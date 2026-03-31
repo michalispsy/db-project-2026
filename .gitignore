@@ -1,0 +1,11 @@
+# Docker & Database logs
+mysql/
+*.log
+.DS_Store
+
+# Προσωρινά αρχεία DBeaver
+.dbeaver/
+Diagrams/
+
+# Αν τα Excel του ΕΜΑ είναι πολύ μεγάλα, ίσως θες να τα εξαιρέσεις, 
+# αλλά η εκφώνηση ζητάει πλήρη φάκελο [sql/load.sql] οπότε προσοχή εδώ.
