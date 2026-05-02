@@ -14,7 +14,7 @@ INSERT INTO Personnel (AMK, first_name, last_name, age, email, phone, hire_date,
 -- 3. Εισαγωγή Ιατρών (Σύνδεση με Personnel)
 -- Ο Παπαδόπουλος (1001) είναι Διευθυντής χωρίς επόπτη.
 -- Η Γεωργίου (1002) είναι Ειδικευόμενη με επόπτη τον Παπαδόπουλο.
-INSERT INTO Doctors (AMK, license_number, specialty, rank, supervisor_amk) VALUES 
+INSERT INTO Doctors (AMK, license_number, specialty, rank, supervisor_amka) VALUES 
 ('1001', 'MD12345', 'Καρδιολογία', 'Director', NULL),
 ('1002', 'MD67890', 'Καρδιολογία', 'Resident', '1001');
 

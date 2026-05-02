@@ -27,9 +27,9 @@ CREATE TABLE Doctors (
     license_number VARCHAR(50) UNIQUE,
     specialty VARCHAR(100),
     rank ENUM('Resident', 'Attending B', 'Attending A', 'Director'),
-    supervisor_amk VARCHAR(20),
+    supervisor_amka VARCHAR(20),
     FOREIGN KEY (AMK) REFERENCES Personnel(AMK) ON DELETE CASCADE,
-    FOREIGN KEY (supervisor_amk) REFERENCES Doctors(AMK)
+    FOREIGN KEY (supervisor_amka) REFERENCES Doctors(AMK)
 ) ENGINE=InnoDB;
 
 CREATE TABLE Patients (
