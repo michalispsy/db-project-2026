@@ -1,8 +1,8 @@
--- 1. Δημιουργία και χρήση της βάσης
-CREATE DATABASE IF NOT EXISTS ygeiopolis;
+USE information_schema;
+DROP DATABASE IF EXISTS ygeiopolis;
+CREATE DATABASE ygeiopolis;
 USE ygeiopolis;
 
--- 2. Τμήματα (Departments) - Βασική οντότητα
 CREATE TABLE Departments (
     dept_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -11,7 +11,6 @@ CREATE TABLE Departments (
     floor_building VARCHAR(50)
 ) ENGINE=InnoDB;
 
--- 3. Προσωπικό (Personnel) - Γενικός πίνακας
 CREATE TABLE Personnel (
     AMK VARCHAR(20) PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -23,7 +22,6 @@ CREATE TABLE Personnel (
     staff_type ENUM('Doctor', 'Nurse', 'Administrative') NOT NULL
 ) ENGINE=InnoDB;
 
--- 4. Ιατροί (Doctors) - Εξειδίκευση του Personnel
 CREATE TABLE Doctors (
     AMK VARCHAR(20) PRIMARY KEY,
     license_number VARCHAR(50) UNIQUE,
@@ -34,7 +32,6 @@ CREATE TABLE Doctors (
     FOREIGN KEY (supervisor_amk) REFERENCES Doctors(AMK)
 ) ENGINE=InnoDB;
 
--- 5. Ασθενείς (Patients)
 CREATE TABLE Patients (
     AMKA VARCHAR(11) PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -44,7 +41,6 @@ CREATE TABLE Patients (
     insurance_provider VARCHAR(100)
 ) ENGINE=InnoDB;
 
--- 6. Κλίνες (Beds) - Εξαρτάται από το Department
 CREATE TABLE Beds (
     bed_id INT AUTO_INCREMENT PRIMARY KEY,
     dept_id INT,
@@ -54,7 +50,6 @@ CREATE TABLE Beds (
     FOREIGN KEY (dept_id) REFERENCES Departments(dept_id)
 ) ENGINE=InnoDB;
 
--- 7. Νοσηλείες (Hospitalizations) - Συνδέει Ασθενή, Κλίνη και Τμήμα
 CREATE TABLE Hospitalizations (
     hosp_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_amka VARCHAR(11),
