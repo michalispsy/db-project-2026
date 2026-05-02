@@ -26,7 +26,7 @@ CREATE TABLE Doctors (
     AMKA VARCHAR(20) PRIMARY KEY,
     license_number VARCHAR(50) UNIQUE,
     specialty VARCHAR(100),
-    rank ENUM('Resident', 'Attending B', 'Attending A', 'Director'),
+    `rank` ENUM('Resident', 'Attending B', 'Attending A', 'Director'),
     supervisor_amka VARCHAR(20),
     FOREIGN KEY (AMKA) REFERENCES Personnel(AMKA) ON DELETE CASCADE,
     FOREIGN KEY (supervisor_amka) REFERENCES Doctors(AMKA)
