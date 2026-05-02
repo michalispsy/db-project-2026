@@ -6,7 +6,7 @@ INSERT INTO Departments (name, description, beds_count, floor_building) VALUES
 ('Επείγοντα', 'Τμήμα Επειγόντων Περιστατικών', 10, 'Κτίριο Α - Ισόγειο');
 
 -- 2. Εισαγωγή Προσωπικού
-INSERT INTO Personnel (AMK, first_name, last_name, age, email, phone, hire_date, staff_type) VALUES 
+INSERT INTO Personnel (AMKA, first_name, last_name, age, email, phone, hire_date, staff_type) VALUES 
 ('1001', 'Γιώργος', 'Παπαδόπουλος', 55, 'gpap@hospital.gr', '2101234567', '2010-05-15', 'Doctor'),
 ('1002', 'Ελένη', 'Γεωργίου', 30, 'egeo@hospital.gr', '2107654321', '2020-10-01', 'Doctor'),
 ('2001', 'Μαρία', 'Κωνσταντίνου', 40, 'mkon@hospital.gr', '2109998888', '2015-03-20', 'Nurse');
@@ -14,7 +14,7 @@ INSERT INTO Personnel (AMK, first_name, last_name, age, email, phone, hire_date,
 -- 3. Εισαγωγή Ιατρών (Σύνδεση με Personnel)
 -- Ο Παπαδόπουλος (1001) είναι Διευθυντής χωρίς επόπτη.
 -- Η Γεωργίου (1002) είναι Ειδικευόμενη με επόπτη τον Παπαδόπουλο.
-INSERT INTO Doctors (AMK, license_number, specialty, rank, supervisor_amka) VALUES 
+INSERT INTO Doctors (AMKA, license_number, specialty, rank, supervisor_amka) VALUES 
 ('1001', 'MD12345', 'Καρδιολογία', 'Director', NULL),
 ('1002', 'MD67890', 'Καρδιολογία', 'Resident', '1001');
 

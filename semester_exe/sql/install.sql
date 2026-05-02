@@ -12,7 +12,7 @@ CREATE TABLE Departments (
 ) ENGINE=InnoDB;
 
 CREATE TABLE Personnel (
-    AMK VARCHAR(20) PRIMARY KEY,
+    AMKA VARCHAR(20) PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     age INT,
@@ -23,13 +23,13 @@ CREATE TABLE Personnel (
 ) ENGINE=InnoDB;
 
 CREATE TABLE Doctors (
-    AMK VARCHAR(20) PRIMARY KEY,
+    AMKA VARCHAR(20) PRIMARY KEY,
     license_number VARCHAR(50) UNIQUE,
     specialty VARCHAR(100),
     rank ENUM('Resident', 'Attending B', 'Attending A', 'Director'),
     supervisor_amka VARCHAR(20),
-    FOREIGN KEY (AMK) REFERENCES Personnel(AMK) ON DELETE CASCADE,
-    FOREIGN KEY (supervisor_amka) REFERENCES Doctors(AMK)
+    FOREIGN KEY (AMKA) REFERENCES Personnel(AMKA) ON DELETE CASCADE,
+    FOREIGN KEY (supervisor_amka) REFERENCES Doctors(AMKA)
 ) ENGINE=InnoDB;
 
 CREATE TABLE Patients (
