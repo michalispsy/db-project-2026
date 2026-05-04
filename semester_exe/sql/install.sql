@@ -229,7 +229,7 @@ CREATE TABLE triages (
     arrival_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     triage_time DATETIME DEFAULT NULL,
     minutes_waited INT DEFAULT NULL,
-    urgency_level INT CHECK (urgency_level BETWEEN 1 AND 5),
+    urgency_level TINYINT CHECK (urgency_level BETWEEN 1 AND 5),
     symptoms TEXT,
     outcome ENUM('hospitalized', 'discharged') DEFAULT 'discharged',
     admission_id INT DEFAULT NULL UNIQUE,
@@ -241,31 +241,37 @@ CREATE TABLE triages (
 );
 
 CREATE TABLE active_substances (
-    substance_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL UNIQUE
+    substance_id INT AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL UNIQUE,
+
+    CONSTRAINT pk_active_substances PRIMARY KEY (substance_id)
 );
 
 CREATE TABLE drugs (
-    drug_id INT AUTO_INCREMENT PRIMARY KEY,
+    drug_id INT AUTO_INCREMENT,
     ema_code VARCHAR(50) NOT NULL UNIQUE,
     name VARCHAR(150) NOT NULL,
-    manufacturer VARCHAR(100)
+    manufacturer VARCHAR(100),
+
+    CONSTRAINT pk_drugs PRIMARY KEY (drug_id)
 );
 
 CREATE TABLE drug_contains_substances (
     drug_id INT,
     substance_id INT,
-    PRIMARY KEY (drug_id, substance_id),
-    FOREIGN KEY (drug_id) REFERENCES drugs(drug_id),
-    FOREIGN KEY (substance_id) REFERENCES active_substances(substance_id)
+
+    CONSTRAINT pk_drug_cs PRIMARY KEY (drug_id, substance_id),
+    CONSTRAINT fk_drug_id FOREIGN KEY (drug_id) REFERENCES drugs(drug_id) ON DELETE CASCADE,
+    CONSTRAINT fk_substance_id FOREIGN KEY (substance_id) REFERENCES active_substances(substance_id) ON DELETE CASCADE
 );
 
 CREATE TABLE patient_allergies (
     patient_AMKA CHAR(11),
     substance_id INT,
-    PRIMARY KEY (patient_AMKA, substance_id),
-    FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA),
-    FOREIGN KEY (substance_id) REFERENCES active_substances(substance_id)
+
+    CONSTRAINT pk_patient_allergies PRIMARY KEY (patient_AMKA, substance_id),
+    CONSTRAINT pk_patient FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA) ON DELETE CASCADE,
+    CONSTRAINT fk_substance_id FOREIGN KEY (substance_id) REFERENCES active_substances(substance_id) ON DELETE CASCADE
 );
 
 CREATE TABLE prescriptions (
@@ -283,6 +289,30 @@ CREATE TABLE prescriptions (
     FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA),
     FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
     FOREIGN KEY (drug_id) REFERENCES drugs(drug_id)
+);
+
+CREATE TABLE admission_ratings (
+    admission_id INT PRIMARY KEY,
+    nursing_quality TINYINT NOT NULL CHECK (nursing_quality BETWEEN 1 AND 5),
+    cleanliness TINYINT NOT NULL CHECK (cleanliness BETWEEN 1 AND 5),
+    food TINYINT NOT NULL CHECK (food BETWEEN 1 AND 5),
+    overall TINYINT NOT NULL CHECK (overall BETWEEN 1 AND 5),
+    comment TEXT,
+    rated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT fk_rating_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE
+);
+
+CREATE TABLE doctor_ratings (
+    rating_id INT AUTO_INCREMENT PRIMARY KEY,
+    admission_id INT NOT NULL,
+    doctor_AMKA CHAR(11) NOT NULL,
+    medical_care_quality TINYINT NOT NULL CHECK (medical_care_quality BETWEEN 1 AND 5),
+    rated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT fk_doc_rating_adm FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
+    CONSTRAINT fk_doc_rating_doc FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
+    UNIQUE (admission_id, doctor_AMKA)
 );
 
 CREATE TRIGGER beds_insert_trigger
