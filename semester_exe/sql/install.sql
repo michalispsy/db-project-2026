@@ -113,7 +113,7 @@ CREATE TABLE patient_emergency_contacts (
     email VARCHAR(50),
     relationship_to_patient VARCHAR(50),
 
-    CONSTRAINT pk_ec PRIMARY KEY (contact_seq, patient_AMKA),
+    CONSTRAINT pk_ec PRIMARY KEY (patient_AMKA, contact_seq),
     CONSTRAINT fk_ec_patient FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA) ON DELETE CASCADE
 );
 
@@ -161,6 +161,7 @@ CREATE TABLE admissions (
 CREATE TABLE lab_exams (
     exam_id INT AUTO_INCREMENT,
     admission_id INT NOT NULL,
+    exam_code INT NOT NULL,
     exam_type VARCHAR(100) NOT NULL,
     exam_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     result_text TEXT,
@@ -239,7 +240,50 @@ CREATE TABLE triages (
     CONSTRAINT fk_triage_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id)
 );
 
-DELIMITER //
+CREATE TABLE active_substances (
+    substance_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE drugs (
+    drug_id INT AUTO_INCREMENT PRIMARY KEY,
+    ema_code VARCHAR(50) NOT NULL UNIQUE,
+    name VARCHAR(150) NOT NULL,
+    manufacturer VARCHAR(100)
+);
+
+CREATE TABLE drug_contains_substances (
+    drug_id INT,
+    substance_id INT,
+    PRIMARY KEY (drug_id, substance_id),
+    FOREIGN KEY (drug_id) REFERENCES drugs(drug_id),
+    FOREIGN KEY (substance_id) REFERENCES active_substances(substance_id)
+);
+
+CREATE TABLE patient_allergies (
+    patient_AMKA CHAR(11),
+    substance_id INT,
+    PRIMARY KEY (patient_AMKA, substance_id),
+    FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA),
+    FOREIGN KEY (substance_id) REFERENCES active_substances(substance_id)
+);
+
+CREATE TABLE prescriptions (
+    prescription_id INT AUTO_INCREMENT PRIMARY KEY,
+    admission_id INT NOT NULL,
+    patient_AMKA CHAR(11) NOT NULL,
+    doctor_AMKA CHAR(11) NOT NULL,
+    drug_id INT NOT NULL,
+    dosage VARCHAR(50),
+    frequency VARCHAR(50),
+    start_date DATE NOT NULL,
+    end_date DATE,
+    
+    FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
+    FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA),
+    FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
+    FOREIGN KEY (drug_id) REFERENCES drugs(drug_id)
+);
 
 CREATE TRIGGER beds_insert_trigger
 AFTER INSERT ON beds
@@ -264,7 +308,7 @@ BEGIN
         FROM patient_emergency_contacts 
         WHERE patient_AMKA = NEW.patient_AMKA
     );
-END //
+END;
 
 CREATE TRIGGER calculate_admission_base_cost_trigger
 BEFORE INSERT ON admissions
@@ -273,7 +317,7 @@ BEGIN
     DECLARE v_cost DECIMAL(10, 2);
     SELECT base_cost INTO v_cost FROM ken WHERE ken_code = NEW.ken_code;
     SET NEW.base_cost = v_cost, NEW.extra_cost = 0.00;
-END //
+END;
 
 CREATE TRIGGER calculate_admission_extra_cost_trigger
 BEFORE UPDATE ON admissions
@@ -306,14 +350,14 @@ BEGIN
             SET NEW.extra_cost = 0.00;
         END IF;
     END IF;
-END //
+END;
 
 CREATE TRIGGER set_bed_occupied_trigger
 AFTER INSERT ON admissions
 FOR EACH ROW
 BEGIN
     UPDATE beds SET status = 'occupied', assigned_to = NEW.admission_id WHERE bed_id = NEW.bed_id;
-END //
+END;
 
 CREATE TRIGGER set_bed_free_trigger
 AFTER UPDATE ON admissions
@@ -322,6 +366,4 @@ BEGIN
     IF OLD.discharge_date IS NULL AND NEW.discharge_date IS NOT NULL THEN
         UPDATE beds SET status = 'free', assigned_to = NULL WHERE bed_id = NEW.bed_id;
     END IF;
-END //
-
-DELIMITER ;
+END;
