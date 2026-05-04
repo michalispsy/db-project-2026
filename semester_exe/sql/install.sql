@@ -139,7 +139,7 @@ CREATE TABLE admissions (
     admission_id INT AUTO_INCREMENT,
     patient_AMKA CHAR(11) NOT NULL,
     department_id INT NOT NULL,
-    bed_id INT NOT NULL UNIQUE,
+    bed_id INT NOT NULL,
     ken_code VARCHAR(5) NOT NULL,
     admission_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
     discharge_date DATE DEFAULT NULL,
@@ -160,7 +160,7 @@ CREATE TABLE admissions (
 
 CREATE TABLE lab_exams (
     exam_id INT AUTO_INCREMENT,
-    admission_id INT NOT NULL UNIQUE,
+    admission_id INT NOT NULL,
     exam_type VARCHAR(100) NOT NULL,
     exam_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     result_text TEXT,
@@ -196,9 +196,9 @@ CREATE TABLE operating_rooms (
 
 CREATE TABLE procedure_executions (
     execution_id INT AUTO_INCREMENT,
-    admission_id INT NOT NULL UNIQUE,
+    admission_id INT NOT NULL,
     procedure_code VARCHAR(20) NOT NULL,
-    room_id INT NOT NULL UNIQUE,
+    room_id INT NOT NULL,
     main_doctor_AMKA CHAR(11) NOT NULL,
     start_time DATETIME NOT NULL,
     end_time DATETIME,
@@ -239,6 +239,8 @@ CREATE TABLE triages (
     CONSTRAINT fk_triage_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id)
 );
 
+DELIMITER //
+
 CREATE TRIGGER beds_insert_trigger
 AFTER INSERT ON beds
 FOR EACH ROW
@@ -262,21 +264,16 @@ BEGIN
         FROM patient_emergency_contacts 
         WHERE patient_AMKA = NEW.patient_AMKA
     );
-END;
+END //
 
 CREATE TRIGGER calculate_admission_base_cost_trigger
 BEFORE INSERT ON admissions
 FOR EACH ROW
 BEGIN
     DECLARE v_cost DECIMAL(10, 2);
-    
-    SELECT base_cost
-    INTO v_cost
-    FROM ken
-    WHERE ken_code = NEW.ken_code;
-    
+    SELECT base_cost INTO v_cost FROM ken WHERE ken_code = NEW.ken_code;
     SET NEW.base_cost = v_cost, NEW.extra_cost = 0.00;
-END;
+END //
 
 CREATE TRIGGER calculate_admission_extra_cost_trigger
 BEFORE UPDATE ON admissions
@@ -284,17 +281,12 @@ FOR EACH ROW
 BEGIN
     DECLARE v_avg_length_of_stay INT;
     DECLARE v_days_stayed INT;
-    DECLARE v_daily_surcharge_rate DECIMAL (10, 2);
-    DECLARE v_base_cost DECIMAL (10, 2);
+    DECLARE v_daily_surcharge_rate DECIMAL(10, 2);
+    DECLARE v_base_cost DECIMAL(10, 2);
 
     IF OLD.ken_code <> NEW.ken_code THEN
-        SELECT base_cost
-        INTO v_base_cost
-        FROM ken WHERE
-        ken_code = NEW.ken_code;
-
+        SELECT base_cost INTO v_base_cost FROM ken WHERE ken_code = NEW.ken_code;
         SET NEW.base_cost = v_base_cost;
-
     ELSEIF NEW.base_cost <> OLD.base_cost THEN
         SET NEW.base_cost = OLD.base_cost;
     END IF;
@@ -314,24 +306,22 @@ BEGIN
             SET NEW.extra_cost = 0.00;
         END IF;
     END IF;
-END;
+END //
 
 CREATE TRIGGER set_bed_occupied_trigger
 AFTER INSERT ON admissions
 FOR EACH ROW
 BEGIN
-    UPDATE beds 
-    SET status = 'occupied', assigned_to = NEW.admission_id
-    WHERE bed_id = NEW.bed_id;
-END;
+    UPDATE beds SET status = 'occupied', assigned_to = NEW.admission_id WHERE bed_id = NEW.bed_id;
+END //
 
 CREATE TRIGGER set_bed_free_trigger
 AFTER UPDATE ON admissions
 FOR EACH ROW
 BEGIN
     IF OLD.discharge_date IS NULL AND NEW.discharge_date IS NOT NULL THEN
-        UPDATE beds 
-        SET status = 'free', assigned_to = NULL
-        WHERE bed_id = NEW.bed_id;
+        UPDATE beds SET status = 'free', assigned_to = NULL WHERE bed_id = NEW.bed_id;
     END IF;
-END;
+END //
+
+DELIMITER ;
