@@ -20,7 +20,7 @@ CREATE TABLE beds (
     dept_id INT NOT NULL,
     room_capacity INT,
     bed_type ENUM('regular', 'icu', 'emergency', 'pediatric') NOT NULL DEFAULT 'regular',
-    status ENUM('free', 'occupied', 'unavailable') NOT NULL DEFAULT 'free',
+    status ENUM('free', 'occupied', 'maintenance') NOT NULL DEFAULT 'free',
     assigned_to INT DEFAULT NULL,
     
     CONSTRAINT pk_beds PRIMARY KEY (bed_id),
@@ -156,6 +156,69 @@ CREATE TABLE admissions (
     CONSTRAINT fk_adm_ken FOREIGN KEY (ken_code) REFERENCES ken(ken_code),
     CONSTRAINT fk_adm_diag_in FOREIGN KEY (admission_diagnosis_code) REFERENCES icd10(icd10_code),
     CONSTRAINT fk_adm_diag_out FOREIGN KEY (discharge_diagnosis_code) REFERENCES icd10(icd10_code)
+);
+
+CREATE TABLE lab_exams (
+    exam_id INT AUTO_INCREMENT,
+    admission_id INT NOT NULL UNIQUE,
+    exam_type VARCHAR(100) NOT NULL,
+    exam_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    result_text TEXT,
+    result_numeric DECIMAL(10, 2),
+    result_unit VARCHAR(20),
+    cost DECIMAL(10, 2) DEFAULT 0.00,
+    doctor_AMKA CHAR(11) NOT NULL,
+    
+    CONSTRAINT pk_exams PRIMARY KEY (exam_id),
+    CONSTRAINT fk_exam_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
+    CONSTRAINT fk_exam_ordered_by FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA)
+);
+
+CREATE TABLE medical_procedures (
+    procedure_code VARCHAR(20),
+    name VARCHAR(50) NOT NULL,
+    category VARCHAR(100),
+    standard_duration INT,
+    standard_cost DECIMAL(10, 2),
+
+    CONSTRAINT pk_proc_code PRIMARY KEY (procedure_code)
+);
+
+CREATE TABLE operating_rooms (
+    room_id INT AUTO_INCREMENT,
+    room_name VARCHAR(50) NOT NULL,
+    room_type ENUM('Operating Room', 'ICU', 'Exam Room', 'Therapy Room'),
+    floor INT,
+    building VARCHAR(50),
+
+    CONSTRAINT pk_op_rooms PRIMARY KEY (room_id)
+);
+
+CREATE TABLE procedure_executions (
+    execution_id INT AUTO_INCREMENT,
+    admission_id INT NOT NULL UNIQUE,
+    procedure_code VARCHAR(20) NOT NULL,
+    room_id INT NOT NULL UNIQUE,
+    main_doctor_AMKA CHAR(11) NOT NULL,
+    start_time DATETIME NOT NULL,
+    end_time DATETIME,
+    actual_cost DECIMAL(10, 2),
+    
+    CONSTRAINT pk_proc_exec PRIMARY KEY (execution_id),
+    CONSTRAINT fk_proc_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
+    CONSTRAINT fk_proc_code FOREIGN KEY (procedure_code) REFERENCES medical_procedures(procedure_code),
+    CONSTRAINT fk_proc_room FOREIGN KEY (room_id) REFERENCES operating_rooms(room_id),
+    CONSTRAINT fk_proc_doctor FOREIGN KEY (main_doctor_AMKA) REFERENCES doctors(AMKA)
+);
+
+CREATE TABLE procedure_assistants (
+    execution_id INT NOT NULL,
+    staff_AMKA CHAR(11) NOT NULL,
+    role VARCHAR(50) NOT NULL,
+
+    CONSTRAINT pk_proc_staff PRIMARY KEY (execution_id, staff_AMKA),
+    CONSTRAINT fk_proc_exec FOREIGN KEY (execution_id) REFERENCES procedure_executions(execution_id) ON DELETE CASCADE,
+    FOREIGN KEY (staff_AMKA) REFERENCES staff(AMKA)
 );
 
 CREATE TABLE triages (
