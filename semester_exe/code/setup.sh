@@ -47,13 +47,10 @@ if [[ "$0" != "$TARGET_DIR/db" ]]; then
 
     install_pkg git && \
     install_pkg mariadb-server mariadb && \
-    install_pkg mycli && \
     {
         echo " * Registering db command to $TARGET_DIR" && \
         $SUDO_PREFIX mkdir -p "$TARGET_DIR" && \
         $SUDO_PREFIX cp "$0" "$TARGET_DIR/db" && \
-        # echo "#!/usr/bin/env bash" | $SUDO_PREFIX tee "$TARGET_DIR/db" > /dev/null && \
-        # sed -n /# --- EXECUTION_[S]TART ---/,/# --- EXECUTION_[E]ND ---/p "$0" | $SUDO_PREFIX tee -a "$TARGET_DIR/db" > /dev/null && \
         $SUDO_PREFIX chmod +x "$TARGET_DIR/db"
     } || {
         echo " * Error: Setup failed. Aborting"
@@ -108,12 +105,9 @@ if [[ -z "$MY_CNF" || ! -f "$MY_CNF" ]]; then
     fi
 fi
 
-args1=()
-args2=()
-[[ -n "$MY_CNF" ]] && args1+=(--defaults-file="$MY_CNF")
-[[ -n "$MY_CNF" ]] && args2+=(--defaults-file="$MY_CNF")
-[[ -n "$MYCLIRC" ]] && args2+=(--myclirc="$MYCLIRC")
+args=()
+[[ -n "$MY_CNF" ]] && args+=(--defaults-file="$MY_CNF")
 
-$cmd_prefix mariadb "${args1[@]}" < "sql/install.sql"
-$cmd_prefix mariadb "${args1[@]}" < "sql/load.sql"
-$cmd_prefix mycli "${args2[@]}" ygeiopolis
+$cmd_prefix mariadb "${args[@]}" < "sql/install.sql"
+$cmd_prefix mariadb "${args[@]}" < "sql/load.sql"
+$cmd_prefix mariadb "${args[@]}" ygeiopolis
