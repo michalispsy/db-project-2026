@@ -19,8 +19,8 @@ CREATE TABLE beds (
     bed_id INT AUTO_INCREMENT,
     dept_id INT NOT NULL,
     room_capacity INT,
-    bed_type ENUM('regular', 'icu', 'emergency', 'pediatric') NOT NULL DEFAULT 'regular',
-    status ENUM('free', 'occupied', 'maintenance') NOT NULL DEFAULT 'free',
+    bed_type ENUM('Regular', 'ICU', 'Emergency', 'Pediatric') NOT NULL DEFAULT 'Regular',
+    status ENUM('Free', 'Occupied', 'Maintenance') NOT NULL DEFAULT 'Free',
     assigned_to INT DEFAULT NULL,
     
     CONSTRAINT pk_beds PRIMARY KEY (bed_id),
@@ -36,7 +36,7 @@ CREATE TABLE staff (
     email VARCHAR(50) UNIQUE,
     phone_number VARCHAR(15) UNIQUE,
     hire_date DATE DEFAULT (CURRENT_DATE),
-    staff_type ENUM('doctor', 'admin', 'nurse'),
+    staff_type ENUM('Doctor', 'Admin', 'Nurse'),
 
     CONSTRAINT pk_staff PRIMARY KEY (AMKA)
 );
@@ -44,7 +44,7 @@ CREATE TABLE staff (
 CREATE TABLE doctors (
     AMKA CHAR(11),
     license_number VARCHAR(20) NOT NULL,
-    rank ENUM('resident', 'junior attending', 'senior attending', 'director') NOT NULL,
+    rank ENUM('Resident', 'Junior Attending', 'Senior Attending', 'Director') NOT NULL,
     supervisor_AMKA CHAR(11),
 
     CONSTRAINT pk_doctors PRIMARY KEY (AMKA),
@@ -77,7 +77,7 @@ CREATE TABLE admin_staff (
 
 CREATE TABLE nurses (
     AMKA CHAR(11),
-    rank ENUM('nursing assistant', 'registered nurse', 'head nurse') NOT NULL,
+    rank ENUM('Nursing Assistant', 'Registered Nurse', 'Head Nurse') NOT NULL,
     dept_id INT, -- MAYBE ADD NOT NULL
 
     CONSTRAINT pk_nurses PRIMARY KEY (AMKA),
@@ -217,7 +217,7 @@ CREATE TABLE procedure_assistants (
     staff_AMKA CHAR(11) NOT NULL,
     role VARCHAR(50) NOT NULL,
 
-    CONSTRAINT pk_proc_staff PRIMARY KEY (execution_id, staff_AMKA),
+    CONSTRAINT pk_proc_staff PRIMARY KEY (staff_AMKA, execution_id),
     CONSTRAINT fk_proc_exec FOREIGN KEY (execution_id) REFERENCES procedure_executions(execution_id) ON DELETE CASCADE,
     FOREIGN KEY (staff_AMKA) REFERENCES staff(AMKA)
 );
@@ -231,7 +231,7 @@ CREATE TABLE triages (
     minutes_waited INT DEFAULT NULL,
     urgency_level TINYINT CHECK (urgency_level BETWEEN 1 AND 5),
     symptoms TEXT,
-    outcome ENUM('hospitalized', 'discharged') DEFAULT 'discharged',
+    outcome ENUM('Hospitalized', 'Discharged') DEFAULT 'Discharged',
     admission_id INT DEFAULT NULL UNIQUE,
 
     CONSTRAINT pk_triages PRIMARY KEY (triage_id),
@@ -318,6 +318,61 @@ CREATE TABLE doctor_ratings (
     UNIQUE (admission_id, doctor_AMKA)
 );
 
+CREATE TABLE shifts (
+    shift_id INT AUTO_INCREMENT,
+    shift_date DATE NOT NULL,
+    shift_slot ENUM('Morning', 'Afternoon', 'Night') NOT NULL,
+    shift_status ENUM('Scheduled', 'In Progress', 'Completed', 'Cancelled', 'Understaffed') DEFAULT 'Scheduled',
+    dept_id INT NOT NULL,
+
+
+    CONSTRAINT pk_shift PRIMARY KEY (shift_id),
+    CONSTRAINT fk_shift_dept FOREIGN KEY (dept_id) REFERENCES departments(dept_id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE shift_staffing (
+    shift_id INT,
+    staff_AMKA CHAR(11),
+
+    CONSTRAINT pk_shift_staffing PRIMARY KEY (staff_AMKA, shift_id),
+    CONSTRAINT fk_staffing_shift FOREIGN KEY (shift_id) REFERENCES shifts(shift_id) ON DELETE CASCADE,
+    CONSTRAINT fk_staffing_staff FOREIGN KEY (staff_AMKA) REFERENCES staff(AMKA) ON DELETE CASCADE
+);
+
+CREATE TABLE department_images (
+    img_id INT AUTO_INCREMENT,
+    dept_id INT NOT NULL,
+    img_url VARCHAR(255) NOT NULL,
+    caption VARCHAR(255),
+    ordering INT DEFAULT 0,
+
+    CONSTRAINT pk_dept_images PRIMARY KEY (img_id),
+    CONSTRAINT fk_dept_img_relation FOREIGN KEY (dept_id) REFERENCES departments(dept_id) ON DELETE CASCADE
+);
+
+CREATE TABLE drug_images (
+    img_id INT AUTO_INCREMENT,
+    drug_id INT NOT NULL,
+    img_url VARCHAR(255) NOT NULL,
+    caption VARCHAR(255),
+    ordering INT DEFAULT 0,
+
+    CONSTRAINT pk_drug_images PRIMARY KEY (img_id),
+    CONSTRAINT fk_drug_img_relation FOREIGN KEY (drug_id) REFERENCES drugs(drug_id) ON DELETE CASCADE
+);
+
+CREATE TABLE doctor_images (
+    img_id INT AUTO_INCREMENT,
+    doctor_AMKA CHAR(11) NOT NULL,
+    img_url VARCHAR(255) NOT NULL,
+    caption VARCHAR(255),
+    ordering INT DEFAULT 0,
+
+    CONSTRAINT pk_doctor_images PRIMARY KEY (img_id),
+    CONSTRAINT fk_doctor_img_relation FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA) ON DELETE CASCADE
+);
+
 CREATE TRIGGER beds_insert_trigger
 AFTER INSERT ON beds
 FOR EACH ROW
@@ -389,7 +444,7 @@ CREATE TRIGGER set_bed_occupied_trigger
 AFTER INSERT ON admissions
 FOR EACH ROW
 BEGIN
-    UPDATE beds SET status = 'occupied', assigned_to = NEW.admission_id WHERE bed_id = NEW.bed_id;
+    UPDATE beds SET status = 'Occupied', assigned_to = NEW.admission_id WHERE bed_id = NEW.bed_id;
 END;
 
 CREATE TRIGGER set_bed_free_trigger
@@ -397,6 +452,68 @@ AFTER UPDATE ON admissions
 FOR EACH ROW
 BEGIN
     IF OLD.discharge_date IS NULL AND NEW.discharge_date IS NOT NULL THEN
-        UPDATE beds SET status = 'free', assigned_to = NULL WHERE bed_id = NEW.bed_id;
+        UPDATE beds SET status = 'Free', assigned_to = NULL WHERE bed_id = NEW.bed_id;
     END IF;
 END;
+
+-- -------------------- TRIGGERS GIA TA SHIFTS TA PARATISA ----------------------------------------
+
+-- CREATE TRIGGER check_max_shifts_trigger
+-- BEFORE INSERT ON shift_staffing
+-- FOR EACH ROW
+-- BEGIN
+--     DECLARE shift_count INT;
+--     DECLARE staff_role VARCHAR(20);
+--     DECLARE current_month INT;
+--     DECLARE current_year INT;
+--
+--     SELECT MONTH(shift_date), YEAR(shift_date) INTO current_month, current_year
+--     FROM shifts WHERE shift_id = NEW.shift_id;
+--
+--     SELECT role INTO staff_role FROM staff WHERE AMKA = NEW.staff_AMKA;
+--
+--     SELECT COUNT(*) INTO shift_count
+--     FROM shift_staffing ss
+--     JOIN shifts s ON ss.shift_id = s.shift_id
+--     WHERE ss.staff_AMKA = NEW.staff_AMKA 
+--     AND MONTH(s.shift_date) = current_month 
+--     AND YEAR(s.shift_date) = current_year;
+--
+--     IF (staff_role = 'Doctor' AND shift_count >= 15) THEN
+--         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Doctor exceeded max monthly shifts (15)';
+--     ELSEIF (staff_role = 'Nurse' AND shift_count >= 20) THEN
+--         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Nurse exceeded max monthly shifts (20)';
+--     ELSEIF (staff_role = 'Admin' AND shift_count >= 25) THEN
+--         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Admin exceeded max monthly shifts (25)';
+--     END IF;
+-- END;
+--
+-- CREATE TRIGGER prevent_consecutive_shifts_trigger
+-- BEFORE INSERT ON shift_staffing
+-- FOR EACH ROW
+-- BEGIN
+--     DECLARE last_shift_date DATE;
+--     DECLARE last_shift_slot ENUM('Morning', 'Afternoon', 'Night');
+--
+--     SELECT s.shift_date, s.shift_slot INTO last_shift_date, last_shift_slot
+--     FROM shift_staffing ss
+--     JOIN shifts s ON ss.shift_id = s.shift_id
+--     WHERE ss.staff_AMKA = NEW.staff_AMKA
+--     ORDER BY s.shift_date DESC, s.shift_slot DESC
+--     LIMIT 1;
+-- END;
+--
+-- CREATE TRIGGER check_supervisor_trigger
+-- BEFORE UPDATE ON shifts
+-- FOR EACH ROW
+-- BEGIN
+--     IF NEW.shift_status = 'Scheduled' THEN
+--         IF (SELECT COUNT(*) FROM shift_staffing ss 
+--             JOIN staff st ON ss.staff_AMKA = st.AMKA
+--             WHERE ss.shift_id = NEW.shift_id 
+--             AND st.rank IN ('Supervisor', 'Senior Attending')) = 0 
+--         THEN
+--             SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Shift must have at least one Supervisor/Senior.';
+--         END IF;
+--     END IF;
+-- END;
