@@ -110,10 +110,10 @@ fi
 
 args1=()
 args2=()
-# [[ -n "$MY_CNF" ]] && args1+=(--defaults-file="$MY_CNF")
+[[ -n "$MY_CNF" ]] && args1+=(--defaults-file="$MY_CNF")
 [[ -n "$MY_CNF" ]] && args2+=(--defaults-file="$MY_CNF")
 [[ -n "$MYCLIRC" ]] && args2+=(--myclirc="$MYCLIRC")
 
-# $cmd_prefix mariadb "${args1[@]}" < "install.sql"
-# $cmd_prefix mariadb "${args1[@]}" < "load.sql"
+$cmd_prefix mariadb "${args1[@]}" < "install.sql"
+$cmd_prefix mariadb "${args1[@]}" < "load.sql"
 $cmd_prefix mycli "${args2[@]}" ygeiopolis
