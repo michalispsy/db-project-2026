@@ -98,7 +98,7 @@ if [ ! -d "$PROJECT_ROOT" ]; then
     PROJECT_ROOT="$(pwd)/db-project-2026"
 fi
 
-cd "$PROJECT_ROOT/semester_exe/sql" || { echo "Dir not found"; exit 1; }
+cd "$PROJECT_ROOT/semester_exe" || { echo "Dir not found"; exit 1; }
 
 cmd_prefix=""
 if [[ -z "$MY_CNF" || ! -f "$MY_CNF" ]]; then
@@ -114,6 +114,6 @@ args2=()
 [[ -n "$MY_CNF" ]] && args2+=(--defaults-file="$MY_CNF")
 [[ -n "$MYCLIRC" ]] && args2+=(--myclirc="$MYCLIRC")
 
-$cmd_prefix mariadb "${args1[@]}" < "install.sql"
-$cmd_prefix mariadb "${args1[@]}" < "load.sql"
+$cmd_prefix mariadb "${args1[@]}" < "sql/install.sql"
+$cmd_prefix mariadb "${args1[@]}" < "sql/load.sql"
 $cmd_prefix mycli "${args2[@]}" ygeiopolis
