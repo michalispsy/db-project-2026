@@ -275,7 +275,7 @@ CREATE TABLE patient_allergies (
 );
 
 CREATE TABLE prescriptions (
-    prescription_id INT AUTO_INCREMENT PRIMARY KEY,
+    prescription_id INT AUTO_INCREMENT,
     admission_id INT NOT NULL,
     patient_AMKA CHAR(11) NOT NULL,
     doctor_AMKA CHAR(11) NOT NULL,
@@ -285,31 +285,34 @@ CREATE TABLE prescriptions (
     start_date DATE NOT NULL,
     end_date DATE,
     
-    FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
-    FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA),
-    FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
-    FOREIGN KEY (drug_id) REFERENCES drugs(drug_id)
+    CONSTRAINT pk_prescriptions PRIMARY KEY (prescription_id),
+    CONSTRAINT fk_presc_admi_id FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
+    CONSTRAINT fk_presc_pati_id FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA),
+    CONSTRAINT fk_presc_doct_id FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
+    CONSTRAINT fk_presc_drug_id FOREIGN KEY (drug_id) REFERENCES drugs(drug_id)
 );
 
 CREATE TABLE admission_ratings (
-    admission_id INT PRIMARY KEY,
+    admission_id INT,
     nursing_quality TINYINT NOT NULL CHECK (nursing_quality BETWEEN 1 AND 5),
     cleanliness TINYINT NOT NULL CHECK (cleanliness BETWEEN 1 AND 5),
     food TINYINT NOT NULL CHECK (food BETWEEN 1 AND 5),
     overall TINYINT NOT NULL CHECK (overall BETWEEN 1 AND 5),
     comment TEXT,
     rated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    
+
+    CONSTRAINT pk_admissions PRIMARY KEY (admission_id),
     CONSTRAINT fk_rating_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE
 );
 
 CREATE TABLE doctor_ratings (
-    rating_id INT AUTO_INCREMENT PRIMARY KEY,
+    rating_id INT AUTO_INCREMENT,
     admission_id INT NOT NULL,
     doctor_AMKA CHAR(11) NOT NULL,
     medical_care_quality TINYINT NOT NULL CHECK (medical_care_quality BETWEEN 1 AND 5),
     rated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     
+    CONSTRAINT pk_doc_ratings PRIMARY KEY (rating_id),
     CONSTRAINT fk_doc_rating_adm FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
     CONSTRAINT fk_doc_rating_doc FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
     UNIQUE (admission_id, doctor_AMKA)
