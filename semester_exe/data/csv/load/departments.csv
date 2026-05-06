@@ -1,0 +1,16 @@
+dept_id,name,description,bed_count,floor,building,director_AMKA
+1,Kardiologiko,Cardiology department,0,1,A,\N
+2,Cheirourgiko,General surgery department,0,1,B,\N
+3,Pathologiko,Internal medicine department,0,1,C,\N
+4,Orthopediko,Orthopedics department,0,1,A,\N
+5,Neurologiko,Neurology department,0,1,B,\N
+6,Paidiatriko,Pediatrics department,0,2,C,\N
+7,Gynaikologiko,Gynecology and obstetrics,0,2,A,\N
+8,Ogkologiko,Oncology department,0,2,B,\N
+9,Ourologiko,Urology department,0,2,C,\N
+10,Pnevmonologiko,Pulmonology department,0,2,A,\N
+11,Aimatologiko,Hematology department,0,3,B,\N
+12,Revmatologiko,Rheumatology department,0,3,C,\N
+13,Nefrologiko,Nephrology department,0,3,A,\N
+14,Dermatologiko,Dermatology department,0,3,B,\N
+15,Psychiatriko,Psychiatry department,0,3,C,\N

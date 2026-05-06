@@ -1,0 +1,201 @@
+drug_id,ema_code,name,manufacturer
+1,EMA-002664,Magenlom,Bennett Pharmaceuticals Sa
+2,EMA-003121,Notorium,Adelco Chromatourgia Athinon E Colocotronis Bros Sa
+3,EMA-004894,Vradem,Demo Abee
+4,EMA-004347,Talerin,Demo Abee
+5,EMA-002416,Larvin,Pharmex S.A.
+6,EMA-003717,Rapexole,Rafarm Sa.
+7,EMA-004142,Sivinar,Anfarm Hellas Sa
+8,EMA-004960,Yardel,Libytec Pharmaceutical S.A.
+9,EMA-003525,Pomalidomide Faran,Faran S.A.
+10,EMA-000813,Chemiderm,Iasis Pharma
+11,EMA-000938,Co-Aperneva,"Krka, D.D., Novo Mesto"
+12,EMA-004517,Torvastin,Vita Longa Pc
+13,EMA-001762,Flogozyme,Target Pharma Single Member Private Ltd
+14,EMA-003524,Pomalidomide Ariti,Ariti Sa
+15,EMA-003700,Rafitin,Bennett Pharmaceuticals Sa
+16,EMA-001872,Frutenor,Rafarm Sa.
+17,EMA-003390,Pantoprazole Tad,Tad Pharma Gmbh
+18,EMA-002777,Menago,Adelco Chromatourgia Athinon E Colocotronis Bros Sa
+19,EMA-003716,Ranzal,Vian S.A.
+20,EMA-003267,Ophtha-Biotic,Uni-Pharma Kleon Tsetis Pharmaceutical Laboratories S.A.
+21,EMA-003408,Path-Muscle,Doc Pharma
+22,EMA-000779,Ceftazidime Kabi,Fresenius Kabi Hellas Single Member S.A.
+23,EMA-002561,Lobivon-Plus,Menarini International Operations Luxembourg S.A.
+24,EMA-003497,Pitavastatin Stada,Stada Arzneimittel Ag
+25,EMA-002089,Hexalen,Johnson & Johnson Hellas Consumer Ae
+26,EMA-003067,Nintedanib Sandoz,Sandoz Pharmaceuticals D.D.
+27,EMA-001251,Digestopret,Bionorica Se
+28,EMA-003886,Ropivacaine Kabi,Fresenius Kabi Hellas Single Member S.A.
+29,EMA-000550,Biotaxel,Medicus A.E
+30,EMA-000748,Carmustine Tillomed,Tillomed Pharma Gmbh
+31,EMA-000700,Calcium Gluconate Cooper,Cooper Pharmaceuticals S.A.
+32,EMA-000764,Cb 30-Plur,Nephrodynamic Hellas S.A.
+33,EMA-003538,Potassium Chloride + Dextrose Cooper,Cooper Pharmaceuticals S.A.
+34,EMA-000792,Celebrex,Viatris Hellas Limited
+35,EMA-003053,Nilotinib,Viatris Limited
+36,EMA-001066,Dalacin C,Pfizer Hellas A.E.
+37,EMA-004558,Trevicopto Duo,Uni-Pharma Kleon Tsetis Pharmaceutical Laboratories S.A.
+38,EMA-000492,Bergamol,Farmellas Enterprises Ltd
+39,EMA-004805,Vidoil,Op Pharma S.R.L.
+40,EMA-004601,Ufonitren,Pharmazac Sa
+41,EMA-004602,Ufonitren,Novendia Pharmaceuticals Ltd
+42,EMA-002701,Mastopon-Treat New,Nassington Ltd
+43,EMA-001002,Cosyrel,Servier Hellas Pharmaceuticals Ltd
+44,EMA-003366,Paliperidone Teva,Teva B.V
+45,EMA-002897,Moflotrex Pf,Pharma Stulln Gmbh
+46,EMA-003465,Physioneal 40 Clear-Flex,Vantive Belgium
+47,EMA-000422,Azacitidine Stada,Stada Arzneimittel Ag
+48,EMA-002357,Kortikeral,Verisfield S.M.S.A
+49,EMA-004919,Xanator,Genepharm S.A.
+50,EMA-002560,Lobivon,Menarini International Operations Luxembourg S.A.
+51,EMA-002881,Miralust,Bennett Pharmaceuticals Sa
+52,EMA-000849,Cinacalcetωσ  Υδροχλωρική Pharmazac,Pharmazac Sa
+53,EMA-004735,Ven-Fax,Bioneuron Pharmaceuticals Ltd
+54,EMA-004157,Smofkabiven Low Osmo Peripheral,Fresenius Kabi Hellas Μονοπρόσωπη A.E.
+55,EMA-001743,Flecarythm,Galenica Sa
+56,EMA-001268,Dimtruzic,Sandoz Pharmaceuticals D.D.
+57,EMA-003951,Sabril,Sanofi-Aventis Monoprosopi A.E.B.E
+58,EMA-001838,Formotil,Genepharm S.A.
+59,EMA-000887,Claripen,Elpen Pharmaceutical Co. Inc.
+60,EMA-002869,Minocin,Teofarma S.R.L.
+61,EMA-004557,Trevicopto,Uni-Pharma Kleon Tsetis Pharmaceutical Laboratories S.A.
+62,EMA-003012,Neurobion,P&g Health Germany Gmbh
+63,EMA-000942,Cognomem,"Zentiva, K.S."
+64,EMA-002283,Istergan,Elpen Pharmaceutical Co. Inc.
+65,EMA-004704,Vastazor,Vocate Φαρμακευτικη Αε
+66,EMA-001853,Fosrenol,Takeda Pharmaceuticals International Ag Ireland Branch
+67,EMA-003516,Pn-Lemos,Terix Labs Ltd
+68,EMA-004596,Tutecvi,Viatris Limited
+69,EMA-005094,Zocor,Vianex S.A.
+70,EMA-005027,Zenon,Sanofi-Aventis Monoprosopi A.E.B.E
+71,EMA-004561,Trian,Demo Abee
+72,EMA-000216,Anchopriv,Pharmabelle Ltd
+73,EMA-004989,Zameline,Laboratoires Thea
+74,EMA-002191,Importal,Angelini Pharma Hellas S.A.
+75,EMA-000238,Antipsichos,Proel Epam G Koronis Sa Pharmaceuticals
+76,EMA-001478,Enstilar,Leo Pharma A/S
+77,EMA-002239,Iomeron,Bracco Imaging S.P.A.
+78,EMA-002532,Lipigan,Medical Pharmaquality Pharmaceuticals S.A.
+79,EMA-002784,Mepenex,Vianex S.A.
+80,EMA-002876,Miorel,Provident Pharmaceuticals Ltd
+81,EMA-000051,Adaferin,Galderma International
+82,EMA-001487,Enzalutamide Stada,Stada Arzneimittel Ag
+83,EMA-001174,Dermoraze,Medicus A.E
+84,EMA-004640,Ursofalk,Galenica Sa
+85,EMA-003284,Orebus,Zwitter Pharmaceuticals Επε
+86,EMA-000571,Bocouture,Merz Pharmaceuticals Gmbh
+87,EMA-001163,Depredon,Kleva Pharmaceuticals
+88,EMA-005187,Νurofen For Children,Reckitt Benckiser Hellas Healthcare Sa
+89,EMA-000252,Apixaban,Adalvo  Limited
+90,EMA-000752,Carnivit,Viofar Ltd
+91,EMA-004346,Talerin,Demo Abee
+92,EMA-001763,Flonital,Anfarm Hellas Sa
+93,EMA-003082,Nocdurna,Ferring Hellas Mepe
+94,EMA-003440,Periotret,Verisfield S.M.S.A
+95,EMA-002793,Meriofert,Ibsa Farmaceutici Italia
+96,EMA-001290,Docetaxel Actavis,Actavis Group Ptc Ehf.
+97,EMA-003032,Nicobright Enorama,Enorama Pharma Ab
+98,EMA-002553,Livial,N.V. Organon
+99,EMA-002658,Macorel,Elpen Pharmaceutical Co. Inc.
+100,EMA-004650,Vagifem,Novo Nordisk Hellas Ltd.
+101,EMA-004885,Vorteza,Demo Abee
+102,EMA-000696,Calcium Chloride Demo,Demo Abee
+103,EMA-000431,Azemista,Elpen Pharmaceutical Co. Inc.
+104,EMA-001275,Dipen,Elpen Pharmaceutical Co. Inc.
+105,EMA-005062,Zincalto,Verisfield S.M.S.A
+106,EMA-000408,Axavel,Genepharm S.A.
+107,EMA-000669,Buscopan,Opella Healthcare Greece Single Member Ltd.
+108,EMA-002230,Intralipid,Fresenius Kabi Hellas Single Member S.A.
+109,EMA-003630,Prosolvin,Vian S.A.
+110,EMA-003474,Piesiton-R,Demo Abee
+111,EMA-003979,Salvapar,Ipsen M.E.P.E.
+112,EMA-004974,Zacosteo,Pharmazac Sa
+113,EMA-003622,Propiogenta,N.V. Organon
+114,EMA-003393,Pantosec,Medicina Pharmaceuticals S.A.
+115,EMA-002238,Iodovine,Pharmabelle Ltd
+116,EMA-001766,Fluarix Tetra,Glaxosmithkline Biologicals S.A.
+117,EMA-004198,Solidon,Adelco Chromatourgia Athinon E Colocotronis Bros Sa
+118,EMA-000933,Cloplate,Win Medica Sa
+119,EMA-002828,Metronidazole B.Braun,Vioser S.A.
+120,EMA-003522,Poly-Iron,Target Pharma Single Member Private Ltd
+121,EMA-000909,Clindamycin Anfarm,Anfarm Hellas Sa
+122,EMA-002321,Kalvenox,Medochemie Hellas Sa
+123,EMA-004859,Vlenolys,Pharmabelle Ltd
+124,EMA-003987,Santamer,Rafarm Sa.
+125,EMA-004317,Suprane,Baxter Hellas
+126,EMA-002527,Lipemia,Verisfield S.M.S.A
+127,EMA-000373,Atorvastatin/Kleva 20mg,Kleva Pharmaceuticals
+128,EMA-001807,Flusalair,Win Medica Sa
+129,EMA-003238,Omalin Plus,Uni-Pharma Kleon Tsetis Pharmaceutical Laboratories S.A.
+130,EMA-004910,Wilfactin,Vianex S.A.
+131,EMA-000449,Azzol-S,Sja Pharm Ltd
+132,EMA-000063,Adicanil,Innovis Pharma
+133,EMA-001675,Fentanyl Demo,Demo Abee
+134,EMA-002470,Letynol,Norma Hellas S.A.
+135,EMA-001731,Fladalgin,Proel Epam G Koronis Sa Pharmaceuticals
+136,EMA-001125,Demephan,Demo Abee
+137,EMA-002094,Hexvix,Photocure Asa
+138,EMA-002372,Lacipil,Glaxosmithkline Single Member A.E.B.E.
+139,EMA-002688,Mannitol Bradex,Bradex S.A.
+140,EMA-000983,Cordeslon N,Cooper Pharmaceuticals S.A.
+141,EMA-000064,Adifen,Medicamerc Pharmaceuticals S.A
+142,EMA-004075,Sielemit,Nassington Ltd
+143,EMA-003528,Pomalidomide Sandoz,Sandoz Pharmaceuticals D.D.
+144,EMA-001440,Eltrombopag Win Medica,Win Medica Sa
+145,EMA-001059,Daktarin,Johnson & Johnson Hellas Consumer Ae
+146,EMA-003115,Nortolan,Anfarm Hellas Sa
+147,EMA-004363,Tanlotim,Omnivision Gmbh
+148,EMA-001886,Fungiderm 1% W/W Κρέμα,Nestoras Vlachos Pc Epsilon Health
+149,EMA-004099,Simvasterol,Libytec Pharmaceutical S.A.
+150,EMA-004578,Triplovit,Ioulia And Irene Tseti Pharmaceutical Laboratories S.A.
+151,EMA-002902,Momesalic,Nestoras Vlachos Pc Epsilon Health
+152,EMA-000591,Botaderm,D.A.S.T. Biotech Pharm Ltd
+153,EMA-003253,Ondameton,Medicina Pharmaceuticals S.A.
+154,EMA-000347,Asugrin,Uni-Pharma Kleon Tsetis Pharmaceutical Laboratories S.A.
+155,EMA-003574,Presidin/Bennett,Bennett Pharmaceuticals Sa
+156,EMA-000154,Alvesco,Covis Pharma Europe B.V.
+157,EMA-003767,Repevax,Sanofi Winthrop Industrie
+158,EMA-000638,Broxeltia,Innovis Pharma
+159,EMA-002565,Locitafer,Medhel S.A.
+160,EMA-004717,Velept Xr,Theracell Advanced Biotechnology S.A.
+161,EMA-003517,Pokydy,Excess Therapeutics Single Member P.C.
+162,EMA-004698,Vasclor Gest,Verisfield S.M.S.A
+163,EMA-003314,Otilax,Win Medica Sa
+164,EMA-003422,Penezil,"Lyofin Ltd, Greece"
+165,EMA-000944,Colchicin,Pharmaselect International Beteiligungs Gmbh
+166,EMA-003319,Otrivin Menthol Preservative Free,Haleon Hellas Single Member Societe Anonyme
+167,EMA-000171,Amikacin Norma,Norma Hellas S.A.
+168,EMA-002661,Madopar,Roche (Hellas) Sa
+169,EMA-001408,Egotux,Genepharm S.A.
+170,EMA-005064,Zindasept,Verisfield S.M.S.A
+171,EMA-003770,Resata,Rafarm Sa.
+172,EMA-002965,Nagilma,Innovis Pharma
+173,EMA-000722,Capibine,Ariti Sa
+174,EMA-003578,Pressuril,"Lyofin Ltd, Greece"
+175,EMA-000868,Cipromycin/Medichrom,Farmellas Enterprises Ltd
+176,EMA-001994,Gloryfen,Help Abee
+177,EMA-003570,Prenodom,Aidom Pharma Ανωνυμη Φαρμακευτικη Εταιρια
+178,EMA-004825,Vildagliptin+metformin Velka,Velka Hellas S.A.
+179,EMA-003281,Orbical-D3,Zwitter Pharmaceuticals Επε
+180,EMA-004293,Suderlax,Nassington Ltd
+181,EMA-000645,Buateron,Venifar Ltd
+182,EMA-003243,Omnic Τocas,Astellas Pharmaceuticals A.E.B.E.
+183,EMA-002542,Liposic,Bausch + Lomb Ireland Limited
+184,EMA-002782,Mentifar,Rafarm Sa.
+185,EMA-001816,Flutiresp®,Win Medica Sa
+186,EMA-002729,Medolone,Medochemie Hellas Sa
+187,EMA-001378,Duspatalin,Viatris Healthcare Limited
+188,EMA-000626,Bronchoduo,Omega Pharma Hellas S.A.
+189,EMA-004182,Sodium Chloride Βιοσερ,Vioser S.A.
+190,EMA-005188,Νάτριο Ανθρακικό Όξινο Demo,Demo Abee
+191,EMA-000935,Clovelen,Elpen Pharmaceutical Co. Inc.
+192,EMA-004178,Sodium Chloride Noridem,Noridem Enterprises Ltd
+193,EMA-001589,Evoxil,Pharmathen S.A.
+194,EMA-002863,Miniflam,Uni-Pharma Kleon Tsetis Pharmaceutical Laboratories S.A.
+195,EMA-002877,Miorelique,Provident Pharmaceuticals Ltd
+196,EMA-001210,"Dexaton, 8mg/2ml",Vianex S.A.
+197,EMA-001936,Gaviscon,Reckitt Benckiser Hellas Healthcare Sa
+198,EMA-000843,Cinacalcet Genepharm,Genepharm S.A.
+199,EMA-001200,Dexamethasone Kabi,Fresenius Kabi Hellas Single Member S.A.
+200,EMA-002097,Hidrasec Για Παιδια,"Ferrer Internacional, S.A."
