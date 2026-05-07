@@ -13,7 +13,7 @@ random.seed(SEED)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.dirname(SCRIPT_DIR)          # data/
 PROJECT_ROOT = os.path.dirname(DATA_DIR)        # semester_exe/
-CSV_DIR = os.path.join(DATA_DIR, "csv")         # source CSVs (from ETL)
+CSV_DIR = os.path.join(DATA_DIR, "preload")         # source CSVs (from ETL)
 OUT_CSV_DIR = os.path.join(DATA_DIR, "csv", "load")  # generated CSVs for LOAD DATA
 REL_CSV_DIR = "data/csv/load"                   # relative path for LOAD DATA INFILE
 SQL_DIR = os.path.join(PROJECT_ROOT, "sql")

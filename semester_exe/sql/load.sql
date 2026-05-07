@@ -70,7 +70,7 @@ IGNORE 1 ROWS
 (procedure_code, name, category, standard_duration, standard_cost);
 
 -- exam_types
-LOAD DATA LOCAL INFILE 'data/csv/load/exam_types.csv'
+LOAD DATA LOCAL INFILE 'data/csv/load/lab_exam_types.csv'
 INTO TABLE `exam_types`
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
@@ -669,7 +669,7 @@ CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
-(admission_id, exam_code, exam_type, exam_date, result_text, result_numeric, result_unit, cost, doctor_AMKA);
+(admission_id, exam_code, exam_date, result_text, result_numeric, result_unit, cost, doctor_AMKA);
 
 -- procedure_executions
 LOAD DATA LOCAL INFILE 'data/csv/load/procedure_executions.csv'

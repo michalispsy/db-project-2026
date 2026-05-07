@@ -92,7 +92,7 @@ CREATE TABLE triage_outcomes (
 );
 INSERT INTO triage_outcomes VALUES
     ('Discharged','Discharged with instructions'),
-    ('Hospitalized','Referred for hospitalization');
+    ('Hospitalized','Referred for admission');
 
 CREATE TABLE shift_slots (
     code VARCHAR(20),
@@ -440,7 +440,7 @@ CREATE TABLE prescriptions (
     dosage VARCHAR(50),
     frequency VARCHAR(50),
     start_date DATE NOT NULL,
-    end_date DATE,
+    end_date DATE NOT NULL,
 
     CONSTRAINT pk_prescriptions PRIMARY KEY (prescription_id),
     CONSTRAINT fk_presc_admi_id FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
@@ -448,7 +448,7 @@ CREATE TABLE prescriptions (
     CONSTRAINT fk_presc_doct_id FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
     CONSTRAINT fk_presc_drug_id FOREIGN KEY (drug_id) REFERENCES drugs(drug_id),
     CONSTRAINT uni_prescription UNIQUE (doctor_AMKA, patient_AMKA, drug_id, start_date),
-    CONSTRAINT chk_presc_dates CHECK (end_date IS NULL OR end_date > start_date)
+    CONSTRAINT chk_presc_dates CHECK (end_date > start_date)
 );
 
 CREATE TABLE admission_ratings (
@@ -683,4 +683,5 @@ END//
 --         END IF;
 --     END IF;
 -- END;
+
 DELIMITER ;
