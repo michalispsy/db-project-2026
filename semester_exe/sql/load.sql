@@ -629,6 +629,15 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (patient_AMKA, nurse_AMKA, arrival_time, triage_time, minutes_waited, urgency_level, symptoms, outcome, admission_id);
 
+-- exam_types
+LOAD DATA LOCAL INFILE 'data/csv/load/exam_types.csv'
+INTO TABLE `exam_types`
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(exam_code, name);
+
 -- lab_exams
 LOAD DATA LOCAL INFILE 'data/csv/load/lab_exams.csv'
 INTO TABLE `lab_exams`
@@ -636,7 +645,7 @@ CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
-(admission_id, exam_code, exam_type, exam_date, result_text, result_numeric, result_unit, cost, doctor_AMKA);
+(admission_id, exam_code, @skip_exam_type, exam_date, result_text, result_numeric, result_unit, cost, doctor_AMKA);
 
 -- procedure_executions
 LOAD DATA LOCAL INFILE 'data/csv/load/procedure_executions.csv'
