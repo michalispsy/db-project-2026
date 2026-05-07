@@ -260,18 +260,26 @@ CREATE TABLE patient_emergency_contacts (
     CONSTRAINT fk_ec_patient FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA) ON DELETE CASCADE
 );
 
+CREATE TABLE ken_categories (
+    category_letter VARCHAR(2),
+    description TEXT NOT NULL,
+    CONSTRAINT pk_ken_cat PRIMARY KEY (category_letter)
+);
+
 CREATE TABLE ken (
-    ken_code VARCHAR(5),
+    ken_code VARCHAR(7),
     description TEXT NOT NULL,
     base_cost DECIMAL(10, 2) NOT NULL,
     avg_length_of_stay INT,
     daily_surcharge_rate DECIMAL(10, 2),
+    category_letter VARCHAR(2),
 
-    CONSTRAINT pk_ken PRIMARY KEY (ken_code)
+    CONSTRAINT pk_ken PRIMARY KEY (ken_code),
+    CONSTRAINT fk_ken_category FOREIGN KEY (category_letter) REFERENCES ken_categories(category_letter)
 );
 
 CREATE TABLE icd10 (
-    icd10_code VARCHAR(6),
+    icd10_code VARCHAR(7),
     description TEXT NOT NULL,
     category VARCHAR(50),
 
@@ -283,11 +291,11 @@ CREATE TABLE admissions (
     patient_AMKA CHAR(11) NOT NULL,
     department_id INT NOT NULL,
     bed_id INT NOT NULL,
-    ken_code VARCHAR(5) NOT NULL,
+    ken_code VARCHAR(7) NOT NULL,
     admission_date DATE NOT NULL DEFAULT (CURRENT_DATE),
     discharge_date DATE DEFAULT NULL,
-    admission_diagnosis_code VARCHAR(6) NOT NULL,
-    discharge_diagnosis_code VARCHAR(6) DEFAULT NULL,
+    admission_diagnosis_code VARCHAR(7) NOT NULL,
+    discharge_diagnosis_code VARCHAR(7) DEFAULT NULL,
     base_cost  DECIMAL(10, 2) DEFAULT 0.00,
     extra_cost DECIMAL(10, 2) DEFAULT 0.00,
     total_cost DECIMAL(10, 2) GENERATED ALWAYS AS (base_cost + extra_cost) VIRTUAL,

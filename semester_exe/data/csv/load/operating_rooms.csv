@@ -1,11 +1,11 @@
 room_id,room_name,room_type,floor,building
-1,OR-1,Operating Room,3,B
-2,OR-2,Operating Room,2,B
-3,OR-3,Operating Room,0,A
-4,OR-4,Operating Room,3,C
-5,OR-5,Operating Room,3,A
+1,OR-1,Operating Room,2,C
+2,OR-2,Operating Room,1,C
+3,OR-3,Operating Room,1,B
+4,OR-4,Operating Room,1,A
+5,OR-5,Operating Room,1,C
 6,ICU-1,ICU,1,C
-7,ICU-2,ICU,2,A
-8,EXAM-1,Exam Room,0,B
-9,EXAM-2,Exam Room,3,C
+7,ICU-2,ICU,1,C
+8,EXAM-1,Exam Room,3,A
+9,EXAM-2,Exam Room,2,A
 10,THER-1,Therapy Room,3,B

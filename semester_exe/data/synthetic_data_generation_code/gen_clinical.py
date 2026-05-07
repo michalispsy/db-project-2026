@@ -91,7 +91,7 @@ def gen_lab_exams(admissions, doctors, lab_types):
         unit = random.choice(RESULT_UNITS)
         cost = round(random.uniform(10, 500), 2)
         code_str = lt[0]
-        exam_code = abs(hash(code_str)) % 99999 + 1
+        exam_code = lt[2]
 
         rows.append((adm["id"], exam_code, lt[1][:100], exam_date,
                      f"Result for {lt[1][:30]}", f"{result_num:.2f}", unit,

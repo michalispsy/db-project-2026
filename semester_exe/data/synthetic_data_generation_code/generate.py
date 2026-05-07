@@ -33,11 +33,13 @@ from gen_clinical import (
 # Table -> (csv_filename, [columns]) mapping for LOAD DATA
 LOAD_ORDER = [
     ("icd10",                     "icd10.csv",                     ["icd10_code", "description", "category"]),
-    ("ken",                       "ken.csv",                       ["ken_code", "description", "base_cost", "avg_length_of_stay", "daily_surcharge_rate"]),
+    ("ken_categories",            "ken_categories.csv",            ["category_letter", "description"]),
+    ("ken",                       "ken.csv",                       ["ken_code", "description", "base_cost", "avg_length_of_stay", "daily_surcharge_rate", "category_letter"]),
     ("active_substances",         "active_substances.csv",         ["substance_id", "name"]),
     ("drugs",                     "drugs.csv",                     ["drug_id", "ema_code", "name", "manufacturer"]),
     ("drug_contains_substances",  "drug_contains_substances.csv",  ["drug_id", "substance_id"]),
     ("medical_procedures",        "medical_procedures.csv",        ["procedure_code", "name", "category", "standard_duration", "standard_cost"]),
+    ("exam_types",                "exam_types.csv",                ["exam_code", "name"]),
     ("operating_rooms",           "operating_rooms.csv",           ["room_id", "room_name", "room_type", "floor", "building"]),
     ("departments",               "departments.csv",               ["dept_id", "name", "description", "bed_count", "floor", "building", "director_AMKA"]),
     # Staff loaded in 3 batches (all into same `staff` table)
