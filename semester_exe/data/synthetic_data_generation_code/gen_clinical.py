@@ -226,7 +226,7 @@ def gen_images(dept_ids, drug_ids, doctors):
 
     drug_rows = []
     for did in drug_ids[:50]:
-        url = f"https://picsum.photos/seed/drug{did}/400/400"
+        url = f"https://loremflickr.com/400/400/pills,medicine/all?lock={did}"
         drug_rows.append((did, url, f"Drug {did} image", 1))
     write_csv_file("drug_images.csv", ["drug_id", "img_url", "caption", "ordering"], drug_rows)
 
