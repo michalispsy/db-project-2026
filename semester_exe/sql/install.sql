@@ -189,8 +189,8 @@ CREATE TABLE doctors (
     CONSTRAINT fk_doctors FOREIGN KEY (AMKA) REFERENCES staff(AMKA) ON DELETE CASCADE,
     CONSTRAINT fk_docs_supervisor FOREIGN KEY (supervisor_AMKA) REFERENCES doctors(AMKA) ON DELETE SET NULL,
     CONSTRAINT fk_doctor_rank FOREIGN KEY (`rank`) REFERENCES doctor_ranks(code),
-    CONSTRAINT chk_resident_supervisor CHECK (`rank` != 'Resident' OR supervisor_AMKA IS NOT NULL),
-    CONSTRAINT chk_director_supervisor CHECK (`rank` != 'Director' OR supervisor_AMKA IS NULL),
+    -- CONSTRAINT chk_resident_supervisor CHECK (`rank` != 'Resident' OR supervisor_AMKA IS NOT NULL),
+    -- CONSTRAINT chk_director_supervisor CHECK (`rank` != 'Director' OR supervisor_AMKA IS NULL),
     CONSTRAINT uni_license UNIQUE (license_number)
 );
 
@@ -537,6 +537,8 @@ CREATE TABLE doctor_images (
 -- TRIGGERS
 -- ============================================================
 
+DELIMITER //
+
 CREATE TRIGGER beds_insert_trigger
 AFTER INSERT ON beds
 FOR EACH ROW
@@ -560,7 +562,7 @@ BEGIN
         FROM patient_emergency_contacts
         WHERE patient_AMKA = NEW.patient_AMKA
     );
-END;
+END//
 
 CREATE TRIGGER calculate_admission_base_cost_trigger
 BEFORE INSERT ON admissions
@@ -569,7 +571,7 @@ BEGIN
     DECLARE v_cost DECIMAL(10, 2);
     SELECT base_cost INTO v_cost FROM ken WHERE ken_code = NEW.ken_code;
     SET NEW.base_cost = v_cost, NEW.extra_cost = 0.00;
-END;
+END//
 
 CREATE TRIGGER calculate_admission_extra_cost_trigger
 BEFORE UPDATE ON admissions
@@ -602,14 +604,14 @@ BEGIN
             SET NEW.extra_cost = 0.00;
         END IF;
     END IF;
-END;
+END//
 
 CREATE TRIGGER set_bed_occupied_trigger
 AFTER INSERT ON admissions
 FOR EACH ROW
 BEGIN
     UPDATE beds SET status = 'Occupied', assigned_to = NEW.admission_id WHERE bed_id = NEW.bed_id;
-END;
+END//
 
 CREATE TRIGGER set_bed_free_trigger
 AFTER UPDATE ON admissions
@@ -618,7 +620,7 @@ BEGIN
     IF OLD.discharge_date IS NULL AND NEW.discharge_date IS NOT NULL THEN
         UPDATE beds SET status = 'Free', assigned_to = NULL WHERE bed_id = NEW.bed_id;
     END IF;
-END;
+END//
 
 -- -------------------- TRIGGERS GIA TA SHIFTS TA PARATISA ----------------------------------------
 
@@ -681,3 +683,4 @@ END;
 --         END IF;
 --     END IF;
 -- END;
+DELIMITER ;
