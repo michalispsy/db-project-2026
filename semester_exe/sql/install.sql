@@ -78,9 +78,9 @@ INSERT INTO bed_statuses VALUES
     ('Free','Available'),('Occupied','Occupied'),('Maintenance','Under Maintenance');
 
 CREATE TABLE urgency_levels (
-    level TINYINT,
+    `level` TINYINT,
     name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_urgency_levels PRIMARY KEY (level)
+    CONSTRAINT pk_urgency_levels PRIMARY KEY (`level`)
 );
 INSERT INTO urgency_levels VALUES
     (1,'Immediate'),(2,'Emergent'),(3,'Urgent'),(4,'Less Urgent'),(5,'Non-Urgent');
@@ -387,30 +387,33 @@ CREATE TABLE triages (
     urgency_level TINYINT,
     symptoms TEXT,
     outcome VARCHAR(20) DEFAULT 'Discharged',
-    admission_id INT DEFAULT NULL UNIQUE,
+    admission_id INT DEFAULT NULL,
 
     CONSTRAINT pk_triages PRIMARY KEY (triage_id),
     CONSTRAINT fk_triage_patient FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA),
     CONSTRAINT fk_triage_nurse FOREIGN KEY (nurse_AMKA) REFERENCES nurses(AMKA),
     CONSTRAINT fk_triage_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id),
-    CONSTRAINT fk_triage_urgency FOREIGN KEY (urgency_level) REFERENCES urgency_levels(level),
-    CONSTRAINT fk_triage_outcome FOREIGN KEY (outcome) REFERENCES triage_outcomes(code)
+    CONSTRAINT fk_triage_urgency FOREIGN KEY (urgency_level) REFERENCES urgency_levels(`level`),
+    CONSTRAINT fk_triage_outcome FOREIGN KEY (outcome) REFERENCES triage_outcomes(code),
+    CONSTRAINT uni_admission_id UNIQUE (admission_id)
 );
 
 CREATE TABLE active_substances (
     substance_id INT AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL UNIQUE,
+    name VARCHAR(100) NOT NULL,
 
-    CONSTRAINT pk_active_substances PRIMARY KEY (substance_id)
+    CONSTRAINT pk_active_substances PRIMARY KEY (substance_id),
+    CONSTRAINT uni_substance_name UNIQUE (name)
 );
 
 CREATE TABLE drugs (
     drug_id INT AUTO_INCREMENT,
-    ema_code VARCHAR(50) NOT NULL UNIQUE,
+    ema_code VARCHAR(50) NOT NULL,
     name VARCHAR(150) NOT NULL,
     manufacturer VARCHAR(100),
 
-    CONSTRAINT pk_drugs PRIMARY KEY (drug_id)
+    CONSTRAINT pk_drugs PRIMARY KEY (drug_id),
+    CONSTRAINT uni_ema_code UNIQUE (ema_code)
 );
 
 CREATE TABLE drug_contains_substances (
@@ -474,7 +477,7 @@ CREATE TABLE doctor_ratings (
     CONSTRAINT pk_doc_ratings PRIMARY KEY (rating_id),
     CONSTRAINT fk_doc_rating_adm FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
     CONSTRAINT fk_doc_rating_doc FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
-    UNIQUE (admission_id, doctor_AMKA)
+    CONSTRAINT uni_admission_doctor_duplicate UNIQUE (admission_id, doctor_AMKA)
 );
 
 CREATE TABLE shifts (

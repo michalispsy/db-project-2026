@@ -660,7 +660,7 @@ CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
-(patient_AMKA, nurse_AMKA, arrival_time, triage_time, minutes_waited, urgency_level, symptoms, outcome, admission_id);
+(patient_AMKA, nurse_AMKA, arrival_time, triage_time, urgency_level, symptoms, outcome, admission_id);
 
 -- lab_exams
 LOAD DATA LOCAL INFILE 'data/csv/load/lab_exams.csv'
