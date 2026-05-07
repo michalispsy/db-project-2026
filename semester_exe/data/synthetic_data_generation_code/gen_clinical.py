@@ -59,7 +59,6 @@ def gen_triages(patients, nurses, admissions):
         nurse = random.choice(nurses)
         arr_date = random_date(date(2024, 1, 1), date(2025, 12, 1))
         arr_time = random_datetime(arr_date)
-        wait = random.randint(5, 120)
         triage_dt = random_datetime(arr_date)
         urgency = random.randint(1, 5)
         syms = random.choice(SYMPTOMS)
@@ -72,11 +71,11 @@ def gen_triages(patients, nurses, admissions):
             adm_id = None
 
         rows.append((pat["amka"], nurse["amka"], arr_time, triage_dt,
-                     wait, urgency, syms, outcome, adm_id))
+                     urgency, syms, outcome, adm_id))
 
     write_csv_file("triages.csv",
                    ["patient_AMKA", "nurse_AMKA", "arrival_time", "triage_time",
-                    "minutes_waited", "urgency_level", "symptoms", "outcome", "admission_id"], rows)
+                    "urgency_level", "symptoms", "outcome", "admission_id"], rows)
 
 
 def gen_lab_exams(admissions, doctors, lab_types):
