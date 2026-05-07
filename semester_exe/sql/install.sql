@@ -132,7 +132,6 @@ CREATE TABLE exam_types (
     name TEXT NOT NULL,
     CONSTRAINT pk_exam_types PRIMARY KEY (exam_code)
 );
--- exam_types rows loaded from CSV in load.sql
 
 -- ============================================================
 -- CORE TABLES
@@ -189,8 +188,6 @@ CREATE TABLE doctors (
     CONSTRAINT fk_doctors FOREIGN KEY (AMKA) REFERENCES staff(AMKA) ON DELETE CASCADE,
     CONSTRAINT fk_docs_supervisor FOREIGN KEY (supervisor_AMKA) REFERENCES doctors(AMKA) ON DELETE SET NULL,
     CONSTRAINT fk_doctor_rank FOREIGN KEY (`rank`) REFERENCES doctor_ranks(code),
-    -- CONSTRAINT chk_resident_supervisor CHECK (`rank` != 'Resident' OR supervisor_AMKA IS NOT NULL),
-    -- CONSTRAINT chk_director_supervisor CHECK (`rank` != 'Director' OR supervisor_AMKA IS NULL),
     CONSTRAINT uni_license UNIQUE (license_number)
 );
 
@@ -306,7 +303,8 @@ CREATE TABLE admissions (
     CONSTRAINT fk_adm_bed FOREIGN KEY (bed_id) REFERENCES beds(bed_id),
     CONSTRAINT fk_adm_ken FOREIGN KEY (ken_code) REFERENCES ken(ken_code),
     CONSTRAINT fk_adm_diag_in FOREIGN KEY (admission_diagnosis_code) REFERENCES icd10(icd10_code),
-    CONSTRAINT fk_adm_diag_out FOREIGN KEY (discharge_diagnosis_code) REFERENCES icd10(icd10_code)
+    CONSTRAINT fk_adm_diag_out FOREIGN KEY (discharge_diagnosis_code) REFERENCES icd10(icd10_code),
+    CONSTRAINT chk_discharge_date CHECK (discharge_date IS NULL OR discharge_date >= admission_date)
 );
 
 CREATE TABLE lab_exams (
@@ -456,28 +454,33 @@ CREATE TABLE prescriptions (
 
 CREATE TABLE admission_ratings (
     admission_id INT,
-    nursing_quality TINYINT NOT NULL CHECK (nursing_quality BETWEEN 1 AND 5),
-    cleanliness TINYINT NOT NULL CHECK (cleanliness BETWEEN 1 AND 5),
-    food TINYINT NOT NULL CHECK (food BETWEEN 1 AND 5),
-    overall TINYINT NOT NULL CHECK (overall BETWEEN 1 AND 5),
+    nursing_quality TINYINT NOT NULL,
+    cleanliness TINYINT NOT NULL,
+    food TINYINT NOT NULL,
+    overall TINYINT NOT NULL,
     comment TEXT,
     rated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT pk_admission_ratings PRIMARY KEY (admission_id),
-    CONSTRAINT fk_rating_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE
+    CONSTRAINT fk_rating_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
+    CONSTRAINT chk_nursing_range CHECK (nursing_quality BETWEEN 1 AND 5),
+    CONSTRAINT chk_clean_range CHECK (cleanliness BETWEEN 1 AND 5),
+    CONSTRAINT chk_food_range CHECK (food BETWEEN 1 AND 5),
+    CONSTRAINT chk_overall_range CHECK (overall BETWEEN 1 AND 5)
 );
 
 CREATE TABLE doctor_ratings (
     rating_id INT AUTO_INCREMENT,
     admission_id INT NOT NULL,
     doctor_AMKA CHAR(11) NOT NULL,
-    medical_care_quality TINYINT NOT NULL CHECK (medical_care_quality BETWEEN 1 AND 5),
+    medical_care_quality TINYINT NOT NULL,
     rated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT pk_doc_ratings PRIMARY KEY (rating_id),
     CONSTRAINT fk_doc_rating_adm FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
     CONSTRAINT fk_doc_rating_doc FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
-    CONSTRAINT uni_admission_doctor_duplicate UNIQUE (admission_id, doctor_AMKA)
+    CONSTRAINT uni_admission_doctor_duplicate UNIQUE (admission_id, doctor_AMKA),
+    CONSTRAINT chk_medical_range CHECK (medical_care_quality BETWEEN 1 AND 5)
 );
 
 CREATE TABLE shifts (
@@ -624,6 +627,141 @@ BEGIN
         UPDATE beds SET status = 'Free', assigned_to = NULL WHERE bed_id = NEW.bed_id;
     END IF;
 END//
+
+-- ============================================================
+-- TRIGGERS FOR CONSTRAINTS/CHECKS: THROW ERRORS
+-- ============================================================
+
+CREATE TRIGGER doctor_rank_insert_check_trigger_trigger
+BEFORE INSERT ON doctors
+FOR EACH ROW
+BEGIN
+    IF NEW.rank = 'Resident' AND NEW.supervisor_AMKA IS NULL THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Residents must have a supervisor assigned.';
+    END IF;
+
+    IF NEW.rank = 'Director' AND NEW.supervisor_AMKA IS NOT NULL THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Directors cannot have a supervisor.';
+    END IF;
+END//
+
+CREATE TRIGGER doctor_rank_update_check_trigger
+BEFORE UPDATE ON doctors
+FOR EACH ROW
+BEGIN
+    IF NEW.rank = 'Resident' AND NEW.supervisor_AMKA IS NULL THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Residents must have a supervisor assigned.';
+    END IF;
+
+    IF NEW.rank = 'Director' AND NEW.supervisor_AMKA IS NOT NULL THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Directors cannot have a supervisor.';
+    END IF;
+END//
+
+CREATE TRIGGER check_for_admins_in_procedure_trigger
+BEFORE INSERT ON procedure_assistants
+FOR EACH ROW
+BEGIN
+    IF EXISTS (SELECT NULL FROM admin_staff WHERE AMKA = NEW.staff_AMKA) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Only doctors or nurses can be procedure assistants.';
+    END IF;
+END//
+
+CREATE PROCEDURE check_if_discharged(IN p_admission_id INT)
+BEGIN
+    DECLARE p_discharge_date DATE;
+    SELECT discharge_date INTO p_discharge_date 
+    FROM admissions 
+    WHERE admission_id = p_admission_id;
+
+    IF p_discharge_date IS NULL THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Ratings are only allowed after the patient has been discharged.';
+    END IF;
+END//
+
+CREATE TRIGGER check_admission_rating_trigger
+BEFORE INSERT ON admission_ratings
+FOR EACH ROW
+BEGIN
+    CALL check_if_discharged(NEW.admission_id);
+END//
+
+CREATE TRIGGER check_doctor_rating_insert_trigger
+BEFORE INSERT ON doctor_ratings
+FOR EACH ROW
+BEGIN
+    IF NOT EXISTS (SELECT NULL FROM prescriptions WHERE admission_id = NEW.admission_id AND doctor_AMKA = NEW.doctor_AMKA) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Only doctors that prescribed to the patient can be rated.';
+    END IF;
+
+    CALL check_if_discharged(NEW.admission_id);
+END//
+
+CREATE TRIGGER check_doctor_rating_update_trigger
+BEFORE UPDATE ON doctor_ratings
+FOR EACH ROW
+BEGIN
+    IF NOT EXISTS (SELECT NULL FROM prescriptions WHERE admission_id = NEW.admission_id AND doctor_AMKA = NEW.doctor_AMKA) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Only doctors that prescribed to the patient can be rated.';
+    END IF;
+
+    CALL check_if_discharged(NEW.admission_id);
+END//
+
+CREATE TRIGGER check_patient_drug_allergies_trigger
+BEFORE INSERT ON prescriptions
+FOR EACH ROW
+BEGIN
+    DECLARE v_allergy_name VARCHAR(100);
+
+    SELECT sub.name INTO v_allergy_name
+    FROM drug_contains_substances dcs
+    JOIN patient_allergies pa ON dcs.substance_id = pa.substance_id
+    JOIN active_substances sub ON sub.substance_id = pa.substance_id
+    WHERE dcs.drug_id = NEW.drug_id AND pa.patient_AMKA = NEW.patient_AMKA
+    LIMIT 1;
+
+    IF v_allergy_name IS NOT NULL THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'CRITICAL ERROR: Patient is allergic to a substance in this drug!';
+    END IF;
+END//
+
+CREATE PROCEDURE check_procedure_conflicts(IN p_room_id INT, IN p_doctor_AMKA CHAR(11), IN p_start DATETIME, IN p_end DATETIME, IN p_exec_id INT)
+BEGIN
+    DECLARE v_end DATETIME;
+    SET v_end = COALESCE(p_end, '2099-12-31 23:59:59');
+
+    IF EXISTS (
+        SELECT NULL FROM procedure_executions 
+        WHERE room_id = p_room_id 
+        AND execution_id != COALESCE(p_exec_id, -1)
+        AND p_start < COALESCE(end_time, '2099-12-31 23:59:59') 
+        AND v_end > start_time
+    ) THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'Error: Room is already in use.';
+    END IF;
+
+    IF EXISTS (
+        SELECT 1 FROM procedure_executions 
+        WHERE main_doctor_AMKA = p_doctor_AMKA 
+        AND execution_id != COALESCE(p_exec_id, -1)
+        AND p_start < COALESCE(end_time, '2099-12-31 23:59:59') 
+        AND v_end > start_time
+    ) THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'Error: Doctor is already in another procedure.';
+    END IF;
+END //
 
 -- -------------------- TRIGGERS GIA TA SHIFTS TA PARATISA ----------------------------------------
 
