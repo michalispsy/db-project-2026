@@ -169,7 +169,43 @@ const QUERIES = [
   { id: "Q15", title: "Κατανομή triage ανά επίπεδο, με μ. αναμονή & εισαγωγές", parametric: false },
 ];
 
-window.UG = {
+const mockUG = {
   DEPARTMENTS, DOCTORS, NURSES, ADMIN, PATIENTS_TRIAGE, PATIENTS,
   ICD10, KEN, BEDS, DRUGS, SURGERIES, REVIEWS, QUERIES,
+};
+
+window.UG = mockUG;
+try {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '/api/data', false);
+  xhr.send(null);
+  if (xhr.status === 200) {
+    window.UG = JSON.parse(xhr.responseText);
+  }
+} catch (e) {
+  console.error("Failed to fetch real data:", e);
+}
+window.DEPT_GREEK = {
+  "Kardiologiko": "Καρδιολογικό",
+  "Cheirourgiko": "Χειρουργικό",
+  "Pathologiko": "Παθολογικό",
+  "Orthopediko": "Ορθοπεδικό",
+  "Neurologiko": "Νευρολογικό",
+  "Paidiatriko": "Παιδιατρικό",
+  "Gynaikologiko": "Γυναικολογικό",
+  "Ogkologiko": "Ογκολογικό",
+  "Ourologiko": "Ουρολογικό",
+  "Pnevmonologiko": "Πνευμονολογικό",
+  "Aimatologiko": "Αιματολογικό",
+  "Revmatologiko": "Ρευματολογικό",
+  "Nefrologiko": "Νεφρολογικό",
+  "Dermatologiko": "Δερματολογικό",
+  "Psychiatriko": "Ψυχιατρικό"
+};
+
+window.BED_TYPE_GREEK = {
+  "Emergency": "Επείγον",
+  "ICU": "ΜΕΘ",
+  "Pediatric": "Παιδιατρικό",
+  "Regular": "Τακτικό"
 };

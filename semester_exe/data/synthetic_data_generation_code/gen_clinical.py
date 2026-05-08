@@ -92,12 +92,12 @@ def gen_lab_exams(admissions, doctors, lab_types):
         code_str = lt[0]
         exam_code = lt[2]
 
-        rows.append((adm["id"], exam_code, lt[1][:100], exam_date,
+        rows.append((adm["id"], exam_code, exam_date,
                      f"Result for {lt[1][:30]}", f"{result_num:.2f}", unit,
                      f"{cost:.2f}", doc["amka"]))
 
     write_csv_file("lab_exams.csv",
-                   ["admission_id", "exam_code", "exam_type", "exam_date",
+                   ["admission_id", "exam_code", "exam_date",
                     "result_text", "result_numeric", "result_unit", "cost", "doctor_AMKA"], rows)
 
 
@@ -138,6 +138,7 @@ def gen_procedure_executions(admissions, proc_codes, room_ids, doctors):
 
 def gen_prescriptions(admissions, doctors, drug_ids):
     rows = []
+    prescribing_doctors = set() # (admission_id, doctor_amka)
     for i in range(N_PRESCRIPTIONS):
         adm = random.choice(admissions)
         doc = random.choice(doctors)
@@ -148,15 +149,24 @@ def gen_prescriptions(admissions, doctors, drug_ids):
         end = start + timedelta(days=random.randint(3, 30))
         rows.append((adm["id"], adm["patient"], doc["amka"], drug,
                      dosage, freq, str(start), str(end)))
+        prescribing_doctors.add((adm["id"], doc["amka"]))
 
     write_csv_file("prescriptions.csv",
                    ["admission_id", "patient_AMKA", "doctor_AMKA", "drug_id",
                     "dosage", "frequency", "start_date", "end_date"], rows)
+    return prescribing_doctors
 
 
-def gen_ratings(discharged, doctors):
+def gen_ratings(discharged, prescribing_doctors):
     adm_rows = []
     doc_rows = []
+
+    # Group prescribing doctors by admission_id for easy lookup
+    docs_by_adm = {}
+    for adm_id, doc_amka in prescribing_doctors:
+        if adm_id not in docs_by_adm:
+            docs_by_adm[adm_id] = []
+        docs_by_adm[adm_id].append(doc_amka)
 
     for adm in discharged:
         if random.random() < 0.6:
@@ -167,11 +177,12 @@ def gen_ratings(discharged, doctors):
             rated = random_datetime(adm["dis_date"] + timedelta(days=random.randint(0, 7)))
             adm_rows.append((adm["id"], nq, cl, fo, ov, comment, rated))
 
-        if random.random() < 0.5:
-            doc = random.choice(doctors)
+        # Only rate doctors who actually prescribed something (enforced by DB trigger)
+        if adm["id"] in docs_by_adm and random.random() < 0.7:
+            doc_amka = random.choice(docs_by_adm[adm["id"]])
             mcq = random.randint(1, 5)
             rated = random_datetime(adm["dis_date"] + timedelta(days=random.randint(0, 7)))
-            doc_rows.append((adm["id"], doc["amka"], mcq, rated))
+            doc_rows.append((adm["id"], doc_amka, mcq, rated))
 
     # Deduplicate doctor ratings
     seen = set()

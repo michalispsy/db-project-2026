@@ -47,17 +47,39 @@ def gen_staff_and_doctors(dept_ids):
                    ["AMKA", "first_name", "last_name", "date_of_birth", "email", "phone_number", "hire_date", "staff_type"],
                    staff_rows)
 
-    # Build doctor rows with supervisors
+    # Build doctor rows with department-aware supervisors
+    # First, let's map department directors
+    dept_directors = {doc["dept"]: doc["amka"] for doc in doctors if doc["rank"] == "Director"}
+
     for doc in doctors:
         sup = None
+        dept_id = doc["dept"]
+        
+        # Get potential supervisors in the SAME department
+        dept_seniors = [d for d in doctors if d["dept"] == dept_id and d["rank"] == "Senior Attending"]
+        dept_juniors = [d for d in doctors if d["dept"] == dept_id and d["rank"] == "Junior Attending"]
+        
         if doc["rank"] == "Resident":
-            seniors = [d for d in doctors if d["rank"] in ("Senior Attending", "Junior Attending")]
-            if seniors:
-                sup = random.choice(seniors)["amka"]
+            # Residents report to a Senior or Junior Attending in their department
+            options = dept_seniors + dept_juniors
+            if options:
+                sup = random.choice(options)["amka"]
+            else:
+                # Fallback to Director if no Attendings
+                sup = dept_directors.get(dept_id)
+                
         elif doc["rank"] == "Junior Attending":
-            seniors = [d for d in doctors if d["rank"] == "Senior Attending"]
-            if seniors:
-                sup = random.choice(seniors)["amka"]
+            # Junior Attendings report to a Senior Attending in their department
+            if dept_seniors:
+                sup = random.choice(dept_seniors)["amka"]
+            else:
+                # Fallback to Director
+                sup = dept_directors.get(dept_id)
+                
+        elif doc["rank"] == "Senior Attending":
+            # Senior Attendings report to the Department Director
+            sup = dept_directors.get(dept_id)
+            
         lic = gen_license()
         doctor_rows.append((doc["amka"], lic, doc["rank"], sup))
 

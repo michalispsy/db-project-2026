@@ -58,7 +58,7 @@ LOAD_ORDER = [
     ("admissions",                "admissions.csv",                ["patient_AMKA", "department_id", "bed_id", "ken_code", "admission_date", "discharge_date", "admission_diagnosis_code", "discharge_diagnosis_code"]),
     # --- discharge UPDATEs go here (handled separately) ---
     ("triages",                   "triages.csv",                   ["patient_AMKA", "nurse_AMKA", "arrival_time", "triage_time", "minutes_waited", "urgency_level", "symptoms", "outcome", "admission_id"]),
-    ("lab_exams",                 "lab_exams.csv",                 ["admission_id", "exam_code", "exam_type", "exam_date", "result_text", "result_numeric", "result_unit", "cost", "doctor_AMKA"]),
+    ("lab_exams",                 "lab_exams.csv",                 ["admission_id", "exam_code", "exam_date", "result_text", "result_numeric", "result_unit", "cost", "doctor_AMKA"]),
     ("procedure_executions",      "procedure_executions.csv",      ["admission_id", "procedure_code", "room_id", "main_doctor_AMKA", "start_time", "end_time", "actual_cost"]),
     ("procedure_assistants",      "procedure_assistants.csv",      ["execution_id", "staff_AMKA", "`role`"]),
     ("prescriptions",             "prescriptions.csv",             ["admission_id", "patient_AMKA", "doctor_AMKA", "drug_id", "dosage", "frequency", "start_date", "end_date"]),
@@ -150,8 +150,8 @@ def main():
     gen_triages(patients, nurses, admissions)
     gen_lab_exams(admissions, doctors, lab_types)
     gen_procedure_executions(admissions, proc_codes, room_ids, doctors)
-    gen_prescriptions(admissions, doctors, drug_ids)
-    gen_ratings(discharge_updates, doctors)
+    prescribing_doctors = gen_prescriptions(admissions, doctors, drug_ids)
+    gen_ratings(discharge_updates, prescribing_doctors)
 
     # 4. Scheduling & images
     print("\n[4/5] Shifts & images...")

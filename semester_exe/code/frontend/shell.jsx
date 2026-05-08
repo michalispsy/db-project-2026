@@ -23,6 +23,7 @@ const NAV_SECTIONS = [
   ]},
   { label: "Ανάπτυξη", items: [
     { id: "queries", name: "Query Explorer", icon: "sql" },
+    { id: "explorer", name: "Database Explorer", icon: "grid", external: "/explorer.html" },
   ]},
 ];
 
@@ -42,7 +43,7 @@ const Sidebar = ({ current, onNav }) => (
           <div
             key={item.id}
             className={"nav-item" + (current === item.id ? " active" : "")}
-            onClick={() => onNav(item.id)}
+            onClick={() => item.external ? window.location.href = item.external : onNav(item.id)}
             id={"nav-" + item.id}
           >
             <Icon name={item.icon} />

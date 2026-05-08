@@ -10,6 +10,32 @@ function App() {
   const [tw, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [page, setPage] = React.useState("dashboard");
   const [patientId, setPatientId] = React.useState(null);
+  const [dataVersion, setDataVersion] = React.useState(0);
+
+  React.useEffect(() => {
+    const fetchData = () => {
+      try {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/api/data', true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            window.UG = JSON.parse(xhr.responseText);
+            setDataVersion(v => v + 1); // Trigger re-render
+          }
+        };
+        xhr.send(null);
+      } catch (e) {
+        console.error("Failed to poll data:", e);
+      }
+    };
+
+    // Initial fetch
+    fetchData();
+    
+    // Poll every 5 seconds
+    const interval = setInterval(fetchData, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   React.useEffect(() => {
     document.body.classList.toggle("aesthetic-dense", tw.aesthetic === "dense");
@@ -20,14 +46,16 @@ function App() {
   const goTo = (p) => { setPage(p); setPatientId(null); window.scrollTo(0, 0); };
 
   let content;
+  const onPatientOpen = (id) => setPatientId(id);
+
   if (patientId) content = <PatientDetail patientId={patientId} onBack={() => setPatientId(null)}/>;
-  else if (page === "dashboard") content = <Dashboard/>;
+  else if (page === "dashboard") content = <Dashboard onPatientOpen={onPatientOpen}/>;
   else if (page === "triage") content = <Triage onAdmit={() => alert("Δημιουργία νοσηλείας — δημόσιο prototype")}/>;
-  else if (page === "patients") content = <Patients onOpen={(id) => setPatientId(id)}/>;
-  else if (page === "hospitalizations") content = <Hospitalizations/>;
-  else if (page === "beds") content = <Beds/>;
+  else if (page === "patients") content = <Patients onOpen={onPatientOpen}/>;
+  else if (page === "hospitalizations") content = <Hospitalizations onPatientOpen={onPatientOpen}/>;
+  else if (page === "beds") content = <Beds onPatientOpen={onPatientOpen}/>;
   else if (page === "prescriptions") content = <Prescriptions/>;
-  else if (page === "or") content = <OperatingRooms/>;
+  else if (page === "or") content = <OperatingRooms onPatientOpen={onPatientOpen}/>;
   else if (page === "staff") content = <Staff/>;
   else if (page === "shifts") content = <Shifts/>;
   else if (page === "hierarchy") content = <Hierarchy/>;

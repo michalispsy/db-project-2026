@@ -1,19 +1,10 @@
 /* Pages part 2: Staff, Shifts, Hierarchy, Hospitalizations, Prescriptions, OR */
 
-const P2_DEPTS = window.UG.DEPARTMENTS;
-const P2_DOCS = window.UG.DOCTORS;
-const P2_NRS = window.UG.NURSES;
-const P2_ADM = window.UG.ADMIN;
-const P2_BD = window.UG.BEDS;
-const P2_ICD10 = window.UG.ICD10;
-const P2_KEN = window.UG.KEN;
-const P2_DRUGS = window.UG.DRUGS;
-const P2_SURGERIES = window.UG.SURGERIES;
-const P2_PTS = window.UG.PATIENTS;
-
 /* ─────────── STAFF ─────────── */
 const Staff = () => {
   const [tab, setTab] = React.useState("doctors");
+  const { DEPARTMENTS, DOCTORS, NURSES, ADMIN } = window.UG;
+  
   return (
     <div>
       <PageHeader
@@ -25,18 +16,18 @@ const Staff = () => {
         </>}
       />
       <div className="tabs">
-        <div className={"tab" + (tab === "doctors" ? " active" : "")} onClick={() => setTab("doctors")} id="staff-tab-doctors">Γιατροί <span className="count">{P2_DOCS.length}</span></div>
-        <div className={"tab" + (tab === "nurses" ? " active" : "")} onClick={() => setTab("nurses")} id="staff-tab-nurses">Νοσηλευτικό <span className="count">{P2_NRS.length}</span></div>
-        <div className={"tab" + (tab === "admin" ? " active" : "")} onClick={() => setTab("admin")} id="staff-tab-admin">Διοικητικό <span className="count">{P2_ADM.length}</span></div>
+        <div className={"tab" + (tab === "doctors" ? " active" : "")} onClick={() => setTab("doctors")} id="staff-tab-doctors">Γιατροί <span className="count">{DOCTORS.length}</span></div>
+        <div className={"tab" + (tab === "nurses" ? " active" : "")} onClick={() => setTab("nurses")} id="staff-tab-nurses">Νοσηλευτικό <span className="count">{NURSES.length}</span></div>
+        <div className={"tab" + (tab === "admin" ? " active" : "")} onClick={() => setTab("admin")} id="staff-tab-admin">Διοικητικό <span className="count">{ADMIN.length}</span></div>
       </div>
       {tab === "doctors" && (
         <div className="card">
           <table className="tbl">
             <thead><tr><th></th><th>Ονοματεπώνυμο</th><th>Άδεια</th><th>Ειδικότητα</th><th>Βαθμίδα</th><th>Τμήμα</th><th>Προϊστάμενος</th></tr></thead>
             <tbody>
-              {P2_DOCS.map(d => {
-                const sup = P2_DOCS.find(x => x.id === d.supervisorId);
-                const dept = P2_DEPTS.find(x => x.id === d.deptId);
+              {DOCTORS.map(d => {
+                const sup = DOCTORS.find(x => x.id === d.supervisorId);
+                const dept = DEPARTMENTS.find(x => x.id === d.deptId);
                 return (
                   <tr key={d.id} id={"doctor-row-" + d.id}>
                     <td style={{width: 40}}><div className="avatar" style={{background:"var(--brand-100)", color:"var(--brand-700)"}}>{d.name.split(" ").map(s=>s[0]).slice(0,2).join("")}</div></td>
@@ -44,7 +35,7 @@ const Staff = () => {
                     <td className="mono" style={{color:"var(--ink-600)"}}>{d.lic}</td>
                     <td>{d.spec}</td>
                     <td><span className={"chip " + (d.rank === "Διευθυντής" ? "chip-brand" : d.rank === "Επιμελητής Α΄" ? "chip-violet" : d.rank === "Ειδικευόμενος" ? "chip-amber" : "")}>{d.rank}</span></td>
-                    <td>{dept?.name}</td>
+                    <td>{window.DEPT_GREEK[dept?.name] || dept?.name}</td>
                     <td>{sup ? sup.name : <span className="muted">—</span>}</td>
                   </tr>
                 );
@@ -58,12 +49,12 @@ const Staff = () => {
           <table className="tbl">
             <thead><tr><th></th><th>Ονοματεπώνυμο</th><th>Βαθμίδα</th><th>Τμήμα</th></tr></thead>
             <tbody>
-              {P2_NRS.map(n => (
+              {NURSES.map(n => (
                 <tr key={n.id}>
                   <td style={{width: 40}}><div className="avatar" style={{background:"var(--green-100)", color:"var(--green-600)"}}>{n.name.split(" ").map(s=>s[0]).slice(0,2).join("")}</div></td>
                   <td><strong>{n.name}</strong></td>
                   <td><span className={"chip " + (n.rank === "Προϊστάμενος" ? "chip-violet" : "")}>{n.rank}</span></td>
-                  <td>{P2_DEPTS.find(d => d.id === n.deptId)?.name}</td>
+                  <td>{window.DEPT_GREEK[DEPARTMENTS.find(d => d.id === n.deptId)?.name] || DEPARTMENTS.find(d => d.id === n.deptId)?.name}</td>
                 </tr>
               ))}
             </tbody>
@@ -75,13 +66,13 @@ const Staff = () => {
           <table className="tbl">
             <thead><tr><th></th><th>Ονοματεπώνυμο</th><th>Ρόλος</th><th>Γραφείο</th><th>Τμήμα</th></tr></thead>
             <tbody>
-              {P2_ADM.map(a => (
+              {ADMIN.map(a => (
                 <tr key={a.id}>
                   <td style={{width: 40}}><div className="avatar" style={{background:"var(--ink-150)", color:"var(--ink-700)"}}>{a.name.split(" ").map(s=>s[0]).slice(0,2).join("")}</div></td>
                   <td><strong>{a.name}</strong></td>
                   <td><span className="chip">{a.role}</span></td>
                   <td className="mono" style={{color:"var(--ink-600)"}}>{a.office}</td>
-                  <td>{a.deptId ? P2_DEPTS.find(d => d.id === a.deptId)?.name : <span className="muted">—</span>}</td>
+                  <td>{a.deptId ? (window.DEPT_GREEK[DEPARTMENTS.find(d => d.id === a.deptId)?.name] || DEPARTMENTS.find(d => d.id === a.deptId)?.name) : <span className="muted">—</span>}</td>
                 </tr>
               ))}
             </tbody>
@@ -93,35 +84,58 @@ const Staff = () => {
 };
 
 /* ─────────── HIERARCHY ─────────── */
+const RANK_GREEK = {
+  "Director": "Διευθυντής",
+  "Senior Attending": "Επιμελητής Α΄",
+  "Junior Attending": "Επιμελητής Β΄",
+  "Resident": "Ειδικευόμενος"
+};
+
 const Hierarchy = () => {
-  const buildTree = (parentId) => P2_DOCS.filter(d => d.supervisorId === parentId).map(d => ({
+  const { DOCTORS, DEPARTMENTS } = window.UG;
+  const buildTree = (parentId) => DOCTORS.filter(d => d.supervisorId === parentId).map(d => ({
     ...d, children: buildTree(d.id)
   }));
   const directors = buildTree(null);
 
-  const Node = ({ node, depth = 0 }) => (
-    <div style={{marginLeft: depth ? 24 : 0, position:"relative"}}>
-      {depth > 0 && <span style={{position:"absolute", left: -16, top: 0, bottom: "50%", width: 12, borderLeft:"1px solid var(--ink-300)", borderBottom:"1px solid var(--ink-300)", borderBottomLeftRadius: 6}}/>}
-      <div className="org-node">
-        <div className="avatar" style={{background:"var(--brand-100)", color:"var(--brand-700)", fontSize: 9}}>{node.name.split(" ").map(s=>s[0]).slice(0,2).join("")}</div>
-        <div>
-          <div style={{fontWeight: 500}}>{node.name}</div>
-          <div className="role">{node.rank} · {node.spec}</div>
+  const Node = ({ node, depth = 0 }) => {
+    const dept = DEPARTMENTS.find(d => d.id === node.deptId);
+    return (
+      <div style={{marginLeft: depth ? 20 : 0, position:"relative", marginBottom: 4}}>
+        {depth > 0 && <span style={{position:"absolute", left: -14, top: 0, bottom: "16px", width: 10, borderLeft:"1px solid var(--ink-300)", borderBottom:"1px solid var(--ink-300)", borderBottomLeftRadius: 4}}/>}
+        <div className="org-node" style={{padding: "6px 10px", gap: 10, borderRadius: 6, background: depth === 0 ? "var(--brand-50)" : "transparent"}}>
+          <div className="avatar" style={{width: 28, height: 28, background: depth === 0 ? "var(--brand-500)" : "var(--brand-100)", color: depth === 0 ? "#fff" : "var(--brand-700)", fontSize: 8, flexShrink: 0}}>{node.name.split(" ").map(s=>s[0]).slice(0,2).join("")}</div>
+          <div style={{overflow: "hidden"}}>
+            <div style={{fontWeight: 600, fontSize: 13, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>{node.name}</div>
+            <div className="muted" style={{fontSize: 10, marginTop: 1}}>
+              <span style={{color: "var(--brand-600)", fontWeight: 500}}>{RANK_GREEK[node.rank] || node.rank}</span>
+              <span style={{margin: "0 4px"}}>·</span>
+              <span>{window.DEPT_GREEK[dept?.name] || dept?.name}</span>
+            </div>
+          </div>
+        </div>
+        <div style={{borderLeft: node.children.length > 0 ? "1px solid var(--ink-200)" : "none", marginLeft: 14, paddingTop: 4}}>
+          {node.children.map(c => <Node key={c.id} node={c} depth={depth + 1}/>)}
         </div>
       </div>
-      {node.children.map(c => <Node key={c.id} node={c} depth={depth + 1}/>)}
-    </div>
-  );
+    );
+  };
 
   return (
     <div>
       <PageHeader
         title="Ιεραρχία Επίβλεψης"
-        subtitle="Πλήρης δομή supervision · αντιστοιχεί στο Q13 (recursive CTE)"
-        actions={<button className="btn btn-ghost"><Icon name="code" size={14}/>Δες Q13</button>}
+        subtitle="Οργανόγραμμα ιατρικού προσωπικού · Αντιστοιχεί στο ερώτημα Q13"
+        actions={<button className="btn btn-ghost"><Icon name="code" size={14}/>Δες SQL Q13</button>}
       />
-      <div className="card" style={{padding: 24, overflowX: "auto"}}>
-        {directors.map(d => <Node key={d.id} node={d}/>)}
+      <div className="card" style={{padding: "24px", background: "var(--ink-50)"}}>
+        <div style={{columnCount: 4, columnGap: 20, columnFill: "balance"}}>
+          {directors.map(d => (
+            <div key={d.id} style={{breakInside: "avoid", marginBottom: 20, background: "#fff", borderRadius: 8, padding: 16, boxShadow: "var(--shadow-sm)", border: "1px solid var(--ink-200)"}}>
+              <Node node={d}/>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -129,6 +143,7 @@ const Hierarchy = () => {
 
 /* ─────────── SHIFTS ─────────── */
 const Shifts = () => {
+  const { DEPARTMENTS } = window.UG;
   const days = ["Δευ","Τρι","Τετ","Πεμ","Παρ","Σαβ","Κυρ"];
   const shifts = ["Πρωί","Απόγευμα","Νύχτα"];
   const deptId = 1;
@@ -150,8 +165,8 @@ const Shifts = () => {
       />
       <div className="hstack" style={{gap: 8, marginBottom: 14, flexWrap:"wrap"}}>
         <span className="muted" style={{fontSize: 12}}>Τμήμα:</span>
-        {P2_DEPTS.slice(0,5).map(d => (
-          <button key={d.id} className={"btn " + (d.id === 1 ? "btn-primary" : "btn-ghost")}>{d.name}</button>
+        {DEPARTMENTS.slice(0,5).map(d => (
+          <button key={d.id} className={"btn " + (d.id === 1 ? "btn-primary" : "btn-ghost")}>{window.DEPT_GREEK[d.name] || d.name}</button>
         ))}
       </div>
       {violations.length > 0 && (
@@ -193,17 +208,14 @@ const Shifts = () => {
           </React.Fragment>
         ))}
       </div>
-      <div style={{marginTop: 14, display:"flex", gap: 12, fontSize: 11, color:"var(--ink-500)"}}>
-        <span>Όρια μήνα: Γιατροί 15 · Νοσηλευτές 20 · Διοικ. 25</span>
-        <span>· Ελάχ. 8h ανάπαυση μεταξύ βαρδιών</span>
-        <span>· Μέγ. 3 συνεχόμενες νύχτες</span>
-      </div>
     </div>
   );
 };
 
 /* ─────────── HOSPITALIZATIONS ─────────── */
-const Hospitalizations = () => (
+const Hospitalizations = ({ onPatientOpen }) => {
+  const { DEPARTMENTS, BEDS, ICD10, KEN, ADMISSIONS, PATIENTS } = window.UG;
+  return (
   <div>
     <PageHeader
       title="Νοσηλείες"
@@ -219,21 +231,21 @@ const Hospitalizations = () => (
         </div>
         <div>
           <label className="field-label">Τμήμα</label>
-          <select className="select"><option>Καρδιολογική</option>{P2_DEPTS.slice(1).map(d=><option key={d.id}>{d.name}</option>)}</select>
+          <select className="select"><option>Καρδιολογικό</option>{DEPARTMENTS.slice(1).map(d=><option key={d.id}>{window.DEPT_GREEK[d.name] || d.name}</option>)}</select>
         </div>
         <div>
           <label className="field-label">Διαθέσιμη κλίνη</label>
           <select className="select">
-            {P2_BD.filter(b => b.status === "available").map(b => <option key={b.id}>{b.id} — {b.type}</option>)}
+            {BEDS.filter(b => b.status === "available").map(b => <option key={b.id}>{b.id} — {window.BED_TYPE_GREEK[b.type] || b.type}</option>)}
           </select>
         </div>
         <div>
           <label className="field-label">ICD-10 (διάγνωση εισαγωγής)</label>
-          <select className="select">{P2_ICD10.map(c => <option key={c.code}>{c.code} — {c.name}</option>)}</select>
+          <select className="select">{ICD10.map(c => <option key={c.code}>{c.code} — {c.name}</option>)}</select>
         </div>
         <div>
-          <label className="field-label">P2_KEN</label>
-          <select className="select">{P2_KEN.map(k => <option key={k.code}>{k.code} — {k.name} · {k.base}€ · ΜΔΝ {k.mdn} ημ.</option>)}</select>
+          <label className="field-label">KEN</label>
+          <select className="select">{KEN.map(k => <option key={k.code}>{k.code} — {k.name} · {k.base}€ · ΜΔΝ {k.mdn} ημ.</option>)}</select>
         </div>
         <div style={{display:"flex", alignItems:"flex-end"}}>
           <button className="btn btn-primary" style={{width: "100%"}}><Icon name="check" size={14}/>Καταχώρηση</button>
@@ -242,55 +254,43 @@ const Hospitalizations = () => (
     </div>
     <div className="card">
       <table className="tbl">
-        <thead><tr><th>ID</th><th>Ασθενής</th><th>Τμήμα</th><th>Κλίνη</th><th>ICD-10</th><th>P2_KEN</th><th>Από</th><th>Διάρκεια</th><th>Κόστος</th><th>Status</th></tr></thead>
+        <thead><tr><th>ID</th><th>Ασθενής</th><th>Τμήμα</th><th>Κλίνη</th><th>ICD-10</th><th>KEN</th><th>Από</th><th>Διάρκεια</th><th>Κόστος</th><th>Status</th></tr></thead>
         <tbody>
-          {[
-            ["H-22041","Δ. Ραπτόπουλος","Καρδιολογική","Κ-12","I21.4","F62B","2026-04-12",4,"4.250 €","ενεργή"],
-            ["H-22039","Β. Νικολαΐδης","Καρδιολογική","Κ-07","I50.9","F62A","2026-04-10",6,"3.890 €","ενεργή"],
-            ["H-22034","Α. Λαμπρίδης","Καρδιολογική","Κ-01","I21.4","F62B","2026-04-09",7,"5.120 €","ενεργή",true],
-            ["H-22019","Π. Καρά","Παθολογική","Π-04","E11.9","E62A","2026-04-08",8,"2.610 €","ενεργή"],
-            ["H-22011","Λ. Δερμιτζάκης","Παθολογική","Π-09","J18.9","E62A","2026-04-08",8,"2.310 €","ενεργή"],
-            ["H-22008","Ε. Παπαϊωάννου","Καρδιολογική","Κ-03","I50.9","F62A","2026-04-07",9,"4.780 €","ενεργή",true],
-            ["H-21998","Σ. Δημητρίου","Καρδιολογική","Κ-05","I21.4","F62B","2026-04-06",10,"6.020 €","ενεργή",true],
-            ["H-21982","Μ. Σαββίδης","Μ.Ε.Θ.","Μ-02","I21.4","F62A","2026-04-05",11,"12.340 €","ενεργή"],
-            ["H-21978","Ν. Βαρθαλίτης","Παθολογική","Π-12","J18.9","E62A","2026-04-04",6,"1.940 €","εξιτήριο"],
-            ["H-21956","Ι. Σπύρου","Χειρουργική","Χ-04","K35.8","G07A","2026-04-02",5,"5.890 €","εξιτήριο"],
-            ["H-21878","Δ. Ραπτόπουλος","Καρδιολογική","Κ-08","I50.9","F62A","2025-11-22",7,"3.120 €","εξιτήριο"],
-            ["H-21855","Ε. Λάππα","Παιδιατρική","Π-Β-03","J18.9","E62A","2025-11-15",4,"1.620 €","εξιτήριο"],
-          ].map(r => (
-            <tr key={r[0]} style={{cursor:"pointer"}} id={"hosp-row-" + r[0]}>
-              <td className="mono">{r[0]}</td>
-              <td><strong>{r[1]}</strong></td>
-              <td>{r[2]}</td>
-              <td className="mono">{r[3]}</td>
-              <td className="mono">{r[4]}</td>
-              <td className="mono">{r[5]}</td>
-              <td className="mono">{r[6]}</td>
+          {ADMISSIONS.slice(0, 50).map(r => (
+            <tr key={r.id} onClick={() => onPatientOpen(r.patient_AMKA)} style={{cursor:"pointer"}} id={"hosp-row-" + r.id}>
+              <td className="mono">{r.id}</td>
+              <td><strong>{r.patient_name || PATIENTS.find(p => p.amka === r.patient_AMKA)?.last}</strong></td>
+              <td>{window.DEPT_GREEK[r.dept] || r.dept}</td>
+              <td className="mono">{r.bed}</td>
+              <td className="mono">{r.icd10}</td>
+              <td className="mono">{r.ken}</td>
+              <td className="mono">{r.from}</td>
               <td>
-                <span className="mono">{r[7]} ημ.</span>
-                {r[10] && <span className="chip chip-amber" style={{marginLeft:6}} title="Υπέρβαση ΜΔΝ">⚠ ΜΔΝ</span>}
+                <span className="mono">{r.to ? "Ολοκληρώθηκε" : "Ενεργή"}</span>
               </td>
-              <td className="mono" style={{textAlign:"right"}}>{r[8]}</td>
-              <td><span className={"chip " + (r[9] === "ενεργή" ? "chip-amber" : "chip-green")}>{r[9]}</span></td>
+              <td className="mono" style={{textAlign:"right"}}>{r.cost ? r.cost.toLocaleString("el-GR") : 0} €</td>
+              <td><span className={"chip " + (r.status === "ενεργή" ? "chip-amber" : "chip-green")}>{r.status}</span></td>
             </tr>
           ))}
         </tbody>
       </table>
       <div className="pagination">
-        <span>Εμφάνιση 1–12 από 312</span>
-        <div className="pages"><button>‹</button><button className="active">1</button><button>2</button><button>3</button><button>›</button></div>
+        <span>Εμφάνιση 1–{Math.min(50, ADMISSIONS.length)} από {ADMISSIONS.length}</span>
+        <div className="pages"><button disabled>‹</button><button className="active">1</button><button disabled>›</button></div>
       </div>
     </div>
   </div>
-);
+  );
+};
 
 /* ─────────── PRESCRIPTIONS ─────────── */
 const Prescriptions = () => {
-  const [patientId, setPatientId] = React.useState("P-1042");
-  const [drugId, setDrugId] = React.useState("DR07");
-  const patient = P2_PTS.find(p => p.id === patientId) || P2_PTS[0];
-  const drug = P2_DRUGS.find(d => d.id === drugId);
-  const conflict = drug && patient.allergies.some(a => drug.substance.toLowerCase().includes(a.toLowerCase()) || a.toLowerCase().includes(drug.substance.toLowerCase()));
+  const { PATIENTS, DRUGS, DOCTORS, PRESCRIPTIONS } = window.UG;
+  const [patientId, setPatientId] = React.useState(PATIENTS[0]?.id);
+  const [drugId, setDrugId] = React.useState(DRUGS[0]?.id);
+  const patient = PATIENTS.find(p => p.id === patientId) || PATIENTS[0];
+  const drug = DRUGS.find(d => d.id === drugId);
+  const conflict = drug && patient.allergies.some(a => drug.name.toLowerCase().includes(a.toLowerCase()));
 
   return (
     <div>
@@ -304,12 +304,12 @@ const Prescriptions = () => {
           <div style={{display:"grid", gap: 14}}>
             <div>
               <label className="field-label">Γιατρός</label>
-              <select className="select"><option>Δρ. Ανδρέας Παπαδημητρίου · Καρδιολογία</option>{P2_DOCS.slice(1,8).map(d => <option key={d.id}>Δρ. {d.name}</option>)}</select>
+              <select className="select"><option>Δρ. Ανδρέας Παπαδημητρίου · Καρδιολογία</option>{DOCTORS.slice(1,8).map(d => <option key={d.id}>Δρ. {d.name}</option>)}</select>
             </div>
             <div>
               <label className="field-label">Ασθενής</label>
               <select className="select" value={patientId} onChange={e => setPatientId(e.target.value)} id="rx-patient">
-                {P2_PTS.map(p => <option key={p.id} value={p.id}>{p.last} {p.first} ({p.amka})</option>)}
+                {PATIENTS.map(p => <option key={p.id} value={p.id}>{p.last} {p.first} ({p.amka})</option>)}
               </select>
               {patient.allergies.length > 0 && (
                 <div style={{display:"flex", gap: 4, marginTop: 8, flexWrap:"wrap"}}>
@@ -319,9 +319,9 @@ const Prescriptions = () => {
               )}
             </div>
             <div>
-              <label className="field-label">Φάρμακο (EMA Article 57)</label>
+              <label className="field-label">Φάρμακο</label>
               <select className="select" value={drugId} onChange={e => setDrugId(e.target.value)} id="rx-drug">
-                {P2_DRUGS.map(d => <option key={d.id} value={d.id}>{d.name} — {d.substance}</option>)}
+                {DRUGS.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
               </select>
             </div>
             <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap: 12}}>
@@ -348,7 +348,7 @@ const Prescriptions = () => {
                 <Icon name="alert" size={18}/>
                 <div>
                   <strong>Σύγκρουση αλλεργίας — η συνταγή είναι αποκλεισμένη</strong>
-                  Το φάρμακο <strong>{drug.name}</strong> περιέχει <strong>{drug.substance}</strong>, στο οποίο ο/η ασθενής είναι αλλεργικός/ή. Επιλέξτε εναλλακτικό σκεύασμα.
+                  Το φάρμακο <strong>{drug.name}</strong> ενδέχεται να περιέχει ουσίες στις οποίες ο/η ασθενής είναι αλλεργικός/ή.
                 </div>
               </div>
             ) : (
@@ -374,26 +374,13 @@ const Prescriptions = () => {
             <table className="tbl" style={{fontSize: 12}}>
               <thead><tr><th>Φάρμακο</th><th>Από</th><th>Έως</th><th>Γιατρός</th></tr></thead>
               <tbody>
-                {[
-                  ["Concor 5mg","2026-04-12","2026-05-12","Α. Παπαδημητρίου"],
-                  ["Lipitor 20mg","2026-04-12","2026-07-12","Α. Παπαδημητρίου"],
-                  ["Plavix 75mg","2026-04-12","2026-04-26","Γ. Αντωνίου"],
-                  ["Salospir 81mg","2026-04-12","2026-10-12","Α. Παπαδημητρίου"],
-                  ["Depon 500mg","2025-11-22","2025-11-29","Γ. Αντωνίου"],
-                ].map(r => (
-                  <tr key={r[0]+r[1]}>
-                    <td><strong>{r[0]}</strong></td><td className="mono">{r[1]}</td><td className="mono">{r[2]}</td><td>{r[3]}</td>
+                {PRESCRIPTIONS.filter(r => r.patient_AMKA === patient.amka).map((r, i) => (
+                  <tr key={i}>
+                    <td><strong>{r.drug_name}</strong></td><td className="mono">{r.start}</td><td className="mono">{r.end}</td><td>{r.doctor_name}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
-          </div>
-          <div className="card" style={{padding: 18}}>
-            <div style={{fontWeight: 600, fontSize: 14, marginBottom: 10}}>Έλεγχοι μοναδικότητας</div>
-            <div style={{fontSize: 12, color:"var(--ink-600)", lineHeight: 1.6}}>
-              Ο συνδυασμός <span className="mono">(γιατρός, ασθενής, φάρμακο, ημ. έναρξης)</span> πρέπει να είναι μοναδικός.
-              <div style={{marginTop: 8, display:"flex", gap: 6, alignItems:"center", color:"var(--green-600)"}}><Icon name="check" size={14}/>Καμία διπλοεγγραφή στα τελευταία 30 ημέρες.</div>
-            </div>
           </div>
         </div>
       </div>
@@ -402,7 +389,8 @@ const Prescriptions = () => {
 };
 
 /* ─────────── OR / GANTT ─────────── */
-const OperatingRooms = () => {
+const OperatingRooms = ({ onPatientOpen }) => {
+  const { SURGERIES, DOCTORS, PATIENTS } = window.UG;
   const rooms = ["ΧΑ-1","ΧΑ-2","ΧΑ-3","ΧΑ-4"];
   const startHour = 7;
   const endHour = 19;
@@ -412,11 +400,7 @@ const OperatingRooms = () => {
       <PageHeader
         title="Χειρουργεία — Ημερολόγιο Αιθουσών"
         subtitle="Δευτέρα 5 Μαΐου 2026 · prevention double-booking για αίθουσες & χειρουργούς"
-        actions={<>
-          <button className="btn btn-ghost">‹ 4 Μαΐ</button>
-          <button className="btn btn-ghost">6 Μαΐ ›</button>
-          <button className="btn btn-primary"><Icon name="plus" size={14}/>Νέο Χειρουργείο</button>
-        </>}
+        actions={<button className="btn btn-primary"><Icon name="plus" size={14}/>Νέο Χειρουργείο</button>}
       />
       <div className="hstack" style={{gap: 12, marginBottom: 14}}>
         <span className="chip chip-brand"><span className="dot"/>Κατηγορία Α</span>
@@ -431,7 +415,7 @@ const OperatingRooms = () => {
           </div>
         </div>
         {rooms.map(room => {
-          const ops = P2_SURGERIES.filter(s => s.room === room);
+          const ops = SURGERIES.filter(s => s.room === room);
           return (
             <div key={room} className="gantt-row">
               <div className="room-label"><Icon name="scalpel" size={12}/>{room}</div>
@@ -439,9 +423,15 @@ const OperatingRooms = () => {
                 {ops.map(op => {
                   const left = ((op.start - startHour) / totalH) * 100;
                   const width = (op.dur / totalH) * 100;
-                  const surgeon = P2_DOCS.find(d => d.id === op.surgeon);
+                  const surgeon = DOCTORS.find(d => d.id === op.surgeon);
                   return (
-                    <div key={op.id} id={"surgery-" + op.id} className={"gantt-block " + (op.urgent ? "cat-emergency" : op.category === "Β" ? "cat-b" : "")} style={{left: left + "%", width: width + "%"}}>
+                    <div key={op.id} id={"surgery-" + op.id} 
+                         onClick={() => {
+                           const patient = PATIENTS.find(p => (p.first + " " + p.last).includes(op.patient) || op.patient.includes(p.last));
+                           if (patient) onPatientOpen(patient.amka);
+                         }}
+                         className={"gantt-block " + (op.urgent ? "cat-emergency" : op.category === "Β" ? "cat-b" : "")} 
+                         style={{left: left + "%", width: width + "%", cursor:"pointer"}}>
                       <div className="block-title">{op.name}</div>
                       <div className="block-meta">{surgeon?.name.split(" ")[1]} · {op.patient} · {op.dur}h</div>
                     </div>
@@ -451,45 +441,6 @@ const OperatingRooms = () => {
             </div>
           );
         })}
-      </div>
-
-      <div className="card" style={{padding: 18, marginTop: 16}}>
-        <div style={{fontWeight: 600, fontSize: 14, marginBottom: 10}}>Λεπτομέρειες χειρουργείου</div>
-        <div style={{display:"grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 14}}>
-          <div>
-            <label className="field-label">Πράξη</label>
-            <input className="input" defaultValue="Στεφανιογραφία"/>
-          </div>
-          <div>
-            <label className="field-label">Κατηγορία</label>
-            <select className="select"><option>Α — χειρουργική</option><option>Β — διαγνωστική</option></select>
-          </div>
-          <div>
-            <label className="field-label">Επικεφαλής χειρουργός</label>
-            <select className="select">{P2_DOCS.filter(d=>d.surgeries>0).map(d=><option key={d.id}>{d.name}</option>)}</select>
-          </div>
-          <div>
-            <label className="field-label">Διάρκεια</label>
-            <input className="input" defaultValue="2h"/>
-          </div>
-          <div style={{gridColumn: "span 2"}}>
-            <label className="field-label">Βοηθοί (γιατροί + νοσηλευτές)</label>
-            <div className="hstack" style={{flexWrap:"wrap", gap: 6, padding: 6, border:"1px solid var(--ink-200)", borderRadius: "var(--r-sm)", minHeight: 38}}>
-              <span className="chip chip-brand">Δρ. Δ. Παπαγιάννη ×</span>
-              <span className="chip chip-brand">Δρ. Κ. Ροζάκης ×</span>
-              <span className="chip chip-green">Νοσ. Α. Παπαδάκη ×</span>
-              <input style={{border:"none", outline:"none", flex:1, minWidth: 120, fontSize: 13}} placeholder="+ προσθήκη..."/>
-            </div>
-          </div>
-          <div>
-            <label className="field-label">Αίθουσα</label>
-            <select className="select">{rooms.map(r=><option key={r}>{r}</option>)}</select>
-          </div>
-          <div>
-            <label className="field-label">Ώρα έναρξης</label>
-            <input className="input" type="time" defaultValue="08:00"/>
-          </div>
-        </div>
       </div>
     </div>
   );

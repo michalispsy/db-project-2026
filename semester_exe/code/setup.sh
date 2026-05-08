@@ -87,9 +87,17 @@ else
     fi
 fi
 
-PROJECT_ROOT=$(find "$HOME" -name ".*" -prune -o -type d -path "*/db-project-2026/semester_exe" -printf '%h\n' -quit 2>/dev/null)
+# Try to find the project root by looking for the sql/install.sql file nearby
+if [[ -f "./sql/install.sql" ]]; then
+    PROJECT_ROOT="$(pwd)/.."
+elif [[ -f "../sql/install.sql" ]]; then
+    PROJECT_ROOT="$(pwd)/../.."
+else
+    # Fallback to searching (but more broad)
+    PROJECT_ROOT=$(find "$HOME" -name ".*" -prune -o -type d -path "*/semester_exe" -printf '%h\n' -quit 2>/dev/null)
+fi
 
-if [ ! -d "$PROJECT_ROOT" ]; then
+if [ -z "$PROJECT_ROOT" ] || [ ! -d "$PROJECT_ROOT" ]; then
     echo " * Project not found. Cloning"
     git clone https://github.com/michalispsy/db-project-2026 || exit 1
     PROJECT_ROOT="$(pwd)/db-project-2026"
@@ -101,11 +109,11 @@ cmd_prefix=""
 if [[ -z "$MY_CNF" || ! -f "$MY_CNF" ]]; then
     if [[ $EUID -ne 0 ]]; then
         sudo -v || exit 1
-        cmd_prefix2="sudo -E"
+        cmd_prefix="sudo -E"
     fi
 fi
 
-args=()
+args=(--local-infile=1)
 [[ -n "$MY_CNF" ]] && args+=(--defaults-file="$MY_CNF")
 
 $cmd_prefix mariadb "${args[@]}" < "sql/install.sql"

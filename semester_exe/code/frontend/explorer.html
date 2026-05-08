@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ygeiopolis Database Explorer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-panel: rgba(30, 41, 59, 0.7);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --brand: #3b82f6;
+            --brand-hover: #2563eb;
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            background: linear-gradient(135deg, #020617 0%, var(--bg-dark) 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: var(--bg-panel);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 24px rgba(0,0,0,0.2);
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            padding: 24px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-header h1 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sidebar-header p {
+            margin: 4px 0 0 0;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .table-list {
+            list-style: none;
+            padding: 12px 0;
+            margin: 0;
+        }
+
+        .table-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            color: var(--text-muted);
+            border-left: 3px solid transparent;
+        }
+
+        .table-item:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .table-item.active {
+            color: var(--brand);
+            border-left-color: var(--brand);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 32px 40px;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .header {
+            margin-bottom: 24px;
+        }
+
+        .header h2 {
+            margin: 0 0 8px 0;
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .header p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        /* Table Card */
+        .card {
+            background: var(--bg-panel);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        /* DataTables Customization for Dark Mode */
+        table.dataTable {
+            width: 100% !important;
+            color: var(--text-main);
+            border-collapse: collapse !important;
+        }
+
+        table.dataTable thead th {
+            border-bottom: 1px solid var(--border-color) !important;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 12px 16px;
+        }
+
+        table.dataTable tbody tr {
+            background-color: transparent !important;
+        }
+
+        table.dataTable tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.02) !important;
+        }
+
+        table.dataTable tbody td {
+            border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+            padding: 14px 16px;
+            font-size: 0.95rem;
+        }
+
+        .dataTables_wrapper .dataTables_length, 
+        .dataTables_wrapper .dataTables_filter, 
+        .dataTables_wrapper .dataTables_info, 
+        .dataTables_wrapper .dataTables_processing, 
+        .dataTables_wrapper .dataTables_paginate {
+            color: var(--text-muted) !important;
+            margin-bottom: 16px;
+        }
+
+        .dataTables_wrapper .dataTables_filter input {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-main);
+            padding: 6px 12px;
+            margin-left: 8px;
+            outline: none;
+        }
+
+        .dataTables_wrapper .dataTables_filter input:focus {
+            border-color: var(--brand);
+        }
+
+        .dataTables_wrapper .dataTables_length select {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-main);
+            padding: 4px;
+            outline: none;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            color: var(--text-muted) !important;
+            border: 1px solid var(--border-color) !important;
+            border-radius: 6px;
+            margin: 0 4px;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+            background: var(--brand) !important;
+            color: white !important;
+            border-color: var(--brand) !important;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+            background: rgba(255,255,255,0.1) !important;
+            color: white !important;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .nav-buttons {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: var(--font-family);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Database Explorer</h1>
+            <p>MariaDB • Ygeiopolis</p>
+        </div>
+        <ul class="table-list" id="tableList">
+            <li style="padding: 20px; color: var(--text-muted); text-align: center;">Loading tables...</li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="header">
+            <h2 id="currentTableName">Select a Table</h2>
+            <p id="tableMeta">Extensive filtering, sorting, and search available.</p>
+        </div>
+
+        <div class="card">
+            <div id="tableContainer" class="table-container">
+                <div class="loading">Please select a table from the sidebar.</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- jQuery & DataTables -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        let currentDataTable = null;
+
+        // Fetch list of tables on load
+        fetch('/api/tables')
+            .then(res => res.json())
+            .then(tables => {
+                const list = document.getElementById('tableList');
+                list.innerHTML = '';
+                
+                if (tables.error) {
+                    list.innerHTML = `<li style="padding: 20px; color: #ef4444;">Error loading tables</li>`;
+                    return;
+                }
+
+                tables.forEach(tableName => {
+                    const li = document.createElement('li');
+                    li.className = 'table-item';
+                    li.textContent = tableName;
+                    li.onclick = () => loadTable(tableName, li);
+                    list.appendChild(li);
+                });
+            })
+            .catch(err => {
+                document.getElementById('tableList').innerHTML = `<li style="padding: 20px; color: #ef4444;">Connection error</li>`;
+            });
+
+        function loadTable(tableName, listItemElement) {
+            // Update active state
+            document.querySelectorAll('.table-item').forEach(el => el.classList.remove('active'));
+            if(listItemElement) listItemElement.classList.add('active');
+
+            document.getElementById('currentTableName').textContent = tableName;
+            document.getElementById('tableMeta').textContent = `Loading data for ${tableName}...`;
+            
+            const container = document.getElementById('tableContainer');
+            container.innerHTML = `<div class="loading">Fetching data...</div>`;
+
+            fetch(`/api/tables/${tableName}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        container.innerHTML = `<div class="loading" style="color:#ef4444">Error: ${data.error}</div>`;
+                        return;
+                    }
+
+                    if (data.length === 0) {
+                        container.innerHTML = `<div class="loading">Table is empty.</div>`;
+                        document.getElementById('tableMeta').textContent = `0 records found.`;
+                        return;
+                    }
+
+                    document.getElementById('tableMeta').textContent = `${data.length} records loaded. Use the search bar for extensive filtering.`;
+
+                    // Generate table HTML
+                    const columns = Object.keys(data[0]);
+                    
+                    let tableHtml = `<table id="dynamicTable" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                ${columns.map(col => `<th>${col}</th>`).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.map(row => `
+                                <tr>
+                                    ${columns.map(col => `<td>${row[col] === null ? '<span style="color:var(--text-muted)">null</span>' : row[col]}</td>`).join('')}
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>`;
+
+                    container.innerHTML = tableHtml;
+
+                    // Initialize DataTables
+                    if (currentDataTable) {
+                        currentDataTable.destroy();
+                    }
+                    
+                    currentDataTable = $('#dynamicTable').DataTable({
+                        pageLength: 25,
+                        responsive: true,
+                        language: {
+                            search: "Filter records:",
+                            lengthMenu: "Show _MENU_ records",
+                            info: "Showing _START_ to _END_ of _TOTAL_ records",
+                        }
+                    });
+                })
+                .catch(err => {
+                    container.innerHTML = `<div class="loading" style="color:#ef4444">Failed to load data.</div>`;
+                });
+        }
+    </script>
+</body>
+</html>

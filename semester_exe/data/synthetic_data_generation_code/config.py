@@ -13,7 +13,7 @@ random.seed(SEED)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.dirname(SCRIPT_DIR)          # data/
 PROJECT_ROOT = os.path.dirname(DATA_DIR)        # semester_exe/
-CSV_DIR = os.path.join(DATA_DIR, "preload")         # source CSVs (from ETL)
+CSV_DIR = os.path.join(DATA_DIR, "csv")         # source CSVs (from ETL)
 OUT_CSV_DIR = os.path.join(DATA_DIR, "csv", "load")  # generated CSVs for LOAD DATA
 REL_CSV_DIR = "data/csv/load"                   # relative path for LOAD DATA INFILE
 SQL_DIR = os.path.join(PROJECT_ROOT, "sql")
@@ -218,6 +218,28 @@ def gen_dob(min_age=25, max_age=65):
     return today - timedelta(days=days)
 
 
+def adjust_greek_surname(last, gender):
+    """Adjusts masculine Greek surnames to feminine form if needed."""
+    if gender != "F":
+        return last
+    
+    # Common Greek surname ending transformations
+    if last.endswith("opoulos"):
+        return last[:-2] + "ou"  # Papadopoulos -> Papadopoulou
+    if last.endswith("idis"):
+        return last[:-1]         # Mavridis -> Mavridi
+    if last.endswith("akis"):
+        return last[:-1]         # Chatzidakis -> Chatzidaki
+    if last.endswith("is"):
+        return last[:-1]         # Makris -> Makri
+    if last.endswith("as"):
+        return last[:-1]         # Tsoukalas -> Tsoukala
+    if last.endswith("os"):
+        return last[:-2] + "ou"  # Spanos -> Spanou
+    
+    return last
+
+
 def gen_person(gender=None):
     if gender is None:
         gender = random.choices(["M", "F"], weights=[0.5, 0.5])[0]
@@ -225,7 +247,10 @@ def gen_person(gender=None):
         first = random.choice(MALE_FIRST)
     else:
         first = random.choice(FEMALE_FIRST)
+    
     last = random.choice(LAST_NAMES)
+    last = adjust_greek_surname(last, gender)
+    
     return first, last, gender
 
 

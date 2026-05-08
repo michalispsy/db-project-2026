@@ -1,1630 +1,1528 @@
 substance_id,name
-1,(3s
-2,(Live
-3,1-Propanol
-4,10s
-5,11
-6,12-Trioxo-2
-7,13-Tetraazahexadecane-10
-8,14
-9,14s)-1-[4-[[(2s)-4-Carboxy-2-[(2s)-4-Carboxy-2-(6-[18f] Fluoropyridin-3-Amido)butanamido]butanamido]
-10,16-Tricarboxylic Acid
-11,2
-12,2-Propanedicarboxylic Acid
-13,3
-14,3-Diphosphono-1
-15,4
-16,4 Dichlorobenzyl Alcohol
-17,5
-18,5)
-19,5-3
-20,A/Croatia/10136rv/2023 (H3n2) Like Strain X-425a
-21,A/Victoria/4897/2022 (H1n1)pdm09-Like Strain (A/Victoria/4897/2022
-22,Abacavir
-23,Abiraterone Acetate
-24,Aceclofenac
-25,Acemetacin
-26,Acenocoumarol
-27,Acetazolamide
-28,Acetic Acid
-29,Acetylcholine Chloride
-30,Acetylcysteine
-31,Acetylsalicylic Acid
-32,Achillea Millefolium D3
-33,Achillea Millefolium L. Herba
-34,Achillea Millefolium Mother Tincture
-35,Aciclovir
-36,Aconitum Napellus D1
-37,Aconitum Napellus D3
-38,Activated
-39,Adapalene
-40,Adenosine
-41,Afatinib
-42,Alanine
-43,Alanyl Glutamine
-44,Albendazole
-45,Alendronate Sodium
-46,Alendronate Sodium Trihydrate
-47,Alendronic Acid
-48,Alfacalcidol
-49,Alfuzosin Hydrochloride
-50,Algeldrate
-51,Alkanna Tinctoria Oily Extract
-52,Allopurinol
-53,Almotriptan
-54,Alpha-Tocopherol
-55,Alprazolam
-56,Alprostadil
-57,Alteplase
-58,Aluminium
-59,Aluminium Hydroxide
-60,Aluminium Hydroxide Gel
-61,Aluminium Hydroxide-Magnesium Carbonate Co-Dried Gel
-62,Aluminium Oxide
-63,Aluminium Phosphate
-64,Amantadine Hydrochloride
-65,Ambra Grisea D6
-66,Ambrisentan
-67,Ambroxol Hydrochloride
-68,Amikacin
-69,Amikacin Sulfate
-70,Amiloride Hydrochloride
-71,Aminophylline
-72,Aminophylline Dihydrate
-73,Amiodarone Hydrochloride
-74,Amisulpride
-75,Amitriptyline Hydrochloride
-76,Amlodipine
-77,Amlodipine Besilate
-78,Amorolfine Hydrochloride
-79,Amorphous Aluminium Hydroxyphosphate Sulphate
-80,Amoxicillin
-81,Amoxicillin Trihydrate
-82,Amphotericin B
-83,Amphotericine B
-84,Ampicillin
-85,Ampicillin Sodium
-86,Amylmetacresol
-87,Anagrelide
-88,Anamirta Cocculus D4
-89,Anastrozole
-90,Anhydrous
-91,Anhydrous Benzoyl Peroxide
-92,Anhydrous Caffeine
-93,Anhydrous Lidocaine Hydrochloride
-94,Anhydrous Zoledronic Acid
-95,Anidulafungin
-96,Aniracetam
-97,Anti-T Lymphocyte Immunoglobulin For Human Use
-98,Antithrombin Iii
-99,Apixaban
-100,Apomorphine Hydrochloride Hemihydrate
-101,Apraclonidine
-102,Apremilast
-103,Aprepitant
-104,Aprotinin
-105,Aranea Diadema D6
-106,Arginine
-107,Argipressin
-108,Aripiprazole
-109,Arnica Montana D2
-110,Arnica Montana D3
-111,Articaine Hydrochloride
-112,Ascorbic Acid
-113,Aspartic Acid
-114,Atenolol
-115,Atomoxetine
-116,Atomoxetine Hydrochloride
-117,Atorvastatin
-118,Atorvastatin Calcium
-119,Atorvastatin Calcium Trihydrate
-120,Atovaquone
-121,Atropa Bella-Donna D1
-122,Atropa Bella-Donna D4
-123,Atropine Sulfate
-124,Atropine Sulfate Monohydrate
-125,Attenuated)
-126,Attenuated) Derived From From The Jeryl Lynn Produced In Chick Embryo Cells
-127,Attenuated) Produced In Human Diploid (Mrc-5) Cells
-128,Avena Sativa D2
-129,Axitinib
-130,Azacitidine
-131,Azathioprine
-132,Azelaic Acid
-133,Azelastine Hydrochloride
-134,Azidamfenicol
-135,Azithromycin
-136,Azithromycin Dihydrate
-137,B/Phuket/3073/2013-Like Virus (B/Phuket/3073/2013
-138,Bacillus Calmette-Guérin (Bcg)
-139,Bacitracin
-140,Bacitracin Zinc
-141,Baclofen
-142,Beclometasone Dipropionate
-143,Beclometasone Dipropionate Anhydrous
-144,Bellis Perennis D2
-145,Bellis Perennis Mother Tincture
-146,Bemiparin Sodium
-147,Benazepril Hydrochloride
-148,Bendamustine Hydrochloride
-149,Benserazide Hydrochloride
-150,Benzalkonium Chloride
-151,Benzocaine
-152,Benzoxonium Chloride
-153,Benzoyl Peroxide
-154,Benzydamine Hydrochloride
-155,Benzyl Benzoate
-156,Benzylpenicillin Sodium
-157,Betahistine Dihydrochloride
-158,Betahistine Mesilate
-159,Betaine Citrate
-160,Betaine Hydrochloride
-161,Betamethasone
-162,Betamethasone Acetate
-163,Betamethasone Dipropionate
-164,Betamethasone Sodium Phosphate
-165,Betamethasone Valerate
-166,Betaxolol Hydrochloride
-167,Betiatide
-168,Bicalutamide
-169,Bifonazole
-170,Bilastine
-171,Bilastine Monohydrate
-172,Bimatoprost
-173,Biotin
-174,Biperiden Hydrochloride
-175,Biperiden Lactate
-176,Bisacodyl
-177,Bismuth Oxide
-178,Bisoprolol Fumarate
-179,Bisoprolol Hemifumarate
-180,Boric Acid
-181,Bortezomib
-182,Bosentan
-183,Bosentan Monohydrate
-184,Botulinum Toxin Type A
-185,Botulinum Toxin Type A - Haemagglutinin Complex
-186,Brimonidine Tartrate
-187,Brinzolamide
-188,Brivaracetam
-189,Brivudine
-190,Bromazepam
-191,Bromhexine Hydrochloride
-192,Budesonide
-193,Bumetanide
-194,Bupivacaine Hydrochloride
-195,Buprenorphine
-196,Bupropion Hydrochloride
-197,Buserelin Acetate
-198,Buspirone
-199,Buspirone Hydrochloride
-200,Butamirate Citrate
-201,Bvr-26)
-202,C1 Esterase Inhibitor (Human)
-203,Cabazitaxel
-204,Cabazitaxel 2-Propanol Solvate
-205,Cabergoline
-206,Caffeine
-207,Calcifediol Monohydrate
-208,Calcipotriol
-209,Calcitonin (Salmon)
-210,Calcitriol
-211,Calcium
-212,Calcium Acetate
-213,Calcium Carbonate
-214,Calcium Chloride
-215,Calcium Chloride Dihydrate
-216,Calcium Chloride Hexahydrate
-217,Calcium Dobesilate
-218,Calcium Folinate
-219,Calcium Folinate Hydrate
-220,Calcium Folinate Pentahydrate
-221,Calcium Gluconate
-222,Calcium Gluconate Monohydrate
-223,Calcium Lactate Gluconate
-224,Calcium Pantothenate
-225,Calcium Phosphate
-226,Calcium Phosphoricum D12
-227,Calcium Trisodium Pentetate
-228,Calendula Officinalis D2
-229,Calendula Officinalis Mother Tincture
-230,Camellia Sinensis (Green Tea) Leaf Extract
-231,Camphor
-232,Candesartan
-233,Candesartan Cilexetil
-234,Cannabidiol
-235,Cannabinol
-236,Capecitabine
-237,Capsaicin
-238,Capsicum Annuum
-239,Captopril
-240,Carbamazepine
-241,Carbetocin
-242,Carbidopa Monohydrate
-243,Carbimazole
-244,Carbocisteine
-245,Carbocisteine Lysine
-246,Carbomer
-247,Carbomer 974p
-248,Carbomer 980
-249,Carbon Dioxide
-250,Carboplatin
-251,Carglumic Acid
-252,Carmellose Sodium
-253,Carmustine
-254,Carnitine
-255,Carvedilol
-256,Caspofungin
-257,Cassia Pulp Extract
-258,Catalase
-259,Cayenne Pepper Soft Extract
-260,Cefaclor
-261,Cefaclor Monohydrate
-262,Cefatrizine
-263,Cefazolin Sodium
-264,Cefditoren Pivoxil
-265,Cefepime
-266,Cefepime Dihydrochloride Monohydrate
-267,Cefepime Hydrochloride
-268,Cefixime
-269,Ceforanide
-270,Cefotaxime
-271,Cefotaxime Sodium
-272,Cefoxitin Sodium
-273,Cefpodoxime Proxetil
-274,Cefprozil
-275,Ceftazidime
-276,Ceftazidime Pentahydrate
-277,Ceftriaxone
-278,Ceftriaxone Disodium Salt Hemiheptahydrate
-279,Ceftriaxone Sodium
-280,Ceftriaxone Sodium Sesquaterhydrate
-281,Cefuroxime
-282,Cefuroxime Axetil
-283,Cefuroxime Sodium
-284,Celecoxib
-285,Celiprolol Hydrochloride
-286,Centaury
-287,Centella Asiatica Extract
-288,Cetalkonium Chloride
-289,Cetirizine Dihydrochloride
-290,Cetrimide
-291,Cetrorelix
-292,Cetylpyridinium Chloride
-293,Cetylpyridinium Chloride Monohydrate
-294,Charcoal
-295,Chloramphenicol
-296,Chloramphenicol Sodium Succinate
-297,Chlordiazepoxide
-298,Chlordiazepoxide Hydrochloride
-299,Chlorhexidine Gluconate
-300,Chloride Ion
-301,Chlormadinone Acetate
-302,Chloroprocaine Hydrochloride
-303,Chloroquine Phosphate
-304,Chloroxylenol
-305,Chlorphenamine Maleate
-306,Chlorpromazine Hydrochloride
-307,Chlortalidone
-308,Cholecalciferol Concentrate
-309,Cholecalciferol Concentrate (Powder Form)
-310,Choline Salicylate
-311,Choline Theophyllinate
-312,Chondroitin Sulfate Sodium
-313,Chromium Chloride Hexahydrate
-314,Ciclesonide
-315,Ciclopirox
-316,Ciclopirox Olamine
-317,Ciclosporin
-318,Cilastatin
-319,Cilastatin Sodium
-320,Cilazapril
-321,Cilazapril Monohydrate
-322,Cilostazol
-323,Cimetidine
-324,Cinacalcet
-325,Cinacalcet Hydrochloride
-326,Cinchocaine Hydrochloride
-327,Cinnarizine
-328,Ciprofloxacin
-329,Ciprofloxacin Hydrated
-330,Ciprofloxacin Hydrochloride
-331,Ciprofloxacin Hydrochloride Monohydrate
-332,Ciprofloxacin Lactate
-333,Cisatracurium
-334,Cisplatin
-335,Citalopram
-336,Citalopram Hydrobromide
-337,Citalopram Hydrochloride
-338,Citric Acid
-339,Cladribine
-340,Clarithromycin
-341,Clavulanic Acid
-342,Clidinium Bromide
-343,Clindamycin
-344,Clindamycin Hydrochloride
-345,Clindamycin Phosphate
-346,Clioquinol
-347,Clobazam
-348,Clobetasol Propionate
-349,Clofarabine
-350,Clomifene Citrate
-351,Clomipramine Hydrochloride
-352,Clonidine Hydrochloride
-353,Clopidogrel
-354,Clopidogrel Besilate
-355,Clostridium Botulinum Neurotoxin Type A (150kd)
-356,Clotrimazole
-357,Cloxacillin
-358,Clozapine
-359,Coal Tar Solution
-360,Cocarboxylase Tetrahydrate
-361,Codeine Phosphate
-362,Codeine Phosphate Hemihydrate
-363,Coffea Arabica D12
-364,Colchicine
-365,Colecalciferol
-366,Colecalciferol Concentrate (Oily Form)
-367,Colistimethate Sodium
-368,Colistin Mesilate Sodium
-369,Common Sorrel Herb
-370,Conium Maculatum D3
-371,Copper Chloride Dihydrate
-372,Copper Tetramibi Tetrafluoroborate
-373,Coriander Fruit Powder
-374,Crospovidone
-375,Crystalline Glucosamine Sulfate
-376,Cyanocobalamin
-377,Cyclopentolate Hydrochloride
-378,Cyclophosphamide Monohydrate
-379,Cyproterone Acetate
-380,Cysteine
-381,Cytarabine
-382,Cytisinicline
-383,D-Biotin
-384,D-Penicillamine
-385,Dabigatran Etexilate
-386,Dabigatran Etexilate Mesilate
-387,Dacarbazine
-388,Dalbavancin
-389,Danaparoid Sodium
-390,Dandelion Herb Powdered
-391,Danish Strain 1331
-392,Dapagliflozin
-393,Dapoxetine
-394,Daptomycin
-395,Darunavir
-396,Dasatinib
-397,Deferasirox
-398,Deferiprone
-399,Deferoxamine Mesilate
-400,Delapril Hydrochloride
-401,Deoxycholic Acid
-402,Desflurane
-403,Desloratadine
-404,Desmopressin
-405,Desmopressin Acetate
-406,Desogestrel
-407,Desvenlafaxine
-408,Dexamethasone
-409,Dexamethasone Isonicotinate
-410,Dexamethasone Phosphate
-411,Dexamethasone Sodium Phosphate
-412,Dexibuprofen
-413,Dexketoprofen
-414,Dexmedetomidine
-415,Dexmedetomidine Hydrochloride
-416,Dexpanthenol
-417,Dextran 70
-418,Dextropropoxyphene Hydrochloride
-419,Dha 10%
-420,Diacerein
-421,Diazepam
-422,Diclofenac
-423,Diclofenac Diethylamine
-424,Diclofenac Epolamine
-425,Diclofenac Potassium
-426,Diclofenac Sodium
-427,Dienogest
-428,Diethylamine Salicylate
-429,Diflucortolone Valerate
-430,Digoxin
-431,Dihydroergotamine Mesilate
-432,Diltiazem Hydrochloride
-433,Dimenhydrinate
-434,Dimercaptosuccinic Acid
-435,Dimethyl Fumarate
-436,Dimeticone
-437,Dimetindene Maleate
-438,Dinoprostone
-439,Diosmectite
-440,Diosmin
-441,Diphenhydramine Hydrochloride
-442,Diphtheria Toxoid
-443,Diphtheria Toxoid Adsorbed On Aluminium Hydroxide
-444,Dipotassium Clorazepate
-445,Dipotassium Phosphate
-446,Dipyridamole
-447,Disodium
-448,Disodium Phosphate Dodecahydrate
-449,Dl-Alpha Tocopherol Acetate
-450,Dl-Alpha-Tocopherol
-451,Dobutamine
-452,Docetaxel
-453,Doconexent
-454,Docosahexaenoic Acid Ethyl Ester
-455,Domperidone
-456,Donepezil
-457,Donepezil Hydrochloride
-458,Dopamine Hydrochloride
-459,Dornase Alfa
-460,Dorzolamide
-461,Dorzolamide Hydrochloride
-462,Doxazosin
-463,Doxazosin Mesilate
-464,Doxorubicin Hydrochloride
-465,Doxycycline
-466,Doxycycline Hydrochloride
-467,Doxylamine
-468,Doxylamine Hydrogen Succinate
-469,Dpa 3%
-470,Dried
-471,Dried Ferrous Sulfate
-472,Dronabinol
-473,Droperidol
-474,Drospirenone
-475,Dry Extract
-476,Dry Extract (3-6:1) Of Gentian Root
-477,Dry Extract From Hop Strobile (4–8:1)
-478,Dry Extract From Horse Chestnut Corresponding To 21 Mg Triterpene Glycosides Calculated Protoescigen
-479,Dry Extract From Ivy Leaf (5-7.5:1)
-480,Dry Extract From Rubus Idaeus (3-5:1): Extraction Solvent: Water
-481,Dry Extract Of Lime Flower (3-8:1)
-482,Dry Extract Of Marshmallow Root (Der 7-9:1)
-483,Dry Extract Of Passionflower Herb (Der 4 -6: 1)
-484,Dry Extract Of Ribwort Plantain (4-6:1)
-485,Dry Extract Of Thyme (7-13:1)
-486,Dry Extract Of Valerian Root (4-6.7:1)
-487,Dry Extract Passion Flower (5-7:1)
-488,Dry Ruscus Extract Titrated In Sterolic Heterosides (Sh)
-489,Duloxetine
-490,Dutasteride
-491,Dydrogesterone
-492,E.Coli Extract
-493,Ebastine
-494,Echinacea D2
-495,Echinacea Mother Tincture
-496,Echinacea Purpurea D2
-497,Echinacea Purpurea Mother Tincture
-498,Econazole Nitrate
-499,Edoxaban
-500,Efavirenz
-501,Eicosapentanoic Acid/Docosahexaenoic Acid
-502,Elder Flower
-503,Elder Flowers
-504,Eletriptan
-505,Eltrombopag
-506,Empagliflozin
-507,Emtricitabine
-508,Enalapril Maleate
-509,Enoxaparin Sodium
-510,Entacapone
-511,Entecavir
-512,Enzalutamide
-513,Ephedrine Hydrochloride
-514,Epinastine Hydrochloride
-515,Epinephrine
-516,Epinephrine Bitartrate
-517,Epirubicin Hydrochloride
-518,Eplerenone
-519,Epoetin Alfa
-520,Epoprostenol
-521,Eprosartan Mesilate
-522,Equisetum Hiemale D4
-523,Erdosteine
-524,Ergocalciferol
-525,Ergometrine Maleate
-526,Ergotamine Tartrate
-527,Eribulin
-528,Erlotinib
-529,Ertapenem
-530,Erythromycin
-531,Escitalopram
-532,Escitalopram Oxalate
-533,Eslicarbazepine Acetate
-534,Esmolol Hydrochloride
-535,Esomeprazole
-536,Esomeprazole Magnesium Trihydrate
-537,Estradiol
-538,Estradiol Hemihydrate
-539,Estradiol Valerate
-540,Estriol
-541,Ethanol (96 Per Cent)
-542,Ethanol (96% Denatured With Mek)
-543,Ethanol 70 %(V/V)
-544,Ethanol 70% (V/V)
-545,Ethanol 90%
-546,Ethinylestradiol
-547,Ethyl Esters Of Iodised Fatty Acids From Poppyseed Oil
-548,Ethylenediamine-N
-549,Etidronate Disodium
-550,Etofenamate
-551,Etonogestrel
-552,Etoposide
-553,Etoricoxib
-554,Eucalyptus Oil
-555,Eugenol
-556,Everolimus
-557,Exametazime
-558,Exemestane
-559,Extract Of Iberis Amara (1 : 1.5 - 2.5)
-560,Extracting Agent: Ethanol 30 % (V/V)
-561,Extracting Agent: Ethanol 50 % (V/V)
-562,Extracting Agent: Ethanol 51% (M/M)
-563,Extracting Agent: Ethanol 70% (V/V)
-564,Extraction Solvent Water
-565,Extraction Solvent: Ethanol 30% V/V
-566,Extraction Solvent: Ethanol 40 % (V/V)
-567,Extraction Solvent: Ethanol 50% (V/V)
-568,Extraction Solvent: Ethanol 59% (V/V)
-569,Extraction Solvent: Ethanol 60% V/V
-570,Extraction Solvent: Ethanol 70% (V/V)
-571,Extraction Solvent: Ethanol 70% V/V
-572,Extraction Solvent: Ethanol: 30% (M/M)
-573,Extraction Solvent: Water
-574,Extraction Solvents: Ammonia Solution 10 % (M/M)
-575,Ezetimibe
-576,Factor Viii Inhibitor Bypassing Fraction
-577,Famciclovir
-578,Famotidine
-579,Fampridine
-580,Febuxostat
-581,Felodipine
-582,Fenofibrate
-583,Fentanyl
-584,Fentanyl Citrate
-585,Fenticonazole Nitrate
-586,Ferric Carboxymaltose
-587,Ferric Chloride Hexahydrate
-588,Ferric Hydroxide Polymaltose Complex
-589,Ferrous (Ii) Glycine Sulfate Complex
-590,Ferrous Gluconate
-591,Ferrous Sulfate
-592,Ferrum Iodatum D12
-593,Fesoterodine
-594,Fesoterodine Fumarate
-595,Fexofenadine Hydrochloride
-596,Finasteride
-597,Fingolimod
-598,Fingolimod Hydrochloride
-599,Fish Oil
-600,Fish Oil (Omega-3 Polyunsaturated Fatty Acids): Epa 17%
-601,Flecainide
-602,Flecainide Acetate
-603,Flucloxacillin
-604,Flucloxacillin Sodium Monohydrate
-605,Fluconazole
-606,Fludarabine Phosphate
-607,Fludeoxyglucose (18f)
-608,Fludrocortisone Acetate
-609,Fluid Extract From Ivy Leaves (1:1)
-610,Flumazenil
-611,Flunitrazepam
-612,Fluocinolone
-613,Fluocinolone Acetonide
-614,Fluocinonide
-615,Fluocortolone Pivalate
-616,Fluorescein Sodium
-617,Fluoride
-618,Fluorocholine (18f)
-619,Fluorometholone
-620,Fluorothymidine F-18
-621,Fluorouracil
-622,Fluoxetine
-623,Fluoxetine Hydrochloride
-624,Fluprednidene Acetate
-625,Flurbiprofen
-626,Flurbiprofen Ph. Eur.
-627,Flurbiprofen Sodium
-628,Flutamide
-629,Fluticasone Propionate
-630,Flutrimazole
-631,Fluvastatin Sodium
-632,Fluvoxamine Maleate
-633,Folic Acid
-634,Follicle-Stimulating Hormone
-635,Formoterol Fumarate
-636,Formoterol Fumarate Dihydrate
-637,Foscarbidopa
-638,Foscarnet Sodium Hexahydrate
-639,Fosfomycin
-640,Fosfomycin Trometamol
-641,Fosinopril Sodium
-642,Foslevodopa
-643,Free Of Complexing Proteins
-644,Frovatriptan
-645,Fulvestrant
-646,Fumaria Officinalis D4
-647,Furosemide
-648,Furosemide Sodium
-649,Fusidic Acid
-650,Fusidic Acid Hemihydrate
-651,Gabapentin
-652,Gadobenate Dimeglumine
-653,Gadobutrol
-654,Gadodiamide
-655,Gadoteric Acid
-656,Gadoteridol
-657,Gadoxetic Acid
-658,Galantamine
-659,Galantamine Hydrobromide
-660,Gallium (67ga) Citrate
-661,Ganciclovir
-662,Ganirelix
-663,Gefitinib
-664,Gemcitabine
-665,Gemfibrozil
-666,Gentamicin
-667,Gentamicin Sulfate
-668,Gentiana Lutea D5
-669,Geranium Robertianum D4
-670,Germanium (68ge) Chloride
-671,Glacial
-672,Glatiramer Acetate
-673,Glibenclamide
-674,Gliclazide
-675,Glimepiride
-676,Glucagon
-677,Glucosamine Hydrochloride
-678,Glucosamine Sulfate
-679,Glucosamine Sulfate Sodium Chloride
-680,Glucose
-681,Glucose Monohydrate
-682,Glutamic Acid
-683,Glycerol
-684,Glycerol 85%
-685,Glyceryl Trinitrate
-686,Glycine
-687,Glycopyrronium Bromide
-688,Goserelin
-689,Goserelin Acetate
-690,Gozetotide
-691,Granisetron
-692,Granisetron Hydrochloride
-693,Graphite
-694,Guaifenesin
-695,Haemophilus Influenzae Type B Polysaccharide (Polyribosylribitol Phosphate)
-696,Haemophilus Type B Conjugate Vaccine (Tetanus Toxoid Conjugate)
-697,Haloperidol
-698,Haloperidol Decanoate
-699,Hamamelis Virginiana D2
-700,Hamamelis Virginiana Mother Tincture
-701,Hepar Sulfuris D6
-702,Hepar Sulfuris D8
-703,Heparin Sodium
-704,Hepatitis A Virus (Inactivated ) Adsorbed On Aluminium Hydroxide Hydrated Produced On Human Diploid 
-705,Hepatitis A Virus (Inactivated)
-706,Hepatitis A Virus (Strain Cr 326f) (Inactivated) Produced On Human Diploid (Mrc–5) Fibroblast Cells 
-707,Hepatitis B Surface Antigen (Rdna)
-708,Hesperidin
-709,Hesperidin Methyl Chalcone
-710,Hexachlorophene
-711,Hexamidine Diisetionate
-712,Hexaminolevulinate
-713,Hexetidine
-714,Histidine
-715,Histidine Hydrochloride Monohydrate
-716,Homatropine Methylbromide
-717,Horsetail Herb Powdered
-718,Human Albumin As Macroaggregates
-719,Human Albumin Solution
-720,Human Alpha1-Proteinase Inhibitor
-721,Human Anti-D Immunoglobulin
-722,Human Chorionic Gonadotropin
-723,Human Coagulation Factor Ii
-724,Human Coagulation Factor Ix
-725,Human Coagulation Factor Vii
-726,Human Coagulation Factor Viii
-727,Human Coagulation Factor X
-728,Human Coagulation Factor Xiii
-729,Human Cytomegalovirus Immunoglobulin
-730,Human Fibrinogen
-731,Human Hepatitis B Immunoglobulin
-732,Human Normal Immunoglobulin
-733,Human Normal Immunoglobulin (Iv)
-734,Human Plasma Protein
-735,Human Serum Albumin
-736,Human Tetanus Immunoglobulin
-737,Human Thrombin
-738,Human Von Willebrand Factor
-739,Humulus Lupulus Extractum Siccum
-740,Hydrated
-741,Hydrated And Aluminium Phosphate
-742,Hydrochloric Acid 25%
+1,"(3s,10s,14s)-1-[4-[[(2s)-4-Carboxy-2-[(2s)-4-Carboxy-2-(6-[18f] Fluoropyridin-3-Amido)butanamido]but"
+2,"3,3-Diphosphono-1,2-Propanedicarboxylic Acid, Tetrasodium Salt (Dpd)"
+3,Abacavir
+4,"Abacavir, Lamivudine"
+5,Abiraterone Acetate
+6,Aceclofenac
+7,Acemetacin
+8,Acenocoumarol
+9,Acetazolamide
+10,Acetic Acid
+11,"Acetic Acid, Glacial, Sodium Hydrogen Carbonate, Magnesium Chloride Hexahydrate, Potassium Chloride,"
+12,Acetylcholine Chloride
+13,Acetylcysteine
+14,Acetylsalicylic Acid
+15,"Acetylsalicylic Acid, Aluminium Hydroxide Gel, Dried, Magnesium Hydroxide"
+16,"Acetylsalicylic Acid, Rosuvastatin"
+17,"Acetylsalicylic Acid, Rosuvastatin Calcium"
+18,Aciclovir
+19,"Aciclovir, Hydrocortisone"
+20,Adapalene
+21,"Adapalene, Anhydrous Benzoyl Peroxide"
+22,"Adapalene, Benzoyl Peroxide"
+23,Adenosine
+24,Afatinib
+25,Alanyl Glutamine
+26,Albendazole
+27,Alendronate Sodium
+28,Alendronate Sodium Trihydrate
+29,Alendronic Acid
+30,"Alendronic Acid, Colecalciferol"
+31,Alfacalcidol
+32,Alfuzosin Hydrochloride
+33,"Algeldrate, Inactivated Hepatitis A Virus (Gbm Strain)"
+34,Alkanna Tinctoria Oily Extract
+35,Allopurinol
+36,Almotriptan
+37,Alprazolam
+38,Alprostadil
+39,Alteplase
+40,"Aluminium Oxide, Magnesium Hydroxide"
+41,"Aluminium Phosphate, Diphtheria Toxoid Adsorbed On Aluminium Hydroxide, Hydrated And Aluminium Phosp"
+42,"Aluminium Phosphate, Diphtheria Toxoid, Tetanus Toxoid, Pertussis Toxoid, Pertussis Filamentous Haem"
+43,"Aluminium, Hepatitis A Virus (Strain Cr 326f) (Inactivated) Produced On Human Diploid (Mrc–5) Fibrob"
+44,Amantadine Hydrochloride
+45,Ambrisentan
+46,Ambroxol Hydrochloride
+47,Amikacin
+48,Amikacin Sulfate
+49,"Amiloride Hydrochloride, Furosemide"
+50,"Amiloride Hydrochloride, Hydrochlorothiazide"
+51,Aminophylline
+52,Aminophylline Dihydrate
+53,Amiodarone Hydrochloride
+54,Amisulpride
+55,"Amitriptyline Hydrochloride, Perphenazine"
+56,Amlodipine
+57,Amlodipine Besilate
+58,"Amlodipine Besilate, Candesartan Cilexetil"
+59,"Amlodipine Besilate, Nebivolol Hydrochloride"
+60,"Amlodipine Besilate, Perindopril Arginine"
+61,"Amlodipine Besilate, Perindopril Arginine, Atorvastatin Calcium Trihydrate"
+62,"Amlodipine, Hydrochlorothiazide, Candesartan Cilexetil"
+63,"Amlodipine, Hydrochlorothiazide, Irbesartan"
+64,"Amlodipine, Hydrochlorothiazide, Ramipril"
+65,"Amlodipine, Indapamide, Perindopril Arginine"
+66,"Amlodipine, Irbesartan"
+67,"Amlodipine, Perindopril Arginine"
+68,"Amlodipine, Ramipril"
+69,"Amlodipine, Telmisartan"
+70,Amorolfine Hydrochloride
+71,Amoxicillin
+72,Amoxicillin Trihydrate
+73,"Amoxicillin Trihydrate, Potassium Clavulanate"
+74,"Amoxicillin, Clavulanic Acid"
+75,Amphotericin B
+76,"Amphotericine B, Liposome"
+77,Ampicillin
+78,Ampicillin Sodium
+79,"Ampicillin, Sulbactam"
+80,"Amylmetacresol, 2,4 Dichlorobenzyl Alcohol"
+81,"Amylmetacresol, Lidocaine, 2,4 Dichlorobenzyl Alcohol"
+82,Anagrelide
+83,"Anamirta Cocculus D4, Conium Maculatum D3, Ambra Grisea D6, Petroleum Rectificatum D8"
+84,Anastrozole
+85,Anhydrous Zoledronic Acid
+86,Anidulafungin
+87,Aniracetam
+88,"Anti-T Lymphocyte Immunoglobulin For Human Use, Rabbit"
+89,Antithrombin Iii
+90,Apixaban
+91,Apomorphine Hydrochloride Hemihydrate
+92,Apraclonidine
+93,Apremilast
+94,Aprepitant
+95,"Aprotinin, Human Fibrinogen, Calcium Chloride Dihydrate, Human Thrombin, Human Coagulation Factor Xi"
+96,Argipressin
+97,Aripiprazole
+98,"Articaine Hydrochloride, Epinephrine"
+99,"Articaine Hydrochloride, Epinephrine Bitartrate"
+100,Ascorbic Acid
+101,"Ascorbic Acid, Acetylsalicylic Acid"
+102,"Ascorbic Acid, Calcium Pantothenate, Cyanocobalamin, Nicotinamide, Riboflavin, Thiamine Nitrate, Pyr"
+103,"Ascorbic Acid, Colecalciferol, Cyanocobalamin, Folic Acid, Nicotinamide, Thiamine, Pantothenic Acid,"
+104,"Ascorbic Acid, Dry Ruscus Extract Titrated In Sterolic Heterosides (Sh), Hesperidin Methyl Chalcone"
+105,"Ascorbic Acid, Ergocalciferol, Calcium Carbonate, Pyridoxine Hydrochloride, Citric Acid"
+106,"Ascorbic Acid, Paracetamol"
+107,"Aspartic Acid, Glycine, Magnesium Chloride Hexahydrate, Potassium Chloride, Calcium Chloride Dihydra"
+108,Atenolol
+109,"Atenolol, Chlortalidone"
+110,Atomoxetine
+111,Atomoxetine Hydrochloride
+112,Atorvastatin
+113,Atorvastatin Calcium
+114,Atorvastatin Calcium Trihydrate
+115,"Atorvastatin Calcium, Ezetimibe"
+116,"Atorvastatin, Ezetimibe"
+117,Atovaquone
+118,Atropine Sulfate
+119,Atropine Sulfate Monohydrate
+120,"Avena Sativa D2, Passiflora Incarnata D2, Zincum Isovalerianicum D4, Coffea Arabica D12"
+121,Axitinib
+122,Azacitidine
+123,Azathioprine
+124,Azelaic Acid
+125,Azelastine Hydrochloride
+126,"Azelastine Hydrochloride, Fluticasone Propionate"
+127,Azidamfenicol
+128,Azithromycin
+129,Azithromycin Dihydrate
+130,"B/Phuket/3073/2013-Like Virus (B/Phuket/3073/2013, Wild Type), Influenza Virus B/Austria/1359417/202"
+131,"B/Phuket/3073/2013-Like Virus (B/Phuket/3073/2013, Wild Type), Influenza Virus B/Michigan/01/2021, I"
+132,"Bacillus Calmette-Guérin (Bcg), Tice"
+133,"Bacitracin Zinc, Neomycin Sulfate, Polymyxin B Sulfate"
+134,"Bacitracin, Neomycin"
+135,"Bacitracin, Papain, Lysozyme Hydrochloride"
+136,Baclofen
+137,Beclometasone Dipropionate
+138,Beclometasone Dipropionate Anhydrous
+139,"Beclometasone Dipropionate, Formoterol Fumarate Dihydrate"
+140,"Bellis Perennis D2, Echinacea D2, Hypericum Perforatum D2, Mercurius Solubilis Hahnemanni D 8, Achil"
+141,Bemiparin Sodium
+142,Benazepril Hydrochloride
+143,Bendamustine Hydrochloride
+144,"Benserazide Hydrochloride, Levodopa"
+145,Benzalkonium Chloride
+146,"Benzalkonium Chloride, Dexamethasone Sodium Phosphate"
+147,"Benzalkonium Chloride, Isopropyl Alcohol"
+148,"Benzocaine, Cetylpyridinium Chloride"
+149,Benzydamine Hydrochloride
+150,"Benzydamine Hydrochloride, Cetylpyridinium Chloride Monohydrate"
+151,Benzyl Benzoate
+152,Benzylpenicillin Sodium
+153,Betahistine Dihydrochloride
+154,Betahistine Mesilate
+155,Betaine Citrate
+156,Betamethasone
+157,"Betamethasone Acetate, Betamethasone Sodium Phosphate"
+158,Betamethasone Dipropionate
+159,"Betamethasone Dipropionate, Betamethasone Sodium Phosphate"
+160,"Betamethasone Dipropionate, Gentamicin"
+161,Betamethasone Valerate
+162,"Betamethasone Valerate, Fusidic Acid"
+163,"Betamethasone Valerate, Gentamicin Sulfate"
+164,"Betamethasone, Calcipotriol"
+165,Betaxolol Hydrochloride
+166,Betiatide
+167,Bicalutamide
+168,Bifonazole
+169,Bilastine
+170,Bilastine Monohydrate
+171,Bimatoprost
+172,Biperiden Hydrochloride
+173,Biperiden Lactate
+174,Bisacodyl
+175,Bismuth Oxide
+176,Bisoprolol Fumarate
+177,"Bisoprolol Fumarate, Acetylsalicylic Acid"
+178,"Bisoprolol Fumarate, Amlodipine"
+179,"Bisoprolol Fumarate, Hydrochlorothiazide"
+180,"Bisoprolol Fumarate, Perindopril Arginine"
+181,"Bisoprolol Fumarate, Ramipril"
+182,Bisoprolol Hemifumarate
+183,Bortezomib
+184,Bosentan
+185,Bosentan Monohydrate
+186,Botulinum Toxin Type A
+187,Botulinum Toxin Type A - Haemagglutinin Complex
+188,Brimonidine Tartrate
+189,Brinzolamide
+190,"Brinzolamide, Brimonidine Tartrate"
+191,"Brinzolamide, Timolol"
+192,Brivaracetam
+193,Brivudine
+194,Bromazepam
+195,Bromhexine Hydrochloride
+196,Budesonide
+197,"Budesonide, Formoterol Fumarate Dihydrate"
+198,"Budesonide, Salmeterol"
+199,Bumetanide
+200,"Bupivacaine Hydrochloride, Anhydrous"
+201,Buprenorphine
+202,"Buprenorphine, Naloxone"
+203,Bupropion Hydrochloride
+204,Buserelin Acetate
+205,Buspirone
+206,Buspirone Hydrochloride
+207,Butamirate Citrate
+208,C1 Esterase Inhibitor (Human)
+209,Cabazitaxel
+210,Cabazitaxel 2-Propanol Solvate
+211,Cabergoline
+212,Calcifediol Monohydrate
+213,Calcipotriol
+214,"Calcipotriol, Anhydrous"
+215,Calcitonin (Salmon)
+216,Calcitriol
+217,Calcium
+218,Calcium Acetate
+219,Calcium Carbonate
+220,"Calcium Carbonate, Calcium Lactate Gluconate"
+221,"Calcium Carbonate, Cholecalciferol Concentrate"
+222,Calcium Chloride Dihydrate
+223,"Calcium Chloride Hexahydrate, Sodium Iodide"
+224,"Calcium Chloride, Icodextrin, Sodium Chloride, Magnesium Chloride, Sodium-L-Lactate"
+225,Calcium Dobesilate
+226,Calcium Folinate
+227,Calcium Folinate Hydrate
+228,Calcium Folinate Pentahydrate
+229,"Calcium Folinate, Iron Protein Acetyl Aspartate"
+230,Calcium Gluconate
+231,Calcium Gluconate Monohydrate
+232,"Calcium Phosphate, Tribasic"
+233,"Calcium, Glucose, Lactic Acid, Magnesium, Potassium, Sodium, Chloride Ion, Hydrogen Carbonate"
+234,"Calcium, Lactic Acid, Magnesium, Sodium, Chloride Ion, Hydrogen Carbonate"
+235,"Calcium, Magnesium, Potassium, Sodium, Chloride Ion, Hydrogen Phosphate, Hydrogen Carbonate"
+236,Camellia Sinensis (Green Tea) Leaf Extract
+237,Candesartan Cilexetil
+238,"Candesartan, Hydrochlorothiazide"
+239,"Cannabinol, Dronabinol"
+240,Capecitabine
+241,Capsaicin
+242,Capsicum Annuum
+243,Captopril
+244,"Captopril, Hydrochlorothiazide"
+245,Carbamazepine
+246,Carbetocin
+247,Carbimazole
+248,Carbocisteine
+249,Carbocisteine Lysine
+250,"Carbocisteine, Sobrerol"
+251,Carbomer
+252,Carbomer 974p
+253,Carbomer 980
+254,Carbon Dioxide
+255,Carboplatin
+256,Carglumic Acid
+257,Carmellose Sodium
+258,Carmustine
+259,Carnitine
+260,Carvedilol
+261,Caspofungin
+262,Cayenne Pepper Soft Extract
+263,Cefaclor
+264,Cefaclor Monohydrate
+265,Cefatrizine
+266,Cefazolin Sodium
+267,Cefditoren Pivoxil
+268,Cefepime
+269,Cefepime Dihydrochloride Monohydrate
+270,Cefepime Hydrochloride
+271,Cefixime
+272,"Ceforanide, L-Lysine"
+273,Cefotaxime
+274,Cefotaxime Sodium
+275,"Cefotaxime Sodium, Lidocaine Hydrochloride"
+276,Cefoxitin Sodium
+277,Cefpodoxime Proxetil
+278,Cefprozil
+279,Ceftazidime
+280,Ceftazidime Pentahydrate
+281,Ceftriaxone
+282,Ceftriaxone Disodium Salt Hemiheptahydrate
+283,Ceftriaxone Sodium
+284,Ceftriaxone Sodium Sesquaterhydrate
+285,Cefuroxime
+286,Cefuroxime Axetil
+287,Cefuroxime Sodium
+288,Celecoxib
+289,Celiprolol Hydrochloride
+290,"Centaury, Powder, Lovage Root, Powder, Rosemary Leaf, Powder"
+291,Centella Asiatica Extract
+292,Cetirizine Dihydrochloride
+293,"Cetrimide, Lidocaine"
+294,Cetrorelix
+295,"Cetylpyridinium Chloride, Lidocaine Hydrochloride"
+296,Chloramphenicol
+297,Chloramphenicol Sodium Succinate
+298,"Chloramphenicol, Dexamethasone"
+299,Chlordiazepoxide Hydrochloride
+300,"Chlordiazepoxide, Clidinium Bromide"
+301,Chlorhexidine Gluconate
+302,"Chlorhexidine Gluconate, Lidocaine"
+303,"Chlorhexidine Gluconate, Lidocaine Hydrochloride Monohydrate, Tyrothricin"
+304,"Chlormadinone Acetate, Ethinylestradiol"
+305,Chloroprocaine Hydrochloride
+306,Chloroquine Phosphate
+307,Chloroxylenol
+308,Chlorphenamine Maleate
+309,"Chlorphenamine Maleate, Paracetamol"
+310,"Chlorphenamine Maleate, Pseudoephedrine Hydrochloride, Paracetamol"
+311,"Chlorphenamine Maleate, Sodium Cromoglicate"
+312,Chlorpromazine Hydrochloride
+313,Chlortalidone
+314,Cholecalciferol Concentrate (Powder Form)
+315,"Choline Salicylate, Cetalkonium Chloride"
+316,Choline Theophyllinate
+317,Chondroitin Sulfate Sodium
+318,Ciclesonide
+319,Ciclopirox
+320,Ciclopirox Olamine
+321,Ciclosporin
+322,"Cilastatin Sodium, Imipenem Monohydrate"
+323,"Cilastatin, Imipenem"
+324,Cilazapril
+325,Cilazapril Monohydrate
+326,"Cilazapril, Hydrochlorothiazide"
+327,Cilostazol
+328,Cimetidine
+329,Cinacalcet
+330,Cinacalcet Hydrochloride
+331,Cinchocaine Hydrochloride
+332,"Cinchocaine Hydrochloride, Hexachlorophene, Prednisolone, Undecylenic Acid"
+333,"Cinchocaine Hydrochloride, Hydrocortisone"
+334,"Cinchocaine Hydrochloride, Prednisolone Caproate"
+335,"Cinnarizine, Dimenhydrinate"
+336,Ciprofloxacin
+337,Ciprofloxacin Hydrated
+338,Ciprofloxacin Hydrochloride
+339,Ciprofloxacin Hydrochloride Monohydrate
+340,Ciprofloxacin Lactate
+341,"Ciprofloxacin, Fluocinolone"
+342,"Ciprofloxacin, Hydrocortisone"
+343,Cisatracurium
+344,Cisplatin
+345,Citalopram
+346,Citalopram Hydrobromide
+347,Citalopram Hydrochloride
+348,Cladribine
+349,Clarithromycin
+350,"Clidinium Bromide, Diazepam"
+351,Clindamycin
+352,Clindamycin Hydrochloride
+353,Clindamycin Phosphate
+354,"Clindamycin, Benzoyl Peroxide"
+355,"Clindamycin, Tretinoin"
+356,"Clioquinol, Fluocinolone Acetonide"
+357,Clobazam
+358,Clobetasol Propionate
+359,Clofarabine
+360,Clomifene Citrate
+361,Clomipramine Hydrochloride
+362,Clonidine Hydrochloride
+363,Clopidogrel
+364,Clopidogrel Besilate
+365,"Clostridium Botulinum Neurotoxin Type A (150kd), Free Of Complexing Proteins"
+366,Clotrimazole
+367,"Clotrimazole, Dexamethasone"
+368,"Clotrimazole, Metronidazole"
+369,Cloxacillin
+370,Clozapine
+371,Coal Tar Solution
+372,"Codeine Phosphate, Ephedrine Hydrochloride"
+373,Colchicine
+374,Colecalciferol
+375,Colecalciferol Concentrate (Oily Form)
+376,"Colecalciferol, Calcium"
+377,"Colecalciferol, Calcium Carbonate"
+378,Colistimethate Sodium
+379,Colistin Mesilate Sodium
+380,Copper Tetramibi Tetrafluoroborate
+381,Crystalline Glucosamine Sulfate
+382,"Cyanocobalamin, Folic Acid"
+383,"Cyanocobalamin, Thiamine Nitrate, Pyridoxine Hydrochloride"
+384,Cyclopentolate Hydrochloride
+385,Cyclophosphamide Monohydrate
+386,Cyproterone Acetate
+387,Cytarabine
+388,Cytisinicline
+389,D-Penicillamine
+390,Dabigatran Etexilate
+391,Dabigatran Etexilate Mesilate
+392,Dacarbazine
+393,Dalbavancin
+394,Danaparoid Sodium
+395,Dapagliflozin
+396,Dapoxetine
+397,Daptomycin
+398,Darunavir
+399,Dasatinib
+400,Deferasirox
+401,Deferiprone
+402,Deferoxamine Mesilate
+403,"Delapril Hydrochloride, Manidipine Dihydrochloride"
+404,Deoxycholic Acid
+405,Desflurane
+406,Desloratadine
+407,Desmopressin
+408,Desmopressin Acetate
+409,Desogestrel
+410,"Desogestrel, Ethinylestradiol"
+411,Desvenlafaxine
+412,Dexamethasone
+413,"Dexamethasone Isonicotinate, Oxymetazoline Hydrochloride"
+414,"Dexamethasone Isonicotinate, Tramazoline Hydrochloride"
+415,Dexamethasone Phosphate
+416,Dexamethasone Sodium Phosphate
+417,"Dexamethasone Sodium Phosphate, Chloramphenicol"
+418,"Dexamethasone Sodium Phosphate, Clotrimazole"
+419,"Dexamethasone Sodium Phosphate, Gentamicin Sulfate"
+420,"Dexamethasone Sodium Phosphate, Neomycin Sulfate"
+421,"Dexamethasone Sodium Phosphate, Urea"
+422,"Dexamethasone, Ciprofloxacin"
+423,"Dexamethasone, Levofloxacin"
+424,"Dexamethasone, Tobramycin"
+425,Dexibuprofen
+426,Dexketoprofen
+427,Dexmedetomidine
+428,Dexmedetomidine Hydrochloride
+429,Dexpanthenol
+430,"Dexpanthenol, Retinol"
+431,"Dextran 70, Hypromellose"
+432,Dextropropoxyphene Hydrochloride
+433,Diacerein
+434,Diazepam
+435,Diclofenac
+436,Diclofenac Diethylamine
+437,Diclofenac Epolamine
+438,Diclofenac Potassium
+439,Diclofenac Sodium
+440,"Diclofenac Sodium, Omeprazole"
+441,"Diclofenac Sodium, Thiocolchicoside"
+442,Dienogest
+443,"Dienogest, Estradiol Valerate"
+444,"Diflucortolone Valerate, Isoconazole Nitrate"
+445,Digoxin
+446,Dihydroergotamine Mesilate
+447,Diltiazem Hydrochloride
+448,Dimenhydrinate
+449,"Dimenhydrinate, Nicotinic Acid, Pyridoxine Hydrochloride"
+450,"Dimenhydrinate, Sodium Nicotinate, Pyridoxine Hydrochloride"
+451,Dimercaptosuccinic Acid
+452,Dimethyl Fumarate
+453,"Dimeticone, Aluminium Oxide, Magnesium Hydroxide"
+454,"Dimeticone, Loperamide Hydrochloride"
+455,"Dimeticone, Magnesium Hydroxide, Aluminium Hydroxide"
+456,Dimetindene Maleate
+457,"Dimetindene Maleate, Phenylephrine"
+458,Dinoprostone
+459,Diosmectite
+460,Diosmin
+461,"Diosmin, Hesperidin"
+462,"Diosmin, Micronized"
+463,"Diphenhydramine Hydrochloride, Paracetamol"
+464,"Diphtheria Toxoid, Tetanus Toxoid"
+465,"Diphtheria Toxoid, Tetanus Toxoid, Haemophilus Type B Conjugate Vaccine (Tetanus Toxoid Conjugate), "
+466,"Diphtheria Toxoid, Tetanus Toxoid, Pertussis Toxoid, Pertussis Filamentous Haemagglutinin, Pertussis"
+467,"Diphtheria Toxoid, Tetanus Toxoid, Pertussis Toxoid, Pertussis Filamentous Haemagglutinin, Polioviru"
+468,Dipotassium Clorazepate
+469,"Dipotassium Phosphate, Glycine, Magnesium Chloride Hexahydrate, Sodium Chloride, Calcium Chloride Di"
+470,Dipyridamole
+471,"Disodium Phosphate Dodecahydrate, Sodium Dihydrogen Phosphate Dihydrate"
+472,Dl-Alpha Tocopherol Acetate
+473,Dobutamine
+474,Docetaxel
+475,"Doconexent, Eicosapentanoic Acid/Docosahexaenoic Acid"
+476,"Doconexent, Icosapent"
+477,"Doconexent, Vitamin D, Icosapent, Retinol"
+478,Domperidone
+479,Donepezil
+480,Donepezil Hydrochloride
+481,Dopamine Hydrochloride
+482,Dornase Alfa
+483,Dorzolamide
+484,Dorzolamide Hydrochloride
+485,"Dorzolamide Hydrochloride, Timolol Maleate"
+486,"Dorzolamide, Timolol"
+487,Doxazosin
+488,Doxazosin Mesilate
+489,Doxorubicin Hydrochloride
+490,Doxycycline
+491,Doxycycline Hydrochloride
+492,Doxylamine Hydrogen Succinate
+493,"Doxylamine, Pyridoxine Hydrochloride"
+494,Dried Ferrous Sulfate
+495,"Dronabinol, Cannabidiol"
+496,Droperidol
+497,"Drospirenone, Ethinylestradiol"
+498,"Dry Extract (3-6:1) Of Gentian Root, Primula Flowers, Sorrel Herb, Elder Flowers, Vervaine Herb (1:3"
+499,Dry Extract From Horse Chestnut Corresponding To 21 Mg Triterpene Glycosides Calculated Protoescigen
+500,"Dry Extract From Ivy Leaf (5-7.5:1), Extraction Solvent: Ethanol: 30% (M/M)"
+501,Dry Extract From Rubus Idaeus (3-5:1): Extraction Solvent: Water
+502,"Dry Extract Of Marshmallow Root (Der 7-9:1), Extraction Solvent Water, Dry Extract Of Lime Flower (3"
+503,"Dry Extract Of Marshmallow Root (Der 7-9:1), Extraction Solvent Water, Dry Extract Of Thyme (7-13:1)"
+504,"Dry Extract Of Passionflower Herb (Der 4 -6: 1), Extraction Solvent: Ethanol 70% V/V"
+505,"Dry Extract Of Thyme (7-13:1), Extraction Solvent: Water, Liquid Extract From Marshmallow Root (Der "
+506,"Dry Extract Of Valerian Root (4-6.7:1), Extraction Solvent: Ethanol 70% (V/V), Dry Extract From Hop "
+507,"Dry Extract Passion Flower (5-7:1), Extraction Solvent: Ethanol 60% V/V"
+508,Duloxetine
+509,Dutasteride
+510,Dydrogesterone
+511,"Dydrogesterone, Estradiol"
+512,E.Coli Extract
+513,Ebastine
+514,"Echinacea Mother Tincture, Calendula Officinalis Mother Tincture, Arnica Montana D3, Mercurius Solub"
+515,Econazole Nitrate
+516,"Econazole Nitrate, Triamcinolone Acetonide"
+517,Edoxaban
+518,Eletriptan
+519,Eltrombopag
+520,Empagliflozin
+521,"Emtricitabine, Efavirenz, Tenofovir Disoproxil Succinate"
+522,"Emtricitabine, Tenofovir Disoproxil Fumarate"
+523,"Emtricitabine, Tenofovir Disoproxil Succinate"
+524,Enalapril Maleate
+525,"Enalapril Maleate, Hydrochlorothiazide"
+526,"Enalapril Maleate, Lercanidipine Hydrochloride"
+527,"Enalapril Maleate, Nitrendipine"
+528,Enoxaparin Sodium
+529,"Entacapone, Levodopa, Carbidopa Monohydrate"
+530,Entecavir
+531,Enzalutamide
+532,Ephedrine Hydrochloride
+533,Epinastine Hydrochloride
+534,Epinephrine
+535,Epinephrine Bitartrate
+536,"Epinephrine, Lidocaine Hydrochloride"
+537,Epirubicin Hydrochloride
+538,Eplerenone
+539,Epoetin Alfa
+540,Epoprostenol
+541,Eprosartan Mesilate
+542,"Eprosartan Mesilate, Hydrochlorothiazide"
+543,Erdosteine
+544,Ergometrine Maleate
+545,"Ergotamine Tartrate, Anhydrous Caffeine"
+546,Eribulin
+547,Erlotinib
+548,Ertapenem
+549,Erythromycin
+550,"Erythromycin, Benzoyl Peroxide"
+551,"Erythromycin, Isotretinoin"
+552,"Erythromycin, Tretinoin"
+553,"Erythromycin, Zinc Acetate"
+554,Escitalopram
+555,Escitalopram Oxalate
+556,Eslicarbazepine Acetate
+557,Esmolol Hydrochloride
+558,Esomeprazole
+559,Esomeprazole Magnesium Trihydrate
+560,Estradiol
+561,Estradiol Hemihydrate
+562,Estradiol Valerate
+563,"Estradiol Valerate, Norgestrel"
+564,Estriol
+565,Ethanol (96 Per Cent)
+566,Ethanol (96% Denatured With Mek)
+567,Ethanol 70% (V/V)
+568,"Ethinylestradiol, Etonogestrel"
+569,Ethyl Esters Of Iodised Fatty Acids From Poppyseed Oil
+570,"Ethylenediamine-N,n'-Diacetic Acid"
+571,Etidronate Disodium
+572,Etofenamate
+573,Etoposide
+574,Etoricoxib
+575,"Eucalyptus Oil, Turpentine Oil, Larix Decidua Resin"
+576,Everolimus
+577,Exametazime
+578,Exemestane
+579,"Extract Of Iberis Amara (1 : 1.5 - 2.5), Extracting Agent: Ethanol 50 % (V/V), Liquid Extract Of Car"
+580,Ezetimibe
+581,"Ezetimibe, Rosuvastatin"
+582,"Ezetimibe, Rosuvastatin Calcium"
+583,"Ezetimibe, Rosuvastatin Zinc"
+584,Factor Viii Inhibitor Bypassing Fraction
+585,Famciclovir
+586,Famotidine
+587,Fampridine
+588,Febuxostat
+589,Felodipine
+590,Fenofibrate
+591,Fentanyl
+592,Fentanyl Citrate
+593,Fenticonazole Nitrate
+594,Ferric Carboxymaltose
+595,Ferric Hydroxide Polymaltose Complex
+596,Ferrous (Ii) Glycine Sulfate Complex
+597,Ferrous Gluconate
+598,Ferrous Sulfate
+599,Fesoterodine
+600,Fesoterodine Fumarate
+601,Fexofenadine Hydrochloride
+602,Finasteride
+603,Fingolimod
+604,Fingolimod Hydrochloride
+605,Fish Oil
+606,"Fish Oil (Omega-3 Polyunsaturated Fatty Acids): Epa 17%, Dha 10%, Dpa 3%"
+607,Flecainide
+608,Flecainide Acetate
+609,Flucloxacillin
+610,Flucloxacillin Sodium Monohydrate
+611,Fluconazole
+612,Fludarabine Phosphate
+613,Fludeoxyglucose (18f)
+614,Fludrocortisone Acetate
+615,"Fludrocortisone Acetate, Polymyxin B Sulfate, Lidocaine Hydrochloride"
+616,"Fluid Extract From Ivy Leaves (1:1), Extracting Agent: Ethanol 70% (V/V), Liquid Extract From Thyme "
+617,Flumazenil
+618,Flunitrazepam
+619,Fluocinolone Acetonide
+620,"Fluocinolone Acetonide, Lidocaine Hydrochloride"
+621,Fluocinonide
+622,"Fluocortolone Pivalate, Anhydrous Lidocaine Hydrochloride"
+623,Fluorescein Sodium
+624,"Fluorescein Sodium, Lidocaine Hydrochloride"
+625,Fluoride
+626,Fluorocholine (18f)
+627,Fluorometholone
+628,Fluorothymidine F-18
+629,Fluorouracil
+630,"Fluorouracil, Salicylic Acid"
+631,Fluoxetine
+632,Fluoxetine Hydrochloride
+633,"Fluprednidene Acetate, Miconazole Nitrate"
+634,Flurbiprofen
+635,Flurbiprofen Ph. Eur.
+636,Flurbiprofen Sodium
+637,Flutamide
+638,Fluticasone Propionate
+639,"Fluticasone Propionate, Salmeterol"
+640,"Fluticasone Propionate, Salmeterol Xinafoate"
+641,Flutrimazole
+642,Fluvastatin Sodium
+643,Fluvoxamine Maleate
+644,Folic Acid
+645,"Folic Acid, Anhydrous"
+646,"Folic Acid, Dried Ferrous Sulfate"
+647,"Folic Acid, Ferric Hydroxide Polymaltose Complex"
+648,"Folic Acid, Ferrous Sulfate"
+649,Formoterol Fumarate
+650,Formoterol Fumarate Dihydrate
+651,"Formoterol Fumarate Dihydrate, Beclometasone Dipropionate Anhydrous"
+652,"Foscarbidopa, Foslevodopa"
+653,Foscarnet Sodium Hexahydrate
+654,Fosfomycin
+655,Fosfomycin Trometamol
+656,Fosinopril Sodium
+657,Frovatriptan
+658,Fulvestrant
+659,Furosemide
+660,Furosemide Sodium
+661,Fusidic Acid
+662,Fusidic Acid Hemihydrate
+663,"Fusidic Acid, Betamethasone"
+664,"Fusidic Acid, Hydrocortisone Acetate"
+665,"Fusidic Acid, Triamcinolone Acetonide"
+666,Gabapentin
+667,Gadobenate Dimeglumine
+668,Gadobutrol
+669,Gadodiamide
+670,Gadoteric Acid
+671,Gadoteridol
+672,"Gadoxetic Acid, Disodium"
+673,Galantamine
+674,Galantamine Hydrobromide
+675,Gallium (67ga) Citrate
+676,Ganciclovir
+677,Ganirelix
+678,Gefitinib
+679,Gemcitabine
+680,Gemfibrozil
+681,Gentamicin
+682,"Gentamicin Sulfate, Dexamethasone"
+683,"Gentamicin, Betamethasone, Clotrimazole"
+684,Germanium (68ge) Chloride
+685,Glatiramer Acetate
+686,Glibenclamide
+687,Gliclazide
+688,Glimepiride
+689,Glucagon
+690,Glucosamine Hydrochloride
+691,Glucosamine Sulfate
+692,Glucosamine Sulfate Sodium Chloride
+693,Glucose
+694,Glucose Monohydrate
+695,"Glucose, Anhydrous"
+696,"Glucose, Anhydrous, Sodium Hydrogen Carbonate, Magnesium Chloride Hexahydrate, Potassium Chloride, S"
+697,Glycerol
+698,Glyceryl Trinitrate
+699,"Glycine, Calcium Carbonate"
+700,"Glycine, Magnesium Chloride Hexahydrate, Potassium Chloride, Calcium Chloride Dihydrate, L-Lysine Ac"
+701,Glycopyrronium Bromide
+702,"Glycopyrronium Bromide, Neostigmine Methylsulfate"
+703,Goserelin
+704,Goserelin Acetate
+705,Gozetotide
+706,Granisetron
+707,Granisetron Hydrochloride
+708,Graphite
+709,Guaifenesin
+710,"Guaifenesin, Paracetamol, Phenylephrine"
+711,"Haemophilus Influenzae Type B Polysaccharide (Polyribosylribitol Phosphate), Diphtheria Toxoid, Teta"
+712,Haemophilus Type B Conjugate Vaccine (Tetanus Toxoid Conjugate)
+713,Haloperidol
+714,Haloperidol Decanoate
+715,Heparin Sodium
+716,"Heparin Sodium, Zinc Sulphate Monohydrate"
+717,Hepatitis A Virus (Inactivated ) Adsorbed On Aluminium Hydroxide Hydrated Produced On Human Diploid 
+718,"Hepatitis A Virus (Inactivated), Algeldrate"
+719,"Hepatitis B Surface Antigen (Rdna), Algeldrate"
+720,Hexamidine Diisetionate
+721,Hexaminolevulinate
+722,Hexetidine
+723,Homatropine Methylbromide
+724,Human Albumin As Macroaggregates
+725,Human Albumin Solution
+726,Human Alpha1-Proteinase Inhibitor
+727,Human Anti-D Immunoglobulin
+728,Human Chorionic Gonadotropin
+729,"Human Coagulation Factor Ix, Human Coagulation Factor Vii, Human Coagulation Factor Ii, Human Coagul"
+730,"Human Coagulation Factor Ix, Protein C, Human Coagulation Factor Vii, Protein S, Human Coagulation F"
+731,Human Coagulation Factor Viii
+732,"Human Coagulation Factor Viii, Human Von Willebrand Factor"
+733,Human Coagulation Factor Xiii
+734,Human Cytomegalovirus Immunoglobulin
+735,Human Fibrinogen
+736,Human Hepatitis B Immunoglobulin
+737,Human Normal Immunoglobulin
+738,Human Normal Immunoglobulin (Iv)
+739,Human Plasma Protein
+740,Human Serum Albumin
+741,Human Tetanus Immunoglobulin
+742,Human Von Willebrand Factor
 743,Hydrochlorothiazide
-744,Hydrocortisone
-745,Hydrocortisone Acetate
-746,Hydrocortisone Sodium Phosphate
-747,Hydrogen Carbonate
-748,Hydrogen Peroxide
-749,Hydrogen Phosphate
-750,Hydrotalcite
-751,Hydroxocobalamin
-752,Hydroxycarbamide
-753,Hydroxychloroquine Sulfate
-754,Hydroxyzine Dihydrochloride
-755,Hydroxyzine Hydrochloride
-756,Hynic-[d-Phe1
-757,Hyoscine Butylbromide
-758,Hyoscyamus Oil
-759,Hypericum Perforatum D2
-760,Hypericum Perforatum D6
-761,Hypromellose
-762,Ibandronic Acid
-763,Ibandronic Acid Monosodium Salt
-764,Ibuprofen
-765,Ibuprofen Lysine
-766,Ibuprofen Sodium
-767,Icodextrin
-768,Icosapent
-769,Icosapent Ethyl
-770,Idarubicin Hydrochloride
-771,Ifosfamide
-772,Iloprost
-773,Iloprost Trometamol
-774,Imatinib
-775,Imatinib Mesilate
-776,Imipenem
-777,Imipenem Monohydrate
-778,Imiquimod
-779,Immunoglobulin A
-780,Immunoglobulin G
-781,Immunoglobulin M
-782,Inactivated
-783,Inactivated Hepatitis A Virus (Gbm Strain)
-784,Indapamide
-785,Indigo Carmine
-786,Indium (111in)
-787,Indium (111in) Pentetate
-788,Indium In-111 Pentetreotide
-789,Indometacin
-790,Influenza A Virus
-791,Influenza A/Victoria/4897/2022 Ivr-238 (H1n1)
-792,Influenza Virus A/Thailand/8/2022 (H3n2) Ivr-237-Like Strain (A/Thailand/8/2022)
-793,Influenza Virus B/Austria/1359417/2021-Like Strain (B/Austria/1359417/2021
-794,Influenza Virus B/Michigan/01/2021
+744,"Hydrochlorothiazide, Benazepril Hydrochloride"
+745,"Hydrochlorothiazide, Candesartan Cilexetil"
+746,"Hydrochlorothiazide, Irbesartan"
+747,"Hydrochlorothiazide, Lisinopril Anhydrous"
+748,"Hydrochlorothiazide, Losartan"
+749,"Hydrochlorothiazide, Nebivolol"
+750,"Hydrochlorothiazide, Ramipril"
+751,"Hydrochlorothiazide, Ramipril, Amlodipine Besilate"
+752,Hydrocortisone
+753,"Hydrocortisone Acetate, Lidocaine"
+754,Hydrocortisone Sodium Phosphate
+755,"Hydrocortisone, Lidocaine"
+756,"Hydrocortisone, Oxytetracycline"
+757,Hydrogen Peroxide
+758,Hydrotalcite
+759,Hydroxocobalamin
+760,Hydroxycarbamide
+761,Hydroxychloroquine Sulfate
+762,Hydroxyzine Dihydrochloride
+763,Hydroxyzine Hydrochloride
+764,"Hynic-[d-Phe1,tyr3-Octreotide]*tfa"
+765,Hyoscine Butylbromide
+766,Hyoscyamus Oil
+767,Hypromellose
+768,Ibandronic Acid
+769,"Ibandronic Acid Monosodium Salt, Monohydrate"
+770,Ibuprofen
+771,Ibuprofen Lysine
+772,Ibuprofen Sodium
+773,"Ibuprofen, Caffeine"
+774,"Ibuprofen, Codeine Phosphate Hemihydrate"
+775,"Ibuprofen, Paracetamol"
+776,"Icosapent Ethyl, Docosahexaenoic Acid Ethyl Ester"
+777,Idarubicin Hydrochloride
+778,Ifosfamide
+779,Iloprost
+780,Iloprost Trometamol
+781,Imatinib
+782,Imatinib Mesilate
+783,Imiquimod
+784,"Immunoglobulin A, Immunoglobulin G, Immunoglobulin M"
+785,Indapamide
+786,"Indapamide, Amlodipine Besilate, Perindopril Arginine"
+787,"Indapamide, Perindopril Arginine"
+788,Indigo Carmine
+789,Indium (111in)
+790,"Indium (111in) Pentetate, Calcium Trisodium Pentetate"
+791,Indium In-111 Pentetreotide
+792,Indometacin
+793,"Influenza Virus B/Austria/1359417/2021-Like Strain (B/Austria/1359417/2021, Bvr-26), Influenza A/Vic"
+794,"Influenza Virus B/Michigan/01/2021, Influenza A/Victoria/4897/2022 Ivr-238 (H1n1), Inactivated, Infl"
 795,Insulin Human
 796,Insulin Human (Rdna)
 797,Iobenguane (131i)
 798,Iobitridol
-799,Iodinated
-800,Iodine
-801,Iodixanol
-802,Iohexol
-803,Iomeprol
-804,Ion (Fe3+)
-805,Iopamidol
-806,Iopromide
-807,Ioversol
-808,Ipratropium Bromide
-809,Ipratropium Bromide Anhydrous
-810,Ipratropium Bromide Monohydrate
-811,Irbesartan
-812,Irinotecan Hydrochloride
-813,Irinotecan Hydrochloride Trihydrate
-814,Iron
-815,Iron Oxide Red (E172)
-816,Iron Protein Acetyl Aspartate
-817,Iron Protein Succinylate
+799,Iodine
+800,Iodixanol
+801,Iohexol
+802,Iomeprol
+803,Iopamidol
+804,Iopromide
+805,Ioversol
+806,Ipratropium Bromide
+807,Ipratropium Bromide Anhydrous
+808,"Ipratropium Bromide, Salbutamol"
+809,Irbesartan
+810,Irinotecan Hydrochloride
+811,Irinotecan Hydrochloride Trihydrate
+812,Iron
+813,Iron Oxide Red (E172)
+814,Iron Protein Acetyl Aspartate
+815,Iron Protein Succinylate
+816,"Iron Protein Succinylate, Calcium Folinate Hydrate"
+817,"Iron Protein Succinylate, Calcium Folinate Pentahydrate"
 818,Iron Sucrose
 819,Iron(Iii) Ion
-820,Isoconazole Nitrate
-821,Isoleucine
+820,"Iron, Ion (Fe3+)"
+821,Isoconazole Nitrate
 822,Isoniazid
-823,Isoprenaline Hydrochloride
-824,Isopropyl Alcohol
-825,Isosorbide 5 Mononitrate
-826,Isosorbide Dinitrate
-827,Isosorbide Mononitrate
-828,Isotretinoin
-829,Itopride Hydrochloride
-830,Itraconazole
-831,Ivabradine
-832,Ivabradine Hydrochloride
-833,Ivacaftor
-834,Ivermectin
-835,Ivr-238)
-836,Ivy Leaves
-837,Juglans Regia Dil. D3
-838,Ketoconazole
-839,Ketoprofen
-840,Ketoprofen Lysine
-841,Ketorolac Trometamol
-842,Ketotifen
-843,Ketotifen Hydrogen Fumarate
-844,L-Alanine
-845,L-Arginine
-846,L-Aspartic Acid
-847,L-Cysteine
-848,L-Cysteine Hydrochloride Monohydrate
-849,L-Glutamic Acid
-850,L-Histidine
-851,L-Isoleucine
-852,L-Leucine
-853,L-Lysine
-854,L-Lysine Acetate
-855,L-Lysine Hydrochloride
-856,L-Methionine
-857,L-Ornithine Hydrochloride
-858,L-Phenylalanine
-859,L-Proline
-860,L-Serine
-861,L-Threonine
-862,L-Tryptophan
-863,L-Tyrosine
-864,L-Valine
-865,Lacidipine
-866,Lacosamide
-867,Lactic Acid
-868,Lactitol Monohydrate
-869,Lactobacillus Gasseri Dsm 14869
-870,Lactobacillus Plantarum P 17630
-871,Lactobacillus Rhamnosus Dsm 14870
-872,Lactose Anhydrous
-873,Lactose Monohydrate
-874,Lactulose
-875,Lamivudine
-876,Lamotrigine
-877,Landiolol Hydrochloride
-878,Lanolin
-879,Lanreotide
-880,Lansoprazole
-881,Lanthanum
-882,Larix Decidua Resin
-883,Latanoprost
-884,Lavender Oil
-885,Leflunomide
-886,Lenalidomide
-887,Lenvatinib
-888,Lercanidipine Hydrochloride
-889,Letrozole
-890,Leucine
-891,Leuprorelin
-892,Leuprorelin Acetate
-893,Levetiracetam
-894,Levocabastine
-895,Levocarnitine
-896,Levocarnitine Tartrate
-897,Levocetirizine Dihydrochloride
-898,Levodopa
-899,Levodropropizine
-900,Levofloxacin
-901,Levofloxacin Hemihydrate
-902,Levoleucovorin
-903,Levomenthol
-904,Levomepromazine Maleate
-905,Levonorgestrel
-906,Levosimendan
-907,Levothyroxine Sodium
-908,Levothyroxinum D12
-909,Lidocaine
-910,Lidocaine Hydrochloride
-911,Lidocaine Hydrochloride Monohydrate
-912,Light
-913,Linagliptin
-914,Lincomycin
-915,Linezolid
-916,Liothyronine Sodium
-917,Lipidosterolic Extract Of Serenoa Repens
-918,Liposome
-919,Liquid (Crystallising)
-920,Liquid Extract From Gentian Root
-921,Liquid Extract From Liquorice Root (1:2
-922,Liquid Extract From Marshmallow Root (Der 1:12-14)
-923,Liquid Extract From Melissa Leaf (1:2
-924,Liquid Extract From Thyme Herb (Der 1:2-2
-925,Liquid Extract Of Caraway Fruit (1 : 2.5 - 3.5)
-926,Liquid Extract Of Matricaria Flower (1 : 2 - 4)
-927,Liquid Extract Of Peppermint Leaf (1 : 2.5 - 3.5)
-928,Liquid Paraffin
-929,Lisinopril
-930,Lisinopril Anhydrous
-931,Lisinopril Dihydrate
-932,Lithium Carbonate
-933,Loperamide Hydrochloride
-934,Loratadine
-935,Lorazepam
-936,Lornoxicam
-937,Losartan
-938,Losartan Potassium
-939,Loteprednol Etabonate
-940,Lovage Root
-941,Lovastatin
-942,Lurasidone
-943,Lurasidone Hydrochloride
-944,Luteinising Hormone (Human)
-945,Lutetium (177lu) Zadavotide Guraxetan
-946,Lyophilized Bacterial Lysates
-947,Lyophilized Bacterial Lysates Of: Haemophilus Influenzae Streptococcus (Diplococcus) Pneumoniae Kleb
-948,Lysine
-949,Lysine Acetate
-950,Lysine Hydrochloride
-951,Lysine Monohydrate
-952,Lysozyme Hydrochloride
-953,Macitentan
-954,Macrogol 3350
-955,Macrogol 4000
-956,Magaldrate Anhydrous
-957,Magnesium
-958,Magnesium Acetate Tetrahydrate
-959,Magnesium Aspartate Dihydrate
-960,Magnesium Carbonate Heavy
-961,Magnesium Chloride
-962,Magnesium Chloride Hexahydrate
-963,Magnesium Citrate
-964,Magnesium Glycerophosphate
-965,Magnesium Hydroxide
-966,Magnesium L-Aspartate Hydrochloride Trihydrate
-967,Magnesium Oxide
-968,Magnesium Pidolate
-969,Magnesium Sulfate
-970,Magnesium Sulfate Heptahydrate
-971,Manganese Chloride Tetrahydrate
-972,Manidipine Dihydrochloride
-973,Mannitol
-974,Maprotiline Hydrochloride
-975,Marshmallow Root Powdered
-976,Matricaria Recutita D3
-977,Matricaria Recutita Mother Tincture
-978,Matricariae Flos
-979,Measles Virus Schwarz Strain (Live
-980,Mebendazole
-981,Mebeverine Hydrochloride
-982,Mecetronium Etilsulfate
-983,Meclozine Hydrochloride
-984,Medium Chain
-985,Medronate Tetrasodium
-986,Mefenamic Acid
-987,Megestrol Acetate
-988,Meglumine Amidotrizoate
-989,Melatonin
-990,Meloxicam
-991,Melphalan
-992,Memantine Hydrochloride
-993,Menotrophin
-994,Menthol
-995,Mepivacaine Hydrochloride
-996,Mequinol
-997,Mercurius Solubilis Hahnemanni D 8
-998,Mercurius Solubilis Hahnemanni D6
-999,Meropenem
-1000,Meropenem Anhydrous
-1001,Meropenem Trihydrate
-1002,Mesalazine
-1003,Mesna
-1004,Mesterolone
-1005,Metamizole Sodium Monohydrate
-1006,Metformin Hydrochloride
-1007,Methadone Hydrochloride
-1008,Methionine
-1009,Methotrexate
-1010,Methotrexate Sodium
-1011,Methoxsalen
-1012,Methyl Aminolevulinate
-1013,Methyl Salicylate
-1014,Methylergometrine Maleate
-1015,Methylphenidate Hydrochloride
-1016,Methylprednisolone
-1017,Methylprednisolone Aceponate
-1018,Metoclopramide
-1019,Metoclopramide Hydrochloride
-1020,Metoclopramide Hydrochloride Monohydrate
-1021,Metoprolol Succinate
-1022,Metoprolol Tartrate
-1023,Metronidazole
-1024,Metronidazole Benzoate
-1025,Metyrapone
-1026,Micafungin
-1027,Micafungin Sodium
-1028,Miconazole
-1029,Miconazole Nitrate
-1030,Micronised
-1031,Micronised Purified Flavonoic Fraction
-1032,Micronized
-1033,Midazolam
-1034,Midazolam Hydrochloride
-1035,Midodrine Hydrochloride
-1036,Mifepristone
-1037,Milrinone
-1038,Minocycline
-1039,Minocycline Hydrochloride
-1040,Minoxidil
-1041,Mirabegron
-1042,Mirtazapine
-1043,Misoprostol
-1044,Mitoxantrone
-1045,Mizolastine
-1046,Modafinil
-1047,Mometasone Furoate
-1048,Monohydrate
-1049,Montelukast
-1050,Montelukast Sodium
-1051,Moxifloxacin
-1052,Moxifloxacin Hydrochloride
-1053,Moxonidine
-1054,Mumps Virus Rit 4385 Strain (Live
-1055,Mupirocin
-1056,Mupirocin Calcium
-1057,Mycobacterium Bovis
-1058,Mycophenolic Acid
-1059,Myosotis Arvensis D3
-1060,Myrtecaine
-1061,N. Meningitidis Group C (Strain C11) Polysaccharide (De-O-Acetylated) Conjugated To Tetanus Toxoid
-1062,Nabumetone
-1063,Nadroparin Calcium
-1064,Nalbuphine Hydrochloride
-1065,Naloxone
-1066,Naloxone Hydrochloride
-1067,Nandrolone Decanoate
-1068,Naphazoline Nitrate
-1069,Naproxen
-1070,Naproxen Sodium
-1071,Naratriptan
-1072,Nasturtium Officinale D4
-1073,Natrium Sulfuricum D4
-1074,Nebivolol
-1075,Nebivolol Hydrochloride
-1076,Neomycin
-1077,Neomycin Sulfate
-1078,Neostigmine Methylsulfate
-1079,Nevirapine
-1080,Nicotinamide
-1081,Nicotine
-1082,Nicotine Polacrilex
-1083,Nicotine Resinate
-1084,Nicotinic Acid
-1085,Nifedipine
-1086,Niflumic Acid
-1087,Nifuroxazide
-1088,Nilotinib
-1089,Nimesulide
-1090,Nimodipine
-1091,Nintedanib
-1092,Nintedanib Esylate
-1093,Nitrendipine
-1094,Nitric Oxide
-1095,Nitrofurantoin
-1096,Nitrous Oxide
-1097,Noradrenaline Tartrate
-1098,Norepinephrine
-1099,Norethisterone Acetate
-1100,Norfloxacin
-1101,Norgestrel
-1102,Nystatin
-1103,O-(ß-Hydroxyethyl)rutosides
-1104,Oak Bark Powdered
-1105,Octenidine Dihydrochloride
-1106,Octreotide
-1107,Ofloxacin
-1108,Olanzapine
-1109,Olanzapine Micronized
-1110,Olive Oil
-1111,Olmesartan
-1112,Olmesartan Medoxomil
-1113,Olodaterol
-1114,Olopatadine
-1115,Omega-3-Acid Ethyl Esters 90
-1116,Omega-3-Acid Triglycerides
-1117,Omeprazole
-1118,Omeprazole Sodium
-1119,Ondansetron
-1120,Ondansetron Hydrochloride
-1121,Ondansetron Hydrochloride Dihydrate
-1122,Ornithine Hydrochloride
-1123,Orphenadrine Citrate
-1124,Orphenadrine Hydrochloride
-1125,Otilonium Bromide
-1126,Oxaliplatin
-1127,Oxaprozin
-1128,Oxcarbazepine
-1129,Oxybutynin Hydrochloride
-1130,Oxycodone Hydrochloride
-1131,Oxygen
-1132,Oxymetazoline Hydrochloride
-1133,Oxytetracycline
-1134,Oxytocin
-1135,Oxytocin Synthetic
-1136,Paclitaxel
-1137,Paliperidone
-1138,Paliperidone Palmitate
-1139,Palonosetron
-1140,Pancreas Powder
-1141,Pantoprazole
-1142,Pantoprazole Sodium
-1143,Pantoprazole Sodium Sesquihydrate
-1144,Pantothenate Sodium
-1145,Pantothenic Acid
-1146,Pantothenol
-1147,Papain
-1148,Paracetamol
-1149,Paracetamol Ph. Eur.
-1150,Parecoxib
-1151,Parecoxib Sodium
-1152,Paricalcitol
-1153,Paroxetine
-1154,Passiflora Incarnata D2
-1155,Passiflora Incarnata Dry Extract
-1156,Pazopanib
-1157,Pazopanib Hydrochloride
-1158,Pefloxacin Mesilate
-1159,Pemetrexed
-1160,Penciclovir
-1161,Pentetic Acid
-1162,Pentostatin
-1163,Pentoxifylline
-1164,Peppermint Oil
-1165,Perampanel
-1166,Perindopril Arginine
-1167,Perindopril Tert-Butylamine
-1168,Perphenazine
-1169,Pertechnetate (99mtc) Sodium
-1170,Pertussis Filamentous Haemagglutinin
-1171,Pertussis Filamentous Haemagglutinin Adsorbed On Aluminium Hydroxide
-1172,Pertussis Filamentous Haemagglutinin On Aluminium Hydroxide
-1173,Pertussis Fimbrial Agglutinogens (Fim) 2 And 3
-1174,Pertussis Pertactin
-1175,Pertussis Pertactin Adsorbed On Aluminium Hydroxide
-1176,Pertussis Toxoid
-1177,Pertussis Toxoid Adsorbed On Aluminium Hydroxide
-1178,Petroleum Rectificatum D8
-1179,Pheniramine Maleate
-1180,Phenobarbital
-1181,Phenothrin
-1182,Phenoxyethanol
-1183,Phentermine
-1184,Phenylalanine
-1185,Phenylephrine
-1186,Phenylephrine Hydrochloride
-1187,Phenytoin
-1188,Phenytoin Sodium
-1189,Phytomenadione
-1190,Pilocarpine Hydrochloride
-1191,Pimecrolimus
-1192,Pimozide
-1193,Pinaverium Bromide
-1194,Pinus Sylvestris D4
-1195,Pioglitazone
-1196,Pioglitazone Hydrochloride
-1197,Pipamperone Hydrochloride
-1198,Piperacillin
-1199,Piperacillin Sodium
-1200,Piracetam
-1201,Pirfenidone
-1202,Piroxicam
-1203,Piroxicam Betadex
-1204,Piroxicam Cinnamate
-1205,Pitavastatin
-1206,Pitavastatin Calcium
-1207,Pivmecillinam Hydrochloride
-1208,Pneumococcal Polysaccharide Serotype 1
-1209,Pneumococcal Polysaccharide Serotype 10a
-1210,Pneumococcal Polysaccharide Serotype 11a
-1211,Pneumococcal Polysaccharide Serotype 12f
-1212,Pneumococcal Polysaccharide Serotype 14
-1213,Pneumococcal Polysaccharide Serotype 15b
-1214,Pneumococcal Polysaccharide Serotype 17f
-1215,Pneumococcal Polysaccharide Serotype 18c
-1216,Pneumococcal Polysaccharide Serotype 19a
-1217,Pneumococcal Polysaccharide Serotype 19f
-1218,Pneumococcal Polysaccharide Serotype 2
-1219,Pneumococcal Polysaccharide Serotype 20
-1220,Pneumococcal Polysaccharide Serotype 22f
-1221,Pneumococcal Polysaccharide Serotype 23f
-1222,Pneumococcal Polysaccharide Serotype 3
-1223,Pneumococcal Polysaccharide Serotype 33f
-1224,Pneumococcal Polysaccharide Serotype 4
-1225,Pneumococcal Polysaccharide Serotype 5
-1226,Pneumococcal Polysaccharide Serotype 6b
-1227,Pneumococcal Polysaccharide Serotype 7f
-1228,Pneumococcal Polysaccharide Serotype 8
-1229,Pneumococcal Polysaccharide Serotype 9n
-1230,Pneumococcal Polysaccharide Serotype 9v
-1231,Poliovirus (Inactivated) Type 1 (Mahoney Strain)
-1232,Poliovirus (Inactivated) Type 1 (Mahoney Strain) Produced On Vero Cells
-1233,Poliovirus (Inactivated) Type 2 (Mef-1 Strain)
-1234,Poliovirus (Inactivated) Type 2 (Mef-1 Strain) Produced On Vero Cells
-1235,Poliovirus (Inactivated) Type 3 (Saukett Strain)
-1236,Poliovirus (Inactivated) Type 3 (Saukett Strain) Produced On Vero Cells
-1237,Poliovirus Type 1
-1238,Poly(Vinyl Alcohol)
-1239,Polymyxin B
-1240,Polymyxin B Sulfate
-1241,Pomalidomide
-1242,Poractant Alfa
-1243,Posaconazole
-1244,Potassium
-1245,Potassium Acetate
-1246,Potassium Chloride
-1247,Potassium Citrate
-1248,Potassium Clavulanate
-1249,Potassium Gluconate
-1250,Potassium Hydrogen Carbonate
-1251,Potassium Hydroxide
-1252,Potassium Iodide
-1253,Potassium Ion
-1254,Potassium Sulphate
-1255,Povidone
-1256,Powder
-1257,Pramipexole
-1258,Pramipexole Dihydrochloride
-1259,Pramipexole Dihydrochloride Monohydrate
-1260,Prasugrel
-1261,Pravastatin
-1262,Pravastatin Sodium
-1263,Prednisolone
-1264,Prednisolone Caproate
-1265,Prednisolone Sodium Phosphate
-1266,Prednisolone Sodium Phosphate Ph. Eur.
-1267,Pregabalin
-1268,Prilocaine
-1269,Primula Flower With Calyx (1:3:3:3:3) (Der 1:5.6)
-1270,Primula Flowers
-1271,Procaine Hydrochloride
-1272,Progesterone
-1273,Proguanil Hydrochloride
-1274,Proline
-1275,Promethazine Hydrochloride
-1276,Propafenone Hydrochloride
-1277,Propanol
-1278,Propiverine Hydrochloride
-1279,Propofol
-1280,Propranolol
-1281,Propylthiouracil
-1282,Protamine Sulfate
-1283,Protein C
-1284,Protein S
-1285,Proxymetacaine Hydrochloride
-1286,Prucalopride
-1287,Prulifloxacin
-1288,Pseudoephedrine Hydrochloride
-1289,Pseudoephedrine Sulphate
-1290,Purified
-1291,Pyrazinamide
-1292,Pyridostigmine Bromide
-1293,Pyridoxine Hydrochloride
-1294,Quetiapine
-1295,Quetiapine Fumarate
-1296,Quinagolide
-1297,Rabbit
-1298,Rabeprazole Sodium
-1299,Racecadotril
-1300,Racementhol
-1301,Racemic
-1302,Raloxifene Hydrochloride
-1303,Raltegravir
-1304,Ramipril
-1305,Ranitidine
-1306,Ranitidine Hydrochloride
-1307,Ranolazine
-1308,Rasagiline
-1309,Rasagiline Tartrate
-1310,Refined
-1311,Refined Olive Oil And Refined Soya Oil
-1312,Remifentanil
-1313,Repaglinide
-1314,Retinol
-1315,Retinol Palmitate
-1316,Rhubarb Extract
-1317,Rhus Toxicodendron D2
-1318,Riboflavin
-1319,Riboflavin Sodium Phosphate
-1320,Riboflavin Sodium Phosphate Dihydrate
-1321,Rich In Omega-3-Acids
-1322,Rifampicin
-1323,Rifamycin Sodium
-1324,Rifaximin
-1325,Riluzole
-1326,Risedronate Monosodium Hemi-Pentahydrate
-1327,Risedronate Sodium
-1328,Risedronic Acid
-1329,Risperidone
-1330,Rivaroxaban
-1331,Rivastigmine
-1332,Rivastigmine Hydrogen Tartrate
-1333,Rizatriptan Benzoate
-1334,Rocuronium Bromide
-1335,Roflumilast
-1336,Ropinirole
-1337,Ropivacaine Hydrochloride
-1338,Ropivacaine Hydrochloride Monohydrate
-1339,Rosemary Leaf
-1340,Rosuvastatin
-1341,Rosuvastatin Calcium
-1342,Rosuvastatin Zinc
-1343,Roxithromycin
-1344,Rubella Virus Wistar Ra 27/3 Strain (Live
-1345,Rupatadine
-1346,Saccharomyces Boulardii cncm I-745 Lyophilized
-1347,Sacubitril
-1348,Salbutamol
-1349,Salbutamol Sulfate
-1350,Salicylic Acid
-1351,Salmeterol
-1352,Salmeterol Xinafoate
-1353,Sanguinaria Canadensis D2
-1354,Sanguinaria Canadensis D4
-1355,Scrophularia Nodosa D3
-1356,Selegiline Hydrochloride
-1357,Selexipag
-1358,Senna Leaf Powder
-1359,Sennae Folium
-1360,Sennoside A+b
-1361,Serine
-1362,Serrapeptase
-1363,Sertindole
-1364,Sertraline
-1365,Sertraline Hydrochloride
-1366,Sevelamer Carbonate
-1367,Sevelamer Hydrochloride
-1368,Sevoflurane
-1369,Shark-Liver Oil
-1370,Sildenafil
-1371,Sildenafil Citrate
-1372,Simeticone
-1373,Simvastatin
-1374,Sitagliptin
-1375,Sitagliptin Hydrochloride
-1376,Sitagliptin Hydrochloride Monohydrate
-1377,Smilax Utilis D6
-1378,Sobrerol
-1379,Sodium
-1380,Sodium (S)-Lactate Solution
-1381,Sodium Acetate
-1382,Sodium Acetate Trihydrate
-1383,Sodium Alginate
-1384,Sodium Amidotrizoate
-1385,Sodium Ascorbate
-1386,Sodium Chloride
-1387,Sodium Citrate
-1388,Sodium Citrate Dihydrate
-1389,Sodium Cromoglicate
-1390,Sodium Dihydrogen Phosphate Dihydrate
-1391,Sodium Dihydrogen Phosphate Monohydrate
-1392,Sodium Fluoride
-1393,Sodium Fluoride (18f)
-1394,Sodium Fusidate
-1395,Sodium Gluconate
-1396,Sodium Glycerophosphate
-1397,Sodium Glycerophosphate Anhydrous
-1398,Sodium Glycerophosphate Hydrate
-1399,Sodium Glycerophosphate Pentahydrate
-1400,Sodium Hyaluronate
-1401,Sodium Hydrogen Carbonate
-1402,Sodium Hydrogen Carbonate Solution (0.2 M)
-1403,Sodium Hydroxide
-1404,Sodium Iodide
-1405,Sodium Iodide (131i)
-1406,Sodium Ion
-1407,Sodium Lactate
-1408,Sodium Lactate Solution
-1409,Sodium Lauryl Sulfoacetate 70%
-1410,Sodium Molybdate (99mo)
-1411,Sodium Molybdate Dihydrate
-1412,Sodium Nicotinate
-1413,Sodium Oxybate
-1414,Sodium Phosphate Dibasic Heptahydrate
-1415,Sodium Picosulfate
-1416,Sodium Selenite
-1417,Sodium Selenite Anhydrous
-1418,Sodium Sulfate Anhydrous
-1419,Sodium Valproate
-1420,Sodium-L-Lactate
-1421,Solanum Dulcamara D2
-1422,Solifenacin
-1423,Solifenacin Succinate
-1424,Somatostatin
-1425,Somatropin
-1426,Sorafenib
-1427,Sorbitol
-1428,Sorrel Herb
-1429,Sotalol Hydrochloride
-1430,Soya Oil
-1431,Soya-Bean Oil Refined
-1432,Spiramycin
-1433,Spironolactone
-1434,Stannous Chloride
-1435,Strain Brunhilde
-1436,Succinylated Gelatin
-1437,Sucralfate
-1438,Sugammadex
-1439,Sugammadex Sodium
-1440,Sulbactam
-1441,Sulfadiazine Silver
-1442,Sulfamethoxazole
-1443,Sulfametrole
-1444,Sulfasalazine
-1445,Sulfur D10
-1446,Sulfur D4
-1447,Sulfur D6
-1448,Sulpiride
-1449,Sultamicillin Tosilate
-1450,Sumatriptan
-1451,Sumatriptan Succinate
-1452,Sunitinib
-1453,Suxamethonium Chloride
-1454,Symphytum Officinale D4
-1455,Symphytum Officinale D8
-1456,Tacrolimus
-1457,Tacrolimus Monohydrate
-1458,Tadalafil
-1459,Tafluprost
-1460,Tamarind Extract
-1461,Tamoxifen
-1462,Tamoxifen Citrate
-1463,Tamsulosin Hydrochloride
-1464,Tanacetum Parthenium (L.) Schultz Bip.
-1465,Tapentadol
-1466,Tapentadol Hydrochloride
-1467,Tartaric Acid
-1468,Taurine
-1469,Tauroselcholic Acid Se-75
-1470,Tazobactam
-1471,Tazobactam Sodium
-1472,Technetium (99mtc)
-1473,Teicoplanin
-1474,Telmisartan
-1475,Temozolomide
-1476,Tenofovir Disoproxil
-1477,Tenofovir Disoproxil Fumarate
-1478,Tenofovir Disoproxil Succinate
-1479,Tenoxicam
-1480,Terazosin
-1481,Terbinafine
-1482,Terbinafine Hydrochloride
-1483,Terebinthina Laricina
-1484,Terebinthinae Aetheroleum Rectificatum
-1485,Teriflunomide
-1486,Teriparatide
-1487,Terlipressin Acetate
-1488,Testosterone
-1489,Testosterone Enantate
-1490,Testosterone Undecanoate
-1491,Tetanus Toxoid
-1492,Tetanus Toxoid Adsorbed On Aluminium Hydroxide
-1493,Tetrabenazine
-1494,Tetracaine
-1495,Tetracaine Hydrochloride
-1496,Tetracycline Hydrochloride
-1497,Tetrafluoroborate
-1498,Tetrasodium Salt (Dpd)
-1499,Tetrofosmin
-1500,Tetryzoline Hydrochloride
-1501,Teucrium Scorodonia D3
-1502,Thallium (201tl) Chloride
-1503,Theophylline Anhydrous
-1504,Theophylline Monohydrate
-1505,Thiamazole
-1506,Thiamine
-1507,Thiamine Hydrochloride
-1508,Thiamine Nitrate
-1509,Thiocolchicoside
-1510,Threonine
-1511,Thymol
-1512,Tianeptine Sodium
-1513,Tibolone
-1514,Ticagrelor
-1515,Tice
-1516,Ticlopidine Hydrochloride
-1517,Tigecycline
-1518,Timolol
-1519,Timolol Maleate
-1520,Tinzaparin
-1521,Tinzaparin Sodium
-1522,Tioconazole
-1523,Tiotropium
-1524,Tiotropium Bromide
-1525,Tiotropium Bromide Monohydrate
-1526,Tirofiban Hydrochloride Monohydrate
-1527,Tizanidine Hydrochloride
-1528,Tobramycin
-1529,Tocopheryl Acetate
-1530,Tolfenamic Acid
-1531,Tolterodine L-Tartrate
-1532,Tolterodine Tartrate
-1533,Tolvaptan
-1534,Topiramate
-1535,Topotecan
-1536,Topotecan Hydrochloride
-1537,Torasemide
-1538,Trabectedin
-1539,Tramadol Hydrochloride
-1540,Tramazoline Hydrochloride
-1541,Tramazoline Hydrochloride Monohydrate
-1542,Trandolapril
-1543,Tranexamic Acid
-1544,Travoprost
-1545,Trazodone Hydrochloride
-1546,Treosulfan
-1547,Treprostinil
-1548,Tretinoin
-1549,Triamcinolone Acetonide
-1550,Tribasic
-1551,Tribenoside
-1552,Triclosan
-1553,Trientine
-1554,Trientine Dihydrochloride
-1555,Trifarotene
-1556,Trifluoperazine
-1557,Triflusal
-1558,Triglycerides
-1559,Trimebutine
-1560,Trimebutine Maleate
-1561,Trimetazidine Dihydrochloride
-1562,Trimethoprim
-1563,Tripotassium Dicitratobismuthate
-1564,Triptorelin
-1565,Tropicamide
-1566,Tryptophan
-1567,Turpentine Oil
-1568,Tyrosine
-1569,Tyrothricin
-1570,Ulipristal Acetate
-1571,Undecylenic Acid
-1572,Urea
-1573,Urofollitropin
-1574,Ursodeoxycholic Acid
-1575,Valaciclovir
-1576,Valerian Root Dry Extract (3-6:1)
-1577,Valeriana Officinalis L. Root Ethanol Dry Extract
-1578,Valerianae Radix
-1579,Valganciclovir Hydrochloride
-1580,Valine
-1581,Valproic Acid
-1582,Valsartan
-1583,Vancomycin
-1584,Vancomycin Hydrochloride
-1585,Varicella Virus Oka Strain
-1586,Varicella Virus Oka/Merck Strain
-1587,Vecuronium Bromide
-1588,Venlafaxine
-1589,Venlafaxine Hydrochloride
-1590,Verapamil Hydrochloride
-1591,Verbena Herb
-1592,Veronica Officinalis D3
-1593,Vervaine Herb (1:3:3:3:3)
-1594,Vigabatrin
-1595,Vildagliptin
-1596,Vincetoxicum Hirundinaria D10
-1597,Vincetoxicum Hirundinaria D30
-1598,Vincetoxicum Hirundinaria D6
-1599,Vinorelbine
-1600,Vinorelbine Tartrate
-1601,Vitamin D
-1602,Voriconazole
-1603,Vortioxetine
-1604,Walnut Leaves Powdered
-1605,Water (1:20:70:109)
-1606,Water For Injection
-1607,Wild Type)
-1608,Xylometazoline Hydrochloride
-1609,Yeast Extract
-1610,Zanamivir
-1611,Zidovudine
-1612,Zinc Acetate
-1613,Zinc Acetate Dihydrate
-1614,Zinc Chloride
-1615,Zinc Sulphate
-1616,Zinc Sulphate Heptahydrate
-1617,Zinc Sulphate Monohydrate
-1618,Zincum Isovalerianicum D4
-1619,Ziprasidone
-1620,Zofenopril Calcium
-1621,Zoledronic Acid
-1622,Zoledronic Acid Monohydrate
-1623,Zolpidem Tartrate
-1624,Zopiclone
-1625,Zuclopenthixol Acetate
-1626,Zuclopenthixol Decanoate
-1627,Zuclopenthixol Hydrochloride
-1628,n'-Diacetic Acid
-1629,tyr3-Octreotide]*tfa
+823,"Isoniazid, Rifampicin"
+824,Isoprenaline Hydrochloride
+825,"Isopropyl Alcohol, 1-Propanol"
+826,Isosorbide 5 Mononitrate
+827,Isosorbide Dinitrate
+828,Isosorbide Mononitrate
+829,Isotretinoin
+830,Itopride Hydrochloride
+831,Itraconazole
+832,Ivabradine
+833,Ivabradine Hydrochloride
+834,Ivacaftor
+835,Ivermectin
+836,"Ivy Leaves, Dry Extract"
+837,Ketoconazole
+838,Ketoprofen
+839,Ketoprofen Lysine
+840,Ketorolac Trometamol
+841,Ketotifen
+842,Ketotifen Hydrogen Fumarate
+843,Lacidipine
+844,Lacosamide
+845,Lactitol Monohydrate
+846,"Lactobacillus Gasseri Dsm 14869, Lactobacillus Rhamnosus Dsm 14870"
+847,Lactobacillus Plantarum P 17630
+848,Lactose Anhydrous
+849,Lactose Monohydrate
+850,Lactulose
+851,Lamotrigine
+852,Landiolol Hydrochloride
+853,"Lanolin, Liquid Paraffin"
+854,Lanreotide
+855,Lansoprazole
+856,Lanthanum
+857,Latanoprost
+858,"Latanoprost, Timolol"
+859,Lavender Oil
+860,Leflunomide
+861,Lenalidomide
+862,Lenvatinib
+863,Lercanidipine Hydrochloride
+864,Letrozole
+865,Leuprorelin
+866,Leuprorelin Acetate
+867,Levetiracetam
+868,Levocabastine
+869,Levocarnitine
+870,Levocarnitine Tartrate
+871,Levocetirizine Dihydrochloride
+872,"Levodopa, Carbidopa Monohydrate"
+873,Levodropropizine
+874,Levofloxacin
+875,Levofloxacin Hemihydrate
+876,Levoleucovorin
+877,"Levomenthol, Camphor, Racemic, Methyl Salicylate, Tocopheryl Acetate"
+878,"Levomenthol, Methyl Salicylate"
+879,Levomepromazine Maleate
+880,Levonorgestrel
+881,Levosimendan
+882,Levothyroxine Sodium
+883,Lidocaine
+884,Lidocaine Hydrochloride
+885,Lidocaine Hydrochloride Monohydrate
+886,"Lidocaine Hydrochloride Monohydrate, Benzoxonium Chloride"
+887,"Lidocaine Hydrochloride Monohydrate, Ceftriaxone Disodium Salt Hemiheptahydrate"
+888,"Lidocaine Hydrochloride Monohydrate, Phenylephrine Hydrochloride, Tropicamide"
+889,"Lidocaine, Prilocaine"
+890,"Lidocaine, Tetracaine"
+891,"Lidocaine, Tribenoside"
+892,Linagliptin
+893,Lincomycin
+894,Linezolid
+895,Liothyronine Sodium
+896,"Liothyronine Sodium, Levothyroxine Sodium"
+897,Lipidosterolic Extract Of Serenoa Repens
+898,"Liquid Extract From Gentian Root, Verbena Herb, Common Sorrel Herb, Elder Flower, Primula Flower Wit"
+899,Liquid Paraffin
+900,Lisinopril
+901,Lisinopril Anhydrous
+902,Lisinopril Dihydrate
+903,Lithium Carbonate
+904,Loperamide Hydrochloride
+905,Loratadine
+906,"Loratadine, Pseudoephedrine Sulphate"
+907,Lorazepam
+908,Lornoxicam
+909,Losartan
+910,Losartan Potassium
+911,"Losartan Potassium, Hydrochlorothiazide"
+912,Loteprednol Etabonate
+913,Lovastatin
+914,Lurasidone
+915,Lurasidone Hydrochloride
+916,"Luteinising Hormone (Human), Follicle-Stimulating Hormone"
+917,Lutetium (177lu) Zadavotide Guraxetan
+918,Lyophilized Bacterial Lysates
+919,Lyophilized Bacterial Lysates Of: Haemophilus Influenzae Streptococcus (Diplococcus) Pneumoniae Kleb
+920,Macitentan
+921,Macrogol 4000
+922,Magaldrate Anhydrous
+923,Magnesium
+924,Magnesium Aspartate Dihydrate
+925,"Magnesium Aspartate Dihydrate, Magnesium Citrate"
+926,"Magnesium Carbonate Heavy, Calcium Acetate"
+927,"Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Calcium Chloride Dihydrate, Glu"
+928,"Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Calcium Chloride Dihydrate, Sod"
+929,"Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Glucose Monohydrate, Sodium Ace"
+930,"Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Glucose, Sodium Acetate Trihydr"
+931,"Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Sodium Acetate Trihydrate"
+932,"Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Sodium Acetate Trihydrate, Sodi"
+933,"Magnesium Chloride Hexahydrate, Sodium Chloride, Calcium Chloride Dihydrate, Glucose Monohydrate, So"
+934,"Magnesium Citrate, Magnesium Oxide"
+935,"Magnesium Glycerophosphate, Pyridoxine Hydrochloride"
+936,Magnesium Hydroxide
+937,"Magnesium Hydroxide, Aluminium Hydroxide"
+938,Magnesium L-Aspartate Hydrochloride Trihydrate
+939,Magnesium Oxide
+940,Magnesium Pidolate
+941,Magnesium Sulfate
+942,Magnesium Sulfate Heptahydrate
+943,"Magnesium Sulfate Heptahydrate, Sodium Sulfate Anhydrous, Potassium Sulphate"
+944,"Magnesium, Pyridoxine Hydrochloride"
+945,"Magnesium, Sodium Ion, Chloride Ion, Hydrogen Phosphate, Hydrogen Carbonate, Potassium Ion"
+946,Manidipine Dihydrochloride
+947,Mannitol
+948,Maprotiline Hydrochloride
+949,"Matricariae Flos, Achillea Millefolium L. Herba, Marshmallow Root Powdered, Oak Bark Powdered, Dande"
+950,"Measles Virus Schwarz Strain (Live, Attenuated), Mumps Virus Rit 4385 Strain (Live, Attenuated) Deri"
+951,Mebendazole
+952,Mebeverine Hydrochloride
+953,"Mecetronium Etilsulfate, Isopropyl Alcohol, Propanol"
+954,Meclozine Hydrochloride
+955,Medronate Tetrasodium
+956,Mefenamic Acid
+957,Megestrol Acetate
+958,"Meglumine Amidotrizoate, Sodium Amidotrizoate"
+959,Melatonin
+960,Meloxicam
+961,"Meloxicam, Crospovidone"
+962,Melphalan
+963,Memantine Hydrochloride
+964,"Memantine Hydrochloride, Donepezil Hydrochloride"
+965,Menotrophin
+966,"Menthol, Camphor"
+967,"Menthol, Camphor, Eucalyptus Oil, Thymol, Turpentine Oil"
+968,"Menthol, Eugenol, Methyl Salicylate"
+969,Mepivacaine Hydrochloride
+970,Mequinol
+971,Meropenem
+972,Meropenem Anhydrous
+973,Meropenem Trihydrate
+974,Mesalazine
+975,Mesna
+976,Mesterolone
+977,Metamizole Sodium Monohydrate
+978,Metformin Hydrochloride
+979,"Metformin Hydrochloride, Dapagliflozin"
+980,"Metformin Hydrochloride, Linagliptin"
+981,"Metformin Hydrochloride, Pioglitazone"
+982,"Metformin Hydrochloride, Sitagliptin"
+983,"Metformin Hydrochloride, Sitagliptin Hydrochloride"
+984,"Metformin Hydrochloride, Sitagliptin Hydrochloride Monohydrate"
+985,"Metformin Hydrochloride, Vildagliptin"
+986,Methadone Hydrochloride
+987,Methotrexate
+988,Methotrexate Sodium
+989,Methoxsalen
+990,Methyl Aminolevulinate
+991,Methylergometrine Maleate
+992,Methylphenidate Hydrochloride
+993,Methylprednisolone
+994,Methylprednisolone Aceponate
+995,Metoclopramide
+996,Metoclopramide Hydrochloride
+997,Metoclopramide Hydrochloride Monohydrate
+998,"Metoclopramide Hydrochloride, Paracetamol"
+999,Metoprolol Succinate
+1000,"Metoprolol Succinate, Felodipine"
+1001,Metoprolol Tartrate
+1002,Metronidazole
+1003,Metronidazole Benzoate
+1004,Metyrapone
+1005,Micafungin
+1006,Micafungin Sodium
+1007,Miconazole
+1008,Miconazole Nitrate
+1009,"Miconazole Nitrate, Hydrocortisone"
+1010,Micronised Purified Flavonoic Fraction
+1011,Midazolam
+1012,Midazolam Hydrochloride
+1013,Midodrine Hydrochloride
+1014,Mifepristone
+1015,Milrinone
+1016,Minocycline
+1017,Minocycline Hydrochloride
+1018,Minoxidil
+1019,Mirabegron
+1020,Mirtazapine
+1021,Misoprostol
+1022,Mitoxantrone
+1023,Mizolastine
+1024,Modafinil
+1025,Mometasone Furoate
+1026,"Mometasone Furoate, Salicylic Acid"
+1027,Montelukast
+1028,Montelukast Sodium
+1029,Moxifloxacin
+1030,Moxifloxacin Hydrochloride
+1031,Moxonidine
+1032,Mupirocin
+1033,Mupirocin Calcium
+1034,"Mycobacterium Bovis, Danish Strain 1331"
+1035,Mycophenolic Acid
+1036,"Myrtecaine, Diethylamine Salicylate"
+1037,N. Meningitidis Group C (Strain C11) Polysaccharide (De-O-Acetylated) Conjugated To Tetanus Toxoid
+1038,Nabumetone
+1039,Nadroparin Calcium
+1040,Nalbuphine Hydrochloride
+1041,Naloxone Hydrochloride
+1042,Nandrolone Decanoate
+1043,"Naphazoline Nitrate, Boric Acid"
+1044,"Naphazoline Nitrate, Zinc Sulphate"
+1045,Naproxen
+1046,Naproxen Sodium
+1047,"Naproxen Sodium, Sumatriptan Succinate"
+1048,Naratriptan
+1049,Nebivolol
+1050,Nebivolol Hydrochloride
+1051,"Neomycin Sulfate, Catalase"
+1052,"Neomycin Sulfate, Dexamethasone, Acetic Acid"
+1053,"Neomycin Sulfate, Prednisolone"
+1054,"Neomycin, Nystatin, Triamcinolone Acetonide"
+1055,"Neomycin, Polymyxin B, Fluocinolone Acetonide"
+1056,Neostigmine Methylsulfate
+1057,Nevirapine
+1058,Nicotine
+1059,Nicotine Polacrilex
+1060,Nicotine Resinate
+1061,Nifedipine
+1062,"Nifedipine, Lidocaine Hydrochloride"
+1063,Niflumic Acid
+1064,Nifuroxazide
+1065,Nilotinib
+1066,Nimesulide
+1067,Nimodipine
+1068,Nintedanib
+1069,Nintedanib Esylate
+1070,Nitrendipine
+1071,Nitric Oxide
+1072,Nitrofurantoin
+1073,Nitrous Oxide
+1074,"Nitrous Oxide, Oxygen"
+1075,Noradrenaline Tartrate
+1076,Norepinephrine
+1077,"Norethisterone Acetate, Estradiol"
+1078,Norfloxacin
+1079,Nystatin
+1080,"Nystatin, Metronidazole"
+1081,O-(ß-Hydroxyethyl)rutosides
+1082,"Octenidine Dihydrochloride, Isopropyl Alcohol, Propanol"
+1083,"Octenidine Dihydrochloride, Phenoxyethanol"
+1084,Octreotide
+1085,Ofloxacin
+1086,Olanzapine
+1087,Olanzapine Micronized
+1088,"Olive Oil, Refined, Soya-Bean Oil Refined, Triglycerides, Medium Chain, Fish Oil, Rich In Omega-3-Ac"
+1089,Olmesartan
+1090,Olmesartan Medoxomil
+1091,"Olmesartan Medoxomil, Amlodipine"
+1092,"Olmesartan Medoxomil, Amlodipine Besilate"
+1093,"Olmesartan Medoxomil, Amlodipine, Hydrochlorothiazide"
+1094,"Olmesartan Medoxomil, Hydrochlorothiazide"
+1095,"Olmesartan Medoxomil, Hydrochlorothiazide, Amlodipine Besilate"
+1096,Olodaterol
+1097,Olopatadine
+1098,Omega-3-Acid Ethyl Esters 90
+1099,Omeprazole
+1100,Omeprazole Sodium
+1101,Ondansetron
+1102,Ondansetron Hydrochloride
+1103,Ondansetron Hydrochloride Dihydrate
+1104,"Orphenadrine Citrate, Paracetamol"
+1105,"Orphenadrine Citrate, Paracetamol, Acetylsalicylic Acid, Caffeine"
+1106,Orphenadrine Hydrochloride
+1107,Otilonium Bromide
+1108,Oxaliplatin
+1109,Oxaprozin
+1110,Oxcarbazepine
+1111,Oxybutynin Hydrochloride
+1112,Oxycodone Hydrochloride
+1113,"Oxycodone Hydrochloride, Paracetamol"
+1114,Oxygen
+1115,Oxymetazoline Hydrochloride
+1116,Oxytocin
+1117,Oxytocin Synthetic
+1118,Paclitaxel
+1119,Paliperidone
+1120,Paliperidone Palmitate
+1121,Palonosetron
+1122,Pancreas Powder
+1123,Pantoprazole
+1124,Pantoprazole Sodium
+1125,Pantoprazole Sodium Sesquihydrate
+1126,"Pantothenate Sodium, Riboflavin Sodium Phosphate, Biotin, Cyanocobalamin, Folic Acid, Nicotinamide, "
+1127,Paracetamol
+1128,"Paracetamol, Acetylsalicylic Acid, Caffeine"
+1129,"Paracetamol, Caffeine"
+1130,"Paracetamol, Caffeine, Codeine Phosphate Hemihydrate"
+1131,"Paracetamol, Codeine Phosphate Hemihydrate"
+1132,"Paracetamol, Hyoscine Butylbromide"
+1133,"Paracetamol, Lidocaine Hydrochloride"
+1134,"Paracetamol, Metoclopramide Hydrochloride Monohydrate"
+1135,"Paracetamol, Thiocolchicoside"
+1136,Parecoxib
+1137,Parecoxib Sodium
+1138,Paricalcitol
+1139,Paroxetine
+1140,Passiflora Incarnata Dry Extract
+1141,Pazopanib
+1142,Pazopanib Hydrochloride
+1143,Pefloxacin Mesilate
+1144,Pemetrexed
+1145,Penciclovir
+1146,Pentetic Acid
+1147,Pentostatin
+1148,Pentoxifylline
+1149,Peppermint Oil
+1150,Perampanel
+1151,Perindopril Arginine
+1152,"Perindopril Tert-Butylamine, Indapamide"
+1153,"Pheniramine Maleate, Ascorbic Acid, Paracetamol"
+1154,Phenobarbital
+1155,Phenothrin
+1156,"Phentermine, Topiramate"
+1157,Phenylephrine Hydrochloride
+1158,"Phenylephrine Hydrochloride, Guaifenesin, Paracetamol"
+1159,Phenytoin
+1160,Phenytoin Sodium
+1161,Pilocarpine Hydrochloride
+1162,Pimecrolimus
+1163,Pimozide
+1164,Pinaverium Bromide
+1165,Pioglitazone
+1166,Pioglitazone Hydrochloride
+1167,Pipamperone Hydrochloride
+1168,"Piperacillin Sodium, Tazobactam Sodium"
+1169,"Piperacillin, Tazobactam"
+1170,Piracetam
+1171,Pirfenidone
+1172,Piroxicam
+1173,Piroxicam Betadex
+1174,Piroxicam Cinnamate
+1175,Pitavastatin
+1176,Pitavastatin Calcium
+1177,Pivmecillinam Hydrochloride
+1178,"Pneumococcal Polysaccharide Serotype 4, Pneumococcal Polysaccharide Serotype 6b, Pneumococcal Polysa"
+1179,"Poliovirus (Inactivated) Type 3 (Saukett Strain), Pertussis Filamentous Haemagglutinin Adsorbed On A"
+1180,"Poliovirus (Inactivated) Type 3 (Saukett Strain), Poliovirus (Inactivated) Type 2 (Mef-1 Strain), Po"
+1181,Pomalidomide
+1182,Poractant Alfa
+1183,Posaconazole
+1184,Potassium Chloride
+1185,"Potassium Chloride, Glucose"
+1186,"Potassium Chloride, Glucose Monohydrate"
+1187,"Potassium Chloride, Sodium Chloride, Calcium Chloride Dihydrate"
+1188,"Potassium Chloride, Sodium Chloride, Calcium Chloride Dihydrate, Sodium Lactate"
+1189,"Potassium Chloride, Sodium Chloride, Sodium Citrate, Glucose"
+1190,Potassium Gluconate
+1191,"Potassium Hydrogen Carbonate, Betaine Hydrochloride"
+1192,"Potassium Hydrogen Carbonate, Potassium Citrate"
+1193,"Potassium Hydrogen Carbonate, Sodium Alginate"
+1194,"Potassium Iodide, Sodium Iodide"
+1195,"Povidone, Iodinated"
+1196,"Povidone, Poly(Vinyl Alcohol)"
+1197,Pramipexole
+1198,Pramipexole Dihydrochloride
+1199,Pramipexole Dihydrochloride Monohydrate
+1200,Prasugrel
+1201,Pravastatin
+1202,Pravastatin Sodium
+1203,Prednisolone
+1204,Prednisolone Sodium Phosphate
+1205,Prednisolone Sodium Phosphate Ph. Eur.
+1206,Pregabalin
+1207,Procaine Hydrochloride
+1208,Progesterone
+1209,"Progesterone, Micronised"
+1210,"Proguanil Hydrochloride, Atovaquone"
+1211,Promethazine Hydrochloride
+1212,Propafenone Hydrochloride
+1213,Propiverine Hydrochloride
+1214,Propofol
+1215,Propranolol
+1216,Propylthiouracil
+1217,Protamine Sulfate
+1218,Proxymetacaine Hydrochloride
+1219,Prucalopride
+1220,Prulifloxacin
+1221,"Pseudoephedrine Hydrochloride, Acetylcysteine, Paracetamol"
+1222,"Pseudoephedrine Hydrochloride, Ibuprofen"
+1223,"Pseudoephedrine Hydrochloride, Paracetamol"
+1224,Pyrazinamide
+1225,Pyridostigmine Bromide
+1226,Pyridoxine Hydrochloride
+1227,"Pyridoxine Hydrochloride, Lysozyme Hydrochloride"
+1228,Quetiapine
+1229,Quetiapine Fumarate
+1230,Quinagolide
+1231,Rabeprazole Sodium
+1232,Racecadotril
+1233,"Racementhol, Eucalyptus Oil, Methyl Salicylate, Turpentine Oil"
+1234,Raloxifene Hydrochloride
+1235,Raltegravir
+1236,Ramipril
+1237,"Ramipril, Acetylsalicylic Acid, Atorvastatin Calcium Trihydrate"
+1238,"Ramipril, Felodipine"
+1239,"Ramipril, Rosuvastatin"
+1240,"Ramipril, Rosuvastatin Calcium"
+1241,Ranitidine
+1242,Ranitidine Hydrochloride
+1243,Ranolazine
+1244,Rasagiline
+1245,Rasagiline Tartrate
+1246,Remifentanil
+1247,Repaglinide
+1248,Retinol Palmitate
+1249,"Retinol Palmitate, Ascorbic Acid, Biotin, Colecalciferol, Cyanocobalamin, Dexpanthenol, Folic Acid, "
+1250,"Retinol Palmitate, Ergocalciferol, Phytomenadione, Dl-Alpha-Tocopherol"
+1251,"Retinol, Alpha-Tocopherol"
+1252,"Rhubarb Extract, Salicylic Acid"
+1253,"Riboflavin Sodium Phosphate, Thiamine Hydrochloride, Dexpanthenol, Nicotinamide, Pyridoxine Hydrochl"
+1254,Rifamycin Sodium
+1255,Rifaximin
+1256,Riluzole
+1257,Risedronate Monosodium Hemi-Pentahydrate
+1258,Risedronate Sodium
+1259,"Risedronate Sodium, Risedronic Acid"
+1260,Risperidone
+1261,Rivaroxaban
+1262,Rivastigmine
+1263,Rivastigmine Hydrogen Tartrate
+1264,Rizatriptan Benzoate
+1265,Rocuronium Bromide
+1266,Roflumilast
+1267,Ropinirole
+1268,Ropivacaine Hydrochloride
+1269,Ropivacaine Hydrochloride Monohydrate
+1270,Rosuvastatin
+1271,Rosuvastatin Calcium
+1272,Roxithromycin
+1273,Rupatadine
+1274,Saccharomyces Boulardii cncm I-745 Lyophilized
+1275,Salbutamol
+1276,Salbutamol Sulfate
+1277,"Salbutamol Sulfate, Ipratropium Bromide"
+1278,"Salbutamol Sulfate, Ipratropium Bromide Monohydrate"
+1279,Salicylic Acid
+1280,Salmeterol
+1281,Salmeterol Xinafoate
+1282,Selegiline Hydrochloride
+1283,Selexipag
+1284,Sennae Folium
+1285,Sennoside A+b
+1286,Serrapeptase
+1287,Sertindole
+1288,Sertraline
+1289,Sertraline Hydrochloride
+1290,Sevelamer Carbonate
+1291,Sevelamer Hydrochloride
+1292,Sevoflurane
+1293,"Shark-Liver Oil, Yeast Extract"
+1294,Sildenafil
+1295,Sildenafil Citrate
+1296,Simeticone
+1297,"Simeticone, Charcoal, Activated"
+1298,"Simeticone, Magnesium Hydroxide, Aluminium Hydroxide"
+1299,"Simeticone, Magnesium Hydroxide, Aluminium Hydroxide-Magnesium Carbonate Co-Dried Gel"
+1300,Simvastatin
+1301,"Simvastatin, Ezetimibe"
+1302,Sitagliptin
+1303,Sitagliptin Hydrochloride
+1304,"Sitagliptin, Dapagliflozin"
+1305,"Smilax Utilis D6, Juglans Regia Dil. D3, Natrium Sulfuricum D4, Aranea Diadema D6, Calcium Phosphori"
+1306,Sodium Chloride
+1307,"Sodium Chloride, Glucose Monohydrate"
+1308,"Sodium Chloride, Sodium Citrate"
+1309,"Sodium Chloride, Succinylated Gelatin"
+1310,Sodium Citrate
+1311,Sodium Cromoglicate
+1312,Sodium Fluoride
+1313,Sodium Fluoride (18f)
+1314,Sodium Fusidate
+1315,Sodium Glycerophosphate Pentahydrate
+1316,Sodium Hyaluronate
+1317,Sodium Hydrogen Carbonate
+1318,Sodium Hydrogen Carbonate Solution (0.2 M)
+1319,"Sodium Hydrogen Carbonate, Calcium Carbonate, Sodium Alginate"
+1320,"Sodium Hydrogen Carbonate, Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Calc"
+1321,"Sodium Hydrogen Carbonate, Magnesium Chloride Hexahydrate, Sodium Chloride, Calcium Chloride Dihydra"
+1322,"Sodium Hydrogen Carbonate, Potassium Chloride, Sodium Chloride, Macrogol 3350"
+1323,"Sodium Hydrogen Carbonate, Potassium Chloride, Sodium Chloride, Sodium Sulfate Anhydrous, Macrogol 3"
+1324,"Sodium Hydrogen Carbonate, Potassium Chloride, Sodium Chloride, Sodium Sulfate Anhydrous, Macrogol 4"
+1325,"Sodium Hydrogen Carbonate, Sodium Alginate"
+1326,"Sodium Hydrogen Carbonate, Sodium Chloride"
+1327,"Sodium Hydrogen Carbonate, Tartaric Acid"
+1328,Sodium Iodide (131i)
+1329,"Sodium Lactate Solution, Potassium Chloride, Sodium Chloride, Calcium Chloride Dihydrate"
+1330,Sodium Molybdate (99mo)
+1331,"Sodium Molybdate (99mo), Pertechnetate (99mtc) Sodium"
+1332,"Sodium Molybdate Dihydrate, Zinc Chloride, Ferric Chloride Hexahydrate, Potassium Iodide, Sodium Flu"
+1333,Sodium Oxybate
+1334,"Sodium Phosphate Dibasic Heptahydrate, Sodium Dihydrogen Phosphate Monohydrate"
+1335,Sodium Picosulfate
+1336,"Sodium Picosulfate, Magnesium Oxide, Light, Citric Acid"
+1337,Sodium Selenite
+1338,Sodium Valproate
+1339,Solifenacin
+1340,Solifenacin Succinate
+1341,Somatostatin
+1342,Somatropin
+1343,Sorafenib
+1344,"Sorbitol, Liquid (Crystallising), Sodium Citrate, Sodium Lauryl Sulfoacetate 70%"
+1345,Sotalol Hydrochloride
+1346,"Soya Oil, Purified"
+1347,Spiramycin
+1348,Spironolactone
+1349,"Stannous Chloride, Copper Tetramibi Tetrafluoroborate, L-Cysteine Hydrochloride Monohydrate"
+1350,Sucralfate
+1351,Sugammadex
+1352,Sugammadex Sodium
+1353,Sulfadiazine Silver
+1354,"Sulfadiazine Silver, Sodium Hyaluronate"
+1355,"Sulfamethoxazole, Trimethoprim"
+1356,"Sulfametrole, Trimethoprim"
+1357,Sulfasalazine
+1358,"Sulfur D10, Sulfur D4, Vincetoxicum Hirundinaria D10, Vincetoxicum Hirundinaria D30, Vincetoxicum Hi"
+1359,"Sulfur D6, Arnica Montana D2, Sanguinaria Canadensis D2, Solanum Dulcamara D2, Rhus Toxicodendron D2"
+1360,"Sulfur D6, Arnica Montana D2, Sanguinaria Canadensis D4, Solanum Dulcamara D2, Rhus Toxicodendron D2"
+1361,Sulpiride
+1362,Sultamicillin Tosilate
+1363,Sumatriptan
+1364,Sumatriptan Succinate
+1365,Sunitinib
+1366,Suxamethonium Chloride
+1367,Tacrolimus
+1368,Tacrolimus Monohydrate
+1369,Tadalafil
+1370,Tafluprost
+1371,"Tamarind Extract, Senna Leaf Powder, Cassia Pulp Extract, Coriander Fruit Powder"
+1372,Tamoxifen
+1373,Tamoxifen Citrate
+1374,Tamsulosin Hydrochloride
+1375,"Tamsulosin Hydrochloride, Dutasteride"
+1376,"Tamsulosin Hydrochloride, Solifenacin Succinate"
+1377,Tanacetum Parthenium (L.) Schultz Bip.
+1378,Tapentadol
+1379,Tapentadol Hydrochloride
+1380,"Taurine, Glycine, L-Tryptophan, L-Arginine, L-Histidine, L-Isoleucine, L-Leucine, L-Methionine, L-Pr"
+1381,Tauroselcholic Acid Se-75
+1382,Technetium (99mtc)
+1383,Teicoplanin
+1384,Temozolomide
+1385,Tenofovir Disoproxil
+1386,Tenoxicam
+1387,Terazosin
+1388,Terbinafine
+1389,Terbinafine Hydrochloride
+1390,"Terebinthina Laricina, Terebinthinae Aetheroleum Rectificatum"
+1391,Teriflunomide
+1392,Teriparatide
+1393,Terlipressin Acetate
+1394,Testosterone
+1395,Testosterone Enantate
+1396,Testosterone Undecanoate
+1397,"Tetanus Toxoid Adsorbed On Aluminium Hydroxide, Hydrated, Diphtheria Toxoid Adsorbed On Aluminium Hy"
+1398,Tetrabenazine
+1399,Tetracaine Hydrochloride
+1400,Tetracycline Hydrochloride
+1401,"Tetracycline Hydrochloride, Metronidazole Benzoate, Tripotassium Dicitratobismuthate"
+1402,Tetrafluoroborate
+1403,Tetrofosmin
+1404,Tetryzoline Hydrochloride
+1405,Thallium (201tl) Chloride
+1406,Theophylline Anhydrous
+1407,Theophylline Monohydrate
+1408,Thiamazole
+1409,Thiamine Hydrochloride
+1410,"Thiamine Hydrochloride, Ascorbic Acid, Cyanocobalamin, Nicotinamide, Riboflavin, Pantothenol, Pyrido"
+1411,"Thiamine Hydrochloride, Ascorbic Acid, Nicotinamide, Riboflavin, Glucose Monohydrate, Pyridoxine Hyd"
+1412,"Thiamine Hydrochloride, Cyanocobalamin, Pyridoxine Hydrochloride"
+1413,"Thiamine Hydrochloride, Ergocalciferol, Cyanocobalamin, Dexpanthenol, Nicotinamide, Riboflavin, Pyri"
+1414,Thiocolchicoside
+1415,"Thiocolchicoside, Paracetamol Ph. Eur."
+1416,Tianeptine Sodium
+1417,Tibolone
+1418,Ticagrelor
+1419,Ticlopidine Hydrochloride
+1420,Tigecycline
+1421,Timolol
+1422,Timolol Maleate
+1423,"Timolol Maleate, Bimatoprost"
+1424,"Timolol Maleate, Brimonidine Tartrate"
+1425,"Timolol Maleate, Latanoprost"
+1426,"Timolol Maleate, Travoprost"
+1427,"Timolol, Bimatoprost"
+1428,"Timolol, Tafluprost"
+1429,"Timolol, Travoprost"
+1430,Tinzaparin
+1431,Tinzaparin Sodium
+1432,Tioconazole
+1433,Tiotropium
+1434,Tiotropium Bromide
+1435,Tiotropium Bromide Monohydrate
+1436,"Tiotropium, Olodaterol"
+1437,Tirofiban Hydrochloride Monohydrate
+1438,Tizanidine Hydrochloride
+1439,Tobramycin
+1440,Tolfenamic Acid
+1441,Tolterodine L-Tartrate
+1442,Tolterodine Tartrate
+1443,Tolvaptan
+1444,Topiramate
+1445,Topotecan
+1446,Topotecan Hydrochloride
+1447,Torasemide
+1448,Trabectedin
+1449,Tramadol Hydrochloride
+1450,"Tramadol Hydrochloride, Dexketoprofen"
+1451,"Tramadol Hydrochloride, Paracetamol"
+1452,Tramazoline Hydrochloride Monohydrate
+1453,Trandolapril
+1454,Tranexamic Acid
+1455,Travoprost
+1456,Trazodone Hydrochloride
+1457,Treosulfan
+1458,Treprostinil
+1459,Triamcinolone Acetonide
+1460,"Triamcinolone Acetonide, Salicylic Acid"
+1461,"Tribenoside, Lidocaine Hydrochloride"
+1462,Triclosan
+1463,Trientine
+1464,Trientine Dihydrochloride
+1465,Trifarotene
+1466,Trifluoperazine
+1467,Triflusal
+1468,Trimebutine
+1469,Trimebutine Maleate
+1470,Trimetazidine Dihydrochloride
+1471,Triptorelin
+1472,Tropicamide
+1473,Tyrothricin
+1474,Ulipristal Acetate
+1475,Urofollitropin
+1476,Ursodeoxycholic Acid
+1477,Valaciclovir
+1478,"Valerian Root Dry Extract (3-6:1), Ethanol 70 %(V/V)"
+1479,"Valeriana Officinalis L. Root Ethanol Dry Extract, Humulus Lupulus Extractum Siccum"
+1480,Valerianae Radix
+1481,Valganciclovir Hydrochloride
+1482,"Valine, Alanine, Arginine, Cysteine, Histidine, Isoleucine, Leucine, Methionine, Phenylalanine, Prol"
+1483,"Valine, Alanine, Arginine, Histidine, Isoleucine, Leucine, Lysine, Methionine, Phenylalanine, Prolin"
+1484,"Valine, Alanine, Arginine, Histidine, Isoleucine, Leucine, Methionine, Phenylalanine, Proline, Serin"
+1485,"Valine, Alanine, Arginine, Isoleucine, Leucine, Methionine, Phenylalanine, Proline, Serine, Threonin"
+1486,"Valine, Ornithine Hydrochloride, Alanine, Arginine, Cysteine, Histidine, Isoleucine, Leucine, Methio"
+1487,"Valproic Acid, Sodium Valproate"
+1488,Valsartan
+1489,"Valsartan, Amlodipine"
+1490,"Valsartan, Amlodipine, Hydrochlorothiazide"
+1491,"Valsartan, Hydrochlorothiazide"
+1492,"Valsartan, Indapamide"
+1493,"Valsartan, Sacubitril"
+1494,Vancomycin
+1495,Vancomycin Hydrochloride
+1496,"Varicella Virus Oka Strain, (Live, Attenuated) Produced In Human Diploid (Mrc-5) Cells"
+1497,"Varicella Virus Oka Strain, (Live, Attenuated) Produced In Human Diploid (Mrc-5) Cells, Measles Viru"
+1498,"Varicella Virus Oka/Merck Strain, (Live, Attenuated) Produced In Human Diploid (Mrc-5) Cells"
+1499,Vecuronium Bromide
+1500,Venlafaxine
+1501,Venlafaxine Hydrochloride
+1502,Verapamil Hydrochloride
+1503,Vigabatrin
+1504,Vildagliptin
+1505,Vinorelbine
+1506,Vinorelbine Tartrate
+1507,Voriconazole
+1508,Vortioxetine
+1509,Water For Injection
+1510,Xylometazoline Hydrochloride
+1511,"Xylometazoline Hydrochloride, Dexpanthenol"
+1512,"Xylometazoline Hydrochloride, Ipratropium Bromide"
+1513,Zanamivir
+1514,Zidovudine
+1515,"Zinc Chloride, Potassium Iodide, Sodium Fluoride, Copper Chloride Dihydrate, Manganese Chloride Tetr"
+1516,"Zinc Chloride, Potassium Iodide, Sodium Selenite, Copper Chloride Dihydrate, Manganese Chloride Tetr"
+1517,Zinc Sulphate Monohydrate
+1518,Ziprasidone
+1519,Zofenopril Calcium
+1520,"Zofenopril Calcium, Hydrochlorothiazide"
+1521,Zoledronic Acid
+1522,Zoledronic Acid Monohydrate
+1523,Zolpidem Tartrate
+1524,Zopiclone
+1525,Zuclopenthixol Acetate
+1526,Zuclopenthixol Decanoate
+1527,Zuclopenthixol Hydrochloride
