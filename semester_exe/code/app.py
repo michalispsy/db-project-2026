@@ -42,10 +42,13 @@ def get_data():
     # 2. Doctors
     cursor.execute("""
         SELECT d.AMKA AS id, CONCAT(s.first_name, ' ', s.last_name) AS name,
-               d.license_number AS lic, d.rank, dd.dept_id AS deptId, d.supervisor_AMKA AS supervisorId
+               d.license_number AS lic, d.rank, 
+               GROUP_CONCAT(dd.dept_id) AS deptIds, 
+               d.supervisor_AMKA AS supervisorId
         FROM doctors d
         JOIN staff s ON d.AMKA = s.AMKA
         LEFT JOIN doctor_departments dd ON d.AMKA = dd.doctor_AMKA
+        GROUP BY d.AMKA
     """)
     docs = cursor.fetchall()
     
@@ -60,6 +63,11 @@ def get_data():
     for doc in docs:
         doc['spec'] = doc['rank']
         doc['surgeries'] = doc_surgeries.get(doc['id'], 0)
+        # Convert comma-separated string to list of ints
+        if doc['deptIds']:
+            doc['deptIds'] = [int(x) for x in doc['deptIds'].split(',')]
+        else:
+            doc['deptIds'] = []
     data['DOCTORS'] = docs
 
     # 3. Nurses

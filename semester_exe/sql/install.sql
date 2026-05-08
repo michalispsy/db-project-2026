@@ -841,7 +841,7 @@ BEGIN
 
     SELECT MONTH(shift_date), YEAR(shift_date) INTO current_month, current_year
     FROM shifts WHERE shift_id = p_shift_id;
-    SELECT position INTO p_position FROM staff WHERE AMKA = p_staff_AMKA;
+    SELECT staff_type INTO p_position FROM staff WHERE AMKA = p_staff_AMKA;
 
     SELECT COUNT(*) INTO shift_count
     FROM shift_staffing ss
@@ -868,7 +868,7 @@ main: BEGIN
     DECLARE p_type VARCHAR(20);
     DECLARE consecutive_count INT;
 
-    SELECT shift_date, shift_type INTO p_date, p_type FROM shifts WHERE shift_id = p_shift_id;
+    SELECT shift_date, shift_slot INTO p_date, p_type FROM shifts WHERE shift_id = p_shift_id;
 
     IF p_type <> 'Night' THEN
         LEAVE main;

@@ -92,29 +92,61 @@ const RANK_GREEK = {
 };
 
 const Hierarchy = () => {
-  const { DOCTORS, DEPARTMENTS } = window.UG;
-  const buildTree = (parentId) => DOCTORS.filter(d => d.supervisorId === parentId).map(d => ({
+  const { DEPARTMENTS, DOCTORS: rawDoctors } = window.UG;
+  
+  // De-duplicate doctors by AMKA to be 100% sure
+  const DOCTORS = Array.from(new Map(rawDoctors.map(d => [d.id, d])).values());
+
+  const buildTree = (parentId) => DOCTORS.filter(d => String(d.supervisorId) === String(parentId)).map(d => ({
     ...d, children: buildTree(d.id)
   }));
   const directors = buildTree(null);
 
   const Node = ({ node, depth = 0 }) => {
-    const dept = DEPARTMENTS.find(d => d.id === node.deptId);
+    // Ultra-robust ID matching checking all common field names
+    const depts = (node.deptIds || []).map(id => {
+      return DEPARTMENTS.find(d => 
+        String(d.id || d.dept_id || d.deptId) === String(id)
+      );
+    }).filter(Boolean);
+    
+    const deptNames = depts.map(d => window.DEPT_GREEK[d.name] || d.name).join(", ") || "—";
+    
     return (
-      <div style={{marginLeft: depth ? 20 : 0, position:"relative", marginBottom: 4}}>
-        {depth > 0 && <span style={{position:"absolute", left: -14, top: 0, bottom: "16px", width: 10, borderLeft:"1px solid var(--ink-300)", borderBottom:"1px solid var(--ink-300)", borderBottomLeftRadius: 4}}/>}
-        <div className="org-node" style={{padding: "6px 10px", gap: 10, borderRadius: 6, background: depth === 0 ? "var(--brand-50)" : "transparent"}}>
-          <div className="avatar" style={{width: 28, height: 28, background: depth === 0 ? "var(--brand-500)" : "var(--brand-100)", color: depth === 0 ? "#fff" : "var(--brand-700)", fontSize: 8, flexShrink: 0}}>{node.name.split(" ").map(s=>s[0]).slice(0,2).join("")}</div>
-          <div style={{overflow: "hidden"}}>
-            <div style={{fontWeight: 600, fontSize: 13, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>{node.name}</div>
-            <div className="muted" style={{fontSize: 10, marginTop: 1}}>
-              <span style={{color: "var(--brand-600)", fontWeight: 500}}>{RANK_GREEK[node.rank] || node.rank}</span>
-              <span style={{margin: "0 4px"}}>·</span>
-              <span>{window.DEPT_GREEK[dept?.name] || dept?.name}</span>
+      <div style={{marginLeft: depth ? 14 : 0, position:"relative", marginBottom: 2}}>
+        {depth > 0 && (
+          <div style={{
+            position:"absolute", left: -10, top: 0, bottom: 12, width: 8, 
+            borderLeft:"1.5px solid var(--ink-200)", borderBottom:"1.5px solid var(--ink-200)", 
+            borderBottomLeftRadius: 4
+          }}/>
+        )}
+        <div className="org-node" style={{
+          padding: "6px 10px", gap: 10, borderRadius: 6, 
+          background: depth === 0 ? "var(--brand-50)" : "#fff",
+          border: depth === 0 ? "1px solid var(--brand-100)" : "1px solid var(--ink-150)",
+          marginBottom: 4,
+          boxShadow: depth === 0 ? "none" : "var(--shadow-sm)",
+          display: "flex", alignItems: "center"
+        }}>
+          <div className="avatar" style={{
+            width: 22, height: 22, 
+            background: depth === 0 ? "var(--brand-500)" : "var(--brand-100)", 
+            color: depth === 0 ? "#fff" : "var(--brand-700)", 
+            fontSize: 8, flexShrink: 0
+          }}>
+            {node.name.split(" ").map(s=>s[0]).slice(0,2).join("")}
+          </div>
+          <div style={{overflow: "hidden", flex: 1}}>
+            <div style={{fontWeight: 600, fontSize: 11, color: "var(--ink-900)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>{node.name}</div>
+            <div className="muted" style={{fontSize: 9, marginTop: 1, display: "flex", flexWrap: "nowrap", alignItems: "center", gap: 4, whiteSpace: "nowrap"}}>
+              <span style={{color: "var(--brand-600)", fontWeight: 600, flexShrink: 0}}>{RANK_GREEK[node.rank] || node.rank}</span>
+              <span style={{color: "var(--ink-300)", flexShrink: 0}}>·</span>
+              <span style={{overflow: "hidden", textOverflow: "ellipsis", flex: 1}} title={deptNames}>{deptNames}</span>
             </div>
           </div>
         </div>
-        <div style={{borderLeft: node.children.length > 0 ? "1px solid var(--ink-200)" : "none", marginLeft: 14, paddingTop: 4}}>
+        <div style={{marginLeft: 10}}>
           {node.children.map(c => <Node key={c.id} node={c} depth={depth + 1}/>)}
         </div>
       </div>
@@ -128,10 +160,15 @@ const Hierarchy = () => {
         subtitle="Οργανόγραμμα ιατρικού προσωπικού · Αντιστοιχεί στο ερώτημα Q13"
         actions={<button className="btn btn-ghost"><Icon name="code" size={14}/>Δες SQL Q13</button>}
       />
-      <div className="card" style={{padding: "24px", background: "var(--ink-50)"}}>
-        <div style={{columnCount: 4, columnGap: 20, columnFill: "balance"}}>
+      <div style={{padding: "10px 0"}}>
+        <div style={{
+          display: "grid", 
+          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", 
+          gap: 16,
+          alignItems: "start"
+        }}>
           {directors.map(d => (
-            <div key={d.id} style={{breakInside: "avoid", marginBottom: 20, background: "#fff", borderRadius: 8, padding: 16, boxShadow: "var(--shadow-sm)", border: "1px solid var(--ink-200)"}}>
+            <div key={d.id} style={{background: "var(--ink-50)", borderRadius: 12, padding: 12, border: "1px solid var(--ink-200)"}}>
               <Node node={d}/>
             </div>
           ))}
