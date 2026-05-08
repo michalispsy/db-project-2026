@@ -832,43 +832,263 @@ BEGIN
     CALL check_procedure_conflicts(NEW.room_id, NEW.main_doctor_AMKA, NEW.start_time, NEW.end_time, NEW.execution_id);
 END //
 
--- CREATE TRIGGER check_max_shifts_trigger
--- BEFORE INSERT ON shift_staffing
--- FOR EACH ROW
--- BEGIN
---     DECLARE shift_count INT;
---     DECLARE staff_role VARCHAR(20);
---     DECLARE current_month INT;
---     DECLARE current_year INT;
---
---     SELECT MONTH(shift_date), YEAR(shift_date) INTO current_month, current_year
---     FROM shifts WHERE shift_id = NEW.shift_id;
---
---     SELECT role INTO staff_role FROM staff WHERE AMKA = NEW.staff_AMKA;
---
---     SELECT COUNT(*) INTO shift_count
---     FROM shift_staffing ss
---     JOIN shifts s ON ss.shift_id = s.shift_id
---     WHERE ss.staff_AMKA = NEW.staff_AMKA
---     AND MONTH(s.shift_date) = current_month
---     AND YEAR(s.shift_date) = current_year;
---
---     IF (staff_role = 'Doctor' AND shift_count >= 15) THEN
---         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Doctor exceeded max monthly shifts (15)';
---     ELSEIF (staff_role = 'Nurse' AND shift_count >= 20) THEN
---         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Nurse exceeded max monthly shifts (20)';
---     ELSEIF (staff_role = 'Admin' AND shift_count >= 25) THEN
---         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Admin exceeded max monthly shifts (25)';
---     END IF;
--- END//
+CREATE PROCEDURE validate_staff_shift_max_limit(IN p_staff_AMKA VARCHAR(11), IN p_shift_id INT)
+BEGIN
+    DECLARE shift_count INT;
+    DECLARE p_position VARCHAR(20);
+    DECLARE current_month INT;
+    DECLARE current_year INT;
 
--- CREATE TRIGGER prevent_consecutive_shifts_trigger
--- BEFORE INSERT ON shift_staffing
--- FOR EACH ROW
--- BEGIN
---     DECLARE last_shift_date DATE;
---     DECLARE last_shift_slot VARCHAR(20);
---     IF (
--- END//
+    SELECT MONTH(shift_date), YEAR(shift_date) INTO current_month, current_year
+    FROM shifts WHERE shift_id = p_shift_id;
+    SELECT position INTO p_position FROM staff WHERE AMKA = p_staff_AMKA;
+
+    SELECT COUNT(*) INTO shift_count
+    FROM shift_staffing ss
+    JOIN shifts s ON ss.shift_id = s.shift_id
+    WHERE ss.staff_AMKA = p_staff_AMKA
+    AND MONTH(s.shift_date) = current_month
+    AND YEAR(s.shift_date) = current_year;
+
+    IF (p_position = 'Doctor' AND shift_count >= 15) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Doctor exceeded max monthly shifts (15)';
+    ELSEIF (p_position = 'Nurse' AND shift_count >= 20) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Nurse exceeded max monthly shifts (20)';
+    ELSEIF (p_position = 'Admin' AND shift_count >= 25) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Admin exceeded max monthly shifts (25)';
+    END IF;
+END//
+
+CREATE PROCEDURE validate_consecutive_nights(IN p_staff_AMKA VARCHAR(11), IN p_shift_id INT)
+main: BEGIN
+    DECLARE p_date DATE;
+    DECLARE p_type VARCHAR(20);
+    DECLARE consecutive_count INT;
+
+    SELECT shift_date, shift_type INTO p_date, p_type FROM shifts WHERE shift_id = p_shift_id;
+
+    IF p_type <> 'Night' THEN
+        LEAVE main;
+    END IF;
+
+    IF EXISTS (
+        SELECT 1 FROM shift_staffing ss1
+        JOIN shifts s1 ON ss1.shift_id = s1.shift_id
+        WHERE ss1.staff_AMKA = p_staff_AMKA AND s1.shift_slot = 'Night'
+        AND s1.shift_date = DATE_ADD(p_date, INTERVAL 1 DAY)
+        AND EXISTS (
+            SELECT 1 FROM shift_staffing ss2
+            JOIN shifts s2 ON ss2.shift_id = s2.shift_id
+            WHERE ss2.staff_AMKA = p_staff_AMKA AND s2.shift_slot = 'Night'
+            AND s2.shift_date = DATE_ADD(p_date, INTERVAL 2 DAY)
+        )
+        ) OR EXISTS (
+        SELECT 1 FROM shift_staffing ss1
+        JOIN shifts s1 ON ss1.shift_id = s1.shift_id
+        WHERE ss1.staff_AMKA = p_staff_AMKA AND s1.shift_slot = 'Night'
+        AND s1.shift_date = DATE_SUB(p_date, INTERVAL 1 DAY)
+        AND EXISTS (
+            SELECT 1 FROM shift_staffing ss2
+            JOIN shifts s2 ON ss2.shift_id = s2.shift_id
+            WHERE ss2.staff_AMKA = p_staff_AMKA AND s2.shift_slot = 'Night'
+            AND s2.shift_date = DATE_ADD(p_date, INTERVAL 1 DAY)
+        )
+        ) OR EXISTS (
+        SELECT 1 FROM shift_staffing ss1
+        JOIN shifts s1 ON ss1.shift_id = s1.shift_id
+        WHERE ss1.staff_AMKA = p_staff_AMKA AND s1.shift_slot = 'Night'
+        AND s1.shift_date = DATE_SUB(p_date, INTERVAL 1 DAY)
+        AND EXISTS (
+            SELECT 1 FROM shift_staffing ss2
+            JOIN shifts s2 ON ss2.shift_id = s2.shift_id
+            WHERE ss2.staff_AMKA = p_staff_AMKA AND s2.shift_slot = 'Night'
+            AND s2.shift_date = DATE_SUB(p_date, INTERVAL 2 DAY)
+        )
+    ) THEN
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Staff cannot work for 3 consecutive night shifts.';
+END IF;
+END main //
+
+CREATE TRIGGER shift_staffing_insert_trigger
+BEFORE INSERT ON shift_staffing
+FOR EACH ROW
+BEGIN
+    CALL validate_staff_shift_max_limit(NEW.staff_AMKA, NEW.shift_id);
+    CALL validate_consecutive_nights(NEW.staff_AMKA, NEW.shift_id);
+END //
+
+CREATE TRIGGER shift_staffing_update_trigger
+BEFORE UPDATE ON shift_staffing
+FOR EACH ROW
+BEGIN
+    IF (NEW.staff_AMKA <> OLD.staff_AMKA OR NEW.shift_id <> OLD.shift_id) THEN
+        CALL validate_staff_shift_max_limit(NEW.staff_AMKA, NEW.shift_id);
+        CALL validate_consecutive_nights(NEW.staff_AMKA, NEW.shift_id);
+    END IF;
+END //
+        
+CREATE TRIGGER prevent_consecutive_shift_insert_trigger
+BEFORE INSERT ON shift_staffing
+FOR EACH ROW
+BEGIN
+    DECLARE last_date DATE;
+    DECLARE last_slot VARCHAR(20);
+
+    SELECT s.shift_date, s.shift_slot
+    INTO last_date, last_slot
+    FROM shift_staffing ss
+    JOIN shifts s ON ss.shift_id = s.shift_id
+    WHERE ss.staff_AMKA = NEW.staff_AMKA
+    LIMIT 1;
+END//
+
+CREATE TRIGGER prevent_consecutive_shift_update_trigger
+BEFORE UPDATE ON shift_staffing
+FOR EACH ROW
+BEGIN
+    DECLARE last_date DATE;
+    DECLARE last_slot VARCHAR(20);
+
+    SELECT s.shift_date, s.shift_slot
+    INTO last_date, last_slot
+    FROM shift_staffing ss
+    JOIN shifts s ON ss.shift_id = s.shift_id
+    WHERE ss.staff_AMKA = NEW.staff_AMKA
+    LIMIT 1;
+END//
+
+CREATE PROCEDURE validate_shift_requirements(IN p_shift_id INT)
+BEGIN
+    DECLARE doc_count INT;
+    DECLARE nurse_count INT;
+    DECLARE admin_count INT;
+    DECLARE resident_exists INT;
+    DECLARE senior_exists INT;
+
+    SELECT 
+        COUNT(CASE WHEN s.staff_type = 'Doctor' THEN 1 END),
+        COUNT(CASE WHEN s.staff_type = 'Nurse' THEN 1 END),
+        COUNT(CASE WHEN s.staff_type = 'Admin' THEN 1 END)
+    INTO doc_count, nurse_count, admin_count
+    FROM shift_staffing ss
+    JOIN staff s ON ss.staff_AMKA = s.AMKA
+    WHERE ss.shift_id = p_shift_id;
+
+    IF doc_count < 3 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Minimum 3 Doctors required in any shift.';
+    ELSEIF nurse_count < 6 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Minimum 6 Nurses required in any shift.';
+    ELSEIF admin_count < 2 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Minimum 2 Admin staff required in any shift.';
+    END IF;
+
+    SELECT COUNT(*) INTO resident_exists
+    FROM shift_staffing ss
+    JOIN doctors d ON ss.staff_AMKA = d.AMKA
+    WHERE ss.shift_id = p_shift_id AND d.rank = 'Resident';
+
+    IF resident_exists > 0 THEN
+        SELECT COUNT(*) INTO senior_exists
+        FROM shift_staffing ss
+        JOIN doctors d ON ss.staff_AMKA = d.AMKA
+        WHERE ss.shift_id = p_shift_id 
+        AND d.rank IN ('Senior Attending', 'Director');
+
+        IF senior_exists = 0 THEN
+            SIGNAL SQLSTATE '45000' 
+            SET MESSAGE_TEXT = 'Shift Error: Residents require at least one Senior Attending or Director present.';
+        END IF;
+    END IF;
+END//
+
+CREATE PROCEDURE update_shift_staffing_status(IN p_shift_id INT)
+BEGIN
+    DECLARE doc_count INT;
+    DECLARE nurse_count INT;
+    DECLARE admin_count INT;
+    DECLARE current_status VARCHAR(20);
+
+    SELECT 
+        COUNT(CASE WHEN s.staff_type = 'Doctor' THEN 1 END),
+        COUNT(CASE WHEN s.staff_type = 'Nurse' THEN 1 END),
+        COUNT(CASE WHEN s.staff_type = 'Admin' THEN 1 END)
+    INTO doc_count, nurse_count, admin_count
+    FROM shift_staffing ss
+    JOIN staff s ON ss.staff_AMKA = s.AMKA
+    WHERE ss.shift_id = p_shift_id;
+
+    IF doc_count >= 3 AND nurse_count >= 6 AND admin_count >= 2 THEN
+        SET current_status = 'Scheduled';
+    ELSE
+        SET current_status = 'Understaffed';
+    END IF;
+
+    UPDATE shifts 
+    SET shift_status = current_status 
+    WHERE shift_id = p_shift_id 
+    AND shift_status IN ('Scheduled', 'Understaffed'); 
+END//
+
+CREATE TRIGGER after_staffing_insert_trigger
+AFTER INSERT ON shift_staffing
+FOR EACH ROW
+BEGIN
+    CALL update_shift_staffing_status(NEW.shift_id);
+END//
+
+CREATE TRIGGER after_staffing_delete_trigger
+AFTER DELETE ON shift_staffing
+FOR EACH ROW
+BEGIN
+    CALL update_shift_staffing_status(OLD.shift_id);
+END//
+
+CREATE TRIGGER validate_shift_on_lock_trigger
+BEFORE UPDATE ON shifts
+FOR EACH ROW
+BEGIN
+    IF NEW.shift_status = 'Completed' AND OLD.shift_status <> 'Completed' THEN
+        CALL validate_shift_requirements(NEW.shift_id);
+    END IF;
+END//
+
+CREATE TRIGGER trg_protect_locked_shifts
+BEFORE INSERT ON shift_staffing
+FOR EACH ROW
+BEGIN
+    DECLARE v_status VARCHAR(20);
+
+    SELECT shift_status INTO v_status 
+    FROM shifts 
+    WHERE shift_id = NEW.shift_id;
+
+    IF v_status = 'Completed' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Cannot add staff to a Completed/Locked shift.';
+    END IF;
+END//
+
+CREATE TRIGGER trg_protect_locked_shifts_delete
+BEFORE DELETE ON shift_staffing
+FOR EACH ROW
+BEGIN
+    DECLARE v_status VARCHAR(20);
+
+    SELECT shift_status INTO v_status 
+    FROM shifts 
+    WHERE shift_id = OLD.shift_id;
+
+    IF v_status = 'Completed' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Cannot remove staff from a Completed/Locked shift.';
+    END IF;
+END//
 
 DELIMITER ;
