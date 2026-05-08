@@ -632,7 +632,7 @@ END//
 -- TRIGGERS FOR CONSTRAINTS/CHECKS: THROW ERRORS
 -- ============================================================
 
-CREATE TRIGGER doctor_rank_insert_check_trigger_trigger
+CREATE TRIGGER doctor_rank_insert_check_trigger
 BEFORE INSERT ON doctors
 FOR EACH ROW
 BEGIN
@@ -661,6 +661,45 @@ BEGIN
         SET MESSAGE_TEXT = 'Error: Directors cannot have a supervisor.';
     END IF;
 END//
+
+DELIMITER //
+
+CREATE TRIGGER doctor_supervisor_cycle_trigger
+BEFORE UPDATE ON doctors
+FOR EACH ROW
+main: BEGIN
+    DECLARE v_count INT DEFAULT 0;
+
+    IF NEW.supervisor_AMKA IS NULL THEN
+        LEAVE main;
+    END IF;
+
+    IF NEW.supervisor_AMKA = NEW.AMKA THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: A doctor cannot supervise themselves.';
+    END IF;
+
+    WITH RECURSIVE supervision_chain AS (
+        SELECT supervisor_AMKA
+        FROM doctors
+        WHERE AMKA = NEW.supervisor_AMKA
+        
+        UNION ALL
+        
+        SELECT sup.supervisor_AMKA
+        FROM doctors sup
+        INNER JOIN supervision_chain sc ON sup.AMKA = sc.supervisor_AMKA
+        WHERE sup.supervisor_AMKA IS NOT NULL AND sc.supervisor_AMKA <> NEW.AMKA
+    )
+    SELECT COUNT(*) INTO v_count 
+    FROM supervision_chain 
+    WHERE supervisor_AMKA = NEW.AMKA;
+
+    IF v_count > 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Detected Circular chain of supervision.';
+    END IF;
+END main//
 
 CREATE TRIGGER check_for_admins_in_procedure_trigger
 BEFORE INSERT ON procedure_assistants
