@@ -662,19 +662,15 @@ BEGIN
     END IF;
 END//
 
-DELIMITER //
-
-CREATE TRIGGER doctor_supervisor_cycle_trigger
-BEFORE UPDATE ON doctors
-FOR EACH ROW
+CREATE PROCEDURE check_supervisor_cycle_proc(IN p_doctor_amka CHAR(11), IN p_new_supervisor_amka CHAR(11))
 main: BEGIN
     DECLARE v_count INT DEFAULT 0;
 
-    IF NEW.supervisor_AMKA IS NULL THEN
+    IF p_new_supervisor_amka IS NULL THEN
         LEAVE main;
     END IF;
 
-    IF NEW.supervisor_AMKA = NEW.AMKA THEN
+    IF p_doctor_amka = p_new_supervisor_amka THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Error: A doctor cannot supervise themselves.';
     END IF;
@@ -682,24 +678,44 @@ main: BEGIN
     WITH RECURSIVE supervision_chain AS (
         SELECT supervisor_AMKA
         FROM doctors
-        WHERE AMKA = NEW.supervisor_AMKA
+        WHERE AMKA = p_new_supervisor_amka
         
         UNION ALL
         
-        SELECT sup.supervisor_AMKA
-        FROM doctors sup
-        INNER JOIN supervision_chain sc ON sup.AMKA = sc.supervisor_AMKA
-        WHERE sup.supervisor_AMKA IS NOT NULL AND sc.supervisor_AMKA <> NEW.AMKA
+        SELECT d.supervisor_AMKA
+        FROM doctors d
+        INNER JOIN supervision_chain sc ON d.AMKA = sc.supervisor_AMKA
+        WHERE d.supervisor_AMKA IS NOT NULL AND sc.supervisor_AMKA <> p_doctor_amka
     )
     SELECT COUNT(*) INTO v_count 
     FROM supervision_chain 
-    WHERE supervisor_AMKA = NEW.AMKA;
+    WHERE supervisor_AMKA = p_doctor_amka
+    LIMIT 1;
 
     IF v_count > 0 THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Error: Detected Circular chain of supervision.';
     END IF;
-END main//
+END main //
+
+CREATE TRIGGER doctor_supervisor_insert_trigger
+BEFORE INSERT ON doctors
+FOR EACH ROW
+BEGIN
+    CALL check_supervisor_cycle_proc(NEW.AMKA, NEW.supervisor_AMKA);
+END //
+
+CREATE TRIGGER doctor_supervisor_update_trigger
+BEFORE UPDATE ON doctors
+FOR EACH ROW
+BEGIN
+    IF (NEW.supervisor_AMKA <> OLD.supervisor_AMKA) 
+        OR (NEW.supervisor_AMKA IS NULL AND OLD.supervisor_AMKA IS NOT NULL)
+        OR (NEW.supervisor_AMKA IS NOT NULL AND OLD.supervisor_AMKA IS NULL) 
+    THEN
+        CALL check_supervisor_cycle_proc(NEW.AMKA, NEW.supervisor_AMKA);
+    END IF;
+END //
 
 CREATE TRIGGER check_for_admins_in_procedure_trigger
 BEFORE INSERT ON procedure_assistants
@@ -791,7 +807,7 @@ BEGIN
     END IF;
 
     IF EXISTS (
-        SELECT 1 FROM procedure_executions 
+        SELECT NULL FROM procedure_executions 
         WHERE main_doctor_AMKA = p_doctor_AMKA 
         AND execution_id != COALESCE(p_exec_id, -1)
         AND p_start < COALESCE(end_time, '2099-12-31 23:59:59') 
@@ -802,7 +818,19 @@ BEGIN
     END IF;
 END //
 
--- -------------------- TRIGGERS GIA TA SHIFTS TA PARATISA ----------------------------------------
+CREATE TRIGGER procedure_overlap_insert_trigger
+BEFORE INSERT ON procedure_executions
+FOR EACH ROW
+BEGIN
+    CALL check_procedure_conflicts(NEW.room_id, NEW.main_doctor_AMKA, NEW.start_time, NEW.end_time, NULL);
+END //
+
+CREATE TRIGGER trg_procedure_overlap_update
+BEFORE UPDATE ON procedure_executions
+FOR EACH ROW
+BEGIN
+    CALL check_procedure_conflicts(NEW.room_id, NEW.main_doctor_AMKA, NEW.start_time, NEW.end_time, NEW.execution_id);
+END //
 
 -- CREATE TRIGGER check_max_shifts_trigger
 -- BEFORE INSERT ON shift_staffing
@@ -832,36 +860,15 @@ END //
 --     ELSEIF (staff_role = 'Admin' AND shift_count >= 25) THEN
 --         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Admin exceeded max monthly shifts (25)';
 --     END IF;
--- END;
---
+-- END//
+
 -- CREATE TRIGGER prevent_consecutive_shifts_trigger
 -- BEFORE INSERT ON shift_staffing
 -- FOR EACH ROW
 -- BEGIN
 --     DECLARE last_shift_date DATE;
---     DECLARE last_shift_slot ENUM('Morning', 'Afternoon', 'Night');
---
---     SELECT s.shift_date, s.shift_slot INTO last_shift_date, last_shift_slot
---     FROM shift_staffing ss
---     JOIN shifts s ON ss.shift_id = s.shift_id
---     WHERE ss.staff_AMKA = NEW.staff_AMKA
---     ORDER BY s.shift_date DESC, s.shift_slot DESC
---     LIMIT 1;
--- END;
---
--- CREATE TRIGGER check_supervisor_trigger
--- BEFORE UPDATE ON shifts
--- FOR EACH ROW
--- BEGIN
---     IF NEW.shift_status = 'Scheduled' THEN
---         IF (SELECT COUNT(*) FROM shift_staffing ss
---             JOIN staff st ON ss.staff_AMKA = st.AMKA
---             WHERE ss.shift_id = NEW.shift_id
---             AND st.rank IN ('Supervisor', 'Senior Attending')) = 0
---         THEN
---             SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Shift must have at least one Supervisor/Senior.';
---         END IF;
---     END IF;
--- END;
+--     DECLARE last_shift_slot VARCHAR(20);
+--     IF (
+-- END//
 
 DELIMITER ;
