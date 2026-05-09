@@ -256,20 +256,32 @@
             <h1>Database Explorer</h1>
             <p>MariaDB • Ygeiopolis</p>
         </div>
+        
+        <div style="padding: 16px 20px 8px; font-size: 0.75rem; text-transform: uppercase; color: var(--brand); font-weight: 700; letter-spacing: 0.05em;">Assignment Queries</div>
+        <ul class="table-list" id="queryList">
+            <li style="padding: 10px 20px; color: var(--text-muted); font-size: 0.85rem;">Loading queries...</li>
+        </ul>
+
+        <div style="padding: 16px 20px 8px; font-size: 0.75rem; text-transform: uppercase; color: var(--brand); font-weight: 700; letter-spacing: 0.05em;">Database Tables</div>
         <ul class="table-list" id="tableList">
-            <li style="padding: 20px; color: var(--text-muted); text-align: center;">Loading tables...</li>
+            <li style="padding: 10px 20px; color: var(--text-muted); font-size: 0.85rem;">Loading tables...</li>
         </ul>
     </aside>
 
     <main class="main-content">
         <div class="header">
-            <h2 id="currentTableName">Select a Table</h2>
+            <h2 id="currentTableName">Select a Table or Query</h2>
             <p id="tableMeta">Extensive filtering, sorting, and search available.</p>
+        </div>
+
+        <div id="querySourceContainer" style="display: none; margin-bottom: 20px;" class="card">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 8px;">SQL SOURCE</div>
+            <pre id="querySourceCode" style="margin: 0; font-family: monospace; font-size: 0.9rem; color: #a5b4fc; white-space: pre-wrap;"></pre>
         </div>
 
         <div class="card">
             <div id="tableContainer" class="table-container">
-                <div class="loading">Please select a table from the sidebar.</div>
+                <div class="loading">Please select an item from the sidebar.</div>
             </div>
         </div>
     </main>
@@ -305,11 +317,40 @@
                 document.getElementById('tableList').innerHTML = `<li style="padding: 20px; color: #ef4444;">Connection error</li>`;
             });
 
-        function loadTable(tableName, listItemElement) {
-            // Update active state
-            document.querySelectorAll('.table-item').forEach(el => el.classList.remove('active'));
-            if(listItemElement) listItemElement.classList.add('active');
+        // Fetch list of queries on load
+        fetch('/api/queries')
+            .then(res => res.json())
+            .then(queries => {
+                const list = document.getElementById('queryList');
+                list.innerHTML = '';
+                
+                if (queries.error) {
+                    list.innerHTML = `<li style="padding: 20px; color: #ef4444;">Error loading queries</li>`;
+                    return;
+                }
 
+                queries.forEach(q => {
+                    const li = document.createElement('li');
+                    li.className = 'table-item';
+                    li.style.fontSize = '0.85rem';
+                    li.innerHTML = `<strong style="color: var(--text-main); margin-right: 6px;">${q.id}</strong> <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;">${q.title}</span>`;
+                    li.onclick = () => runQuery(q.id, q.title, li);
+                    list.appendChild(li);
+                });
+            })
+            .catch(err => {
+                document.getElementById('queryList').innerHTML = `<li style="padding: 20px; color: #ef4444;">Connection error</li>`;
+            });
+
+        function clearActive() {
+            document.querySelectorAll('.table-item').forEach(el => el.classList.remove('active'));
+        }
+
+        function loadTable(tableName, listItemElement) {
+            clearActive();
+            if(listItemElement) listItemElement.classList.add('active');
+            
+            document.getElementById('querySourceContainer').style.display = 'none';
             document.getElementById('currentTableName').textContent = tableName;
             document.getElementById('tableMeta').textContent = `Loading data for ${tableName}...`;
             
@@ -318,58 +359,89 @@
 
             fetch(`/api/tables/${tableName}`)
                 .then(res => res.json())
-                .then(data => {
-                    if (data.error) {
-                        container.innerHTML = `<div class="loading" style="color:#ef4444">Error: ${data.error}</div>`;
-                        return;
-                    }
-
-                    if (data.length === 0) {
-                        container.innerHTML = `<div class="loading">Table is empty.</div>`;
-                        document.getElementById('tableMeta').textContent = `0 records found.`;
-                        return;
-                    }
-
-                    document.getElementById('tableMeta').textContent = `${data.length} records loaded. Use the search bar for extensive filtering.`;
-
-                    // Generate table HTML
-                    const columns = Object.keys(data[0]);
-                    
-                    let tableHtml = `<table id="dynamicTable" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                ${columns.map(col => `<th>${col}</th>`).join('')}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${data.map(row => `
-                                <tr>
-                                    ${columns.map(col => `<td>${row[col] === null ? '<span style="color:var(--text-muted)">null</span>' : row[col]}</td>`).join('')}
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>`;
-
-                    container.innerHTML = tableHtml;
-
-                    // Initialize DataTables
-                    if (currentDataTable) {
-                        currentDataTable.destroy();
-                    }
-                    
-                    currentDataTable = $('#dynamicTable').DataTable({
-                        pageLength: 25,
-                        responsive: true,
-                        language: {
-                            search: "Filter records:",
-                            lengthMenu: "Show _MENU_ records",
-                            info: "Showing _START_ to _END_ of _TOTAL_ records",
-                        }
-                    });
-                })
+                .then(data => renderData(data, `records loaded from ${tableName}`))
                 .catch(err => {
                     container.innerHTML = `<div class="loading" style="color:#ef4444">Failed to load data.</div>`;
                 });
+        }
+
+        function runQuery(queryId, title, listItemElement) {
+            clearActive();
+            if(listItemElement) listItemElement.classList.add('active');
+
+            document.getElementById('currentTableName').textContent = queryId;
+            document.getElementById('tableMeta').textContent = title;
+            
+            document.getElementById('querySourceContainer').style.display = 'block';
+            document.getElementById('querySourceCode').textContent = "Executing...";
+
+            const container = document.getElementById('tableContainer');
+            container.innerHTML = `<div class="loading">Executing query...</div>`;
+
+            fetch(`/api/queries/${queryId}`)
+                .then(res => res.json())
+                .then(response => {
+                    if (response.error) {
+                        document.getElementById('querySourceCode').textContent = response.sql || "SQL Not Found";
+                        container.innerHTML = `<div class="loading" style="color:#ef4444; max-width: 800px; text-align: center;">Error: ${response.error}</div>`;
+                        return;
+                    }
+
+                    document.getElementById('querySourceCode').textContent = response.sql;
+                    renderData(response.results, `rows returned by ${queryId}`);
+                })
+                .catch(err => {
+                    container.innerHTML = `<div class="loading" style="color:#ef4444">Failed to execute query.</div>`;
+                });
+        }
+
+        function renderData(data, metaTextSuffix) {
+            const container = document.getElementById('tableContainer');
+            if (data.error) {
+                container.innerHTML = `<div class="loading" style="color:#ef4444">Error: ${data.error}</div>`;
+                return;
+            }
+
+            if (!data || data.length === 0) {
+                container.innerHTML = `<div class="loading">No records returned.</div>`;
+                document.getElementById('tableMeta').textContent = `0 ${metaTextSuffix}.`;
+                return;
+            }
+
+            document.getElementById('tableMeta').textContent = `${data.length} ${metaTextSuffix}.`;
+
+            const columns = Object.keys(data[0]);
+            
+            let tableHtml = `<table id="dynamicTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        ${columns.map(col => `<th>${col}</th>`).join('')}
+                    </tr>
+                </thead>
+                <tbody>
+                    ${data.map(row => `
+                        <tr>
+                            ${columns.map(col => `<td>${row[col] === null ? '<span style="color:var(--text-muted)">null</span>' : row[col]}</td>`).join('')}
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>`;
+
+            container.innerHTML = tableHtml;
+
+            if (currentDataTable) {
+                currentDataTable.destroy();
+            }
+            
+            currentDataTable = $('#dynamicTable').DataTable({
+                pageLength: 25,
+                responsive: true,
+                language: {
+                    search: "Filter results:",
+                    lengthMenu: "Show _MENU_ records",
+                    info: "Showing _START_ to _END_ of _TOTAL_ records",
+                }
+            });
         }
     </script>
 </body>

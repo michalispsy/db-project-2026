@@ -31,11 +31,13 @@ def gen_staff_and_doctors(dept_ids):
 
         staff_rows.append((amka, first, last, str(dob), email, phone, str(hire), "Doctor"))
 
+        n_seniors = N_DEPARTMENTS * 2
+        n_juniors = N_DEPARTMENTS * 4
         if i < N_DEPARTMENTS:
             rank = "Director"
-        elif i < N_DEPARTMENTS + 15:
+        elif i < N_DEPARTMENTS + n_seniors:
             rank = "Senior Attending"
-        elif i < N_DEPARTMENTS + 35:
+        elif i < N_DEPARTMENTS + n_seniors + n_juniors:
             rank = "Junior Attending"
         else:
             rank = "Resident"
@@ -93,6 +95,15 @@ def gen_staff_and_doctors(dept_ids):
             dd_rows.append((doc["amka"], other))
     dd_rows = list(set(dd_rows))
     write_csv_file("doctor_departments.csv", ["doctor_AMKA", "dept_id"], dd_rows)
+
+    # 13. doctor_images (Map to existing doctors)
+    img_data = []
+    doctor_amkas = [d["amka"] for d in doctors]
+    for i, doc_amka in enumerate(doctor_amkas):
+        gender_type = "women" if i % 2 == 0 else "men"
+        img_url = f"https://randomuser.me/api/portraits/{gender_type}/{i % 100}.jpg"
+        img_data.append([doc_amka, img_url, "Profile photo", 1])
+    write_csv_file("doctor_images.csv", ["doctor_AMKA", "img_url", "caption", "ordering"], img_data)
 
     # Director updates (returned for SQL UPDATE statements)
     director_updates = [(dept_ids[i], doctors[i]["amka"]) for i in range(N_DEPARTMENTS)]

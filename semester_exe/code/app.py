@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, send_from_directory, request
 import mysql.connector
 
 app = Flask(__name__, static_folder='frontend')
@@ -26,7 +26,58 @@ def get_data():
     cursor = conn.cursor(dictionary=True)
     data = {}
 
-    # 1. Departments
+    # 1. Pre-fetch Prescriptions (Used by both global list and patient profiles)
+    cursor.execute("""
+        SELECT pr.patient_AMKA, CONCAT(p.first_name, ' ', p.last_name) AS patient_name,
+               CONCAT(s.first_name, ' ', s.last_name) AS doctor_name,
+               d.name AS drug_name, d.manufacturer AS drug_ema, pr.dosage, pr.frequency,
+               DATE_FORMAT(pr.start_date, '%Y-%m-%d') AS start,
+               DATE_FORMAT(pr.end_date, '%Y-%m-%d') AS end,
+               di.img_url AS drug_img
+        FROM prescriptions pr
+        JOIN patients p ON pr.patient_AMKA = p.AMKA
+        JOIN staff s ON pr.doctor_AMKA = s.AMKA
+        JOIN drugs d ON pr.drug_id = d.drug_id
+        LEFT JOIN drug_images di ON d.drug_id = di.drug_id
+        ORDER BY pr.start_date DESC
+    """)
+    prescs = cursor.fetchall()
+    presc_by_patient = {}
+    for r in prescs:
+        if not r['drug_img']:
+            # Use name hash or AMKA for a consistent fallback image
+            r['drug_img'] = f"https://loremflickr.com/400/400/pills,medicine/all?lock={abs(hash(r['drug_name'])) % 1000}"
+        presc_by_patient.setdefault(r['patient_AMKA'], []).append(r)
+    data['PRESCRIPTIONS'] = prescs
+
+    # 1.5 Pre-fetch Surgeries
+    cursor.execute("""
+        SELECT pe.execution_id AS id, o.room_name AS room, mp.name, mp.category,
+               CONCAT(s.first_name, ' ', s.last_name) AS surgeon_name,
+               pe.main_doctor_AMKA AS surgeon,
+               CONCAT(p.first_name, ' ', p.last_name) AS patient,
+               p.AMKA AS patient_AMKA,
+               DATE_FORMAT(pe.start_time, '%Y-%m-%d %H:%i') AS start,
+               ROUND(TIMESTAMPDIFF(MINUTE, pe.start_time, IFNULL(pe.end_time, CURRENT_TIMESTAMP)) / 60.0, 1) AS dur
+        FROM procedure_executions pe
+        JOIN medical_procedures mp ON pe.procedure_code = mp.procedure_code
+        JOIN operating_rooms o ON pe.room_id = o.room_id
+        JOIN admissions a ON pe.admission_id = a.admission_id
+        JOIN patients p ON a.patient_AMKA = p.AMKA
+        LEFT JOIN staff s ON pe.main_doctor_AMKA = s.AMKA
+        ORDER BY pe.start_time DESC
+    """)
+    surgeries = cursor.fetchall()
+    surgeries_by_patient = {}
+    for s in surgeries:
+        s['id'] = str(s['id'])
+        if s['dur'] is not None:
+            s['dur'] = float(s['dur'])
+        s['assistants'] = [] # simplified
+        surgeries_by_patient.setdefault(s['patient_AMKA'], []).append(s)
+    data['SURGERIES'] = surgeries
+
+    # 2. Departments
     cursor.execute("""
         SELECT d.dept_id AS id, d.name, d.description AS `desc`, 
                (SELECT COUNT(*) FROM beds WHERE dept_id = d.dept_id) AS beds, 
@@ -43,7 +94,7 @@ def get_data():
     cursor.execute("""
         SELECT d.AMKA AS id, CONCAT(s.first_name, ' ', s.last_name) AS name,
                d.license_number AS lic, d.rank, 
-               GROUP_CONCAT(dd.dept_id) AS deptIds, 
+               GROUP_CONCAT(DISTINCT dd.dept_id) AS deptIds, 
                d.supervisor_AMKA AS supervisorId
         FROM doctors d
         JOIN staff s ON d.AMKA = s.AMKA
@@ -51,6 +102,12 @@ def get_data():
         GROUP BY d.AMKA
     """)
     docs = cursor.fetchall()
+    
+    # Separate image fetch to be ultra-safe
+    cursor.execute("SELECT doctor_AMKA, img_url FROM doctor_images ORDER BY ordering ASC")
+    img_rows = cursor.fetchall()
+    img_map = {row['doctor_AMKA']: row['img_url'] for row in img_rows}
+    print(f" * Found {len(img_map)} doctor images in DB")
     
     # Count surgeries per doctor
     cursor.execute("""
@@ -63,9 +120,13 @@ def get_data():
     for doc in docs:
         doc['spec'] = doc['rank']
         doc['surgeries'] = doc_surgeries.get(doc['id'], 0)
+        doc['img'] = img_map.get(doc['id'])
         # Convert comma-separated string to list of ints
-        if doc['deptIds']:
-            doc['deptIds'] = [int(x) for x in doc['deptIds'].split(',')]
+        if doc.get('deptIds'):
+            try:
+                doc['deptIds'] = [int(x) for x in str(doc['deptIds']).split(',') if x.strip()]
+            except:
+                doc['deptIds'] = []
         else:
             doc['deptIds'] = []
     data['DOCTORS'] = docs
@@ -86,15 +147,22 @@ def get_data():
     """)
     data['ADMIN'] = cursor.fetchall()
 
-    # 5. Patients Triage
+    # 5. Triage (History and Outcomes)
     cursor.execute("""
-        SELECT t.triage_id AS id, t.urgency_level AS level, CONCAT(p.first_name, ' ', p.last_name) AS name,
-               t.symptoms, DATE_FORMAT(t.arrival_time, '%H:%i') AS arrival, t.minutes_waited AS waitMin
+        SELECT t.triage_id AS id, t.urgency_level AS level, IFNULL(CONCAT(p.first_name, ' ', p.last_name), 'Unknown Patient') AS name,
+               t.patient_AMKA AS amka, t.symptoms, DATE_FORMAT(t.arrival_time, '%Y-%m-%d %H:%i') AS arrival, 
+               IFNULL(t.minutes_waited, TIMESTAMPDIFF(MINUTE, t.arrival_time, NOW())) AS waitMin, 
+               t.outcome
         FROM triages t
-        JOIN patients p ON t.patient_AMKA = p.AMKA
-        ORDER BY t.arrival_time DESC LIMIT 50
+        LEFT JOIN patients p ON t.patient_AMKA = p.AMKA
+        ORDER BY t.arrival_time DESC
     """)
-    data['PATIENTS_TRIAGE'] = cursor.fetchall()
+    triages = cursor.fetchall()
+    for t in triages:
+        if t['level'] is not None:
+            t['level'] = int(t['level'])
+    print(f" * Found {len(triages)} triages in DB")
+    data['PATIENTS_TRIAGE'] = triages
 
     # 6. Patients (Complex with Nested Lists)
     cursor.execute("""
@@ -102,7 +170,6 @@ def get_data():
                age, gender, weight, height, phone_number AS phone, email, occupation AS job, nationality,
                insurance_provider AS insurance
         FROM patients
-        LIMIT 50
     """)
     patients = cursor.fetchall()
     
@@ -133,14 +200,14 @@ def get_data():
                CONCAT(p.first_name, ' ', p.last_name) AS patient_name,
                DATE_FORMAT(a.admission_date, '%Y-%m-%d') AS `from`, 
                DATE_FORMAT(a.discharge_date, '%Y-%m-%d') AS `to`, d.name AS dept, 
-               a.admission_diagnosis_code AS icd10, a.ken_code AS ken, b.bed_id AS bed,
+               a.admission_diagnosis_code AS icd10, a.discharge_diagnosis_code, a.ken_code AS ken, b.bed_id AS bed,
                a.base_cost + a.extra_cost AS cost,
                IF(a.discharge_date IS NULL, 'ενεργή', 'εξιτήριο') AS status
         FROM admissions a
         JOIN patients p ON a.patient_AMKA = p.AMKA
         LEFT JOIN departments d ON a.department_id = d.dept_id
         LEFT JOIN beds b ON a.bed_id = b.bed_id
-        ORDER BY a.admission_date DESC
+        ORDER BY a.admission_date DESC, a.admission_id DESC
     """)
     all_hosp = cursor.fetchall()
     hosp_by_patient = {}
@@ -158,6 +225,8 @@ def get_data():
         p['allergies'] = allergies_by_patient.get(p_id, [])
         p['contacts'] = contacts_by_patient.get(p_id, [])
         p['hospitalizations'] = hosp_by_patient.get(p_id, [])
+        p['prescriptions'] = presc_by_patient.get(p_id, [])
+        p['surgeries'] = surgeries_by_patient.get(p_id, [])
         
     data['PATIENTS'] = patients
     data['ADMISSIONS'] = all_hosp  # Full list for the Hospitalizations tab
@@ -191,48 +260,53 @@ def get_data():
     data['BEDS'] = beds
 
     # 10. Drugs
-    cursor.execute("SELECT drug_id AS id, name, manufacturer AS substance FROM drugs")
+    cursor.execute("""
+        SELECT d.drug_id AS id, d.name, d.manufacturer AS substance, di.img_url AS img
+        FROM drugs d
+        LEFT JOIN drug_images di ON d.drug_id = di.drug_id
+    """)
     drugs = cursor.fetchall()
     for d in drugs:
         d['id'] = str(d['id'])
+        if not d['img']:
+            # Fallback: Dynamic medical image based on drug ID for consistency
+            d['img'] = f"https://loremflickr.com/400/400/pills,medicine/all?lock={d['id']}"
     data['DRUGS'] = drugs
 
-    # 11. Surgeries (medical procedures)
+
+    # 11. Shifts
     cursor.execute("""
-        SELECT pe.execution_id AS id, o.room_name AS room, mp.name, mp.category,
-               pe.main_doctor_AMKA AS surgeon,
-               CONCAT(p.first_name, ' ', p.last_name) AS patient,
-               DATE_FORMAT(pe.start_time, '%H:%i') AS start,
-               ROUND(TIMESTAMPDIFF(MINUTE, pe.start_time, IFNULL(pe.end_time, CURRENT_TIMESTAMP)) / 60.0, 1) AS dur
-        FROM procedure_executions pe
-        JOIN medical_procedures mp ON pe.procedure_code = mp.procedure_code
-        JOIN operating_rooms o ON pe.room_id = o.room_id
-        JOIN admissions a ON pe.admission_id = a.admission_id
-        JOIN patients p ON a.patient_AMKA = p.AMKA
+        SELECT s.shift_id, s.shift_date, s.shift_slot, s.shift_status, d.name AS dept_name, s.dept_id
+        FROM shifts s
+        JOIN departments d ON s.dept_id = d.dept_id
+        ORDER BY s.shift_date ASC
     """)
-    surgeries = cursor.fetchall()
-    for s in surgeries:
-        s['id'] = str(s['id'])
-        if s['dur'] is not None:
-            s['dur'] = float(s['dur'])
-        s['assistants'] = [] # simplified
-    data['SURGERIES'] = surgeries
+    shifts = cursor.fetchall()
+    
+    cursor.execute("""
+        SELECT ss.shift_id, st.AMKA AS id, CONCAT(st.first_name, ' ', st.last_name) AS name, 
+               CASE WHEN dr.AMKA IS NOT NULL THEN 'Doctor'
+                    WHEN nu.AMKA IS NOT NULL THEN 'Nurse'
+                    ELSE 'Admin' END AS role
+        FROM shift_staffing ss
+        JOIN staff st ON ss.staff_AMKA = st.AMKA
+        LEFT JOIN doctors dr ON st.AMKA = dr.AMKA
+        LEFT JOIN nurses nu ON st.AMKA = nu.AMKA
+    """)
+    staffing = cursor.fetchall()
+    
+    staff_by_shift = {}
+    for entry in staffing:
+        sid = entry['shift_id']
+        staff_by_shift.setdefault(sid, []).append(entry)
+        
+    for s in shifts:
+        s['staff'] = staff_by_shift.get(s['shift_id'], [])
+        s['date'] = s['shift_date'].isoformat()
+        
+    data['SHIFTS'] = shifts
 
     # 12. Prescriptions
-    cursor.execute("""
-        SELECT pr.patient_AMKA, CONCAT(p.first_name, ' ', p.last_name) AS patient_name,
-               CONCAT(s.first_name, ' ', s.last_name) AS doctor_name,
-               d.name AS drug_name, pr.dosage, pr.frequency,
-               DATE_FORMAT(pr.start_date, '%Y-%m-%d') AS start,
-               DATE_FORMAT(pr.end_date, '%Y-%m-%d') AS end
-        FROM prescriptions pr
-        JOIN patients p ON pr.patient_AMKA = p.AMKA
-        JOIN staff s ON pr.doctor_AMKA = s.AMKA
-        JOIN drugs d ON pr.drug_id = d.drug_id
-        ORDER BY pr.start_date DESC LIMIT 100
-    """)
-    data['PRESCRIPTIONS'] = cursor.fetchall()
-
     data['REVIEWS'] = []
     data['QUERIES'] = []
 
@@ -272,6 +346,95 @@ def get_table_data(table_name):
     finally:
         cursor.close()
         conn.close()
+
+@app.route('/api/triage/update', methods=['POST'])
+def update_triage():
+    try:
+        data = request.json
+        triage_id = data.get('id')
+        level = data.get('level')
+        
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        
+        # When updating level, we also set triage_time to now
+        cursor.execute("""
+            UPDATE triages 
+            SET urgency_level = %s, triage_time = NOW() 
+            WHERE triage_id = %s
+        """, (level, triage_id))
+        
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return jsonify({"status": "success"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# ----- QUERY EXPLORER ROUTES -----
+QUERIES = [
+    {"id": "01", "title": "Έσοδα ανά Τμήμα", "desc": "1. Βρείτε τα συνολικά έσοδα του νοσοκομείου ανά τμήμα και ανά έτος, με ανάλυση ανά ΚΕΝ κωδικό..."},
+    {"id": "02", "title": "Ιατροί Ειδικότητας", "desc": "2. Για συγκεκριμένη ειδικότητα ιατρού, βρείτε όλους τους ιατρούς που ανήκουν σε αυτήν..."},
+    {"id": "03", "title": "Συχνές Νοσηλείες", "desc": "3. Βρείτε ποιοι ασθενείς έχουν νοσηλευτεί περισσότερες από 3 φορές στο ίδιο τμήμα..."},
+    {"id": "04", "title": "Αξιολογήσεις Ιατρού", "desc": "4. Για συγκεκριμένο ιατρό, βρείτε τον μέσο όρο αξιολογήσεων των ασθενών του..."},
+    {"id": "05", "title": "Νέοι Χειρουργοί", "desc": "5. Βρείτε τους νέους ιατρούς (ηλικία < 35 ετών) που έχουν εκτελέσει τις περισσότερες χειρουργικές επεμβάσεις..."},
+    {"id": "06", "title": "Ιστορικό Ασθενούς", "desc": "6. Για συγκεκριμένο ασθενή, βρείτε το ιστορικό νοσηλειών του, τις αντίστοιχες διαγνώσεις (ICD-10)..."},
+    {"id": "07", "title": "Ουσίες & Αλλεργίες", "desc": "7. Βρείτε για κάθε δραστική ουσία τον αριθμό ασθενών που έχουν δηλώσει αλλεργία και τον αριθμό φαρμάκων..."},
+    {"id": "08", "title": "Διαθέσιμο Προσωπικό", "desc": "8. Βρείτε το προσωπικό (ιατροί, νοσηλευτές, διοικητικό προσωπικό) που δεν έχει προγραμματισμένη εφημερία..."},
+    {"id": "09", "title": "Διάρκεια Νοσηλειών", "desc": "9. Βρείτε ποιοι ασθενείς νοσηλεύτηκαν τον ίδιο αριθμό ημερών σε διάστημα ενός έτους..."},
+    {"id": "10", "title": "Top Ζεύγη Ουσιών", "desc": "10. Πολλοί ασθενείς λαμβάνουν συνδυασμούς φαρμάκων. Βρείτε τα top-3 ζεύγη δραστικών ουσιών..."},
+    {"id": "11", "title": "Σύγκριση Επεμβάσεων", "desc": "11. Βρείτε όλους τους ιατρούς που έχουν εκτελέσει τουλάχιστον 5 λιγότερες επεμβάσεις..."},
+    {"id": "12", "title": "Απαιτήσεις Βαρδιών", "desc": "12. Βρείτε τον απαιτούμενο αριθμό προσωπικού ανά τμήμα και ανά βάρδια για συγκεκριμένη εβδομάδα..."},
+    {"id": "13", "title": "Ιεραρχία Εποπτείας", "desc": "13. Βρείτε για κάθε ιατρό όλη την ιεραρχία εποπτείας του, από τον άμεσο επόπτη έως τον Διευθυντή..."},
+    {"id": "14", "title": "ICD-10 Εισαγωγές", "desc": "14. Βρείτε ποιες κατηγορίες ICD-10 διαγνώσεων είχαν τον ίδιο αριθμό εισαγωγών σε δύο συνεχόμενα έτη..."},
+    {"id": "15", "title": "Κατανομή Triage", "desc": "15. Βρείτε την κατανομή των περιστατικών triage ανά επίπεδο επείγοντος, με μέσο χρόνο αναμονής..."}
+]
+
+@app.route('/api/queries')
+def get_queries():
+    return jsonify(QUERIES)
+
+@app.route('/api/queries/<query_id>')
+def execute_query(query_id):
+    import os
+    sql_path = os.path.join(os.path.dirname(__file__), '..', 'sql', f'Q{query_id}.sql')
+    
+    if not os.path.exists(sql_path):
+        return jsonify({
+            "error": f"Το αρχείο sql/Q{query_id}.sql δεν βρέθηκε. Δημιουργήστε το αρχείο και γράψτε το SQL ερώτημα."
+        }), 404
+
+    try:
+        with open(sql_path, 'r', encoding='utf-8') as f:
+            sql_query = f.read().strip()
+            
+        if not sql_query:
+            return jsonify({
+                "error": f"Το αρχείο sql/Q{query_id}.sql είναι άδειο."
+            }), 400
+
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute(sql_query)
+        rows = cursor.fetchall()
+        
+        # Format types
+        for row in rows:
+            for k, v in row.items():
+                if hasattr(v, 'isoformat'):
+                    row[k] = v.isoformat()
+                elif hasattr(v, 'quantize') or hasattr(v, 'real'):
+                    row[k] = float(v)
+                    
+        return jsonify({
+            "sql": sql_query,
+            "results": rows
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    finally:
+        if 'cursor' in locals(): cursor.close()
+        if 'conn' in locals(): conn.close()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

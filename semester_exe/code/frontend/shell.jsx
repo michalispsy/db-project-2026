@@ -8,6 +8,7 @@ const NAV_SECTIONS = [
     { id: "hospitalizations", name: "Νοσηλείες", icon: "hospital" },
     { id: "beds", name: "Κλίνες", icon: "bed" },
     { id: "prescriptions", name: "Συνταγές", icon: "pill" },
+    { id: "drugs", name: "Φαρμακείο", icon: "grid" },
     { id: "or", name: "Χειρουργεία", icon: "scalpel" },
   ]},
   { label: "Προσωπικό", items: [
@@ -22,7 +23,6 @@ const NAV_SECTIONS = [
     { id: "review", name: "Αξιολόγηση", icon: "star" },
   ]},
   { label: "Ανάπτυξη", items: [
-    { id: "queries", name: "Query Explorer", icon: "sql" },
     { id: "explorer", name: "Database Explorer", icon: "grid", external: "/explorer.html" },
   ]},
 ];
@@ -39,18 +39,24 @@ const Sidebar = ({ current, onNav }) => (
     {NAV_SECTIONS.map((section, idx) => (
       <React.Fragment key={idx}>
         <div className="nav-section-label">{section.label}</div>
-        {section.items.map(item => (
-          <div
-            key={item.id}
-            className={"nav-item" + (current === item.id ? " active" : "")}
-            onClick={() => item.external ? window.location.href = item.external : onNav(item.id)}
-            id={"nav-" + item.id}
-          >
-            <Icon name={item.icon} />
-            <span>{item.name}</span>
-            {item.badge ? <span className="badge">{item.badge}</span> : null}
-          </div>
-        ))}
+        {section.items.map(item => {
+          const badge = (item.id === 'triage') 
+            ? window.UG.PATIENTS_TRIAGE.filter(p => !p.outcome || p.outcome === 'Pending').length 
+            : item.badge;
+          
+          return (
+            <div
+              key={item.id}
+              className={"nav-item" + (current === item.id ? " active" : "")}
+              onClick={() => item.external ? window.location.href = item.external : onNav(item.id)}
+              id={"nav-" + item.id}
+            >
+              <Icon name={item.icon} />
+              <span>{item.name}</span>
+              {badge ? <span className="badge">{badge}</span> : null}
+            </div>
+          );
+        })}
       </React.Fragment>
     ))}
   </aside>
@@ -63,6 +69,7 @@ const CRUMB_LABEL = {
   hospitalizations: ["Διαχείριση", "Νοσηλείες"],
   beds: ["Διαχείριση", "Διαχείριση Κλινών"],
   prescriptions: ["Διαχείριση", "Συνταγές"],
+  drugs: ["Διαχείριση", "Φαρμακείο"],
   or: ["Διαχείριση", "Χειρουργεία"],
   staff: ["Προσωπικό", "Κατάλογος"],
   shifts: ["Προσωπικό", "Εφημερίες"],

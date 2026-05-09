@@ -1,16 +1,121 @@
 AMKA,position,office_location,dept_id
-05040433335,Secretary,Office-C315,2
-80933913732,Supplies Manager,Office-B204,8
-88002300915,Records Clerk,Office-C209,8
-16093659520,Receptionist,Office-A217,5
-92632239982,Secretary,Office-C310,15
-60505376660,Receptionist,Office-B213,15
-27153123455,HR Officer,Office-B305,14
-40134808735,Billing Clerk,Office-C304,11
-70908599144,Records Clerk,Office-B319,10
-89971842859,Billing Clerk,Office-C307,15
-23426698069,HR Officer,Office-A307,11
-89359538280,IT Support,Office-A219,1
-64186965613,Supplies Manager,Office-A207,6
-23948400273,Supplies Manager,Office-B307,14
-95001680941,IT Support,Office-B314,14
+40476253950,HR Officer,Office-C318,8
+31748903045,Receptionist,Office-A308,14
+45920559675,Secretary,Office-C211,4
+74511608958,Records Clerk,Office-C313,7
+34761289899,Supplies Manager,Office-C219,10
+56033878852,Receptionist,Office-C213,13
+00737949994,Supplies Manager,Office-A314,10
+43475916043,IT Support,Office-C314,13
+78375681678,HR Officer,Office-B204,14
+07883692233,Billing Clerk,Office-A311,10
+12653273551,Billing Clerk,Office-B203,4
+50935555702,Supplies Manager,Office-B309,5
+12189391270,Receptionist,Office-C301,11
+46853045555,HR Officer,Office-C310,8
+76399046008,Receptionist,Office-A119,11
+06179067015,Secretary,Office-B220,10
+16218333919,Secretary,Office-A114,8
+22837742705,Receptionist,Office-A207,15
+01269804466,Supplies Manager,Office-C114,7
+45257378747,HR Officer,Office-B202,6
+98897284268,Secretary,Office-A207,8
+60566880316,Secretary,Office-A205,4
+41601991984,HR Officer,Office-A206,7
+10740433689,Billing Clerk,Office-A102,1
+01785020502,Records Clerk,Office-A316,1
+97475396597,Secretary,Office-B204,5
+74051337937,IT Support,Office-B216,14
+90584968814,Billing Clerk,Office-C112,3
+50999863245,Records Clerk,Office-C203,1
+89859321359,Supplies Manager,Office-A105,15
+59720554829,IT Support,Office-C309,5
+04293717847,Supplies Manager,Office-B205,1
+69889798877,Secretary,Office-A305,5
+59627519346,IT Support,Office-A212,8
+56862230706,Records Clerk,Office-A210,3
+37271862447,HR Officer,Office-C118,1
+66154598586,Supplies Manager,Office-C317,11
+12886690594,IT Support,Office-B202,14
+31329887123,Supplies Manager,Office-C218,15
+85272876032,Receptionist,Office-C308,7
+57356232770,Receptionist,Office-B105,1
+04240255546,HR Officer,Office-C303,7
+64673865690,Supplies Manager,Office-A306,10
+55877006239,Secretary,Office-C320,7
+12033980138,Secretary,Office-B303,10
+15337435670,HR Officer,Office-C312,10
+45759599550,Billing Clerk,Office-B118,9
+52520788216,Records Clerk,Office-B205,5
+27694730882,Records Clerk,Office-C119,1
+40941218052,Billing Clerk,Office-A108,10
+60189113434,HR Officer,Office-B314,3
+34211202913,IT Support,Office-C302,3
+45231919908,Receptionist,Office-B313,3
+17103891918,Receptionist,Office-B219,13
+71487650775,Secretary,Office-A316,7
+57039963066,Records Clerk,Office-C105,7
+00715800971,Secretary,Office-B218,14
+88839237590,Records Clerk,Office-B211,6
+19603482367,IT Support,Office-A109,4
+75846648674,Billing Clerk,Office-B119,8
+01458408114,Secretary,Office-A218,7
+46036118926,Receptionist,Office-B309,9
+14034454595,Records Clerk,Office-A116,7
+69742173683,Supplies Manager,Office-C319,1
+08113640348,Receptionist,Office-B311,7
+42954496695,Secretary,Office-A114,9
+44794592351,Secretary,Office-C302,12
+07812945761,Records Clerk,Office-C111,11
+83372875679,Records Clerk,Office-B103,8
+21870894107,HR Officer,Office-C303,5
+09754247388,Secretary,Office-B318,1
+32512180822,IT Support,Office-B207,3
+16468210037,IT Support,Office-C214,11
+70983484926,HR Officer,Office-B309,14
+72676541982,Supplies Manager,Office-A110,14
+20262693032,Records Clerk,Office-A209,15
+51685224767,Records Clerk,Office-B113,1
+32763342285,Receptionist,Office-B307,3
+37008942340,IT Support,Office-C118,11
+12578047371,Records Clerk,Office-C210,15
+44215783792,IT Support,Office-B307,9
+88390397997,IT Support,Office-B314,10
+10250666860,Records Clerk,Office-C208,10
+10385242762,Records Clerk,Office-B120,10
+94038955465,Receptionist,Office-C101,1
+66325673223,Secretary,Office-A304,7
+88660732644,Secretary,Office-B202,5
+16458104573,IT Support,Office-B302,4
+90566518378,Receptionist,Office-B202,5
+93806250230,Supplies Manager,Office-A209,5
+21215603871,HR Officer,Office-A219,7
+64747691161,Supplies Manager,Office-B317,9
+41589333528,IT Support,Office-B207,3
+12457181580,Supplies Manager,Office-C202,11
+91939687186,Supplies Manager,Office-A306,10
+19612933213,Supplies Manager,Office-A203,1
+88562748066,Billing Clerk,Office-A211,14
+21186018112,Supplies Manager,Office-C316,10
+23145968891,Billing Clerk,Office-A103,1
+60816418044,Receptionist,Office-B219,14
+95060958062,Records Clerk,Office-C219,10
+29414290495,HR Officer,Office-C120,13
+16472861746,Secretary,Office-B205,2
+34982468967,Secretary,Office-A112,5
+12524235256,Receptionist,Office-A202,8
+05353131845,Records Clerk,Office-C304,3
+94431414087,Billing Clerk,Office-A104,14
+23137998181,IT Support,Office-C207,8
+77452634888,Receptionist,Office-B103,6
+28050345538,HR Officer,Office-B302,7
+74587120753,Receptionist,Office-A302,7
+14430106144,Receptionist,Office-A120,15
+53334972969,IT Support,Office-B218,10
+61888178602,Receptionist,Office-C116,7
+33122239548,HR Officer,Office-C210,13
+40703666560,IT Support,Office-A119,11
+82784726439,Secretary,Office-B213,13
+53123443584,Receptionist,Office-A113,5
+17048364811,Secretary,Office-C116,3
+63659727676,Receptionist,Office-B116,2

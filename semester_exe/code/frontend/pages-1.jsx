@@ -1,6 +1,68 @@
 /* Pages: Dashboard, Triage, Patients, Beds — part 1 */
 
 /* ─────────── DASHBOARD ─────────── */
+const PatientPrescriptionsTab = ({ p }) => (
+  <div className="card" style={{padding: 0, overflow: "hidden"}}>
+    <table className="tbl">
+      <thead>
+        <tr>
+          <th style={{width: 60}}>Εικόνα</th>
+          <th>Φάρμακο</th>
+          <th>Δοσολογία & Συχνότητα</th>
+          <th>Διάρκεια</th>
+          <th>Γιατρός</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {p.prescriptions && p.prescriptions.map((r, i) => {
+          const isActive = new Date(r.end) > new Date();
+          return (
+            <tr key={i}>
+              <td>
+                <div style={{width: 44, height: 44, borderRadius: 8, overflow: "hidden", background: "var(--ink-100)", border: "1px solid var(--ink-200)"}}>
+                  {r.drug_img ? (
+                    <img src={r.drug_img} alt={r.drug_name} style={{width: "100%", height: "100%", objectFit: "cover"}} />
+                  ) : (
+                    <div className="hstack" style={{justifyContent: "center", height: "100%", color: "var(--ink-400)"}}><Icon name="pill" size={18}/></div>
+                  )}
+                </div>
+              </td>
+              <td>
+                <div style={{fontWeight: 700, fontSize: 14, color: "var(--brand-700)"}}>{r.drug_name}</div>
+                <div className="muted" style={{fontSize: 10}}>{r.drug_ema}</div>
+              </td>
+              <td>
+                <div style={{fontSize: 13}}>{r.dosage}</div>
+                <div className="muted" style={{fontSize: 11}}>{r.frequency}</div>
+              </td>
+              <td className="mono" style={{fontSize: 12}}>
+                {r.start} <br/> {r.end}
+              </td>
+              <td>
+                <div style={{fontSize: 13, fontWeight: 500}}>Δρ. {r.doctor_name}</div>
+              </td>
+              <td>
+                <span className={"chip " + (isActive ? "chip-green" : "chip-ink")}>
+                  {isActive ? "Ενεργή" : "Έληξε"}
+                </span>
+              </td>
+            </tr>
+          );
+        })}
+        {(!p.prescriptions || p.prescriptions.length === 0) && (
+          <tr>
+            <td colSpan="6" style={{padding: 60, textAlign: "center"}} className="muted">
+              <Icon name="pill" size={32} style={{opacity: 0.2, marginBottom: 12}}/><br/>
+              Δεν βρέθηκε φαρμακευτική αγωγή για τον συγκεκριμένο ασθενή.
+            </td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  </div>
+);
+
 const Dashboard = ({ onPatientOpen }) => {
   const { DEPARTMENTS, PATIENTS_TRIAGE, BEDS, ADMISSIONS, SURGERIES } = window.UG;
   
@@ -22,8 +84,8 @@ const Dashboard = ({ onPatientOpen }) => {
       </div>
       <div className="stat">
         <div className="stat-label">Triage σε αναμονή</div>
-        <div className="stat-value">{PATIENTS_TRIAGE.length}</div>
-        <div className="stat-meta"><span style={{color:"var(--red-500)"}}>● {PATIENTS_TRIAGE.filter(p => p.level === 1).length} επίπεδο 1</span></div>
+        <div className="stat-value">{window.UG.PATIENTS_TRIAGE.filter(p => !p.outcome || p.outcome === 'Pending').length}</div>
+        <div className="stat-meta"><span style={{color:"var(--red-500)"}}>● {window.UG.PATIENTS_TRIAGE.filter(p => (!p.outcome || p.outcome === 'Pending') && p.level === 1).length} κρίσιμα</span></div>
       </div>
       <div className="stat">
         <div className="stat-label">Διαθέσιμες κλίνες</div>
@@ -87,45 +149,197 @@ const TRIAGE_LEVELS = [
   { lvl: 5, label: "Καθόλου Επείγον", color: "var(--t5)", desc: "Εντός 120 λεπτών" },
 ];
 
-const Triage = ({ onAdmit }) => {
-  const { PATIENTS_TRIAGE } = window.UG;
-  const grouped = TRIAGE_LEVELS.map(l => ({...l, patients: PATIENTS_TRIAGE.filter(p => p.level === l.lvl)}));
+const Triage = ({ onAdmit, onPatientOpen }) => {
+  const [triages, setTriages] = React.useState(window.UG.PATIENTS_TRIAGE);
+  const [view, setView] = React.useState("active");
+  const [loading, setLoading] = React.useState(null);
+
+  const handleUpdateLevel = async (id, level) => {
+    setLoading(id);
+    try {
+      const resp = await fetch('/api/triage/update', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, level })
+      });
+      if (resp.ok) {
+        // Update local state immediately
+        const next = triages.map(p => p.id === id ? { ...p, level } : p);
+        setTriages(next);
+        window.UG.PATIENTS_TRIAGE = next; // Sync with global for other components
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(null);
+    }
+  };
+
+  const active = triages.filter(p => !p.outcome || p.outcome === 'Pending');
+  const history = triages.filter(p => p.outcome && p.outcome !== 'Pending');
+  
+  const stats = {
+    pending: active.length,
+    avgWait: Math.round(active.reduce((acc, curr) => acc + (curr.waitMin || 0), 0) / (active.length || 1)) || 0,
+    admitted: triages.filter(p => p.outcome === 'Hospitalized').length,
+    discharged: triages.filter(p => p.outcome === 'Discharged').length
+  };
+
+  const OUTCOME_LABELS = {
+    'Hospitalized': { label: 'Εισαγωγή', chip: 'chip-brand' },
+    'Discharged': { label: 'Εξιτήριο', chip: 'chip-green' },
+    'Pending': { label: 'Σε αναμονή', chip: 'chip-amber' }
+  };
+
   return (
     <div>
       <PageHeader
-        title="Emergency Triage"
-        subtitle="Ταξινόμηση περιστατικών κατά προτεραιότητα (ATS/ESI standard)"
-        actions={<button className="btn btn-primary"><Icon name="plus" size={14}/>Νέο Περιστατικό</button>}
+        title="Διαλογή & Επείγοντα (Triage)"
+        subtitle="Διαχείριση ροής ασθενών και ιστορικό επισκέψεων ΤΕΠ"
+        actions={
+          <div className="hstack" style={{gap: 8}}>
+            <button className={"btn " + (view === "active" ? "btn-primary" : "btn-ghost")} onClick={() => setView("active")}>Ενεργά Περιστατικά</button>
+            <button className={"btn " + (view === "history" ? "btn-primary" : "btn-ghost")} onClick={() => setView("history")}>Ιστορικό Διαλογής</button>
+            <button className="btn btn-primary" style={{marginLeft: 12}}><Icon name="plus" size={14}/>Νέα Διαλογή</button>
+          </div>
+        }
       />
-      <div style={{display:"grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 12}}>
-        {grouped.map(g => (
-          <div key={g.lvl} className="card" style={{padding: 0, overflow:"hidden", borderTop: "4px solid " + g.color}}>
-            <div style={{padding: 12, background: "var(--ink-50)", borderBottom: "1px solid var(--ink-150)"}}>
-              <div style={{fontWeight: 700, fontSize: 18, color: g.color}}>Επ. {g.lvl}</div>
-              <div style={{fontWeight: 600, fontSize: 12, marginTop: 2}}>{g.label}</div>
-              <div className="muted" style={{fontSize: 10, marginTop: 2}}>{g.desc}</div>
+
+      <div style={{display:"grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 20}}>
+        <div className="card hstack" style={{padding: 16, gap: 16}}>
+          <div className="avatar" style={{background:"var(--brand-50)", color:"var(--brand-600)"}}><Icon name="users" size={20}/></div>
+          <div><div className="muted" style={{fontSize: 12}}>Σε Αναμονή</div><div style={{fontSize: 20, fontWeight: 700}}>{stats.pending}</div></div>
+        </div>
+        <div className="card hstack" style={{padding: 16, gap: 16}}>
+          <div className="avatar" style={{background:"var(--amber-50)", color:"var(--amber-600)"}}><Icon name="clock" size={20}/></div>
+          <div><div className="muted" style={{fontSize: 12}}>Μέση Τρέχουσα Αναμονή</div><div style={{fontSize: 20, fontWeight: 700}}>{stats.avgWait}′</div></div>
+        </div>
+        <div className="card hstack" style={{padding: 16, gap: 16}}>
+          <div className="avatar" style={{background:"var(--green-50)", color:"var(--green-600)"}}><Icon name="hospital" size={20}/></div>
+          <div><div className="muted" style={{fontSize: 12}}>Εισαγωγές</div><div style={{fontSize: 20, fontWeight: 700}}>{stats.admitted}</div></div>
+        </div>
+        <div className="card hstack" style={{padding: 16, gap: 16}}>
+          <div className="avatar" style={{background:"var(--ink-50)", color:"var(--ink-600)"}}><Icon name="userCheck" size={20}/></div>
+          <div><div className="muted" style={{fontSize: 12}}>Εξιτήρια ΤΕΠ</div><div style={{fontSize: 20, fontWeight: 700}}>{stats.discharged}</div></div>
+        </div>
+      </div>
+
+      {view === "active" ? (
+        <div style={{display:"grid", gridTemplateColumns: "1fr 5fr", gap: 20}}>
+          {/* Waiting for Initial Sorting */}
+          <div className="card" style={{padding: 0, overflow:"hidden", borderTop: "4px solid var(--ink-400)", background: "var(--ink-50)"}}>
+            <div style={{padding: 12, background: "var(--ink-150)", borderBottom: "1px solid var(--ink-200)"}}>
+              <div style={{fontWeight: 700, fontSize: 16, color: "var(--ink-700)"}}>Προς Διαλογή</div>
+              <div className="muted" style={{fontSize: 11, marginTop: 2}}>Νέες Αφίξεις</div>
             </div>
-            <div style={{padding: 8, minHeight: 400}}>
-              {g.patients.map(p => (
-                <div key={p.id} className="card" style={{padding: 10, marginBottom: 8, fontSize: 12, cursor:"pointer", boxShadow:"var(--shadow-sm)"}}>
+            <div style={{padding: 8, minHeight: 500}}>
+              {active.filter(p => !p.level).map(p => (
+                <div key={p.id} className="card" style={{padding: 10, marginBottom: 10, fontSize: 12, borderLeft: "4px solid var(--ink-300)"}}>
                   <div className="hstack" style={{justifyContent:"space-between", marginBottom: 6}}>
-                    <strong>{p.name}</strong>
-                    <span className="mono muted">{p.arrival}</span>
+                    <strong onClick={() => onPatientOpen(p.amka)} style={{cursor:"pointer", color: "var(--brand-700)"}}>{p.name}</strong>
+                    <span className="mono muted" style={{fontSize: 10}}>{p.arrival.split(" ")[1]}</span>
                   </div>
-                  <div className="muted" style={{fontSize: 11, lineHeight: 1.4}}>{p.symptoms}</div>
-                  <div style={{marginTop: 8, display:"flex", justifyContent:"space-between", alignItems:"center"}}>
-                    <span className="mono" style={{fontSize: 10, color: p.waitMin > 30 ? "var(--red-600)" : "var(--ink-500)"}}>
-                      <Icon name="clock" size={10} style={{marginRight: 4}}/>{p.waitMin}′ αναμονή
-                    </span>
-                    <button className="btn btn-ghost" style={{padding: "2px 6px", fontSize: 10}} onClick={onAdmit}>Εισαγωγή</button>
+                  <div className="muted" style={{fontSize: 11, lineHeight: 1.3, marginBottom: 10}}>{p.symptoms}</div>
+                  
+                  <div style={{display:"flex", gap: 4, flexWrap: "wrap"}}>
+                    {[1,2,3,4,5].map(lvl => (
+                      <button 
+                        key={lvl}
+                        disabled={loading === p.id}
+                        className="btn btn-ghost" 
+                        style={{
+                          flex: 1, 
+                          padding: "6px 0", 
+                          fontSize: 11, 
+                          fontWeight: 700,
+                          border: "1px solid var(--ink-250)", 
+                          background: "white",
+                          color: "var(--ink-700)"
+                        }}
+                        onClick={(e) => { e.stopPropagation(); handleUpdateLevel(p.id, lvl); }}
+                      >
+                        {lvl}
+                      </button>
+                    ))}
                   </div>
                 </div>
               ))}
-              {g.patients.length === 0 && <div className="muted" style={{textAlign:"center", marginTop: 40, fontSize: 12}}>—</div>}
+              {active.filter(p => !p.level).length === 0 && <div className="muted" style={{textAlign:"center", marginTop: 60, fontSize: 11, opacity: 0.6}}>Δεν υπάρχουν νέες αφίξεις</div>}
             </div>
           </div>
-        ))}
-      </div>
+
+          {/* Categorized Queues */}
+          <div style={{display:"grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 12}}>
+            {TRIAGE_LEVELS.map(l => {
+              const lPatients = active.filter(p => Number(p.level) === l.lvl);
+              return (
+                <div key={l.lvl} className="card" style={{padding: 0, overflow:"hidden", borderTop: "4px solid " + l.color}}>
+                  <div style={{padding: 12, background: "var(--ink-50)", borderBottom: "1px solid var(--ink-150)"}}>
+                    <div style={{fontWeight: 700, fontSize: 18, color: l.color}}>Επ. {l.lvl}</div>
+                    <div style={{fontWeight: 600, fontSize: 11, marginTop: 2, whiteSpace:"nowrap"}}>{l.label}</div>
+                  </div>
+                  <div style={{padding: 8, minHeight: 400}}>
+                    {lPatients.map(p => (
+                      <div key={p.id} className="card" onClick={() => onPatientOpen(p.amka)} style={{padding: 10, marginBottom: 8, fontSize: 12, cursor:"pointer", boxShadow:"var(--shadow-sm)"}}>
+                        <div className="hstack" style={{justifyContent:"space-between", marginBottom: 6}}>
+                          <strong>{p.name}</strong>
+                          <span className="mono muted" style={{fontSize: 10}}>{p.arrival.split(" ")[1]}</span>
+                        </div>
+                        <div className="muted" style={{fontSize: 11, lineHeight: 1.3, marginBottom: 8}}>{p.symptoms}</div>
+                        <div style={{display:"flex", flexDirection: "column", gap: 8}}>
+                          <div className="hstack" style={{justifyContent:"space-between"}}>
+                             <span className="mono" style={{fontSize: 10, color: (p.waitMin > 30) ? "var(--red-600)" : "var(--brand-600)", fontWeight: 600}}>
+                              {p.waitMin || 0}′ αναμ.
+                            </span>
+                            <button className="btn btn-ghost" style={{padding: "2px 6px", fontSize: 10, border: "1px solid var(--ink-200)"}} onClick={(e) => {e.stopPropagation(); onAdmit();}}>Εισαγωγή</button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                    {lPatients.length === 0 && <div className="muted" style={{textAlign:"center", marginTop: 40, fontSize: 11, opacity: 0.4}}>Καθαρό</div>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : (
+        <div className="card">
+          <table className="tbl">
+            <thead>
+              <tr>
+                <th>Ασθενής</th>
+                <th>Ημ/νία & Ώρα</th>
+                <th>Επίπεδο</th>
+                <th>Συμπτώματα</th>
+                <th>Αναμονή</th>
+                <th>Αποτέλεσμα</th>
+              </tr>
+            </thead>
+            <tbody>
+              {history.map(p => (
+                <tr key={p.id} style={{cursor:"pointer"}} onClick={() => onPatientOpen(p.amka)}>
+                  <td><strong>{p.name}</strong><div className="muted mono" style={{fontSize: 10}}>{p.amka}</div></td>
+                  <td className="mono">{p.arrival}</td>
+                  <td>
+                    <div className="hstack" style={{gap: 6}}>
+                      <div style={{width: 8, height: 8, borderRadius: 4, background: TRIAGE_LEVELS.find(l => l.lvl === p.level)?.color}} />
+                      {TRIAGE_LEVELS.find(l => l.lvl === p.level)?.label}
+                    </div>
+                  </td>
+                  <td style={{maxWidth: 200, fontSize: 12}} className="muted">{p.symptoms}</td>
+                  <td className="mono">{p.waitMin}′</td>
+                  <td>
+                    <span className={"chip " + (OUTCOME_LABELS[p.outcome]?.chip || "chip-ink")}>
+                      {OUTCOME_LABELS[p.outcome]?.label || p.outcome}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 };
@@ -173,9 +387,16 @@ const Patients = ({ onOpen }) => {
 };
 
 const PatientDetail = ({ patientId, onBack }) => {
-  const p = window.UG.PATIENTS.find(x => x.id === patientId);
+  const p = window.UG.PATIENTS.find(x => String(x.id).trim() === String(patientId).trim());
   const [tab, setTab] = React.useState("history");
-  if (!p) return <div>Patient not found</div>;
+  if (!p) return (
+    <div className="card" style={{padding: 40, textAlign: "center"}}>
+      <Icon name="alert" size={40} style={{color: "var(--red-500)", marginBottom: 16}}/>
+      <h2 style={{margin: 0}}>Ο ασθενής δεν βρέθηκε</h2>
+      <p className="muted">Το AMKA {patientId} δεν αντιστοιχεί σε κάποιον εγγεγραμμένο ασθενή.</p>
+      <button className="btn btn-primary" onClick={onBack} style={{marginTop: 20}}>Επιστροφή</button>
+    </div>
+  );
 
   return (
     <div>
@@ -213,40 +434,52 @@ const PatientDetail = ({ patientId, onBack }) => {
             <div className={"tab" + (tab === "history" ? " active" : "")} onClick={() => setTab("history")}>Ιστορικό Νοσηλειών</div>
             <div className={"tab" + (tab === "labs" ? " active" : "")} onClick={() => setTab("labs")}>Εργαστηριακά</div>
             <div className={"tab" + (tab === "acts" ? " active" : "")} onClick={() => setTab("acts")}>Πράξεις & Χειρουργεία</div>
+            <div className={"tab" + (tab === "prescriptions" ? " active" : "")} onClick={() => setTab("prescriptions")}>Φαρμακευτική Αγωγή</div>
           </div>
           {tab === "history" && <PatientHistoryTab p={p}/>}
           {tab === "labs" && <PatientLabsTab p={p}/>}
           {tab === "acts" && <PatientActsTab p={p}/>}
+          {tab === "prescriptions" && <PatientPrescriptionsTab p={p}/>}
         </div>
       </div>
     </div>
   );
 };
 
-const PatientHistoryTab = ({ p }) => (
-  <div className="vstack" style={{gap: 16}}>
-    {p.hospitalizations.map(h => (
-      <div key={h.id} className="card" style={{padding: 18}}>
-        <div className="hstack" style={{justifyContent:"space-between", marginBottom: 14}}>
-          <div>
-            <div className="hstack" style={{gap: 10}}>
-              <span className="chip chip-brand mono">{h.id}</span>
-              <strong style={{fontSize: 15}}>{h.dept}</strong>
+const PatientHistoryTab = ({ p }) => {
+  const { ICD10 } = window.UG;
+  return (
+    <div className="vstack" style={{gap: 16}}>
+      {p.hospitalizations.map(h => {
+        const icd = ICD10.find(i => i.code === h.icd10);
+        return (
+          <div key={h.id} className="card" style={{padding: 18}}>
+            <div className="hstack" style={{justifyContent:"space-between", marginBottom: 14}}>
+              <div>
+                <div className="hstack" style={{gap: 10}}>
+                  <span className="chip chip-brand mono">{h.id}</span>
+                  <strong style={{fontSize: 15}}>{window.DEPT_GREEK[h.dept] || h.dept}</strong>
+                </div>
+                <div className="muted" style={{fontSize: 12, marginTop: 4}}>{h.from} — {h.to || "σήμερα"}</div>
+              </div>
+              <span className={"chip " + (h.status === 'ενεργή' ? "chip-amber" : "chip-green")}>{h.status}</span>
             </div>
-            <div className="muted" style={{fontSize: 12, marginTop: 4}}>{h.from} — {h.to || "σήμερα"}</div>
+            <div style={{display:"grid", gridTemplateColumns: "1.5fr 1fr 1fr", gap: 20}}>
+              <div>
+                <div className="field-label">ICD-10 Διάγνωση</div>
+                <div className="mono" style={{fontSize: 13, color: "var(--brand-700)"}}>{h.icd10}</div>
+                {icd && <div style={{fontSize: 11, marginTop: 2, lineHeight: 1.2}}>{icd.name}</div>}
+              </div>
+              <div><div className="field-label">P1_KEN</div><div className="mono" style={{fontSize: 13}}>{h.ken}</div></div>
+              <div><div className="field-label">Κόστος</div><div className="mono" style={{fontSize: 13}}>{h.cost ? h.cost.toLocaleString("el-GR") : 0} €</div></div>
+            </div>
           </div>
-          <span className={"chip " + (h.status === 'ενεργή' ? "chip-amber" : "chip-green")}>{h.status}</span>
-        </div>
-        <div style={{display:"grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20}}>
-          <div><div className="field-label">ICD-10 Διάγνωση</div><div className="mono" style={{fontSize: 13}}>{h.icd10}</div></div>
-          <div><div className="field-label">P1_KEN</div><div className="mono" style={{fontSize: 13}}>{h.ken}</div></div>
-          <div><div className="field-label">Κόστος</div><div className="mono" style={{fontSize: 13}}>{h.cost ? h.cost.toLocaleString("el-GR") : 0} €</div></div>
-        </div>
-      </div>
-    ))}
-    {p.hospitalizations.length === 0 && <div className="card muted" style={{padding: 40, textAlign:"center"}}>Δεν βρέθηκαν προηγούμενες νοσηλείες.</div>}
-  </div>
-);
+        );
+      })}
+      {p.hospitalizations.length === 0 && <div className="card muted" style={{padding: 40, textAlign:"center"}}>Δεν βρέθηκαν προηγούμενες νοσηλείες.</div>}
+    </div>
+  );
+};
 
 const PatientLabsTab = ({ p }) => (
   <div className="card">
@@ -270,16 +503,33 @@ const PatientLabsTab = ({ p }) => (
 const PatientActsTab = ({ p }) => (
   <div className="card">
     <table className="tbl">
-      <thead><tr><th>Κωδ.</th><th>Πράξη</th><th>Κατηγορία</th><th>Διάρκεια</th><th>Κόστος</th></tr></thead>
+      <thead>
+        <tr>
+          <th style={{width: 140}}>Ημερομηνία & Ώρα</th>
+          <th>Ιατρική Πράξη / Επέμβαση</th>
+          <th style={{width: 100}}>Αίθουσα</th>
+          <th>Γιατρός</th>
+          <th style={{width: 80}}>Διάρκεια</th>
+          <th>Κατηγορία</th>
+        </tr>
+      </thead>
       <tbody>
-        {[
-          ["MA-3211","Στεφανιογραφία","Α — χειρουργική","45′","420 €"],
-          ["MA-3212","Αγγειοπλαστική + stent","Α — χειρουργική","1h 30′","2.150 €"],
-          ["MA-3301","Ηχοκαρδιογράφημα","Β — διαγνωστική","20′","85 €"],
-          ["MA-3302","Holter ρυθμού 24h","Β — διαγνωστική","24h","65 €"],
-        ].map(r => (
-          <tr key={r[0]}><td className="mono">{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td><td className="mono">{r[3]}</td><td className="mono">{r[4]}</td></tr>
+        {p.surgeries && p.surgeries.map((s, i) => (
+          <tr key={i}>
+            <td className="mono" style={{fontSize: 11}}>{s.start}</td>
+            <td><strong style={{color: "var(--brand-700)"}}>{s.name}</strong></td>
+            <td><div className="hstack" style={{gap: 6}}><Icon name="scalpel" size={12}/>{s.room}</div></td>
+            <td>
+              <div style={{fontWeight: 500}}>Δρ. {s.surgeon_name}</div>
+              <div className="muted" style={{fontSize: 10}}>Κωδ: {s.surgeon}</div>
+            </td>
+            <td className="mono">{s.dur}h</td>
+            <td><span className={"chip " + (s.category === 'Επείγον' ? "chip-red" : "chip-brand")}>{s.category}</span></td>
+          </tr>
         ))}
+        {(!p.surgeries || p.surgeries.length === 0) && (
+          <tr><td colSpan="6" style={{padding: 60, textAlign: "center"}} className="muted">Δεν βρέθηκαν καταγεγραμμένες πράξεις ή χειρουργεία.</td></tr>
+        )}
       </tbody>
     </table>
   </div>

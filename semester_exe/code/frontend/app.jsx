@@ -54,7 +54,8 @@ function App() {
   else if (page === "patients") content = <Patients onOpen={onPatientOpen}/>;
   else if (page === "hospitalizations") content = <Hospitalizations onPatientOpen={onPatientOpen}/>;
   else if (page === "beds") content = <Beds onPatientOpen={onPatientOpen}/>;
-  else if (page === "prescriptions") content = <Prescriptions/>;
+  else if (page === "prescriptions") content = <Prescriptions onPatientOpen={onPatientOpen} onNav={goTo}/>;
+  else if (page === "drugs") content = <Drugs/>;
   else if (page === "or") content = <OperatingRooms onPatientOpen={onPatientOpen}/>;
   else if (page === "staff") content = <Staff/>;
   else if (page === "shifts") content = <Shifts/>;

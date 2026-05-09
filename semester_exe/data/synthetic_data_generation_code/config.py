@@ -25,9 +25,9 @@ os.makedirs(OUT_CSV_DIR, exist_ok=True)
 # Volume constants
 # ---------------------------------------------------------------------------
 N_DEPARTMENTS = 15
-N_DOCTORS = 80
-N_NURSES = 50
-N_ADMIN = 15
+N_DOCTORS = 300
+N_NURSES = 450
+N_ADMIN = 120
 N_PATIENTS = 200
 N_ADMISSIONS = 500
 N_PRESCRIPTIONS = 300

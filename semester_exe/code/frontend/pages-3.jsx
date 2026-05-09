@@ -74,6 +74,8 @@ const Departments = () => {
 /* ─────────── DOCTORS (PUBLIC) ─────────── */
 const DoctorProfiles = () => {
   const { DOCTORS, DEPARTMENTS } = window.UG;
+  const RANK_GREEK = { "Director": "Διευθυντής", "Senior Attending": "Επιμελητής Α΄", "Junior Attending": "Επιμελητής Β΄", "Resident": "Ειδικευόμενος" };
+  
   return (
     <div>
       <PageHeader
@@ -82,13 +84,23 @@ const DoctorProfiles = () => {
       />
       <div style={{display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20}}>
         {DOCTORS.map(d => {
-          const dept = DEPARTMENTS.find(x => x.id === d.deptId);
+          const depts = (d.deptIds || []).map(id => DEPARTMENTS.find(x => String(x.id || x.dept_id) === String(id))).filter(Boolean);
+          const deptNames = depts.map(d => window.DEPT_GREEK[d.name] || d.name).join(", ");
+          
           return (
-            <div key={d.id} className="card hstack" style={{padding: 16, gap: 16}}>
-              <div className="avatar" style={{width: 60, height: 60, fontSize: 20, flexShrink: 0}}>{d.name.split(" ").map(s=>s[0]).slice(0,2).join("")}</div>
-              <div style={{flex: 1}}>
+            <div key={d.id} className="card hstack" style={{padding: 16, gap: 16, alignItems: "center"}}>
+              <div className="avatar" style={{width: 64, height: 64, fontSize: 22, flexShrink: 0, overflow: "hidden", background: "var(--brand-100)", color: "var(--brand-700)"}}>
+                {d.img ? (
+                  <img src={d.img} alt="" style={{width: "100%", height: "100%", objectFit: "cover"}}/>
+                ) : (
+                  d.name.split(" ").map(s=>s[0]).slice(0,2).join("")
+                )}
+              </div>
+              <div style={{flex: 1, overflow: "hidden"}}>
                 <div style={{fontSize: 16, fontWeight: 700, letterSpacing: "-0.02em"}}>Δρ. {d.name}</div>
-                <div className="muted" style={{fontSize: 13, marginTop: 2}}>{d.spec} · {window.DEPT_GREEK[dept?.name] || dept?.name}</div>
+                <div className="muted" style={{fontSize: 13, marginTop: 2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>
+                  {RANK_GREEK[d.rank] || d.rank} · {deptNames}
+                </div>
                 <div style={{marginTop: 12, display: "flex", gap: 6}}>
                   <button className="btn btn-ghost" style={{padding: "4px 10px", fontSize: 11}}>Προφίλ</button>
                   <button className="btn btn-primary" style={{padding: "4px 10px", fontSize: 11}}>e-Ραντεβού</button>
@@ -97,6 +109,87 @@ const DoctorProfiles = () => {
             </div>
           );
         })}
+      </div>
+    </div>
+  );
+};
+/* ─────────── DRUGS ─────────── */
+const Drugs = () => {
+  const { DRUGS } = window.UG;
+  const [search, setSearch] = React.useState("");
+  
+  const filtered = DRUGS.filter(d => 
+    d.name.toLowerCase().includes(search.toLowerCase()) || 
+    d.substance.toLowerCase().includes(search.toLowerCase())
+  ).slice(0, 50); // Performance: Show only first 50 results
+
+  return (
+    <div>
+      <PageHeader 
+        title="Φαρμακείο & Αποθήκη" 
+        subtitle="Διαχείριση αποθέματος και ευρετήριο δραστικών ουσιών"
+        actions={<button className="btn btn-primary"><Icon name="plus" size={14}/>Νέο Φάρμακο</button>}
+      />
+      
+      <div className="card" style={{padding: "16px 20px", marginBottom: 20, background: "var(--ink-50)"}}>
+        <div className="hstack" style={{justifyContent: "space-between", gap: 16}}>
+          <div style={{position:"relative", maxWidth: 400, flex: 1}}>
+            <Icon name="search" size={14} style={{position:"absolute", left: 10, top: 10, color: "var(--ink-400)"}}/>
+            <input 
+              className="input" 
+              placeholder="Αναζήτηση φαρμάκου ή εταιρείας..." 
+              value={search} 
+              onChange={e => setSearch(e.target.value)}
+              style={{paddingLeft: 32}}
+            />
+          </div>
+          <div className="muted" style={{fontSize: 12}}>
+            Εμφάνιση {filtered.length} από {DRUGS.length} φάρμακα
+          </div>
+        </div>
+      </div>
+
+      <div className="card">
+        <table className="tbl">
+          <thead>
+            <tr>
+              <th style={{width: 60}}>ID</th>
+              <th style={{width: 80}}>Εικόνα</th>
+              <th>Ονομασία Φαρμάκου</th>
+              <th>Κατασκευαστής / Δραστική</th>
+              <th>Τύπος</th>
+              <th>Ενέργειες</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map(d => (
+              <tr key={d.id}>
+                <td className="mono muted">{d.id}</td>
+                <td>
+                  <div style={{width: 50, height: 50, borderRadius: 8, overflow: "hidden", background: "var(--ink-100)", border: "1px solid var(--ink-200)"}}>
+                    {d.img ? (
+                      <img src={d.img} alt={d.name} style={{width: "100%", height: "100%", objectFit: "cover"}} />
+                    ) : (
+                      <div className="hstack" style={{justifyContent: "center", height: "100%", color: "var(--ink-400)"}}><Icon name="pill" size={20}/></div>
+                    )}
+                  </div>
+                </td>
+                <td>
+                  <div style={{fontWeight: 700, fontSize: 15, color: "var(--brand-700)"}}>{d.name}</div>
+                  <div className="muted" style={{fontSize: 10}}>Κωδικός: {Math.random().toString(36).substring(7).toUpperCase()}</div>
+                </td>
+                <td>{d.substance}</td>
+                <td><span className="chip chip-ink">Σκεύασμα</span></td>
+                <td>
+                  <div className="hstack" style={{gap: 8}}>
+                    <button className="btn btn-ghost" style={{padding: "6px"}} title="Προβολή"><Icon name="search" size={12}/></button>
+                    <button className="btn btn-ghost" style={{padding: "6px"}} title="Επεξεργασία"><Icon name="edit" size={12}/></button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
@@ -210,4 +303,4 @@ const QueryExplorer = () => {
   );
 };
 
-Object.assign(window, { PublicPortal, Departments, DoctorProfiles, ReviewForm, QueryExplorer });
+Object.assign(window, { PublicPortal, Departments, DoctorProfiles, ReviewForm, QueryExplorer, Drugs });
