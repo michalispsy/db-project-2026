@@ -105,7 +105,6 @@ if [[ -z "$MY_CNF" || ! -f "$MY_CNF" ]]; then
     fi
 fi
 
-args=(--local-infile=1)
 [[ -n "$MY_CNF" ]] && args+=(--defaults-file="$MY_CNF")
 
 $cmd_prefix mariadb "${args[@]}" < "sql/install.sql"
