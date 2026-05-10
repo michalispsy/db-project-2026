@@ -87,15 +87,7 @@ else
     fi
 fi
 
-# Try to find the project root by looking for the sql/install.sql file nearby
-if [[ -f "./sql/install.sql" ]]; then
-    PROJECT_ROOT="$(pwd)/.."
-elif [[ -f "../sql/install.sql" ]]; then
-    PROJECT_ROOT="$(pwd)/../.."
-else
-    # Fallback to searching (but more broad)
-    PROJECT_ROOT=$(find "$HOME" -name ".*" -prune -o -type d -path "*/semester_exe" -printf '%h\n' -quit 2>/dev/null)
-fi
+PROJECT_ROOT=$(find "$HOME" -name ".*" -prune -o -type d -path "*/db-project-2026/semester_exe" -printf '%h\n' -quit 2>/dev/null)
 
 if [ -z "$PROJECT_ROOT" ] || [ ! -d "$PROJECT_ROOT" ]; then
     echo " * Project not found. Cloning"
