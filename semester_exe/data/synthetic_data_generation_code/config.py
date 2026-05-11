@@ -105,6 +105,17 @@ ROOM_NAMES = [
     ("EXAM-2", "Exam Room"), ("THER-1", "Therapy Room"),
 ]
 DOCTOR_RANKS = ["Resident", "Junior Attending", "Senior Attending", "Director"]
+DOCTOR_SPECIALTIES = [
+    "Cardiology", "Surgery", "Pediatrics", "Neurology", "Orthopedics",
+    "Internal Medicine", "Emergency Medicine", "Anesthesiology", "Radiology",
+    "Oncology", "Psychiatry", "Obstetrics and Gynecology", "Dermatology",
+    "Urology", "General Practice",
+]
+ATHENS_STREETS = [
+    "Patision", "Stadiou", "Akadimias", "Panepistimiou", "Vasilissis Sofias",
+    "Alexandras", "Kifissias", "Mesogeion", "Syngrou", "Vouliagmenis",
+    "Pireos", "Ermou", "Athinas", "Omirou", "Solonos",
+]
 NURSE_RANKS = ["Nursing Assistant", "Registered Nurse", "Head Nurse"]
 ADMIN_POSITIONS = [
     "Secretary", "Receptionist", "Billing Clerk", "HR Officer",
@@ -116,7 +127,7 @@ NATIONALITIES = ["GR", "GR", "GR", "GR", "GR", "CY", "AL", "BG", "DE", "GB"]
 INSURANCE = [
     "EOPYY", "EOPYY", "EOPYY", "EOPYY",
     "Generali", "Ethniki", "Interamerican", "Eurolife",
-    "Allianz", "MetLife",
+    "Allianz", "MetLife", "Uninsured",
 ]
 RELATIONSHIPS = ["Parent", "Spouse", "Sibling", "Child", "Friend", "Other"]
 SHIFT_SLOTS = ["Morning", "Afternoon", "Night"]

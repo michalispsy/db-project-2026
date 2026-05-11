@@ -59,7 +59,8 @@ CREATE TABLE insurance_providers (
 INSERT INTO insurance_providers VALUES
     ('Allianz','Allianz'),('EOPYY','EOPYY'),('Ethniki','Ethniki'),
     ('Eurolife','Eurolife'),('Generali','Generali'),
-    ('Interamerican','Interamerican'),('MetLife','MetLife');
+    ('Interamerican','Interamerican'),('MetLife','MetLife'),
+    ('Uninsured','Uninsured');
 
 CREATE TABLE bed_types (
     code VARCHAR(20),
@@ -112,11 +113,14 @@ INSERT INTO shift_statuses VALUES
     ('Completed','Completed'),('Cancelled','Cancelled'),('Understaffed','Understaffed');
 
 CREATE TABLE procedure_categories (
-    code VARCHAR(5),
+    code VARCHAR(20),
     name VARCHAR(100) NOT NULL,
     CONSTRAINT pk_procedure_categories PRIMARY KEY (code)
 );
-INSERT INTO procedure_categories VALUES ('Α','Category A'),('Β','Category B');
+INSERT INTO procedure_categories VALUES
+    ('Surgical','Surgical Procedures'),
+    ('Diagnostic','Diagnostic Procedures'),
+    ('Therapeutic','Therapeutic Procedures');
 
 CREATE TABLE room_types (
     code VARCHAR(30),
@@ -132,6 +136,28 @@ CREATE TABLE exam_types (
     name TEXT NOT NULL,
     CONSTRAINT pk_exam_types PRIMARY KEY (exam_code)
 );
+
+CREATE TABLE specialties (
+    code VARCHAR(50),
+    name VARCHAR(100) NOT NULL,
+    CONSTRAINT pk_specialties PRIMARY KEY (code)
+);
+INSERT INTO specialties VALUES
+    ('Cardiology','Cardiology'),
+    ('Surgery','Surgery'),
+    ('Pediatrics','Pediatrics'),
+    ('Neurology','Neurology'),
+    ('Orthopedics','Orthopedics'),
+    ('Internal Medicine','Internal Medicine'),
+    ('Emergency Medicine','Emergency Medicine'),
+    ('Anesthesiology','Anesthesiology'),
+    ('Radiology','Radiology'),
+    ('Oncology','Oncology'),
+    ('Psychiatry','Psychiatry'),
+    ('Obstetrics and Gynecology','Obstetrics and Gynecology'),
+    ('Dermatology','Dermatology'),
+    ('Urology','Urology'),
+    ('General Practice','General Practice');
 
 -- ============================================================
 -- CORE TABLES
@@ -171,7 +197,7 @@ CREATE TABLE staff (
     age INT AS (TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE())) VIRTUAL,
     email VARCHAR(50) UNIQUE,
     phone_number VARCHAR(15) UNIQUE,
-    hire_date DATE DEFAULT (CURRENT_DATE),
+    hire_date DATE NOT NULL DEFAULT (CURRENT_DATE),
     staff_type VARCHAR(20),
 
     CONSTRAINT pk_staff PRIMARY KEY (AMKA),
@@ -182,12 +208,14 @@ CREATE TABLE doctors (
     AMKA CHAR(11),
     license_number VARCHAR(20) NOT NULL,
     `rank` VARCHAR(30) NOT NULL,
+    specialty VARCHAR(50) NOT NULL,
     supervisor_AMKA CHAR(11),
 
     CONSTRAINT pk_doctors PRIMARY KEY (AMKA),
     CONSTRAINT fk_doctors FOREIGN KEY (AMKA) REFERENCES staff(AMKA) ON DELETE CASCADE,
     CONSTRAINT fk_docs_supervisor FOREIGN KEY (supervisor_AMKA) REFERENCES doctors(AMKA) ON DELETE SET NULL,
     CONSTRAINT fk_doctor_rank FOREIGN KEY (`rank`) REFERENCES doctor_ranks(code),
+    CONSTRAINT fk_doctor_specialty FOREIGN KEY (specialty) REFERENCES specialties(code),
     CONSTRAINT uni_license UNIQUE (license_number)
 );
 
@@ -199,6 +227,10 @@ CREATE TABLE doctor_departments (
     CONSTRAINT fk_dd_amka FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA) ON DELETE CASCADE,
     CONSTRAINT fd_dd_dept FOREIGN KEY (dept_id) REFERENCES departments(dept_id) ON DELETE CASCADE
 );
+
+ALTER TABLE departments
+    ADD CONSTRAINT fk_dept_director FOREIGN KEY (director_AMKA)
+        REFERENCES doctors(AMKA) ON DELETE SET NULL;
 
 CREATE TABLE admin_staff (
     AMKA CHAR(11),
@@ -231,10 +263,11 @@ CREATE TABLE patients (
     date_of_birth DATE,
     age INT AS (TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE())) VIRTUAL,
     gender VARCHAR(10) NOT NULL,
-    weight INT,
+    weight DECIMAL(5,1),
     height INT,
     phone_number VARCHAR(15) UNIQUE,
     email VARCHAR(50) UNIQUE,
+    address VARCHAR(255),
     occupation VARCHAR(50),
     nationality CHAR(2),
     insurance_provider VARCHAR(30),
@@ -328,7 +361,7 @@ CREATE TABLE lab_exams (
 CREATE TABLE medical_procedures (
     procedure_code VARCHAR(20),
     name VARCHAR(50) NOT NULL,
-    category VARCHAR(5),
+    category VARCHAR(20),
     standard_duration INT,
     standard_cost DECIMAL(10, 2),
 
@@ -384,7 +417,7 @@ CREATE TABLE triages (
     minutes_waited INT DEFAULT NULL,
     urgency_level TINYINT,
     symptoms TEXT,
-    outcome VARCHAR(20) DEFAULT 'Discharged',
+    outcome VARCHAR(20) DEFAULT NULL,
     admission_id INT DEFAULT NULL,
 
     CONSTRAINT pk_triages PRIMARY KEY (triage_id),
@@ -393,7 +426,12 @@ CREATE TABLE triages (
     CONSTRAINT fk_triage_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id),
     CONSTRAINT fk_triage_urgency FOREIGN KEY (urgency_level) REFERENCES urgency_levels(`level`),
     CONSTRAINT fk_triage_outcome FOREIGN KEY (outcome) REFERENCES triage_outcomes(code),
-    CONSTRAINT uni_admission_id UNIQUE (admission_id)
+    CONSTRAINT uni_admission_id UNIQUE (admission_id),
+    CONSTRAINT chk_triage_consistency CHECK (
+        outcome IS NULL OR
+        (outcome = 'Hospitalized' AND admission_id IS NOT NULL) OR
+        (outcome = 'Discharged'   AND admission_id IS NULL)
+    )
 );
 
 CREATE TABLE active_substances (
@@ -474,6 +512,7 @@ CREATE TABLE doctor_ratings (
     admission_id INT NOT NULL,
     doctor_AMKA CHAR(11) NOT NULL,
     medical_care_quality TINYINT NOT NULL,
+    comment TEXT,
     rated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT pk_doc_ratings PRIMARY KEY (rating_id),
@@ -570,6 +609,55 @@ BEGIN
     );
 END//
 
+CREATE TRIGGER check_bed_overlap_insert_trigger
+BEFORE INSERT ON admissions
+FOR EACH ROW
+BEGIN
+    DECLARE v_bed_status VARCHAR(20);
+    DECLARE v_overlap_count INT;
+
+    SELECT status INTO v_bed_status FROM beds WHERE bed_id = NEW.bed_id;
+    IF v_bed_status = 'Maintenance' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Cannot admit patient to a bed under maintenance.';
+    END IF;
+
+    SELECT COUNT(*) INTO v_overlap_count
+    FROM admissions
+    WHERE bed_id = NEW.bed_id
+      AND NEW.admission_date < COALESCE(discharge_date, '9999-12-31')
+      AND COALESCE(NEW.discharge_date, '9999-12-31') > admission_date;
+
+    IF v_overlap_count > 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Bed already has an overlapping admission.';
+    END IF;
+END//
+
+CREATE TRIGGER check_bed_overlap_update_trigger
+BEFORE UPDATE ON admissions
+FOR EACH ROW
+BEGIN
+    DECLARE v_overlap_count INT;
+
+    IF NEW.bed_id <> OLD.bed_id
+       OR NEW.admission_date <> OLD.admission_date
+       OR NOT (NEW.discharge_date <=> OLD.discharge_date) THEN
+
+        SELECT COUNT(*) INTO v_overlap_count
+        FROM admissions
+        WHERE bed_id = NEW.bed_id
+          AND admission_id <> NEW.admission_id
+          AND NEW.admission_date < COALESCE(discharge_date, '9999-12-31')
+          AND COALESCE(NEW.discharge_date, '9999-12-31') > admission_date;
+
+        IF v_overlap_count > 0 THEN
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Error: Bed already has an overlapping admission.';
+        END IF;
+    END IF;
+END//
+
 CREATE TRIGGER calculate_admission_base_cost_trigger
 BEFORE INSERT ON admissions
 FOR EACH ROW
@@ -592,7 +680,8 @@ BEGIN
         SELECT base_cost INTO v_base_cost FROM ken WHERE ken_code = NEW.ken_code;
         SET NEW.base_cost = v_base_cost;
     ELSEIF NEW.base_cost <> OLD.base_cost THEN
-        SET NEW.base_cost = OLD.base_cost;
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: base_cost is derived from KEN and cannot be changed directly.';
     END IF;
 
     IF OLD.discharge_date IS NULL AND NEW.discharge_date IS NOT NULL THEN
@@ -747,15 +836,28 @@ BEGIN
     CALL check_if_discharged(NEW.admission_id);
 END//
 
+CREATE PROCEDURE check_doctor_treated_patient(IN p_admission_id INT, IN p_doctor_AMKA CHAR(11))
+BEGIN
+    IF NOT EXISTS (
+        SELECT NULL FROM prescriptions
+            WHERE admission_id = p_admission_id AND doctor_AMKA = p_doctor_AMKA
+        UNION ALL
+        SELECT NULL FROM procedure_executions
+            WHERE admission_id = p_admission_id AND main_doctor_AMKA = p_doctor_AMKA
+        UNION ALL
+        SELECT NULL FROM lab_exams
+            WHERE admission_id = p_admission_id AND doctor_AMKA = p_doctor_AMKA
+    ) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Doctor must have treated this patient (prescribed, performed procedure, or ordered lab exam) to be rated.';
+    END IF;
+END//
+
 CREATE TRIGGER check_doctor_rating_insert_trigger
 BEFORE INSERT ON doctor_ratings
 FOR EACH ROW
 BEGIN
-    IF NOT EXISTS (SELECT NULL FROM prescriptions WHERE admission_id = NEW.admission_id AND doctor_AMKA = NEW.doctor_AMKA) THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Only doctors that prescribed to the patient can be rated.';
-    END IF;
-
+    CALL check_doctor_treated_patient(NEW.admission_id, NEW.doctor_AMKA);
     CALL check_if_discharged(NEW.admission_id);
 END//
 
@@ -763,12 +865,72 @@ CREATE TRIGGER check_doctor_rating_update_trigger
 BEFORE UPDATE ON doctor_ratings
 FOR EACH ROW
 BEGIN
-    IF NOT EXISTS (SELECT NULL FROM prescriptions WHERE admission_id = NEW.admission_id AND doctor_AMKA = NEW.doctor_AMKA) THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Only doctors that prescribed to the patient can be rated.';
-    END IF;
-
+    CALL check_doctor_treated_patient(NEW.admission_id, NEW.doctor_AMKA);
     CALL check_if_discharged(NEW.admission_id);
+END//
+
+CREATE PROCEDURE check_exam_within_admission(IN p_admission_id INT, IN p_exam_date DATETIME)
+BEGIN
+    DECLARE v_adm_date DATE;
+    DECLARE v_dis_date DATE;
+    SELECT admission_date, discharge_date INTO v_adm_date, v_dis_date
+    FROM admissions WHERE admission_id = p_admission_id;
+    IF DATE(p_exam_date) < v_adm_date THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Lab exam date cannot be before admission date.';
+    END IF;
+    IF v_dis_date IS NOT NULL AND DATE(p_exam_date) > v_dis_date THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Lab exam date cannot be after discharge date.';
+    END IF;
+END//
+
+CREATE TRIGGER check_lab_exam_window_insert_trigger
+BEFORE INSERT ON lab_exams
+FOR EACH ROW
+BEGIN
+    CALL check_exam_within_admission(NEW.admission_id, NEW.exam_date);
+END//
+
+CREATE TRIGGER check_lab_exam_window_update_trigger
+BEFORE UPDATE ON lab_exams
+FOR EACH ROW
+BEGIN
+    IF NOT (NEW.exam_date <=> OLD.exam_date) OR NEW.admission_id <> OLD.admission_id THEN
+        CALL check_exam_within_admission(NEW.admission_id, NEW.exam_date);
+    END IF;
+END//
+
+CREATE PROCEDURE check_procedure_within_admission(IN p_admission_id INT, IN p_start DATETIME)
+BEGIN
+    DECLARE v_adm_date DATE;
+    DECLARE v_dis_date DATE;
+    SELECT admission_date, discharge_date INTO v_adm_date, v_dis_date
+    FROM admissions WHERE admission_id = p_admission_id;
+    IF DATE(p_start) < v_adm_date THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Procedure date cannot be before admission date.';
+    END IF;
+    IF v_dis_date IS NOT NULL AND DATE(p_start) > v_dis_date THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Procedure date cannot be after discharge date.';
+    END IF;
+END//
+
+CREATE TRIGGER check_procedure_window_insert_trigger
+BEFORE INSERT ON procedure_executions
+FOR EACH ROW
+BEGIN
+    CALL check_procedure_within_admission(NEW.admission_id, NEW.start_time);
+END//
+
+CREATE TRIGGER check_procedure_window_update_trigger
+BEFORE UPDATE ON procedure_executions
+FOR EACH ROW
+BEGIN
+    IF NOT (NEW.start_time <=> OLD.start_time) OR NEW.admission_id <> OLD.admission_id THEN
+        CALL check_procedure_within_admission(NEW.admission_id, NEW.start_time);
+    END IF;
 END//
 
 CREATE TRIGGER check_patient_drug_allergies_trigger
@@ -931,34 +1093,58 @@ BEGIN
     END IF;
 END //
         
+CREATE PROCEDURE validate_shift_rest(IN p_staff_AMKA CHAR(11), IN p_shift_id INT)
+BEGIN
+    DECLARE v_new_date DATE;
+    DECLARE v_new_slot VARCHAR(20);
+    DECLARE v_new_start DATETIME;
+    DECLARE v_violation INT DEFAULT 0;
+
+    SELECT shift_date, shift_slot INTO v_new_date, v_new_slot
+    FROM shifts WHERE shift_id = p_shift_id;
+
+    SET v_new_start = TIMESTAMP(v_new_date,
+        CASE v_new_slot
+            WHEN 'Morning'   THEN '07:00:00'
+            WHEN 'Afternoon' THEN '15:00:00'
+            WHEN 'Night'     THEN '23:00:00'
+        END);
+
+    -- Each shift is 8h long, so two shifts have >=8h rest gap
+    -- iff the distance between their start times is >=16h.
+    SELECT COUNT(*) INTO v_violation
+    FROM shift_staffing ss
+    JOIN shifts s ON ss.shift_id = s.shift_id
+    WHERE ss.staff_AMKA = p_staff_AMKA
+      AND ss.shift_id <> p_shift_id
+      AND ABS(TIMESTAMPDIFF(MINUTE, v_new_start,
+              TIMESTAMP(s.shift_date,
+                  CASE s.shift_slot
+                      WHEN 'Morning'   THEN '07:00:00'
+                      WHEN 'Afternoon' THEN '15:00:00'
+                      WHEN 'Night'     THEN '23:00:00'
+                  END))) < 16 * 60;
+
+    IF v_violation > 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Staff must have at least 8 hours rest between shifts.';
+    END IF;
+END//
+
 CREATE TRIGGER prevent_consecutive_shift_insert_trigger
 BEFORE INSERT ON shift_staffing
 FOR EACH ROW
 BEGIN
-    DECLARE last_date DATE;
-    DECLARE last_slot VARCHAR(20);
-
-    SELECT s.shift_date, s.shift_slot
-    INTO last_date, last_slot
-    FROM shift_staffing ss
-    JOIN shifts s ON ss.shift_id = s.shift_id
-    WHERE ss.staff_AMKA = NEW.staff_AMKA
-    LIMIT 1;
+    CALL validate_shift_rest(NEW.staff_AMKA, NEW.shift_id);
 END//
 
 CREATE TRIGGER prevent_consecutive_shift_update_trigger
 BEFORE UPDATE ON shift_staffing
 FOR EACH ROW
 BEGIN
-    DECLARE last_date DATE;
-    DECLARE last_slot VARCHAR(20);
-
-    SELECT s.shift_date, s.shift_slot
-    INTO last_date, last_slot
-    FROM shift_staffing ss
-    JOIN shifts s ON ss.shift_id = s.shift_id
-    WHERE ss.staff_AMKA = NEW.staff_AMKA
-    LIMIT 1;
+    IF (NEW.staff_AMKA <> OLD.staff_AMKA OR NEW.shift_id <> OLD.shift_id) THEN
+        CALL validate_shift_rest(NEW.staff_AMKA, NEW.shift_id);
+    END IF;
 END//
 
 CREATE PROCEDURE validate_shift_requirements(IN p_shift_id INT)

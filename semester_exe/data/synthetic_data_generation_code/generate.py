@@ -44,7 +44,7 @@ LOAD_ORDER = [
     ("departments",               "departments.csv",               ["dept_id", "name", "description", "bed_count", "floor", "building", "director_AMKA"]),
     # Staff loaded in 3 batches (all into same `staff` table)
     ("staff",                     "staff_doctors.csv",             ["AMKA", "first_name", "last_name", "date_of_birth", "email", "phone_number", "hire_date", "staff_type"]),
-    ("doctors",                   "doctors.csv",                   ["AMKA", "license_number", "`rank`", "supervisor_AMKA"]),
+    ("doctors",                   "doctors.csv",                   ["AMKA", "license_number", "`rank`", "specialty", "supervisor_AMKA"]),
     ("doctor_departments",        "doctor_departments.csv",        ["doctor_AMKA", "dept_id"]),
     # --- director UPDATE goes here (handled separately) ---
     ("staff",                     "staff_nurses.csv",              ["AMKA", "first_name", "last_name", "date_of_birth", "email", "phone_number", "hire_date", "staff_type"]),
@@ -52,7 +52,7 @@ LOAD_ORDER = [
     ("staff",                     "staff_admin.csv",               ["AMKA", "first_name", "last_name", "date_of_birth", "email", "phone_number", "hire_date", "staff_type"]),
     ("admin_staff",               "admin_staff.csv",               ["AMKA", "position", "office_location", "dept_id"]),
     ("beds",                      "beds.csv",                      ["bed_id", "dept_id", "room_capacity", "bed_type"]),
-    ("patients",                  "patients.csv",                  ["AMKA", "first_name", "last_name", "fathers_name", "date_of_birth", "gender", "weight", "height", "phone_number", "email", "occupation", "nationality", "insurance_provider"]),
+    ("patients",                  "patients.csv",                  ["AMKA", "first_name", "last_name", "fathers_name", "date_of_birth", "gender", "weight", "height", "phone_number", "email", "address", "occupation", "nationality", "insurance_provider"]),
     ("patient_emergency_contacts","patient_emergency_contacts.csv",["patient_AMKA", "first_name", "last_name", "phone_number", "email", "relationship_to_patient"]),
     ("patient_allergies",         "patient_allergies.csv",         ["patient_AMKA", "substance_id"]),
     ("admissions",                "admissions.csv",                ["patient_AMKA", "department_id", "bed_id", "ken_code", "admission_date", "discharge_date", "admission_diagnosis_code", "discharge_diagnosis_code"]),
@@ -63,7 +63,7 @@ LOAD_ORDER = [
     ("procedure_assistants",      "procedure_assistants.csv",      ["execution_id", "staff_AMKA", "`role`"]),
     ("prescriptions",             "prescriptions.csv",             ["admission_id", "patient_AMKA", "doctor_AMKA", "drug_id", "dosage", "frequency", "start_date", "end_date"]),
     ("admission_ratings",         "admission_ratings.csv",         ["admission_id", "nursing_quality", "cleanliness", "food", "overall", "comment", "rated_at"]),
-    ("doctor_ratings",            "doctor_ratings.csv",            ["admission_id", "doctor_AMKA", "medical_care_quality", "rated_at"]),
+    ("doctor_ratings",            "doctor_ratings.csv",            ["admission_id", "doctor_AMKA", "medical_care_quality", "comment", "rated_at"]),
     ("shifts",                    "shifts.csv",                    ["shift_id", "shift_date", "shift_slot", "shift_status", "dept_id"]),
     ("shift_staffing",            "shift_staffing.csv",            ["shift_id", "staff_AMKA"]),
     ("department_images",         "department_images.csv",         ["dept_id", "img_url", "caption", "ordering"]),
@@ -130,7 +130,7 @@ def main():
     print("\n[1/5] Reference data from CSVs...")
     icd10_codes = gen_icd10()
     ken_codes = gen_ken()
-    drug_ids, substance_list, sub_id_map = gen_substances_and_drugs()
+    drug_ids, substance_list, sub_id_map, drug_substance_map = gen_substances_and_drugs()
     proc_codes = gen_medical_procedures()
     room_ids = gen_operating_rooms()
     lab_types = gen_lab_exam_types()
@@ -142,16 +142,16 @@ def main():
     nurses = gen_nurses(dept_ids)
     admins = gen_admin(dept_ids)
     dept_beds = gen_beds(dept_ids)
-    patients = gen_patients(sub_id_map)
+    patients, patient_allergy_map = gen_patients(sub_id_map)
 
     # 3. Clinical data
     print("\n[3/5] Clinical records...")
     admissions, discharge_updates = gen_admissions(patients, dept_ids, dept_beds, ken_codes, icd10_codes)
     gen_triages(patients, nurses, admissions)
-    gen_lab_exams(admissions, doctors, lab_types)
-    gen_procedure_executions(admissions, proc_codes, room_ids, doctors)
-    prescribing_doctors = gen_prescriptions(admissions, doctors, drug_ids)
-    gen_ratings(discharge_updates, prescribing_doctors)
+    lab_doctors = gen_lab_exams(admissions, doctors, lab_types)
+    procedure_doctors = gen_procedure_executions(admissions, proc_codes, room_ids, doctors)
+    prescribing_doctors = gen_prescriptions(admissions, doctors, drug_ids, patient_allergy_map, drug_substance_map)
+    gen_ratings(discharge_updates, prescribing_doctors, procedure_doctors, lab_doctors)
 
     # 4. Scheduling & images
     print("\n[4/5] Shifts & images...")

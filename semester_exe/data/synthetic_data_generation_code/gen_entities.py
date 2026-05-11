@@ -83,9 +83,10 @@ def gen_staff_and_doctors(dept_ids):
             sup = dept_directors.get(dept_id)
             
         lic = gen_license()
-        doctor_rows.append((doc["amka"], lic, doc["rank"], sup))
+        specialty = random.choice(DOCTOR_SPECIALTIES)
+        doctor_rows.append((doc["amka"], lic, doc["rank"], specialty, sup))
 
-    write_csv_file("doctors.csv", ["AMKA", "license_number", "rank", "supervisor_AMKA"], doctor_rows)
+    write_csv_file("doctors.csv", ["AMKA", "license_number", "rank", "specialty", "supervisor_AMKA"], doctor_rows)
 
     # Doctor-department
     for doc in doctors:
@@ -185,6 +186,7 @@ def gen_patients(sub_id_map):
     pat_rows = []
     ec_rows = []
     allergy_rows = []
+    patient_allergy_map = {}
     substance_ids = list(sub_id_map.values()) if sub_id_map else []
 
     for i in range(N_PATIENTS):
@@ -202,9 +204,10 @@ def gen_patients(sub_id_map):
         ins = random.choice(INSURANCE)
         weight = random.randint(45, 130) if random.random() > 0.1 else None
         height = random.randint(150, 200) if random.random() > 0.1 else None
+        address = f"{random.choice(ATHENS_STREETS)} {random.randint(1, 200)}, Athens"
 
         pat_rows.append((amka, first, last, fathers, str(dob), gender,
-                         weight, height, phone, email, occ, nat, ins))
+                         weight, height, phone, email, address, occ, nat, ins))
         patients.append({"amka": amka})
 
         # Emergency contacts (1-2)
@@ -215,14 +218,16 @@ def gen_patients(sub_id_map):
             ec_rows.append((amka, cf, cl, cp, None, rel))
 
         # Allergies (0-3)
+        patient_allergy_map[amka] = set()
         if substance_ids and random.random() < 0.3:
             for sid in random.sample(substance_ids, min(random.randint(1, 3), len(substance_ids))):
                 allergy_rows.append((amka, sid))
+                patient_allergy_map[amka].add(sid)
 
     write_csv_file("patients.csv",
                    ["AMKA", "first_name", "last_name", "fathers_name", "date_of_birth",
                     "gender", "weight", "height", "phone_number", "email",
-                    "occupation", "nationality", "insurance_provider"], pat_rows)
+                    "address", "occupation", "nationality", "insurance_provider"], pat_rows)
     # Omit contact_seq — trigger handles it
     write_csv_file("patient_emergency_contacts.csv",
                    ["patient_AMKA", "first_name", "last_name", "phone_number", "email",
@@ -231,4 +236,4 @@ def gen_patients(sub_id_map):
     if allergy_rows:
         write_csv_file("patient_allergies.csv", ["patient_AMKA", "substance_id"], allergy_rows)
 
-    return patients
+    return patients, patient_allergy_map

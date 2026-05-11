@@ -20,9 +20,18 @@ def gen_admissions(patients, dept_ids, dept_beds, ken_codes, icd10_codes):
     start = date(2026, 3, 1)
     span = max(1, (today - start).days)
 
+    forced_dept = all_beds[0][0]
+    forced_count = 0
+
     for i in range(min(N_ADMISSIONS, len(all_beds))):
         dept, bed = all_beds[i]
         pat = random.choice(patients)
+        
+        # Force the first patient to take 4 admissions in forced_dept
+        if dept == forced_dept and forced_count < 4:
+            pat = patients[0]
+            forced_count += 1
+            
         ken = random.choice(ken_codes)
         icd_in = random.choice(icd10_codes)
 
@@ -115,6 +124,7 @@ def gen_triages(patients, nurses, admissions):
 
 def gen_lab_exams(admissions, doctors, lab_types):
     rows = []
+    lab_doctors = set()  # (admission_id, doctor_amka)
     for i in range(N_LAB_EXAMS):
         adm = random.choice(admissions)
         doc = random.choice(doctors)
@@ -130,10 +140,12 @@ def gen_lab_exams(admissions, doctors, lab_types):
         rows.append((adm["id"], exam_code, exam_date,
                      f"Result for {lt[1][:30]}", f"{result_num:.2f}", unit,
                      f"{cost:.2f}", doc["amka"]))
+        lab_doctors.add((adm["id"], doc["amka"]))
 
     write_csv_file("lab_exams.csv",
                    ["admission_id", "exam_code", "exam_date",
                     "result_text", "result_numeric", "result_unit", "cost", "doctor_AMKA"], rows)
+    return lab_doctors
 
 
 def gen_procedure_executions(admissions, proc_codes, room_ids, doctors):
@@ -204,19 +216,29 @@ def gen_procedure_executions(admissions, proc_codes, room_ids, doctors):
     if assist_rows:
         write_csv_file("procedure_assistants.csv", ["execution_id", "staff_AMKA", "role"], assist_rows)
 
+    procedure_doctors = {(r[0], r[3]) for r in exec_rows}  # (admission_id, main_doctor_amka)
+    return procedure_doctors
 
-def gen_prescriptions(admissions, doctors, drug_ids):
+
+def gen_prescriptions(admissions, doctors, drug_ids, patient_allergy_map=None, drug_substance_map=None):
     rows = []
     prescribing_doctors = set() # (admission_id, doctor_amka)
+    patient_allergy_map = patient_allergy_map or {}
+    drug_substance_map = drug_substance_map or {}
     for i in range(N_PRESCRIPTIONS):
         adm = random.choice(admissions)
         doc = random.choice(doctors)
-        drug = random.choice(drug_ids)
+        patient_amka = adm["patient"]
+        allergies = patient_allergy_map.get(patient_amka, set())
+        safe_drugs = [d for d in drug_ids if not (drug_substance_map.get(d, set()) & allergies)]
+        if not safe_drugs:
+            safe_drugs = drug_ids
+        drug = random.choice(safe_drugs)
         dosage = random.choice(DOSAGES)
         freq = random.choice(FREQUENCIES)
         start = adm["adm_date"]
         end = start + timedelta(days=random.randint(3, 30))
-        rows.append((adm["id"], adm["patient"], doc["amka"], drug,
+        rows.append((adm["id"], patient_amka, doc["amka"], drug,
                      dosage, freq, str(start), str(end)))
         prescribing_doctors.add((adm["id"], doc["amka"]))
 
@@ -226,16 +248,20 @@ def gen_prescriptions(admissions, doctors, drug_ids):
     return prescribing_doctors
 
 
-def gen_ratings(discharged, prescribing_doctors):
+def gen_ratings(discharged, prescribing_doctors, procedure_doctors=None, lab_doctors=None):
     adm_rows = []
     doc_rows = []
 
-    # Group prescribing doctors by admission_id for easy lookup
+    # Merge all doctors who treated the patient for this admission
+    all_treating = set(prescribing_doctors)
+    if procedure_doctors:
+        all_treating |= procedure_doctors
+    if lab_doctors:
+        all_treating |= lab_doctors
+
     docs_by_adm = {}
-    for adm_id, doc_amka in prescribing_doctors:
-        if adm_id not in docs_by_adm:
-            docs_by_adm[adm_id] = []
-        docs_by_adm[adm_id].append(doc_amka)
+    for adm_id, doc_amka in all_treating:
+        docs_by_adm.setdefault(adm_id, []).append(doc_amka)
 
     for adm in discharged:
         if random.random() < 0.6:
@@ -246,18 +272,20 @@ def gen_ratings(discharged, prescribing_doctors):
             rated = random_datetime(adm["dis_date"] + timedelta(days=random.randint(0, 7)))
             adm_rows.append((adm["id"], nq, cl, fo, ov, comment, rated))
 
-        # Only rate doctors who actually prescribed something (enforced by DB trigger)
+        # Rate any doctor who treated the patient (prescribed, performed procedure, or ordered exam)
         if adm["id"] in docs_by_adm and random.random() < 0.7:
             doc_amka = random.choice(docs_by_adm[adm["id"]])
             mcq = random.randint(1, 5)
+            comment = random.choice(["Excellent diagnosis", "Very attentive", "Professional",
+                                      "Could explain more", "Great bedside manner", None])
             rated = random_datetime(adm["dis_date"] + timedelta(days=random.randint(0, 7)))
-            doc_rows.append((adm["id"], doc_amka, mcq, rated))
+            doc_rows.append((adm["id"], doc_amka, mcq, comment, rated))
 
-    # Deduplicate doctor ratings
+    # Deduplicate doctor ratings (unique per admission + doctor)
     seen = set()
     unique_dr = []
     for r in doc_rows:
-        key = (r[0], r[1])
+        key = (r[0], r[1])  # (admission_id, doctor_amka)
         if key not in seen:
             seen.add(key)
             unique_dr.append(r)
@@ -268,7 +296,7 @@ def gen_ratings(discharged, prescribing_doctors):
                         "overall", "comment", "rated_at"], adm_rows)
     if unique_dr:
         write_csv_file("doctor_ratings.csv",
-                       ["admission_id", "doctor_AMKA", "medical_care_quality", "rated_at"], unique_dr)
+                       ["admission_id", "doctor_AMKA", "medical_care_quality", "comment", "rated_at"], unique_dr)
 
 
 def gen_shifts(dept_ids, doctors, nurses, admins):
@@ -298,16 +326,22 @@ def gen_shifts(dept_ids, doctors, nurses, admins):
         ym = (d.year, d.month)
         if monthly_counts.get((amka, ym), 0) >= LIMITS[staff_type_map[amka]]:
             return False
-        # One shift per person per day (covers same-shift and rest-rule conflicts)
+        # One shift per person per day (prevents same-day M+A and A+N conflicts)
         if d in person_dates.get(amka, set()):
+            return False
+        shifts = person_shifts.get(amka, set())
+        # Night (D) and Morning (D+1) are only 8h apart end-to-start, which is
+        # exactly the minimum — but 8h START-to-START is less than the required 16h
+        # gap between shift starts (each shift is 8h, so 8h rest needs 16h start gap).
+        if slot == "Morning" and (d - timedelta(days=1), "Night") in shifts:
+            return False
+        if slot == "Night" and (d + timedelta(days=1), "Morning") in shifts:
             return False
         # validate_consecutive_nights trigger forbids the 3rd consecutive night
         if slot == "Night":
-            shifts = person_shifts.get(amka, set())
             if (d - timedelta(days=1), "Night") in shifts \
                and (d - timedelta(days=2), "Night") in shifts:
                 return False
-            # also block creating a 3-night streak that wraps around an existing future night
             if (d + timedelta(days=1), "Night") in shifts \
                and (d + timedelta(days=2), "Night") in shifts:
                 return False

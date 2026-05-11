@@ -1,201 +1,201 @@
-AMKA,first_name,last_name,fathers_name,date_of_birth,gender,weight,height,phone_number,email,occupation,nationality,insurance_provider
-93064691267,Dimitris,Georgiou,Alexandros,2015-04-25,M,116,163,6996993353,dimitris.georgiou@ygeiopolis.gr,Engineer,GR,EOPYY
-48747811282,Georgios,Lamprou,Vasilis,1989-03-06,M,\N,182,6945173922,georgios.lamprou@ygeiopolis.gr,Driver,GB,EOPYY
-81157509272,Leonidas,Christodoulou,Athanasios,2020-11-08,M,70,176,6980369575,leonidas.christodoulou1@ygeiopolis.gr,Doctor,GR,MetLife
-01818896991,Michalis,Konstantinidis,Michalis,2006-02-22,M,\N,152,6993575384,michalis.konstantinidis1@ygeiopolis.gr,Clerk,GR,EOPYY
-21354692239,Spyros,Papadopoulos,Giannis,1999-10-31,M,78,153,6971734346,spyros.papadopoulos@ygeiopolis.gr,Doctor,GR,MetLife
-02241756168,Alexandros,Oikonomidis,Ilias,2021-08-15,M,46,171,6964185413,alexandros.oikonomidis@ygeiopolis.gr,Farmer,GR,Interamerican
-92219114299,Dimitra,Karamanli,Athanasios,1943-09-03,F,119,157,6981414013,dimitra.karamanli@ygeiopolis.gr,Clerk,CY,Interamerican
-27291367591,Alexandra,Alexiou,Pavlos,1943-06-08,F,\N,\N,6944915321,alexandra.alexiou@ygeiopolis.gr,Clerk,GR,EOPYY
-38670776042,Evangelos,Papanikolaou,Vasilis,1969-10-25,M,54,\N,6998766740,evangelos.papanikolaou@ygeiopolis.gr,Clerk,BG,Eurolife
-39276398523,Antonis,Diamantis,Christos,1975-07-07,M,106,197,6982893632,antonis.diamantis@ygeiopolis.gr,Lawyer,DE,Interamerican
-35347050707,Theodoros,Georgiou,Markos,1982-05-04,M,103,176,6908849499,theodoros.georgiou@ygeiopolis.gr,Chef,AL,EOPYY
-54196351109,Foteini,Nikolaidi,Anastasios,1988-07-04,F,77,\N,6945136365,foteini.nikolaidi3@ygeiopolis.gr,Chef,GR,Ethniki
-81718993547,Sofia,Mavridi,Sotiris,1958-10-24,F,\N,163,6921127596,sofia.mavridi1@ygeiopolis.gr,Farmer,BG,EOPYY
-38180364851,Maria,Vlachopoulou,Dimitris,1964-07-28,F,62,177,6902182414,maria.vlachopoulou1@ygeiopolis.gr,Engineer,DE,EOPYY
-04347433442,Christina,Mavridi,Dimitris,2015-12-25,F,60,173,6965100460,christina.mavridi@ygeiopolis.gr,Teacher,GR,Generali
-76775138771,Danai,Bakogianni,Ioannis,2013-10-19,F,73,\N,6998189397,danai.bakogianni@ygeiopolis.gr,Driver,GR,Generali
-91853620544,Foteini,Stamatiou,Vasilis,1971-06-11,F,98,150,6939271954,foteini.stamatiou@ygeiopolis.gr,Engineer,AL,EOPYY
-35440789677,Leonidas,Lazaridis,Grigoris,1962-09-08,M,47,189,6988922100,leonidas.lazaridis@ygeiopolis.gr,Lawyer,GR,EOPYY
-70498671101,Eleftherios,Karamanlis,Dionysios,1980-04-23,M,48,158,6970332570,eleftherios.karamanlis1@ygeiopolis.gr,Student,GR,EOPYY
-81130186432,Nikos,Ioannidis,Alexandros,2003-02-26,M,\N,153,6945651812,nikos.ioannidis@ygeiopolis.gr,Lawyer,CY,MetLife
-23115411190,Sotiris,Georgiou,Georgios,1967-12-06,M,61,193,6906071369,sotiris.georgiou@ygeiopolis.gr,Farmer,GR,EOPYY
-26829508149,Sotiris,Alexiou,Filippos,1973-04-10,M,71,197,6902323585,sotiris.alexiou@ygeiopolis.gr,Chef,GR,Ethniki
-44496493046,Anastasios,Papageorgiou,Konstantinos,2000-01-11,M,130,173,6906069882,anastasios.papageorgiou@ygeiopolis.gr,Doctor,GR,Allianz
-54539601609,Dionysios,Papanikolaou,Petros,1950-07-19,M,82,193,6924707926,dionysios.papanikolaou@ygeiopolis.gr,Driver,CY,EOPYY
-54959578127,Pavlos,Athanasiou,Vasilis,1960-04-19,M,65,163,6917427183,pavlos.athanasiou1@ygeiopolis.gr,Driver,GR,Generali
-28920745952,Maria,Mavridi,Fotios,1954-03-14,Other,72,164,6927677423,maria.mavridi@ygeiopolis.gr,Chef,GR,Ethniki
-53715573105,Elisavet,Antoniou,Giannis,2009-01-26,F,\N,164,6989831873,elisavet.antoniou1@ygeiopolis.gr,Engineer,GB,Ethniki
-87121894523,Theodoros,Vlachopoulos,Sotiris,1971-11-13,M,89,173,6996023315,theodoros.vlachopoulos@ygeiopolis.gr,Chef,GB,Allianz
-58755850959,Theodora,Karagianni,Christos,1957-10-17,F,95,161,6945049723,theodora.karagianni@ygeiopolis.gr,Doctor,AL,MetLife
-16674078869,Ariadni,Ioannidi,Markos,1979-07-14,F,99,155,6985749110,ariadni.ioannidi@ygeiopolis.gr,Doctor,AL,Eurolife
-47040793651,Kalliopi,Papadopoulou,Grigoris,1953-06-03,Other,71,199,6975692692,kalliopi.papadopoulou@ygeiopolis.gr,Engineer,GR,EOPYY
-80578369030,Giannis,Diamantis,Athanasios,2007-03-20,M,122,178,6913653298,giannis.diamantis@ygeiopolis.gr,Retired,AL,Allianz
-87621577405,Thomas,Christodoulou,Markos,2002-06-25,M,107,164,6986618248,thomas.christodoulou@ygeiopolis.gr,Lawyer,GR,EOPYY
-15900713204,Fotios,Papanikolaou,Athanasios,1960-11-27,M,93,168,6984567715,fotios.papanikolaou@ygeiopolis.gr,Student,GR,Eurolife
-29645521750,Grigoris,Lazaridis,Antonis,1999-07-24,M,80,150,6987829887,grigoris.lazaridis@ygeiopolis.gr,Driver,BG,Ethniki
-18393301118,Konstantinos,Stamatiou,Nikos,2001-10-10,M,82,186,6965488558,konstantinos.stamatiou@ygeiopolis.gr,Lawyer,CY,Ethniki
-38958641782,Theodora,Christodoulou,Thomas,1996-01-07,F,105,160,6901999162,theodora.christodoulou@ygeiopolis.gr,Student,AL,MetLife
-01027190952,Xanthi,Lamprou,Giannis,1950-04-17,F,90,174,6938721215,xanthi.lamprou@ygeiopolis.gr,Teacher,GB,EOPYY
-82432625381,Leonidas,Angelopoulos,Athanasios,1939-09-24,M,52,168,6903075598,leonidas.angelopoulos@ygeiopolis.gr,Student,GR,Generali
-32773765547,Evangelia,Lazaridi,Panagiotis,1989-08-30,F,57,174,6972757355,evangelia.lazaridi@ygeiopolis.gr,Student,DE,EOPYY
-58247733912,Antonis,Tsoukalas,Dimitris,1971-04-04,M,91,192,6937191275,antonis.tsoukalas@ygeiopolis.gr,Chef,GR,MetLife
-64364443296,Evangelos,Stamatiou,Alexandros,1972-07-31,M,65,153,6942200722,evangelos.stamatiou@ygeiopolis.gr,Lawyer,AL,Allianz
-47034463324,Spyros,Kalligas,Thomas,1951-10-14,M,108,198,6956841546,spyros.kalligas@ygeiopolis.gr,Farmer,CY,EOPYY
-33752296484,Maria,Angelopoulou,Georgios,1968-03-02,F,120,196,6910922251,maria.angelopoulou@ygeiopolis.gr,Student,CY,Ethniki
-81372298210,Charalampos,Angelopoulos,Vasilis,1969-09-27,M,130,169,6952439229,charalampos.angelopoulos@ygeiopolis.gr,Retired,GR,EOPYY
-94836094386,Emmanouil,Antoniou,Spyros,1979-12-31,M,68,186,6950855925,emmanouil.antoniou@ygeiopolis.gr,Doctor,GR,MetLife
-33446661051,Ioanna,Oikonomidi,Filippos,1941-04-06,F,111,180,6996180686,ioanna.oikonomidi@ygeiopolis.gr,Driver,DE,Allianz
-44088331838,Alexandros,Panagiotidis,Andreas,2022-11-15,M,122,165,6969347691,alexandros.panagiotidis@ygeiopolis.gr,Driver,GR,Eurolife
-31336314098,Paraskevi,Chatzidaki,Alexandros,2009-06-08,F,\N,189,6927023189,paraskevi.chatzidaki@ygeiopolis.gr,Doctor,BG,EOPYY
-51547469117,Athina,Konstantinidi,Konstantinos,1937-10-05,F,\N,196,6987027282,athina.konstantinidi@ygeiopolis.gr,Engineer,GR,EOPYY
-41832527625,Ioannis,Oikonomidis,Dimitris,2012-02-12,M,72,174,6921311679,ioannis.oikonomidis@ygeiopolis.gr,Retired,GR,EOPYY
-20994175304,Nikos,Papanikolaou,Giannis,1940-07-15,M,85,\N,6953198410,nikos.papanikolaou1@ygeiopolis.gr,Retired,GR,Eurolife
-01727279732,Vasiliki,Spanou,Theodoros,1976-02-23,F,\N,151,6990183205,vasiliki.spanou@ygeiopolis.gr,Teacher,GR,EOPYY
-96886312407,Leonidas,Eleftheriadis,Nikos,1959-02-14,M,\N,167,6944813881,leonidas.eleftheriadis1@ygeiopolis.gr,Chef,GR,EOPYY
-80453478277,Michalis,Makris,Georgios,1966-05-27,M,105,173,6953209592,michalis.makris@ygeiopolis.gr,Clerk,GR,Allianz
-27398356523,Eleftherios,Vasileiou,Panagiotis,1971-04-11,M,84,174,6988676227,eleftherios.vasileiou@ygeiopolis.gr,Farmer,CY,EOPYY
-26362886233,Georgia,Lazaridi,Dionysios,1992-08-29,F,55,\N,6904445514,georgia.lazaridi1@ygeiopolis.gr,Farmer,GR,Generali
-24642998724,Anastasios,Tsoukalas,Ioannis,1985-10-18,M,52,157,6953998759,anastasios.tsoukalas@ygeiopolis.gr,Teacher,CY,EOPYY
-86243014606,Stefanos,Papageorgiou,Thomas,1987-08-11,M,53,181,6910696374,stefanos.papageorgiou@ygeiopolis.gr,Chef,GR,EOPYY
-16004027289,Georgios,Stamatiou,Pavlos,1976-10-22,M,63,179,6983212086,georgios.stamatiou@ygeiopolis.gr,Teacher,GR,MetLife
-95285994757,Katerina,Tsakalidi,Aristeidis,1962-10-11,F,105,188,6937982930,katerina.tsakalidi@ygeiopolis.gr,Retired,CY,Eurolife
-43903560285,Vasiliki,Papadopoulou,Pavlos,1956-07-01,F,\N,155,6996609635,vasiliki.papadopoulou@ygeiopolis.gr,Student,BG,Interamerican
-59408593565,Anastasia,Vasileiou,Ilias,2003-10-15,F,86,164,6924377950,anastasia.vasileiou@ygeiopolis.gr,Lawyer,AL,Ethniki
-23967499902,Theodora,Spanou,Petros,2019-12-14,F,55,168,6985407008,theodora.spanou1@ygeiopolis.gr,Student,GR,Ethniki
-14262040852,Eleftherios,Sidiropoulos,Emmanouil,2023-05-06,M,63,191,6933461189,eleftherios.sidiropoulos@ygeiopolis.gr,Lawyer,DE,Eurolife
-02093137880,Danai,Triantafyllou,Spyros,1959-10-05,F,98,179,6910936767,danai.triantafyllou1@ygeiopolis.gr,Lawyer,BG,Eurolife
-89233313514,Stefanos,Archontopoulos,Fotios,1937-12-28,M,99,\N,6955070264,stefanos.archontopoulos1@ygeiopolis.gr,Engineer,AL,EOPYY
-52023589377,Aggeliki,Papanikolaou,Andreas,1956-06-01,F,120,169,6925828488,aggeliki.papanikolaou@ygeiopolis.gr,Chef,GR,MetLife
-55470189779,Athina,Alexiou,Leonidas,1963-09-05,Other,88,197,6901467093,athina.alexiou1@ygeiopolis.gr,Doctor,BG,EOPYY
-61340799216,Stefanos,Dimitriou,Athanasios,1945-12-08,M,96,182,6957527542,stefanos.dimitriou@ygeiopolis.gr,Clerk,GR,EOPYY
-95516113395,Giannis,Lazaridis,Vasilis,1988-02-04,M,\N,159,6922451825,giannis.lazaridis@ygeiopolis.gr,Doctor,GB,Interamerican
-92259164230,Ioannis,Antoniou,Andreas,1940-11-27,M,56,182,6927469017,ioannis.antoniou@ygeiopolis.gr,Doctor,GR,EOPYY
-10400327303,Fotios,Karamanlis,Georgios,1957-11-08,M,55,182,6948274635,fotios.karamanlis1@ygeiopolis.gr,Driver,GR,Ethniki
-11281779036,Margarita,Nikolaidi,Thomas,1987-04-29,F,86,167,6963694728,margarita.nikolaidi@ygeiopolis.gr,Teacher,GR,EOPYY
-30568780712,Vasiliki,Archontopoulou,Emmanouil,1962-06-19,F,121,165,6952494891,vasiliki.archontopoulou@ygeiopolis.gr,Clerk,CY,EOPYY
-57652822619,Alexandros,Sidiropoulos,Sotiris,1966-07-19,M,77,170,6949029484,alexandros.sidiropoulos@ygeiopolis.gr,Chef,GR,EOPYY
-93601941270,Nikoletta,Michailidi,Thomas,1988-02-13,F,130,164,6918536087,nikoletta.michailidi1@ygeiopolis.gr,Clerk,GR,Eurolife
-73448365670,Nikos,Stamatiou,Christos,1984-02-01,M,85,178,6990565743,nikos.stamatiou@ygeiopolis.gr,Chef,AL,Eurolife
-58868102531,Evangelia,Archontopoulou,Theodoros,2013-02-05,F,84,\N,6966254780,evangelia.archontopoulou@ygeiopolis.gr,Engineer,GB,Ethniki
-46734743693,Grigoris,Spanos,Dimitris,1951-10-07,M,112,156,6989413198,grigoris.spanos@ygeiopolis.gr,Retired,GB,Interamerican
-40942941259,Leonidas,Lamprou,Dimitris,1985-02-13,M,94,196,6932388767,leonidas.lamprou@ygeiopolis.gr,Doctor,AL,EOPYY
-70266382071,Christina,Tsoukala,Filippos,1994-02-10,F,88,178,6981851331,christina.tsoukala2@ygeiopolis.gr,Teacher,BG,Allianz
-67787192497,Pavlos,Papadopoulos,Theodoros,1965-12-05,M,91,\N,6965571364,pavlos.papadopoulos1@ygeiopolis.gr,Chef,AL,Eurolife
-85157646705,Stefanos,Panagiotidis,Pavlos,2019-12-12,M,52,181,6980983831,stefanos.panagiotidis@ygeiopolis.gr,Chef,GR,Generali
-82638803242,Nikoletta,Papageorgiou,Alexandros,1983-09-24,F,68,163,6961862869,nikoletta.papageorgiou@ygeiopolis.gr,Lawyer,GR,Eurolife
-53941854554,Emmanouil,Oikonomidis,Antonis,2019-07-29,M,73,\N,6992588314,emmanouil.oikonomidis@ygeiopolis.gr,Engineer,GR,EOPYY
-89621325086,Christos,Triantafyllou,Antonis,2009-11-13,M,113,151,6968564347,christos.triantafyllou@ygeiopolis.gr,Doctor,GR,Allianz
-01726280336,Eleftherios,Antoniou,Konstantinos,1997-05-26,M,49,156,6984749116,eleftherios.antoniou@ygeiopolis.gr,Farmer,GR,EOPYY
-08579622951,Panagiotis,Ioannidis,Christos,1956-10-30,M,94,168,6908486106,panagiotis.ioannidis@ygeiopolis.gr,Doctor,GR,EOPYY
-16502423893,Petros,Chatzidakis,Athanasios,1994-04-07,M,\N,192,6940711072,petros.chatzidakis@ygeiopolis.gr,Chef,DE,Ethniki
-47955412982,Athina,Georgiou,Theodoros,1999-02-04,F,90,178,6920288152,athina.georgiou@ygeiopolis.gr,Engineer,DE,MetLife
-02749623838,Dimitra,Michailidi,Eleftherios,1939-03-16,F,116,197,6940376543,dimitra.michailidi1@ygeiopolis.gr,Chef,GB,MetLife
-50487159051,Olympia,Vlachopoulou,Georgios,1975-05-18,F,118,186,6937721090,olympia.vlachopoulou@ygeiopolis.gr,Lawyer,GR,Generali
-65737449666,Georgia,Oikonomou,Giannis,1940-07-08,F,\N,150,6972366047,georgia.oikonomou@ygeiopolis.gr,Student,GR,EOPYY
-02695775266,Sofia,Petridi,Eleftherios,1975-01-21,F,78,185,6980316367,sofia.petridi@ygeiopolis.gr,Clerk,GR,Eurolife
-88532987340,Emmanouil,Angelopoulos,Alexandros,2017-01-04,M,49,187,6949974754,emmanouil.angelopoulos1@ygeiopolis.gr,Lawyer,GR,Eurolife
-03405736891,Thomas,Dimitriou,Konstantinos,1942-08-05,M,65,193,6980417569,thomas.dimitriou@ygeiopolis.gr,Student,GR,EOPYY
-65728182912,Sofia,Chatzidaki,Anastasios,1949-02-21,F,48,168,6989885249,sofia.chatzidaki2@ygeiopolis.gr,Chef,GR,MetLife
-59670716944,Fotios,Spanos,Christos,1976-03-29,M,60,\N,6944000407,fotios.spanos@ygeiopolis.gr,Retired,AL,EOPYY
-19736654758,Ariadni,Michailidi,Dionysios,1944-06-29,F,\N,181,6983710539,ariadni.michailidi@ygeiopolis.gr,Driver,CY,MetLife
-70712797176,Paraskevi,Chatzidaki,Sotiris,2006-03-31,F,125,196,6906427299,paraskevi.chatzidaki1@ygeiopolis.gr,Engineer,GR,EOPYY
-82036906155,Eirini,Bakogianni,Theodoros,2022-05-30,F,52,195,6961340973,eirini.bakogianni1@ygeiopolis.gr,Teacher,GR,EOPYY
-13805732136,Paraskevi,Kalliga,Kyriakos,1955-10-04,F,101,\N,6988645552,paraskevi.kalliga@ygeiopolis.gr,Doctor,GR,Ethniki
-69263560062,Vasiliki,Kalliga,Leonidas,1995-04-29,F,77,163,6915179751,vasiliki.kalliga@ygeiopolis.gr,Chef,GR,Eurolife
-61646152653,Vasilis,Vasileiou,Michalis,2011-10-17,M,101,\N,6924708101,vasilis.vasileiou@ygeiopolis.gr,Student,DE,EOPYY
-81403340508,Grigoris,Angelopoulos,Andreas,1950-02-05,M,75,156,6905635869,grigoris.angelopoulos@ygeiopolis.gr,Chef,GR,EOPYY
-84959126092,Foteini,Papadimitriou,Stefanos,2025-04-24,F,110,163,6931465657,foteini.papadimitriou@ygeiopolis.gr,Teacher,AL,Interamerican
-53223072487,Anastasia,Chronopoulou,Evangelos,1990-10-07,F,60,150,6912613955,anastasia.chronopoulou@ygeiopolis.gr,Lawyer,GR,Ethniki
-32596276223,Thomas,Tsoukalas,Antonis,1988-03-08,M,89,190,6931275341,thomas.tsoukalas1@ygeiopolis.gr,Clerk,GR,MetLife
-41439103231,Margarita,Makri,Fotios,1951-03-01,F,62,195,6966790667,margarita.makri1@ygeiopolis.gr,Student,BG,Eurolife
-77795334225,Stavroula,Alexiou,Petros,2006-05-11,F,91,171,6992242577,stavroula.alexiou@ygeiopolis.gr,Lawyer,GR,Eurolife
-83968788420,Thomas,Stamatiou,Eleftherios,1957-05-04,M,\N,194,6975983589,thomas.stamatiou@ygeiopolis.gr,Student,BG,Eurolife
-94677818986,Alexandra,Papageorgiou,Pavlos,2006-01-16,F,87,161,6913959459,alexandra.papageorgiou1@ygeiopolis.gr,Driver,GR,EOPYY
-99779178220,Leonidas,Ioannidis,Andreas,2021-05-29,M,55,170,6900142866,leonidas.ioannidis1@ygeiopolis.gr,Chef,GR,Interamerican
-83051719725,Foteini,Karamanli,Theodoros,2019-08-14,F,72,196,6934335367,foteini.karamanli@ygeiopolis.gr,Retired,BG,Eurolife
-12806199074,Charalampos,Papageorgiou,Emmanouil,1989-12-23,M,92,182,6969747217,charalampos.papageorgiou@ygeiopolis.gr,Teacher,GR,Generali
-35078107283,Thomas,Karagiannis,Filippos,1966-10-27,M,96,165,6976461261,thomas.karagiannis@ygeiopolis.gr,Student,GB,MetLife
-66300636210,Xanthi,Lazaridi,Panagiotis,1993-03-05,F,128,198,6964078704,xanthi.lazaridi@ygeiopolis.gr,Clerk,GR,EOPYY
-70554899071,Ioanna,Bakogianni,Theodoros,1936-12-03,F,\N,186,6999699154,ioanna.bakogianni@ygeiopolis.gr,Clerk,GR,Eurolife
-41577129184,Danai,Alexiou,Markos,2009-11-08,F,73,173,6919561765,danai.alexiou1@ygeiopolis.gr,Retired,DE,MetLife
-78971535964,Michalis,Alexiou,Spyros,1981-11-23,M,111,198,6968474645,michalis.alexiou@ygeiopolis.gr,Retired,GR,Eurolife
-58105801088,Paraskevi,Vlachopoulou,Pavlos,1945-07-16,F,115,174,6979744761,paraskevi.vlachopoulou@ygeiopolis.gr,Chef,GR,Eurolife
-79226281915,Petros,Stamatiou,Theodoros,2025-04-23,M,59,150,6937438734,petros.stamatiou@ygeiopolis.gr,Retired,GR,Ethniki
-98174736653,Elisavet,Konstantinidi,Kyriakos,1970-04-09,F,59,189,6988587489,elisavet.konstantinidi@ygeiopolis.gr,Retired,CY,Eurolife
-91898755798,Thomas,Nikolaidis,Petros,1949-03-31,M,59,174,6922900059,thomas.nikolaidis1@ygeiopolis.gr,Engineer,CY,Generali
-98096282196,Charalampos,Spanos,Giannis,1943-02-27,M,99,187,6987875788,charalampos.spanos@ygeiopolis.gr,Driver,BG,EOPYY
-10793226527,Ariadni,Vlachopoulou,Spyros,1978-12-28,F,53,170,6954630594,ariadni.vlachopoulou@ygeiopolis.gr,Teacher,CY,Interamerican
-38053659726,Ilias,Spanos,Ioannis,1978-07-25,M,68,\N,6995070513,ilias.spanos@ygeiopolis.gr,Engineer,AL,MetLife
-13717306390,Spyros,Karamanlis,Fotios,1950-12-29,M,99,162,6958306848,spyros.karamanlis@ygeiopolis.gr,Farmer,AL,Allianz
-98810855872,Olympia,Alexiou,Ilias,2006-05-28,F,47,155,6978457208,olympia.alexiou1@ygeiopolis.gr,Engineer,GR,Generali
-00458408922,Leonidas,Angelopoulos,Charalampos,1969-03-05,M,128,194,6906990649,leonidas.angelopoulos1@ygeiopolis.gr,Student,GB,EOPYY
-70833514244,Aggeliki,Dimitriou,Pavlos,1967-04-27,F,\N,196,6963900045,aggeliki.dimitriou@ygeiopolis.gr,Farmer,GB,Allianz
-84691281501,Nikos,Panagiotidis,Evangelos,1991-03-04,M,58,175,6954662573,nikos.panagiotidis@ygeiopolis.gr,Teacher,GR,Ethniki
-61447165044,Athanasios,Oikonomidis,Christos,1956-08-17,M,92,192,6952644582,athanasios.oikonomidis1@ygeiopolis.gr,Chef,AL,MetLife
-73965242760,Olympia,Stamatiou,Anastasios,1962-02-07,F,81,172,6941464402,olympia.stamatiou@ygeiopolis.gr,Doctor,GR,EOPYY
-84820727126,Stavroula,Archontopoulou,Ioannis,2008-06-22,F,102,159,6940293781,stavroula.archontopoulou1@ygeiopolis.gr,Farmer,GR,Interamerican
-67572668490,Panagiotis,Stamatiou,Ilias,1943-09-24,M,71,180,6936678320,panagiotis.stamatiou@ygeiopolis.gr,Farmer,GR,Interamerican
-38895311543,Andreas,Lamprou,Charalampos,1974-10-24,M,99,\N,6981573415,andreas.lamprou@ygeiopolis.gr,Chef,GR,EOPYY
-10840157997,Pavlos,Mavridis,Nikos,1942-07-12,M,99,176,6962981099,pavlos.mavridis@ygeiopolis.gr,Lawyer,CY,EOPYY
-05626070247,Anastasia,Vlachopoulou,Grigoris,1999-10-01,F,113,171,6957988892,anastasia.vlachopoulou1@ygeiopolis.gr,Teacher,GR,EOPYY
-47543188645,Evangelia,Kalliga,Athanasios,1971-07-07,F,121,165,6978007924,evangelia.kalliga@ygeiopolis.gr,Doctor,GR,Interamerican
-98043331569,Petros,Michailidis,Evangelos,1987-08-18,M,45,177,6901014601,petros.michailidis@ygeiopolis.gr,Chef,GR,EOPYY
-14082310171,Andreas,Antoniou,Kyriakos,1963-05-10,M,118,185,6919945740,andreas.antoniou@ygeiopolis.gr,Retired,GR,MetLife
-35241302286,Charalampos,Triantafyllou,Christos,1982-05-22,M,102,168,6906656024,charalampos.triantafyllou@ygeiopolis.gr,Chef,GR,EOPYY
-75261587898,Aggeliki,Tsoukala,Andreas,1971-12-30,F,78,168,6968317151,aggeliki.tsoukala@ygeiopolis.gr,Teacher,GR,Generali
-11761706130,Evangelos,Papadopoulos,Christos,2015-03-09,M,85,174,6927383181,evangelos.papadopoulos@ygeiopolis.gr,Lawyer,GR,EOPYY
-47546624822,Panagiotis,Konstantinidis,Konstantinos,2004-10-28,M,121,156,6964211684,panagiotis.konstantinidis@ygeiopolis.gr,Doctor,GR,EOPYY
-13463107890,Ioannis,Papageorgiou,Charalampos,1968-01-12,M,80,193,6986957601,ioannis.papageorgiou1@ygeiopolis.gr,Clerk,DE,EOPYY
-17504093701,Markos,Christodoulou,Andreas,1943-07-17,M,47,200,6985968974,markos.christodoulou2@ygeiopolis.gr,Engineer,GB,Ethniki
-27890880683,Eleni,Antoniou,Andreas,2017-05-14,F,55,174,6921795928,eleni.antoniou@ygeiopolis.gr,Driver,GR,EOPYY
-21420942079,Anastasios,Athanasiou,Charalampos,2003-12-18,M,\N,171,6941587199,anastasios.athanasiou1@ygeiopolis.gr,Student,GR,Ethniki
-42737957238,Evangelia,Petridi,Christos,1960-08-11,F,71,\N,6961292135,evangelia.petridi1@ygeiopolis.gr,Teacher,GR,EOPYY
-22320873857,Ioannis,Mavridis,Filippos,2020-01-16,M,124,164,6939137085,ioannis.mavridis@ygeiopolis.gr,Clerk,BG,Allianz
-84498838037,Katerina,Eleftheriadi,Athanasios,1968-02-14,F,66,173,6973811337,katerina.eleftheriadi1@ygeiopolis.gr,Engineer,GR,MetLife
-28477982587,Vasiliki,Archontopoulou,Leonidas,1959-04-19,F,47,176,6937156415,vasiliki.archontopoulou1@ygeiopolis.gr,Farmer,GR,EOPYY
-37930618920,Ioanna,Papadopoulou,Giannis,1944-12-15,F,83,177,6945820721,ioanna.papadopoulou@ygeiopolis.gr,Doctor,GR,Generali
-03550819968,Margarita,Lamprou,Evangelos,1948-03-24,F,\N,153,6945657817,margarita.lamprou@ygeiopolis.gr,Student,GR,EOPYY
-80670914465,Dimitris,Tsakalidis,Fotios,1997-08-08,M,77,174,6940000400,dimitris.tsakalidis@ygeiopolis.gr,Student,AL,Generali
-01380795118,Kyriakos,Triantafyllou,Spyros,2015-04-19,M,84,171,6916525081,kyriakos.triantafyllou@ygeiopolis.gr,Retired,GB,Ethniki
-23197670254,Ariadni,Panagiotidi,Thomas,1938-12-04,F,127,198,6916844469,ariadni.panagiotidi@ygeiopolis.gr,Doctor,GR,Ethniki
-29759144894,Aggeliki,Lamprou,Giannis,2023-07-24,F,109,151,6994658463,aggeliki.lamprou@ygeiopolis.gr,Chef,GR,Generali
-67666091919,Aikaterini,Eleftheriadi,Markos,2008-05-02,F,108,150,6926425993,aikaterini.eleftheriadi@ygeiopolis.gr,Teacher,BG,Interamerican
-15544940998,Markos,Vlachopoulos,Dionysios,1996-08-01,M,88,191,6952563744,markos.vlachopoulos@ygeiopolis.gr,Clerk,GR,Ethniki
-70894266036,Ariadni,Kalliga,Aristeidis,1942-05-11,F,81,173,6998027644,ariadni.kalliga1@ygeiopolis.gr,Clerk,GR,MetLife
-64919163695,Anastasios,Dimitriou,Charalampos,2023-05-29,M,105,180,6925925016,anastasios.dimitriou@ygeiopolis.gr,Chef,GR,Ethniki
-24941801695,Aristeidis,Chronopoulos,Andreas,1943-12-05,M,104,156,6912946403,aristeidis.chronopoulos@ygeiopolis.gr,Teacher,GR,Allianz
-54288463773,Christina,Papageorgiou,Sotiris,1997-11-09,F,96,152,6903027721,christina.papageorgiou@ygeiopolis.gr,Lawyer,GB,EOPYY
-77478691040,Dimitra,Papadimitriou,Thomas,1985-08-08,Other,130,159,6929696524,dimitra.papadimitriou@ygeiopolis.gr,Teacher,CY,Eurolife
-65781496355,Konstantinos,Oikonomidis,Alexandros,2022-09-01,M,101,155,6993531101,konstantinos.oikonomidis1@ygeiopolis.gr,Retired,DE,Generali
-73733970101,Theodoros,Dimitriou,Eleftherios,1966-02-04,Other,98,\N,6992621892,theodoros.dimitriou@ygeiopolis.gr,Driver,GR,EOPYY
-19596027693,Aggeliki,Nikolaidi,Athanasios,1953-09-08,F,105,167,6977966054,aggeliki.nikolaidi1@ygeiopolis.gr,Clerk,CY,Interamerican
-27711488160,Nikoletta,Oikonomou,Nikos,1992-03-29,F,93,170,6919755708,nikoletta.oikonomou@ygeiopolis.gr,Driver,AL,Eurolife
-13786268497,Katerina,Lazaridi,Eleftherios,2021-06-30,F,129,178,6924169814,katerina.lazaridi1@ygeiopolis.gr,Driver,GR,Eurolife
-10541715007,Eirini,Sidiropoulou,Giannis,1986-07-24,F,81,173,6917518007,eirini.sidiropoulou@ygeiopolis.gr,Lawyer,DE,Generali
-72597833674,Markos,Papanikolaou,Konstantinos,1954-12-01,M,95,184,6989120599,markos.papanikolaou@ygeiopolis.gr,Student,GR,Eurolife
-16206370355,Anastasios,Angelopoulos,Leonidas,1969-10-25,M,96,172,6991516761,anastasios.angelopoulos@ygeiopolis.gr,Doctor,AL,EOPYY
-73871834100,Kyriakos,Kalligas,Giannis,1967-12-18,M,80,164,6966584843,kyriakos.kalligas@ygeiopolis.gr,Chef,GR,EOPYY
-02764513005,Despoina,Chronopoulou,Konstantinos,1942-09-19,F,114,181,6919857547,despoina.chronopoulou@ygeiopolis.gr,Farmer,DE,Allianz
-75051391841,Kalliopi,Papadimitriou,Nikos,1979-05-05,F,92,\N,6951412007,kalliopi.papadimitriou2@ygeiopolis.gr,Student,GR,Generali
-06056360712,Ioannis,Lamprou,Andreas,1998-04-16,M,100,168,6937394912,ioannis.lamprou@ygeiopolis.gr,Retired,DE,EOPYY
-95146318798,Dimitris,Alexiou,Charalampos,1973-06-01,M,111,198,6963302304,dimitris.alexiou@ygeiopolis.gr,Driver,GR,EOPYY
-68470726027,Aggeliki,Antoniou,Charalampos,1997-02-21,F,52,199,6989663680,aggeliki.antoniou1@ygeiopolis.gr,Retired,GR,Eurolife
-18621098636,Ioanna,Michailidi,Fotios,1984-01-19,F,109,183,6928168960,ioanna.michailidi@ygeiopolis.gr,Engineer,AL,Interamerican
-17922419979,Theodora,Alexiou,Giannis,1985-08-16,F,89,166,6931080834,theodora.alexiou@ygeiopolis.gr,Clerk,GR,MetLife
-97430878037,Sotiris,Lamprou,Theodoros,1978-05-05,M,55,170,6953712688,sotiris.lamprou1@ygeiopolis.gr,Lawyer,GR,Generali
-59766208407,Petros,Angelopoulos,Athanasios,1978-08-17,M,123,182,6964015774,petros.angelopoulos@ygeiopolis.gr,Doctor,AL,EOPYY
-82738688339,Sofia,Panagiotidi,Vasilis,2013-03-31,Other,97,155,6989862254,sofia.panagiotidi@ygeiopolis.gr,Doctor,DE,Interamerican
-26273506001,Xanthi,Diamanti,Aristeidis,2012-01-08,F,55,\N,6964609614,xanthi.diamanti1@ygeiopolis.gr,Chef,GR,MetLife
-27420522589,Danai,Petridi,Dionysios,1979-12-02,F,50,153,6930732166,danai.petridi1@ygeiopolis.gr,Retired,AL,MetLife
-34774116028,Eleni,Spanou,Leonidas,1991-10-20,F,68,\N,6938875598,eleni.spanou@ygeiopolis.gr,Lawyer,CY,MetLife
-44433294578,Athina,Bakogianni,Anastasios,1986-11-27,F,110,199,6940477246,athina.bakogianni@ygeiopolis.gr,Student,GB,Eurolife
-02489105579,Foteini,Papageorgiou,Alexandros,1973-12-13,F,78,195,6958434565,foteini.papageorgiou@ygeiopolis.gr,Teacher,GR,EOPYY
-81544788937,Michalis,Dimitriou,Dionysios,1968-04-30,M,94,161,6907050709,michalis.dimitriou1@ygeiopolis.gr,Retired,GR,Interamerican
-99636918454,Vasilis,Tsoukalas,Christos,2001-05-03,M,122,\N,6998385792,vasilis.tsoukalas@ygeiopolis.gr,Clerk,GR,Interamerican
-19617650210,Vasiliki,Antoniou,Nikos,1953-06-04,F,\N,\N,6902786499,vasiliki.antoniou1@ygeiopolis.gr,Retired,DE,Eurolife
-32879274622,Eirini,Lamprou,Grigoris,1989-11-24,F,129,\N,6997531152,eirini.lamprou2@ygeiopolis.gr,Student,GR,Allianz
-57368507051,Ioanna,Nikolaidi,Antonis,1944-12-30,F,106,156,6925110318,ioanna.nikolaidi1@ygeiopolis.gr,Doctor,BG,EOPYY
-66573297741,Ioanna,Michailidi,Konstantinos,1956-10-07,F,83,177,6950685902,ioanna.michailidi1@ygeiopolis.gr,Farmer,GR,EOPYY
-16293096150,Athina,Oikonomou,Andreas,1982-05-20,F,52,157,6906616903,athina.oikonomou@ygeiopolis.gr,Doctor,BG,EOPYY
-78847798882,Maria,Papadimitriou,Ioannis,2002-05-23,F,68,164,6975968686,maria.papadimitriou2@ygeiopolis.gr,Driver,BG,Generali
+AMKA,first_name,last_name,fathers_name,date_of_birth,gender,weight,height,phone_number,email,address,occupation,nationality,insurance_provider
+92530955877,Konstantinos,Lazaridis,Petros,1970-10-31,M,125,\N,6964273795,konstantinos.lazaridis@ygeiopolis.gr,"Pireos 19, Athens",Lawyer,GR,EOPYY
+46948412322,Dimitris,Oikonomidis,Petros,2009-02-02,M,58,150,6920873857,dimitris.oikonomidis1@ygeiopolis.gr,"Syngrou 91, Athens",Engineer,GB,Generali
+38037473811,Antonis,Kalligas,Ioannis,2005-04-28,M,\N,150,6970494624,antonis.kalligas@ygeiopolis.gr,"Patision 83, Athens",Retired,CY,Generali
+85028477982,Elisavet,Panagiotidi,Ilias,1939-02-05,F,75,152,6987537156,elisavet.panagiotidi1@ygeiopolis.gr,"Mesogeion 198, Athens",Student,GR,Ethniki
+55309373134,Christos,Diamantis,Konstantinos,1963-11-22,M,48,184,6937791703,christos.diamantis@ygeiopolis.gr,"Vouliagmenis 36, Athens",Lawyer,GB,Uninsured
+68473255065,Anastasia,Karamanli,Georgios,1950-06-30,F,65,197,6999053679,anastasia.karamanli1@ygeiopolis.gr,"Ermou 9, Athens",Teacher,GR,EOPYY
+15567409201,Eleni,Michailidi,Emmanouil,1959-12-05,Other,\N,172,6975993001,eleni.michailidi@ygeiopolis.gr,"Ermou 162, Athens",Farmer,GR,Uninsured
+04645497683,Eleftherios,Angelopoulos,Antonis,1998-10-31,M,95,170,6975256048,eleftherios.angelopoulos@ygeiopolis.gr,"Mesogeion 109, Athens",Chef,GB,EOPYY
+25081595904,Thomas,Tsakalidis,Christos,2003-10-22,M,129,162,6950717416,thomas.tsakalidis@ygeiopolis.gr,"Omirou 198, Athens",Student,BG,Eurolife
+44469645892,Pavlos,Papadimitriou,Filippos,2002-10-25,Other,80,195,6918328113,pavlos.papadimitriou@ygeiopolis.gr,"Vouliagmenis 182, Athens",Lawyer,GR,Generali
+46392488780,Ilias,Alexiou,Charalampos,1967-08-01,M,\N,159,6937676497,ilias.alexiou@ygeiopolis.gr,"Alexandras 29, Athens",Farmer,BG,Allianz
+91919352642,Eirini,Archontopoulou,Ioannis,1994-08-19,F,48,191,6917697085,eirini.archontopoulou1@ygeiopolis.gr,"Kifissias 188, Athens",Doctor,BG,Ethniki
+50155449409,Eleni,Mavridi,Antonis,1963-04-13,F,88,195,6957525637,eleni.mavridi1@ygeiopolis.gr,"Pireos 168, Athens",Student,GR,Allianz
+70894266036,Ariadni,Kalliga,Aristeidis,1942-05-13,F,121,168,6998027644,ariadni.kalliga1@ygeiopolis.gr,"Panepistimiou 178, Athens",Clerk,GR,Uninsured
+59250169156,Charalampos,Oikonomidis,Charalampos,1970-05-12,M,70,197,6980798230,charalampos.oikonomidis@ygeiopolis.gr,"Vasilissis Sofias 189, Athens",Lawyer,GR,EOPYY
+59911294640,Thomas,Chronopoulos,Panagiotis,2003-03-06,M,55,151,6918287914,thomas.chronopoulos@ygeiopolis.gr,"Athinas 49, Athens",Doctor,CY,MetLife
+83754288463,Xanthi,Stamatiou,Charalampos,1982-10-31,F,55,186,6934850302,xanthi.stamatiou@ygeiopolis.gr,"Panepistimiou 20, Athens",Lawyer,BG,EOPYY
+94912867287,Ariadni,Oikonomou,Evangelos,1982-04-15,F,124,174,6978691040,ariadni.oikonomou1@ygeiopolis.gr,"Alexandras 47, Athens",Lawyer,AL,EOPYY
+49635501935,Fotios,Dimitriou,Panagiotis,2006-08-10,M,106,\N,6910158456,fotios.dimitriou@ygeiopolis.gr,"Patision 186, Athens",Lawyer,GR,EOPYY
+37339701014,Christos,Eleftheriadis,Spyros,1974-08-11,M,\N,171,6962189224,christos.eleftheriadis@ygeiopolis.gr,"Vasilissis Sofias 178, Athens",Engineer,GR,Interamerican
+02769347796,Aggeliki,Sidiropoulou,Konstantinos,1987-12-09,F,84,166,6954856257,aggeliki.sidiropoulou1@ygeiopolis.gr,"Athinas 15, Athens",Retired,GR,Generali
+57082678650,Margarita,Lazaridi,Athanasios,2001-10-18,F,\N,194,6941442942,margarita.lazaridi1@ygeiopolis.gr,"Alexandras 12, Athens",Doctor,BG,Uninsured
+42076817006,Grigoris,Konstantinidis,Panagiotis,1977-05-17,M,58,170,6943659723,grigoris.konstantinidis@ygeiopolis.gr,"Vasilissis Sofias 32, Athens",Chef,BG,Interamerican
+77066721922,Fotios,Triantafyllou,Petros,1975-09-23,M,67,189,6949143092,fotios.triantafyllou@ygeiopolis.gr,"Mesogeion 137, Athens",Teacher,CY,EOPYY
+69880122562,Alexandra,Bakogianni,Antonis,2019-11-26,F,\N,\N,6936108802,alexandra.bakogianni1@ygeiopolis.gr,"Kifissias 167, Athens",Retired,BG,Uninsured
+66296586360,Thomas,Nikolaidis,Markos,2013-06-13,M,91,\N,6936873209,thomas.nikolaidis@ygeiopolis.gr,"Syngrou 6, Athens",Driver,GR,Ethniki
+30046035608,Olympia,Chronopoulou,Anastasios,1970-09-15,F,123,190,6906493759,olympia.chronopoulou2@ygeiopolis.gr,"Omirou 81, Athens",Engineer,GR,Generali
+01985754738,Konstantinos,Spanos,Giannis,1979-10-16,Other,45,172,6984274062,konstantinos.spanos@ygeiopolis.gr,"Alexandras 58, Athens",Clerk,GR,Allianz
+75051391841,Kalliopi,Papadimitriou,Nikos,1979-05-07,F,92,\N,6951412007,kalliopi.papadimitriou@ygeiopolis.gr,"Kifissias 149, Athens",Student,GR,Generali
+23906056360,Michalis,Michailidis,Alexandros,1985-12-24,M,113,154,6924137394,michalis.michailidis@ygeiopolis.gr,"Vouliagmenis 57, Athens",Chef,GR,EOPYY
+31879897633,Eleftherios,Antoniou,Dimitris,1937-10-28,M,58,174,6923042333,eleftherios.antoniou1@ygeiopolis.gr,"Patision 197, Athens",Clerk,DE,Uninsured
+26027578966,Dimitris,Karagiannis,Pavlos,2007-03-11,M,50,151,6980537380,dimitris.karagiannis@ygeiopolis.gr,"Stadiou 156, Athens",Clerk,DE,EOPYY
+36782816896,Olympia,Sidiropoulou,Giannis,2024-05-07,F,114,174,6966881279,olympia.sidiropoulou@ygeiopolis.gr,"Alexandras 129, Athens",Engineer,GR,EOPYY
+08348098544,Dimitris,Kalligas,Fotios,1943-11-14,M,103,190,6978904833,dimitris.kalligas@ygeiopolis.gr,"Akadimias 100, Athens",Student,AL,Ethniki
+30878037825,Stavroula,Karamanli,Stefanos,1962-01-07,F,85,190,6971268870,stavroula.karamanli@ygeiopolis.gr,"Stadiou 61, Athens",Student,GR,Ethniki
+62084078464,Charalampos,Sidiropoulos,Giannis,1944-11-24,M,110,177,6915774662,charalampos.sidiropoulos@ygeiopolis.gr,"Alexandras 162, Athens",Teacher,GB,MetLife
+94060154138,Pavlos,Papageorgiou,Kyriakos,2010-09-05,M,122,158,6938688339,pavlos.papageorgiou@ygeiopolis.gr,"Akadimias 92, Athens",Driver,GR,Allianz
+06001266460,Stavroula,Michailidi,Aristeidis,1972-11-01,F,130,170,6914909100,stavroula.michailidi@ygeiopolis.gr,"Vasilissis Sofias 87, Athens",Chef,GR,Interamerican
+21665691070,Anastasios,Stamatiou,Antonis,1969-02-02,M,97,159,6961171340,anastasios.stamatiou@ygeiopolis.gr,"Mesogeion 108, Athens",Driver,CY,EOPYY
+92041552823,Anastasios,Spanos,Christos,2020-11-24,M,81,199,6964303297,anastasios.spanos@ygeiopolis.gr,"Ermou 38, Athens",Lawyer,GR,Generali
+09978442982,Panagiotis,Vlachopoulos,Stefanos,1973-06-03,M,122,199,6916421282,panagiotis.vlachopoulos@ygeiopolis.gr,"Patision 197, Athens",Doctor,CY,Allianz
+51234344070,Leonidas,Antoniou,Nikos,1979-03-28,M,128,170,6963139594,leonidas.antoniou@ygeiopolis.gr,"Vouliagmenis 6, Athens",Farmer,CY,Eurolife
+50709506263,Anastasios,Archontopoulos,Kyriakos,2008-09-19,M,51,181,6962432657,anastasios.archontopoulos@ygeiopolis.gr,"Patision 124, Athens",Driver,GR,Eurolife
+45441983857,Olympia,Oikonomou,Michalis,1938-01-22,F,118,180,6982629016,olympia.oikonomou@ygeiopolis.gr,"Solonos 73, Athens",Retired,GR,Ethniki
+00027864995,Anastasia,Konstantinidi,Fotios,1945-09-17,F,69,\N,6970051253,anastasia.konstantinidi@ygeiopolis.gr,"Ermou 1, Athens",Clerk,GR,Uninsured
+72075793144,Ioannis,Alexiou,Athanasios,2002-11-01,M,80,\N,6919964596,ioannis.alexiou1@ygeiopolis.gr,"Vouliagmenis 184, Athens",Driver,GR,Uninsured
+51103186720,Antonis,Chatzidakis,Leonidas,1982-07-31,M,93,155,6991445661,antonis.chatzidakis1@ygeiopolis.gr,"Ermou 86, Athens",Chef,AL,Interamerican
+57329774105,Pavlos,Petridis,Aristeidis,2025-02-12,M,68,194,6985902330,pavlos.petridis@ygeiopolis.gr,"Mesogeion 163, Athens",Chef,GR,Interamerican
+29309615071,Stavroula,Sidiropoulou,Konstantinos,1948-04-30,F,79,179,6966169036,stavroula.sidiropoulou@ygeiopolis.gr,"Pireos 147, Athens",Lawyer,GR,Ethniki
+79888243759,Alexandra,Papageorgiou,Fotios,1989-03-07,F,101,\N,6968627482,alexandra.papageorgiou1@ygeiopolis.gr,"Alexandras 66, Athens",Farmer,GR,EOPYY
+71650942315,Andreas,Christodoulou,Pavlos,1944-01-19,M,75,187,6937813191,andreas.christodoulou@ygeiopolis.gr,"Athinas 6, Athens",Retired,GR,Allianz
+93942789119,Vasiliki,Dimitriou,Spyros,1937-09-03,F,\N,168,6968900986,vasiliki.dimitriou1@ygeiopolis.gr,"Vasilissis Sofias 21, Athens",Engineer,AL,Allianz
+72400303151,Elisavet,Spanou,Fotios,1958-05-25,F,83,179,6961759896,elisavet.spanou@ygeiopolis.gr,"Kifissias 68, Athens",Driver,GR,Uninsured
+77708594268,Georgios,Chatzidakis,Stefanos,2009-11-25,M,45,170,6995543448,georgios.chatzidakis1@ygeiopolis.gr,"Pireos 87, Athens",Driver,GR,EOPYY
+32434213957,Sotiris,Chatzidakis,Aristeidis,1954-05-05,M,78,170,6956280733,sotiris.chatzidakis1@ygeiopolis.gr,"Athinas 84, Athens",Retired,GR,EOPYY
+70625873608,Elisavet,Stamatiou,Markos,2019-12-07,F,53,\N,6958226231,elisavet.stamatiou@ygeiopolis.gr,"Panepistimiou 35, Athens",Doctor,BG,Ethniki
+38289812239,Alexandra,Lazaridi,Ilias,1990-05-05,F,94,160,6975376445,alexandra.lazaridi@ygeiopolis.gr,"Akadimias 4, Athens",Teacher,GR,Uninsured
+69939945106,Eirini,Angelopoulou,Fotios,1966-04-29,F,\N,181,6938292162,eirini.angelopoulou@ygeiopolis.gr,"Syngrou 96, Athens",Chef,DE,Interamerican
+08886081107,Foteini,Diamanti,Eleftherios,2016-06-08,F,116,168,6992360368,foteini.diamanti@ygeiopolis.gr,"Vasilissis Sofias 198, Athens",Engineer,DE,Uninsured
+42181801874,Thomas,Papadimitriou,Spyros,1983-11-08,M,72,\N,6991311265,thomas.papadimitriou@ygeiopolis.gr,"Pireos 55, Athens",Chef,BG,Generali
+85920630416,Danai,Georgiou,Georgios,1994-06-29,F,\N,\N,6972618910,danai.georgiou@ygeiopolis.gr,"Solonos 18, Athens",Chef,CY,EOPYY
+07727204509,Stefanos,Petridis,Giannis,1939-08-08,M,86,152,6963533350,stefanos.petridis@ygeiopolis.gr,"Vasilissis Sofias 148, Athens",Teacher,AL,EOPYY
+53390363857,Pavlos,Sidiropoulos,Vasilis,2000-06-04,M,63,181,6939195800,pavlos.sidiropoulos@ygeiopolis.gr,"Alexandras 12, Athens",Engineer,DE,Generali
+64201819023,Nikoletta,Ioannidi,Giannis,2010-03-08,F,59,199,6916519889,nikoletta.ioannidi@ygeiopolis.gr,"Alexandras 9, Athens",Engineer,AL,EOPYY
+20204871036,Kalliopi,Karagianni,Ilias,1955-02-11,F,119,168,6934764144,kalliopi.karagianni2@ygeiopolis.gr,"Alexandras 56, Athens",Driver,BG,EOPYY
+73564272943,Paraskevi,Karamanli,Alexandros,1988-04-28,F,100,178,6909098245,paraskevi.karamanli@ygeiopolis.gr,"Patision 39, Athens",Engineer,DE,EOPYY
+34176228095,Christina,Georgiou,Panagiotis,1998-07-09,F,79,185,6975401637,christina.georgiou@ygeiopolis.gr,"Stadiou 115, Athens",Chef,GR,Ethniki
+06464676478,Christos,Mavridis,Leonidas,1952-02-06,M,118,159,6962508450,christos.mavridis@ygeiopolis.gr,"Alexandras 120, Athens",Teacher,GR,EOPYY
+32865918198,Anastasia,Papadopoulou,Leonidas,2022-03-11,F,130,153,6928390530,anastasia.papadopoulou@ygeiopolis.gr,"Panepistimiou 144, Athens",Doctor,BG,EOPYY
+14387673843,Aristeidis,Diamantis,Sotiris,2014-11-30,M,97,195,6956769597,aristeidis.diamantis1@ygeiopolis.gr,"Mesogeion 56, Athens",Chef,GR,MetLife
+13430768329,Sofia,Athanasiou,Grigoris,1955-05-15,F,65,161,6976816051,sofia.athanasiou@ygeiopolis.gr,"Omirou 61, Athens",Chef,GR,Eurolife
+07347873541,Eirini,Papanikolaou,Sotiris,2000-03-10,Other,96,180,6956473116,eirini.papanikolaou@ygeiopolis.gr,"Pireos 186, Athens",Clerk,DE,Ethniki
+65608804189,Ariadni,Dimitriou,Georgios,2021-12-22,F,93,\N,6944628826,ariadni.dimitriou@ygeiopolis.gr,"Athinas 140, Athens",Teacher,BG,EOPYY
+49116476492,Olympia,Panagiotidi,Charalampos,1960-04-14,F,116,154,6938681337,olympia.panagiotidi2@ygeiopolis.gr,"Alexandras 89, Athens",Driver,GR,Uninsured
+17876028749,Grigoris,Karamanlis,Charalampos,2024-01-27,M,\N,154,6926488105,grigoris.karamanlis@ygeiopolis.gr,"Akadimias 136, Athens",Engineer,GR,MetLife
+95395369823,Georgia,Triantafyllou,Theodoros,1940-06-14,F,65,153,6907248611,georgia.triantafyllou@ygeiopolis.gr,"Omirou 178, Athens",Retired,AL,Uninsured
+78861732776,Theodoros,Makris,Pavlos,2023-02-01,M,105,194,6939513689,theodoros.makris2@ygeiopolis.gr,"Kifissias 152, Athens",Chef,GR,Interamerican
+88374489239,Theodora,Nikolaidi,Thomas,1945-10-23,F,64,180,6904244502,theodora.nikolaidi@ygeiopolis.gr,"Athinas 133, Athens",Retired,AL,Eurolife
+03804374126,Elisavet,Ioannidi,Giannis,1970-07-20,F,45,196,6986551086,elisavet.ioannidi1@ygeiopolis.gr,"Ermou 129, Athens",Teacher,GB,MetLife
+75557486328,Eirini,Michailidi,Giannis,2018-12-20,F,81,186,6970560557,eirini.michailidi1@ygeiopolis.gr,"Kifissias 2, Athens",Farmer,DE,Uninsured
+79181433697,Eirini,Lamprou,Dionysios,1995-12-03,F,\N,183,6955460683,eirini.lamprou2@ygeiopolis.gr,"Syngrou 41, Athens",Student,GR,Interamerican
+93790229309,Eirini,Konstantinidi,Eleftherios,1967-05-10,F,48,180,6943121345,eirini.konstantinidi@ygeiopolis.gr,"Akadimias 88, Athens",Retired,BG,MetLife
+32249673719,Olympia,Diamanti,Charalampos,1987-07-13,Other,65,189,6955791209,olympia.diamanti1@ygeiopolis.gr,"Solonos 177, Athens",Student,CY,Generali
+63914183590,Charalampos,Oikonomou,Eleftherios,1958-06-11,M,83,196,6990444742,charalampos.oikonomou@ygeiopolis.gr,"Akadimias 123, Athens",Lawyer,GR,Eurolife
+89910858777,Sotiris,Sidiropoulos,Charalampos,2025-04-28,M,102,180,6950139939,sotiris.sidiropoulos@ygeiopolis.gr,"Ermou 198, Athens",Driver,CY,Interamerican
+49864094665,Pavlos,Mavridis,Athanasios,1952-10-07,M,128,156,6997705364,pavlos.mavridis@ygeiopolis.gr,"Akadimias 28, Athens",Student,GR,Generali
+69001923315,Aristeidis,Tsoukalas,Filippos,2013-06-04,M,56,161,6904157584,aristeidis.tsoukalas@ygeiopolis.gr,"Mesogeion 115, Athens",Driver,BG,Interamerican
+95064103184,Pavlos,Oikonomidis,Anastasios,2019-09-16,Other,53,192,6932652346,pavlos.oikonomidis@ygeiopolis.gr,"Athinas 16, Athens",Retired,CY,Generali
+89143535425,Foteini,Oikonomidi,Aristeidis,1968-11-16,F,54,198,6928607813,foteini.oikonomidi1@ygeiopolis.gr,"Vasilissis Sofias 199, Athens",Clerk,GR,Eurolife
+65120690611,Vasiliki,Vasileiou,Leonidas,1969-05-11,F,93,198,6997372530,vasiliki.vasileiou@ygeiopolis.gr,"Vouliagmenis 65, Athens",Farmer,GR,Ethniki
+29262055556,Athanasios,Makris,Michalis,1951-11-21,M,122,168,6984975657,athanasios.makris@ygeiopolis.gr,"Panepistimiou 19, Athens",Clerk,GR,EOPYY
+95728397830,Danai,Papadopoulou,Panagiotis,1964-03-01,F,88,160,6989865984,danai.papadopoulou1@ygeiopolis.gr,"Pireos 82, Athens",Doctor,GR,Eurolife
+74390648477,Aggeliki,Archontopoulou,Spyros,2008-04-20,F,\N,189,6902444073,aggeliki.archontopoulou@ygeiopolis.gr,"Ermou 173, Athens",Teacher,GB,Eurolife
+64710793527,Emmanouil,Sidiropoulos,Pavlos,1994-09-16,M,\N,164,6952083130,emmanouil.sidiropoulos1@ygeiopolis.gr,"Akadimias 24, Athens",Engineer,GR,Interamerican
+10606067377,Georgia,Papageorgiou,Antonis,1977-12-16,F,48,166,6992141810,georgia.papageorgiou1@ygeiopolis.gr,"Mesogeion 159, Athens",Engineer,BG,EOPYY
+90336759479,Markos,Eleftheriadis,Alexandros,1937-09-11,M,72,184,6909999378,markos.eleftheriadis1@ygeiopolis.gr,"Patision 74, Athens",Student,DE,Interamerican
+38251172303,Katerina,Triantafyllou,Leonidas,1949-10-04,F,78,190,6982172633,katerina.triantafyllou@ygeiopolis.gr,"Pireos 4, Athens",Engineer,DE,EOPYY
+35215267371,Theodora,Triantafyllou,Giannis,2018-11-03,F,75,188,6970686864,theodora.triantafyllou1@ygeiopolis.gr,"Omirou 80, Athens",Doctor,GR,EOPYY
+01409507151,Margarita,Papageorgiou,Thomas,1969-08-25,F,\N,\N,6932304772,margarita.papageorgiou@ygeiopolis.gr,"Pireos 165, Athens",Retired,GB,Interamerican
+43493635680,Fotios,Makris,Fotios,1963-03-30,M,63,\N,6977934724,fotios.makris@ygeiopolis.gr,"Syngrou 126, Athens",Student,GR,Interamerican
+48262773312,Filippos,Tsakalidis,Fotios,1995-01-26,M,77,179,6912876634,filippos.tsakalidis@ygeiopolis.gr,"Kifissias 88, Athens",Engineer,GR,EOPYY
+84547050057,Markos,Chatzidakis,Ilias,2002-01-19,M,130,161,6980766487,markos.chatzidakis1@ygeiopolis.gr,"Mesogeion 112, Athens",Clerk,GR,EOPYY
+53417654614,Margarita,Stamatiou,Christos,2016-07-03,F,128,170,6991014739,margarita.stamatiou@ygeiopolis.gr,"Syngrou 65, Athens",Teacher,GR,MetLife
+89229064199,Vasilis,Vlachopoulos,Thomas,1956-10-31,M,98,185,6958402937,vasilis.vlachopoulos@ygeiopolis.gr,"Mesogeion 34, Athens",Doctor,GR,Ethniki
+88800300537,Margarita,Konstantinidi,Michalis,1977-02-01,F,\N,154,6986872203,margarita.konstantinidi@ygeiopolis.gr,"Solonos 196, Athens",Engineer,BG,EOPYY
+58349263898,Theodora,Makri,Athanasios,1981-08-22,F,112,179,6995591092,theodora.makri@ygeiopolis.gr,"Omirou 39, Athens",Farmer,GR,Ethniki
+61499094167,Michalis,Diamantis,Sotiris,1974-07-22,M,55,185,6920279891,michalis.diamantis@ygeiopolis.gr,"Vouliagmenis 31, Athens",Student,CY,Generali
+70197435752,Nikos,Tsakalidis,Georgios,1966-05-13,Other,\N,191,6955568084,nikos.tsakalidis1@ygeiopolis.gr,"Syngrou 29, Athens",Doctor,GB,EOPYY
+72446095772,Dimitris,Petridis,Eleftherios,1950-03-19,M,130,151,6987747630,dimitris.petridis@ygeiopolis.gr,"Vouliagmenis 25, Athens",Clerk,GR,Ethniki
+97573368287,Giannis,Spanos,Leonidas,1991-06-08,M,91,\N,6975552586,giannis.spanos1@ygeiopolis.gr,"Kifissias 196, Athens",Clerk,CY,Interamerican
+44704145056,Evangelos,Papadimitriou,Vasilis,2006-05-04,M,70,178,6970695118,evangelos.papadimitriou@ygeiopolis.gr,"Omirou 94, Athens",Teacher,GB,Interamerican
+04890985927,Vasilis,Antoniou,Evangelos,2016-06-12,M,111,163,6936947493,vasilis.antoniou@ygeiopolis.gr,"Ermou 130, Athens",Student,BG,Interamerican
+02845958769,Anastasios,Karamanlis,Markos,1996-07-24,M,71,183,6991268130,anastasios.karamanlis@ygeiopolis.gr,"Ermou 177, Athens",Lawyer,DE,EOPYY
+55711627435,Theodoros,Ioannidis,Eleftherios,2016-02-24,M,126,152,6992863270,theodoros.ioannidis@ygeiopolis.gr,"Akadimias 135, Athens",Driver,GR,EOPYY
+35641629870,Thomas,Makris,Spyros,1952-07-21,M,130,182,6952151435,thomas.makris@ygeiopolis.gr,"Alexandras 12, Athens",Teacher,BG,EOPYY
+58927523408,Maria,Vasileiou,Dimitris,1981-03-28,F,116,\N,6956833555,maria.vasileiou@ygeiopolis.gr,"Athinas 40, Athens",Doctor,GR,Allianz
+75017505665,Filippos,Athanasiou,Sotiris,1955-03-23,M,66,152,6989906586,filippos.athanasiou@ygeiopolis.gr,"Vasilissis Sofias 62, Athens",Chef,BG,EOPYY
+42028612232,Alexandros,Georgiou,Pavlos,1975-09-05,M,81,159,6914024542,alexandros.georgiou@ygeiopolis.gr,"Panepistimiou 177, Athens",Driver,GR,MetLife
+09791353295,Stefanos,Lazaridis,Thomas,1938-01-19,M,113,188,6917629484,stefanos.lazaridis@ygeiopolis.gr,"Omirou 117, Athens",Doctor,BG,Interamerican
+73629245989,Theodora,Nikolaidi,Kyriakos,1983-02-18,F,65,160,6973824382,theodora.nikolaidi1@ygeiopolis.gr,"Syngrou 58, Athens",Teacher,GR,Interamerican
+40144124522,Maria,Diamanti,Michalis,1972-05-28,F,80,160,6945670893,maria.diamanti@ygeiopolis.gr,"Ermou 158, Athens",Chef,GR,Uninsured
+19053094587,Paraskevi,Tsoukala,Leonidas,1992-12-08,F,116,154,6908257232,paraskevi.tsoukala@ygeiopolis.gr,"Syngrou 112, Athens",Farmer,GR,EOPYY
+41105562412,Margarita,Michailidi,Pavlos,1987-06-06,F,76,167,6976809405,margarita.michailidi1@ygeiopolis.gr,"Akadimias 74, Athens",Chef,AL,Generali
+30953122526,Pavlos,Alexiou,Kyriakos,2000-08-18,M,125,164,6947870676,pavlos.alexiou@ygeiopolis.gr,"Patision 120, Athens",Student,GR,EOPYY
+18749004491,Anastasia,Dimitriou,Konstantinos,1951-03-15,F,47,176,6907231492,anastasia.dimitriou@ygeiopolis.gr,"Vasilissis Sofias 15, Athens",Engineer,GR,MetLife
+41483515609,Stavroula,Konstantinidi,Andreas,1993-11-08,F,87,155,6942770215,stavroula.konstantinidi@ygeiopolis.gr,"Solonos 182, Athens",Farmer,DE,Interamerican
+07250845240,Dimitra,Chatzidaki,Fotios,1976-02-16,F,\N,\N,6960969253,dimitra.chatzidaki@ygeiopolis.gr,"Solonos 150, Athens",Farmer,AL,EOPYY
+92288741594,Ioanna,Konstantinidi,Michalis,1969-07-02,F,76,195,6954345026,ioanna.konstantinidi@ygeiopolis.gr,"Kifissias 161, Athens",Doctor,GR,Uninsured
+81070824089,Ioanna,Bakogianni,Petros,1954-04-10,F,76,174,6951331579,ioanna.bakogianni@ygeiopolis.gr,"Stadiou 182, Athens",Driver,GR,Allianz
+67360863339,Margarita,Papageorgiou,Leonidas,1971-12-07,F,128,\N,6906667605,margarita.papageorgiou1@ygeiopolis.gr,"Omirou 13, Athens",Retired,GR,Allianz
+99412436160,Aikaterini,Nikolaidi,Giannis,1992-01-02,F,84,184,6929990761,aikaterini.nikolaidi1@ygeiopolis.gr,"Panepistimiou 106, Athens",Chef,GR,Uninsured
+75229508386,Sofia,Lazaridi,Vasilis,2022-02-24,F,92,199,6990367486,sofia.lazaridi2@ygeiopolis.gr,"Athinas 84, Athens",Lawyer,CY,Interamerican
+37810103208,Alexandra,Vlachopoulou,Stefanos,2011-09-14,F,113,172,6941609909,alexandra.vlachopoulou2@ygeiopolis.gr,"Stadiou 103, Athens",Lawyer,CY,Eurolife
+28465592189,Thomas,Vlachopoulos,Thomas,1996-11-30,M,122,184,6988649933,thomas.vlachopoulos@ygeiopolis.gr,"Patision 46, Athens",Chef,BG,Generali
+08575379476,Eleni,Tsoukala,Ioannis,1957-09-26,F,107,200,6918342900,eleni.tsoukala@ygeiopolis.gr,"Alexandras 41, Athens",Driver,GR,MetLife
+58978242565,Thomas,Triantafyllou,Georgios,1975-10-22,M,115,183,6993854044,thomas.triantafyllou@ygeiopolis.gr,"Solonos 51, Athens",Retired,GR,EOPYY
+78601508334,Alexandra,Oikonomou,Sotiris,1952-09-30,F,108,156,6912982945,alexandra.oikonomou@ygeiopolis.gr,"Vasilissis Sofias 167, Athens",Student,GR,Allianz
+03673361424,Aggeliki,Antoniou,Athanasios,1983-01-14,F,110,200,6915163295,aggeliki.antoniou@ygeiopolis.gr,"Athinas 177, Athens",Doctor,AL,EOPYY
+30614601741,Anastasios,Papageorgiou,Thomas,1971-12-09,M,121,177,6940009256,anastasios.papageorgiou@ygeiopolis.gr,"Omirou 33, Athens",Clerk,GR,Uninsured
+52936756275,Leonidas,Triantafyllou,Evangelos,1957-01-11,M,90,175,6954034989,leonidas.triantafyllou1@ygeiopolis.gr,"Pireos 77, Athens",Farmer,GB,Eurolife
+01876927043,Christina,Tsoukala,Antonis,1979-06-24,F,\N,189,6952871583,christina.tsoukala1@ygeiopolis.gr,"Ermou 170, Athens",Student,GR,EOPYY
+27247711578,Vasilis,Athanasiou,Vasilis,1984-06-10,M,105,165,6978156162,vasilis.athanasiou@ygeiopolis.gr,"Ermou 136, Athens",Teacher,BG,EOPYY
+76867071671,Georgios,Athanasiou,Athanasios,1968-02-19,Other,85,188,6989579257,georgios.athanasiou@ygeiopolis.gr,"Syngrou 15, Athens",Clerk,CY,EOPYY
+15582218195,Pinelopi,Dimitriou,Kyriakos,2017-10-20,F,59,200,6919070677,pinelopi.dimitriou@ygeiopolis.gr,"Omirou 101, Athens",Doctor,GB,EOPYY
+03170568258,Kyriakos,Papageorgiou,Theodoros,2007-10-05,M,110,164,6901435456,kyriakos.papageorgiou@ygeiopolis.gr,"Kifissias 129, Athens",Farmer,AL,Eurolife
+74350697820,Dimitra,Vasileiou,Ioannis,1973-09-12,F,69,188,6987211203,dimitra.vasileiou@ygeiopolis.gr,"Solonos 11, Athens",Clerk,GR,MetLife
+40054680131,Stefanos,Angelopoulos,Athanasios,1951-10-14,Other,89,171,6933605743,stefanos.angelopoulos@ygeiopolis.gr,"Vouliagmenis 162, Athens",Driver,GR,EOPYY
+92059483609,Pavlos,Spanos,Nikos,1936-07-15,M,71,173,6916801153,pavlos.spanos@ygeiopolis.gr,"Pireos 51, Athens",Doctor,GR,MetLife
+04970464855,Alexandra,Alexiou,Christos,1993-05-25,F,117,162,6969324057,alexandra.alexiou2@ygeiopolis.gr,"Vouliagmenis 26, Athens",Student,GR,EOPYY
+80439429008,Grigoris,Antoniou,Fotios,1964-08-19,M,48,180,6992585783,grigoris.antoniou@ygeiopolis.gr,"Panepistimiou 193, Athens",Chef,DE,EOPYY
+95140501813,Georgia,Vlachopoulou,Thomas,1961-08-17,F,130,156,6917000485,georgia.vlachopoulou@ygeiopolis.gr,"Patision 186, Athens",Student,GR,EOPYY
+11148324096,Anastasios,Triantafyllou,Ilias,1958-02-14,M,126,\N,6926121669,anastasios.triantafyllou@ygeiopolis.gr,"Stadiou 17, Athens",Student,DE,EOPYY
+36841434462,Petros,Kalligas,Grigoris,2009-08-22,M,92,\N,6907490538,petros.kalligas@ygeiopolis.gr,"Athinas 187, Athens",Chef,GR,Ethniki
+15551849552,Elisavet,Papadimitriou,Aristeidis,1969-06-30,F,112,191,6943522173,elisavet.papadimitriou@ygeiopolis.gr,"Pireos 44, Athens",Driver,DE,Generali
+81314562530,Xanthi,Karagianni,Konstantinos,2005-09-28,F,84,168,6924130011,xanthi.karagianni@ygeiopolis.gr,"Panepistimiou 120, Athens",Farmer,GR,Generali
+11350764996,Aristeidis,Karamanlis,Spyros,1984-11-01,M,123,181,6976339680,aristeidis.karamanlis@ygeiopolis.gr,"Alexandras 13, Athens",Engineer,BG,EOPYY
+97446970711,Theodora,Petridi,Fotios,1971-03-17,F,70,170,6995111578,theodora.petridi2@ygeiopolis.gr,"Pireos 95, Athens",Lawyer,GR,EOPYY
+71178444002,Maria,Tsakalidi,Anastasios,1959-07-29,F,99,168,6948942443,maria.tsakalidi@ygeiopolis.gr,"Vasilissis Sofias 138, Athens",Lawyer,GB,EOPYY
+33188156754,Georgios,Bakogiannis,Ioannis,2014-07-07,M,101,169,6954557970,georgios.bakogiannis@ygeiopolis.gr,"Pireos 164, Athens",Lawyer,GB,EOPYY
+17748565264,Spyros,Spanos,Michalis,1943-06-30,M,\N,\N,6943742822,spyros.spanos@ygeiopolis.gr,"Kifissias 75, Athens",Engineer,GR,EOPYY
+05065069615,Vasilis,Oikonomidis,Antonis,1943-04-01,M,48,200,6984452364,vasilis.oikonomidis@ygeiopolis.gr,"Solonos 174, Athens",Chef,GR,EOPYY
+19679296058,Dionysios,Spanos,Leonidas,1986-09-30,M,50,179,6931434220,dionysios.spanos@ygeiopolis.gr,"Akadimias 43, Athens",Lawyer,GR,Generali
+67873880111,Alexandros,Karagiannis,Ioannis,1953-01-01,M,108,167,6905292383,alexandros.karagiannis@ygeiopolis.gr,"Vasilissis Sofias 135, Athens",Retired,GR,EOPYY
+55427933997,Christos,Petridis,Georgios,2020-05-13,M,\N,177,6914616904,christos.petridis1@ygeiopolis.gr,"Pireos 195, Athens",Lawyer,AL,EOPYY
+04851199065,Sotiris,Petridis,Emmanouil,1957-10-30,M,68,195,6932267911,sotiris.petridis@ygeiopolis.gr,"Akadimias 175, Athens",Teacher,BG,Allianz
+88366079833,Evangelos,Michailidis,Eleftherios,1965-11-21,M,94,175,6908337836,evangelos.michailidis@ygeiopolis.gr,"Kifissias 165, Athens",Teacher,CY,Uninsured
+93604709280,Paraskevi,Papadopoulou,Petros,2004-04-16,F,74,190,6971421374,paraskevi.papadopoulou@ygeiopolis.gr,"Akadimias 176, Athens",Lawyer,GR,Eurolife
+95981618098,Despoina,Georgiou,Nikos,1951-11-24,F,79,171,6998804093,despoina.georgiou1@ygeiopolis.gr,"Omirou 33, Athens",Farmer,AL,EOPYY
+01699329745,Michalis,Spanos,Alexandros,2016-09-10,Other,73,177,6965160862,michalis.spanos@ygeiopolis.gr,"Kifissias 185, Athens",Student,GB,Ethniki
+72391918465,Anastasia,Papadopoulou,Markos,1942-03-31,F,91,189,6906369851,anastasia.papadopoulou1@ygeiopolis.gr,"Athinas 149, Athens",Doctor,BG,Interamerican
+14370434249,Olympia,Tsakalidi,Pavlos,2016-01-25,F,68,158,6926317774,olympia.tsakalidi2@ygeiopolis.gr,"Pireos 28, Athens",Student,GR,EOPYY
+13563431719,Ioannis,Spanos,Panagiotis,1964-12-01,M,126,160,6963354715,ioannis.spanos1@ygeiopolis.gr,"Alexandras 78, Athens",Student,GR,EOPYY
+02845718691,Vasiliki,Kalliga,Grigoris,1957-06-28,F,98,162,6916254993,vasiliki.kalliga2@ygeiopolis.gr,"Panepistimiou 133, Athens",Teacher,GR,Ethniki
+31217894069,Aggeliki,Michailidi,Kyriakos,1956-04-25,F,53,156,6929672041,aggeliki.michailidi1@ygeiopolis.gr,"Pireos 97, Athens",Clerk,AL,EOPYY
+84039726754,Eleftherios,Panagiotidis,Kyriakos,1994-05-07,M,70,196,6969094142,eleftherios.panagiotidis@ygeiopolis.gr,"Patision 56, Athens",Retired,GR,MetLife
+58692254376,Stefanos,Papadimitriou,Pavlos,2007-10-06,M,88,171,6962871171,stefanos.papadimitriou@ygeiopolis.gr,"Alexandras 50, Athens",Doctor,CY,EOPYY
+14914215440,Filippos,Panagiotidis,Emmanouil,1973-05-06,M,\N,160,6976242857,filippos.panagiotidis@ygeiopolis.gr,"Ermou 172, Athens",Student,GR,Generali
+40723461504,Christos,Tsoukalas,Panagiotis,2014-09-29,M,\N,189,6970829220,christos.tsoukalas@ygeiopolis.gr,"Patision 2, Athens",Chef,GR,Ethniki
+39049757456,Charalampos,Papadimitriou,Antonis,1942-01-30,M,98,186,6944263333,charalampos.papadimitriou@ygeiopolis.gr,"Solonos 11, Athens",Clerk,DE,Generali
+90359341773,Evangelos,Athanasiou,Eleftherios,2007-01-25,M,100,186,6930718218,evangelos.athanasiou@ygeiopolis.gr,"Akadimias 57, Athens",Driver,GR,Interamerican
+02579535644,Elisavet,Papageorgiou,Panagiotis,1966-03-17,F,95,151,6919354728,elisavet.papageorgiou2@ygeiopolis.gr,"Pireos 41, Athens",Doctor,GR,MetLife
+39572869395,Foteini,Vlachopoulou,Alexandros,2004-03-24,F,82,153,6906733382,foteini.vlachopoulou2@ygeiopolis.gr,"Omirou 46, Athens",Lawyer,AL,Ethniki
+05187032217,Kyriakos,Vasileiou,Ilias,1984-06-05,M,\N,161,6999025498,kyriakos.vasileiou@ygeiopolis.gr,"Patision 177, Athens",Farmer,GB,EOPYY
+25176668992,Nikos,Oikonomidis,Spyros,2014-10-07,M,126,173,6974621334,nikos.oikonomidis1@ygeiopolis.gr,"Kifissias 90, Athens",Retired,GB,Ethniki
+66955770518,Filippos,Karagiannis,Markos,1988-11-10,M,45,158,6906799645,filippos.karagiannis@ygeiopolis.gr,"Omirou 85, Athens",Teacher,GR,Ethniki
+27502092252,Sofia,Sidiropoulou,Theodoros,2015-07-02,F,57,168,6938029446,sofia.sidiropoulou@ygeiopolis.gr,"Syngrou 119, Athens",Driver,BG,Interamerican
+53595228751,Theodora,Diamanti,Giannis,2013-09-20,F,81,177,6990181749,theodora.diamanti1@ygeiopolis.gr,"Panepistimiou 54, Athens",Lawyer,GR,EOPYY
+04208418286,Dimitra,Georgiou,Athanasios,1996-08-08,F,60,186,6990787255,dimitra.georgiou@ygeiopolis.gr,"Panepistimiou 118, Athens",Engineer,CY,Generali
+82770699226,Elisavet,Michailidi,Andreas,1971-08-14,F,47,\N,6956949060,elisavet.michailidi@ygeiopolis.gr,"Ermou 58, Athens",Clerk,GR,Eurolife
+91387870188,Despoina,Vasileiou,Alexandros,2017-05-31,F,80,\N,6913379523,despoina.vasileiou1@ygeiopolis.gr,"Solonos 114, Athens",Farmer,GR,Generali
+81322082204,Foteini,Angelopoulou,Fotios,2000-01-25,F,105,198,6943519788,foteini.angelopoulou@ygeiopolis.gr,"Patision 75, Athens",Teacher,AL,Generali
+83137743403,Alexandra,Konstantinidi,Konstantinos,1936-10-25,F,74,160,6957925173,alexandra.konstantinidi@ygeiopolis.gr,"Athinas 42, Athens",Farmer,GR,Ethniki
+08212407664,Theodora,Papanikolaou,Ilias,1960-11-07,F,77,174,6936292135,theodora.papanikolaou@ygeiopolis.gr,"Syngrou 177, Athens",Engineer,GR,EOPYY
+42175639490,Anastasios,Athanasiou,Evangelos,1940-11-28,M,82,160,6965144446,anastasios.athanasiou@ygeiopolis.gr,"Alexandras 35, Athens",Retired,BG,Generali
+72715422412,Athina,Karagianni,Giannis,1996-11-21,F,103,152,6938341247,athina.karagianni@ygeiopolis.gr,"Mesogeion 77, Athens",Driver,GR,EOPYY
+73352108583,Ariadni,Karagianni,Dionysios,1938-07-19,F,92,196,6955826321,ariadni.karagianni@ygeiopolis.gr,"Patision 143, Athens",Clerk,GB,Generali
+53433497197,Ariadni,Spanou,Giannis,2013-11-29,F,55,198,6940932424,ariadni.spanou1@ygeiopolis.gr,"Mesogeion 58, Athens",Farmer,GR,EOPYY
+71212579896,Nikoletta,Vlachopoulou,Panagiotis,1941-07-08,F,91,152,6902419827,nikoletta.vlachopoulou1@ygeiopolis.gr,"Mesogeion 99, Athens",Driver,GR,Generali
+80054402776,Konstantinos,Dimitriou,Andreas,2020-01-22,M,\N,176,6923162575,konstantinos.dimitriou@ygeiopolis.gr,"Athinas 138, Athens",Teacher,GR,EOPYY
+25112980310,Vasilis,Papageorgiou,Thomas,2011-07-11,M,65,159,6923705067,vasilis.papageorgiou@ygeiopolis.gr,"Vouliagmenis 41, Athens",Student,DE,EOPYY

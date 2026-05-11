@@ -81,16 +81,18 @@ def gen_substances_and_drugs():
     write_csv_file("drugs.csv", ["drug_id", "ema_code", "name", "manufacturer"], drug_rows)
 
     dcs_rows = []
+    drug_substance_map = {}
     for pid, snames in prod_subs.items():
         if pid in drug_id_map:
             did = drug_id_map[pid]
             for sn in snames:
                 if sn in sub_id_map:
                     dcs_rows.append((did, sub_id_map[sn]))
+                    drug_substance_map.setdefault(did, set()).add(sub_id_map[sn])
     write_csv_file("drug_contains_substances.csv", ["drug_id", "substance_id"], dcs_rows)
 
     sampled_drug_ids = random.sample(list(drug_id_map.values()), min(N_DRUG_SAMPLE, len(drug_id_map)))
-    return sampled_drug_ids, substance_list, sub_id_map
+    return sampled_drug_ids, substance_list, sub_id_map, drug_substance_map
 
 
 def gen_medical_procedures():
@@ -100,9 +102,14 @@ def gen_medical_procedures():
     for r in rows_raw:
         code = r["code"][:20]
         desc = r["description"][:50]
-        cat = r.get("category", "").strip()
-        if cat not in ["Α", "Β"]:
-            cat = random.choice(["Α", "Β"])
+        raw_cat = r.get("category", "").strip()
+        # Ministry source uses Greek letters: Α=Surgical, Β=Diagnostic or Therapeutic
+        if raw_cat == "Α":
+            cat = "Surgical"
+        elif raw_cat == "Β":
+            cat = random.choice(["Diagnostic", "Therapeutic"])
+        else:
+            cat = random.choice(["Surgical", "Diagnostic", "Therapeutic"])
         dur = random.randint(15, 240)
         cost = round(random.uniform(200, 10000), 2)
         rows.append((code, desc, cat, dur, f"{cost:.2f}"))
