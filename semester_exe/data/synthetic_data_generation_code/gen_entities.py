@@ -23,6 +23,8 @@ def gen_staff_and_doctors(dept_ids):
     for i in range(N_DOCTORS):
         gender = random.choice(["M", "F"])
         first, last, g = gen_person(gender)
+        if i == 0:
+            last = "Alexiou"  # guarantee at least one Alexiou doctor (Director, dept 1)
         amka = gen_amka()
         dob = gen_dob(30, 60)
         email = gen_email(first, last)
@@ -109,7 +111,7 @@ def gen_staff_and_doctors(dept_ids):
     # Director updates (returned for SQL UPDATE statements)
     director_updates = [(dept_ids[i], doctors[i]["amka"]) for i in range(N_DEPARTMENTS)]
 
-    return doctors, director_updates
+    return doctors, director_updates, doctors[0]["amka"]
 
 
 def gen_nurses(dept_ids):

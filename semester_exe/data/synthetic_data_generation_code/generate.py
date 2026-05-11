@@ -27,6 +27,7 @@ from gen_clinical import (
     gen_admissions, gen_triages, gen_lab_exams,
     gen_procedure_executions, gen_prescriptions,
     gen_ratings, gen_shifts, gen_images,
+    gen_alexiou_boost,
 )
 
 
@@ -138,7 +139,7 @@ def main():
     # 2. Structural entities
     print("\n[2/5] People & structure...")
     dept_ids = gen_departments()
-    doctors, director_updates = gen_staff_and_doctors(dept_ids)
+    doctors, director_updates, alexiou_amka = gen_staff_and_doctors(dept_ids)
     nurses = gen_nurses(dept_ids)
     admins = gen_admin(dept_ids)
     dept_beds = gen_beds(dept_ids)
@@ -157,6 +158,11 @@ def main():
     print("\n[4/5] Shifts & images...")
     gen_shifts(dept_ids, doctors, nurses, admins)
     gen_images(dept_ids, drug_ids, doctors)
+
+    # 4b. Alexiou boost: inject 500+ extra ratings for the guaranteed Alexiou doctor
+    print("\n[4b/5] Generating Alexiou boost data...")
+    boost_discharge_updates = gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types)
+    discharge_updates.extend(boost_discharge_updates)
 
     # 5. Generate load.sql
     print("\n[5/5] Writing load.sql...")

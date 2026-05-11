@@ -32,7 +32,7 @@ N_PATIENTS = 200
 N_ADMISSIONS = 500
 N_PRESCRIPTIONS = 300
 N_OPERATING_ROOMS = 10
-N_PROCEDURE_EXECS = 150
+N_PROCEDURE_EXECS = 600
 N_LAB_EXAMS = 200
 N_TRIAGES = 120
 N_SHIFTS_MONTHS = 6
@@ -42,6 +42,8 @@ N_ICD10_SAMPLE = 400
 N_DRUG_SAMPLE = 200
 N_PROCEDURE_SAMPLE = 200
 N_LAB_SAMPLE = 200
+
+N_ALEXIOU_BOOST = 500  # extra ratings injected for the Alexiou doctor
 
 # ---------------------------------------------------------------------------
 # Greek names (romanized)
@@ -153,6 +155,24 @@ DEPT_PHOTO_IDS = [
 # ---------------------------------------------------------------------------
 # CSV writer (MySQL-compatible: \N for NULL, proper quoting)
 # ---------------------------------------------------------------------------
+def append_csv_file(filename, rows):
+    """Append rows to an existing CSV (no header). NULL values written as \\N."""
+    path = os.path.join(OUT_CSV_DIR, filename)
+    with open(path, "a", encoding="utf-8", newline="") as f:
+        for row in rows:
+            parts = []
+            for val in row:
+                if val is None:
+                    parts.append("\\N")
+                else:
+                    s = str(val)
+                    if "," in s or '"' in s or "\n" in s or "\\" in s:
+                        s = '"' + s.replace('"', '""') + '"'
+                    parts.append(s)
+            f.write(",".join(parts) + "\n")
+    print(f"    -> {filename}: +{len(rows)} rows appended")
+
+
 def write_csv_file(filename, header, rows):
     """Write a MySQL-compatible CSV file. NULL values written as \\N."""
     path = os.path.join(OUT_CSV_DIR, filename)

@@ -299,6 +299,106 @@ def gen_ratings(discharged, prescribing_doctors, procedure_doctors=None, lab_doc
                        ["admission_id", "doctor_AMKA", "medical_care_quality", "comment", "rated_at"], unique_dr)
 
 
+def gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types):
+    """Append N_ALEXIOU_BOOST extra patients/admissions/ratings for the Alexiou doctor.
+
+    All admissions are in the past and already discharged so that rating triggers pass.
+    Lab exams are created so the doctor-treated-patient trigger is satisfied.
+    Returns discharge_updates for the new admissions (to be merged into write_load_sql).
+    """
+    n = N_ALEXIOU_BOOST
+    today = date.today()
+
+    ken_code = ken_codes[0]
+    icd_code = icd10_codes[0]
+    exam_code = lab_types[0][2]  # numeric exam_code
+
+    # IDs for the new rows: they follow immediately after the baseline data
+    next_bed_id = N_DEPARTMENTS * BEDS_PER_DEPT + 1
+    next_adm_id = N_ADMISSIONS + 1
+
+    patient_rows = []
+    bed_rows = []
+    admission_rows = []
+    lab_rows = []
+    adm_rating_rows = []
+    doc_rating_rows = []
+    discharge_updates = []
+
+    for i in range(n):
+        # --- patient ---
+        gender = random.choice(["M", "F"])
+        first = random.choice(MALE_FIRST if gender == "M" else FEMALE_FIRST)
+        last = random.choice(LAST_NAMES)
+        last = adjust_greek_surname(last, gender)
+        amka = gen_amka()
+        dob = gen_dob(20, 80)
+        phone = gen_phone()
+        email = gen_email(first, last)
+        patient_rows.append((
+            amka, first, last, random.choice(MALE_FIRST), str(dob),
+            gender, random.randint(50, 120), random.randint(155, 195),
+            phone, email, "Patision 1, Athens", "Other", "GR", "EOPYY",
+        ))
+
+        # --- bed in dept 1 ---
+        bid = next_bed_id + i
+        bed_rows.append((bid, 1, 2, "Regular"))
+
+        # --- admission: spread over past ~2 years, all discharged ---
+        adm_date = today - timedelta(days=n + 3 + i)
+        dis_date = adm_date + timedelta(days=3)
+        adm_id = next_adm_id + i
+
+        # CSV row: discharge_date=NULL (UPDATE applied later via discharge_updates)
+        admission_rows.append((amka, 1, bid, ken_code, str(adm_date), None, icd_code, None))
+
+        discharge_updates.append({
+            "id": adm_id,
+            "dis_date": dis_date,
+            "icd_out": icd_code,
+            "patient": amka,
+            "adm_date": adm_date,
+        })
+
+        # --- lab exam: proves Alexiou treated this patient ---
+        lab_rows.append((
+            adm_id, exam_code,
+            f"{adm_date} 10:00:00",
+            "Routine checkup", f"{random.uniform(10, 200):.2f}",
+            "mg/dL", f"{random.uniform(20, 400):.2f}",
+            alexiou_amka,
+        ))
+
+        # --- admission rating ---
+        rated_dt = f"{dis_date} 12:00:00"
+        adm_rating_rows.append((
+            adm_id,
+            random.randint(3, 5), random.randint(3, 5),
+            random.randint(3, 5), random.randint(3, 5),
+            random.choice(["Very good care", "Satisfactory", "Excellent staff", None]),
+            rated_dt,
+        ))
+
+        # --- doctor rating for Alexiou ---
+        doc_rating_rows.append((
+            adm_id, alexiou_amka,
+            random.randint(3, 5),
+            random.choice(["Excellent diagnosis", "Very attentive", "Great bedside manner", None]),
+            rated_dt,
+        ))
+
+    append_csv_file("patients.csv", patient_rows)
+    append_csv_file("beds.csv", bed_rows)
+    append_csv_file("admissions.csv", admission_rows)
+    append_csv_file("lab_exams.csv", lab_rows)
+    append_csv_file("admission_ratings.csv", adm_rating_rows)
+    append_csv_file("doctor_ratings.csv", doc_rating_rows)
+
+    print(f"    -> Alexiou boost: {n} ratings for AMKA {alexiou_amka}")
+    return discharge_updates
+
+
 def gen_shifts(dept_ids, doctors, nurses, admins):
     shift_rows = []
     staffing_rows = []
