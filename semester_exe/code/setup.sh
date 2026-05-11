@@ -58,30 +58,40 @@ if [[ "$0" != "$TARGET_DIR/db" ]]; then
     }
 
     echo " * Setup complete! You can now use the db command"
-    echo " * You may delete this setup file now"
     exit 0
 fi
 
 # --- SETUP_END ---
 # --- EXECUTION_START ---
 
-SUDO_PREFIX=""
-[[ $EUID -ne 0 ]] && SUDO_PREFIX="sudo"
+if [ -z "$SUDO_PREFIX" ]; then
+    if command -v sudo >/dev/null 2>&1; then
+        SUDO_PREFIX="sudo"
+    else
+        SUDO_PREFIX=""
+    fi
+fi
 
-if command -v systemctl &> /dev/null && systemctl is-system-running &> /dev/null; then
+if [ ! -d "/run/mysqld" ]; then
+    $SUDO_PREFIX mkdir -p /run/mysqld
+    $SUDO_PREFIX chown mysql:mysql /run/mysqld >/dev/null 2>&1 || true
+fi
+
+if [ -d /run/systemd/system ]; then
     if ! systemctl is-active --quiet mariadb; then
-        if $SUDO_PREFIX systemctl start mariadb 2>/dev/null; then
+        if $SUDO_PREFIX systemctl start mariadb; then
             echo " * Started mariadb via systemctl"
         else
-            echo " * Warning: Could not start DB"
+            echo " * Error: systemctl failed to start mariadb"
+            exit 1
         fi
     fi
 else
-    if ! $SUDO_PREFIX service mariadb status &> /dev/null; then
-        if $SUDO_PREFIX service mariadb start &> /dev/null; then
+    if ! $SUDO_PREFIX service mariadb status >/dev/null 2>&1; then
+        if $SUDO_PREFIX service mariadb start >/dev/null 2>&1; then
             echo " * Started mariadb via service"
         else
-            echo " * Warning: Could not start DB"
+            echo " * Error: Could not start DB via service fallback"
             exit 1
         fi
     fi
