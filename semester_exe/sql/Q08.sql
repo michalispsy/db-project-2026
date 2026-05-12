@@ -2,7 +2,7 @@
 SELECT
     CONCAT(s.first_name, ' ', s.last_name)      AS name,
     s.staff_type,
-    COALESCE(d.rank, n.rank, a.position)        AS role,
+    COALESCE(doc.rank, n.rank, a.position)        AS role,
     COALESCE(
         dd.dept_name,
         dep_n.name,

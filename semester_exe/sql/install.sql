@@ -1,4 +1,3 @@
-USE information_schema;
 DROP DATABASE IF EXISTS ygeiopolis;
 CREATE DATABASE ygeiopolis;
 USE ygeiopolis;
