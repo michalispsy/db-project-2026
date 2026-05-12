@@ -19,12 +19,73 @@ def gen_staff_and_doctors(dept_ids):
     staff_rows = []
     doctor_rows = []
     dd_rows = []
+    CELEBRITIES = [
+        # Singers & Musicians
+        ("Sakis", "Rouvas", "M"), ("Giannis", "Antetokounmpo", "M"), ("Antonis", "Remos", "M"),
+        ("Anna", "Vissi", "F"), ("Despina", "Vandi", "F"), ("Eleni", "Foureira", "F"),
+        ("Konstantinos", "Argiros", "M"), ("Nikos", "Vertis", "M"), ("Pantelis", "Pantelidis", "M"),
+        ("Katerina", "Stikoudi", "F"), ("Helena", "Paparizou", "F"), ("Notis", "Sfakianakis", "M"),
+        ("Giorgos", "Mazonakis", "M"), ("Natasa", "Theodorou", "F"), ("Peggy", "Zina", "F"),
+        ("Panos", "Kiamos", "M"), ("Giannis", "Ploutarchos", "M"), ("Michalis", "Hatzigiannis", "M"),
+        ("Melina", "Aslanidou", "F"), ("Nikos", "Oikonomopoulos", "M"), ("Vasilis", "Karras", "M"),
+        ("Stelios", "Kazantzidis", "M"), ("Marinella", "Marinella", "F"), ("Haris", "Alexiou", "F"),
+        ("Maria", "Callas", "F"), ("Mikis", "Theodorakis", "M"), ("Manos", "Hatzidakis", "M"),
+        ("Dimitris", "Mitropanos", "M"), ("Eleni", "Vitali", "F"), ("Vangelis", "Papathanassiou", "M"),
+        
+        # Athletes
+        ("Nikos", "Galis", "M"), ("Theodoros", "Zagorakis", "M"), ("Giorgos", "Karagounis", "M"),
+        ("Kostas", "Sloukas", "M"), ("Dimitris", "Diamantidis", "M"), ("Miltiadis", "Tentoglou", "M"),
+        ("Lefteris", "Petrounias", "M"), ("Katerina", "Stefanidi", "F"), ("Anna", "Korakaki", "F"),
+        ("Vassilis", "Spanoulis", "M"), ("Stefanos", "Tsitsipas", "M"), ("Maria", "Sakkari", "F"),
+        ("Pyrros", "Dimas", "M"), ("Sofia", "Bekatorou", "F"), ("Voula", "Patoulidou", "F"),
+        ("Otto", "Rehhagel", "M"), ("Panagiotis", "Giannakis", "M"), ("Angelos", "Charisteas", "M"),
+        
+        # TV Personalities & Actors
+        ("Eleni", "Menegaki", "F"), ("Grigoris", "Arnaoutoglou", "M"), ("Sakis", "Tanimanidis", "M"),
+        ("Zeta", "Makripoulia", "F"), ("Smaragda", "Karydi", "F"), ("Thodoris", "Atheridis", "M"),
+        ("Giannis", "Bezos", "M"), ("Spyros", "Papadopoulos", "M"), ("Katerina", "Kainourgiou", "F"),
+        ("Nikos", "Moutsinas", "M"), ("Giorgos", "Kapoutzidis", "M"), ("Nikos", "Chatzinikolaou", "M"),
+        ("Faii", "Skorda", "F"), ("Tatiana", "Stefanidou", "F"), ("Stamatis", "Fasoulis", "M"),
+        ("Vasilis", "Bisbikis", "M"), ("Nikos", "Aliagas", "M"), ("Katerina", "Papoutsaki", "F"),
+        ("Aliki", "Vougiouklaki", "F"), ("Dimitris", "Horn", "M"), ("Rena", "Vlachopoulou", "F"),
+        ("Thanasis", "Veggos", "M"), ("Lambros", "Konstantaras", "M"), ("Dionysis", "Papagiannopoulos", "M"),
+        ("Jenny", "Karezi", "F"), ("Nikos", "Kourkoulos", "M"), ("Stathis", "Psaltis", "M"),
+        ("Kostas", "Voutsas", "M"), ("Sotiris", "Moustakas", "M"), ("Eleni", "Rantou", "F"),
+        
+        # Comedians (Stand up / TV)
+        ("Lambros", "Fisfis", "M"), ("Giorgos", "Xatzipavlou", "M"), ("Dimitris", "Makalias", "M"),
+        ("Katerina", "Vrioni", "F"), ("Alexandros", "Tsouvelas", "M"), ("Lakis", "Lazopoulos", "M"),
+        ("Markos", "Seferlis", "M"), ("Dionysis", "Atzarakis", "M"), ("Thomas", "Zabras", "M"),
+        ("Blandine", "Drakou", "F"), ("Ira", "Katsouda", "F"), ("Babis", "Bates", "M"),
+        
+        # Politicians & Historical Figures
+        ("Eleftherios", "Venizelos", "M"), ("Ioannis", "Kapodistrias", "M"), ("Charilaos", "Trikoupis", "M"),
+        ("Theodoros", "Kolokotronis", "M"), ("Georgios", "Karaiskakis", "M"), ("Laskarina", "Bouboulina", "F"),
+        ("Manto", "Mavrogenous", "F"), ("Andreas", "Papandreou", "M"), ("Konstantinos", "Karamanlis", "M"),
+        ("Kyriakos", "Mitsotakis", "M"), ("Alexis", "Tsipras", "M"), ("Nikos", "Androulakis", "M"),
+        ("Dimitris", "Koutsoumpas", "M"), ("Zoi", "Konstantopoulou", "F"), ("Dora", "Bakoyannis", "F"),
+        ("Melina", "Mercouri", "F"), ("Kostas", "Simitis", "M"), ("George", "Papandreou", "M"),
+        ("Antonis", "Samaras", "M"), ("Kostas", "Karamanlis", "M"), ("Prokopis", "Pavlopoulos", "M"),
+        ("Katerina", "Sakellaropoulou", "F"), ("Karolos", "Papoulias", "M"), ("Nikos", "Dendias", "M"),
+        ("Adonis", "Georgiadis", "M"), ("Kostis", "Hatzidakis", "M"), ("Niki", "Kerameus", "F"),
+        
+        # Ancient Greeks & Philosophers (Fun additions)
+        ("Socrates", "Philosopher", "M"), ("Plato", "Philosopher", "M"), ("Aristotle", "Philosopher", "M"),
+        ("Alexander", "TheGreat", "M"), ("Pericles", "Statesman", "M"), ("Leonidas", "King", "M"),
+        ("Homer", "Poet", "M"), ("Sappho", "Poet", "F"), ("Hippocrates", "Doctor", "M"),
+        ("Pythagoras", "Mathematician", "M"), ("Archimedes", "Inventor", "M"), ("Cleopatra", "Queen", "F")
+    ]
 
     for i in range(N_DOCTORS):
-        gender = random.choice(["M", "F"])
-        first, last, g = gen_person(gender)
         if i == 0:
-            last = "Alexiou"  # guarantee at least one Alexiou doctor (Director, dept 1)
+            first, last, g = gen_person("M")
+            last = "Alexiou"  # Required for Q1-5
+            gender = "M"
+        elif i <= len(CELEBRITIES):
+            first, last, gender = CELEBRITIES[i - 1]
+        else:
+            gender = random.choice(["M", "F"])
+            first, last, g = gen_person(gender)
         amka = gen_amka()
         dob = gen_dob(30, 60)
         email = gen_email(first, last)

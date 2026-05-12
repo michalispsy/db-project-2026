@@ -23,7 +23,42 @@ def gen_admissions(patients, dept_ids, dept_beds, ken_codes, icd10_codes):
     forced_dept = all_beds[0][0]
     forced_count = 0
 
-    for i in range(min(N_ADMISSIONS, len(all_beds))):
+    # --- Εξασφάλιση ζευγαριών ασθενών με ίδιο αριθμό ημερών νοσηλείας (Q09) ---
+    # Για κάθε target_days, 2 ασθενείς θα πάρουν νοσηλείες ώστε το
+    # σύνολο ημερών τους να ταιριάζει ακριβώς.
+    MATCHING_DAYS = [18, 20, 22, 25, 28, 30]
+    q09_patients = patients[1:1 + len(MATCHING_DAYS) * 2]  # 12 ασθενείς
+    q09_bed_idx = 0
+
+    for target_days in MATCHING_DAYS:
+        for p_offset in range(2):  # 2 ασθενείς ανά target
+            pat = q09_patients.pop(0)
+            # Χωρίζουμε τις μέρες σε 2-3 νοσηλείες
+            stays = [target_days // 2, target_days - target_days // 2]
+            adm_date_cursor = start + timedelta(days=random.randint(0, 15))
+            for los in stays:
+                if q09_bed_idx >= len(all_beds):
+                    break
+                dept, bed = all_beds[q09_bed_idx]
+                q09_bed_idx += 1
+                ken = random.choice(ken_codes)
+                icd_in = random.choice(icd10_codes)
+                icd_out = random.choice(icd10_codes)
+                adm_date = adm_date_cursor
+                dis_date = adm_date + timedelta(days=los)
+                adm_date_cursor = dis_date + timedelta(days=random.randint(5, 15))
+
+                idx = len(admissions) + 1
+                adm_rows.append((pat["amka"], dept, bed, ken,
+                                 str(adm_date), None, icd_in, None))
+                adm_info = {"id": idx, "patient": pat["amka"], "dept": dept,
+                            "bed": bed, "dis_date": dis_date, "icd_out": icd_out,
+                            "adm_date": adm_date}
+                admissions.append(adm_info)
+                discharge_updates.append(adm_info)
+
+    # --- Κύριος βρόχος νοσηλειών ---
+    for i in range(q09_bed_idx, min(N_ADMISSIONS, len(all_beds))):
         dept, bed = all_beds[i]
         pat = random.choice(patients)
         
@@ -50,10 +85,11 @@ def gen_admissions(patients, dept_ids, dept_beds, ken_codes, icd10_codes):
                 dis_date = today
             icd_out = random.choice(icd10_codes)
 
+        idx = len(admissions) + 1
         # CSV row: discharge_date=NULL initially (trigger needs INSERT then UPDATE)
         adm_rows.append((pat["amka"], dept, bed, ken, str(adm_date), None, icd_in, None))
 
-        adm_info = {"id": i + 1, "patient": pat["amka"], "dept": dept,
+        adm_info = {"id": idx, "patient": pat["amka"], "dept": dept,
                     "bed": bed, "dis_date": dis_date, "icd_out": icd_out,
                     "adm_date": adm_date}
         admissions.append(adm_info)
@@ -75,12 +111,24 @@ def gen_triages(patients, nurses, admissions):
     start_dt = datetime(2026, 3, 1)
     span_secs = max(1.0, (now - start_dt).total_seconds())
 
-    # ~12% are still in the waiting room at base-start time (arrived 3-120 min
-    # ago, not yet triaged). The remainder are completed triages within
-    # [start_dt, now]; half of those led to a hospitalization.
-    n_active = max(1, int(N_TRIAGES * 0.12))
-    n_hospitalized = min(N_TRIAGES // 2, len(admissions))
-    linked_adms = random.sample(admissions, n_hospitalized)
+    # Ρεαλιστικοί χρόνοι αναμονής (λεπτά) ανά επίπεδο επείγοντος
+    WAIT_RANGES = {
+        1: (0, 10),      # Immediate: σχεδόν αμέσως
+        2: (5, 30),      # Emergent
+        3: (15, 60),     # Urgent
+        4: (30, 120),    # Less Urgent
+        5: (60, 240),    # Non-Urgent: μεγάλη αναμονή
+    }
+    # Πιθανότητα νοσηλείας ανά επίπεδο
+    HOSP_PROB = {1: 0.85, 2: 0.65, 3: 0.40, 4: 0.20, 5: 0.10}
+
+    # ~10% ακόμα περιμένουν στην αίθουσα αναμονής (δεν τους έχει δει γιατρός)
+    n_active = max(2, int(N_TRIAGES * 0.10))
+
+    # Προετοιμασία: ξεχωρίζουμε admissions που δεν έχουν συνδεθεί ακόμα
+    available_adms = list(admissions)
+    random.shuffle(available_adms)
+    adm_idx = 0
 
     for i in range(N_TRIAGES):
         pat = random.choice(patients)
@@ -88,34 +136,38 @@ def gen_triages(patients, nurses, admissions):
         syms = random.choice(SYMPTOMS)
 
         if i < n_active:
-            arrival = now - timedelta(minutes=random.randint(3, 120))
+            # Ασθενής που περιμένει — δεν έχει γίνει ακόμα triage
+            arrival = now - timedelta(minutes=random.randint(3, 180))
             arr_str = arrival.strftime("%Y-%m-%d %H:%M:%S")
-            triage_str = None
-            minutes_waited = None
-            urgency = None
-            outcome = None
-            adm_id = None
+            rows.append((pat["amka"], nurse["amka"], arr_str,
+                         None, None, None, syms, None, None))
         else:
+            # Ολοκληρωμένο triage
+            urgency = random.choices([1, 2, 3, 4, 5],
+                                     weights=[0.10, 0.15, 0.25, 0.30, 0.20])[0]
+
             arrival = start_dt + timedelta(seconds=random.uniform(0, span_secs))
-            wait = random.randint(0, 120)
+            lo, hi = WAIT_RANGES[urgency]
+            wait = random.randint(lo, hi)
             triage_dt = arrival + timedelta(minutes=wait)
             if triage_dt > now:
                 triage_dt = now
+
             arr_str = arrival.strftime("%Y-%m-%d %H:%M:%S")
             triage_str = triage_dt.strftime("%Y-%m-%d %H:%M:%S")
             minutes_waited = int((triage_dt - arrival).total_seconds() // 60)
-            urgency = random.randint(1, 5)
 
-            j = i - n_active
-            if j < n_hospitalized:
+            # Νοσηλεία ή αποχώρηση βάσει πιθανότητας ανά επίπεδο
+            if random.random() < HOSP_PROB[urgency] and adm_idx < len(available_adms):
                 outcome = "Hospitalized"
-                adm_id = linked_adms[j]["id"]
+                adm_id = available_adms[adm_idx]["id"]
+                adm_idx += 1
             else:
                 outcome = "Discharged"
                 adm_id = None
 
-        rows.append((pat["amka"], nurse["amka"], arr_str, triage_str,
-                     minutes_waited, urgency, syms, outcome, adm_id))
+            rows.append((pat["amka"], nurse["amka"], arr_str, triage_str,
+                         minutes_waited, urgency, syms, outcome, adm_id))
 
     write_csv_file("triages.csv",
                    ["patient_AMKA", "nurse_AMKA", "arrival_time", "triage_time",
@@ -314,11 +366,9 @@ def gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types):
     exam_code = lab_types[0][2]  # numeric exam_code
 
     # IDs for the new rows: they follow immediately after the baseline data
-    next_bed_id = N_DEPARTMENTS * BEDS_PER_DEPT + 1
     next_adm_id = N_ADMISSIONS + 1
 
     patient_rows = []
-    bed_rows = []
     admission_rows = []
     lab_rows = []
     adm_rating_rows = []
@@ -341,17 +391,23 @@ def gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types):
             phone, email, "Patision 1, Athens", "Other", "GR", "EOPYY",
         ))
 
-        # --- bed in dept 1 ---
-        bid = next_bed_id + i
-        bed_rows.append((bid, 1, 2, "Regular"))
+        # --- bed in dept 1 (reuse existing 40 beds cyclically) ---
+        bid = 1 + (i % 40)
 
-        # --- admission: spread over past ~2 years, all discharged ---
-        adm_date = today - timedelta(days=n + 3 + i)
+        # --- admission: spread strictly BEFORE the baseline data starts ---
+        # Baseline data starts on 2026-03-01. 
+        # For a given bed (i%40), the admissions are spaced by 10 days.
+        # e.g., i=0 -> bed 1 at start - 10 days
+        #       i=40 -> bed 1 at start - 20 days
+        # This guarantees zero overlaps internally AND zero overlaps with baseline.
+        base_start = date(2026, 3, 1)
+        cycle_num = i // 40
+        adm_date = base_start - timedelta(days=10 + cycle_num * 10)
         dis_date = adm_date + timedelta(days=3)
         adm_id = next_adm_id + i
 
-        # CSV row: discharge_date=NULL (UPDATE applied later via discharge_updates)
-        admission_rows.append((amka, 1, bid, ken_code, str(adm_date), None, icd_code, None))
+        # CSV row: put dis_date directly so triggers don't think bed is indefinitely occupied
+        admission_rows.append((amka, 1, bid, ken_code, str(adm_date), str(dis_date), icd_code, icd_code))
 
         discharge_updates.append({
             "id": adm_id,
@@ -389,7 +445,6 @@ def gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types):
         ))
 
     append_csv_file("patients.csv", patient_rows)
-    append_csv_file("beds.csv", bed_rows)
     append_csv_file("admissions.csv", admission_rows)
     append_csv_file("lab_exams.csv", lab_rows)
     append_csv_file("admission_ratings.csv", adm_rating_rows)

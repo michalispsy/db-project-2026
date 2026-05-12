@@ -6,7 +6,7 @@ WITH patient_days AS (
         SUM(DATEDIFF(a.discharge_date, a.admission_date)) AS total_days
     FROM patients p
     JOIN admissions a ON p.AMKA = a.patient_AMKA
-    WHERE YEAR(a.admission_date) = 2025
+    WHERE YEAR(a.admission_date) = 2026
       AND a.discharge_date IS NOT NULL
     GROUP BY p.AMKA, p.first_name, p.last_name
     HAVING total_days > 15

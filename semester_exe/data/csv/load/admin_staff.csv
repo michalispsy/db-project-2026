@@ -1,27 +1,40 @@
 AMKA,position,office_location,dept_id
-73539987591,Supplies Manager,Office-C109,2
-23057824531,Records Clerk,Office-B110,11
-46066961069,HR Officer,Office-C302,15
-61471590112,HR Officer,Office-A320,3
-32120861498,Records Clerk,Office-B309,14
-14144246073,Records Clerk,Office-B320,9
-76379829305,Secretary,Office-B204,7
-39481504390,HR Officer,Office-B301,11
-47607512101,Secretary,Office-A212,9
-59356535243,Receptionist,Office-B218,15
-51225846790,Records Clerk,Office-B206,10
-49990203854,Billing Clerk,Office-A219,3
-38513976352,IT Support,Office-B101,1
-34611897873,Secretary,Office-B120,9
-60333085441,Receptionist,Office-B318,2
-09367677773,Secretary,Office-A217,15
-35110269395,Secretary,Office-A203,11
-55070264062,IT Support,Office-B206,14
-83427973029,Receptionist,Office-A312,1
-12582848891,Records Clerk,Office-C319,2
-44645239004,Billing Clerk,Office-B103,6
-95014670936,HR Officer,Office-B302,2
-60316134079,Billing Clerk,Office-C117,6
+67302209941,Billing Clerk,Office-A111,9
+50848528467,Records Clerk,Office-A308,1
+44058355017,Secretary,Office-A318,10
+51121340636,HR Officer,Office-B103,1
+71170648579,Records Clerk,Office-C110,12
+38819011456,HR Officer,Office-C104,10
+21764517702,Receptionist,Office-B205,14
+20959284898,Receptionist,Office-A311,15
+24093986639,IT Support,Office-A213,10
+91886762273,Receptionist,Office-A202,7
+15634526362,Billing Clerk,Office-B204,5
+42111754944,Records Clerk,Office-B208,14
+29116479246,Receptionist,Office-C320,6
+15300751451,IT Support,Office-A211,14
+81246437862,Secretary,Office-C113,7
+49121879065,Receptionist,Office-B105,2
+00402728986,Records Clerk,Office-C310,12
+79669978420,HR Officer,Office-A206,11
+15952859947,Billing Clerk,Office-B216,1
+83676074105,Secretary,Office-A214,10
+58696609635,IT Support,Office-B113,2
+44180245940,Billing Clerk,Office-C116,13
+50765573748,HR Officer,Office-C302,7
+22792949652,Supplies Manager,Office-A317,1
+70084159124,Receptionist,Office-C316,12
+52946142620,HR Officer,Office-A117,15
+37282659338,Supplies Manager,Office-C308,4
+44184366020,Secretary,Office-A308,11
+77773657645,Supplies Manager,Office-C207,6
+10269395533,Records Clerk,Office-A217,11
+70264062606,Secretary,Office-B218,3
+79730294069,Receptionist,Office-B204,10
+28488919949,Supplies Manager,Office-B310,14
+52390041524,Secretary,Office-C316,13
+01467093672,Records Clerk,Office-A316,8
+03161340799,Records Clerk,Office-A317,5
 67851506688,HR Officer,Office-B319,14
 36364605955,Receptionist,Office-B203,3
 96192126974,IT Support,Office-B307,11
@@ -106,16 +119,3 @@ AMKA,position,office_location,dept_id
 62515759514,Billing Clerk,Office-C217,12
 42274966529,Records Clerk,Office-B106,3
 35367577773,Secretary,Office-B319,2
-40771280619,HR Officer,Office-A303,5
-43566830325,Receptionist,Office-B301,8
-07283947646,Records Clerk,Office-A119,7
-56443909519,Secretary,Office-A203,12
-78704811353,IT Support,Office-C313,6
-05548990712,Receptionist,Office-B102,9
-13268937460,Secretary,Office-C120,8
-25195617655,HR Officer,Office-C114,9
-28293352878,HR Officer,Office-C310,3
-45507283101,Billing Clerk,Office-B111,12
-80108867974,Receptionist,Office-B310,7
-33347749633,Secretary,Office-A116,6
-73450521940,HR Officer,Office-A303,10
