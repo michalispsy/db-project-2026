@@ -603,6 +603,32 @@ BEGIN
     );
 END//
 
+CREATE TRIGGER check_admission_dept_matches_bed_insert
+BEFORE INSERT ON admissions
+FOR EACH ROW
+BEGIN
+    DECLARE v_bed_dept INT;
+    SELECT dept_id INTO v_bed_dept FROM beds WHERE bed_id = NEW.bed_id;
+    IF v_bed_dept <> NEW.department_id THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Bed does not belong to the specified department.';
+    END IF;
+END//
+
+CREATE TRIGGER check_admission_dept_matches_bed_update
+BEFORE UPDATE ON admissions
+FOR EACH ROW
+BEGIN
+    DECLARE v_bed_dept INT;
+    IF NEW.bed_id <> OLD.bed_id OR NEW.department_id <> OLD.department_id THEN
+        SELECT dept_id INTO v_bed_dept FROM beds WHERE bed_id = NEW.bed_id;
+        IF v_bed_dept <> NEW.department_id THEN
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Error: Bed does not belong to the specified department.';
+        END IF;
+    END IF;
+END//
+
 CREATE TRIGGER check_bed_overlap_insert_trigger
 BEFORE INSERT ON admissions
 FOR EACH ROW

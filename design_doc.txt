@@ -1,0 +1,1345 @@
+==========================================================================
+HOSPITAL "ΥΓΕΙΟΠΟΛΗΣ" — DATABASE DESIGN DOCUMENT
+==========================================================================
+Database Systems semester project, ΣΗΜΜΥ ΕΜΠ 2025-2026
+Combined ER design summary + assumptions log
+For internal team reference. Pair this document with er.pdf.
+
+==========================================================================
+TABLE OF CONTENTS
+==========================================================================
+
+  PART 1 — ER DESIGN SUMMARY
+    Section 1.   Lookup entities (small reference tables)
+    Section 2.   Core entities (one by one)
+                   2.1   Staff (ISA superclass)
+                   2.2   Doctor (subclass)
+                   2.3   Nurse (subclass)
+                   2.4   AdminStaff (subclass)
+                   2.5   Department
+                   2.6   Bed (weak)
+                   2.7   Patient
+                   2.8   EmergencyContact (weak)
+                   2.9   ActiveSubstance
+                   2.10  Drug
+                   2.11  Triage
+                   2.12  Hospitalization
+                   2.13  ICD10
+                   2.14  KEN
+                   2.15  LabExam
+                   2.16  MedicalProcedure
+                   2.17  OperatingRoom
+                   2.18  ProcedureExecution
+                   2.19  ProcedureAssistant
+                   2.20  Prescription
+                   2.21  Allergy
+                   2.22  Shift
+                   2.23  ShiftAssignment
+                   2.24  HospitalizationRating
+                   2.25  DoctorRating
+                   2.26  Image entities
+    Section 3.   Relationships (cardinality cheat sheet)
+    Section 4.   Entities by type (for the diagram legend)
+    Section 5.   Non-ER constraints (SQL implementation list)
+    Section 6.   Drawing the ER diagram
+
+  PART 2 — ASSUMPTIONS LOG
+    Layer 0 — Global decisions (A1–A3)
+    Layer 1 — Staff hierarchy (A4–A7)
+    Layer 2 — Department & Bed (A8–A11)
+    Layer 3 — Patient, contacts, allergies (A12–A17)
+    Layer 4 — Triage & Hospitalization (A18–A25)
+    Layer 5 — Lab exams, procedures, rooms (A26–A33)
+    Layer 6 — Drugs & Prescriptions (A34–A38)
+    Layer 7 — Shifts / duty roster (A39–A46)
+    Layer 8 — Ratings & Images (A47–A53)
+    Notation conventions (N1–N11, Silberschatz 7th ed.)
+
+
+==========================================================================
+HOW TO READ THIS DOCUMENT
+==========================================================================
+
+PART 1 (ER summary) is the *what* — every entity, attribute,
+relationship and constraint in one place. Use it as a reference
+when drawing the ER diagram or building the relational schema.
+
+PART 2 (assumptions log) is the *why* — every design decision
+with reasoning. When PART 1 says "Hospitalization stores
+base_cost AND extra_cost separately", PART 2 explains why
+(see A23: enables Q1's clean SUM by category).
+
+Each item in PART 1 has cross-references to assumption IDs
+(e.g. "per A4"). When in doubt about a choice, look up the
+assumption.
+
+
+==========================================================================
+==========================================================================
+PART 1 — ER DESIGN SUMMARY
+==========================================================================
+==========================================================================
+
+
+==========================================================
+SECTION 1 — LOOKUP ENTITIES (small reference tables)
+==========================================================
+These hold fixed vocabularies. All have the same shape:
+  (code or id PK, name, optional description).
+They're not drawn prominently in the ER; usually shown as
+small boxes off to the side or summarized in a legend.
+
+  StaffType         — Doctor, Nurse, AdminStaff
+  DoctorRank        — Resident, Curator B, Curator A, Director
+  NurseRank         — Assistant Nurse, Nurse, Head Nurse
+  AdminRole         — Secretary, Accountant, ... (extensible)
+  Specialty         — Cardiology, Surgery, Internal Medicine,
+                      Neurology, ...  (extensible)
+  Gender            — M / F / O
+  InsuranceProvider — ΕΦΚΑ, Private, Uninsured, ...
+  BedType           — ICU, single, multi
+  BedStatus         — available, occupied, under maintenance
+  UrgencyLevel      — 1 (immediate) ... 5 (non-urgent)
+  TriageOutcome     — discharged with instructions,
+                      referred for hospitalization, ...
+  ShiftSlot         — morning (07–15), afternoon (15–23),
+                      night (23–07)
+  ShiftStatus       — DRAFT, LOCKED
+  ProcedureCategory — surgical, diagnostic, therapeutic
+  RoomType          — operating theater, procedure room
+  ExamType          — hematological, biochemical, imaging, ...
+
+
+==========================================================
+SECTION 2 — CORE ENTITIES (one by one)
+==========================================================
+
+----------------------------------------------------------
+2.1  Staff  (ISA superclass)
+----------------------------------------------------------
+Attributes:
+    PK  AMKA               — natural unique key
+        first_name
+        last_name
+        date_of_birth      (per A4; age is derived)
+      * age                (derived from date_of_birth)
+        email
+        phone
+        hire_date
+    FK  staff_type         → StaffType   (discriminator)
+
+ISA: disjoint, total → {Doctor, Nurse, AdminStaff}
+     (every Staff is exactly one of the three subclasses)
+
+----------------------------------------------------------
+2.2  Doctor  (subclass of Staff)
+----------------------------------------------------------
+Attributes (in addition to inherited Staff attributes):
+        license_number     — natural unique key
+    FK  rank               → DoctorRank
+    (specialties: M:N relationship — see 3.2)
+
+Self-relationship: SUPERVISES
+    Doctor (supervisor side) ─── (0,N) ─── SUPERVISES ───
+                                  (0,1) ─── Doctor (supervisee side)
+    A doctor has at most one supervisor; can supervise many.
+    Business rules NOT in ER (enforced by triggers):
+      - Resident MUST have a supervisor
+      - Director MUST NOT have a supervisor
+      - No cycles in the supervision chain
+
+----------------------------------------------------------
+2.3  Nurse  (subclass of Staff)
+----------------------------------------------------------
+Attributes:
+    FK  rank               → NurseRank
+    FK  department         → Department  (1:1 — exactly one)
+
+----------------------------------------------------------
+2.4  AdminStaff  (subclass of Staff)
+----------------------------------------------------------
+Attributes:
+    FK  role               → AdminRole
+        office             — work office (free text)
+    FK  department         → Department  (1:1 — exactly one)
+
+----------------------------------------------------------
+2.5  Department
+----------------------------------------------------------
+Attributes:
+    PK  dept_id            — surrogate
+        name               — UNIQUE
+        description
+      * bed_count          (derived: COUNT of related Beds, A8)
+        floor
+        building
+
+Relationships:
+    MANAGES (Department ─── director ─── Doctor):  (1,1) ─── (0,1)
+        Every department has exactly one director (a Doctor).
+        A doctor manages at most one department.
+    DOCTOR_WORKS_IN: (Department) (1,N) ─── (1,N) (Doctor)   M:N
+    (NURSE_BELONGS_TO and ADMIN_BELONGS_TO already shown
+     above as 1:N from Department to subclasses.)
+
+----------------------------------------------------------
+2.6  Bed   (weak entity, owner = Department)
+----------------------------------------------------------
+Attributes:
+    PK (partial)  bed_number
+        FK         department  (identifying)
+    FK  bed_type           → BedType
+    FK  status             → BedStatus
+
+Identifying relationship HAS_BED:
+    Department  (1,1) ─── HAS_BED ─── (1,N)  Bed
+    Department's full PK contributes to Bed's identity.
+
+----------------------------------------------------------
+2.7  Patient
+----------------------------------------------------------
+Attributes:
+    PK  AMKA               — natural unique key
+        first_name
+        last_name
+        patronymic
+        date_of_birth      (per A4)
+      * age                (derived)
+    FK  gender             → Gender
+        weight             (kg)
+        height             (cm)
+        address
+        phone
+        email
+        occupation
+        nationality
+    FK  insurance_provider → InsuranceProvider
+
+Multi-valued: emergency contacts → modeled as own entity (2.8).
+
+----------------------------------------------------------
+2.8  EmergencyContact   (weak entity, owner = Patient)
+----------------------------------------------------------
+Attributes:
+    PK (partial)  contact_seq    (1, 2, 3, ... per patient)
+        FK         patient        (identifying)
+        full_name
+        relationship              (free text — mother, friend, ...)
+        phone
+        email                     (?  optional)
+
+Identifying relationship HAS_EMERGENCY_CONTACT:
+    Patient  (1,1) ─── HAS_EMERGENCY_CONTACT ─── (0,N)  EmergencyContact
+
+----------------------------------------------------------
+2.9  ActiveSubstance
+----------------------------------------------------------
+Attributes:
+    PK  substance_id       — surrogate
+        name               — UNIQUE (normalized at load, A17)
+
+----------------------------------------------------------
+2.10 Drug   (reference data — EMA Article 57)
+----------------------------------------------------------
+Attributes:
+    PK  drug_id            — surrogate
+        ema_code           — UNIQUE
+        name
+        manufacturer       (?)
+
+Relationship CONTAINS:
+    Drug (1,N) ─── CONTAINS ─── (1,N) ActiveSubstance
+    M:N. Loaded by splitting EMA's '|'-separated field (A16).
+
+----------------------------------------------------------
+2.11 Triage
+----------------------------------------------------------
+Attributes:
+    PK  triage_id          — surrogate
+    FK  patient            → Patient
+    FK  triage_nurse       → Nurse
+        arrival_time       (DATETIME)
+        triage_time        (DATETIME)
+      * wait_time          (derived: triage_time − arrival_time)
+    FK  urgency_level      → UrgencyLevel
+        symptoms           (free text)
+    FK  outcome            → TriageOutcome
+
+----------------------------------------------------------
+2.12 Hospitalization     (the central fact entity)
+----------------------------------------------------------
+Attributes:
+    PK  hospitalization_id — surrogate
+    FK  patient            → Patient
+    FK  bed                → Bed
+    FK  department         → Department
+                             (denormalized but trigger-enforced
+                             to match Bed.department, per A21)
+    FK  triage             → Triage  (?, nullable)
+        admission_date
+        discharge_date     (?, nullable until discharged)
+    FK  admission_diagnosis → ICD10
+    FK  discharge_diagnosis → ICD10  (?, nullable)
+    FK  ken_code            → KEN
+        base_cost          (frozen at discharge)
+        extra_cost         (surcharge for over-stay; ≥ 0)
+      * total_cost         (derived: base_cost + extra_cost)
+
+----------------------------------------------------------
+2.13 ICD10   (reference data — Greek health ministry)
+----------------------------------------------------------
+Attributes:
+    PK  icd10_code         — natural key (e.g. "I21.0")
+        description
+        category           (extracted prefix at load, A24)
+
+----------------------------------------------------------
+2.14 KEN     (reference data — closed unified hospital codes)
+----------------------------------------------------------
+Attributes:
+    PK  ken_code           — natural key
+        description
+        base_cost
+        avg_length_of_stay (ΜΔΝ, in days)
+        daily_surcharge_rate
+            (default = base_cost / avg_length_of_stay, A25)
+
+----------------------------------------------------------
+2.15 LabExam
+----------------------------------------------------------
+Attributes:
+    PK  exam_id            — surrogate
+    FK  hospitalization    → Hospitalization
+    FK  ordered_by_doctor  → Doctor
+    FK  exam_type          → ExamType
+        exam_date
+        result_text        (?)
+        result_numeric     (?)
+        result_unit        (?)
+        cost
+    CHECK: at least one of result_text / result_numeric is non-null (A26)
+
+----------------------------------------------------------
+2.16 MedicalProcedure   (reference data — catalog of types)
+----------------------------------------------------------
+Attributes:
+    PK  procedure_code     — natural key
+        name
+    FK  category           → ProcedureCategory
+        standard_duration  (minutes)
+        standard_cost
+
+----------------------------------------------------------
+2.17 OperatingRoom
+----------------------------------------------------------
+Attributes:
+    PK  room_id            — surrogate
+        name               — UNIQUE
+    FK  room_type          → RoomType
+        floor              (?)
+        building           (?)
+    (Standalone — NOT tied to a Department, A29)
+
+----------------------------------------------------------
+2.18 ProcedureExecution   (a specific performance event)
+----------------------------------------------------------
+Attributes:
+    PK  execution_id       — surrogate
+    FK  hospitalization    → Hospitalization
+    FK  procedure          → MedicalProcedure
+    FK  room               → OperatingRoom  (?, optional —
+                             only for procedures requiring a space)
+    FK  main_surgeon       → Doctor
+        start_time         (DATETIME)
+        end_time           (DATETIME)
+        actual_cost        (frozen, defaults to procedure.standard_cost)
+
+Anti-conflict business rules (triggers, A31):
+  - No two ProcedureExecutions in the same room overlap in time.
+  - No doctor (as main_surgeon OR assistant) appears in two
+    overlapping ProcedureExecutions.
+
+----------------------------------------------------------
+2.19 ProcedureAssistant   (associative — M:N)
+----------------------------------------------------------
+Attributes:
+    PK  (procedure_execution, staff)  — composite
+    FK  procedure_execution → ProcedureExecution
+    FK  staff               → Staff (parent), CHECK type ∈ {Doctor, Nurse}
+        role                (?, free text — anesthesiologist, scrub nurse)
+
+----------------------------------------------------------
+2.20 Prescription
+----------------------------------------------------------
+Attributes:
+    PK  prescription_id    — surrogate
+    FK  doctor             → Doctor
+    FK  patient            → Patient
+    FK  drug               → Drug
+    FK  hospitalization    → Hospitalization (NOT NULL)
+        dosage             (text — e.g. "500mg")
+        frequency          (text — e.g. "every 8h")
+        start_date
+        end_date           (?, nullable for open-ended)
+
+UNIQUE: (doctor, patient, drug, start_date)  — A35
+CHECK:  end_date IS NULL OR end_date > start_date  — A38
+TRIGGER: BEFORE INSERT — block if any of drug's active
+         substances is in patient's allergy list (A37).
+
+----------------------------------------------------------
+2.21 Allergy   (M:N relationship: Patient ↔ ActiveSubstance)
+----------------------------------------------------------
+Attributes:
+    PK  (patient, substance)  — composite
+    FK  patient               → Patient
+    FK  substance             → ActiveSubstance
+    (no relationship attributes — spec doesn't define any)
+
+----------------------------------------------------------
+2.22 Shift
+----------------------------------------------------------
+Attributes:
+    PK  shift_id           — surrogate
+    FK  department         → Department
+        shift_date         (DATE — for night shift = starting date, A40)
+    FK  shift_slot         → ShiftSlot
+    FK  status             → ShiftStatus  (DRAFT or LOCKED)
+
+UNIQUE: (department, shift_date, shift_slot)
+
+----------------------------------------------------------
+2.23 ShiftAssignment   (M:N: Shift ↔ Staff)
+----------------------------------------------------------
+Attributes:
+    PK  (shift, staff)     — composite
+    FK  shift              → Shift
+    FK  staff              → Staff (parent)
+
+Triggers (per assumptions A41–A46):
+  - R1 (3 docs, 6 nurses, 2 admins per shift): validated on
+    lock_shift procedure.
+  - R2 (resident → senior on same shift): validated on
+    lock_shift.
+  - R3/R4/R5 (monthly limits 15/20/25): BEFORE INSERT.
+  - R6 (≥8h rest between consecutive shifts): BEFORE INSERT.
+  - R7 (max 3 consecutive nights): BEFORE INSERT.
+  - LOCKED shift modifications: blocked by trigger.
+
+----------------------------------------------------------
+2.24 HospitalizationRating
+----------------------------------------------------------
+Attributes:
+    PK  hospitalization    → Hospitalization  (also FK; 0:1)
+        nursing_quality    (1–5)
+        cleanliness        (1–5)
+        food               (1–5)
+        overall            (1–5)
+        rated_at           (DATETIME)
+
+CHECK on each Likert column: BETWEEN 1 AND 5 (A48)
+TRIGGER: requires Hospitalization.discharge_date IS NOT NULL (A49)
+
+----------------------------------------------------------
+2.25 DoctorRating
+----------------------------------------------------------
+Attributes:
+    PK  (hospitalization, doctor)   — composite
+    FK  hospitalization    → Hospitalization
+    FK  doctor             → Doctor
+        medical_care_quality (1–5)
+        rated_at           (DATETIME)
+
+TRIGGER: requires
+   (a) Hospitalization.discharge_date IS NOT NULL, AND
+   (b) EXISTS Prescription with same (hospitalization, doctor)
+
+----------------------------------------------------------
+2.26 Image entities (showcase — A52)
+----------------------------------------------------------
+Five parallel tables, each shaped:
+    PK  image_id           — surrogate
+    FK  parent             → (Doctor / Department / OperatingRoom
+                              / MedicalProcedure / Drug)
+        image_url
+        caption
+        ordering           (small int, display order)
+
+Tables:
+    DoctorImage             → Doctor
+    DepartmentImage         → Department
+    OperatingRoomImage      → OperatingRoom
+    MedicalProcedureImage   → MedicalProcedure
+    DrugImage               → Drug
+
+Patient / Nurse / AdminStaff: NO image tables (A53).
+
+
+==========================================================
+SECTION 3 — RELATIONSHIPS (cardinality cheat sheet)
+==========================================================
+
+3.1  ISA hierarchies
+     Staff ─ ISA ─ {Doctor, Nurse, AdminStaff}    disjoint, total
+
+3.2  Many-to-many
+     Doctor ─── HAS_SPECIALTY ─── Specialty
+       (1,N) ─── (1,N)
+       (one doctor has ≥1 specialty; a specialty can be held
+        by ≥0 doctors at any time, but ≥1 in practice)
+
+     Doctor ─── WORKS_IN ─── Department
+       (1,N) ─── (1,N)
+       (a doctor belongs to one or more departments;
+        a department has many doctors)
+
+     Drug ─── CONTAINS ─── ActiveSubstance
+       (1,N) ─── (1,N)
+
+     Patient ─── ALLERGIC_TO ─── ActiveSubstance
+       (0,N) ─── (0,N)
+
+     Shift ─── HAS_ASSIGNMENT ─── Staff
+       (3+,N) ─── (0,N)
+       (each shift, when LOCKED, has at least 11 staff —
+        but during DRAFT can be incomplete; ER shows the
+        general (0,N) — (0,N) and notes the rule)
+
+     ProcedureExecution ─── HAS_ASSISTANT ─── Staff
+       (0,N) ─── (0,N)
+       (assistants are optional; staff must be Doctor or Nurse)
+
+3.3  One-to-many (mandatory many side)
+     Department ─── HAS_NURSE ─── Nurse
+       (1,1) ─── (1,N)
+       (each Nurse has exactly one Department)
+
+     Department ─── HAS_ADMIN ─── AdminStaff
+       (1,1) ─── (1,N)
+       (each AdminStaff has exactly one Department)
+
+     Department ─── HAS_BED ─── Bed              (identifying)
+       (1,1) ─── (1,N)
+
+     Patient ─── HAS_EMERGENCY_CONTACT ─── EmergencyContact   (identifying)
+       (1,1) ─── (0,N)
+
+     Patient ─── HAS_TRIAGE ─── Triage
+       (1,1) ─── (0,N)
+
+     Nurse ─── PERFORMS_TRIAGE ─── Triage
+       (1,1) ─── (0,N)
+
+     Patient ─── HAS_HOSPITALIZATION ─── Hospitalization
+       (1,1) ─── (0,N)
+
+     Bed ─── ASSIGNED_TO ─── Hospitalization
+       (1,1) ─── (0,N)
+
+     Department ─── HOSPITALIZES_IN ─── Hospitalization
+       (1,1) ─── (0,N)
+
+     Triage ─── LEADS_TO ─── Hospitalization
+       (0,1) ─── (0,1)
+       (a triage may or may not lead to hospitalization;
+        a hospitalization may or may not have a triage)
+
+     ICD10 ─── ADMIT_DIAG ─── Hospitalization
+       (1,1) ─── (0,N)
+     ICD10 ─── DISCHARGE_DIAG ─── Hospitalization
+       (0,1) ─── (0,N)
+       (admission diagnosis required, discharge diagnosis only
+        after discharge)
+
+     KEN ─── PRICES ─── Hospitalization
+       (1,1) ─── (0,N)
+
+     Hospitalization ─── HAS_LAB_EXAM ─── LabExam
+       (1,1) ─── (0,N)
+
+     Doctor ─── ORDERED ─── LabExam
+       (1,1) ─── (0,N)
+
+     Hospitalization ─── HAS_PROCEDURE ─── ProcedureExecution
+       (1,1) ─── (0,N)
+
+     MedicalProcedure ─── EXECUTED_AS ─── ProcedureExecution
+       (1,1) ─── (0,N)
+
+     OperatingRoom ─── HOSTS ─── ProcedureExecution
+       (1,1) ─── (0,N)
+       (room is mandatory only for procedures requiring a space;
+        in ER drawn as (0,1) ─── (0,N) since some procedures
+        don't need rooms)
+
+     Doctor ─── PERFORMS_AS_MAIN ─── ProcedureExecution
+       (1,1) ─── (0,N)
+
+     Doctor ─── PRESCRIBED ─── Prescription
+       (1,1) ─── (0,N)
+
+     Patient ─── RECEIVES ─── Prescription
+       (1,1) ─── (0,N)
+
+     Drug ─── PRESCRIBED_AS ─── Prescription
+       (1,1) ─── (0,N)
+
+     Hospitalization ─── DURING ─── Prescription
+       (1,1) ─── (0,N)
+
+     Department ─── HAS_SHIFT ─── Shift
+       (1,1) ─── (0,N)
+
+3.4  One-to-one (or 0:1)
+     Department ─── DIRECTED_BY ─── Doctor
+       (1,1) ─── (0,1)
+       (every department has a director; a doctor directs at
+        most one department)
+
+     Hospitalization ─── HAS_RATING ─── HospitalizationRating
+       (0,1) ─── (1,1)
+
+3.5  Recursive
+     Doctor ─── SUPERVISES ─── Doctor
+       supervisor side (0,N) ─── supervisee side (0,1)
+
+
+==========================================================
+SECTION 4 — ENTITIES BY TYPE (for the diagram legend)
+==========================================================
+
+Strong entities:
+    Staff (with ISA), Department, Patient, ActiveSubstance,
+    Drug, Triage, Hospitalization, ICD10, KEN, LabExam,
+    MedicalProcedure, OperatingRoom, ProcedureExecution,
+    Prescription, Shift, HospitalizationRating, DoctorRating,
+    + 5 Image entities
+
+Weak entities:
+    Bed (owner: Department)
+    EmergencyContact (owner: Patient)
+
+Lookup entities (small, separate or in legend):
+    StaffType, DoctorRank, NurseRank, AdminRole, Specialty,
+    Gender, InsuranceProvider, BedType, BedStatus,
+    UrgencyLevel, TriageOutcome, ShiftSlot, ShiftStatus,
+    ProcedureCategory, RoomType, ExamType
+
+Pure associative entities (M:N junction tables in relational):
+    DoctorSpecialty, DoctorDepartment, DrugActiveSubstance,
+    Allergy, ShiftAssignment, ProcedureAssistant
+
+
+==========================================================
+SECTION 5 — NON-ER CONSTRAINTS (for SQL implementation)
+==========================================================
+
+These rules cannot be expressed in classical ER notation;
+they must be enforced by CHECK / triggers / stored procedures.
+List for the install.sql roadmap:
+
+C1.  Doctor.rank = 'Resident' ⇒ supervisor IS NOT NULL    (CHECK or trigger)
+C2.  Doctor.rank = 'Director' ⇒ supervisor IS NULL         (CHECK or trigger)
+C3.  No cycles in Doctor.supervises chain                  (trigger, recursive)
+C4.  Hospitalization.department = Bed.department           (trigger, A21)
+C5.  Hospitalization.discharge_date >= admission_date      (CHECK)
+C6.  Hospitalization.extra_cost computed at discharge      (trigger)
+C7.  LabExam: at least one of result_text / result_numeric (CHECK, A26)
+C8.  ProcedureExecution: end_time > start_time             (CHECK)
+C9.  No two ProcedureExecutions in same room overlap       (trigger, A31.1)
+C10. No same Doctor in two overlapping executions          (trigger, A31.2)
+C11. ProcedureAssistant.staff is Doctor or Nurse           (trigger / CHECK)
+C12. Prescription unique (doctor,patient,drug,start_date)  (UNIQUE constraint, A35)
+C13. Prescription end_date IS NULL OR > start_date         (CHECK, A38)
+C14. Prescription: drug ingredients ∉ patient.allergies    (trigger, A37)
+C15. Shift uniqueness (department,date,shift_slot)         (UNIQUE)
+C16. ShiftAssignment R1 (staffing minimums) at LOCK time   (procedure, A41)
+C17. ShiftAssignment R2 (senior with resident) at LOCK     (procedure, A42)
+C18. ShiftAssignment R3-R5 (monthly limits)                (trigger, A43)
+C19. ShiftAssignment R6 (8h rest)                          (trigger, A44)
+C20. ShiftAssignment R7 (3 consecutive nights max)         (trigger, A45)
+C21. LOCKED shifts cannot be modified                      (trigger)
+C22. Likert columns BETWEEN 1 AND 5                        (CHECK, A48)
+C23. Ratings only allowed when discharge_date IS NOT NULL  (trigger, A49)
+C24. DoctorRating: doctor must have prescribed in that
+       hospitalization                                      (trigger, A51)
+
+
+==========================================================
+SECTION 6 — DRAWING THE ER DIAGRAM (er.pdf)
+==========================================================
+
+Recommended approach: draw.io (free, web-based) or Lucidchart.
+MySQL Workbench's EER tool is NOT classical Chen ER notation
+— it's relational. Use Workbench for relational.pdf, not er.pdf.
+
+Suggested layout:
+  - Top-left: Staff ISA hierarchy (Staff parent + 3 subclasses,
+    triangle/d notation).
+  - Top-right: Department + Bed (weak).
+  - Center-left: Patient + EmergencyContact (weak) + Allergy.
+  - Center: Triage → Hospitalization (the spine).
+  - Bottom-left: Drug ↔ ActiveSubstance + Prescription.
+  - Bottom-center: LabExam, ProcedureExecution, OperatingRoom,
+    MedicalProcedure, ProcedureAssistant.
+  - Bottom-right: Shift + ShiftAssignment.
+  - Far-right: ratings (HospitalizationRating, DoctorRating).
+  - Lookup tables in a small box / legend at the bottom.
+  - Image entities clustered near their parents.
+
+Notation used (Silberschatz 7th ed. — see N1–N11 in PART 2):
+  - Rectangles for entities, double rectangles for weak.
+  - Attributes listed INSIDE the entity rectangle, PK underlined.
+  - Multi-valued attributes written in { } braces inside the box.
+  - Derived attributes written with a slash prefix, e.g. /age.
+  - Diamonds for relationships, double diamonds for identifying.
+  - Relationship attributes hung off the diamond by a DASHED line.
+  - Cardinality: ARROW on the entity side = "one"; plain line = "many".
+  - Total participation: DOUBLE line between entity and relationship.
+  - ISA: triangle with 'd' inside (disjoint), double line up to parent
+    (total specialization).
+  - Recursive relationships: lines connect entity to itself with role
+    labels at each endpoint.
+
+==========================================================
+END OF ER SUMMARY
+==========================================================
+
+
+==========================================================================
+==========================================================================
+PART 2 — ASSUMPTIONS LOG
+==========================================================================
+==========================================================================
+
+This is the running log of every design decision with reasoning,
+captured as we worked through the ER stage layer by layer.
+Each assumption has a stable ID (A1–A53) referenced from PART 1.
+At the end, notation conventions (N1–N11) document the
+Silberschatz 7th-edition style we follow on the ER diagram.
+
+
+
+[A1] Lookup tables instead of ENUMs
+  Where: Everywhere a fixed vocabulary appears (urgency levels
+         1–5, shift slots morning/afternoon/night, doctor ranks,
+         nurse ranks, admin roles, insurance types, bed types,
+         bed statuses, procedure categories, staff types).
+  Decision: Each becomes a small lookup ENTITY in the ER and
+            a reference TABLE in SQL.
+  Why: Spec forbids ENUM, JSON, arrays, XML. Lookup tables
+       give referential integrity and easy extension.
+
+[A2] Natural vs surrogate keys at conceptual level
+  Where: ER diagram.
+  Decision: ER shows natural keys as identifying attributes
+            (AMKA, ICD-10 code, KEN code, EMA drug code,
+            license_number, etc.). Surrogate vs natural is
+            decided per-table at the relational stage.
+  Preliminary plan:
+    - Reference data (ICD10, KEN, Drug, Procedure): natural PKs
+    - Everything else: surrogate id PKs
+
+[A3] Images
+  Where: Doctors, Departments, OperatingRooms, MedicalProcedures,
+         Drugs (the "showcase" entities for the planned website).
+  Decision: Single Image entity in ER, related to each showcase
+            entity by separate relationships. In relational layer
+            we'll likely use one Image table per entity type
+            (clean FKs) OR an image_url column on each entity
+            — to be decided later.
+  Why: Spec says all entities should have associated images with
+       captions for the future website.
+
+----------------------------------------------------------
+LAYER 1 — STAFF HIERARCHY
+----------------------------------------------------------
+
+[A4] Age is stored as date_of_birth  [CONFIRMED]
+  Where: Staff entity (all subtypes) and Patient entity.
+  Decision: Store date_of_birth, derive age.
+  Why: Age changes yearly; storing it as an integer means stale
+       data. Standard normalization fix.
+  Note: The spec literally says "ηλικία" (age). Flag in README
+        as an intentional deviation for correctness.
+
+[A5] Doctor can have multiple specialties  [CONFIRMED]
+  Where: Doctor subclass.
+  Decision: M:N relationship Doctor ↔ Specialty.
+  Why: User read of the spec — doctors in practice often have
+       more than one specialty (e.g. internal medicine +
+       cardiology). Modeling as M:N is more flexible than 1:N
+       and handles the single-specialty case naturally.
+  Implication: A separate associative entity DOCTOR_SPECIALTY
+               in the relational layer.
+
+[A6] Doctor supervision constraints are NOT structural
+  Where: Doctor self-relationship SUPERVISES.
+  Decision: ER models supervisor as a 0..1 self-FK on Doctor.
+            The rules — "Residents must have a supervisor",
+            "Directors must NOT have one", "no cyclic supervision"
+            — are enforced by CHECK constraints + triggers, not
+            by ER structure.
+  Why: ER cannot natively express "depends on rank" or "acyclic".
+
+[A7] ISA on Staff is disjoint + total
+  Where: Staff → {Doctor, Nurse, AdminStaff}.
+  Decision: Disjoint (a person is exactly one type) and total
+            (every staff member is one of the three).
+  Why: Spec lists the three categories as parallel and exhaustive.
+
+----------------------------------------------------------
+LAYER 2 — DEPARTMENT & BED
+----------------------------------------------------------
+
+[A8] Department.bed_count is a DERIVED attribute  [CONFIRMED]
+  Where: Department.
+  Decision: Compute from COUNT(beds in dept), not stored as a
+            column. In ER, draw it as a dashed/derived oval.
+  Why: Storing bed_count would denormalize since we already model
+       Bed as its own entity tied to Department. Single source of
+       truth = Bed table. At ~15 departments × ~30 beds, the
+       COUNT is trivial. Avoids drift between stored count and
+       actual rows.
+
+[A9] Director ≠ Membership for doctors
+  Where: Department–Doctor relationships.
+  Decision: MANAGES (Department→Doctor, 1:1 each side at the
+            "department has one director" level) is separate from
+            WORKS_IN (Doctor↔Department, M:N membership).
+  Why: A doctor can be director of one department but not be a
+       member of others, in principle. We'll seed data so each
+       director is also a member of the department they direct.
+
+[A10] Nurses and AdminStaff belong to exactly ONE department
+  Where: NURSE_BELONGS_TO, ADMIN_BELONGS_TO relationships.
+  Decision: 1:N from Department to Nurse / AdminStaff
+            (each nurse / admin → exactly 1 department; a
+            department has many nurses / admins).
+  Why: Spec literally says "ανήκουν σε ένα τμήμα" (belong to
+       one department) for both groups.
+
+[A11] Bed is a WEAK entity
+  Where: Bed.
+  Decision: Bed has partial key bed_number, identified by its
+            owning Department. Identifying relationship HAS_BED.
+  Why: Spec says "μοναδικό αριθμό" (unique number). Most
+       reasonable reading: unique within department, not globally.
+
+----------------------------------------------------------
+PENDING / OPEN
+----------------------------------------------------------
+  (none — all Layer 0–2 questions resolved)
+
+----------------------------------------------------------
+LAYER 3 — PATIENT, EMERGENCY CONTACTS, ALLERGIES
+----------------------------------------------------------
+
+[A12] Gender modeled as a lookup table  [CONFIRMED]
+  Where: Patient.gender.
+  Decision: Lookup table Gender(code, name) with rows like
+            ('M','Male'), ('F','Female'), ('O','Other').
+            Patient.gender_code is a FK to it.
+  Why: Consistency with the global no-ENUM policy (A1).
+       Even though it's small and stable, treating it the same
+       as every other category keeps the schema uniform.
+
+[A13] Insurance provider is a lookup table  [CONFIRMED]
+  Where: Patient.insurance_provider.
+  Decision: Lookup table InsuranceProvider(provider_id, name).
+            Patient.insurance_provider_id FK to it.
+  Why: Query Q1 explicitly groups by insurance provider. A
+       lookup gives clean GROUP BY, prevents typos / variants
+       (e.g. "ΕΦΚΑ" vs "EFKA"), and is extensible if new
+       providers are added.
+
+[A14] Emergency contact is a WEAK entity, not a JSON field
+       [CONFIRMED]
+  Where: Patient.
+  Decision: EmergencyContact is a weak entity owned by Patient.
+            Partial key = contact_seq (1, 2, ... per patient).
+            Identifying relationship HAS_EMERGENCY_CONTACT.
+            Attributes: full_name, relationship (free text),
+            phone, email (optional).
+  Why: Spec uses plural "οικείου(-ων)" — patient may have
+       multiple. Multi-valued attributes must be modeled as a
+       separate entity to satisfy 1NF.
+  Note: relationship field is FREE TEXT (not a lookup) —
+        the variation (mother, husband, neighbor, friend, ...)
+        is too high to enumerate cleanly.
+
+[A15] Allergies are recorded against ActiveSubstance, not Drug
+       [CONFIRMED]
+  Where: Patient ↔ ActiveSubstance.
+  Decision: M:N relationship ALLERGIC_TO between Patient and
+            ActiveSubstance. No relationship attributes.
+            NOT modeled as Patient ↔ Drug.
+  Why: Spec explicitly says "αλλεργίες σε δραστικές ουσίες"
+       (allergies to active substances). Cross-reactions
+       across different drugs sharing the same active substance
+       must be caught by the prescription check.
+  Note: Earlier draft included a recorded_date attribute on
+        the relationship — removed because the spec does not
+        mention it. Adding speculative attributes is out of
+        scope for the project.
+
+[A16] EMA Article 57 active-substance loading uses '|' split
+       [CONFIRMED]
+  Where: Drug ↔ ActiveSubstance population step.
+  Decision: When loading the EMA file, split each drug's
+            active-substance field on '|' and insert one row
+            per substance into the M:N table.
+  Why: Spec footnote tells us so explicitly. Noted now so we
+       don't forget at data-loading time.
+
+[A17] Allergy/prescription matching uses BOTH normalization
+       AND LIKE  [CONFIRMED]
+  Where: Trigger preventing prescription of a drug containing
+         an allergen.
+  Decision: At load time, normalize active-substance names
+            (strip salts/forms, lowercase, trim). At check
+            time in the trigger, also use LIKE for partial
+            match. Belt and suspenders.
+  Why: Spec says either approach is acceptable. Doing both
+       maximizes the chance of catching real allergic conflicts.
+       Cost: occasional false positive (we'd refuse a safe drug)
+       — acceptable trade-off in a clinical setting.
+
+----------------------------------------------------------
+LAYER 4 — TRIAGE & HOSPITALIZATION
+----------------------------------------------------------
+
+[A18] Triage is a standalone entity, NOT an attribute of
+       Hospitalization  [CONFIRMED]
+  Where: Triage entity.
+  Decision: Triage is its own entity. Hospitalization
+            optionally references the Triage that led to it
+            (FK nullable).
+  Why: Spec says some triaged patients are sent home — they
+       have a triage record but no hospitalization. So Triage
+       must be able to exist without a Hospitalization.
+
+[A19] Triage wait_time is a DERIVED attribute  [CONFIRMED]
+  Where: Triage.
+  Decision: wait_time = triage_time − arrival_time. Not stored.
+            Drawn as a dashed oval in ER.
+  Why: Q15 asks for "μέσο χρόνο αναμονής ανά επίπεδο". Avoids
+       drift; both timestamps are stored explicitly.
+
+[A20] Triage outcome is a lookup table  [CONFIRMED]
+  Where: Triage.outcome.
+  Decision: Lookup table TriageOutcome(code, name) with rows
+            for "discharged with instructions" and "referred
+            for hospitalization". Extensible (e.g. LWBS,
+            transferred) if needed.
+  Why: Same justification as A1 — fixed vocabulary, no enums.
+
+[A21] Hospitalization.department is stored explicitly
+       (denormalized) with consistency trigger  [CONFIRMED]
+  Where: Hospitalization.
+  Decision: Store department FK on Hospitalization even though
+            it is derivable via Hospitalization.bed → Bed.dept.
+            A trigger / CHECK enforces equality.
+  Why: Many queries (Q1, Q3, Q12, Q15) group by hospitalization
+       department. Explicit FK keeps queries simpler and faster
+       and clarifies the ER. Trigger prevents drift.
+
+[A22] total_cost is FROZEN at discharge time, stored, not
+       derived live  [CONFIRMED]
+  Where: Hospitalization.
+  Decision: Cost is computed at discharge from KEN parameters
+            in effect at that time, then stored. Not recomputed
+            from KEN if KEN data changes later.
+  Why: A hospitalization's cost should be auditable — KEN base
+       costs and surcharge rates may change over time, but a
+       past hospitalization's bill is fixed.
+
+[A23] Hospitalization stores base_cost AND extra_cost
+       separately, total is derived  [CONFIRMED]
+  Where: Hospitalization cost columns.
+  Decision: Two stored columns: base_cost (from KEN.base_cost
+            at discharge) and extra_cost (surcharge for days
+            beyond ΜΔΝ; 0 if stay within ΜΔΝ).
+            total_cost = base_cost + extra_cost (derived).
+  Why: Q1 explicitly asks for "βασικό κόστος έναντι πρόσθετης
+       χρέωσης λόγω υπέρβασης ΜΔΝ" broken out — storing them
+       separately makes that a clean SUM, no re-decomposition.
+
+[A24] ICD10.category is stored, computed at load time
+       [CONFIRMED]
+  Where: ICD10 reference table.
+  Decision: At load time, extract the category prefix from
+            each ICD-10 code (e.g. "I21.0" → "I" / circulatory)
+            and store as a separate column.
+  Why: Q14 groups by ICD-10 *category*, not full code.
+       Computing the prefix once at load avoids repeated string
+       work at query time and lets us index on category.
+
+[A25] Daily surcharge rate is a per-KEN column with a
+       sensible default formula  [CONFIRMED]
+  Where: KEN reference table.
+  Decision: Add daily_surcharge_rate column on KEN. If the
+            source data doesn't specify a rate per KEN, default
+            it to base_cost / avg_length_of_stay (one extra day
+            costs the average per-day rate of that KEN).
+            Document the formula in README.
+  Why: Spec says "αναλογική πρόσθετη ημερήσια χρέωση"
+       (proportional additional daily charge) but doesn't
+       commit to a rate. Per-KEN is more flexible than a global
+       constant; the default formula is documented and replaceable.
+
+----------------------------------------------------------
+LAYER 5 — LAB EXAMS, PROCEDURES, OPERATING ROOMS,
+          SURGICAL ASSISTANTS
+----------------------------------------------------------
+
+[A26] LabExam result has both text and numeric+unit columns,
+       at least one required  [CONFIRMED]
+  Where: LabExam.
+  Decision: Three nullable columns: result_text, result_numeric,
+            result_unit. CHECK constraint: at least one of
+            result_text or result_numeric must be non-null.
+  Why: Spec: "αποτέλεσμα (κείμενο ή/και αριθμητική τιμή με
+       μονάδα μέτρησης)" — text and/or numeric. Captures all
+       three real cases (text only, numeric only, both).
+
+[A27] LabExam is linked to Hospitalization, not directly
+       to Patient  [CONFIRMED]
+  Where: LabExam.hospitalization FK.
+  Decision: Mandatory FK from LabExam to Hospitalization.
+            Patient is reachable via Hospitalization.patient.
+  Why: Spec: "Κάθε νοσηλεία μπορεί να συνδέεται με
+       εργαστηριακές εξετάσεις". Outpatient labs are out
+       of scope.
+
+[A28] MedicalProcedure (catalog) and ProcedureExecution
+       (event) are two distinct entities  [CONFIRMED]
+  Where: MedicalProcedure vs ProcedureExecution.
+  Decision: MedicalProcedure = catalog of procedure types
+            (loaded from Greek codification, ~150 entries).
+            ProcedureExecution = a specific performance during
+            a hospitalization, with room, surgeon, times.
+  Why: Standard catalog/event split. Same procedure type can
+       be executed many times across many hospitalizations.
+
+[A29] OperatingRoom is standalone, NOT tied to a Department
+       [CONFIRMED]
+  Where: OperatingRoom entity.
+  Decision: OperatingRoom has no FK to Department.
+  Why: An OR / procedure room typically serves multiple
+       departments (cardiology + general surgery share theaters).
+       Tying a room to one department would be artificial.
+
+[A30] ProcedureExecution stores start_time AND end_time
+       as DATETIMEs  [CONFIRMED]
+  Where: ProcedureExecution.
+  Decision: Store start_time and end_time independently, not
+            (start_time + duration).
+  Why: The two anti-conflict rules (A31) require interval
+       comparisons. Real procedures over/underrun catalog
+       duration, so a stored end_time is the only honest model.
+
+[A31] Two ProcedureExecution anti-conflict rules, enforced
+       as triggers  [CONFIRMED]
+  Where: ProcedureExecution + ProcedureAssistant.
+  Decision: Two trigger-enforced rules:
+    (1) No two executions in the SAME room with overlapping
+        [start_time, end_time] intervals.
+    (2) No two executions in which the SAME doctor (as
+        main_surgeon or as assistant) appears with overlapping
+        intervals.
+  Why: Not expressible in pure ER. Will be enforced as BEFORE
+       INSERT / BEFORE UPDATE triggers raising an error on
+       overlap.
+
+[A32] ProcedureExecution.actual_cost is frozen at execution
+       time  [CONFIRMED]
+  Where: ProcedureExecution.actual_cost.
+  Decision: Stored on the execution row. Defaults to
+            MedicalProcedure.standard_cost at insert time
+            but can be overridden.
+  Why: Same reasoning as A22 — the catalog price may change;
+       the bill for a specific execution is fixed.
+
+[A33] ProcedureAssistant FK points to Staff parent, with a
+       check that staff is Doctor or Nurse  [CONFIRMED]
+  Where: ProcedureAssistant.staff FK.
+  Decision: FK references Staff (the ISA parent). A trigger /
+            CHECK enforces: the staff row's type is Doctor
+            or Nurse (not AdminStaff).
+  Why: Spec says assistants can be doctors OR nurses. Single
+       FK to Staff parent is cleaner than two mutually-exclusive
+       FK columns. Justifies having modeled Staff as a unified
+       parent in the ISA (A7).
+
+----------------------------------------------------------
+LAYER 6 — DRUGS & PRESCRIPTIONS
+----------------------------------------------------------
+
+[A34] Drug PK is a surrogate id; EMA code is a separate
+       UNIQUE column  [CONFIRMED]
+  Where: Drug reference table.
+  Decision: drug_id (surrogate INT PK). ema_code stored as
+            a separate column with UNIQUE constraint.
+  Why: EMA product identifiers are long, sometimes versioned,
+       and same brand may appear under multiple identifiers.
+       A surrogate keeps FK columns small (Prescription,
+       Drug↔ActiveSubstance) while still preserving the
+       natural identifier for traceability.
+
+[A35] Prescription has surrogate PK + UNIQUE composite key
+       on (doctor, patient, drug, start_date)  [CONFIRMED]
+  Where: Prescription.
+  Decision: prescription_id surrogate PK. UNIQUE constraint
+            on (doctor_id, patient_id, drug_id, start_date).
+  Why: Spec literally requires "Κάθε συνδυασμός (ιατρός,
+       ασθενής, φάρμακο, ημερομηνία έναρξης) είναι μοναδικός".
+       Surrogate PK simplifies FK references from rating
+       tables and other places.
+
+[A36] Prescription is mandatorily tied to a Hospitalization
+       [CONFIRMED]
+  Where: Prescription.hospitalization FK.
+  Decision: NOT NULL FK from Prescription to Hospitalization.
+  Why: Q4 and Q6 only make sense if prescriptions are scoped
+       to a hospitalization (rating "the doctors who
+       prescribed during the hospitalization"). Outpatient
+       prescriptions are out of scope per our reading of the
+       spec.
+
+[A37] Allergy check on Prescription INSERT is enforced by
+       trigger  [CONFIRMED]
+  Where: BEFORE INSERT trigger on Prescription.
+  Decision: Trigger fetches all active substances of the
+            drug being prescribed, checks each against the
+            patient's allergy list using the matching strategy
+            from A17 (normalized name + LIKE). On match, raise
+            an error and abort the insert.
+  Why: Spec: "Απαγορεύεται η συνταγογράφηση φαρμάκου αν
+       κάποια από τις δραστικές ουσίες του βρίσκεται στις
+       αλλεργίες του ασθενή". This is the core data-integrity
+       rule of the medication subsystem; it cannot be expressed
+       structurally in ER.
+
+[A38] Prescription end_date is nullable; CHECK
+       end_date IS NULL OR end_date > start_date  [CONFIRMED]
+  Where: Prescription.end_date.
+  Decision: end_date NULLABLE. CHECK constraint:
+            end_date IS NULL OR end_date > start_date.
+  Why: Real prescriptions can be open-ended ("until further
+       notice"). NULL = still active. CHECK ensures non-null
+       values are after start.
+
+----------------------------------------------------------
+LAYER 7 — SHIFTS / DUTY ROSTER
+----------------------------------------------------------
+
+[A39] Shift is its own entity; ShiftAssignment is a separate
+       M:N relationship  [CONFIRMED]
+  Where: Shift, ShiftAssignment.
+  Decision: Shift = (department, shift_date, shift_slot) with
+            UNIQUE on the triple. ShiftAssignment is the M:N
+            associative entity between Shift and Staff with
+            PK (shift_id, staff_id).
+  Why: A shift exists as a "duty slot" independent of any
+       specific staff being assigned, and it carries its own
+       state (A41). Modeling it as a 4-way relationship would
+       make R1/R2 awkward to express.
+
+[A40] Night-shift calendar date = the date the shift STARTS
+       [CONFIRMED]
+  Where: Shift.shift_date semantics for shift_slot = night.
+  Decision: A night shift dated 2026-05-10 runs
+            2026-05-10 23:00 → 2026-05-11 07:00.
+  Why: Unambiguous, simplifies the "consecutive nights" rule
+       (A45) — N consecutive nights = consecutive shift_date
+       values with shift_slot = night. Document explicitly
+       since this affects rest-period calculation (A44).
+
+[A41] R1 (≥3 doctors, ≥6 nurses, ≥2 admins per shift) is
+       enforced via a DRAFT / LOCKED Shift.status, not per
+       insert  [CONFIRMED]
+  Where: Shift.status lookup, lock-shift stored procedure.
+  Decision: Add Shift.status ∈ {DRAFT, LOCKED} (lookup table).
+            Inserting/removing assignments is free while
+            DRAFT. A stored procedure lock_shift(shift_id)
+            verifies the staffing minimums (R1) and the
+            resident-with-senior rule (R2, see A42), and only
+            then sets status = LOCKED. Once LOCKED, any
+            modification is rejected by trigger.
+  Why: R1 is a completeness rule, not a per-row rule. You
+       can't reject the first doctor inserted into a shift
+       just because there's only one doctor so far. DRAFT/
+       LOCKED matches real-world rostering workflows
+       (drafted, reviewed, approved).
+
+[A42] R2 (resident → at least one Curator A or Director on
+       the same shift) is enforced at LOCK time  [CONFIRMED]
+  Where: lock_shift stored procedure.
+  Decision: Same enforcement path as R1. Validation runs as
+            part of lock_shift. Once LOCKED, removing a
+            Curator A / Director that R2 depends on is
+            blocked by trigger (or requires unlocking).
+  Why: Same completeness flavor as R1 — checking on each
+       insert is awkward because the senior may be added
+       later in the drafting session.
+
+[A43] R3–R5 (monthly limits 15 / 20 / 25) enforced by BEFORE
+       INSERT trigger on ShiftAssignment  [CONFIRMED]
+  Where: ShiftAssignment trigger.
+  Decision: On INSERT, look up the staff's StaffType, count
+            existing assignments for that staff in the same
+            calendar month, and reject if the count would
+            reach the limit (15 doctors / 20 nurses / 25
+            admins).
+  Why: Monthly limits are per-row rules — exactly the case
+       triggers handle well. The "calendar month" matches
+       YEAR(shift_date), MONTH(shift_date).
+
+[A44] R6 (≥8 hours rest between consecutive shifts) enforced
+       by BEFORE INSERT trigger using a helper that returns
+       a shift's [start_dt, end_dt] interval  [CONFIRMED]
+  Where: ShiftAssignment trigger + helper function.
+  Decision: Helper _shift_window(shift_id) returns the full
+            DATETIME interval, accounting for night shifts
+            crossing midnight (per A40). Trigger fetches the
+            staff's neighbouring assignments (closest before
+            and after the new shift's window) and verifies
+            both gaps are ≥ 8 hours.
+  Why: Need real DATETIMEs because the rule cuts across
+       calendar days (e.g. afternoon→morning next day = 16h
+       gap, fine; night→morning same person two-day cycle
+       could fail).
+
+[A45] R7 (max 3 consecutive night shifts) enforced by BEFORE
+       INSERT trigger  [CONFIRMED]
+  Where: ShiftAssignment trigger (when shift_slot = night).
+  Decision: On insert into a night shift dated D, check
+            whether the staff is already assigned to night
+            shifts on D-1, D-2, D-3. If all three exist, the
+            new insert would make 4-in-a-row → reject.
+  Why: "Consecutive" is well-defined under A40 (night shifts
+       indexed by their starting date). Three lookups; cheap.
+
+[A46] All shift-related trigger errors use SIGNAL with
+       descriptive SQLSTATE and human-readable message
+       [CONFIRMED]
+  Where: All shift triggers and the lock_shift procedure.
+  Decision: Each violation raises a SIGNAL with a stable
+            SQLSTATE (e.g. '45R03' for R3 monthly limit) and
+            a message identifying the rule and the offending
+            row.
+  Why: The application layer can match on SQLSTATE for
+       i18n / user-friendly errors; debugging the schema is
+       easier when triggers fail loudly with named rules.
+
+----------------------------------------------------------
+LAYER 8 — RATINGS & IMAGES
+----------------------------------------------------------
+
+[A47] HospitalizationRating is 0:1 with Hospitalization
+       (one rating max, no revisions)  [CONFIRMED]
+  Where: HospitalizationRating.
+  Decision: PK = hospitalization_id (also FK). A patient
+            can submit at most one rating per hospitalization.
+  Why: Spec implies a single post-discharge evaluation.
+       Revisions are out of scope.
+
+[A48] Likert columns enforced by CHECK 1–5, not lookup
+       [CONFIRMED]
+  Where: HospitalizationRating, DoctorRating.
+  Decision: Each rating column is TINYINT with
+            CHECK (value BETWEEN 1 AND 5).
+  Why: Pure numeric scale with self-evident semantics —
+       a lookup table would be ceremony for no benefit.
+       This is the one place we deviate from the
+       lookup-everywhere policy (A1) deliberately.
+
+[A49] Rating insert requires Hospitalization.discharge_date
+       IS NOT NULL  [CONFIRMED]
+  Where: BEFORE INSERT triggers on HospitalizationRating
+         and DoctorRating.
+  Decision: Trigger checks discharge_date is set; otherwise
+            raises an error.
+  Why: Spec: "Αξιολόγηση επιτρέπεται μόνο σε ασθενείς με
+       ολοκληρωμένη νοσηλεία".
+
+[A50] DoctorRating PK = (hospitalization, doctor)
+       [CONFIRMED]
+  Where: DoctorRating.
+  Decision: Composite PK. A patient can rate the same doctor
+            multiple times across multiple hospitalizations,
+            but at most once per hospitalization.
+  Why: Spec scopes the rating to the hospitalization context.
+       Keying on (patient, doctor) would prevent a returning
+       patient from rating the same doctor again — wrong.
+
+[A51] DoctorRating trigger validates the doctor actually
+       prescribed during that hospitalization  [CONFIRMED]
+  Where: BEFORE INSERT trigger on DoctorRating.
+  Decision: Trigger verifies EXISTS a Prescription with
+            matching (hospitalization, doctor); otherwise
+            raises an error. Plus the A49 discharge check.
+  Why: Spec: "κάθε ιατρό που συνταγογράφησε κατά τη
+       νοσηλεία του".
+
+[A52] One Image table per showcase entity (no polymorphic
+       table)  [CONFIRMED]
+  Where: DoctorImage, DepartmentImage, OperatingRoomImage,
+         MedicalProcedureImage, DrugImage.
+  Decision: Five tables, each with (parent_id FK,
+            image_url, caption, ordering). Multiple images
+            per parent allowed.
+  Why: Polymorphic FKs aren't enforceable in MySQL — losing
+       referential integrity is a bigger cost than five
+       extra small tables. Clear, queryable, indexable.
+
+[A53] Patient / Nurse / AdminStaff images are OUT of scope
+       [CONFIRMED]
+  Where: Image coverage decision.
+  Decision: No image tables for Patient (privacy), Nurse, or
+            AdminStaff (not public-facing on the website).
+            Doctor images are in scope (public profiles).
+  Why: Spec talks about the website needing images of
+       departments, doctors, equipment — not patients or
+       all staff. Privacy + minimalism principle.
+
+----------------------------------------------------------
+PENDING / OPEN
+----------------------------------------------------------
+  (none — ER STAGE COMPLETE)
+
+==========================================================
+ER STAGE COMPLETE — 53 ASSUMPTIONS LOCKED
+==========================================================
+Next: ER diagram summary document → relational/EER in
+MySQL Workbench → install.sql → load.sql → 15 queries
+→ indexes (per spec section A.2.2) → report.
+
+----------------------------------------------------------
+NOTATION CONVENTIONS (Silberschatz 7th ed., per professor's
+slides)
+----------------------------------------------------------
+
+[N1] Entities drawn as rectangles with header bar; attributes
+     listed inside, PK underlined.
+[N2] Weak entities: double-line rectangle.
+[N3] Relationships: diamonds, name in italics. Plain lines
+     between diamond and entity.
+[N4] Cardinality shown by ARROWS on the entity side of a
+     relationship line. Arrow = "one"; plain line = "many".
+     (No (min,max) labels.)
+[N5] Total participation: DOUBLE line between entity and
+     relationship.
+[N6] Relationship attributes: small rectangle attached to the
+     diamond by a DASHED line.
+[N7] Multi-valued attributes: written inside the entity in
+     braces, e.g. { day, start_time, end_time }.
+[N8] Derived attributes: slash prefix, e.g. /age.
+[N9] Composite attributes: indented sub-attributes inside the
+     entity box.
+[N10] ISA: triangle labeled "ISA" with "d" inside (disjoint).
+      Double line from parent to triangle for total
+      specialization.
+[N11] Recursive relationships: relationship line connects
+      entity to itself with role labels at each endpoint.
