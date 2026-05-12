@@ -3,9 +3,7 @@ DROP DATABASE IF EXISTS ygeiopolis;
 CREATE DATABASE ygeiopolis;
 USE ygeiopolis;
 
--- ============================================================
--- LOOKUP TABLES
--- ============================================================
+-- Λεξικά και Βοηθητικοί Πίνακες
 
 CREATE TABLE staff_types (
     code VARCHAR(20),
@@ -159,9 +157,7 @@ INSERT INTO specialties VALUES
     ('Urology','Urology'),
     ('General Practice','General Practice');
 
--- ============================================================
--- CORE TABLES
--- ============================================================
+-- Βασικοί Πίνακες της Βάσης
 
 CREATE TABLE departments (
     dept_id INT AUTO_INCREMENT,
@@ -578,9 +574,7 @@ CREATE TABLE doctor_images (
     CONSTRAINT fk_doctor_img_relation FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA) ON DELETE CASCADE
 );
 
--- ============================================================
--- TRIGGERS
--- ============================================================
+-- Triggers για αυτοματοποιήσεις
 
 DELIMITER //
 
@@ -619,7 +613,7 @@ BEGIN
     SELECT status INTO v_bed_status FROM beds WHERE bed_id = NEW.bed_id;
     IF v_bed_status = 'Maintenance' THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Cannot admit patient to a bed under maintenance.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Η κλίνη βρίσκεται σε συντήρηση.';
     END IF;
 
     SELECT COUNT(*) INTO v_overlap_count
@@ -630,7 +624,7 @@ BEGIN
 
     IF v_overlap_count > 0 THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Bed already has an overlapping admission.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Η κλίνη είναι ήδη κατειλημμένη για αυτό το διάστημα.';
     END IF;
 END//
 
@@ -653,7 +647,7 @@ BEGIN
 
         IF v_overlap_count > 0 THEN
             SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Error: Bed already has an overlapping admission.';
+            SET MESSAGE_TEXT = 'Σφάλμα: Η κλίνη είναι ήδη κατειλημμένη για αυτό το διάστημα.';
         END IF;
     END IF;
 END//
@@ -681,7 +675,7 @@ BEGIN
         SET NEW.base_cost = v_base_cost;
     ELSEIF NEW.base_cost <> OLD.base_cost THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: base_cost is derived from KEN and cannot be changed directly.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Το βασικό κόστος υπολογίζεται αυτόματα από το ΚΕΝ.';
     END IF;
 
     IF OLD.discharge_date IS NULL AND NEW.discharge_date IS NOT NULL THEN
@@ -717,9 +711,7 @@ BEGIN
     END IF;
 END//
 
--- ============================================================
--- TRIGGERS FOR CONSTRAINTS/CHECKS: THROW ERRORS
--- ============================================================
+-- Triggers για ελέγχους και περιορισμούς (Business Rules)
 
 CREATE TRIGGER doctor_rank_insert_check_trigger
 BEFORE INSERT ON doctors
@@ -727,12 +719,12 @@ FOR EACH ROW
 BEGIN
     IF NEW.rank = 'Resident' AND NEW.supervisor_AMKA IS NULL THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Residents must have a supervisor assigned.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Οι ειδικευόμενοι ιατροί πρέπει υποχρεωτικά να έχουν επόπτη.';
     END IF;
 
     IF NEW.rank = 'Director' AND NEW.supervisor_AMKA IS NOT NULL THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Directors cannot have a supervisor.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Οι διευθυντές δεν μπορούν να έχουν επόπτη.';
     END IF;
 END//
 
@@ -742,12 +734,12 @@ FOR EACH ROW
 BEGIN
     IF NEW.rank = 'Resident' AND NEW.supervisor_AMKA IS NULL THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Residents must have a supervisor assigned.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Οι ειδικευόμενοι ιατροί πρέπει υποχρεωτικά να έχουν επόπτη.';
     END IF;
 
     IF NEW.rank = 'Director' AND NEW.supervisor_AMKA IS NOT NULL THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Directors cannot have a supervisor.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Οι διευθυντές δεν μπορούν να έχουν επόπτη.';
     END IF;
 END//
 
@@ -761,7 +753,7 @@ main: BEGIN
 
     IF p_doctor_amka = p_new_supervisor_amka THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: A doctor cannot supervise themselves.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Ένας ιατρός δεν μπορεί να είναι επόπτης του εαυτού του.';
     END IF;
 
     WITH RECURSIVE supervision_chain AS (
@@ -783,7 +775,7 @@ main: BEGIN
 
     IF v_count > 0 THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Detected Circular chain of supervision.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Εντοπίστηκε κυκλική εξάρτηση στην ιεραρχία εποπτείας.';
     END IF;
 END main //
 
@@ -812,7 +804,7 @@ FOR EACH ROW
 BEGIN
     IF EXISTS (SELECT NULL FROM admin_staff WHERE AMKA = NEW.staff_AMKA) THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Only doctors or nurses can be procedure assistants.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Μόνο ιατροί ή νοσηλευτές μπορούν να συμμετέχουν ως βοηθοί.';
     END IF;
 END//
 
@@ -825,7 +817,7 @@ BEGIN
 
     IF p_discharge_date IS NULL THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Ratings are only allowed after the patient has been discharged.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Η αξιολόγηση επιτρέπεται μόνο μετά το εξιτήριο.';
     END IF;
 END//
 
@@ -849,7 +841,7 @@ BEGIN
             WHERE admission_id = p_admission_id AND doctor_AMKA = p_doctor_AMKA
     ) THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Doctor must have treated this patient (prescribed, performed procedure, or ordered lab exam) to be rated.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Ο ιατρός δεν συμμετείχε στη νοσηλεία αυτού του ασθενή.';
     END IF;
 END//
 
@@ -877,11 +869,11 @@ BEGIN
     FROM admissions WHERE admission_id = p_admission_id;
     IF DATE(p_exam_date) < v_adm_date THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Lab exam date cannot be before admission date.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Η ημερομηνία της εξέτασης δεν μπορεί να προηγείται της εισαγωγής.';
     END IF;
     IF v_dis_date IS NOT NULL AND DATE(p_exam_date) > v_dis_date THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Lab exam date cannot be after discharge date.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Η ημερομηνία της εξέτασης δεν μπορεί να είναι μετά το εξιτήριο.';
     END IF;
 END//
 
@@ -909,11 +901,11 @@ BEGIN
     FROM admissions WHERE admission_id = p_admission_id;
     IF DATE(p_start) < v_adm_date THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Procedure date cannot be before admission date.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Η επέμβαση δεν μπορεί να γίνει πριν την εισαγωγή.';
     END IF;
     IF v_dis_date IS NOT NULL AND DATE(p_start) > v_dis_date THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Procedure date cannot be after discharge date.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Η επέμβαση δεν μπορεί να γίνει μετά το εξιτήριο.';
     END IF;
 END//
 
@@ -948,7 +940,7 @@ BEGIN
 
     IF v_allergy_name IS NOT NULL THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'CRITICAL ERROR: Patient is allergic to a substance in this drug!';
+        SET MESSAGE_TEXT = 'Σφάλμα: Ο ασθενής είναι αλλεργικός σε δραστική ουσία του φαρμάκου!';
     END IF;
 END//
 
@@ -965,7 +957,7 @@ BEGIN
         AND v_end > start_time
     ) THEN
         SIGNAL SQLSTATE '45000' 
-        SET MESSAGE_TEXT = 'Error: Room is already in use.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Η αίθουσα είναι κατειλημμένη αυτή τη στιγμή.';
     END IF;
 
     IF EXISTS (
@@ -976,7 +968,7 @@ BEGIN
         AND v_end > start_time
     ) THEN
         SIGNAL SQLSTATE '45000' 
-        SET MESSAGE_TEXT = 'Error: Doctor is already in another procedure.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Ο ιατρός συμμετέχει ήδη σε άλλη επέμβαση.';
     END IF;
 END //
 
@@ -1014,13 +1006,13 @@ BEGIN
 
     IF (p_position = 'Doctor' AND shift_count >= 15) THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Doctor exceeded max monthly shifts (15)';
+        SET MESSAGE_TEXT = 'Σφάλμα: Υπέρβαση μέγιστου ορίου εφημεριών ιατρού (15/μήνα).';
     ELSEIF (p_position = 'Nurse' AND shift_count >= 20) THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Nurse exceeded max monthly shifts (20)';
+        SET MESSAGE_TEXT = 'Σφάλμα: Υπέρβαση μέγιστου ορίου εφημεριών νοσηλευτή (20/μήνα).';
     ELSEIF (p_position = 'Admin' AND shift_count >= 25) THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Admin exceeded max monthly shifts (25)';
+        SET MESSAGE_TEXT = 'Σφάλμα: Υπέρβαση μέγιστου ορίου εφημεριών διοικητικού (25/μήνα).';
     END IF;
 END//
 
@@ -1071,7 +1063,7 @@ main: BEGIN
         )
     ) THEN
     SIGNAL SQLSTATE '45000'
-    SET MESSAGE_TEXT = 'Staff cannot work for 3 consecutive night shifts.';
+    SET MESSAGE_TEXT = 'Σφάλμα: Απαγορεύονται πάνω από 3 συνεχόμενες νυχτερινές βάρδιες.';
 END IF;
 END main //
 
@@ -1127,7 +1119,7 @@ BEGIN
 
     IF v_violation > 0 THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Staff must have at least 8 hours rest between shifts.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Πρέπει να μεσολαβούν τουλάχιστον 8 ώρες ανάπαυσης μεταξύ βαρδιών.';
     END IF;
 END//
 
@@ -1166,13 +1158,13 @@ BEGIN
 
     IF doc_count < 3 THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Minimum 3 Doctors required in any shift.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Απαιτούνται τουλάχιστον 3 ιατροί στην εφημερία.';
     ELSEIF nurse_count < 6 THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Minimum 6 Nurses required in any shift.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Απαιτούνται τουλάχιστον 6 νοσηλευτές στην εφημερία.';
     ELSEIF admin_count < 2 THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Minimum 2 Admin staff required in any shift.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Απαιτούνται τουλάχιστον 2 διοικητικοί στην εφημερία.';
     END IF;
 
     SELECT COUNT(*) INTO resident_exists
@@ -1189,7 +1181,7 @@ BEGIN
 
         IF senior_exists = 0 THEN
             SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = 'Shift Error: Residents require at least one Senior Attending or Director present.';
+            SET MESSAGE_TEXT = 'Σφάλμα: Σε βάρδια με ειδικευόμενο πρέπει να παρευρίσκεται Επιμελητής Α ή Διευθυντής.';
         END IF;
     END IF;
 END//
@@ -1257,7 +1249,7 @@ BEGIN
 
     IF v_status = 'Completed' THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Cannot add staff to a Completed/Locked shift.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Δεν μπορείτε να προσθέσετε προσωπικό σε κλειδωμένη βάρδια.';
     END IF;
 END//
 
@@ -1273,7 +1265,7 @@ BEGIN
 
     IF v_status = 'Completed' THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Cannot remove staff from a Completed/Locked shift.';
+        SET MESSAGE_TEXT = 'Σφάλμα: Δεν μπορείτε να αφαιρέσετε προσωπικό από κλειδωμένη βάρδια.';
     END IF;
 END//
 
