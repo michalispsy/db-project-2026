@@ -1,0 +1,7 @@
++-----------+---------------+------+
+| drug1     | drug2         | freq |
++-----------+---------------+------+
+| Pibaxin   | Zalepin Rapid |    2 |
+| Buscopan  | Dorzylea      |    1 |
+| Dagrafors | Kestine Flash |    1 |
++-----------+---------------+------+
