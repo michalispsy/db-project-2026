@@ -23,8 +23,8 @@ WITH RECURSIVE supervisor_hierarchy AS (
 )
 SELECT
     doctor_name,
-    hierarchy_path
-    level,
+    hierarchy_path,
+    level
 FROM (
     SELECT *, ROW_NUMBER() OVER(PARTITION BY leaf_amka ORDER BY level DESC) as `number`
     FROM supervisor_hierarchy

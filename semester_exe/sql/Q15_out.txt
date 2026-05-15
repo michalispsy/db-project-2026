@@ -1,41 +1,37 @@
 +-------+-------------+------------------+---------------+-----------------+------------------+---------------------+
 | level | level_name  | department_name  | cases_in_dept | total_per_level | avg_wait_minutes | hospitalization_pct |
 +-------+-------------+------------------+---------------+-----------------+------------------+---------------------+
-|     1 | Immediate   | Cheirourgiko     |             2 |              13 |              4.8 |                84.6 |
-|     1 | Immediate   | Orthopediko      |             2 |              13 |              4.8 |                84.6 |
-|     1 | Immediate   | Not Hospitalized |             2 |              13 |              4.8 |                84.6 |
-|     1 | Immediate   | Ogkologiko       |             2 |              13 |              4.8 |                84.6 |
-|     1 | Immediate   | Nefrologiko      |             1 |              13 |              4.8 |                84.6 |
-|     1 | Immediate   | Ourologiko       |             1 |              13 |              4.8 |                84.6 |
-|     1 | Immediate   | Aimatologiko     |             1 |              13 |              4.8 |                84.6 |
-|     1 | Immediate   | Revmatologiko    |             1 |              13 |              4.8 |                84.6 |
-|     1 | Immediate   | Neurologiko      |             1 |              13 |              4.8 |                84.6 |
-|     2 | Emergent    | Not Hospitalized |             6 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Ourologiko       |             3 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Ogkologiko       |             2 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Revmatologiko    |             2 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Pnevmonologiko   |             2 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Nefrologiko      |             2 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Paidiatriko      |             1 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Cheirourgiko     |             1 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Neurologiko      |             1 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Pathologiko      |             1 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Kardiologiko     |             1 |              23 |             20.0 |                73.9 |
-|     2 | Emergent    | Orthopediko      |             1 |              23 |             20.0 |                73.9 |
-|     3 | Urgent      | Not Hospitalized |            18 |              27 |             36.1 |                33.3 |
-|     3 | Urgent      | Dermatologiko    |             2 |              27 |             36.1 |                33.3 |
-|     3 | Urgent      | Pnevmonologiko   |             2 |              27 |             36.1 |                33.3 |
-|     3 | Urgent      | Kardiologiko     |             1 |              27 |             36.1 |                33.3 |
-|     3 | Urgent      | Psychiatriko     |             1 |              27 |             36.1 |                33.3 |
-|     3 | Urgent      | Ourologiko       |             1 |              27 |             36.1 |                33.3 |
-|     3 | Urgent      | Neurologiko      |             1 |              27 |             36.1 |                33.3 |
-|     3 | Urgent      | Aimatologiko     |             1 |              27 |             36.1 |                33.3 |
-|     4 | Less Urgent | Not Hospitalized |            16 |              22 |             74.8 |                27.3 |
-|     4 | Less Urgent | Nefrologiko      |             2 |              22 |             74.8 |                27.3 |
-|     4 | Less Urgent | Ogkologiko       |             1 |              22 |             74.8 |                27.3 |
-|     4 | Less Urgent | Psychiatriko     |             1 |              22 |             74.8 |                27.3 |
-|     4 | Less Urgent | Orthopediko      |             1 |              22 |             74.8 |                27.3 |
-|     4 | Less Urgent | Kardiologiko     |             1 |              22 |             74.8 |                27.3 |
-|     5 | Non-Urgent  | Not Hospitalized |            22 |              23 |            154.2 |                 4.3 |
-|     5 | Non-Urgent  | Ogkologiko       |             1 |              23 |            154.2 |                 4.3 |
+|     1 | immediate   | Kardiologiko     |             4 |              14 |              4.5 |                85.7 |
+|     1 | immediate   | Aimatologiko     |             3 |              14 |              4.5 |                85.7 |
+|     1 | immediate   | Ourologiko       |             2 |              14 |              4.5 |                85.7 |
+|     1 | immediate   | Neurologiko      |             2 |              14 |              4.5 |                85.7 |
+|     1 | immediate   | Not Hospitalized |             2 |              14 |              4.5 |                85.7 |
+|     1 | immediate   | Nefrologiko      |             1 |              14 |              4.5 |                85.7 |
+|     2 | emergent    | Not Hospitalized |             6 |              21 |             19.4 |                71.4 |
+|     2 | emergent    | Aimatologiko     |             3 |              21 |             19.4 |                71.4 |
+|     2 | emergent    | Gynaikologiko    |             3 |              21 |             19.4 |                71.4 |
+|     2 | emergent    | Psychiatriko     |             2 |              21 |             19.4 |                71.4 |
+|     2 | emergent    | Ogkologiko       |             1 |              21 |             19.4 |                71.4 |
+|     2 | emergent    | Pnevmonologiko   |             1 |              21 |             19.4 |                71.4 |
+|     2 | emergent    | Pathologiko      |             1 |              21 |             19.4 |                71.4 |
+|     2 | emergent    | Ourologiko       |             1 |              21 |             19.4 |                71.4 |
+|     2 | emergent    | Neurologiko      |             1 |              21 |             19.4 |                71.4 |
+|     2 | emergent    | Cheirourgiko     |             1 |              21 |             19.4 |                71.4 |
+|     2 | emergent    | Revmatologiko    |             1 |              21 |             19.4 |                71.4 |
+|     3 | urgent      | Not Hospitalized |            18 |              28 |             36.6 |                35.7 |
+|     3 | urgent      | Paidiatriko      |             3 |              28 |             36.6 |                35.7 |
+|     3 | urgent      | Cheirourgiko     |             2 |              28 |             36.6 |                35.7 |
+|     3 | urgent      | Gynaikologiko    |             1 |              28 |             36.6 |                35.7 |
+|     3 | urgent      | Pnevmonologiko   |             1 |              28 |             36.6 |                35.7 |
+|     3 | urgent      | Pathologiko      |             1 |              28 |             36.6 |                35.7 |
+|     3 | urgent      | Psychiatriko     |             1 |              28 |             36.6 |                35.7 |
+|     3 | urgent      | Ourologiko       |             1 |              28 |             36.6 |                35.7 |
+|     4 | less urgent | Not Hospitalized |            18 |              23 |             74.2 |                21.7 |
+|     4 | less urgent | Pathologiko      |             1 |              23 |             74.2 |                21.7 |
+|     4 | less urgent | Kardiologiko     |             1 |              23 |             74.2 |                21.7 |
+|     4 | less urgent | Cheirourgiko     |             1 |              23 |             74.2 |                21.7 |
+|     4 | less urgent | Dermatologiko    |             1 |              23 |             74.2 |                21.7 |
+|     4 | less urgent | Pnevmonologiko   |             1 |              23 |             74.2 |                21.7 |
+|     5 | non-urgent  | Not Hospitalized |            21 |              22 |            151.6 |                 4.5 |
+|     5 | non-urgent  | Orthopediko      |             1 |              22 |            151.6 |                 4.5 |
 +-------+-------------+------------------+---------------+-----------------+------------------+---------------------+

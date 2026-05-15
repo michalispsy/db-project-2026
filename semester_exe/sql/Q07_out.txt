@@ -9,6 +9,37 @@
 | Pregabalin                                                                                           |                 2 |               11 |
 | Diclofenac                                                                                           |                 2 |                1 |
 | Trandolapril                                                                                         |                 2 |                3 |
+| Ifosfamide                                                                                           |                 1 |                1 |
+| Emtricitabine, Tenofovir Disoproxil Fumarate                                                         |                 1 |                2 |
+| Gentamicin Sulfate, Dexamethasone                                                                    |                 1 |                1 |
+| Levofloxacin                                                                                         |                 1 |               12 |
+| Ipratropium Bromide Anhydrous                                                                        |                 1 |                1 |
+| Sugammadex                                                                                           |                 1 |                9 |
+| Lithium Carbonate                                                                                    |                 1 |                1 |
+| Carvedilol                                                                                           |                 1 |                5 |
+| Meloxicam, Crospovidone                                                                              |                 1 |                1 |
+| Palonosetron                                                                                         |                 1 |                5 |
+| Methylprednisolone                                                                                   |                 1 |                3 |
+| (3s,10s,14s)-1-[4-[[(2s)-4-Carboxy-2-[(2s)-4-Carboxy-2-(6-[18f] Fluoropyridin-3-Amido)butanamido]but |                 1 |                1 |
+| Paclitaxel                                                                                           |                 1 |                6 |
+| Somatropin                                                                                           |                 1 |                6 |
+| Linezolid                                                                                            |                 1 |                9 |
+| Magnesium Carbonate Heavy, Calcium Acetate                                                           |                 1 |                2 |
+| Insulin Human                                                                                        |                 1 |                5 |
+| Ceftriaxone Sodium                                                                                   |                 1 |                7 |
+| Ramipril, Rosuvastatin Calcium                                                                       |                 1 |                2 |
+| Fluoxetine Hydrochloride                                                                             |                 1 |                2 |
+| Mebeverine Hydrochloride                                                                             |                 1 |                1 |
+| Bosentan                                                                                             |                 1 |                4 |
+| Lanthanum                                                                                            |                 1 |                1 |
+| Anti-T Lymphocyte Immunoglobulin For Human Use, Rabbit                                               |                 1 |                1 |
+| Lidocaine Hydrochloride Monohydrate, Phenylephrine Hydrochloride, Tropicamide                        |                 1 |                1 |
+| Dipotassium Phosphate, Glycine, Magnesium Chloride Hexahydrate, Sodium Chloride, Calcium Chloride Di |                 1 |                1 |
+| Matricariae Flos, Achillea Millefolium L. Herba, Marshmallow Root Powdered, Oak Bark Powdered, Dande |                 1 |                1 |
+| Oxaprozin                                                                                            |                 1 |                1 |
+| Fusidic Acid                                                                                         |                 1 |                6 |
+| Tribenoside, Lidocaine Hydrochloride                                                                 |                 1 |                1 |
+| Lutetium (177lu) Zadavotide Guraxetan                                                                |                 1 |                1 |
 | Fluorocholine (18f)                                                                                  |                 1 |                1 |
 | Aciclovir                                                                                            |                 1 |               17 |
 | Roflumilast                                                                                          |                 1 |                1 |
@@ -28,20 +59,20 @@
 | Topotecan Hydrochloride                                                                              |                 1 |                1 |
 | Dabigatran Etexilate                                                                                 |                 1 |                9 |
 | Bromhexine Hydrochloride                                                                             |                 1 |                4 |
+| Betamethasone Dipropionate, Gentamicin                                                               |                 1 |                1 |
+| Olive Oil, Refined, Soya-Bean Oil Refined, Triglycerides, Medium Chain, Fish Oil, Rich In Omega-3-Ac |                 1 |                1 |
 | Fluticasone Propionate, Salmeterol Xinafoate                                                         |                 1 |                1 |
 | Dexamethasone Sodium Phosphate                                                                       |                 1 |                7 |
 | Celecoxib                                                                                            |                 1 |                1 |
-| Betamethasone Dipropionate, Gentamicin                                                               |                 1 |                1 |
-| Olive Oil, Refined, Soya-Bean Oil Refined, Triglycerides, Medium Chain, Fish Oil, Rich In Omega-3-Ac |                 1 |                1 |
+| Betamethasone Acetate, Betamethasone Sodium Phosphate                                                |                 1 |                1 |
 | Chondroitin Sulfate Sodium                                                                           |                 1 |                1 |
 | Alendronic Acid                                                                                      |                 1 |                9 |
 | Brinzolamide                                                                                         |                 1 |                2 |
 | Misoprostol                                                                                          |                 1 |                3 |
 | Human Coagulation Factor Xiii                                                                        |                 1 |                1 |
-| Betamethasone Acetate, Betamethasone Sodium Phosphate                                                |                 1 |                1 |
+| Cholecalciferol Concentrate (Powder Form)                                                            |                 1 |                1 |
 | Pneumococcal Polysaccharide Serotype 4, Pneumococcal Polysaccharide Serotype 6b, Pneumococcal Polysa |                 1 |                1 |
 | Tafluprost                                                                                           |                 1 |                2 |
-| Cholecalciferol Concentrate (Powder Form)                                                            |                 1 |                1 |
 | Metformin Hydrochloride, Sitagliptin Hydrochloride                                                   |                 1 |                1 |
 | Aniracetam                                                                                           |                 1 |                2 |
 | Sodium Picosulfate                                                                                   |                 1 |                1 |
@@ -90,37 +121,358 @@
 | Foscarnet Sodium Hexahydrate                                                                         |                 1 |                1 |
 | Zinc Sulphate Monohydrate                                                                            |                 1 |                2 |
 | Nintedanib Esylate                                                                                   |                 1 |                1 |
-| Emtricitabine, Tenofovir Disoproxil Fumarate                                                         |                 1 |                2 |
-| Gentamicin Sulfate, Dexamethasone                                                                    |                 1 |                1 |
-| Levofloxacin                                                                                         |                 1 |               12 |
-| Ifosfamide                                                                                           |                 1 |                1 |
-| Ipratropium Bromide Anhydrous                                                                        |                 1 |                1 |
-| Sugammadex                                                                                           |                 1 |                9 |
-| Lithium Carbonate                                                                                    |                 1 |                1 |
-| Carvedilol                                                                                           |                 1 |                5 |
-| Meloxicam, Crospovidone                                                                              |                 1 |                1 |
-| Palonosetron                                                                                         |                 1 |                5 |
-| Methylprednisolone                                                                                   |                 1 |                3 |
-| (3s,10s,14s)-1-[4-[[(2s)-4-Carboxy-2-[(2s)-4-Carboxy-2-(6-[18f] Fluoropyridin-3-Amido)butanamido]but |                 1 |                1 |
-| Paclitaxel                                                                                           |                 1 |                6 |
-| Somatropin                                                                                           |                 1 |                6 |
-| Linezolid                                                                                            |                 1 |                9 |
-| Magnesium Carbonate Heavy, Calcium Acetate                                                           |                 1 |                2 |
-| Insulin Human                                                                                        |                 1 |                5 |
-| Ceftriaxone Sodium                                                                                   |                 1 |                7 |
-| Fluoxetine Hydrochloride                                                                             |                 1 |                2 |
-| Mebeverine Hydrochloride                                                                             |                 1 |                1 |
-| Bosentan                                                                                             |                 1 |                4 |
-| Lanthanum                                                                                            |                 1 |                1 |
-| Anti-T Lymphocyte Immunoglobulin For Human Use, Rabbit                                               |                 1 |                1 |
-| Lidocaine Hydrochloride Monohydrate, Phenylephrine Hydrochloride, Tropicamide                        |                 1 |                1 |
-| Ramipril, Rosuvastatin Calcium                                                                       |                 1 |                2 |
-| Matricariae Flos, Achillea Millefolium L. Herba, Marshmallow Root Powdered, Oak Bark Powdered, Dande |                 1 |                1 |
-| Oxaprozin                                                                                            |                 1 |                1 |
-| Fusidic Acid                                                                                         |                 1 |                6 |
-| Tribenoside, Lidocaine Hydrochloride                                                                 |                 1 |                1 |
-| Lutetium (177lu) Zadavotide Guraxetan                                                                |                 1 |                1 |
-| Dipotassium Phosphate, Glycine, Magnesium Chloride Hexahydrate, Sodium Chloride, Calcium Chloride Di |                 1 |                1 |
+| Acetic Acid                                                                                          |                 0 |                1 |
+| Magnesium L-Aspartate Hydrochloride Trihydrate                                                       |                 0 |                3 |
+| Bilastine Monohydrate                                                                                |                 0 |                1 |
+| Omega-3-Acid Ethyl Esters 90                                                                         |                 0 |                5 |
+| Cinacalcet Hydrochloride                                                                             |                 0 |                1 |
+| Risedronate Sodium                                                                                   |                 0 |               12 |
+| Doxycycline                                                                                          |                 0 |                2 |
+| Ticagrelor                                                                                           |                 0 |               13 |
+| Formoterol Fumarate Dihydrate                                                                        |                 0 |                3 |
+| Irinotecan Hydrochloride                                                                             |                 0 |                1 |
+| Aluminium Phosphate, Diphtheria Toxoid, Tetanus Toxoid, Pertussis Toxoid, Pertussis Filamentous Haem |                 0 |                2 |
+| Mequinol                                                                                             |                 0 |                1 |
+| Buprenorphine, Naloxone                                                                              |                 0 |                1 |
+| Paracetamol, Caffeine, Codeine Phosphate Hemihydrate                                                 |                 0 |                1 |
+| Clonidine Hydrochloride                                                                              |                 0 |                1 |
+| Sevelamer Carbonate                                                                                  |                 0 |                4 |
+| Tramadol Hydrochloride, Dexketoprofen                                                                |                 0 |                1 |
+| Ketotifen Hydrogen Fumarate                                                                          |                 0 |                7 |
+| Amoxicillin, Clavulanic Acid                                                                         |                 0 |                9 |
+| Metronidazole                                                                                        |                 0 |               15 |
+| Calcium, Lactic Acid, Magnesium, Sodium, Chloride Ion, Hydrogen Carbonate                            |                 0 |                1 |
+| Pimecrolimus                                                                                         |                 0 |                1 |
+| Danaparoid Sodium                                                                                    |                 0 |                1 |
+| Sodium Hydrogen Carbonate, Potassium Chloride, Sodium Chloride, Macrogol 3350                        |                 0 |                2 |
+| Escitalopram                                                                                         |                 0 |               10 |
+| Valine, Alanine, Arginine, Cysteine, Histidine, Isoleucine, Leucine, Methionine, Phenylalanine, Prol |                 0 |                1 |
+| Haloperidol Decanoate                                                                                |                 0 |                2 |
+| Ascorbic Acid, Paracetamol                                                                           |                 0 |                3 |
+| Mycobacterium Bovis, Danish Strain 1331                                                              |                 0 |                2 |
+| Cefazolin Sodium                                                                                     |                 0 |                1 |
+| Potassium Iodide, Sodium Iodide                                                                      |                 0 |                1 |
+| Dexketoprofen                                                                                        |                 0 |                4 |
+| Sulfadiazine Silver, Sodium Hyaluronate                                                              |                 0 |                3 |
+| Famotidine                                                                                           |                 0 |                6 |
+| Zidovudine                                                                                           |                 0 |                2 |
+| Hydrochlorothiazide, Irbesartan                                                                      |                 0 |                7 |
+| Loratadine, Pseudoephedrine Sulphate                                                                 |                 0 |                1 |
+| Beclometasone Dipropionate Anhydrous                                                                 |                 0 |                2 |
+| Nimesulide                                                                                           |                 0 |               25 |
+| Chloramphenicol, Dexamethasone                                                                       |                 0 |                1 |
+| Pyridoxine Hydrochloride                                                                             |                 0 |                1 |
+| Dinoprostone                                                                                         |                 0 |                2 |
+| Tenoxicam                                                                                            |                 0 |                7 |
+| Flunitrazepam                                                                                        |                 0 |                1 |
+| Ibuprofen, Paracetamol                                                                               |                 0 |                9 |
+| Acemetacin                                                                                           |                 0 |                1 |
+| Magnesium Glycerophosphate, Pyridoxine Hydrochloride                                                 |                 0 |                1 |
+| Bicalutamide                                                                                         |                 0 |               11 |
+| Olmesartan Medoxomil, Hydrochlorothiazide, Amlodipine Besilate                                       |                 0 |                1 |
+| Cilostazol                                                                                           |                 0 |                4 |
+| Rifaximin                                                                                            |                 0 |                1 |
+| Doxazosin                                                                                            |                 0 |                1 |
+| Thiocolchicoside, Paracetamol Ph. Eur.                                                               |                 0 |                2 |
+| Folic Acid, Ferric Hydroxide Polymaltose Complex                                                     |                 0 |                2 |
+| Alteplase                                                                                            |                 0 |                2 |
+| Menthol, Camphor, Eucalyptus Oil, Thymol, Turpentine Oil                                             |                 0 |                1 |
+| Bumetanide                                                                                           |                 0 |                2 |
+| Paracetamol                                                                                          |                 0 |               31 |
+| Clofarabine                                                                                          |                 0 |                2 |
+| Sertindole                                                                                           |                 0 |                1 |
+| Eltrombopag                                                                                          |                 0 |               12 |
+| Torasemide                                                                                           |                 0 |                3 |
+| Gemcitabine                                                                                          |                 0 |               10 |
+| Ketoprofen Lysine                                                                                    |                 0 |                3 |
+| Amoxicillin                                                                                          |                 0 |                1 |
+| Metoprolol Succinate                                                                                 |                 0 |                1 |
+| Calcium Gluconate Monohydrate                                                                        |                 0 |                2 |
+| Phenytoin                                                                                            |                 0 |                1 |
+| Dabigatran Etexilate Mesilate                                                                        |                 0 |                3 |
+| Sodium Hydrogen Carbonate, Calcium Carbonate, Sodium Alginate                                        |                 0 |                6 |
+| Erythromycin, Isotretinoin                                                                           |                 0 |                1 |
+| Valeriana Officinalis L. Root Ethanol Dry Extract, Humulus Lupulus Extractum Siccum                  |                 0 |                1 |
+| Haemophilus Influenzae Type B Polysaccharide (Polyribosylribitol Phosphate), Diphtheria Toxoid, Teta |                 0 |                1 |
+| Levocetirizine Dihydrochloride                                                                       |                 0 |                3 |
+| Ascorbic Acid, Colecalciferol, Cyanocobalamin, Folic Acid, Nicotinamide, Thiamine, Pantothenic Acid, |                 0 |                1 |
+| Moxonidine                                                                                           |                 0 |                2 |
+| Cefaclor                                                                                             |                 0 |                3 |
+| Potassium Hydrogen Carbonate, Betaine Hydrochloride                                                  |                 0 |                1 |
+| Dexamethasone, Levofloxacin                                                                          |                 0 |                1 |
+| Ezetimibe, Rosuvastatin Zinc                                                                         |                 0 |                1 |
+| Xylometazoline Hydrochloride, Dexpanthenol                                                           |                 0 |                3 |
+| Hydrochlorothiazide                                                                                  |                 0 |                2 |
+| Bacitracin, Papain, Lysozyme Hydrochloride                                                           |                 0 |                1 |
+| Niflumic Acid                                                                                        |                 0 |                1 |
+| Cetylpyridinium Chloride, Lidocaine Hydrochloride                                                    |                 0 |                1 |
+| Pseudoephedrine Hydrochloride, Paracetamol                                                           |                 0 |                3 |
+| Dimeticone, Magnesium Hydroxide, Aluminium Hydroxide                                                 |                 0 |                2 |
+| Teicoplanin                                                                                          |                 0 |                7 |
+| Fludrocortisone Acetate, Polymyxin B Sulfate, Lidocaine Hydrochloride                                |                 0 |                1 |
+| Abacavir, Lamivudine                                                                                 |                 0 |                2 |
+| Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Sodium Acetate Trihydrate, Sodi |                 0 |                1 |
+| Betamethasone, Calcipotriol                                                                          |                 0 |                3 |
+| Olmesartan Medoxomil, Amlodipine Besilate                                                            |                 0 |                1 |
+| Cilazapril                                                                                           |                 0 |                1 |
+| Rhubarb Extract, Salicylic Acid                                                                      |                 0 |                1 |
+| Dorzolamide Hydrochloride                                                                            |                 0 |                4 |
+| Thiamine Hydrochloride, Cyanocobalamin, Pyridoxine Hydrochloride                                     |                 0 |               20 |
+| Folic Acid                                                                                           |                 0 |                4 |
+| Iopromide                                                                                            |                 0 |                1 |
+| Almotriptan                                                                                          |                 0 |                1 |
+| Memantine Hydrochloride, Donepezil Hydrochloride                                                     |                 0 |                2 |
+| Budesonide                                                                                           |                 0 |               63 |
+| Pantoprazole Sodium                                                                                  |                 0 |                2 |
+| Clioquinol, Fluocinolone Acetonide                                                                   |                 0 |                1 |
+| Sennae Folium                                                                                        |                 0 |                1 |
+| Econazole Nitrate, Triamcinolone Acetonide                                                           |                 0 |                1 |
+| Topiramate                                                                                           |                 0 |                4 |
+| Ganciclovir                                                                                          |                 0 |                2 |
+| Ivy Leaves, Dry Extract                                                                              |                 0 |                1 |
+| Amlodipine, Ramipril                                                                                 |                 0 |                2 |
+| Metoclopramide Hydrochloride                                                                         |                 0 |                2 |
+| Calcium Folinate Pentahydrate                                                                        |                 0 |                4 |
+| Phentermine, Topiramate                                                                              |                 0 |                1 |
+| Cytisinicline                                                                                        |                 0 |                2 |
+| Sodium Hyaluronate                                                                                   |                 0 |                5 |
+| Ertapenem                                                                                            |                 0 |                1 |
+| Ursodeoxycholic Acid                                                                                 |                 0 |                3 |
+| Graphite                                                                                             |                 0 |                1 |
+| Levocabastine                                                                                        |                 0 |                2 |
+| Ascorbic Acid                                                                                        |                 0 |                1 |
+| Montelukast Sodium                                                                                   |                 0 |                6 |
+| Potassium Chloride, Sodium Chloride, Calcium Chloride Dihydrate, Sodium Lactate                      |                 0 |                6 |
+| Dexamethasone Sodium Phosphate, Neomycin Sulfate                                                     |                 0 |                2 |
+| Spironolactone                                                                                       |                 0 |                1 |
+| Ezetimibe                                                                                            |                 0 |               16 |
+| Vortioxetine                                                                                         |                 0 |                6 |
+| Human Serum Albumin                                                                                  |                 0 |                7 |
+| Lisinopril                                                                                           |                 0 |                3 |
+| Bacillus Calmette-Guérin (Bcg), Tice                                                                 |                 0 |                1 |
+| Nicotine Resinate                                                                                    |                 0 |                4 |
+| Cetirizine Dihydrochloride                                                                           |                 0 |               11 |
+| Prulifloxacin                                                                                        |                 0 |                2 |
+| Dimethyl Fumarate                                                                                    |                 0 |               13 |
+| Taurine, Glycine, L-Tryptophan, L-Arginine, L-Histidine, L-Isoleucine, L-Leucine, L-Methionine, L-Pr |                 0 |                2 |
+| Fludarabine Phosphate                                                                                |                 0 |                2 |
+| Ibuprofen Sodium                                                                                     |                 0 |                1 |
+| Betamethasone Valerate                                                                               |                 0 |                4 |
+| Olmesartan                                                                                           |                 0 |                1 |
+| Ciclosporin                                                                                          |                 0 |                5 |
+| Retinol Palmitate, Ascorbic Acid, Biotin, Colecalciferol, Cyanocobalamin, Dexpanthenol, Folic Acid,  |                 0 |                1 |
+| Dopamine Hydrochloride                                                                               |                 0 |                3 |
+| Thiamine Hydrochloride                                                                               |                 0 |                1 |
+| Flutrimazole                                                                                         |                 0 |                1 |
+| Iohexol                                                                                              |                 0 |                2 |
+| Algeldrate, Inactivated Hepatitis A Virus (Gbm Strain)                                               |                 0 |                2 |
+| Brivudine                                                                                            |                 0 |                1 |
+| Clindamycin Phosphate                                                                                |                 0 |               20 |
+| Salmeterol Xinafoate                                                                                 |                 0 |                2 |
+| Ebastine                                                                                             |                 0 |                3 |
+| Tolterodine L-Tartrate                                                                               |                 0 |                1 |
+| Galantamine                                                                                          |                 0 |                7 |
+| Ivabradine Hydrochloride                                                                             |                 0 |                4 |
+| Amlodipine, Indapamide, Perindopril Arginine                                                         |                 0 |                1 |
+| Calcium Dobesilate                                                                                   |                 0 |                1 |
+| Pheniramine Maleate, Ascorbic Acid, Paracetamol                                                      |                 0 |                1 |
+| Cyclophosphamide Monohydrate                                                                         |                 0 |                2 |
+| Sodium Fluoride (18f)                                                                                |                 0 |                1 |
+| Ergotamine Tartrate, Anhydrous Caffeine                                                              |                 0 |                1 |
+| Tyrothricin                                                                                          |                 0 |                1 |
+| Gozetotide                                                                                           |                 0 |                1 |
+| Leuprorelin                                                                                          |                 0 |                3 |
+| Aripiprazole                                                                                         |                 0 |               14 |
+| Mometasone Furoate                                                                                   |                 0 |               15 |
+| Carmellose Sodium                                                                                    |                 0 |                1 |
+| Potassium Chloride, Glucose                                                                          |                 0 |                1 |
+| Dexamethasone Sodium Phosphate, Chloramphenicol                                                      |                 0 |                4 |
+| Sotalol Hydrochloride                                                                                |                 0 |                1 |
+| Exametazime                                                                                          |                 0 |                1 |
+| Vinorelbine                                                                                          |                 0 |                1 |
+| Human Normal Immunoglobulin                                                                          |                 0 |                4 |
+| Lipidosterolic Extract Of Serenoa Repens                                                             |                 0 |                1 |
+| Azithromycin Dihydrate                                                                               |                 0 |                4 |
+| Nevirapine                                                                                           |                 0 |                1 |
+| Celiprolol Hydrochloride                                                                             |                 0 |                2 |
+| Protamine Sulfate                                                                                    |                 0 |                1 |
+| Dimenhydrinate, Nicotinic Acid, Pyridoxine Hydrochloride                                             |                 0 |                1 |
+| Tanacetum Parthenium (L.) Schultz Bip.                                                               |                 0 |                1 |
+| Flucloxacillin                                                                                       |                 0 |                2 |
+| Ibandronic Acid Monosodium Salt, Monohydrate                                                         |                 0 |                1 |
+| Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Glucose Monohydrate, Sodium Ace |                 0 |                1 |
+| Betamethasone Dipropionate                                                                           |                 0 |                1 |
+| Olanzapine                                                                                           |                 0 |               34 |
+| Ciclesonide                                                                                          |                 0 |                2 |
+| Remifentanil                                                                                         |                 0 |                3 |
+| Domperidone                                                                                          |                 0 |                3 |
+| Theophylline Anhydrous                                                                               |                 0 |                4 |
+| Fluticasone Propionate                                                                               |                 0 |               19 |
+| Iobitridol                                                                                           |                 0 |                2 |
+| Alendronic Acid, Colecalciferol                                                                      |                 0 |                5 |
+| Meglumine Amidotrizoate, Sodium Amidotrizoate                                                        |                 0 |                1 |
+| Brinzolamide, Brimonidine Tartrate                                                                   |                 0 |                1 |
+| Clidinium Bromide, Diazepam                                                                          |                 0 |                1 |
+| Salbutamol Sulfate, Ipratropium Bromide Monohydrate                                                  |                 0 |                1 |
+| Dydrogesterone                                                                                       |                 0 |                1 |
+| Tizanidine Hydrochloride                                                                             |                 0 |                1 |
+| Gadoteric Acid                                                                                       |                 0 |                5 |
+| Itopride Hydrochloride                                                                               |                 0 |                1 |
+| Amlodipine, Hydrochlorothiazide, Candesartan Cilexetil                                               |                 0 |                1 |
+| Methyl Aminolevulinate                                                                               |                 0 |                1 |
+| Calcium Chloride Dihydrate                                                                           |                 0 |                4 |
+| Perampanel                                                                                           |                 0 |                2 |
+| Cyanocobalamin, Folic Acid                                                                           |                 0 |                1 |
+| Sodium Citrate                                                                                       |                 0 |                1 |
+| Eprosartan Mesilate, Hydrochlorothiazide                                                             |                 0 |                1 |
+| Trimetazidine Dihydrochloride                                                                        |                 0 |                2 |
+| Glycopyrronium Bromide, Neostigmine Methylsulfate                                                    |                 0 |                1 |
+| Lenvatinib                                                                                           |                 0 |                1 |
+| Aprepitant                                                                                           |                 0 |                3 |
+| Mitoxantrone                                                                                         |                 0 |                1 |
+| Carbon Dioxide                                                                                       |                 0 |                1 |
+| Poractant Alfa                                                                                       |                 0 |                1 |
+| Dexamethasone Isonicotinate, Tramazoline Hydrochloride                                               |                 0 |                1 |
+| Etoricoxib                                                                                           |                 0 |                7 |
+| Verapamil Hydrochloride                                                                              |                 0 |                1 |
+| Human Cytomegalovirus Immunoglobulin                                                                 |                 0 |                1 |
+| Azelastine Hydrochloride, Fluticasone Propionate                                                     |                 0 |                6 |
+| Neomycin, Nystatin, Triamcinolone Acetonide                                                          |                 0 |                1 |
+| Cefuroxime Axetil                                                                                    |                 0 |                5 |
+| Propofol                                                                                             |                 0 |                4 |
+| Dihydroergotamine Mesilate                                                                           |                 0 |                1 |
+| Tamsulosin Hydrochloride                                                                             |                 0 |                7 |
+| Fish Oil (Omega-3 Polyunsaturated Fatty Acids): Epa 17%, Dha 10%, Dpa 3%                             |                 0 |                1 |
+| Hyoscyamus Oil                                                                                       |                 0 |                1 |
+| Choline Salicylate, Cetalkonium Chloride                                                             |                 0 |                1 |
+| Ranolazine                                                                                           |                 0 |               10 |
+| Doconexent, Eicosapentanoic Acid/Docosahexaenoic Acid                                                |                 0 |                1 |
+| Tetrofosmin                                                                                          |                 0 |                3 |
+| Flurbiprofen Ph. Eur.                                                                                |                 0 |                1 |
+| Alendronate Sodium                                                                                   |                 0 |                1 |
+| Medronate Tetrasodium                                                                                |                 0 |                1 |
+| Botulinum Toxin Type A - Haemagglutinin Complex                                                      |                 0 |                4 |
+| Oxymetazoline Hydrochloride                                                                          |                 0 |                3 |
+| Citalopram Hydrochloride                                                                             |                 0 |               14 |
+| Salbutamol                                                                                           |                 0 |                2 |
+| Dry Extract Passion Flower (5-7:1), Extraction Solvent: Ethanol 60% V/V                              |                 0 |                1 |
+| Tiotropium Bromide Monohydrate                                                                       |                 0 |                2 |
+| Gadobenate Dimeglumine                                                                               |                 0 |                1 |
+| Isosorbide Dinitrate                                                                                 |                 0 |                1 |
+| Amlodipine Besilate, Nebivolol Hydrochloride                                                         |                 0 |                1 |
+| Methotrexate                                                                                         |                 0 |                9 |
+| Calcium Carbonate                                                                                    |                 0 |                2 |
+| Pentostatin                                                                                          |                 0 |                1 |
+| Colistin Mesilate Sodium                                                                             |                 0 |                1 |
+| Sodium Chloride, Glucose Monohydrate                                                                 |                 0 |                6 |
+| Epoetin Alfa                                                                                         |                 0 |                2 |
+| Triflusal                                                                                            |                 0 |                1 |
+| Glycine, Calcium Carbonate                                                                           |                 0 |                1 |
+| Lavender Oil                                                                                         |                 0 |                1 |
+| Apomorphine Hydrochloride Hemihydrate                                                                |                 0 |                5 |
+| Mirabegron                                                                                           |                 0 |                4 |
+| Carbomer                                                                                             |                 0 |                2 |
+| Poliovirus (Inactivated) Type 3 (Saukett Strain), Pertussis Filamentous Haemagglutinin Adsorbed On A |                 0 |                1 |
+| Desvenlafaxine                                                                                       |                 0 |                1 |
+| Solifenacin                                                                                          |                 0 |                1 |
+| Etidronate Disodium                                                                                  |                 0 |                2 |
+| Vecuronium Bromide                                                                                   |                 0 |                1 |
+| Human Coagulation Factor Viii                                                                        |                 0 |                2 |
+| Lidocaine, Tribenoside                                                                               |                 0 |                1 |
+| Azathioprine                                                                                         |                 0 |                2 |
+| Neomycin Sulfate, Catalase                                                                           |                 0 |                1 |
+| Promethazine Hydrochloride                                                                           |                 0 |                4 |
+| Dienogest, Estradiol Valerate                                                                        |                 0 |                1 |
+| Tamarind Extract, Senna Leaf Powder, Cassia Pulp Extract, Coriander Fruit Powder                     |                 0 |                1 |
+| Fingolimod                                                                                           |                 0 |                8 |
+| Hydroxyzine Hydrochloride                                                                            |                 0 |                3 |
+| Magnesium                                                                                            |                 0 |                3 |
+| Betaine Citrate                                                                                      |                 0 |                1 |
+| Octenidine Dihydrochloride, Phenoxyethanol                                                           |                 0 |                2 |
+| Chlorpromazine Hydrochloride                                                                         |                 0 |                2 |
+| Dl-Alpha Tocopherol Acetate                                                                          |                 0 |                1 |
+| Tetracycline Hydrochloride                                                                           |                 0 |                3 |
+| Indometacin                                                                                          |                 0 |                2 |
+| Afatinib                                                                                             |                 0 |                1 |
+| Oxycodone Hydrochloride                                                                              |                 0 |                1 |
+| Cisplatin                                                                                            |                 0 |                2 |
+| Roxithromycin                                                                                        |                 0 |                9 |
+| Dry Extract Of Passionflower Herb (Der 4 -6: 1), Extraction Solvent: Ethanol 70% V/V                 |                 0 |                1 |
+| Tioconazole                                                                                          |                 0 |                2 |
+| Fusidic Acid, Hydrocortisone Acetate                                                                 |                 0 |                3 |
+| Isoprenaline Hydrochloride                                                                           |                 0 |                1 |
+| Amlodipine                                                                                           |                 0 |               24 |
+| Metformin Hydrochloride, Sitagliptin Hydrochloride Monohydrate                                       |                 0 |                1 |
+| Calcitriol                                                                                           |                 0 |                1 |
+| Pemetrexed                                                                                           |                 0 |                4 |
+| Colecalciferol, Calcium                                                                              |                 0 |                4 |
+| Sitagliptin, Dapagliflozin                                                                           |                 0 |                1 |
+| Epinephrine, Lidocaine Hydrochloride                                                                 |                 0 |                1 |
+| Trientine Dihydrochloride                                                                            |                 0 |                1 |
+| Glucose, Anhydrous, Sodium Hydrogen Carbonate, Magnesium Chloride Hexahydrate, Potassium Chloride, S |                 0 |                2 |
+| Minocycline                                                                                          |                 0 |                1 |
+| Carbocisteine                                                                                        |                 0 |                5 |
+| Pitavastatin Calcium                                                                                 |                 0 |                1 |
+| Desmopressin Acetate                                                                                 |                 0 |                1 |
+| Sodium Picosulfate, Magnesium Oxide, Light, Citric Acid                                              |                 0 |                4 |
+| Ethinylestradiol, Etonogestrel                                                                       |                 0 |                1 |
+| Varicella Virus Oka Strain, (Live, Attenuated) Produced In Human Diploid (Mrc-5) Cells               |                 0 |                1 |
+| Human Chorionic Gonadotropin                                                                         |                 0 |                1 |
+| Avena Sativa D2, Passiflora Incarnata D2, Zincum Isovalerianicum D4, Coffea Arabica D12              |                 0 |                1 |
+| Naratriptan                                                                                          |                 0 |                1 |
+| Ceftazidime Pentahydrate                                                                             |                 0 |                2 |
+| Progesterone                                                                                         |                 0 |               11 |
+| Diclofenac Sodium, Omeprazole                                                                        |                 0 |                1 |
+| Tacrolimus Monohydrate                                                                               |                 0 |                2 |
+| Fesoterodine Fumarate                                                                                |                 0 |                1 |
+| Hydroxycarbamide                                                                                     |                 0 |                1 |
+| Macitentan                                                                                           |                 0 |                3 |
+| Benzylpenicillin Sodium                                                                              |                 0 |                1 |
+| Nystatin, Metronidazole                                                                              |                 0 |                1 |
+| Tetanus Toxoid Adsorbed On Aluminium Hydroxide, Hydrated, Diphtheria Toxoid Adsorbed On Aluminium Hy |                 0 |                1 |
+| Fluorouracil                                                                                         |                 0 |                4 |
+| Indium (111in)                                                                                       |                 0 |                1 |
+| Adapalene, Anhydrous Benzoyl Peroxide                                                                |                 0 |                1 |
+| Bisoprolol Fumarate, Ramipril                                                                        |                 0 |                1 |
+| Ciprofloxacin, Fluocinolone                                                                          |                 0 |                1 |
+| Ropivacaine Hydrochloride Monohydrate                                                                |                 0 |                2 |
+| Dry Extract From Rubus Idaeus (3-5:1): Extraction Solvent: Water                                     |                 0 |                1 |
+| Timolol, Travoprost                                                                                  |                 0 |                4 |
+| Isoconazole Nitrate                                                                                  |                 0 |                1 |
+| Amiodarone Hydrochloride                                                                             |                 0 |                2 |
+| Metformin Hydrochloride, Pioglitazone                                                                |                 0 |                1 |
+| Calcipotriol                                                                                         |                 0 |                1 |
+| Pazopanib                                                                                            |                 0 |                2 |
+| Colchicine                                                                                           |                 0 |                5 |
+| Simvastatin, Ezetimibe                                                                               |                 0 |               12 |
+| Epinastine Hydrochloride                                                                             |                 0 |                2 |
+| Glucose                                                                                              |                 0 |                3 |
+| Lanolin, Liquid Paraffin                                                                             |                 0 |                1 |
+| Anhydrous Zoledronic Acid                                                                            |                 0 |                1 |
+| Midodrine Hydrochloride                                                                              |                 0 |                1 |
+| Carbamazepine                                                                                        |                 0 |                1 |
+| Piroxicam Betadex                                                                                    |                 0 |                2 |
+| Desflurane                                                                                           |                 0 |                1 |
+| Sodium Oxybate                                                                                       |                 0 |                1 |
+| Ethanol (96 Per Cent)                                                                                |                 0 |                1 |
+| Valsartan, Sacubitril                                                                                |                 0 |                1 |
+| Human Albumin Solution                                                                               |                 0 |                2 |
+| Lidocaine Hydrochloride Monohydrate                                                                  |                 0 |                1 |
+| Atovaquone                                                                                           |                 0 |                2 |
+| Naproxen                                                                                             |                 0 |                3 |
+| Cefpodoxime Proxetil                                                                                 |                 0 |                1 |
+| Prednisolone Sodium Phosphate Ph. Eur.                                                               |                 0 |                1 |
+| Diclofenac Epolamine                                                                                 |                 0 |                2 |
+| Sunitinib                                                                                            |                 0 |                5 |
+| Ferrous Gluconate                                                                                    |                 0 |               22 |
+| Zuclopenthixol Acetate                                                                               |                 0 |                1 |
+| Hydrogen Peroxide                                                                                    |                 0 |                2 |
+| Benzydamine Hydrochloride                                                                            |                 0 |                6 |
+| Norethisterone Acetate, Estradiol                                                                    |                 0 |                1 |
+| Chlorphenamine Maleate, Paracetamol                                                                  |                 0 |                2 |
+| Ramipril, Acetylsalicylic Acid, Atorvastatin Calcium Trihydrate                                      |                 0 |                1 |
+| Diphtheria Toxoid, Tetanus Toxoid, Pertussis Toxoid, Pertussis Filamentous Haemagglutinin, Pertussis |                 0 |                1 |
+| Testosterone                                                                                         |                 0 |                2 |
 | Indapamide, Amlodipine Besilate, Perindopril Arginine                                                |                 0 |                2 |
 | Manidipine Dihydrochloride                                                                           |                 0 |                3 |
 | Bisoprolol Fumarate, Amlodipine                                                                      |                 0 |                1 |
@@ -161,8 +513,7 @@
 | Nitrous Oxide, Oxygen                                                                                |                 0 |                2 |
 | Chloroquine Phosphate                                                                                |                 0 |                1 |
 | Raloxifene Hydrochloride                                                                             |                 0 |                1 |
-| Diphtheria Toxoid, Tetanus Toxoid, Pertussis Toxoid, Pertussis Filamentous Haemagglutinin, Pertussis |                 0 |                1 |
-| Testosterone                                                                                         |                 0 |                2 |
+| Fluorescein Sodium                                                                                   |                 0 |                1 |
 | Imiquimod                                                                                            |                 0 |                2 |
 | Acetylsalicylic Acid, Aluminium Hydroxide Gel, Dried, Magnesium Hydroxide                            |                 0 |                1 |
 | Magnesium Sulfate Heptahydrate, Sodium Sulfate Anhydrous, Potassium Sulphate                         |                 0 |                1 |
@@ -207,7 +558,7 @@
 | Rabeprazole Sodium                                                                                   |                 0 |                4 |
 | Diphenhydramine Hydrochloride, Paracetamol                                                           |                 0 |                1 |
 | Teriflunomide                                                                                        |                 0 |               10 |
-| Fluorescein Sodium                                                                                   |                 0 |                1 |
+| Iloprost Trometamol                                                                                  |                 0 |                1 |
 | Acetylcholine Chloride                                                                               |                 0 |                1 |
 | Magnesium Pidolate                                                                                   |                 0 |                3 |
 | Biperiden Hydrochloride                                                                              |                 0 |                1 |
@@ -252,7 +603,7 @@
 | Diosmin                                                                                              |                 0 |                1 |
 | Terbinafine                                                                                          |                 0 |                7 |
 | Fluocinolone Acetonide, Lidocaine Hydrochloride                                                      |                 0 |                1 |
-| Iloprost Trometamol                                                                                  |                 0 |                1 |
+| Idarubicin Hydrochloride                                                                             |                 0 |                2 |
 | Acetazolamide                                                                                        |                 0 |                1 |
 | Magnesium Hydroxide, Aluminium Hydroxide                                                             |                 0 |                2 |
 | Bilastine                                                                                            |                 0 |                4 |
@@ -296,7 +647,8 @@
 | Pyridostigmine Bromide                                                                               |                 0 |                1 |
 | Dimetindene Maleate, Phenylephrine                                                                   |                 0 |                1 |
 | Flumazenil                                                                                           |                 0 |                4 |
-| Idarubicin Hydrochloride                                                                             |                 0 |                2 |
+| Aceclofenac                                                                                          |                 0 |                6 |
+| Magnesium Citrate, Magnesium Oxide                                                                   |                 0 |                2 |
 | Betiatide                                                                                            |                 0 |                1 |
 | Olmesartan Medoxomil, Hydrochlorothiazide                                                            |                 0 |                5 |
 | Cilazapril, Hydrochlorothiazide                                                                      |                 0 |                1 |
@@ -341,8 +693,8 @@
 | Technetium (99mtc)                                                                                   |                 0 |                1 |
 | Fludrocortisone Acetate                                                                              |                 0 |                1 |
 | Ibuprofen, Codeine Phosphate Hemihydrate                                                             |                 0 |                1 |
-| Aceclofenac                                                                                          |                 0 |                6 |
-| Magnesium Citrate, Magnesium Oxide                                                                   |                 0 |                2 |
+| Abacavir                                                                                             |                 0 |                1 |
+| Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Sodium Acetate Trihydrate       |                 0 |                1 |
 | Betamethasone Valerate, Gentamicin Sulfate                                                           |                 0 |                1 |
 | Olmesartan Medoxomil, Amlodipine                                                                     |                 0 |               12 |
 | Cilastatin, Imipenem                                                                                 |                 0 |                1 |
@@ -387,8 +739,6 @@
 | Tapentadol Hydrochloride                                                                             |                 0 |                4 |
 | Fluconazole                                                                                          |                 0 |               52 |
 | Ibuprofen Lysine                                                                                     |                 0 |                1 |
-| Abacavir                                                                                             |                 0 |                1 |
-| Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Sodium Acetate Trihydrate       |                 0 |                1 |
 | Ciclopirox Olamine                                                                                   |                 0 |                3 |
 | Retinol Palmitate                                                                                    |                 0 |                1 |
 | Donepezil Hydrochloride                                                                              |                 0 |               31 |
@@ -431,6 +781,7 @@
 | Flecainide Acetate                                                                                   |                 0 |                5 |
 | Ibandronic Acid                                                                                      |                 0 |                5 |
 | Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Calcium Chloride Dihydrate, Sod |                 0 |                3 |
+| Ofloxacin                                                                                            |                 0 |                2 |
 | Rasagiline Tartrate                                                                                  |                 0 |                3 |
 | Doconexent, Vitamin D, Icosapent, Retinol                                                            |                 0 |                1 |
 | Thallium (201tl) Chloride                                                                            |                 0 |                1 |
@@ -471,7 +822,7 @@
 | Fish Oil                                                                                             |                 0 |                2 |
 | Hyoscine Butylbromide                                                                                |                 0 |                3 |
 | Magnesium Aspartate Dihydrate, Magnesium Citrate                                                     |                 0 |                8 |
-| Ofloxacin                                                                                            |                 0 |                2 |
+| Ranitidine Hydrochloride                                                                             |                 0 |                9 |
 | Docetaxel                                                                                            |                 0 |                6 |
 | Tetrafluoroborate                                                                                    |                 0 |                1 |
 | Flurbiprofen                                                                                         |                 0 |                7 |
@@ -515,7 +866,8 @@
 | Magaldrate Anhydrous                                                                                 |                 0 |                1 |
 | Betahistine Mesilate                                                                                 |                 0 |                2 |
 | Octenidine Dihydrochloride, Isopropyl Alcohol, Propanol                                              |                 0 |                1 |
-| Ranitidine Hydrochloride                                                                             |                 0 |                9 |
+| Ramipril, Rosuvastatin                                                                               |                 0 |                1 |
+| Disodium Phosphate Dodecahydrate, Sodium Dihydrogen Phosphate Dihydrate                              |                 0 |                6 |
 | Tetracaine Hydrochloride                                                                             |                 0 |                1 |
 | Fluoxetine                                                                                           |                 0 |                8 |
 | Indium In-111 Pentetreotide                                                                          |                 0 |                1 |
@@ -557,8 +909,8 @@
 | Benzyl Benzoate                                                                                      |                 0 |                1 |
 | Nystatin                                                                                             |                 0 |                1 |
 | Chlorphenamine Maleate, Sodium Cromoglicate                                                          |                 0 |                3 |
-| Ramipril, Rosuvastatin                                                                               |                 0 |                1 |
-| Disodium Phosphate Dodecahydrate, Sodium Dihydrogen Phosphate Dihydrate                              |                 0 |                6 |
+| Dipotassium Clorazepate                                                                              |                 0 |                1 |
+| Testosterone Undecanoate                                                                             |                 0 |                1 |
 | Fluorothymidine F-18                                                                                 |                 0 |                1 |
 | Indigo Carmine                                                                                       |                 0 |                1 |
 | Adapalene                                                                                            |                 0 |                1 |
@@ -600,8 +952,7 @@
 | Norepinephrine                                                                                       |                 0 |                1 |
 | Chlorphenamine Maleate                                                                               |                 0 |                3 |
 | Ramipril                                                                                             |                 0 |                3 |
-| Dipotassium Clorazepate                                                                              |                 0 |                1 |
-| Testosterone Undecanoate                                                                             |                 0 |                1 |
+| Fluoride                                                                                             |                 0 |                1 |
 | Indapamide                                                                                           |                 0 |                1 |
 | Acetylsalicylic Acid, Rosuvastatin Calcium                                                           |                 0 |                1 |
 | Bisoprolol Fumarate, Acetylsalicylic Acid                                                            |                 0 |                2 |
@@ -645,7 +996,7 @@
 | Racementhol, Eucalyptus Oil, Methyl Salicylate, Turpentine Oil                                       |                 0 |                1 |
 | Diphtheria Toxoid, Tetanus Toxoid, Haemophilus Type B Conjugate Vaccine (Tetanus Toxoid Conjugate),  |                 0 |                1 |
 | Terlipressin Acetate                                                                                 |                 0 |                1 |
-| Fluoride                                                                                             |                 0 |                1 |
+| Fluocortolone Pivalate, Anhydrous Lidocaine Hydrochloride                                            |                 0 |                1 |
 | Imatinib Mesilate                                                                                    |                 0 |                1 |
 | Acetylsalicylic Acid                                                                                 |                 0 |                3 |
 | Magnesium Sulfate Heptahydrate                                                                       |                 0 |                2 |
@@ -689,7 +1040,7 @@
 | Chlorhexidine Gluconate, Lidocaine                                                                   |                 0 |                1 |
 | Diosmin, Micronized                                                                                  |                 0 |                1 |
 | Terebinthina Laricina, Terebinthinae Aetheroleum Rectificatum                                        |                 0 |                1 |
-| Fluocortolone Pivalate, Anhydrous Lidocaine Hydrochloride                                            |                 0 |                1 |
+| Iloprost                                                                                             |                 0 |                1 |
 | Acetic Acid, Glacial, Sodium Hydrogen Carbonate, Magnesium Chloride Hexahydrate, Potassium Chloride, |                 0 |                1 |
 | Magnesium Oxide                                                                                      |                 0 |                8 |
 | Bimatoprost                                                                                          |                 0 |                5 |
@@ -736,7 +1087,7 @@
 | Diosmectite                                                                                          |                 0 |                1 |
 | Terazosin                                                                                            |                 0 |                1 |
 | Fluocinolone Acetonide                                                                               |                 0 |                1 |
-| Iloprost                                                                                             |                 0 |                1 |
+| Icosapent Ethyl, Docosahexaenoic Acid Ethyl Ester                                                    |                 0 |                2 |
 | Acenocoumarol                                                                                        |                 0 |                1 |
 | Magnesium Hydroxide                                                                                  |                 0 |                1 |
 | Bifonazole                                                                                           |                 0 |                1 |
@@ -779,7 +1130,8 @@
 | Pyrazinamide                                                                                         |                 0 |                1 |
 | Dimetindene Maleate                                                                                  |                 0 |                6 |
 | Fluid Extract From Ivy Leaves (1:1), Extracting Agent: Ethanol 70% (V/V), Liquid Extract From Thyme  |                 0 |                1 |
-| Icosapent Ethyl, Docosahexaenoic Acid Ethyl Ester                                                    |                 0 |                2 |
+| Abiraterone Acetate                                                                                  |                 0 |               12 |
+| Magnesium Chloride Hexahydrate, Sodium Chloride, Calcium Chloride Dihydrate, Glucose Monohydrate, So |                 0 |                9 |
 | Betaxolol Hydrochloride                                                                              |                 0 |                3 |
 | Olmesartan Medoxomil, Amlodipine, Hydrochlorothiazide                                                |                 0 |                8 |
 | Cilazapril Monohydrate                                                                               |                 0 |                1 |
@@ -823,8 +1175,8 @@
 | Tauroselcholic Acid Se-75                                                                            |                 0 |                1 |
 | Fludeoxyglucose (18f)                                                                                |                 0 |                4 |
 | Ibuprofen, Caffeine                                                                                  |                 0 |                1 |
-| Abiraterone Acetate                                                                                  |                 0 |               12 |
-| Magnesium Chloride Hexahydrate, Sodium Chloride, Calcium Chloride Dihydrate, Glucose Monohydrate, So |                 0 |                9 |
+| Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Glucose, Sodium Acetate Trihydr |                 0 |                1 |
+| Betamethasone Valerate, Fusidic Acid                                                                 |                 0 |                6 |
 | Olmesartan Medoxomil                                                                                 |                 0 |                7 |
 | Cilastatin Sodium, Imipenem Monohydrate                                                              |                 0 |                3 |
 | Retinol Palmitate, Ergocalciferol, Phytomenadione, Dl-Alpha-Tocopherol                               |                 0 |                2 |
@@ -868,8 +1220,8 @@
 | Flucloxacillin Sodium Monohydrate                                                                    |                 0 |                2 |
 | Ibuprofen                                                                                            |                 0 |               16 |
 | 3,3-Diphosphono-1,2-Propanedicarboxylic Acid, Tetrasodium Salt (Dpd)                                 |                 0 |                1 |
-| Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Glucose, Sodium Acetate Trihydr |                 0 |                1 |
-| Betamethasone Valerate, Fusidic Acid                                                                 |                 0 |                6 |
+| Betamethasone Dipropionate, Betamethasone Sodium Phosphate                                           |                 0 |                1 |
+| Olanzapine Micronized                                                                                |                 0 |                2 |
 | Ciclopirox                                                                                           |                 0 |                1 |
 | Repaglinide                                                                                          |                 0 |                1 |
 | Donepezil                                                                                            |                 0 |                2 |
@@ -914,8 +1266,8 @@
 | Flecainide                                                                                           |                 0 |                1 |
 | Hypromellose                                                                                         |                 0 |                2 |
 | Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Calcium Chloride Dihydrate, Glu |                 0 |                1 |
-| Betamethasone Dipropionate, Betamethasone Sodium Phosphate                                           |                 0 |                1 |
-| Olanzapine Micronized                                                                                |                 0 |                2 |
+| Choline Theophyllinate                                                                               |                 0 |                1 |
+| Rasagiline                                                                                           |                 0 |                4 |
 | Tetryzoline Hydrochloride                                                                            |                 0 |                1 |
 | Flurbiprofen Sodium                                                                                  |                 0 |                1 |
 | Insulin Human (Rdna)                                                                                 |                 0 |               10 |
@@ -958,8 +1310,8 @@
 | Magnesium Aspartate Dihydrate                                                                        |                 0 |                3 |
 | Betamethasone                                                                                        |                 0 |                1 |
 | Octreotide                                                                                           |                 0 |                3 |
-| Choline Theophyllinate                                                                               |                 0 |                1 |
-| Rasagiline                                                                                           |                 0 |                4 |
+| Chlortalidone                                                                                        |                 0 |                2 |
+| Ranitidine                                                                                           |                 0 |                7 |
 | Dobutamine                                                                                           |                 0 |                2 |
 | Tetracycline Hydrochloride, Metronidazole Benzoate, Tripotassium Dicitratobismuthate                 |                 0 |                1 |
 | Fluprednidene Acetate, Miconazole Nitrate                                                            |                 0 |               15 |
@@ -1000,8 +1352,8 @@
 | Macrogol 4000                                                                                        |                 0 |                3 |
 | Betahistine Dihydrochloride                                                                          |                 0 |                4 |
 | O-(ß-Hydroxyethyl)rutosides                                                                          |                 0 |                1 |
-| Chlortalidone                                                                                        |                 0 |                2 |
-| Ranitidine                                                                                           |                 0 |                7 |
+| Dipyridamole                                                                                         |                 0 |                1 |
+| Tetrabenazine                                                                                        |                 0 |                2 |
 | Indium (111in) Pentetate, Calcium Trisodium Pentetate                                                |                 0 |                1 |
 | Adapalene, Benzoyl Peroxide                                                                          |                 0 |                4 |
 | Measles Virus Schwarz Strain (Live, Attenuated), Mumps Virus Rit 4385 Strain (Live, Attenuated) Deri |                 0 |                1 |
@@ -1041,8 +1393,8 @@
 | Benzydamine Hydrochloride, Cetylpyridinium Chloride Monohydrate                                      |                 0 |                1 |
 | Chlorphenamine Maleate, Pseudoephedrine Hydrochloride, Paracetamol                                   |                 0 |                1 |
 | Ramipril, Felodipine                                                                                 |                 0 |                1 |
-| Dipyridamole                                                                                         |                 0 |                1 |
-| Tetrabenazine                                                                                        |                 0 |                2 |
+| Diphtheria Toxoid, Tetanus Toxoid, Pertussis Toxoid, Pertussis Filamentous Haemagglutinin, Polioviru |                 0 |                1 |
+| Testosterone Enantate                                                                                |                 0 |                1 |
 | Fluorometholone                                                                                      |                 0 |                2 |
 | Indapamide, Perindopril Arginine                                                                     |                 0 |                2 |
 | Aciclovir, Hydrocortisone                                                                            |                 0 |                1 |
@@ -1088,8 +1440,7 @@
 | Noradrenaline Tartrate                                                                               |                 0 |                3 |
 | Chloroxylenol                                                                                        |                 0 |                1 |
 | Raltegravir                                                                                          |                 0 |                1 |
-| Diphtheria Toxoid, Tetanus Toxoid, Pertussis Toxoid, Pertussis Filamentous Haemagglutinin, Polioviru |                 0 |                1 |
-| Testosterone Enantate                                                                                |                 0 |                1 |
+| Fluorescein Sodium, Lidocaine Hydrochloride                                                          |                 0 |                1 |
 | Immunoglobulin A, Immunoglobulin G, Immunoglobulin M                                                 |                 0 |                1 |
 | Acetylsalicylic Acid, Rosuvastatin                                                                   |                 0 |                1 |
 | Magnesium, Pyridoxine Hydrochloride                                                                  |                 0 |                1 |
@@ -1134,7 +1485,7 @@
 | Racecadotril                                                                                         |                 0 |                3 |
 | Diphtheria Toxoid, Tetanus Toxoid                                                                    |                 0 |                1 |
 | Teriparatide                                                                                         |                 0 |                2 |
-| Fluorescein Sodium, Lidocaine Hydrochloride                                                          |                 0 |                1 |
+| Fluocinonide                                                                                         |                 0 |                1 |
 | Imatinib                                                                                             |                 0 |                5 |
 | Acetylcysteine                                                                                       |                 0 |                5 |
 | Magnesium Sulfate                                                                                    |                 0 |                1 |
@@ -1177,355 +1528,4 @@
 | Quetiapine Fumarate                                                                                  |                 0 |                5 |
 | Diosmin, Hesperidin                                                                                  |                 0 |                7 |
 | Terbinafine Hydrochloride                                                                            |                 0 |               16 |
-| Fluocinonide                                                                                         |                 0 |                1 |
-| Acetic Acid                                                                                          |                 0 |                1 |
-| Magnesium L-Aspartate Hydrochloride Trihydrate                                                       |                 0 |                3 |
-| Bilastine Monohydrate                                                                                |                 0 |                1 |
-| Omega-3-Acid Ethyl Esters 90                                                                         |                 0 |                5 |
-| Cinacalcet Hydrochloride                                                                             |                 0 |                1 |
-| Risedronate Sodium                                                                                   |                 0 |               12 |
-| Doxycycline                                                                                          |                 0 |                2 |
-| Ticagrelor                                                                                           |                 0 |               13 |
-| Formoterol Fumarate Dihydrate                                                                        |                 0 |                3 |
-| Irinotecan Hydrochloride                                                                             |                 0 |                1 |
-| Aluminium Phosphate, Diphtheria Toxoid, Tetanus Toxoid, Pertussis Toxoid, Pertussis Filamentous Haem |                 0 |                2 |
-| Mequinol                                                                                             |                 0 |                1 |
-| Buprenorphine, Naloxone                                                                              |                 0 |                1 |
-| Paracetamol, Caffeine, Codeine Phosphate Hemihydrate                                                 |                 0 |                1 |
-| Clonidine Hydrochloride                                                                              |                 0 |                1 |
-| Sevelamer Carbonate                                                                                  |                 0 |                4 |
-| Tramadol Hydrochloride, Dexketoprofen                                                                |                 0 |                1 |
-| Ketotifen Hydrogen Fumarate                                                                          |                 0 |                7 |
-| Amoxicillin, Clavulanic Acid                                                                         |                 0 |                9 |
-| Metronidazole                                                                                        |                 0 |               15 |
-| Calcium, Lactic Acid, Magnesium, Sodium, Chloride Ion, Hydrogen Carbonate                            |                 0 |                1 |
-| Pimecrolimus                                                                                         |                 0 |                1 |
-| Danaparoid Sodium                                                                                    |                 0 |                1 |
-| Sodium Hydrogen Carbonate, Potassium Chloride, Sodium Chloride, Macrogol 3350                        |                 0 |                2 |
-| Escitalopram                                                                                         |                 0 |               10 |
-| Valine, Alanine, Arginine, Cysteine, Histidine, Isoleucine, Leucine, Methionine, Phenylalanine, Prol |                 0 |                1 |
-| Haloperidol Decanoate                                                                                |                 0 |                2 |
-| Ascorbic Acid, Paracetamol                                                                           |                 0 |                3 |
-| Mycobacterium Bovis, Danish Strain 1331                                                              |                 0 |                2 |
-| Cefazolin Sodium                                                                                     |                 0 |                1 |
-| Potassium Iodide, Sodium Iodide                                                                      |                 0 |                1 |
-| Dexketoprofen                                                                                        |                 0 |                4 |
-| Sulfadiazine Silver, Sodium Hyaluronate                                                              |                 0 |                3 |
-| Famotidine                                                                                           |                 0 |                6 |
-| Zidovudine                                                                                           |                 0 |                2 |
-| Hydrochlorothiazide, Irbesartan                                                                      |                 0 |                7 |
-| Loratadine, Pseudoephedrine Sulphate                                                                 |                 0 |                1 |
-| Beclometasone Dipropionate Anhydrous                                                                 |                 0 |                2 |
-| Nimesulide                                                                                           |                 0 |               25 |
-| Chloramphenicol, Dexamethasone                                                                       |                 0 |                1 |
-| Pyridoxine Hydrochloride                                                                             |                 0 |                1 |
-| Dinoprostone                                                                                         |                 0 |                2 |
-| Tenoxicam                                                                                            |                 0 |                7 |
-| Flunitrazepam                                                                                        |                 0 |                1 |
-| Bicalutamide                                                                                         |                 0 |               11 |
-| Olmesartan Medoxomil, Hydrochlorothiazide, Amlodipine Besilate                                       |                 0 |                1 |
-| Cilostazol                                                                                           |                 0 |                4 |
-| Rifaximin                                                                                            |                 0 |                1 |
-| Doxazosin                                                                                            |                 0 |                1 |
-| Thiocolchicoside, Paracetamol Ph. Eur.                                                               |                 0 |                2 |
-| Folic Acid, Ferric Hydroxide Polymaltose Complex                                                     |                 0 |                2 |
-| Alteplase                                                                                            |                 0 |                2 |
-| Menthol, Camphor, Eucalyptus Oil, Thymol, Turpentine Oil                                             |                 0 |                1 |
-| Bumetanide                                                                                           |                 0 |                2 |
-| Paracetamol                                                                                          |                 0 |               31 |
-| Clofarabine                                                                                          |                 0 |                2 |
-| Sertindole                                                                                           |                 0 |                1 |
-| Eltrombopag                                                                                          |                 0 |               12 |
-| Torasemide                                                                                           |                 0 |                3 |
-| Gemcitabine                                                                                          |                 0 |               10 |
-| Ketoprofen Lysine                                                                                    |                 0 |                3 |
-| Amoxicillin                                                                                          |                 0 |                1 |
-| Metoprolol Succinate                                                                                 |                 0 |                1 |
-| Calcium Gluconate Monohydrate                                                                        |                 0 |                2 |
-| Phenytoin                                                                                            |                 0 |                1 |
-| Dabigatran Etexilate Mesilate                                                                        |                 0 |                3 |
-| Sodium Hydrogen Carbonate, Calcium Carbonate, Sodium Alginate                                        |                 0 |                6 |
-| Erythromycin, Isotretinoin                                                                           |                 0 |                1 |
-| Valeriana Officinalis L. Root Ethanol Dry Extract, Humulus Lupulus Extractum Siccum                  |                 0 |                1 |
-| Haemophilus Influenzae Type B Polysaccharide (Polyribosylribitol Phosphate), Diphtheria Toxoid, Teta |                 0 |                1 |
-| Levocetirizine Dihydrochloride                                                                       |                 0 |                3 |
-| Ascorbic Acid, Colecalciferol, Cyanocobalamin, Folic Acid, Nicotinamide, Thiamine, Pantothenic Acid, |                 0 |                1 |
-| Moxonidine                                                                                           |                 0 |                2 |
-| Cefaclor                                                                                             |                 0 |                3 |
-| Potassium Hydrogen Carbonate, Betaine Hydrochloride                                                  |                 0 |                1 |
-| Dexamethasone, Levofloxacin                                                                          |                 0 |                1 |
-| Ezetimibe, Rosuvastatin Zinc                                                                         |                 0 |                1 |
-| Xylometazoline Hydrochloride, Dexpanthenol                                                           |                 0 |                3 |
-| Hydrochlorothiazide                                                                                  |                 0 |                2 |
-| Bacitracin, Papain, Lysozyme Hydrochloride                                                           |                 0 |                1 |
-| Niflumic Acid                                                                                        |                 0 |                1 |
-| Cetylpyridinium Chloride, Lidocaine Hydrochloride                                                    |                 0 |                1 |
-| Pseudoephedrine Hydrochloride, Paracetamol                                                           |                 0 |                3 |
-| Dimeticone, Magnesium Hydroxide, Aluminium Hydroxide                                                 |                 0 |                2 |
-| Teicoplanin                                                                                          |                 0 |                7 |
-| Fludrocortisone Acetate, Polymyxin B Sulfate, Lidocaine Hydrochloride                                |                 0 |                1 |
-| Ibuprofen, Paracetamol                                                                               |                 0 |                9 |
-| Acemetacin                                                                                           |                 0 |                1 |
-| Magnesium Glycerophosphate, Pyridoxine Hydrochloride                                                 |                 0 |                1 |
-| Betamethasone, Calcipotriol                                                                          |                 0 |                3 |
-| Olmesartan Medoxomil, Amlodipine Besilate                                                            |                 0 |                1 |
-| Cilazapril                                                                                           |                 0 |                1 |
-| Rhubarb Extract, Salicylic Acid                                                                      |                 0 |                1 |
-| Dorzolamide Hydrochloride                                                                            |                 0 |                4 |
-| Thiamine Hydrochloride, Cyanocobalamin, Pyridoxine Hydrochloride                                     |                 0 |               20 |
-| Folic Acid                                                                                           |                 0 |                4 |
-| Iopromide                                                                                            |                 0 |                1 |
-| Almotriptan                                                                                          |                 0 |                1 |
-| Memantine Hydrochloride, Donepezil Hydrochloride                                                     |                 0 |                2 |
-| Budesonide                                                                                           |                 0 |               63 |
-| Pantoprazole Sodium                                                                                  |                 0 |                2 |
-| Clioquinol, Fluocinolone Acetonide                                                                   |                 0 |                1 |
-| Sennae Folium                                                                                        |                 0 |                1 |
-| Econazole Nitrate, Triamcinolone Acetonide                                                           |                 0 |                1 |
-| Topiramate                                                                                           |                 0 |                4 |
-| Ganciclovir                                                                                          |                 0 |                2 |
-| Ivy Leaves, Dry Extract                                                                              |                 0 |                1 |
-| Amlodipine, Ramipril                                                                                 |                 0 |                2 |
-| Metoclopramide Hydrochloride                                                                         |                 0 |                2 |
-| Calcium Folinate Pentahydrate                                                                        |                 0 |                4 |
-| Phentermine, Topiramate                                                                              |                 0 |                1 |
-| Cytisinicline                                                                                        |                 0 |                2 |
-| Sodium Hyaluronate                                                                                   |                 0 |                5 |
-| Ertapenem                                                                                            |                 0 |                1 |
-| Ursodeoxycholic Acid                                                                                 |                 0 |                3 |
-| Graphite                                                                                             |                 0 |                1 |
-| Levocabastine                                                                                        |                 0 |                2 |
-| Ascorbic Acid                                                                                        |                 0 |                1 |
-| Montelukast Sodium                                                                                   |                 0 |                6 |
-| Potassium Chloride, Sodium Chloride, Calcium Chloride Dihydrate, Sodium Lactate                      |                 0 |                6 |
-| Dexamethasone Sodium Phosphate, Neomycin Sulfate                                                     |                 0 |                2 |
-| Spironolactone                                                                                       |                 0 |                1 |
-| Ezetimibe                                                                                            |                 0 |               16 |
-| Vortioxetine                                                                                         |                 0 |                6 |
-| Human Serum Albumin                                                                                  |                 0 |                7 |
-| Lisinopril                                                                                           |                 0 |                3 |
-| Bacillus Calmette-Guérin (Bcg), Tice                                                                 |                 0 |                1 |
-| Nicotine Resinate                                                                                    |                 0 |                4 |
-| Cetirizine Dihydrochloride                                                                           |                 0 |               11 |
-| Prulifloxacin                                                                                        |                 0 |                2 |
-| Dimethyl Fumarate                                                                                    |                 0 |               13 |
-| Taurine, Glycine, L-Tryptophan, L-Arginine, L-Histidine, L-Isoleucine, L-Leucine, L-Methionine, L-Pr |                 0 |                2 |
-| Fludarabine Phosphate                                                                                |                 0 |                2 |
-| Ibuprofen Sodium                                                                                     |                 0 |                1 |
-| Abacavir, Lamivudine                                                                                 |                 0 |                2 |
-| Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Sodium Acetate Trihydrate, Sodi |                 0 |                1 |
-| Ciclosporin                                                                                          |                 0 |                5 |
-| Retinol Palmitate, Ascorbic Acid, Biotin, Colecalciferol, Cyanocobalamin, Dexpanthenol, Folic Acid,  |                 0 |                1 |
-| Dopamine Hydrochloride                                                                               |                 0 |                3 |
-| Thiamine Hydrochloride                                                                               |                 0 |                1 |
-| Flutrimazole                                                                                         |                 0 |                1 |
-| Iohexol                                                                                              |                 0 |                2 |
-| Algeldrate, Inactivated Hepatitis A Virus (Gbm Strain)                                               |                 0 |                2 |
-| Brivudine                                                                                            |                 0 |                1 |
-| Clindamycin Phosphate                                                                                |                 0 |               20 |
-| Salmeterol Xinafoate                                                                                 |                 0 |                2 |
-| Ebastine                                                                                             |                 0 |                3 |
-| Tolterodine L-Tartrate                                                                               |                 0 |                1 |
-| Galantamine                                                                                          |                 0 |                7 |
-| Ivabradine Hydrochloride                                                                             |                 0 |                4 |
-| Amlodipine, Indapamide, Perindopril Arginine                                                         |                 0 |                1 |
-| Calcium Dobesilate                                                                                   |                 0 |                1 |
-| Pheniramine Maleate, Ascorbic Acid, Paracetamol                                                      |                 0 |                1 |
-| Cyclophosphamide Monohydrate                                                                         |                 0 |                2 |
-| Sodium Fluoride (18f)                                                                                |                 0 |                1 |
-| Ergotamine Tartrate, Anhydrous Caffeine                                                              |                 0 |                1 |
-| Tyrothricin                                                                                          |                 0 |                1 |
-| Gozetotide                                                                                           |                 0 |                1 |
-| Leuprorelin                                                                                          |                 0 |                3 |
-| Aripiprazole                                                                                         |                 0 |               14 |
-| Mometasone Furoate                                                                                   |                 0 |               15 |
-| Carmellose Sodium                                                                                    |                 0 |                1 |
-| Potassium Chloride, Glucose                                                                          |                 0 |                1 |
-| Dexamethasone Sodium Phosphate, Chloramphenicol                                                      |                 0 |                4 |
-| Sotalol Hydrochloride                                                                                |                 0 |                1 |
-| Exametazime                                                                                          |                 0 |                1 |
-| Vinorelbine                                                                                          |                 0 |                1 |
-| Human Normal Immunoglobulin                                                                          |                 0 |                4 |
-| Lipidosterolic Extract Of Serenoa Repens                                                             |                 0 |                1 |
-| Azithromycin Dihydrate                                                                               |                 0 |                4 |
-| Nevirapine                                                                                           |                 0 |                1 |
-| Celiprolol Hydrochloride                                                                             |                 0 |                2 |
-| Protamine Sulfate                                                                                    |                 0 |                1 |
-| Dimenhydrinate, Nicotinic Acid, Pyridoxine Hydrochloride                                             |                 0 |                1 |
-| Tanacetum Parthenium (L.) Schultz Bip.                                                               |                 0 |                1 |
-| Flucloxacillin                                                                                       |                 0 |                2 |
-| Ibandronic Acid Monosodium Salt, Monohydrate                                                         |                 0 |                1 |
-| Magnesium Chloride Hexahydrate, Potassium Chloride, Sodium Chloride, Glucose Monohydrate, Sodium Ace |                 0 |                1 |
-| Betamethasone Valerate                                                                               |                 0 |                4 |
-| Olmesartan                                                                                           |                 0 |                1 |
-| Ciclesonide                                                                                          |                 0 |                2 |
-| Remifentanil                                                                                         |                 0 |                3 |
-| Domperidone                                                                                          |                 0 |                3 |
-| Theophylline Anhydrous                                                                               |                 0 |                4 |
-| Fluticasone Propionate                                                                               |                 0 |               19 |
-| Iobitridol                                                                                           |                 0 |                2 |
-| Alendronic Acid, Colecalciferol                                                                      |                 0 |                5 |
-| Meglumine Amidotrizoate, Sodium Amidotrizoate                                                        |                 0 |                1 |
-| Brinzolamide, Brimonidine Tartrate                                                                   |                 0 |                1 |
-| Clidinium Bromide, Diazepam                                                                          |                 0 |                1 |
-| Salbutamol Sulfate, Ipratropium Bromide Monohydrate                                                  |                 0 |                1 |
-| Dydrogesterone                                                                                       |                 0 |                1 |
-| Tizanidine Hydrochloride                                                                             |                 0 |                1 |
-| Gadoteric Acid                                                                                       |                 0 |                5 |
-| Itopride Hydrochloride                                                                               |                 0 |                1 |
-| Amlodipine, Hydrochlorothiazide, Candesartan Cilexetil                                               |                 0 |                1 |
-| Methyl Aminolevulinate                                                                               |                 0 |                1 |
-| Calcium Chloride Dihydrate                                                                           |                 0 |                4 |
-| Perampanel                                                                                           |                 0 |                2 |
-| Cyanocobalamin, Folic Acid                                                                           |                 0 |                1 |
-| Sodium Citrate                                                                                       |                 0 |                1 |
-| Eprosartan Mesilate, Hydrochlorothiazide                                                             |                 0 |                1 |
-| Trimetazidine Dihydrochloride                                                                        |                 0 |                2 |
-| Glycopyrronium Bromide, Neostigmine Methylsulfate                                                    |                 0 |                1 |
-| Lenvatinib                                                                                           |                 0 |                1 |
-| Aprepitant                                                                                           |                 0 |                3 |
-| Mitoxantrone                                                                                         |                 0 |                1 |
-| Carbon Dioxide                                                                                       |                 0 |                1 |
-| Poractant Alfa                                                                                       |                 0 |                1 |
-| Dexamethasone Isonicotinate, Tramazoline Hydrochloride                                               |                 0 |                1 |
-| Etoricoxib                                                                                           |                 0 |                7 |
-| Verapamil Hydrochloride                                                                              |                 0 |                1 |
-| Human Cytomegalovirus Immunoglobulin                                                                 |                 0 |                1 |
-| Azelastine Hydrochloride, Fluticasone Propionate                                                     |                 0 |                6 |
-| Neomycin, Nystatin, Triamcinolone Acetonide                                                          |                 0 |                1 |
-| Cefuroxime Axetil                                                                                    |                 0 |                5 |
-| Propofol                                                                                             |                 0 |                4 |
-| Dihydroergotamine Mesilate                                                                           |                 0 |                1 |
-| Tamsulosin Hydrochloride                                                                             |                 0 |                7 |
-| Fish Oil (Omega-3 Polyunsaturated Fatty Acids): Epa 17%, Dha 10%, Dpa 3%                             |                 0 |                1 |
-| Hyoscyamus Oil                                                                                       |                 0 |                1 |
-| Betamethasone Dipropionate                                                                           |                 0 |                1 |
-| Olanzapine                                                                                           |                 0 |               34 |
-| Doconexent, Eicosapentanoic Acid/Docosahexaenoic Acid                                                |                 0 |                1 |
-| Tetrofosmin                                                                                          |                 0 |                3 |
-| Flurbiprofen Ph. Eur.                                                                                |                 0 |                1 |
-| Alendronate Sodium                                                                                   |                 0 |                1 |
-| Medronate Tetrasodium                                                                                |                 0 |                1 |
-| Botulinum Toxin Type A - Haemagglutinin Complex                                                      |                 0 |                4 |
-| Oxymetazoline Hydrochloride                                                                          |                 0 |                3 |
-| Citalopram Hydrochloride                                                                             |                 0 |               14 |
-| Salbutamol                                                                                           |                 0 |                2 |
-| Dry Extract Passion Flower (5-7:1), Extraction Solvent: Ethanol 60% V/V                              |                 0 |                1 |
-| Tiotropium Bromide Monohydrate                                                                       |                 0 |                2 |
-| Gadobenate Dimeglumine                                                                               |                 0 |                1 |
-| Isosorbide Dinitrate                                                                                 |                 0 |                1 |
-| Amlodipine Besilate, Nebivolol Hydrochloride                                                         |                 0 |                1 |
-| Methotrexate                                                                                         |                 0 |                9 |
-| Calcium Carbonate                                                                                    |                 0 |                2 |
-| Pentostatin                                                                                          |                 0 |                1 |
-| Colistin Mesilate Sodium                                                                             |                 0 |                1 |
-| Sodium Chloride, Glucose Monohydrate                                                                 |                 0 |                6 |
-| Epoetin Alfa                                                                                         |                 0 |                2 |
-| Triflusal                                                                                            |                 0 |                1 |
-| Glycine, Calcium Carbonate                                                                           |                 0 |                1 |
-| Lavender Oil                                                                                         |                 0 |                1 |
-| Apomorphine Hydrochloride Hemihydrate                                                                |                 0 |                5 |
-| Mirabegron                                                                                           |                 0 |                4 |
-| Carbomer                                                                                             |                 0 |                2 |
-| Poliovirus (Inactivated) Type 3 (Saukett Strain), Pertussis Filamentous Haemagglutinin Adsorbed On A |                 0 |                1 |
-| Desvenlafaxine                                                                                       |                 0 |                1 |
-| Solifenacin                                                                                          |                 0 |                1 |
-| Etidronate Disodium                                                                                  |                 0 |                2 |
-| Vecuronium Bromide                                                                                   |                 0 |                1 |
-| Human Coagulation Factor Viii                                                                        |                 0 |                2 |
-| Lidocaine, Tribenoside                                                                               |                 0 |                1 |
-| Azathioprine                                                                                         |                 0 |                2 |
-| Neomycin Sulfate, Catalase                                                                           |                 0 |                1 |
-| Promethazine Hydrochloride                                                                           |                 0 |                4 |
-| Dienogest, Estradiol Valerate                                                                        |                 0 |                1 |
-| Tamarind Extract, Senna Leaf Powder, Cassia Pulp Extract, Coriander Fruit Powder                     |                 0 |                1 |
-| Fingolimod                                                                                           |                 0 |                8 |
-| Hydroxyzine Hydrochloride                                                                            |                 0 |                3 |
-| Magnesium                                                                                            |                 0 |                3 |
-| Betaine Citrate                                                                                      |                 0 |                1 |
-| Octenidine Dihydrochloride, Phenoxyethanol                                                           |                 0 |                2 |
-| Choline Salicylate, Cetalkonium Chloride                                                             |                 0 |                1 |
-| Ranolazine                                                                                           |                 0 |               10 |
-| Dl-Alpha Tocopherol Acetate                                                                          |                 0 |                1 |
-| Tetracycline Hydrochloride                                                                           |                 0 |                3 |
-| Indometacin                                                                                          |                 0 |                2 |
-| Afatinib                                                                                             |                 0 |                1 |
-| Oxycodone Hydrochloride                                                                              |                 0 |                1 |
-| Cisplatin                                                                                            |                 0 |                2 |
-| Roxithromycin                                                                                        |                 0 |                9 |
-| Dry Extract Of Passionflower Herb (Der 4 -6: 1), Extraction Solvent: Ethanol 70% V/V                 |                 0 |                1 |
-| Tioconazole                                                                                          |                 0 |                2 |
-| Fusidic Acid, Hydrocortisone Acetate                                                                 |                 0 |                3 |
-| Isoprenaline Hydrochloride                                                                           |                 0 |                1 |
-| Amlodipine                                                                                           |                 0 |               24 |
-| Metformin Hydrochloride, Sitagliptin Hydrochloride Monohydrate                                       |                 0 |                1 |
-| Calcitriol                                                                                           |                 0 |                1 |
-| Pemetrexed                                                                                           |                 0 |                4 |
-| Colecalciferol, Calcium                                                                              |                 0 |                4 |
-| Sitagliptin, Dapagliflozin                                                                           |                 0 |                1 |
-| Epinephrine, Lidocaine Hydrochloride                                                                 |                 0 |                1 |
-| Trientine Dihydrochloride                                                                            |                 0 |                1 |
-| Glucose, Anhydrous, Sodium Hydrogen Carbonate, Magnesium Chloride Hexahydrate, Potassium Chloride, S |                 0 |                2 |
-| Minocycline                                                                                          |                 0 |                1 |
-| Carbocisteine                                                                                        |                 0 |                5 |
-| Pitavastatin Calcium                                                                                 |                 0 |                1 |
-| Desmopressin Acetate                                                                                 |                 0 |                1 |
-| Sodium Picosulfate, Magnesium Oxide, Light, Citric Acid                                              |                 0 |                4 |
-| Ethinylestradiol, Etonogestrel                                                                       |                 0 |                1 |
-| Varicella Virus Oka Strain, (Live, Attenuated) Produced In Human Diploid (Mrc-5) Cells               |                 0 |                1 |
-| Human Chorionic Gonadotropin                                                                         |                 0 |                1 |
-| Avena Sativa D2, Passiflora Incarnata D2, Zincum Isovalerianicum D4, Coffea Arabica D12              |                 0 |                1 |
-| Naratriptan                                                                                          |                 0 |                1 |
-| Ceftazidime Pentahydrate                                                                             |                 0 |                2 |
-| Progesterone                                                                                         |                 0 |               11 |
-| Diclofenac Sodium, Omeprazole                                                                        |                 0 |                1 |
-| Tacrolimus Monohydrate                                                                               |                 0 |                2 |
-| Fesoterodine Fumarate                                                                                |                 0 |                1 |
-| Hydroxycarbamide                                                                                     |                 0 |                1 |
-| Macitentan                                                                                           |                 0 |                3 |
-| Benzylpenicillin Sodium                                                                              |                 0 |                1 |
-| Nystatin, Metronidazole                                                                              |                 0 |                1 |
-| Chlorpromazine Hydrochloride                                                                         |                 0 |                2 |
-| Fluorouracil                                                                                         |                 0 |                4 |
-| Indium (111in)                                                                                       |                 0 |                1 |
-| Adapalene, Anhydrous Benzoyl Peroxide                                                                |                 0 |                1 |
-| Bisoprolol Fumarate, Ramipril                                                                        |                 0 |                1 |
-| Ciprofloxacin, Fluocinolone                                                                          |                 0 |                1 |
-| Ropivacaine Hydrochloride Monohydrate                                                                |                 0 |                2 |
-| Dry Extract From Rubus Idaeus (3-5:1): Extraction Solvent: Water                                     |                 0 |                1 |
-| Timolol, Travoprost                                                                                  |                 0 |                4 |
-| Isoconazole Nitrate                                                                                  |                 0 |                1 |
-| Amiodarone Hydrochloride                                                                             |                 0 |                2 |
-| Metformin Hydrochloride, Pioglitazone                                                                |                 0 |                1 |
-| Calcipotriol                                                                                         |                 0 |                1 |
-| Pazopanib                                                                                            |                 0 |                2 |
-| Colchicine                                                                                           |                 0 |                5 |
-| Simvastatin, Ezetimibe                                                                               |                 0 |               12 |
-| Epinastine Hydrochloride                                                                             |                 0 |                2 |
-| Glucose                                                                                              |                 0 |                3 |
-| Lanolin, Liquid Paraffin                                                                             |                 0 |                1 |
-| Anhydrous Zoledronic Acid                                                                            |                 0 |                1 |
-| Midodrine Hydrochloride                                                                              |                 0 |                1 |
-| Carbamazepine                                                                                        |                 0 |                1 |
-| Piroxicam Betadex                                                                                    |                 0 |                2 |
-| Desflurane                                                                                           |                 0 |                1 |
-| Sodium Oxybate                                                                                       |                 0 |                1 |
-| Ethanol (96 Per Cent)                                                                                |                 0 |                1 |
-| Valsartan, Sacubitril                                                                                |                 0 |                1 |
-| Human Albumin Solution                                                                               |                 0 |                2 |
-| Lidocaine Hydrochloride Monohydrate                                                                  |                 0 |                1 |
-| Atovaquone                                                                                           |                 0 |                2 |
-| Naproxen                                                                                             |                 0 |                3 |
-| Cefpodoxime Proxetil                                                                                 |                 0 |                1 |
-| Prednisolone Sodium Phosphate Ph. Eur.                                                               |                 0 |                1 |
-| Diclofenac Epolamine                                                                                 |                 0 |                2 |
-| Sunitinib                                                                                            |                 0 |                5 |
-| Ferrous Gluconate                                                                                    |                 0 |               22 |
-| Zuclopenthixol Acetate                                                                               |                 0 |                1 |
-| Hydrogen Peroxide                                                                                    |                 0 |                2 |
-| Benzydamine Hydrochloride                                                                            |                 0 |                6 |
-| Norethisterone Acetate, Estradiol                                                                    |                 0 |                1 |
-| Chlorphenamine Maleate, Paracetamol                                                                  |                 0 |                2 |
-| Ramipril, Acetylsalicylic Acid, Atorvastatin Calcium Trihydrate                                      |                 0 |                1 |
-| Tetanus Toxoid Adsorbed On Aluminium Hydroxide, Hydrated, Diphtheria Toxoid Adsorbed On Aluminium Hy |                 0 |                1 |
 +------------------------------------------------------------------------------------------------------+-------------------+------------------+
