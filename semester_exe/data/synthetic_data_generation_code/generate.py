@@ -161,7 +161,7 @@ def main():
 
     # 4b. Alexiou boost: inject 500+ extra ratings for the guaranteed Alexiou doctor
     print("\n[4b/5] Generating Alexiou boost data...")
-    boost_discharge_updates = gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types)
+    boost_discharge_updates = gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types, len(admissions))
     discharge_updates.extend(boost_discharge_updates)
 
     # 5. Generate load.sql

@@ -57,6 +57,27 @@ def gen_admissions(patients, dept_ids, dept_beds, ken_codes, icd10_codes):
                 admissions.append(adm_info)
                 discharge_updates.append(adm_info)
 
+    # --- Εξασφάλιση Q14 ---
+    # Create 6 admissions in 2024 and 6 in 2025 for a specific ICD code to ensure Q14 has results
+    q14_icd = icd10_codes[2]
+    q14_ken = ken_codes[2]
+    q14_dept, q14_bed = all_beds[0]
+    
+    for year in [2024, 2025]:
+        for m in range(6):
+            pat = patients[m % len(patients)] # Just use some existing patients
+            adm_date = date(year, m + 1, 10)
+            dis_date = adm_date + timedelta(days=3)
+            
+            idx = len(admissions) + 1
+            adm_rows.append((pat["amka"], q14_dept, q14_bed, q14_ken,
+                             str(adm_date), str(dis_date), q14_icd, q14_icd))
+            adm_info = {"id": idx, "patient": pat["amka"], "dept": q14_dept,
+                        "bed": q14_bed, "dis_date": dis_date, "icd_out": q14_icd,
+                        "adm_date": adm_date}
+            admissions.append(adm_info)
+            discharge_updates.append(adm_info)
+
     # --- Κύριος βρόχος νοσηλειών ---
     for i in range(q09_bed_idx, min(N_ADMISSIONS, len(all_beds))):
         dept, bed = all_beds[i]
@@ -277,6 +298,37 @@ def gen_prescriptions(admissions, doctors, drug_ids, patient_allergy_map=None, d
     prescribing_doctors = set() # (admission_id, doctor_amka)
     patient_allergy_map = patient_allergy_map or {}
     drug_substance_map = drug_substance_map or {}
+    
+    # --- Εξασφάλιση Q10 ---
+    # Inject high frequency co-prescribed pairs
+    # Sort drug ids so that d1 < d2 to match the p1.drug_id < p2.drug_id condition
+    sorted_drugs = sorted(drug_ids)
+    q10_pairs = [
+        (sorted_drugs[0], sorted_drugs[1], 18),
+        (sorted_drugs[2], sorted_drugs[3], 12),
+        (sorted_drugs[4], sorted_drugs[5], 7)
+    ]
+    for d1, d2, target_freq in q10_pairs:
+        count = 0
+        for adm in admissions:
+            if count >= target_freq:
+                break
+            patient_amka = adm["patient"]
+            allergies = patient_allergy_map.get(patient_amka, set())
+            d1_sub = drug_substance_map.get(d1, set())
+            d2_sub = drug_substance_map.get(d2, set())
+            
+            # Avoid duplicate pair for same admission, and avoid allergies
+            if not (d1_sub & allergies) and not (d2_sub & allergies):
+                doc = random.choice(doctors)
+                start = adm["adm_date"]
+                end = start + timedelta(days=7)
+                rows.append((adm["id"], patient_amka, doc["amka"], d1, "1 tab", "1/day", str(start), str(end)))
+                rows.append((adm["id"], patient_amka, doc["amka"], d2, "1 tab", "1/day", str(start), str(end)))
+                prescribing_doctors.add((adm["id"], doc["amka"]))
+                count += 1
+                
+    # --- Random prescriptions ---
     for i in range(N_PRESCRIPTIONS):
         adm = random.choice(admissions)
         doc = random.choice(doctors)
@@ -351,7 +403,7 @@ def gen_ratings(discharged, prescribing_doctors, procedure_doctors=None, lab_doc
                        ["admission_id", "doctor_AMKA", "medical_care_quality", "comment", "rated_at"], unique_dr)
 
 
-def gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types):
+def gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types, base_adm_count):
     """Append N_ALEXIOU_BOOST extra patients/admissions/ratings for the Alexiou doctor.
 
     All admissions are in the past and already discharged so that rating triggers pass.
@@ -366,7 +418,7 @@ def gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types):
     exam_code = lab_types[0][2]  # numeric exam_code
 
     # IDs for the new rows: they follow immediately after the baseline data
-    next_adm_id = N_ADMISSIONS + 1
+    next_adm_id = base_adm_count + 1
 
     patient_rows = []
     admission_rows = []
