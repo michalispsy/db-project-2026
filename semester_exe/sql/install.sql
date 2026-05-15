@@ -1,576 +1,576 @@
-DROP DATABASE IF EXISTS ygeiopolis;
-CREATE DATABASE ygeiopolis;
-USE ygeiopolis;
+drop database if exists ygeiopolis;
+create database ygeiopolis;
+use ygeiopolis;
 
--- Λεξικά και Βοηθητικοί Πίνακες
+-- λεξικά και βοηθητικοί πίνακες
 
-CREATE TABLE staff_types (
-    code VARCHAR(20),
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_staff_types PRIMARY KEY (code)
+create table staff_types (
+    code varchar(20),
+    name varchar(50) not null,
+    constraint pk_staff_types primary key (code)
 );
-INSERT INTO staff_types VALUES ('Doctor','Doctor'),('Nurse','Nurse'),('Admin','Admin');
+insert into staff_types values ('doctor','doctor'),('nurse','nurse'),('admin','admin');
 
-CREATE TABLE doctor_ranks (
-    code VARCHAR(30),
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_doctor_ranks PRIMARY KEY (code)
+create table doctor_ranks (
+    code varchar(30),
+    name varchar(50) not null,
+    constraint pk_doctor_ranks primary key (code)
 );
-INSERT INTO doctor_ranks VALUES
-    ('Resident','Resident'),('Junior Attending','Junior Attending'),
-    ('Senior Attending','Senior Attending'),('Director','Director');
+insert into doctor_ranks values
+    ('resident','resident'),('junior attending','junior attending'),
+    ('senior attending','senior attending'),('director','director');
 
-CREATE TABLE nurse_ranks (
-    code VARCHAR(30),
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_nurse_ranks PRIMARY KEY (code)
+create table nurse_ranks (
+    code varchar(30),
+    name varchar(50) not null,
+    constraint pk_nurse_ranks primary key (code)
 );
-INSERT INTO nurse_ranks VALUES
-    ('Nursing Assistant','Nursing Assistant'),
-    ('Registered Nurse','Registered Nurse'),
-    ('Head Nurse','Head Nurse');
+insert into nurse_ranks values
+    ('nursing assistant','nursing assistant'),
+    ('registered nurse','registered nurse'),
+    ('head nurse','head nurse');
 
-CREATE TABLE admin_roles (
-    code VARCHAR(30),
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_admin_roles PRIMARY KEY (code)
+create table admin_roles (
+    code varchar(30),
+    name varchar(50) not null,
+    constraint pk_admin_roles primary key (code)
 );
-INSERT INTO admin_roles VALUES
-    ('Billing Clerk','Billing Clerk'),('HR Officer','HR Officer'),
-    ('IT Support','IT Support'),('Receptionist','Receptionist'),
-    ('Records Clerk','Records Clerk'),('Secretary','Secretary'),
-    ('Supplies Manager','Supplies Manager');
+insert into admin_roles values
+    ('billing clerk','billing clerk'),('hr officer','hr officer'),
+    ('it support','it support'),('receptionist','receptionist'),
+    ('records clerk','records clerk'),('secretary','secretary'),
+    ('supplies manager','supplies manager');
 
-CREATE TABLE genders (
-    code VARCHAR(10),
-    name VARCHAR(20) NOT NULL,
-    CONSTRAINT pk_genders PRIMARY KEY (code)
+create table genders (
+    code varchar(10),
+    name varchar(20) not null,
+    constraint pk_genders primary key (code)
 );
-INSERT INTO genders VALUES ('M','Male'),('F','Female'),('Other','Other');
+insert into genders values ('m','male'),('f','female'),('other','other');
 
-CREATE TABLE insurance_providers (
-    code VARCHAR(30),
-    name VARCHAR(100) NOT NULL,
-    CONSTRAINT pk_insurance_providers PRIMARY KEY (code)
+create table insurance_providers (
+    code varchar(30),
+    name varchar(100) not null,
+    constraint pk_insurance_providers primary key (code)
 );
-INSERT INTO insurance_providers VALUES
-    ('Allianz','Allianz'),('EOPYY','EOPYY'),('Ethniki','Ethniki'),
-    ('Eurolife','Eurolife'),('Generali','Generali'),
-    ('Interamerican','Interamerican'),('MetLife','MetLife'),
-    ('Uninsured','Uninsured');
+insert into insurance_providers values
+    ('allianz','allianz'),('eopyy','eopyy'),('ethniki','ethniki'),
+    ('eurolife','eurolife'),('generali','generali'),
+    ('interamerican','interamerican'),('metlife','metlife'),
+    ('uninsured','uninsured');
 
-CREATE TABLE bed_types (
-    code VARCHAR(20),
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_bed_types PRIMARY KEY (code)
+create table bed_types (
+    code varchar(20),
+    name varchar(50) not null,
+    constraint pk_bed_types primary key (code)
 );
-INSERT INTO bed_types VALUES
-    ('Emergency','Emergency'),('ICU','ICU'),('Pediatric','Pediatric'),('Regular','Regular');
+insert into bed_types values
+    ('emergency','emergency'),('icu','icu'),('pediatric','pediatric'),('regular','regular');
 
-CREATE TABLE bed_statuses (
-    code VARCHAR(20),
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_bed_statuses PRIMARY KEY (code)
+create table bed_statuses (
+    code varchar(20),
+    name varchar(50) not null,
+    constraint pk_bed_statuses primary key (code)
 );
-INSERT INTO bed_statuses VALUES
-    ('Free','Available'),('Occupied','Occupied'),('Maintenance','Under Maintenance');
+insert into bed_statuses values
+    ('free','available'),('occupied','occupied'),('maintenance','under maintenance');
 
-CREATE TABLE urgency_levels (
-    `level` TINYINT,
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_urgency_levels PRIMARY KEY (`level`)
+create table urgency_levels (
+    `level` tinyint,
+    name varchar(50) not null,
+    constraint pk_urgency_levels primary key (`level`)
 );
-INSERT INTO urgency_levels VALUES
-    (1,'Immediate'),(2,'Emergent'),(3,'Urgent'),(4,'Less Urgent'),(5,'Non-Urgent');
+insert into urgency_levels values
+    (1,'immediate'),(2,'emergent'),(3,'urgent'),(4,'less urgent'),(5,'non-urgent');
 
-CREATE TABLE triage_outcomes (
-    code VARCHAR(20),
-    name VARCHAR(100) NOT NULL,
-    CONSTRAINT pk_triage_outcomes PRIMARY KEY (code)
+create table triage_outcomes (
+    code varchar(20),
+    name varchar(100) not null,
+    constraint pk_triage_outcomes primary key (code)
 );
-INSERT INTO triage_outcomes VALUES
-    ('Discharged','Discharged with instructions'),
-    ('Hospitalized','Referred for admission');
+insert into triage_outcomes values
+    ('discharged','discharged with instructions'),
+    ('hospitalized','referred for admission');
 
-CREATE TABLE shift_slots (
-    code VARCHAR(20),
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_shift_slots PRIMARY KEY (code)
+create table shift_slots (
+    code varchar(20),
+    name varchar(50) not null,
+    constraint pk_shift_slots primary key (code)
 );
-INSERT INTO shift_slots VALUES
-    ('Morning','Morning (07-15)'),('Afternoon','Afternoon (15-23)'),('Night','Night (23-07)');
+insert into shift_slots values
+    ('morning','morning (07-15)'),('afternoon','afternoon (15-23)'),('night','night (23-07)');
 
-CREATE TABLE shift_statuses (
-    code VARCHAR(20),
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_shift_statuses PRIMARY KEY (code)
+create table shift_statuses (
+    code varchar(20),
+    name varchar(50) not null,
+    constraint pk_shift_statuses primary key (code)
 );
-INSERT INTO shift_statuses VALUES
-    ('Scheduled','Scheduled'),('In Progress','In Progress'),
-    ('Completed','Completed'),('Cancelled','Cancelled'),('Understaffed','Understaffed');
+insert into shift_statuses values
+    ('scheduled','scheduled'),('in progress','in progress'),
+    ('completed','completed'),('cancelled','cancelled'),('understaffed','understaffed');
 
-CREATE TABLE procedure_categories (
-    code VARCHAR(20),
-    name VARCHAR(100) NOT NULL,
-    CONSTRAINT pk_procedure_categories PRIMARY KEY (code)
+create table procedure_categories (
+    code varchar(20),
+    name varchar(100) not null,
+    constraint pk_procedure_categories primary key (code)
 );
-INSERT INTO procedure_categories VALUES
-    ('Surgical','Surgical Procedures'),
-    ('Diagnostic','Diagnostic Procedures'),
-    ('Therapeutic','Therapeutic Procedures');
+insert into procedure_categories values
+    ('surgical','surgical procedures'),
+    ('diagnostic','diagnostic procedures'),
+    ('therapeutic','therapeutic procedures');
 
-CREATE TABLE room_types (
-    code VARCHAR(30),
-    name VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_room_types PRIMARY KEY (code)
+create table room_types (
+    code varchar(30),
+    name varchar(50) not null,
+    constraint pk_room_types primary key (code)
 );
-INSERT INTO room_types VALUES
-    ('Exam Room','Exam Room'),('ICU','ICU'),
-    ('Operating Room','Operating Room'),('Therapy Room','Therapy Room');
+insert into room_types values
+    ('exam room','exam room'),('icu','icu'),
+    ('operating room','operating room'),('therapy room','therapy room');
 
-CREATE TABLE exam_types (
-    exam_code INT,
-    name TEXT NOT NULL,
-    CONSTRAINT pk_exam_types PRIMARY KEY (exam_code)
-);
-
-CREATE TABLE specialties (
-    code VARCHAR(50),
-    name VARCHAR(100) NOT NULL,
-    CONSTRAINT pk_specialties PRIMARY KEY (code)
-);
-INSERT INTO specialties VALUES
-    ('Cardiology','Cardiology'),
-    ('Surgery','Surgery'),
-    ('Pediatrics','Pediatrics'),
-    ('Neurology','Neurology'),
-    ('Orthopedics','Orthopedics'),
-    ('Internal Medicine','Internal Medicine'),
-    ('Emergency Medicine','Emergency Medicine'),
-    ('Anesthesiology','Anesthesiology'),
-    ('Radiology','Radiology'),
-    ('Oncology','Oncology'),
-    ('Psychiatry','Psychiatry'),
-    ('Obstetrics and Gynecology','Obstetrics and Gynecology'),
-    ('Dermatology','Dermatology'),
-    ('Urology','Urology'),
-    ('General Practice','General Practice');
-
--- Βασικοί Πίνακες της Βάσης
-
-CREATE TABLE departments (
-    dept_id INT AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    description TEXT,
-    bed_count INT NOT NULL DEFAULT 0,
-    floor INT,
-    building VARCHAR(50),
-    director_AMKA CHAR(11),
-
-    CONSTRAINT pk_dept PRIMARY KEY (dept_id)
+create table exam_types (
+    exam_code int,
+    name text not null,
+    constraint pk_exam_types primary key (exam_code)
 );
 
-CREATE TABLE beds (
-    bed_id INT AUTO_INCREMENT,
-    dept_id INT NOT NULL,
-    room_capacity INT,
-    bed_type VARCHAR(20) NOT NULL DEFAULT 'Regular',
-    status VARCHAR(20) NOT NULL DEFAULT 'Free',
-    assigned_to INT DEFAULT NULL,
+create table specialties (
+    code varchar(50),
+    name varchar(100) not null,
+    constraint pk_specialties primary key (code)
+);
+insert into specialties values
+    ('cardiology','cardiology'),
+    ('surgery','surgery'),
+    ('pediatrics','pediatrics'),
+    ('neurology','neurology'),
+    ('orthopedics','orthopedics'),
+    ('internal medicine','internal medicine'),
+    ('emergency medicine','emergency medicine'),
+    ('anesthesiology','anesthesiology'),
+    ('radiology','radiology'),
+    ('oncology','oncology'),
+    ('psychiatry','psychiatry'),
+    ('obstetrics and gynecology','obstetrics and gynecology'),
+    ('dermatology','dermatology'),
+    ('urology','urology'),
+    ('general practice','general practice');
 
-    CONSTRAINT pk_beds PRIMARY KEY (bed_id),
-    CONSTRAINT fk_beds_dept FOREIGN KEY (dept_id) REFERENCES departments(dept_id) ON DELETE CASCADE,
-    CONSTRAINT fk_beds_bed_type FOREIGN KEY (bed_type) REFERENCES bed_types(code),
-    CONSTRAINT fk_beds_status FOREIGN KEY (status) REFERENCES bed_statuses(code)
+-- βασικοί πίνακες της βάσης
+
+create table departments (
+    dept_id int auto_increment,
+    name varchar(50) not null,
+    description text,
+    bed_count int not null default 0,
+    floor int,
+    building varchar(50),
+    director_amka char(11),
+
+    constraint pk_dept primary key (dept_id)
 );
 
-CREATE TABLE staff (
-    AMKA CHAR(11),
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    date_of_birth DATE NOT NULL,
-    age INT AS (TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE())) VIRTUAL,
-    email VARCHAR(50) UNIQUE,
-    phone_number VARCHAR(15) UNIQUE,
-    hire_date DATE NOT NULL DEFAULT (CURRENT_DATE),
-    staff_type VARCHAR(20),
+create table beds (
+    bed_id int auto_increment,
+    dept_id int not null,
+    room_capacity int,
+    bed_type varchar(20) not null default 'regular',
+    status varchar(20) not null default 'free',
+    assigned_to int default null,
 
-    CONSTRAINT pk_staff PRIMARY KEY (AMKA),
-    CONSTRAINT fk_staff_type FOREIGN KEY (staff_type) REFERENCES staff_types(code)
+    constraint pk_beds primary key (bed_id),
+    constraint fk_beds_dept foreign key (dept_id) references departments(dept_id) on delete cascade,
+    constraint fk_beds_bed_type foreign key (bed_type) references bed_types(code),
+    constraint fk_beds_status foreign key (status) references bed_statuses(code)
 );
 
-CREATE TABLE doctors (
-    AMKA CHAR(11),
-    license_number VARCHAR(20) NOT NULL,
-    `rank` VARCHAR(30) NOT NULL,
-    specialty VARCHAR(50) NOT NULL,
-    supervisor_AMKA CHAR(11),
+create table staff (
+    amka char(11),
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    date_of_birth date not null,
+    age int as (timestampdiff(year, date_of_birth, curdate())) virtual,
+    email varchar(50) unique,
+    phone_number varchar(15) unique,
+    hire_date date not null default (current_date),
+    staff_type varchar(20),
 
-    CONSTRAINT pk_doctors PRIMARY KEY (AMKA),
-    CONSTRAINT fk_doctors FOREIGN KEY (AMKA) REFERENCES staff(AMKA) ON DELETE CASCADE,
-    CONSTRAINT fk_docs_supervisor FOREIGN KEY (supervisor_AMKA) REFERENCES doctors(AMKA) ON DELETE SET NULL,
-    CONSTRAINT fk_doctor_rank FOREIGN KEY (`rank`) REFERENCES doctor_ranks(code),
-    CONSTRAINT fk_doctor_specialty FOREIGN KEY (specialty) REFERENCES specialties(code),
-    CONSTRAINT uni_license UNIQUE (license_number)
+    constraint pk_staff primary key (amka),
+    constraint fk_staff_type foreign key (staff_type) references staff_types(code)
 );
 
-CREATE TABLE doctor_departments (
-    doctor_AMKA CHAR(11),
-    dept_id INT NOT NULL,
+create table doctors (
+    amka char(11),
+    license_number varchar(20) not null,
+    `rank` varchar(30) not null,
+    specialty varchar(50) not null,
+    supervisor_amka char(11),
 
-    CONSTRAINT pk_dd PRIMARY KEY (doctor_AMKA, dept_id),
-    CONSTRAINT fk_dd_amka FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA) ON DELETE CASCADE,
-    CONSTRAINT fd_dd_dept FOREIGN KEY (dept_id) REFERENCES departments(dept_id) ON DELETE CASCADE
+    constraint pk_doctors primary key (amka),
+    constraint fk_doctors foreign key (amka) references staff(amka) on delete cascade,
+    constraint fk_docs_supervisor foreign key (supervisor_amka) references doctors(amka) on delete set null,
+    constraint fk_doctor_rank foreign key (`rank`) references doctor_ranks(code),
+    constraint fk_doctor_specialty foreign key (specialty) references specialties(code),
+    constraint uni_license unique (license_number)
 );
 
-ALTER TABLE departments
-    ADD CONSTRAINT fk_dept_director FOREIGN KEY (director_AMKA)
-        REFERENCES doctors(AMKA) ON DELETE SET NULL;
+create table doctor_departments (
+    doctor_amka char(11),
+    dept_id int not null,
 
-CREATE TABLE admin_staff (
-    AMKA CHAR(11),
-    position VARCHAR(30) NOT NULL,
-    office_location VARCHAR(50) NOT NULL,
-    dept_id INT,
-
-    CONSTRAINT pk_admin_staff PRIMARY KEY (AMKA),
-    CONSTRAINT fk_admin_staff FOREIGN KEY (AMKA) REFERENCES staff(AMKA) ON DELETE CASCADE,
-    CONSTRAINT fk_admin_dept FOREIGN KEY (dept_id) REFERENCES departments(dept_id) ON DELETE SET NULL,
-    CONSTRAINT fk_admin_role FOREIGN KEY (position) REFERENCES admin_roles(code)
+    constraint pk_dd primary key (doctor_amka, dept_id),
+    constraint fk_dd_amka foreign key (doctor_amka) references doctors(amka) on delete cascade,
+    constraint fd_dd_dept foreign key (dept_id) references departments(dept_id) on delete cascade
 );
 
-CREATE TABLE nurses (
-    AMKA CHAR(11),
-    `rank` VARCHAR(30) NOT NULL,
-    dept_id INT,
+alter table departments
+    add constraint fk_dept_director foreign key (director_amka)
+        references doctors(amka) on delete set null;
 
-    CONSTRAINT pk_nurses PRIMARY KEY (AMKA),
-    CONSTRAINT fk_nurses FOREIGN KEY (AMKA) REFERENCES staff(AMKA) ON DELETE CASCADE,
-    CONSTRAINT fk_nurses_dept FOREIGN KEY (dept_id) REFERENCES departments(dept_id) ON DELETE CASCADE,
-    CONSTRAINT fk_nurse_rank FOREIGN KEY (`rank`) REFERENCES nurse_ranks(code)
+create table admin_staff (
+    amka char(11),
+    position varchar(30) not null,
+    office_location varchar(50) not null,
+    dept_id int,
+
+    constraint pk_admin_staff primary key (amka),
+    constraint fk_admin_staff foreign key (amka) references staff(amka) on delete cascade,
+    constraint fk_admin_dept foreign key (dept_id) references departments(dept_id) on delete set null,
+    constraint fk_admin_role foreign key (position) references admin_roles(code)
 );
 
-CREATE TABLE patients (
-    AMKA CHAR(11),
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    fathers_name VARCHAR(50),
-    date_of_birth DATE,
-    age INT AS (TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE())) VIRTUAL,
-    gender VARCHAR(10) NOT NULL,
-    weight DECIMAL(5,1),
-    height INT,
-    phone_number VARCHAR(15) UNIQUE,
-    email VARCHAR(50) UNIQUE,
-    address VARCHAR(255),
-    occupation VARCHAR(50),
-    nationality CHAR(2),
-    insurance_provider VARCHAR(30),
+create table nurses (
+    amka char(11),
+    `rank` varchar(30) not null,
+    dept_id int,
 
-    CONSTRAINT pk_patients PRIMARY KEY (AMKA),
-    CONSTRAINT fk_patient_gender FOREIGN KEY (gender) REFERENCES genders(code),
-    CONSTRAINT fk_patient_insurance FOREIGN KEY (insurance_provider) REFERENCES insurance_providers(code)
+    constraint pk_nurses primary key (amka),
+    constraint fk_nurses foreign key (amka) references staff(amka) on delete cascade,
+    constraint fk_nurses_dept foreign key (dept_id) references departments(dept_id) on delete cascade,
+    constraint fk_nurse_rank foreign key (`rank`) references nurse_ranks(code)
 );
 
-CREATE TABLE patient_emergency_contacts (
-    patient_AMKA CHAR(11),
-    contact_seq INT,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    phone_number VARCHAR(15) NOT NULL,
-    email VARCHAR(50),
-    relationship_to_patient VARCHAR(50),
+create table patients (
+    amka char(11),
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    fathers_name varchar(50),
+    date_of_birth date,
+    age int as (timestampdiff(year, date_of_birth, curdate())) virtual,
+    gender varchar(10) not null,
+    weight decimal(5,1),
+    height int,
+    phone_number varchar(15) unique,
+    email varchar(50) unique,
+    address varchar(255),
+    occupation varchar(50),
+    nationality char(2),
+    insurance_provider varchar(30),
 
-    CONSTRAINT pk_ec PRIMARY KEY (patient_AMKA, contact_seq),
-    CONSTRAINT fk_ec_patient FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA) ON DELETE CASCADE
+    constraint pk_patients primary key (amka),
+    constraint fk_patient_gender foreign key (gender) references genders(code),
+    constraint fk_patient_insurance foreign key (insurance_provider) references insurance_providers(code)
 );
 
-CREATE TABLE ken_categories (
-    category_letter VARCHAR(2),
-    description TEXT NOT NULL,
-    CONSTRAINT pk_ken_cat PRIMARY KEY (category_letter)
+create table patient_emergency_contacts (
+    patient_amka char(11),
+    contact_seq int,
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    phone_number varchar(15) not null,
+    email varchar(50),
+    relationship_to_patient varchar(50),
+
+    constraint pk_ec primary key (patient_amka, contact_seq),
+    constraint fk_ec_patient foreign key (patient_amka) references patients(amka) on delete cascade
 );
 
-CREATE TABLE ken (
-    ken_code VARCHAR(7),
-    description TEXT NOT NULL,
-    base_cost DECIMAL(10, 2) NOT NULL,
-    avg_length_of_stay INT,
-    daily_surcharge_rate DECIMAL(10, 2),
-    category_letter VARCHAR(2),
-
-    CONSTRAINT pk_ken PRIMARY KEY (ken_code),
-    CONSTRAINT fk_ken_category FOREIGN KEY (category_letter) REFERENCES ken_categories(category_letter)
+create table ken_categories (
+    category_letter varchar(2),
+    description text not null,
+    constraint pk_ken_cat primary key (category_letter)
 );
 
-CREATE TABLE icd10 (
-    icd10_code VARCHAR(7),
-    description TEXT NOT NULL,
-    category VARCHAR(50),
+create table ken (
+    ken_code varchar(7),
+    description text not null,
+    base_cost decimal(10, 2) not null,
+    avg_length_of_stay int,
+    daily_surcharge_rate decimal(10, 2),
+    category_letter varchar(2),
 
-    CONSTRAINT pk_icd10 PRIMARY KEY (icd10_code)
+    constraint pk_ken primary key (ken_code),
+    constraint fk_ken_category foreign key (category_letter) references ken_categories(category_letter)
 );
 
-CREATE TABLE admissions (
-    admission_id INT AUTO_INCREMENT,
-    patient_AMKA CHAR(11) NOT NULL,
-    department_id INT NOT NULL,
-    bed_id INT NOT NULL,
-    ken_code VARCHAR(7) NOT NULL,
-    admission_date DATE NOT NULL DEFAULT (CURRENT_DATE),
-    discharge_date DATE DEFAULT NULL,
-    admission_diagnosis_code VARCHAR(7) NOT NULL,
-    discharge_diagnosis_code VARCHAR(7) DEFAULT NULL,
-    base_cost  DECIMAL(10, 2) DEFAULT 0.00,
-    extra_cost DECIMAL(10, 2) DEFAULT 0.00,
-    total_cost DECIMAL(10, 2) GENERATED ALWAYS AS (base_cost + extra_cost) VIRTUAL,
+create table icd10 (
+    icd10_code varchar(7),
+    description text not null,
+    category varchar(50),
 
-    CONSTRAINT pk_admissions PRIMARY KEY (admission_id),
-    CONSTRAINT fk_adm_patient FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA) ON DELETE CASCADE,
-    CONSTRAINT fk_adm_dept FOREIGN KEY (department_id) REFERENCES departments(dept_id),
-    CONSTRAINT fk_adm_bed FOREIGN KEY (bed_id) REFERENCES beds(bed_id),
-    CONSTRAINT fk_adm_ken FOREIGN KEY (ken_code) REFERENCES ken(ken_code),
-    CONSTRAINT fk_adm_diag_in FOREIGN KEY (admission_diagnosis_code) REFERENCES icd10(icd10_code),
-    CONSTRAINT fk_adm_diag_out FOREIGN KEY (discharge_diagnosis_code) REFERENCES icd10(icd10_code),
-    CONSTRAINT chk_discharge_date CHECK (discharge_date IS NULL OR discharge_date >= admission_date)
+    constraint pk_icd10 primary key (icd10_code)
 );
 
-CREATE TABLE lab_exams (
-    exam_id INT AUTO_INCREMENT,
-    admission_id INT NOT NULL,
-    exam_code INT NOT NULL,
-    exam_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    result_text TEXT,
-    result_numeric DECIMAL(10, 2),
-    result_unit VARCHAR(20),
-    cost DECIMAL(10, 2) DEFAULT 0.00,
-    doctor_AMKA CHAR(11) NOT NULL,
+create table admissions (
+    admission_id int auto_increment,
+    patient_amka char(11) not null,
+    department_id int not null,
+    bed_id int not null,
+    ken_code varchar(7) not null,
+    admission_date date not null default (current_date),
+    discharge_date date default null,
+    admission_diagnosis_code varchar(7) not null,
+    discharge_diagnosis_code varchar(7) default null,
+    base_cost  decimal(10, 2) default 0.00,
+    extra_cost decimal(10, 2) default 0.00,
+    total_cost decimal(10, 2) generated always as (base_cost + extra_cost) virtual,
 
-    CONSTRAINT pk_exams PRIMARY KEY (exam_id),
-    CONSTRAINT fk_exam_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
-    CONSTRAINT fk_exam_ordered_by FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
-    CONSTRAINT fk_exam_type FOREIGN KEY (exam_code) REFERENCES exam_types(exam_code),
-    CONSTRAINT chk_exam_result CHECK (result_text IS NOT NULL OR result_numeric IS NOT NULL)
+    constraint pk_admissions primary key (admission_id),
+    constraint fk_adm_patient foreign key (patient_amka) references patients(amka) on delete cascade,
+    constraint fk_adm_dept foreign key (department_id) references departments(dept_id),
+    constraint fk_adm_bed foreign key (bed_id) references beds(bed_id),
+    constraint fk_adm_ken foreign key (ken_code) references ken(ken_code),
+    constraint fk_adm_diag_in foreign key (admission_diagnosis_code) references icd10(icd10_code),
+    constraint fk_adm_diag_out foreign key (discharge_diagnosis_code) references icd10(icd10_code),
+    constraint chk_discharge_date check (discharge_date is null or discharge_date >= admission_date)
 );
 
-CREATE TABLE medical_procedures (
-    procedure_code VARCHAR(20),
-    name VARCHAR(50) NOT NULL,
-    category VARCHAR(20),
-    standard_duration INT,
-    standard_cost DECIMAL(10, 2),
+create table lab_exams (
+    exam_id int auto_increment,
+    admission_id int not null,
+    exam_code int not null,
+    exam_date datetime default current_timestamp,
+    result_text text,
+    result_numeric decimal(10, 2),
+    result_unit varchar(20),
+    cost decimal(10, 2) default 0.00,
+    doctor_amka char(11) not null,
 
-    CONSTRAINT pk_proc_code PRIMARY KEY (procedure_code),
-    CONSTRAINT fk_proc_category FOREIGN KEY (category) REFERENCES procedure_categories(code)
+    constraint pk_exams primary key (exam_id),
+    constraint fk_exam_admission foreign key (admission_id) references admissions(admission_id) on delete cascade,
+    constraint fk_exam_ordered_by foreign key (doctor_amka) references doctors(amka),
+    constraint fk_exam_type foreign key (exam_code) references exam_types(exam_code),
+    constraint chk_exam_result check (result_text is not null or result_numeric is not null)
 );
 
-CREATE TABLE operating_rooms (
-    room_id INT AUTO_INCREMENT,
-    room_name VARCHAR(50) NOT NULL,
-    room_type VARCHAR(30),
-    floor INT,
-    building VARCHAR(50),
+create table medical_procedures (
+    procedure_code varchar(20),
+    name varchar(50) not null,
+    category varchar(20),
+    standard_duration int,
+    standard_cost decimal(10, 2),
 
-    CONSTRAINT pk_op_rooms PRIMARY KEY (room_id),
-    CONSTRAINT fk_room_type FOREIGN KEY (room_type) REFERENCES room_types(code)
+    constraint pk_proc_code primary key (procedure_code),
+    constraint fk_proc_category foreign key (category) references procedure_categories(code)
 );
 
-CREATE TABLE procedure_executions (
-    execution_id INT AUTO_INCREMENT,
-    admission_id INT NOT NULL,
-    procedure_code VARCHAR(20) NOT NULL,
-    room_id INT NOT NULL,
-    main_doctor_AMKA CHAR(11) NOT NULL,
-    start_time DATETIME NOT NULL,
-    end_time DATETIME,
-    actual_cost DECIMAL(10, 2),
+create table operating_rooms (
+    room_id int auto_increment,
+    room_name varchar(50) not null,
+    room_type varchar(30),
+    floor int,
+    building varchar(50),
 
-    CONSTRAINT pk_proc_exec PRIMARY KEY (execution_id),
-    CONSTRAINT fk_proc_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
-    CONSTRAINT fk_proc_code FOREIGN KEY (procedure_code) REFERENCES medical_procedures(procedure_code),
-    CONSTRAINT fk_proc_room FOREIGN KEY (room_id) REFERENCES operating_rooms(room_id),
-    CONSTRAINT fk_proc_doctor FOREIGN KEY (main_doctor_AMKA) REFERENCES doctors(AMKA),
-    CONSTRAINT chk_proc_times CHECK (end_time IS NULL OR end_time > start_time)
+    constraint pk_op_rooms primary key (room_id),
+    constraint fk_room_type foreign key (room_type) references room_types(code)
 );
 
-CREATE TABLE procedure_assistants (
-    execution_id INT NOT NULL,
-    staff_AMKA CHAR(11) NOT NULL,
-    role VARCHAR(50) NOT NULL,
+create table procedure_executions (
+    execution_id int auto_increment,
+    admission_id int not null,
+    procedure_code varchar(20) not null,
+    room_id int not null,
+    main_doctor_amka char(11) not null,
+    start_time datetime not null,
+    end_time datetime,
+    actual_cost decimal(10, 2),
 
-    CONSTRAINT pk_proc_staff PRIMARY KEY (staff_AMKA, execution_id),
-    CONSTRAINT fk_proc_exec FOREIGN KEY (execution_id) REFERENCES procedure_executions(execution_id) ON DELETE CASCADE,
-    FOREIGN KEY (staff_AMKA) REFERENCES staff(AMKA)
+    constraint pk_proc_exec primary key (execution_id),
+    constraint fk_proc_admission foreign key (admission_id) references admissions(admission_id) on delete cascade,
+    constraint fk_proc_code foreign key (procedure_code) references medical_procedures(procedure_code),
+    constraint fk_proc_room foreign key (room_id) references operating_rooms(room_id),
+    constraint fk_proc_doctor foreign key (main_doctor_amka) references doctors(amka),
+    constraint chk_proc_times check (end_time is null or end_time > start_time)
 );
 
-CREATE TABLE triages (
-    triage_id INT AUTO_INCREMENT,
-    patient_AMKA CHAR(11) NOT NULL,
-    nurse_AMKA CHAR(11) NOT NULL,
-    arrival_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    triage_time DATETIME DEFAULT NULL,
-    minutes_waited INT DEFAULT NULL,
-    urgency_level TINYINT,
-    symptoms TEXT,
-    outcome VARCHAR(20) DEFAULT NULL,
-    admission_id INT DEFAULT NULL,
+create table procedure_assistants (
+    execution_id int not null,
+    staff_amka char(11) not null,
+    role varchar(50) not null,
 
-    CONSTRAINT pk_triages PRIMARY KEY (triage_id),
-    CONSTRAINT fk_triage_patient FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA),
-    CONSTRAINT fk_triage_nurse FOREIGN KEY (nurse_AMKA) REFERENCES nurses(AMKA),
-    CONSTRAINT fk_triage_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id),
-    CONSTRAINT fk_triage_urgency FOREIGN KEY (urgency_level) REFERENCES urgency_levels(`level`),
-    CONSTRAINT fk_triage_outcome FOREIGN KEY (outcome) REFERENCES triage_outcomes(code),
-    CONSTRAINT uni_admission_id UNIQUE (admission_id),
-    CONSTRAINT chk_triage_consistency CHECK (
-        outcome IS NULL OR
-        (outcome = 'Hospitalized' AND admission_id IS NOT NULL) OR
-        (outcome = 'Discharged'   AND admission_id IS NULL)
+    constraint pk_proc_staff primary key (staff_amka, execution_id),
+    constraint fk_proc_exec foreign key (execution_id) references procedure_executions(execution_id) on delete cascade,
+    foreign key (staff_amka) references staff(amka)
+);
+
+create table triages (
+    triage_id int auto_increment,
+    patient_amka char(11) not null,
+    nurse_amka char(11) not null,
+    arrival_time datetime not null default current_timestamp,
+    triage_time datetime default null,
+    minutes_waited int default null,
+    urgency_level tinyint,
+    symptoms text,
+    outcome varchar(20) default null,
+    admission_id int default null,
+
+    constraint pk_triages primary key (triage_id),
+    constraint fk_triage_patient foreign key (patient_amka) references patients(amka),
+    constraint fk_triage_nurse foreign key (nurse_amka) references nurses(amka),
+    constraint fk_triage_admission foreign key (admission_id) references admissions(admission_id),
+    constraint fk_triage_urgency foreign key (urgency_level) references urgency_levels(`level`),
+    constraint fk_triage_outcome foreign key (outcome) references triage_outcomes(code),
+    constraint uni_admission_id unique (admission_id),
+    constraint chk_triage_consistency check (
+        outcome is null or
+        (outcome = 'hospitalized' and admission_id is not null) or
+        (outcome = 'discharged'   and admission_id is null)
     )
 );
 
-CREATE TABLE active_substances (
-    substance_id INT AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+create table active_substances (
+    substance_id int auto_increment,
+    name varchar(100) not null,
 
-    CONSTRAINT pk_active_substances PRIMARY KEY (substance_id),
-    CONSTRAINT uni_substance_name UNIQUE (name)
+    constraint pk_active_substances primary key (substance_id),
+    constraint uni_substance_name unique (name)
 );
 
-CREATE TABLE drugs (
-    drug_id INT AUTO_INCREMENT,
-    ema_code VARCHAR(50) NOT NULL,
-    name VARCHAR(150) NOT NULL,
-    manufacturer VARCHAR(100),
+create table drugs (
+    drug_id int auto_increment,
+    ema_code varchar(50) not null,
+    name varchar(150) not null,
+    manufacturer varchar(100),
 
-    CONSTRAINT pk_drugs PRIMARY KEY (drug_id),
-    CONSTRAINT uni_ema_code UNIQUE (ema_code)
+    constraint pk_drugs primary key (drug_id),
+    constraint uni_ema_code unique (ema_code)
 );
 
-CREATE TABLE drug_contains_substances (
-    drug_id INT,
-    substance_id INT,
+create table drug_contains_substances (
+    drug_id int,
+    substance_id int,
 
-    CONSTRAINT pk_drug_cs PRIMARY KEY (drug_id, substance_id),
-    CONSTRAINT fk_drug_id FOREIGN KEY (drug_id) REFERENCES drugs(drug_id) ON DELETE CASCADE,
-    CONSTRAINT fk_dcs_substance_id FOREIGN KEY (substance_id) REFERENCES active_substances(substance_id) ON DELETE CASCADE
+    constraint pk_drug_cs primary key (drug_id, substance_id),
+    constraint fk_drug_id foreign key (drug_id) references drugs(drug_id) on delete cascade,
+    constraint fk_dcs_substance_id foreign key (substance_id) references active_substances(substance_id) on delete cascade
 );
 
-CREATE TABLE patient_allergies (
-    patient_AMKA CHAR(11),
-    substance_id INT,
+create table patient_allergies (
+    patient_amka char(11),
+    substance_id int,
 
-    CONSTRAINT pk_patient_allergies PRIMARY KEY (patient_AMKA, substance_id),
-    CONSTRAINT fk_allergy_patient FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA) ON DELETE CASCADE,
-    CONSTRAINT fk_allergy_substance FOREIGN KEY (substance_id) REFERENCES active_substances(substance_id) ON DELETE CASCADE
+    constraint pk_patient_allergies primary key (patient_amka, substance_id),
+    constraint fk_allergy_patient foreign key (patient_amka) references patients(amka) on delete cascade,
+    constraint fk_allergy_substance foreign key (substance_id) references active_substances(substance_id) on delete cascade
 );
 
-CREATE TABLE prescriptions (
-    prescription_id INT AUTO_INCREMENT,
-    admission_id INT NOT NULL,
-    patient_AMKA CHAR(11) NOT NULL,
-    doctor_AMKA CHAR(11) NOT NULL,
-    drug_id INT NOT NULL,
-    dosage VARCHAR(50),
-    frequency VARCHAR(50),
-    start_date DATE NOT NULL,
-    end_date DATE NOT NULL,
+create table prescriptions (
+    prescription_id int auto_increment,
+    admission_id int not null,
+    patient_amka char(11) not null,
+    doctor_amka char(11) not null,
+    drug_id int not null,
+    dosage varchar(50),
+    frequency varchar(50),
+    start_date date not null,
+    end_date date not null,
 
-    CONSTRAINT pk_prescriptions PRIMARY KEY (prescription_id),
-    CONSTRAINT fk_presc_admi_id FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
-    CONSTRAINT fk_presc_pati_id FOREIGN KEY (patient_AMKA) REFERENCES patients(AMKA),
-    CONSTRAINT fk_presc_doct_id FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
-    CONSTRAINT fk_presc_drug_id FOREIGN KEY (drug_id) REFERENCES drugs(drug_id),
-    CONSTRAINT uni_prescription UNIQUE (doctor_AMKA, patient_AMKA, drug_id, start_date),
-    CONSTRAINT chk_presc_dates CHECK (end_date > start_date)
+    constraint pk_prescriptions primary key (prescription_id),
+    constraint fk_presc_admi_id foreign key (admission_id) references admissions(admission_id) on delete cascade,
+    constraint fk_presc_pati_id foreign key (patient_amka) references patients(amka),
+    constraint fk_presc_doct_id foreign key (doctor_amka) references doctors(amka),
+    constraint fk_presc_drug_id foreign key (drug_id) references drugs(drug_id),
+    constraint uni_prescription unique (doctor_amka, patient_amka, drug_id, start_date),
+    constraint chk_presc_dates check (end_date > start_date)
 );
 
-CREATE TABLE admission_ratings (
-    admission_id INT,
-    nursing_quality TINYINT NOT NULL,
-    cleanliness TINYINT NOT NULL,
-    food TINYINT NOT NULL,
-    overall TINYINT NOT NULL,
-    comment TEXT,
-    rated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+create table admission_ratings (
+    admission_id int,
+    nursing_quality tinyint not null,
+    cleanliness tinyint not null,
+    food tinyint not null,
+    overall tinyint not null,
+    comment text,
+    rated_at datetime default current_timestamp,
 
-    CONSTRAINT pk_admission_ratings PRIMARY KEY (admission_id),
-    CONSTRAINT fk_rating_admission FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
-    CONSTRAINT chk_nursing_range CHECK (nursing_quality BETWEEN 1 AND 5),
-    CONSTRAINT chk_clean_range CHECK (cleanliness BETWEEN 1 AND 5),
-    CONSTRAINT chk_food_range CHECK (food BETWEEN 1 AND 5),
-    CONSTRAINT chk_overall_range CHECK (overall BETWEEN 1 AND 5)
+    constraint pk_admission_ratings primary key (admission_id),
+    constraint fk_rating_admission foreign key (admission_id) references admissions(admission_id) on delete cascade,
+    constraint chk_nursing_range check (nursing_quality between 1 and 5),
+    constraint chk_clean_range check (cleanliness between 1 and 5),
+    constraint chk_food_range check (food between 1 and 5),
+    constraint chk_overall_range check (overall between 1 and 5)
 );
 
-CREATE TABLE doctor_ratings (
-    rating_id INT AUTO_INCREMENT,
-    admission_id INT NOT NULL,
-    doctor_AMKA CHAR(11) NOT NULL,
-    medical_care_quality TINYINT NOT NULL,
-    comment TEXT,
-    rated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+create table doctor_ratings (
+    rating_id int auto_increment,
+    admission_id int not null,
+    doctor_amka char(11) not null,
+    medical_care_quality tinyint not null,
+    comment text,
+    rated_at datetime default current_timestamp,
 
-    CONSTRAINT pk_doc_ratings PRIMARY KEY (rating_id),
-    CONSTRAINT fk_doc_rating_adm FOREIGN KEY (admission_id) REFERENCES admissions(admission_id) ON DELETE CASCADE,
-    CONSTRAINT fk_doc_rating_doc FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA),
-    CONSTRAINT uni_admission_doctor_duplicate UNIQUE (admission_id, doctor_AMKA),
-    CONSTRAINT chk_medical_range CHECK (medical_care_quality BETWEEN 1 AND 5)
+    constraint pk_doc_ratings primary key (rating_id),
+    constraint fk_doc_rating_adm foreign key (admission_id) references admissions(admission_id) on delete cascade,
+    constraint fk_doc_rating_doc foreign key (doctor_amka) references doctors(amka),
+    constraint uni_admission_doctor_duplicate unique (admission_id, doctor_amka),
+    constraint chk_medical_range check (medical_care_quality between 1 and 5)
 );
 
-CREATE TABLE shifts (
-    shift_id INT AUTO_INCREMENT,
-    shift_date DATE NOT NULL,
-    shift_slot VARCHAR(20) NOT NULL,
-    shift_status VARCHAR(20) DEFAULT 'Scheduled',
-    dept_id INT NOT NULL,
+create table shifts (
+    shift_id int auto_increment,
+    shift_date date not null,
+    shift_slot varchar(20) not null,
+    shift_status varchar(20) default 'scheduled',
+    dept_id int not null,
 
-    CONSTRAINT pk_shift PRIMARY KEY (shift_id),
-    CONSTRAINT fk_shift_dept FOREIGN KEY (dept_id) REFERENCES departments(dept_id) ON DELETE CASCADE,
-    CONSTRAINT fk_shift_slot FOREIGN KEY (shift_slot) REFERENCES shift_slots(code),
-    CONSTRAINT fk_shift_status FOREIGN KEY (shift_status) REFERENCES shift_statuses(code),
-    CONSTRAINT uni_shift UNIQUE (dept_id, shift_date, shift_slot)
+    constraint pk_shift primary key (shift_id),
+    constraint fk_shift_dept foreign key (dept_id) references departments(dept_id) on delete cascade,
+    constraint fk_shift_slot foreign key (shift_slot) references shift_slots(code),
+    constraint fk_shift_status foreign key (shift_status) references shift_statuses(code),
+    constraint uni_shift unique (dept_id, shift_date, shift_slot)
 );
 
-CREATE TABLE shift_staffing (
-    shift_id INT,
-    staff_AMKA CHAR(11),
+create table shift_staffing (
+    shift_id int,
+    staff_amka char(11),
 
-    CONSTRAINT pk_shift_staffing PRIMARY KEY (staff_AMKA, shift_id),
-    CONSTRAINT fk_staffing_shift FOREIGN KEY (shift_id) REFERENCES shifts(shift_id) ON DELETE CASCADE,
-    CONSTRAINT fk_staffing_staff FOREIGN KEY (staff_AMKA) REFERENCES staff(AMKA) ON DELETE CASCADE
+    constraint pk_shift_staffing primary key (staff_amka, shift_id),
+    constraint fk_staffing_shift foreign key (shift_id) references shifts(shift_id) on delete cascade,
+    constraint fk_staffing_staff foreign key (staff_amka) references staff(amka) on delete cascade
 );
 
-CREATE TABLE department_images (
-    img_id INT AUTO_INCREMENT,
-    dept_id INT NOT NULL,
-    img_url VARCHAR(255) NOT NULL,
-    caption VARCHAR(255),
-    ordering INT DEFAULT 0,
+create table department_images (
+    img_id int auto_increment,
+    dept_id int not null,
+    img_url varchar(255) not null,
+    caption varchar(255),
+    ordering int default 0,
 
-    CONSTRAINT pk_dept_images PRIMARY KEY (img_id),
-    CONSTRAINT fk_dept_img_relation FOREIGN KEY (dept_id) REFERENCES departments(dept_id) ON DELETE CASCADE
+    constraint pk_dept_images primary key (img_id),
+    constraint fk_dept_img_relation foreign key (dept_id) references departments(dept_id) on delete cascade
 );
 
-CREATE TABLE drug_images (
-    img_id INT AUTO_INCREMENT,
-    drug_id INT NOT NULL,
-    img_url VARCHAR(255) NOT NULL,
-    caption VARCHAR(255),
-    ordering INT DEFAULT 0,
+create table drug_images (
+    img_id int auto_increment,
+    drug_id int not null,
+    img_url varchar(255) not null,
+    caption varchar(255),
+    ordering int default 0,
 
-    CONSTRAINT pk_drug_images PRIMARY KEY (img_id),
-    CONSTRAINT fk_drug_img_relation FOREIGN KEY (drug_id) REFERENCES drugs(drug_id) ON DELETE CASCADE
+    constraint pk_drug_images primary key (img_id),
+    constraint fk_drug_img_relation foreign key (drug_id) references drugs(drug_id) on delete cascade
 );
 
-CREATE TABLE doctor_images (
-    img_id INT AUTO_INCREMENT,
-    doctor_AMKA CHAR(11) NOT NULL,
-    img_url VARCHAR(255) NOT NULL,
-    caption VARCHAR(255),
-    ordering INT DEFAULT 0,
+create table doctor_images (
+    img_id int auto_increment,
+    doctor_amka char(11) not null,
+    img_url varchar(255) not null,
+    caption varchar(255),
+    ordering int default 0,
 
-    CONSTRAINT pk_doctor_images PRIMARY KEY (img_id),
-    CONSTRAINT fk_doctor_img_relation FOREIGN KEY (doctor_AMKA) REFERENCES doctors(AMKA) ON DELETE CASCADE
+    constraint pk_doctor_images primary key (img_id),
+    constraint fk_doctor_img_relation foreign key (doctor_amka) references doctors(amka) on delete cascade
 );
 
 -- Triggers για αυτοματοποιήσεις
@@ -1127,8 +1127,6 @@ BEGIN
             WHEN 'Night'     THEN '23:00:00'
         END);
 
-    -- Each shift is 8h long, so two shifts have >=8h rest gap
-    -- iff the distance between their start times is >=16h.
     SELECT COUNT(*) INTO v_violation
     FROM shift_staffing ss
     JOIN shifts s ON ss.shift_id = s.shift_id

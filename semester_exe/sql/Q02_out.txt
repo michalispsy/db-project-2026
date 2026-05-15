@@ -1,0 +1,26 @@
++-------------+-------------+--------------+-----------+---------------------+-------------------+
+| AMKA        | first_name  | last_name    | specialty | had_shift_this_year | surgeries_as_main |
++-------------+-------------+--------------+-----------+---------------------+-------------------+
+| 81291635049 | Antonis     | Samaras      | Surgery   |                   1 |                 4 |
+| 27622398474 | Giannis     | Nikolaidis   | Surgery   |                   1 |                 4 |
+| 66023515850 | Danai       | Chatzidaki   | Surgery   |                   1 |                 4 |
+| 78870584168 | Georgios    | Makris       | Surgery   |                   1 |                 4 |
+| 90417282076 | Theodora    | Alexiou      | Surgery   |                   1 |                 4 |
+| 00953662195 | Smaragda    | Karydi       | Surgery   |                   1 |                 3 |
+| 78803318361 | Mikis       | Theodorakis  | Surgery   |                   1 |                 3 |
+| 89121397436 | Petros      | Bakogiannis  | Surgery   |                   1 |                 3 |
+| 95437766183 | Eleftherios | Papadopoulos | Surgery   |                   1 |                 3 |
+| 67244693172 | Kostas      | Simitis      | Surgery   |                   1 |                 3 |
+| 65213835071 | Vasilis     | Karras       | Surgery   |                   1 |                 2 |
+| 90577204410 | Eleni       | Menegaki     | Surgery   |                   1 |                 2 |
+| 74653537801 | Dimitris    | Mitropanos   | Surgery   |                   1 |                 2 |
+| 31579057191 | Georgia     | Michailidi   | Surgery   |                   1 |                 2 |
+| 43302650996 | Antonis     | Petridis     | Surgery   |                   1 |                 2 |
+| 73536423570 | Lambros     | Konstantaras | Surgery   |                   1 |                 1 |
+| 19397814590 | Dimitris    | Diamantidis  | Surgery   |                   1 |                 1 |
+| 59851602119 | Giorgos     | Kapoutzidis  | Surgery   |                   1 |                 1 |
+| 20761239612 | Fotios      | Vlachopoulos | Surgery   |                   1 |                 1 |
+| 75169139521 | Babis       | Bates        | Surgery   |                   1 |                 1 |
+| 97648784962 | Vasiliki    | Antoniou     | Surgery   |                   1 |                 1 |
+| 46339534811 | Charilaos   | Trikoupis    | Surgery   |                   1 |                 0 |
++-------------+-------------+--------------+-----------+---------------------+-------------------+

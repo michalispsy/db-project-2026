@@ -1,7 +1,8 @@
 -- Q4: Μέσος όρος αξιολογήσεων για συγκεκριμένο ιατρό
-SELECT 
-    doc.AMKA AS doctor_AMKA,
-    s.last_name AS doctor_last_name,
+SELECT
+    doc.AMKA,
+    s.first_name,
+    s.last_name,
     ROUND(AVG(dr.medical_care_quality), 2) AS avg_medical_care_quality,
     ROUND(AVG(ar.overall), 2) AS avg_overall_admission_rating,
     COUNT(dr.rating_id) AS total_ratings

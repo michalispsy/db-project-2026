@@ -1,5 +1,4 @@
--- Q15: Κατανομή triage ανά επίπεδο επείγοντος με μέσο χρόνο αναμονής,
---      ποσοστό νοσηλείας και κατανομή παραπομπών ανά τμήμα
+-- Q15: Κατανομή triage ανά επίπεδο επείγοντος με μέσο χρόνο αναμονής, ποσοστό νοσηλείας και κατανομή παραπομπών ανά τμήμα
 WITH level_stats AS (
     SELECT
         t.urgency_level,
@@ -15,7 +14,7 @@ WITH level_stats AS (
 SELECT
     t.urgency_level          AS level,
     ul.name                  AS level_name,
-    COALESCE(d.name, 'Χωρίς νοσηλεία') AS department,
+    COALESCE(d.name, 'Not Hospitalized') AS department_name,
     COUNT(*)                 AS cases_in_dept,
     ls.total_per_level,
     ls.avg_wait_minutes,

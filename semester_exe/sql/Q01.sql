@@ -1,5 +1,5 @@
 -- Q1: Συνολικά έσοδα του νοσοκομείου ανά τμήμα και ανά έτος
-SELECT 
+SELECT
     d.name AS department_name,
     YEAR(a.admission_date) AS admission_year,
     a.ken_code,

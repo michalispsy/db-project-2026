@@ -1,5 +1,5 @@
 -- Q2: Ιατροί συγκεκριμένης ειδικότητας και επεμβάσεις
-SELECT 
+SELECT
     s.AMKA,
     s.first_name,
     s.last_name,

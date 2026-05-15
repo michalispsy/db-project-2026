@@ -1,5 +1,5 @@
 -- Q3: Ασθενείς με περισσότερες από 3 νοσηλείες στο ίδιο τμήμα
-SELECT 
+SELECT
     p.AMKA,
     p.first_name,
     p.last_name,

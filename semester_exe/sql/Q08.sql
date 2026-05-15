@@ -1,6 +1,8 @@
 -- Q08: Προσωπικό χωρίς προγραμματισμένη εφημερία για συγκεκριμένη εβδομάδα
 SELECT
-    CONCAT(s.first_name, ' ', s.last_name)      AS name,
+    s.AMKA,
+    s.first_name,
+    s.last_name,
     s.staff_type,
     COALESCE(doc.rank, n.rank, a.position)        AS role,
     COALESCE(

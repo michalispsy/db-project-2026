@@ -3,8 +3,9 @@
 DROP INDEX IF EXISTS idx_patients_last_name ON patients;
 
 EXPLAIN SELECT
-    CONCAT(p.first_name, ' ', p.last_name)              AS patient_name,
-    p.AMKA                                              AS patient_AMKA,
+    p.AMKA,
+    p.first_name,
+    p.last_name,
     a.admission_id,
     DATE_FORMAT(a.admission_date, '%Y-%m-%d')           AS admission_date,
     DATE_FORMAT(a.discharge_date, '%Y-%m-%d')           AS discharge_date,
