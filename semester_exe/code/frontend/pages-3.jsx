@@ -74,7 +74,7 @@ const Departments = () => {
 /* ─────────── DOCTORS (PUBLIC) ─────────── */
 const DoctorProfiles = () => {
   const { DOCTORS, DEPARTMENTS } = window.UG;
-  const RANK_GREEK = { "Director": "Διευθυντής", "Senior Attending": "Επιμελητής Α΄", "Junior Attending": "Επιμελητής Β΄", "Resident": "Ειδικευόμενος" };
+  const RANK_GREEK = { "Director": "Διευθυντής", "Senior Attending": "Επιμελητής Α", "Junior Attending": "Επιμελητής Β", "Resident": "Ειδικευόμενος" };
   
   return (
     <div>

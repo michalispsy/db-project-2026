@@ -34,7 +34,7 @@ const Staff = () => {
                     <td><strong>{d.name}</strong></td>
                     <td className="mono" style={{color:"var(--ink-600)"}}>{d.lic}</td>
                     <td>{d.spec}</td>
-                    <td><span className={"chip " + (d.rank === "Διευθυντής" ? "chip-brand" : d.rank === "Επιμελητής Α΄" ? "chip-violet" : d.rank === "Ειδικευόμενος" ? "chip-amber" : "")}>{d.rank}</span></td>
+                    <td><span className={"chip " + (d.rank === "Διευθυντής" ? "chip-brand" : d.rank === "Επιμελητής Α" ? "chip-violet" : d.rank === "Ειδικευόμενος" ? "chip-amber" : "")}>{d.rank}</span></td>
                     <td>{window.DEPT_GREEK[dept?.name] || dept?.name}</td>
                     <td>{sup ? sup.name : <span className="muted">—</span>}</td>
                   </tr>
@@ -86,8 +86,8 @@ const Staff = () => {
 /* ─────────── HIERARCHY ─────────── */
 const RANK_GREEK = {
   "Director": "Διευθυντής",
-  "Senior Attending": "Επιμελητής Α΄",
-  "Junior Attending": "Επιμελητής Β΄",
+  "Senior Attending": "Επιμελητής Α",
+  "Junior Attending": "Επιμελητής Β",
   "Resident": "Ειδικευόμενος"
 };
 
@@ -199,7 +199,7 @@ const Shifts = () => {
   const startDay = (firstDayOfMonth(year, month) + 6) % 7; // Align Monday as 0
 
   const GREEK_MONTHS = ["Ιανουάριος", "Φεβρουάριος", "Μάρτιος", "Απρίλιος", "Μάιος", "Ιούνιος", "Ιούλιος", "Αύγουστος", "Σεπτέμβριος", "Οκτώβριος", "Νοέμβριος", "Δεκέμβριος"];
-  const SLOT_GREEK = { "Morning": "Πρωί", "Afternoon": "Απόγευμα", "Night": "Νύχτα" };
+  const SLOT_GREEK = { "πρωινή": "Πρωί", "απογευματινή": "Απόγευμα", "νυχτερινή": "Νύχτα" };
 
   const getShiftsForDate = (dateStr) => {
     return SHIFTS.filter(s => s.date === dateStr && s.dept_id === selectedDept);
@@ -255,7 +255,7 @@ const Shifts = () => {
                   {dayShifts.map(s => (
                     <div key={s.shift_id} className="shift-entry">
                       <div className="shift-title">
-                        <span className="dot" style={{background: s.shift_slot === 'Night' ? 'var(--indigo-500)' : s.shift_slot === 'Afternoon' ? 'var(--amber-500)' : 'var(--brand-500)'}}/>
+                        <span className="dot" style={{background: s.shift_slot === 'νυχτερινή' ? 'var(--indigo-500)' : s.shift_slot === 'απογευματινή' ? 'var(--amber-500)' : 'var(--brand-500)'}}/>
                         {SLOT_GREEK[s.shift_slot] || s.shift_slot}
                       </div>
                       <div className="shift-staff">
@@ -285,11 +285,11 @@ const Shifts = () => {
               <button className="btn btn-ghost" onClick={() => setSelectedDay(null)}><Icon name="x" size={16}/></button>
             </div>
             <div style={{display:"flex", flexDirection:"column", gap: 12}}>
-              {["Morning", "Afternoon", "Night"].map(slot => {
+              {["πρωινή", "απογευματινή", "νυχτερινή"].map(slot => {
                 const shift = selectedDay.dayShifts.find(s => s.shift_slot === slot);
                 if (!shift) return null;
                 return (
-                  <div key={slot} className="card" style={{borderLeft: `4px solid ${slot === 'Night' ? 'var(--indigo-500)' : slot === 'Afternoon' ? 'var(--amber-500)' : 'var(--brand-500)'}`}}>
+                  <div key={slot} className="card" style={{borderLeft: `4px solid ${slot === 'νυχτερινή' ? 'var(--indigo-500)' : slot === 'απογευματινή' ? 'var(--amber-500)' : 'var(--brand-500)'}`}}>
                     <div style={{fontWeight: 600, marginBottom: 8}}>{SLOT_GREEK[slot]}</div>
                     <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap: 8}}>
                       {shift.staff.map(st => (
@@ -299,7 +299,7 @@ const Shifts = () => {
                           </div>
                           <div>
                             <div style={{fontSize: 12, fontWeight: 600}}>{st.name}</div>
-                            <div className="muted" style={{fontSize: 10}}>{st.role === 'Doctor' ? '👨‍⚕️ Γιατρός' : st.role === 'Nurse' ? '💉 Νοσηλευτής' : '📋 Διοικητικός'}</div>
+                            <div className="muted" style={{fontSize: 10}}>{st.role === 'doctor' ? '👨‍⚕️ Γιατρός' : st.role === 'nurse' ? '💉 Νοσηλευτής' : '📋 Διοικητικός'}</div>
                           </div>
                         </div>
                       ))}
@@ -371,7 +371,7 @@ const Hospitalizations = ({ onPatientOpen }) => {
         <div>
           <label className="field-label">Διαθέσιμη κλίνη</label>
           <select className="select">
-            {BEDS.filter(b => b.status === "available").map(b => <option key={b.id}>{b.id} — {window.BED_TYPE_GREEK[b.type] || b.type}</option>)}
+            {BEDS.filter(b => b.status === "διαθέσιμη").map(b => <option key={b.id}>{b.id} — {window.BED_TYPE_GREEK[b.type] || b.type}</option>)}
           </select>
         </div>
         <div>

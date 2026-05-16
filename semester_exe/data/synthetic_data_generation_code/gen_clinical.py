@@ -180,11 +180,11 @@ def gen_triages(patients, nurses, admissions):
 
             # Νοσηλεία ή αποχώρηση βάσει πιθανότητας ανά επίπεδο
             if random.random() < HOSP_PROB[urgency] and adm_idx < len(available_adms):
-                outcome = "Hospitalized"
+                outcome = "hospitalized"
                 adm_id = available_adms[adm_idx]["id"]
                 adm_idx += 1
             else:
-                outcome = "Discharged"
+                outcome = "discharged"
                 adm_id = None
 
             rows.append((pat["amka"], nurse["amka"], arr_str, triage_str,
@@ -440,7 +440,7 @@ def gen_alexiou_boost(alexiou_amka, ken_codes, icd10_codes, lab_types, base_adm_
         patient_rows.append((
             amka, first, last, random.choice(MALE_FIRST), str(dob),
             gender, random.randint(50, 120), random.randint(155, 195),
-            phone, email, "Patision 1, Athens", "Other", "GR", "EOPYY",
+            phone, email, "Patision 1, Athens", "Other", "GR", "ΕΦΚΑ",
         ))
 
         # --- bed in dept 1 (reuse existing 40 beds cyclically) ---
@@ -514,16 +514,16 @@ def gen_shifts(dept_ids, doctors, nurses, admins):
     end = date.today()
     n_days = max(1, (end - start).days + 1)
 
-    LIMITS = {"Doctor": 15, "Nurse": 20, "Admin": 25}
+    LIMITS = {"doctor": 15, "nurse": 20, "admin": 25}
 
     doctor_amkas = [d["amka"] for d in doctors]
     nurse_amkas  = [n["amka"] for n in nurses]
     admin_amkas  = [a["amka"] for a in admins]
 
     staff_type_map = {}
-    for d in doctors: staff_type_map[d["amka"]] = "Doctor"
-    for n in nurses:  staff_type_map[n["amka"]] = "Nurse"
-    for a in admins:  staff_type_map[a["amka"]] = "Admin"
+    for d in doctors: staff_type_map[d["amka"]] = "doctor"
+    for n in nurses:  staff_type_map[n["amka"]] = "nurse"
+    for a in admins:  staff_type_map[a["amka"]] = "admin"
 
     monthly_counts = {}   # (amka, year, month) -> int
     person_shifts  = {}   # amka -> set of (date, slot)
@@ -537,23 +537,23 @@ def gen_shifts(dept_ids, doctors, nurses, admins):
         if d in person_dates.get(amka, set()):
             return False
         shifts = person_shifts.get(amka, set())
-        # Night (D) and Morning (D+1) are only 8h apart end-to-start, which is
+        # νυχτερινή (D) and πρωινή (D+1) are only 8h apart end-to-start, which is
         # exactly the minimum — but 8h START-to-START is less than the required 16h
         # gap between shift starts (each shift is 8h, so 8h rest needs 16h start gap).
-        if slot == "Morning" and (d - timedelta(days=1), "Night") in shifts:
+        if slot == "πρωινή" and (d - timedelta(days=1), "νυχτερινή") in shifts:
             return False
-        if slot == "Night" and (d + timedelta(days=1), "Morning") in shifts:
+        if slot == "νυχτερινή" and (d + timedelta(days=1), "πρωινή") in shifts:
             return False
         # validate_consecutive_nights trigger forbids the 3rd consecutive night
-        if slot == "Night":
-            if (d - timedelta(days=1), "Night") in shifts \
-               and (d - timedelta(days=2), "Night") in shifts:
+        if slot == "νυχτερινή":
+            if (d - timedelta(days=1), "νυχτερινή") in shifts \
+               and (d - timedelta(days=2), "νυχτερινή") in shifts:
                 return False
-            if (d + timedelta(days=1), "Night") in shifts \
-               and (d + timedelta(days=2), "Night") in shifts:
+            if (d + timedelta(days=1), "νυχτερινή") in shifts \
+               and (d + timedelta(days=2), "νυχτερινή") in shifts:
                 return False
-            if (d - timedelta(days=1), "Night") in shifts \
-               and (d + timedelta(days=1), "Night") in shifts:
+            if (d - timedelta(days=1), "νυχτερινή") in shifts \
+               and (d + timedelta(days=1), "νυχτερινή") in shifts:
                 return False
         return True
 
@@ -579,7 +579,7 @@ def gen_shifts(dept_ids, doctors, nurses, admins):
         d = start + timedelta(days=day_offset)
         for dept in dept_ids:
             for slot in SHIFT_SLOTS:
-                shift_rows.append((sid, str(d), slot, "Scheduled", dept))
+                shift_rows.append((sid, str(d), slot, "scheduled", dept))
                 all_shifts.append((sid, d, slot))
                 sid += 1
 

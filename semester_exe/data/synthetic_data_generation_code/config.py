@@ -97,8 +97,8 @@ DEPT_NAMES = [
 ]
 
 BUILDINGS = ["A", "B", "C"]
-BED_TYPES = ["Regular", "ICU", "Emergency", "Pediatric"]
-BED_TYPE_WEIGHTS = [0.7, 0.1, 0.1, 0.1]
+BED_TYPES = ["πολύκλινο", "ΜΕΘ", "μονόκλινο"]
+BED_TYPE_WEIGHTS = [0.7, 0.1, 0.2]
 ROOM_NAMES = [
     ("OR-1", "Operating Room"), ("OR-2", "Operating Room"),
     ("OR-3", "Operating Room"), ("OR-4", "Operating Room"),
@@ -106,7 +106,7 @@ ROOM_NAMES = [
     ("ICU-2", "ICU"), ("EXAM-1", "Exam Room"),
     ("EXAM-2", "Exam Room"), ("THER-1", "Therapy Room"),
 ]
-DOCTOR_RANKS = ["Resident", "Junior Attending", "Senior Attending", "Director"]
+DOCTOR_RANKS = ["Ειδικευόμενος", "Επιμελητής Β", "Επιμελητής Α", "Διευθυντής"]
 DOCTOR_SPECIALTIES = [
     "Cardiology", "Surgery", "Pediatrics", "Neurology", "Orthopedics",
     "Internal Medicine", "Emergency Medicine", "Anesthesiology", "Radiology",
@@ -118,21 +118,21 @@ ATHENS_STREETS = [
     "Alexandras", "Kifissias", "Mesogeion", "Syngrou", "Vouliagmenis",
     "Pireos", "Ermou", "Athinas", "Omirou", "Solonos",
 ]
-NURSE_RANKS = ["Nursing Assistant", "Registered Nurse", "Head Nurse"]
+NURSE_RANKS = ["Βοηθός Νοσηλευτή", "Νοσηλευτής", "Προϊστάμενος"]
 ADMIN_POSITIONS = [
-    "Secretary", "Receptionist", "Billing Clerk", "HR Officer",
-    "IT Support", "Records Clerk", "Supplies Manager",
+    "Γραμματέας", "Ρεσεψιονίστ", "Λογιστής", "Υπάλληλος IT",
+    "Αρχειοθέτης", "Γραμματέας Τμήματος", "Υπεύθυνος Προμηθειών",
 ]
 GENDERS = ["M", "F", "Other"]
 GENDER_WEIGHTS = [0.48, 0.48, 0.04]
 NATIONALITIES = ["GR", "GR", "GR", "GR", "GR", "CY", "AL", "BG", "DE", "GB"]
 INSURANCE = [
-    "EOPYY", "EOPYY", "EOPYY", "EOPYY",
-    "Generali", "Ethniki", "Interamerican", "Eurolife",
-    "Allianz", "MetLife", "Uninsured",
+    "ΕΦΚΑ", "ΕΦΚΑ", "ΕΦΚΑ", "ΕΦΚΑ",
+    "Ιδιωτική Ασφάλεια", "Ιδιωτική Ασφάλεια", "Ιδιωτική Ασφάλεια", "Ιδιωτική Ασφάλεια",
+    "Ανασφάλιστος",
 ]
 RELATIONSHIPS = ["Parent", "Spouse", "Sibling", "Child", "Friend", "Other"]
-SHIFT_SLOTS = ["Morning", "Afternoon", "Night"]
+SHIFT_SLOTS = ["πρωινή", "απογευματινή", "νυχτερινή"]
 DOSAGES = ["5mg", "10mg", "20mg", "50mg", "100mg", "200mg", "250mg", "500mg"]
 FREQUENCIES = [
     "1x daily", "2x daily", "3x daily", "Every 8 hours",

@@ -3,9 +3,9 @@ WITH RECURSIVE supervisor_hierarchy AS (
     SELECT
         d.amka AS leaf_amka,
         d.supervisor_amka AS next_supervisor_amka,
-        CAST(CONCAT(s_leaf.first_name, ' ', s_leaf.last_name) AS VARCHAR(100)) AS doctor_name,
+        CAST(CONCAT(s_leaf.first_name, ' ', s_leaf.last_name) AS CHAR(100)) AS doctor_name,
         CASE WHEN d.supervisor_amka IS NULL THEN 1 ELSE 2 END AS level,
-        CAST(CASE WHEN d.supervisor_amka IS NULL THEN '/' ELSE CONCAT('/', s_sup.first_name, ' ', s_sup.last_name, '/') END AS VARCHAR(500)) AS hierarchy_path
+        CAST(CASE WHEN d.supervisor_amka IS NULL THEN '/' ELSE CONCAT('/', s_sup.first_name, ' ', s_sup.last_name, '/') END AS CHAR(500)) AS hierarchy_path
     FROM doctors d
     JOIN staff s_leaf ON d.amka = s_leaf.amka
     LEFT JOIN staff s_sup ON d.supervisor_amka = s_sup.amka

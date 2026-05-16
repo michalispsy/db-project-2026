@@ -89,8 +89,8 @@ const Dashboard = ({ onPatientOpen }) => {
       </div>
       <div className="stat">
         <div className="stat-label">Διαθέσιμες κλίνες</div>
-        <div className="stat-value">{BEDS.filter(b => b.status === 'available').length} / {BEDS.length}</div>
-        <div className="stat-meta"><span className="muted">{Math.round(100 * BEDS.filter(b => b.status === 'occupied').length / BEDS.length)}% πληρότητα</span></div>
+        <div className="stat-value">{BEDS.filter(b => b.status === 'διαθέσιμη').length} / {BEDS.length}</div>
+        <div className="stat-meta"><span className="muted">{Math.round(100 * BEDS.filter(b => b.status === 'κατειλημμένη').length / BEDS.length)}% πληρότητα</span></div>
       </div>
       <div className="stat">
         <div className="stat-label">Προγρ. Χειρουργεία</div>
@@ -109,7 +109,7 @@ const Dashboard = ({ onPatientOpen }) => {
           <button className="btn btn-ghost" style={{padding:"4px 10px", fontSize:12, color:"var(--brand-600)"}}>● Live</button>
         </div>
         {DEPARTMENTS.map(d => {
-          const used = BEDS.filter(b => b.dept == d.id && b.status === 'occupied').length;
+          const used = BEDS.filter(b => b.dept == d.id && b.status === 'κατειλημμένη').length;
           const total = d.beds || 1;
           const pct = Math.round(100 * used / total);
           return (
@@ -181,13 +181,13 @@ const Triage = ({ onAdmit, onPatientOpen }) => {
   const stats = {
     pending: active.length,
     avgWait: Math.round(active.reduce((acc, curr) => acc + (curr.waitMin || 0), 0) / (active.length || 1)) || 0,
-    admitted: triages.filter(p => p.outcome === 'Hospitalized').length,
-    discharged: triages.filter(p => p.outcome === 'Discharged').length
+    admitted: triages.filter(p => p.outcome === 'hospitalized').length,
+    discharged: triages.filter(p => p.outcome === 'discharged').length
   };
 
   const OUTCOME_LABELS = {
-    'Hospitalized': { label: 'Εισαγωγή', chip: 'chip-brand' },
-    'Discharged': { label: 'Εξιτήριο', chip: 'chip-green' },
+    'hospitalized': { label: 'Εισαγωγή', chip: 'chip-brand' },
+    'discharged': { label: 'Εξιτήριο', chip: 'chip-green' },
     'Pending': { label: 'Σε αναμονή', chip: 'chip-amber' }
   };
 
@@ -542,9 +542,9 @@ const Beds = ({ onPatientOpen }) => {
   const { DEPARTMENTS, BEDS } = window.UG;
   const beds = BEDS.filter(b => b.dept == deptId);
   
-  const occupied = beds.filter(b => b.status === 'occupied');
-  const available = beds.filter(b => b.status === 'available');
-  const maintenance = beds.filter(b => b.status === 'maintenance');
+  const occupied = beds.filter(b => b.status === 'κατειλημμένη');
+  const available = beds.filter(b => b.status === 'διαθέσιμη');
+  const maintenance = beds.filter(b => b.status === 'υπό συντήρηση');
 
   const freeByType = available.reduce((acc, b) => {
     acc[b.type] = (acc[b.type] || 0) + 1;

@@ -97,13 +97,13 @@ def gen_staff_and_doctors(dept_ids):
         n_seniors = N_DEPARTMENTS * 2
         n_juniors = N_DEPARTMENTS * 4
         if i < N_DEPARTMENTS:
-            rank = "Director"
+            rank = "Διευθυντής"
         elif i < N_DEPARTMENTS + n_seniors:
-            rank = "Senior Attending"
+            rank = "Επιμελητής Α"
         elif i < N_DEPARTMENTS + n_seniors + n_juniors:
-            rank = "Junior Attending"
+            rank = "Επιμελητής Β"
         else:
-            rank = "Resident"
+            rank = "Ειδικευόμενος"
 
         doctors.append({"amka": amka, "rank": rank, "idx": i, "gender": gender,
                         "dept": dept_ids[i % len(dept_ids)]})
@@ -114,35 +114,35 @@ def gen_staff_and_doctors(dept_ids):
 
     # Build doctor rows with department-aware supervisors
     # First, let's map department directors
-    dept_directors = {doc["dept"]: doc["amka"] for doc in doctors if doc["rank"] == "Director"}
+    dept_directors = {doc["dept"]: doc["amka"] for doc in doctors if doc["rank"] == "Διευθυντής"}
 
     for doc in doctors:
         sup = None
         dept_id = doc["dept"]
         
         # Get potential supervisors in the SAME department
-        dept_seniors = [d for d in doctors if d["dept"] == dept_id and d["rank"] == "Senior Attending"]
-        dept_juniors = [d for d in doctors if d["dept"] == dept_id and d["rank"] == "Junior Attending"]
+        dept_seniors = [d for d in doctors if d["dept"] == dept_id and d["rank"] == "Επιμελητής Α"]
+        dept_juniors = [d for d in doctors if d["dept"] == dept_id and d["rank"] == "Επιμελητής Β"]
         
-        if doc["rank"] == "Resident":
-            # Residents report to a Senior or Junior Attending in their department
+        if doc["rank"] == "Ειδικευόμενος":
+            # Ειδικευόμενοι report to an Επιμελητής in their department
             options = dept_seniors + dept_juniors
             if options:
                 sup = random.choice(options)["amka"]
             else:
-                # Fallback to Director if no Attendings
+                # Fallback to Διευθυντής if no Attendings
                 sup = dept_directors.get(dept_id)
                 
-        elif doc["rank"] == "Junior Attending":
-            # Junior Attendings report to a Senior Attending in their department
+        elif doc["rank"] == "Επιμελητής Β":
+            # Επιμελητές Β report to an Επιμελητής Α in their department
             if dept_seniors:
                 sup = random.choice(dept_seniors)["amka"]
             else:
-                # Fallback to Director
+                # Fallback to Διευθυντής
                 sup = dept_directors.get(dept_id)
                 
-        elif doc["rank"] == "Senior Attending":
-            # Senior Attendings report to the Department Director
+        elif doc["rank"] == "Επιμελητής Α":
+            # Επιμελητές Α report to the Department Διευθυντής
             sup = dept_directors.get(dept_id)
             
         lic = gen_license()

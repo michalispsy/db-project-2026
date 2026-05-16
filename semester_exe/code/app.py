@@ -245,9 +245,7 @@ def get_data():
     # 9. BEDS
     cursor.execute("""
         SELECT b.bed_id AS id, b.dept_id AS dept, b.bed_type AS type, 
-               CASE WHEN b.status = 'Free' THEN 'available'
-                    WHEN b.status = 'Occupied' THEN 'occupied'
-                    ELSE 'maintenance' END AS status,
+               b.status AS status,
                CONCAT(p.first_name, ' ', p.last_name) AS patient,
                p.AMKA AS patient_AMKA
         FROM beds b
@@ -285,9 +283,9 @@ def get_data():
     
     cursor.execute("""
         SELECT ss.shift_id, st.AMKA AS id, CONCAT(st.first_name, ' ', st.last_name) AS name, 
-               CASE WHEN dr.AMKA IS NOT NULL THEN 'Doctor'
-                    WHEN nu.AMKA IS NOT NULL THEN 'Nurse'
-                    ELSE 'Admin' END AS role
+               CASE WHEN dr.AMKA IS NOT NULL THEN 'doctor'
+                    WHEN nu.AMKA IS NOT NULL THEN 'nurse'
+                    ELSE 'admin' END AS role
         FROM shift_staffing ss
         JOIN staff st ON ss.staff_AMKA = st.AMKA
         LEFT JOIN doctors dr ON st.AMKA = dr.AMKA

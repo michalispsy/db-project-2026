@@ -5,9 +5,9 @@ SELECT
     ws.shift_date AS date,
     ws.shift_slot AS shift,
     CASE 
-        WHEN doc.AMKA IS NOT NULL THEN 'Doctor'
-        WHEN n.AMKA IS NOT NULL THEN 'Nurse'
-        WHEN adm.AMKA IS NOT NULL THEN 'Admin'
+        WHEN doc.AMKA IS NOT NULL THEN 'Ιατρός'
+        WHEN n.AMKA IS NOT NULL THEN 'Νοσηλευτής'
+        WHEN adm.AMKA IS NOT NULL THEN 'Διοικητικός'
     END AS staff_type,
     COALESCE(doc.specialty, n.rank, adm.position) AS role,
     COUNT(ss.staff_AMKA) AS staff_count

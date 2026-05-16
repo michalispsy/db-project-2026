@@ -105,18 +105,18 @@ const KEN = [
 
 const BEDS = [
   // Καρδιολογική
-  { id: "Κ-01", dept: 1, type: "πολύκλινο", status: "occupied", patient: "Α. Λαμπρίδης" },
-  { id: "Κ-02", dept: 1, type: "πολύκλινο", status: "available", patient: null },
-  { id: "Κ-03", dept: 1, type: "μονόκλινο", status: "occupied", patient: "Ε. Παπαϊωάννου" },
-  { id: "Κ-04", dept: 1, type: "μονόκλινο", status: "maintenance", patient: null },
-  { id: "Κ-05", dept: 1, type: "πολύκλινο", status: "occupied", patient: "Σ. Δημητρίου" },
-  { id: "Κ-06", dept: 1, type: "πολύκλινο", status: "available", patient: null },
-  { id: "Κ-07", dept: 1, type: "πολύκλινο", status: "occupied", patient: "Β. Νικολαΐδης" },
-  { id: "Κ-08", dept: 1, type: "πολύκλινο", status: "available", patient: null },
-  { id: "Κ-09", dept: 1, type: "ΜΕΘ",        status: "occupied", patient: "Μ. Σαββίδης" },
-  { id: "Κ-10", dept: 1, type: "ΜΕΘ",        status: "occupied", patient: "Π. Καρά" },
-  { id: "Κ-11", dept: 1, type: "πολύκλινο", status: "available", patient: null },
-  { id: "Κ-12", dept: 1, type: "μονόκλινο", status: "occupied", patient: "Δ. Ραπτόπουλος" },
+  { id: "Κ-01", dept: 1, type: "πολύκλινο", status: "κατειλημμένη", patient: "Α. Λαμπρίδης" },
+  { id: "Κ-02", dept: 1, type: "πολύκλινο", status: "διαθέσιμη", patient: null },
+  { id: "Κ-03", dept: 1, type: "μονόκλινο", status: "κατειλημμένη", patient: "Ε. Παπαϊωάννου" },
+  { id: "Κ-04", dept: 1, type: "μονόκλινο", status: "υπό συντήρηση", patient: null },
+  { id: "Κ-05", dept: 1, type: "πολύκλινο", status: "κατειλημμένη", patient: "Σ. Δημητρίου" },
+  { id: "Κ-06", dept: 1, type: "πολύκλινο", status: "διαθέσιμη", patient: null },
+  { id: "Κ-07", dept: 1, type: "πολύκλινο", status: "κατειλημμένη", patient: "Β. Νικολαΐδης" },
+  { id: "Κ-08", dept: 1, type: "πολύκλινο", status: "διαθέσιμη", patient: null },
+  { id: "Κ-09", dept: 1, type: "ΜΕΘ",        status: "κατειλημμένη", patient: "Μ. Σαββίδης" },
+  { id: "Κ-10", dept: 1, type: "ΜΕΘ",        status: "κατειλημμένη", patient: "Π. Καρά" },
+  { id: "Κ-11", dept: 1, type: "πολύκλινο", status: "διαθέσιμη", patient: null },
+  { id: "Κ-12", dept: 1, type: "μονόκλινο", status: "κατειλημμένη", patient: "Δ. Ραπτόπουλος" },
 ];
 
 const DRUGS = [
@@ -204,8 +204,7 @@ window.DEPT_GREEK = {
 };
 
 window.BED_TYPE_GREEK = {
-  "Emergency": "Επείγον",
-  "ICU": "ΜΕΘ",
-  "Pediatric": "Παιδιατρικό",
-  "Regular": "Τακτικό"
+  "μονόκλινο": "Μονόκλινο",
+  "ΜΕΘ": "ΜΕΘ",
+  "πολύκλινο": "Πολύκλινο"
 };

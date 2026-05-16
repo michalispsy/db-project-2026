@@ -5,7 +5,7 @@ WITH level_stats AS (
         COUNT(*)                                                     AS total_per_level,
         ROUND(AVG(TIMESTAMPDIFF(MINUTE, t.arrival_time,
                                         t.triage_time)), 1)         AS avg_wait_minutes,
-        ROUND(SUM(t.outcome = 'Hospitalized') * 100.0
+        ROUND(SUM(t.outcome = 'hospitalized') * 100.0
               / COUNT(*), 1)                                         AS hospitalization_pct
     FROM triages t
     WHERE t.triage_time IS NOT NULL
@@ -14,7 +14,7 @@ WITH level_stats AS (
 SELECT
     t.urgency_level          AS level,
     ul.name                  AS level_name,
-    COALESCE(d.name, 'Not Hospitalized') AS department_name,
+    COALESCE(d.name, 'Μη νοσηλευόμενος') AS department_name,
     COUNT(*)                 AS cases_in_dept,
     ls.total_per_level,
     ls.avg_wait_minutes,

@@ -103,13 +103,13 @@ def gen_medical_procedures():
         code = r["code"][:20]
         desc = r["description"][:50]
         raw_cat = r.get("category", "").strip()
-        # Ministry source uses Greek letters: Α=Surgical, Β=Diagnostic or Therapeutic
+        # Ministry source uses Greek letters: Α=χειρουργική, Β=διαγνωστική or θεραπευτική
         if raw_cat == "Α":
-            cat = "Surgical"
+            cat = "χειρουργική"
         elif raw_cat == "Β":
-            cat = random.choice(["Diagnostic", "Therapeutic"])
+            cat = random.choice(["διαγνωστική", "θεραπευτική"])
         else:
-            cat = random.choice(["Surgical", "Diagnostic", "Therapeutic"])
+            cat = random.choice(["χειρουργική", "διαγνωστική", "θεραπευτική"])
         dur = random.randint(15, 240)
         cost = round(random.uniform(200, 10000), 2)
         rows.append((code, desc, cat, dur, f"{cost:.2f}"))
