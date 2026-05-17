@@ -601,7 +601,7 @@ BEGIN
     );
 END//
 
-CREATE TRIGGER check_admission_dept_matches_bed_insert
+CREATE TRIGGER check_admission_dept_matches_bed_insert_trigger
 BEFORE INSERT ON admissions
 FOR EACH ROW
 BEGIN
@@ -613,7 +613,7 @@ BEGIN
     END IF;
 END//
 
-CREATE TRIGGER check_admission_dept_matches_bed_update
+CREATE TRIGGER check_admission_dept_matches_bed_update_trigger
 BEFORE UPDATE ON admissions
 FOR EACH ROW
 BEGIN
@@ -1259,7 +1259,7 @@ BEGIN
     END IF;
 END//
 
-CREATE TRIGGER trg_protect_locked_shifts
+CREATE TRIGGER trg_protect_locked_shifts_trigger
 BEFORE INSERT ON shift_staffing
 FOR EACH ROW
 BEGIN
@@ -1275,7 +1275,7 @@ BEGIN
     END IF;
 END//
 
-CREATE TRIGGER trg_protect_locked_shifts_delete
+CREATE TRIGGER trg_protect_locked_shifts_delete_trigger
 BEFORE DELETE ON shift_staffing
 FOR EACH ROW
 BEGIN

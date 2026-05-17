@@ -1,7 +1,8 @@
-+------------------+------------------+-----------+
-| drug_1           | drug_2           | frequency |
-+------------------+------------------+-----------+
-| Abiraterone Teva | Actilyse Cathflo |        18 |
-| Almerzac         | Almogran         |        13 |
-| Abiraterone Teva | Almerzac         |        13 |
-+------------------+------------------+-----------+
++---------------------+-------------------------+-----------+
+| substance_1         | substance_2             | frequency |
++---------------------+-------------------------+-----------+
+| Abiraterone Acetate | Alteplase               |        18 |
+| Abiraterone Acetate | Almotriptan             |        12 |
+| Alteplase           | Memantine Hydrochloride |        12 |
++---------------------+-------------------------+-----------+
+
