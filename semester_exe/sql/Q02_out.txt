@@ -3,20 +3,20 @@
 +-------------+-------------+--------------+-------------+---------------------+-------------------+
 | 81291635049 | Antonis     | Samaras      | Χειρουργική |                   1 |                 5 |
 | 31579057191 | Georgia     | Michailidi   | Χειρουργική |                   1 |                 5 |
-| 75169139521 | Babis       | Bates        | Χειρουργική |                   1 |                 4 |
 | 00953662195 | Smaragda    | Karydi       | Χειρουργική |                   1 |                 4 |
-| 90417282076 | Theodora    | Alexiou      | Χειρουργική |                   1 |                 3 |
+| 75169139521 | Babis       | Bates        | Χειρουργική |                   1 |                 4 |
 | 73536423570 | Lambros     | Konstantaras | Χειρουργική |                   1 |                 3 |
 | 46339534811 | Charilaos   | Trikoupis    | Χειρουργική |                   1 |                 3 |
 | 78803318361 | Mikis       | Theodorakis  | Χειρουργική |                   1 |                 3 |
 | 59851602119 | Giorgos     | Kapoutzidis  | Χειρουργική |                   1 |                 3 |
+| 90417282076 | Theodora    | Alexiou      | Χειρουργική |                   1 |                 3 |
+| 27622398474 | Giannis     | Nikolaidis   | Χειρουργική |                   1 |                 2 |
+| 19397814590 | Dimitris    | Diamantidis  | Χειρουργική |                   1 |                 2 |
+| 95437766183 | Eleftherios | Papadopoulos | Χειρουργική |                   1 |                 2 |
 | 20761239612 | Fotios      | Vlachopoulos | Χειρουργική |                   1 |                 2 |
 | 67244693172 | Kostas      | Simitis      | Χειρουργική |                   1 |                 2 |
 | 43302650996 | Antonis     | Petridis     | Χειρουργική |                   1 |                 2 |
 | 97648784962 | Vasiliki    | Antoniou     | Χειρουργική |                   1 |                 2 |
-| 27622398474 | Giannis     | Nikolaidis   | Χειρουργική |                   1 |                 2 |
-| 19397814590 | Dimitris    | Diamantidis  | Χειρουργική |                   1 |                 2 |
-| 95437766183 | Eleftherios | Papadopoulos | Χειρουργική |                   1 |                 2 |
 | 90577204410 | Eleni       | Menegaki     | Χειρουργική |                   1 |                 1 |
 | 66023515850 | Danai       | Chatzidaki   | Χειρουργική |                   1 |                 1 |
 | 89121397436 | Petros      | Bakogiannis  | Χειρουργική |                   1 |                 1 |

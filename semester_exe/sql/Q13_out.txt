@@ -1,304 +1,304 @@
-+----------------------------+------------------------------------------------------------------+-------+
-| doctor_name                | hierarchy_path                                                   | level |
-+----------------------------+------------------------------------------------------------------+-------+
-| Anna Vissi                 | /                                                                |     1 |
-| Antonis Remos              | /                                                                |     1 |
-| Despina Vandi              | /                                                                |     1 |
-| Eleni Foureira             | /                                                                |     1 |
-| Giannis Antetokounmpo      | /                                                                |     1 |
-| Giorgos Mazonakis          | /                                                                |     1 |
-| Helena Paparizou           | /                                                                |     1 |
-| Katerina Stikoudi          | /                                                                |     1 |
-| Konstantinos Argiros       | /                                                                |     1 |
-| Michalis Alexiou           | /                                                                |     1 |
-| Natasa Theodorou           | /                                                                |     1 |
-| Nikos Vertis               | /                                                                |     1 |
-| Notis Sfakianakis          | /                                                                |     1 |
-| Pantelis Pantelidis        | /                                                                |     1 |
-| Sakis Rouvas               | /                                                                |     1 |
-| Kostas Sloukas             | /Anna Vissi/                                                     |     2 |
-| Melina Aslanidou           | /Anna Vissi/                                                     |     2 |
-| Aggeliki Sidiropoulou      | /Anna Vissi/Kostas Sloukas/                                      |     3 |
-| Eleni Menegaki             | /Anna Vissi/Kostas Sloukas/                                      |     3 |
-| Lambros Fisfis             | /Anna Vissi/Kostas Sloukas/                                      |     3 |
-| Georgios Oikonomidis       | /Anna Vissi/Kostas Sloukas/Eleni Menegaki/                       |     4 |
-| Pavlos Chronopoulos        | /Anna Vissi/Kostas Sloukas/Eleni Menegaki/                       |     4 |
-| Leonidas Triantafyllou     | /Anna Vissi/Kostas Sloukas/Lambros Fisfis/                       |     4 |
-| Nikos Lamprou              | /Anna Vissi/Kostas Sloukas/Lambros Fisfis/                       |     4 |
-| Petros Bakogiannis         | /Anna Vissi/Kostas Sloukas/Lambros Fisfis/                       |     4 |
-| Alexandros Stamatiou       | /Anna Vissi/Melina Aslanidou/                                    |     3 |
-| Theodoros Kolokotronis     | /Anna Vissi/Melina Aslanidou/                                    |     3 |
-| Vasilis Bisbikis           | /Anna Vissi/Melina Aslanidou/                                    |     3 |
-| Antonis Samaras            | /Anna Vissi/Melina Aslanidou/Theodoros Kolokotronis/             |     4 |
-| Kalliopi Eleftheriadi      | /Anna Vissi/Melina Aslanidou/Theodoros Kolokotronis/             |     4 |
-| Stavroula Chatzidaki       | /Anna Vissi/Melina Aslanidou/Theodoros Kolokotronis/             |     4 |
-| Christina Vlachopoulou     | /Anna Vissi/Melina Aslanidou/Vasilis Bisbikis/                   |     4 |
-| Homer Poet                 | /Anna Vissi/Melina Aslanidou/Vasilis Bisbikis/                   |     4 |
-| Stavroula Oikonomou        | /Anna Vissi/Melina Aslanidou/Vasilis Bisbikis/                   |     4 |
-| Giorgos Karagounis         | /Antonis Remos/                                                  |     2 |
-| Michalis Hatzigiannis      | /Antonis Remos/                                                  |     2 |
-| Eleni Rantou               | /Antonis Remos/Giorgos Karagounis/                               |     3 |
-| Stamatis Fasoulis          | /Antonis Remos/Giorgos Karagounis/                               |     3 |
-| Filippos Makris            | /Antonis Remos/Giorgos Karagounis/Eleni Rantou/                  |     4 |
-| Georgios Chatzidakis       | /Antonis Remos/Giorgos Karagounis/Eleni Rantou/                  |     4 |
-| Danai Vlachopoulou         | /Antonis Remos/Giorgos Karagounis/Stamatis Fasoulis/             |     4 |
-| Grigoris Dimitriou         | /Antonis Remos/Giorgos Karagounis/Stamatis Fasoulis/             |     4 |
-| Sotiris Papageorgiou       | /Antonis Remos/Giorgos Karagounis/Stamatis Fasoulis/             |     4 |
-| Angelos Charisteas         | /Antonis Remos/Michalis Hatzigiannis/                            |     3 |
-| Charalampos Antoniou       | /Antonis Remos/Michalis Hatzigiannis/                            |     3 |
-| Charilaos Trikoupis        | /Antonis Remos/Michalis Hatzigiannis/                            |     3 |
-| Dimitris Dimitriou         | /Antonis Remos/Michalis Hatzigiannis/                            |     3 |
-| Aikaterini Athanasiou      | /Antonis Remos/Michalis Hatzigiannis/Angelos Charisteas/         |     4 |
-| Fotios Vasileiou           | /Antonis Remos/Michalis Hatzigiannis/Angelos Charisteas/         |     4 |
-| Leonidas King              | /Antonis Remos/Michalis Hatzigiannis/Angelos Charisteas/         |     4 |
-| Theodora Triantafyllou     | /Antonis Remos/Michalis Hatzigiannis/Angelos Charisteas/         |     4 |
-| Foteini Tsoukala           | /Antonis Remos/Michalis Hatzigiannis/Charilaos Trikoupis/        |     4 |
-| George Papandreou          | /Antonis Remos/Michalis Hatzigiannis/Charilaos Trikoupis/        |     4 |
-| Dimitris Diamantidis       | /Despina Vandi/                                                  |     2 |
-| Nikos Oikonomopoulos       | /Despina Vandi/                                                  |     2 |
-| Christos Petridis          | /Despina Vandi/Dimitris Diamantidis/                             |     3 |
-| Eleni Ioannidi             | /Despina Vandi/Dimitris Diamantidis/                             |     3 |
-| Georgios Karaiskakis       | /Despina Vandi/Dimitris Diamantidis/                             |     3 |
-| Grigoris Arnaoutoglou      | /Despina Vandi/Dimitris Diamantidis/                             |     3 |
-| Nikos Aliagas              | /Despina Vandi/Dimitris Diamantidis/                             |     3 |
-| Elisavet Chronopoulou      | /Despina Vandi/Dimitris Diamantidis/Georgios Karaiskakis/        |     4 |
-| Ioannis Michailidis        | /Despina Vandi/Dimitris Diamantidis/Georgios Karaiskakis/        |     4 |
-| Kostas Karamanlis          | /Despina Vandi/Dimitris Diamantidis/Georgios Karaiskakis/        |     4 |
-| Georgia Sidiropoulou       | /Despina Vandi/Dimitris Diamantidis/Nikos Aliagas/               |     4 |
-| Georgios Papageorgiou      | /Despina Vandi/Dimitris Diamantidis/Nikos Aliagas/               |     4 |
-| Pinelopi Makri             | /Despina Vandi/Dimitris Diamantidis/Nikos Aliagas/               |     4 |
-| Sappho Poet                | /Despina Vandi/Dimitris Diamantidis/Nikos Aliagas/               |     4 |
-| Vasiliki Kalliga           | /Despina Vandi/Dimitris Diamantidis/Nikos Aliagas/               |     4 |
-| Giorgos Xatzipavlou        | /Despina Vandi/Nikos Oikonomopoulos/                             |     3 |
-| Ioannis Spanos             | /Despina Vandi/Nikos Oikonomopoulos/                             |     3 |
-| Margarita Nikolaidi        | /Despina Vandi/Nikos Oikonomopoulos/                             |     3 |
-| Eleni Archontopoulou       | /Despina Vandi/Nikos Oikonomopoulos/Giorgos Xatzipavlou/         |     4 |
-| Miltiadis Tentoglou        | /Eleni Foureira/                                                 |     2 |
-| Vasilis Karras             | /Eleni Foureira/                                                 |     2 |
-| Margarita Vlachopoulou     | /Eleni Foureira/Miltiadis Tentoglou/                             |     3 |
-| Sakis Tanimanidis          | /Eleni Foureira/Miltiadis Tentoglou/                             |     3 |
-| Vasilis Kalligas           | /Eleni Foureira/Miltiadis Tentoglou/Sakis Tanimanidis/           |     4 |
-| Christos Spanos            | /Eleni Foureira/Vasilis Karras/                                  |     3 |
-| Dimitris Makalias          | /Eleni Foureira/Vasilis Karras/                                  |     3 |
-| Katerina Papoutsaki        | /Eleni Foureira/Vasilis Karras/                                  |     3 |
-| Laskarina Bouboulina       | /Eleni Foureira/Vasilis Karras/                                  |     3 |
-| Olympia Tsakalidi          | /Eleni Foureira/Vasilis Karras/                                  |     3 |
-| Ariadni Lamprou            | /Eleni Foureira/Vasilis Karras/Dimitris Makalias/                |     4 |
-| Katerina Archontopoulou    | /Eleni Foureira/Vasilis Karras/Dimitris Makalias/                |     4 |
-| Pinelopi Nikolaidi         | /Eleni Foureira/Vasilis Karras/Dimitris Makalias/                |     4 |
-| Stavroula Kalliga          | /Eleni Foureira/Vasilis Karras/Dimitris Makalias/                |     4 |
-| Stefanos Ioannidis         | /Eleni Foureira/Vasilis Karras/Dimitris Makalias/                |     4 |
-| Elisavet Karagianni        | /Eleni Foureira/Vasilis Karras/Katerina Papoutsaki/              |     4 |
-| Pinelopi Antoniou          | /Eleni Foureira/Vasilis Karras/Katerina Papoutsaki/              |     4 |
-| Hippocrates Doctor         | /Eleni Foureira/Vasilis Karras/Laskarina Bouboulina/             |     4 |
-| Prokopis Pavlopoulos       | /Eleni Foureira/Vasilis Karras/Laskarina Bouboulina/             |     4 |
-| Giannis Ploutarchos        | /Giannis Antetokounmpo/                                          |     2 |
-| Theodoros Zagorakis        | /Giannis Antetokounmpo/                                          |     2 |
-| Kostas Simitis             | /Giannis Antetokounmpo/Giannis Ploutarchos/                      |     3 |
-| Panagiotis Giannakis       | /Giannis Antetokounmpo/Giannis Ploutarchos/                      |     3 |
-| Pericles Statesman         | /Giannis Antetokounmpo/Giannis Ploutarchos/                      |     3 |
-| Sotiris Moustakas          | /Giannis Antetokounmpo/Giannis Ploutarchos/                      |     3 |
-| Athina Kalliga             | /Giannis Antetokounmpo/Giannis Ploutarchos/Panagiotis Giannakis/ |     4 |
-| Eleftherios Papadopoulos   | /Giannis Antetokounmpo/Giannis Ploutarchos/Panagiotis Giannakis/ |     4 |
-| Georgia Spanou             | /Giannis Antetokounmpo/Giannis Ploutarchos/Panagiotis Giannakis/ |     4 |
-| Michalis Petridis          | /Giannis Antetokounmpo/Giannis Ploutarchos/Sotiris Moustakas/    |     4 |
-| Antonis Athanasiou         | /Giannis Antetokounmpo/Theodoros Zagorakis/                      |     3 |
-| Emmanouil Chronopoulos     | /Giannis Antetokounmpo/Theodoros Zagorakis/                      |     3 |
-| Ioannis Kapodistrias       | /Giannis Antetokounmpo/Theodoros Zagorakis/                      |     3 |
-| Tatiana Stefanidou         | /Giannis Antetokounmpo/Theodoros Zagorakis/                      |     3 |
-| Xanthi Papadimitriou       | /Giannis Antetokounmpo/Theodoros Zagorakis/                      |     3 |
-| Maria Karagianni           | /Giannis Antetokounmpo/Theodoros Zagorakis/Ioannis Kapodistrias/ |     4 |
-| Xanthi Oikonomou           | /Giannis Antetokounmpo/Theodoros Zagorakis/Ioannis Kapodistrias/ |     4 |
-| Alexandros Lamprou         | /Giannis Antetokounmpo/Theodoros Zagorakis/Tatiana Stefanidou/   |     4 |
-| Sotiris Papageorgiou       | /Giannis Antetokounmpo/Theodoros Zagorakis/Tatiana Stefanidou/   |     4 |
-| Dimitris Mitropanos        | /Giorgos Mazonakis/                                              |     2 |
-| Pyrros Dimas               | /Giorgos Mazonakis/                                              |     2 |
-| Blandine Drakou            | /Giorgos Mazonakis/Dimitris Mitropanos/                          |     3 |
-| Nikos Moutsinas            | /Giorgos Mazonakis/Dimitris Mitropanos/                          |     3 |
-| Socrates Philosopher       | /Giorgos Mazonakis/Dimitris Mitropanos/                          |     3 |
-| Athina Georgiou            | /Giorgos Mazonakis/Dimitris Mitropanos/Blandine Drakou/          |     4 |
-| Danai Chatzidaki           | /Giorgos Mazonakis/Dimitris Mitropanos/Blandine Drakou/          |     4 |
-| Danai Mavridi              | /Giorgos Mazonakis/Dimitris Mitropanos/Blandine Drakou/          |     4 |
-| Paraskevi Triantafyllou    | /Giorgos Mazonakis/Dimitris Mitropanos/Nikos Moutsinas/          |     4 |
-| Dimitris Koutsoumpas       | /Giorgos Mazonakis/Pyrros Dimas/                                 |     3 |
-| Jenny Karezi               | /Giorgos Mazonakis/Pyrros Dimas/                                 |     3 |
-| Danai Papadopoulou         | /Giorgos Mazonakis/Pyrros Dimas/Dimitris Koutsoumpas/            |     4 |
-| Georgia Makri              | /Giorgos Mazonakis/Pyrros Dimas/Dimitris Koutsoumpas/            |     4 |
-| Georgios Makris            | /Giorgos Mazonakis/Pyrros Dimas/Dimitris Koutsoumpas/            |     4 |
-| Maria Oikonomidi           | /Giorgos Mazonakis/Pyrros Dimas/Dimitris Koutsoumpas/            |     4 |
-| Theodoros Dimitriou        | /Giorgos Mazonakis/Pyrros Dimas/Dimitris Koutsoumpas/            |     4 |
-| Aristeidis Diamantis       | /Giorgos Mazonakis/Pyrros Dimas/Jenny Karezi/                    |     4 |
-| Elisavet Nikolaidi         | /Giorgos Mazonakis/Pyrros Dimas/Jenny Karezi/                    |     4 |
-| Ioannis Christodoulou      | /Giorgos Mazonakis/Pyrros Dimas/Jenny Karezi/                    |     4 |
-| Mikis Theodorakis          | /Helena Paparizou/                                               |     2 |
-| Stefanos Tsitsipas         | /Helena Paparizou/                                               |     2 |
-| Alexis Tsipras             | /Helena Paparizou/Mikis Theodorakis/                             |     3 |
-| Dionysios Vlachopoulos     | /Helena Paparizou/Mikis Theodorakis/                             |     3 |
-| Spyros Papadopoulos        | /Helena Paparizou/Mikis Theodorakis/                             |     3 |
-| Anastasios Karagiannis     | /Helena Paparizou/Mikis Theodorakis/Alexis Tsipras/              |     4 |
-| Andreas Papageorgiou       | /Helena Paparizou/Mikis Theodorakis/Alexis Tsipras/              |     4 |
-| Dionysios Papageorgiou     | /Helena Paparizou/Mikis Theodorakis/Alexis Tsipras/              |     4 |
-| Theodora Karamanli         | /Helena Paparizou/Mikis Theodorakis/Alexis Tsipras/              |     4 |
-| Aggeliki Lazaridi          | /Helena Paparizou/Mikis Theodorakis/Spyros Papadopoulos/         |     4 |
-| Petros Papageorgiou        | /Helena Paparizou/Mikis Theodorakis/Spyros Papadopoulos/         |     4 |
-| Dionysis Atzarakis         | /Helena Paparizou/Stefanos Tsitsipas/                            |     3 |
-| Kostis Hatzidakis          | /Helena Paparizou/Stefanos Tsitsipas/                            |     3 |
-| Lambros Konstantaras       | /Helena Paparizou/Stefanos Tsitsipas/                            |     3 |
-| Nikoletta Nikolaidi        | /Helena Paparizou/Stefanos Tsitsipas/                            |     3 |
-| Stefanos Stamatiou         | /Helena Paparizou/Stefanos Tsitsipas/                            |     3 |
-| Theodora Sidiropoulou      | /Helena Paparizou/Stefanos Tsitsipas/                            |     3 |
-| Aristeidis Petridis        | /Helena Paparizou/Stefanos Tsitsipas/Dionysis Atzarakis/         |     4 |
-| Georgios Mavridis          | /Helena Paparizou/Stefanos Tsitsipas/Lambros Konstantaras/       |     4 |
-| Maria Callas               | /Katerina Stikoudi/                                              |     2 |
-| Vassilis Spanoulis         | /Katerina Stikoudi/                                              |     2 |
-| Eleftherios Tsakalidis     | /Katerina Stikoudi/Maria Callas/                                 |     3 |
-| Giannis Bezos              | /Katerina Stikoudi/Maria Callas/                                 |     3 |
-| Thanasis Veggos            | /Katerina Stikoudi/Maria Callas/                                 |     3 |
-| Antonis Petridis           | /Katerina Stikoudi/Maria Callas/Giannis Bezos/                   |     4 |
-| Dimitra Tsoukala           | /Katerina Stikoudi/Maria Callas/Giannis Bezos/                   |     4 |
-| Eleni Christodoulou        | /Katerina Stikoudi/Maria Callas/Giannis Bezos/                   |     4 |
-| Elisavet Lazaridi          | /Katerina Stikoudi/Maria Callas/Giannis Bezos/                   |     4 |
-| Konstantinos Tsoukalas     | /Katerina Stikoudi/Maria Callas/Giannis Bezos/                   |     4 |
-| Pinelopi Vasileiou         | /Katerina Stikoudi/Maria Callas/Giannis Bezos/                   |     4 |
-| Adonis Georgiadis          | /Katerina Stikoudi/Vassilis Spanoulis/                           |     3 |
-| Anastasios Chronopoulos    | /Katerina Stikoudi/Vassilis Spanoulis/                           |     3 |
-| Despoina Papadopoulou      | /Katerina Stikoudi/Vassilis Spanoulis/                           |     3 |
-| Ilias Archontopoulos       | /Katerina Stikoudi/Vassilis Spanoulis/                           |     3 |
-| Kyriakos Mitsotakis        | /Katerina Stikoudi/Vassilis Spanoulis/                           |     3 |
-| Markos Seferlis            | /Katerina Stikoudi/Vassilis Spanoulis/                           |     3 |
-| Fotios Georgiou            | /Katerina Stikoudi/Vassilis Spanoulis/Kyriakos Mitsotakis/       |     4 |
-| Petros Konstantinidis      | /Katerina Stikoudi/Vassilis Spanoulis/Kyriakos Mitsotakis/       |     4 |
-| Lefteris Petrounias        | /Konstantinos Argiros/                                           |     2 |
-| Stelios Kazantzidis        | /Konstantinos Argiros/                                           |     2 |
-| Aliki Vougiouklaki         | /Konstantinos Argiros/Lefteris Petrounias/                       |     3 |
-| Georgios Oikonomidis       | /Konstantinos Argiros/Lefteris Petrounias/                       |     3 |
-| Manto Mavrogenous          | /Konstantinos Argiros/Lefteris Petrounias/                       |     3 |
-| Panagiotis Karamanlis      | /Konstantinos Argiros/Lefteris Petrounias/                       |     3 |
-| Petros Panagiotidis        | /Konstantinos Argiros/Lefteris Petrounias/                       |     3 |
-| Vasiliki Antoniou          | /Konstantinos Argiros/Lefteris Petrounias/                       |     3 |
-| Zeta Makripoulia           | /Konstantinos Argiros/Lefteris Petrounias/                       |     3 |
-| Antonis Papanikolaou       | /Konstantinos Argiros/Lefteris Petrounias/Aliki Vougiouklaki/    |     4 |
-| Filippos Diamantis         | /Konstantinos Argiros/Lefteris Petrounias/Zeta Makripoulia/      |     4 |
-| Giannis Alexiou            | /Konstantinos Argiros/Lefteris Petrounias/Zeta Makripoulia/      |     4 |
-| Ioannis Alexiou            | /Konstantinos Argiros/Lefteris Petrounias/Zeta Makripoulia/      |     4 |
-| Katerina Sakellaropoulou   | /Konstantinos Argiros/Lefteris Petrounias/Zeta Makripoulia/      |     4 |
-| Pythagoras Mathematician   | /Konstantinos Argiros/Lefteris Petrounias/Zeta Makripoulia/      |     4 |
-| Ariadni Papadimitriou      | /Konstantinos Argiros/Stelios Kazantzidis/                       |     3 |
-| Evangelia Papadopoulou     | /Konstantinos Argiros/Stelios Kazantzidis/                       |     3 |
-| Foteini Vlachopoulou       | /Konstantinos Argiros/Stelios Kazantzidis/                       |     3 |
-| Katerina Vrioni            | /Konstantinos Argiros/Stelios Kazantzidis/                       |     3 |
-| Peggy Zina                 | /Michalis Alexiou/                                               |     2 |
-| Vangelis Papathanassiou    | /Michalis Alexiou/                                               |     2 |
-| Aristotle Philosopher      | /Michalis Alexiou/Peggy Zina/                                    |     3 |
-| Babis Bates                | /Michalis Alexiou/Peggy Zina/                                    |     3 |
-| Margarita Michailidi       | /Michalis Alexiou/Peggy Zina/                                    |     3 |
-| Nikos Chatzinikolaou       | /Michalis Alexiou/Peggy Zina/                                    |     3 |
-| Petros Papadopoulos        | /Michalis Alexiou/Peggy Zina/                                    |     3 |
-| Vasiliki Nikolaidi         | /Michalis Alexiou/Peggy Zina/                                    |     3 |
-| Pinelopi Diamanti          | /Michalis Alexiou/Peggy Zina/Babis Bates/                        |     4 |
-| Christina Sidiropoulou     | /Michalis Alexiou/Peggy Zina/Nikos Chatzinikolaou/               |     4 |
-| Dora Bakoyannis            | /Michalis Alexiou/Vangelis Papathanassiou/                       |     3 |
-| Giannis Dimitriou          | /Michalis Alexiou/Vangelis Papathanassiou/                       |     3 |
-| Stathis Psaltis            | /Michalis Alexiou/Vangelis Papathanassiou/                       |     3 |
-| Theodoros Oikonomidis      | /Michalis Alexiou/Vangelis Papathanassiou/                       |     3 |
-| Voula Patoulidou           | /Michalis Alexiou/Vangelis Papathanassiou/                       |     3 |
-| Danai Dimitriou            | /Michalis Alexiou/Vangelis Papathanassiou/Stathis Psaltis/       |     4 |
-| Georgia Michailidi         | /Michalis Alexiou/Vangelis Papathanassiou/Stathis Psaltis/       |     4 |
-| Eleftherios Athanasiou     | /Michalis Alexiou/Vangelis Papathanassiou/Voula Patoulidou/      |     4 |
-| Pavlos Georgiou            | /Michalis Alexiou/Vangelis Papathanassiou/Voula Patoulidou/      |     4 |
-| Eleni Vitali               | /Natasa Theodorou/                                               |     2 |
-| Sofia Bekatorou            | /Natasa Theodorou/                                               |     2 |
-| Ira Katsouda               | /Natasa Theodorou/Eleni Vitali/                                  |     3 |
-| Katerina Vasileiou         | /Natasa Theodorou/Eleni Vitali/                                  |     3 |
-| Nikos Kourkoulos           | /Natasa Theodorou/Eleni Vitali/                                  |     3 |
-| Plato Philosopher          | /Natasa Theodorou/Eleni Vitali/                                  |     3 |
-| Fotios Vlachopoulos        | /Natasa Theodorou/Eleni Vitali/Ira Katsouda/                     |     4 |
-| Nikos Oikonomidis          | /Natasa Theodorou/Eleni Vitali/Ira Katsouda/                     |     4 |
-| Pavlos Dimitriou           | /Natasa Theodorou/Eleni Vitali/Ira Katsouda/                     |     4 |
-| Pavlos Triantafyllou       | /Natasa Theodorou/Eleni Vitali/Ira Katsouda/                     |     4 |
-| Pinelopi Georgiou          | /Natasa Theodorou/Eleni Vitali/Ira Katsouda/                     |     4 |
-| Alexandra Bakogianni       | /Natasa Theodorou/Eleni Vitali/Nikos Kourkoulos/                 |     4 |
-| Nikoletta Antoniou         | /Natasa Theodorou/Eleni Vitali/Nikos Kourkoulos/                 |     4 |
-| Pavlos Stamatiou           | /Natasa Theodorou/Eleni Vitali/Nikos Kourkoulos/                 |     4 |
-| Sotiris Triantafyllou      | /Natasa Theodorou/Eleni Vitali/Nikos Kourkoulos/                 |     4 |
-| Eirini Vlachopoulou        | /Natasa Theodorou/Sofia Bekatorou/                               |     3 |
-| Giorgos Kapoutzidis        | /Natasa Theodorou/Sofia Bekatorou/                               |     3 |
-| Theodora Alexiou           | /Natasa Theodorou/Sofia Bekatorou/                               |     3 |
-| Zoi Konstantopoulou        | /Natasa Theodorou/Sofia Bekatorou/                               |     3 |
-| Katerina Stefanidi         | /Nikos Vertis/                                                   |     2 |
-| Marinella Marinella        | /Nikos Vertis/                                                   |     2 |
-| Alexandros Tsouvelas       | /Nikos Vertis/Katerina Stefanidi/                                |     3 |
-| Danai Oikonomidi           | /Nikos Vertis/Katerina Stefanidi/                                |     3 |
-| Emmanouil Petridis         | /Nikos Vertis/Katerina Stefanidi/                                |     3 |
-| Smaragda Karydi            | /Nikos Vertis/Katerina Stefanidi/                                |     3 |
-| Christina Papadopoulou     | /Nikos Vertis/Katerina Stefanidi/Alexandros Tsouvelas/           |     4 |
-| Nikos Makris               | /Nikos Vertis/Katerina Stefanidi/Alexandros Tsouvelas/           |     4 |
-| Stavroula Spanou           | /Nikos Vertis/Katerina Stefanidi/Alexandros Tsouvelas/           |     4 |
-| Nikoletta Vasileiou        | /Nikos Vertis/Katerina Stefanidi/Smaragda Karydi/                |     4 |
-| Andreas Papandreou         | /Nikos Vertis/Marinella Marinella/                               |     3 |
-| Dimitris Horn              | /Nikos Vertis/Marinella Marinella/                               |     3 |
-| Eirini Oikonomidi          | /Nikos Vertis/Marinella Marinella/                               |     3 |
-| Eleftherios Georgiou       | /Nikos Vertis/Marinella Marinella/                               |     3 |
-| Karolos Papoulias          | /Nikos Vertis/Marinella Marinella/                               |     3 |
-| Archimedes Inventor        | /Nikos Vertis/Marinella Marinella/Andreas Papandreou/            |     4 |
-| Anastasia Ioannidi         | /Nikos Vertis/Marinella Marinella/Dimitris Horn/                 |     4 |
-| Markos Oikonomidis         | /Nikos Vertis/Marinella Marinella/Dimitris Horn/                 |     4 |
-| Sotiris Papadopoulos       | /Nikos Vertis/Marinella Marinella/Dimitris Horn/                 |     4 |
-| Manos Hatzidakis           | /Notis Sfakianakis/                                              |     2 |
-| Maria Sakkari              | /Notis Sfakianakis/                                              |     2 |
-| Ioanna Diamanti            | /Notis Sfakianakis/Manos Hatzidakis/                             |     3 |
-| Margarita Christodoulou    | /Notis Sfakianakis/Manos Hatzidakis/                             |     3 |
-| Nikos Androulakis          | /Notis Sfakianakis/Manos Hatzidakis/                             |     3 |
-| Thomas Zabras              | /Notis Sfakianakis/Manos Hatzidakis/                             |     3 |
-| Fotios Papageorgiou        | /Notis Sfakianakis/Manos Hatzidakis/Nikos Androulakis/           |     4 |
-| Markos Chatzidakis         | /Notis Sfakianakis/Manos Hatzidakis/Nikos Androulakis/           |     4 |
-| Niki Kerameus              | /Notis Sfakianakis/Manos Hatzidakis/Thomas Zabras/               |     4 |
-| Dionysis Papagiannopoulos  | /Notis Sfakianakis/Maria Sakkari/                                |     3 |
-| Grigoris Angelopoulos      | /Notis Sfakianakis/Maria Sakkari/                                |     3 |
-| Katerina Kainourgiou       | /Notis Sfakianakis/Maria Sakkari/                                |     3 |
-| Panagiotis Mavridis        | /Notis Sfakianakis/Maria Sakkari/                                |     3 |
-| Maria Georgiou             | /Notis Sfakianakis/Maria Sakkari/Dionysis Papagiannopoulos/      |     4 |
-| Anastasia Chronopoulou     | /Notis Sfakianakis/Maria Sakkari/Katerina Kainourgiou/           |     4 |
-| Giannis Nikolaidis         | /Notis Sfakianakis/Maria Sakkari/Katerina Kainourgiou/           |     4 |
-| Pavlos Kalligas            | /Notis Sfakianakis/Maria Sakkari/Katerina Kainourgiou/           |     4 |
-| Theodora Eleftheriadi      | /Notis Sfakianakis/Maria Sakkari/Katerina Kainourgiou/           |     4 |
-| Theodora Kalliga           | /Notis Sfakianakis/Maria Sakkari/Katerina Kainourgiou/           |     4 |
-| Anna Korakaki              | /Pantelis Pantelidis/                                            |     2 |
-| Haris Alexiou              | /Pantelis Pantelidis/                                            |     2 |
-| Aristeidis Konstantinidis  | /Pantelis Pantelidis/Anna Korakaki/                              |     3 |
-| Emmanouil Chronopoulos     | /Pantelis Pantelidis/Anna Korakaki/                              |     3 |
-| Konstantinos Christodoulou | /Pantelis Pantelidis/Anna Korakaki/                              |     3 |
-| Konstantinos Karamanlis    | /Pantelis Pantelidis/Anna Korakaki/                              |     3 |
-| Lakis Lazopoulos           | /Pantelis Pantelidis/Anna Korakaki/                              |     3 |
-| Theodora Papadopoulou      | /Pantelis Pantelidis/Anna Korakaki/                              |     3 |
-| Evangelos Kalligas         | /Pantelis Pantelidis/Anna Korakaki/Konstantinos Karamanlis/      |     4 |
-| Nikos Dendias              | /Pantelis Pantelidis/Anna Korakaki/Konstantinos Karamanlis/      |     4 |
-| Stefanos Kalligas          | /Pantelis Pantelidis/Anna Korakaki/Konstantinos Karamanlis/      |     4 |
-| Vasiliki Christodoulou     | /Pantelis Pantelidis/Anna Korakaki/Konstantinos Karamanlis/      |     4 |
-| Xanthi Alexiou             | /Pantelis Pantelidis/Anna Korakaki/Konstantinos Karamanlis/      |     4 |
-| Xanthi Papanikolaou        | /Pantelis Pantelidis/Anna Korakaki/Konstantinos Karamanlis/      |     4 |
-| Alexandra Vlachopoulou     | /Pantelis Pantelidis/Anna Korakaki/Lakis Lazopoulos/             |     4 |
-| Markos Kalligas            | /Pantelis Pantelidis/Anna Korakaki/Lakis Lazopoulos/             |     4 |
-| Cleopatra Queen            | /Pantelis Pantelidis/Haris Alexiou/                              |     3 |
-| Rena Vlachopoulou          | /Pantelis Pantelidis/Haris Alexiou/                              |     3 |
-| Thodoris Atheridis         | /Pantelis Pantelidis/Haris Alexiou/                              |     3 |
-| Nikos Galis                | /Sakis Rouvas/                                                   |     2 |
-| Panos Kiamos               | /Sakis Rouvas/                                                   |     2 |
-| Eleftherios Venizelos      | /Sakis Rouvas/Nikos Galis/                                       |     3 |
-| Faii Skorda                | /Sakis Rouvas/Nikos Galis/                                       |     3 |
-| Melina Mercouri            | /Sakis Rouvas/Nikos Galis/                                       |     3 |
-| Otto Rehhagel              | /Sakis Rouvas/Nikos Galis/                                       |     3 |
-| Charalampos Karamanlis     | /Sakis Rouvas/Nikos Galis/Eleftherios Venizelos/                 |     4 |
-| Olympia Eleftheriadi       | /Sakis Rouvas/Nikos Galis/Eleftherios Venizelos/                 |     4 |
-| Alexander TheGreat         | /Sakis Rouvas/Nikos Galis/Faii Skorda/                           |     4 |
-| Christina Bakogianni       | /Sakis Rouvas/Nikos Galis/Faii Skorda/                           |     4 |
-| Eirini Georgiou            | /Sakis Rouvas/Nikos Galis/Faii Skorda/                           |     4 |
-| Ioanna Lamprou             | /Sakis Rouvas/Nikos Galis/Faii Skorda/                           |     4 |
-| Maria Mavridi              | /Sakis Rouvas/Nikos Galis/Otto Rehhagel/                         |     4 |
-| Sofia Oikonomidi           | /Sakis Rouvas/Nikos Galis/Otto Rehhagel/                         |     4 |
-| Vasiliki Antoniou          | /Sakis Rouvas/Nikos Galis/Otto Rehhagel/                         |     4 |
-| Antonis Chatzidakis        | /Sakis Rouvas/Panos Kiamos/                                      |     3 |
-| Eleftherios Tsakalidis     | /Sakis Rouvas/Panos Kiamos/                                      |     3 |
-| Kostas Voutsas             | /Sakis Rouvas/Panos Kiamos/                                      |     3 |
-| Petros Vasileiou           | /Sakis Rouvas/Panos Kiamos/                                      |     3 |
-+----------------------------+------------------------------------------------------------------+-------+
++----------------------------+-------+------------------------------------------------------------------+
+| doctor_name                | level | hierarchy_path                                                   |
++----------------------------+-------+------------------------------------------------------------------+
+| Anna Vissi                 |     1 | /                                                                |
+| Antonis Remos              |     1 | /                                                                |
+| Despina Vandi              |     1 | /                                                                |
+| Eleni Foureira             |     1 | /                                                                |
+| Giannis Antetokounmpo      |     1 | /                                                                |
+| Giorgos Mazonakis          |     1 | /                                                                |
+| Helena Paparizou           |     1 | /                                                                |
+| Katerina Stikoudi          |     1 | /                                                                |
+| Konstantinos Argiros       |     1 | /                                                                |
+| Michalis Alexiou           |     1 | /                                                                |
+| Natasa Theodorou           |     1 | /                                                                |
+| Nikos Vertis               |     1 | /                                                                |
+| Notis Sfakianakis          |     1 | /                                                                |
+| Pantelis Pantelidis        |     1 | /                                                                |
+| Sakis Rouvas               |     1 | /                                                                |
+| Kostas Sloukas             |     2 | /Anna-Vissi/                                                     |
+| Melina Aslanidou           |     2 | /Anna-Vissi/                                                     |
+| Aggeliki Sidiropoulou      |     3 | /Anna-Vissi/Kostas-Sloukas/                                      |
+| Eleni Menegaki             |     3 | /Anna-Vissi/Kostas-Sloukas/                                      |
+| Lambros Fisfis             |     3 | /Anna-Vissi/Kostas-Sloukas/                                      |
+| Georgios Oikonomidis       |     4 | /Anna-Vissi/Kostas-Sloukas/Eleni-Menegaki/                       |
+| Pavlos Chronopoulos        |     4 | /Anna-Vissi/Kostas-Sloukas/Eleni-Menegaki/                       |
+| Leonidas Triantafyllou     |     4 | /Anna-Vissi/Kostas-Sloukas/Lambros-Fisfis/                       |
+| Nikos Lamprou              |     4 | /Anna-Vissi/Kostas-Sloukas/Lambros-Fisfis/                       |
+| Petros Bakogiannis         |     4 | /Anna-Vissi/Kostas-Sloukas/Lambros-Fisfis/                       |
+| Alexandros Stamatiou       |     3 | /Anna-Vissi/Melina-Aslanidou/                                    |
+| Theodoros Kolokotronis     |     3 | /Anna-Vissi/Melina-Aslanidou/                                    |
+| Vasilis Bisbikis           |     3 | /Anna-Vissi/Melina-Aslanidou/                                    |
+| Antonis Samaras            |     4 | /Anna-Vissi/Melina-Aslanidou/Theodoros-Kolokotronis/             |
+| Kalliopi Eleftheriadi      |     4 | /Anna-Vissi/Melina-Aslanidou/Theodoros-Kolokotronis/             |
+| Stavroula Chatzidaki       |     4 | /Anna-Vissi/Melina-Aslanidou/Theodoros-Kolokotronis/             |
+| Christina Vlachopoulou     |     4 | /Anna-Vissi/Melina-Aslanidou/Vasilis-Bisbikis/                   |
+| Homer Poet                 |     4 | /Anna-Vissi/Melina-Aslanidou/Vasilis-Bisbikis/                   |
+| Stavroula Oikonomou        |     4 | /Anna-Vissi/Melina-Aslanidou/Vasilis-Bisbikis/                   |
+| Giorgos Karagounis         |     2 | /Antonis-Remos/                                                  |
+| Michalis Hatzigiannis      |     2 | /Antonis-Remos/                                                  |
+| Eleni Rantou               |     3 | /Antonis-Remos/Giorgos-Karagounis/                               |
+| Stamatis Fasoulis          |     3 | /Antonis-Remos/Giorgos-Karagounis/                               |
+| Filippos Makris            |     4 | /Antonis-Remos/Giorgos-Karagounis/Eleni-Rantou/                  |
+| Georgios Chatzidakis       |     4 | /Antonis-Remos/Giorgos-Karagounis/Eleni-Rantou/                  |
+| Danai Vlachopoulou         |     4 | /Antonis-Remos/Giorgos-Karagounis/Stamatis-Fasoulis/             |
+| Grigoris Dimitriou         |     4 | /Antonis-Remos/Giorgos-Karagounis/Stamatis-Fasoulis/             |
+| Sotiris Papageorgiou       |     4 | /Antonis-Remos/Giorgos-Karagounis/Stamatis-Fasoulis/             |
+| Angelos Charisteas         |     3 | /Antonis-Remos/Michalis-Hatzigiannis/                            |
+| Charalampos Antoniou       |     3 | /Antonis-Remos/Michalis-Hatzigiannis/                            |
+| Charilaos Trikoupis        |     3 | /Antonis-Remos/Michalis-Hatzigiannis/                            |
+| Dimitris Dimitriou         |     3 | /Antonis-Remos/Michalis-Hatzigiannis/                            |
+| Aikaterini Athanasiou      |     4 | /Antonis-Remos/Michalis-Hatzigiannis/Angelos-Charisteas/         |
+| Fotios Vasileiou           |     4 | /Antonis-Remos/Michalis-Hatzigiannis/Angelos-Charisteas/         |
+| Leonidas King              |     4 | /Antonis-Remos/Michalis-Hatzigiannis/Angelos-Charisteas/         |
+| Theodora Triantafyllou     |     4 | /Antonis-Remos/Michalis-Hatzigiannis/Angelos-Charisteas/         |
+| Foteini Tsoukala           |     4 | /Antonis-Remos/Michalis-Hatzigiannis/Charilaos-Trikoupis/        |
+| George Papandreou          |     4 | /Antonis-Remos/Michalis-Hatzigiannis/Charilaos-Trikoupis/        |
+| Dimitris Diamantidis       |     2 | /Despina-Vandi/                                                  |
+| Nikos Oikonomopoulos       |     2 | /Despina-Vandi/                                                  |
+| Christos Petridis          |     3 | /Despina-Vandi/Dimitris-Diamantidis/                             |
+| Eleni Ioannidi             |     3 | /Despina-Vandi/Dimitris-Diamantidis/                             |
+| Georgios Karaiskakis       |     3 | /Despina-Vandi/Dimitris-Diamantidis/                             |
+| Grigoris Arnaoutoglou      |     3 | /Despina-Vandi/Dimitris-Diamantidis/                             |
+| Nikos Aliagas              |     3 | /Despina-Vandi/Dimitris-Diamantidis/                             |
+| Elisavet Chronopoulou      |     4 | /Despina-Vandi/Dimitris-Diamantidis/Georgios-Karaiskakis/        |
+| Ioannis Michailidis        |     4 | /Despina-Vandi/Dimitris-Diamantidis/Georgios-Karaiskakis/        |
+| Kostas Karamanlis          |     4 | /Despina-Vandi/Dimitris-Diamantidis/Georgios-Karaiskakis/        |
+| Georgia Sidiropoulou       |     4 | /Despina-Vandi/Dimitris-Diamantidis/Nikos-Aliagas/               |
+| Georgios Papageorgiou      |     4 | /Despina-Vandi/Dimitris-Diamantidis/Nikos-Aliagas/               |
+| Pinelopi Makri             |     4 | /Despina-Vandi/Dimitris-Diamantidis/Nikos-Aliagas/               |
+| Sappho Poet                |     4 | /Despina-Vandi/Dimitris-Diamantidis/Nikos-Aliagas/               |
+| Vasiliki Kalliga           |     4 | /Despina-Vandi/Dimitris-Diamantidis/Nikos-Aliagas/               |
+| Giorgos Xatzipavlou        |     3 | /Despina-Vandi/Nikos-Oikonomopoulos/                             |
+| Ioannis Spanos             |     3 | /Despina-Vandi/Nikos-Oikonomopoulos/                             |
+| Margarita Nikolaidi        |     3 | /Despina-Vandi/Nikos-Oikonomopoulos/                             |
+| Eleni Archontopoulou       |     4 | /Despina-Vandi/Nikos-Oikonomopoulos/Giorgos-Xatzipavlou/         |
+| Miltiadis Tentoglou        |     2 | /Eleni-Foureira/                                                 |
+| Vasilis Karras             |     2 | /Eleni-Foureira/                                                 |
+| Margarita Vlachopoulou     |     3 | /Eleni-Foureira/Miltiadis-Tentoglou/                             |
+| Sakis Tanimanidis          |     3 | /Eleni-Foureira/Miltiadis-Tentoglou/                             |
+| Vasilis Kalligas           |     4 | /Eleni-Foureira/Miltiadis-Tentoglou/Sakis-Tanimanidis/           |
+| Christos Spanos            |     3 | /Eleni-Foureira/Vasilis-Karras/                                  |
+| Dimitris Makalias          |     3 | /Eleni-Foureira/Vasilis-Karras/                                  |
+| Katerina Papoutsaki        |     3 | /Eleni-Foureira/Vasilis-Karras/                                  |
+| Laskarina Bouboulina       |     3 | /Eleni-Foureira/Vasilis-Karras/                                  |
+| Olympia Tsakalidi          |     3 | /Eleni-Foureira/Vasilis-Karras/                                  |
+| Ariadni Lamprou            |     4 | /Eleni-Foureira/Vasilis-Karras/Dimitris-Makalias/                |
+| Katerina Archontopoulou    |     4 | /Eleni-Foureira/Vasilis-Karras/Dimitris-Makalias/                |
+| Pinelopi Nikolaidi         |     4 | /Eleni-Foureira/Vasilis-Karras/Dimitris-Makalias/                |
+| Stavroula Kalliga          |     4 | /Eleni-Foureira/Vasilis-Karras/Dimitris-Makalias/                |
+| Stefanos Ioannidis         |     4 | /Eleni-Foureira/Vasilis-Karras/Dimitris-Makalias/                |
+| Elisavet Karagianni        |     4 | /Eleni-Foureira/Vasilis-Karras/Katerina-Papoutsaki/              |
+| Pinelopi Antoniou          |     4 | /Eleni-Foureira/Vasilis-Karras/Katerina-Papoutsaki/              |
+| Hippocrates Doctor         |     4 | /Eleni-Foureira/Vasilis-Karras/Laskarina-Bouboulina/             |
+| Prokopis Pavlopoulos       |     4 | /Eleni-Foureira/Vasilis-Karras/Laskarina-Bouboulina/             |
+| Giannis Ploutarchos        |     2 | /Giannis-Antetokounmpo/                                          |
+| Theodoros Zagorakis        |     2 | /Giannis-Antetokounmpo/                                          |
+| Kostas Simitis             |     3 | /Giannis-Antetokounmpo/Giannis-Ploutarchos/                      |
+| Panagiotis Giannakis       |     3 | /Giannis-Antetokounmpo/Giannis-Ploutarchos/                      |
+| Pericles Statesman         |     3 | /Giannis-Antetokounmpo/Giannis-Ploutarchos/                      |
+| Sotiris Moustakas          |     3 | /Giannis-Antetokounmpo/Giannis-Ploutarchos/                      |
+| Athina Kalliga             |     4 | /Giannis-Antetokounmpo/Giannis-Ploutarchos/Panagiotis-Giannakis/ |
+| Eleftherios Papadopoulos   |     4 | /Giannis-Antetokounmpo/Giannis-Ploutarchos/Panagiotis-Giannakis/ |
+| Georgia Spanou             |     4 | /Giannis-Antetokounmpo/Giannis-Ploutarchos/Panagiotis-Giannakis/ |
+| Michalis Petridis          |     4 | /Giannis-Antetokounmpo/Giannis-Ploutarchos/Sotiris-Moustakas/    |
+| Antonis Athanasiou         |     3 | /Giannis-Antetokounmpo/Theodoros-Zagorakis/                      |
+| Emmanouil Chronopoulos     |     3 | /Giannis-Antetokounmpo/Theodoros-Zagorakis/                      |
+| Ioannis Kapodistrias       |     3 | /Giannis-Antetokounmpo/Theodoros-Zagorakis/                      |
+| Tatiana Stefanidou         |     3 | /Giannis-Antetokounmpo/Theodoros-Zagorakis/                      |
+| Xanthi Papadimitriou       |     3 | /Giannis-Antetokounmpo/Theodoros-Zagorakis/                      |
+| Maria Karagianni           |     4 | /Giannis-Antetokounmpo/Theodoros-Zagorakis/Ioannis-Kapodistrias/ |
+| Xanthi Oikonomou           |     4 | /Giannis-Antetokounmpo/Theodoros-Zagorakis/Ioannis-Kapodistrias/ |
+| Alexandros Lamprou         |     4 | /Giannis-Antetokounmpo/Theodoros-Zagorakis/Tatiana-Stefanidou/   |
+| Sotiris Papageorgiou       |     4 | /Giannis-Antetokounmpo/Theodoros-Zagorakis/Tatiana-Stefanidou/   |
+| Dimitris Mitropanos        |     2 | /Giorgos-Mazonakis/                                              |
+| Pyrros Dimas               |     2 | /Giorgos-Mazonakis/                                              |
+| Blandine Drakou            |     3 | /Giorgos-Mazonakis/Dimitris-Mitropanos/                          |
+| Nikos Moutsinas            |     3 | /Giorgos-Mazonakis/Dimitris-Mitropanos/                          |
+| Socrates Philosopher       |     3 | /Giorgos-Mazonakis/Dimitris-Mitropanos/                          |
+| Athina Georgiou            |     4 | /Giorgos-Mazonakis/Dimitris-Mitropanos/Blandine-Drakou/          |
+| Danai Chatzidaki           |     4 | /Giorgos-Mazonakis/Dimitris-Mitropanos/Blandine-Drakou/          |
+| Danai Mavridi              |     4 | /Giorgos-Mazonakis/Dimitris-Mitropanos/Blandine-Drakou/          |
+| Paraskevi Triantafyllou    |     4 | /Giorgos-Mazonakis/Dimitris-Mitropanos/Nikos-Moutsinas/          |
+| Dimitris Koutsoumpas       |     3 | /Giorgos-Mazonakis/Pyrros-Dimas/                                 |
+| Jenny Karezi               |     3 | /Giorgos-Mazonakis/Pyrros-Dimas/                                 |
+| Danai Papadopoulou         |     4 | /Giorgos-Mazonakis/Pyrros-Dimas/Dimitris-Koutsoumpas/            |
+| Georgia Makri              |     4 | /Giorgos-Mazonakis/Pyrros-Dimas/Dimitris-Koutsoumpas/            |
+| Georgios Makris            |     4 | /Giorgos-Mazonakis/Pyrros-Dimas/Dimitris-Koutsoumpas/            |
+| Maria Oikonomidi           |     4 | /Giorgos-Mazonakis/Pyrros-Dimas/Dimitris-Koutsoumpas/            |
+| Theodoros Dimitriou        |     4 | /Giorgos-Mazonakis/Pyrros-Dimas/Dimitris-Koutsoumpas/            |
+| Aristeidis Diamantis       |     4 | /Giorgos-Mazonakis/Pyrros-Dimas/Jenny-Karezi/                    |
+| Elisavet Nikolaidi         |     4 | /Giorgos-Mazonakis/Pyrros-Dimas/Jenny-Karezi/                    |
+| Ioannis Christodoulou      |     4 | /Giorgos-Mazonakis/Pyrros-Dimas/Jenny-Karezi/                    |
+| Mikis Theodorakis          |     2 | /Helena-Paparizou/                                               |
+| Stefanos Tsitsipas         |     2 | /Helena-Paparizou/                                               |
+| Alexis Tsipras             |     3 | /Helena-Paparizou/Mikis-Theodorakis/                             |
+| Dionysios Vlachopoulos     |     3 | /Helena-Paparizou/Mikis-Theodorakis/                             |
+| Spyros Papadopoulos        |     3 | /Helena-Paparizou/Mikis-Theodorakis/                             |
+| Anastasios Karagiannis     |     4 | /Helena-Paparizou/Mikis-Theodorakis/Alexis-Tsipras/              |
+| Andreas Papageorgiou       |     4 | /Helena-Paparizou/Mikis-Theodorakis/Alexis-Tsipras/              |
+| Dionysios Papageorgiou     |     4 | /Helena-Paparizou/Mikis-Theodorakis/Alexis-Tsipras/              |
+| Theodora Karamanli         |     4 | /Helena-Paparizou/Mikis-Theodorakis/Alexis-Tsipras/              |
+| Aggeliki Lazaridi          |     4 | /Helena-Paparizou/Mikis-Theodorakis/Spyros-Papadopoulos/         |
+| Petros Papageorgiou        |     4 | /Helena-Paparizou/Mikis-Theodorakis/Spyros-Papadopoulos/         |
+| Dionysis Atzarakis         |     3 | /Helena-Paparizou/Stefanos-Tsitsipas/                            |
+| Kostis Hatzidakis          |     3 | /Helena-Paparizou/Stefanos-Tsitsipas/                            |
+| Lambros Konstantaras       |     3 | /Helena-Paparizou/Stefanos-Tsitsipas/                            |
+| Nikoletta Nikolaidi        |     3 | /Helena-Paparizou/Stefanos-Tsitsipas/                            |
+| Stefanos Stamatiou         |     3 | /Helena-Paparizou/Stefanos-Tsitsipas/                            |
+| Theodora Sidiropoulou      |     3 | /Helena-Paparizou/Stefanos-Tsitsipas/                            |
+| Aristeidis Petridis        |     4 | /Helena-Paparizou/Stefanos-Tsitsipas/Dionysis-Atzarakis/         |
+| Georgios Mavridis          |     4 | /Helena-Paparizou/Stefanos-Tsitsipas/Lambros-Konstantaras/       |
+| Maria Callas               |     2 | /Katerina-Stikoudi/                                              |
+| Vassilis Spanoulis         |     2 | /Katerina-Stikoudi/                                              |
+| Eleftherios Tsakalidis     |     3 | /Katerina-Stikoudi/Maria-Callas/                                 |
+| Giannis Bezos              |     3 | /Katerina-Stikoudi/Maria-Callas/                                 |
+| Thanasis Veggos            |     3 | /Katerina-Stikoudi/Maria-Callas/                                 |
+| Antonis Petridis           |     4 | /Katerina-Stikoudi/Maria-Callas/Giannis-Bezos/                   |
+| Dimitra Tsoukala           |     4 | /Katerina-Stikoudi/Maria-Callas/Giannis-Bezos/                   |
+| Eleni Christodoulou        |     4 | /Katerina-Stikoudi/Maria-Callas/Giannis-Bezos/                   |
+| Elisavet Lazaridi          |     4 | /Katerina-Stikoudi/Maria-Callas/Giannis-Bezos/                   |
+| Konstantinos Tsoukalas     |     4 | /Katerina-Stikoudi/Maria-Callas/Giannis-Bezos/                   |
+| Pinelopi Vasileiou         |     4 | /Katerina-Stikoudi/Maria-Callas/Giannis-Bezos/                   |
+| Adonis Georgiadis          |     3 | /Katerina-Stikoudi/Vassilis-Spanoulis/                           |
+| Anastasios Chronopoulos    |     3 | /Katerina-Stikoudi/Vassilis-Spanoulis/                           |
+| Despoina Papadopoulou      |     3 | /Katerina-Stikoudi/Vassilis-Spanoulis/                           |
+| Ilias Archontopoulos       |     3 | /Katerina-Stikoudi/Vassilis-Spanoulis/                           |
+| Kyriakos Mitsotakis        |     3 | /Katerina-Stikoudi/Vassilis-Spanoulis/                           |
+| Markos Seferlis            |     3 | /Katerina-Stikoudi/Vassilis-Spanoulis/                           |
+| Fotios Georgiou            |     4 | /Katerina-Stikoudi/Vassilis-Spanoulis/Kyriakos-Mitsotakis/       |
+| Petros Konstantinidis      |     4 | /Katerina-Stikoudi/Vassilis-Spanoulis/Kyriakos-Mitsotakis/       |
+| Lefteris Petrounias        |     2 | /Konstantinos-Argiros/                                           |
+| Stelios Kazantzidis        |     2 | /Konstantinos-Argiros/                                           |
+| Aliki Vougiouklaki         |     3 | /Konstantinos-Argiros/Lefteris-Petrounias/                       |
+| Georgios Oikonomidis       |     3 | /Konstantinos-Argiros/Lefteris-Petrounias/                       |
+| Manto Mavrogenous          |     3 | /Konstantinos-Argiros/Lefteris-Petrounias/                       |
+| Panagiotis Karamanlis      |     3 | /Konstantinos-Argiros/Lefteris-Petrounias/                       |
+| Petros Panagiotidis        |     3 | /Konstantinos-Argiros/Lefteris-Petrounias/                       |
+| Vasiliki Antoniou          |     3 | /Konstantinos-Argiros/Lefteris-Petrounias/                       |
+| Zeta Makripoulia           |     3 | /Konstantinos-Argiros/Lefteris-Petrounias/                       |
+| Antonis Papanikolaou       |     4 | /Konstantinos-Argiros/Lefteris-Petrounias/Aliki-Vougiouklaki/    |
+| Filippos Diamantis         |     4 | /Konstantinos-Argiros/Lefteris-Petrounias/Zeta-Makripoulia/      |
+| Giannis Alexiou            |     4 | /Konstantinos-Argiros/Lefteris-Petrounias/Zeta-Makripoulia/      |
+| Ioannis Alexiou            |     4 | /Konstantinos-Argiros/Lefteris-Petrounias/Zeta-Makripoulia/      |
+| Katerina Sakellaropoulou   |     4 | /Konstantinos-Argiros/Lefteris-Petrounias/Zeta-Makripoulia/      |
+| Pythagoras Mathematician   |     4 | /Konstantinos-Argiros/Lefteris-Petrounias/Zeta-Makripoulia/      |
+| Ariadni Papadimitriou      |     3 | /Konstantinos-Argiros/Stelios-Kazantzidis/                       |
+| Evangelia Papadopoulou     |     3 | /Konstantinos-Argiros/Stelios-Kazantzidis/                       |
+| Foteini Vlachopoulou       |     3 | /Konstantinos-Argiros/Stelios-Kazantzidis/                       |
+| Katerina Vrioni            |     3 | /Konstantinos-Argiros/Stelios-Kazantzidis/                       |
+| Peggy Zina                 |     2 | /Michalis-Alexiou/                                               |
+| Vangelis Papathanassiou    |     2 | /Michalis-Alexiou/                                               |
+| Aristotle Philosopher      |     3 | /Michalis-Alexiou/Peggy-Zina/                                    |
+| Babis Bates                |     3 | /Michalis-Alexiou/Peggy-Zina/                                    |
+| Margarita Michailidi       |     3 | /Michalis-Alexiou/Peggy-Zina/                                    |
+| Nikos Chatzinikolaou       |     3 | /Michalis-Alexiou/Peggy-Zina/                                    |
+| Petros Papadopoulos        |     3 | /Michalis-Alexiou/Peggy-Zina/                                    |
+| Vasiliki Nikolaidi         |     3 | /Michalis-Alexiou/Peggy-Zina/                                    |
+| Pinelopi Diamanti          |     4 | /Michalis-Alexiou/Peggy-Zina/Babis-Bates/                        |
+| Christina Sidiropoulou     |     4 | /Michalis-Alexiou/Peggy-Zina/Nikos-Chatzinikolaou/               |
+| Dora Bakoyannis            |     3 | /Michalis-Alexiou/Vangelis-Papathanassiou/                       |
+| Giannis Dimitriou          |     3 | /Michalis-Alexiou/Vangelis-Papathanassiou/                       |
+| Stathis Psaltis            |     3 | /Michalis-Alexiou/Vangelis-Papathanassiou/                       |
+| Theodoros Oikonomidis      |     3 | /Michalis-Alexiou/Vangelis-Papathanassiou/                       |
+| Voula Patoulidou           |     3 | /Michalis-Alexiou/Vangelis-Papathanassiou/                       |
+| Danai Dimitriou            |     4 | /Michalis-Alexiou/Vangelis-Papathanassiou/Stathis-Psaltis/       |
+| Georgia Michailidi         |     4 | /Michalis-Alexiou/Vangelis-Papathanassiou/Stathis-Psaltis/       |
+| Eleftherios Athanasiou     |     4 | /Michalis-Alexiou/Vangelis-Papathanassiou/Voula-Patoulidou/      |
+| Pavlos Georgiou            |     4 | /Michalis-Alexiou/Vangelis-Papathanassiou/Voula-Patoulidou/      |
+| Eleni Vitali               |     2 | /Natasa-Theodorou/                                               |
+| Sofia Bekatorou            |     2 | /Natasa-Theodorou/                                               |
+| Ira Katsouda               |     3 | /Natasa-Theodorou/Eleni-Vitali/                                  |
+| Katerina Vasileiou         |     3 | /Natasa-Theodorou/Eleni-Vitali/                                  |
+| Nikos Kourkoulos           |     3 | /Natasa-Theodorou/Eleni-Vitali/                                  |
+| Plato Philosopher          |     3 | /Natasa-Theodorou/Eleni-Vitali/                                  |
+| Fotios Vlachopoulos        |     4 | /Natasa-Theodorou/Eleni-Vitali/Ira-Katsouda/                     |
+| Nikos Oikonomidis          |     4 | /Natasa-Theodorou/Eleni-Vitali/Ira-Katsouda/                     |
+| Pavlos Dimitriou           |     4 | /Natasa-Theodorou/Eleni-Vitali/Ira-Katsouda/                     |
+| Pavlos Triantafyllou       |     4 | /Natasa-Theodorou/Eleni-Vitali/Ira-Katsouda/                     |
+| Pinelopi Georgiou          |     4 | /Natasa-Theodorou/Eleni-Vitali/Ira-Katsouda/                     |
+| Alexandra Bakogianni       |     4 | /Natasa-Theodorou/Eleni-Vitali/Nikos-Kourkoulos/                 |
+| Nikoletta Antoniou         |     4 | /Natasa-Theodorou/Eleni-Vitali/Nikos-Kourkoulos/                 |
+| Pavlos Stamatiou           |     4 | /Natasa-Theodorou/Eleni-Vitali/Nikos-Kourkoulos/                 |
+| Sotiris Triantafyllou      |     4 | /Natasa-Theodorou/Eleni-Vitali/Nikos-Kourkoulos/                 |
+| Eirini Vlachopoulou        |     3 | /Natasa-Theodorou/Sofia-Bekatorou/                               |
+| Giorgos Kapoutzidis        |     3 | /Natasa-Theodorou/Sofia-Bekatorou/                               |
+| Theodora Alexiou           |     3 | /Natasa-Theodorou/Sofia-Bekatorou/                               |
+| Zoi Konstantopoulou        |     3 | /Natasa-Theodorou/Sofia-Bekatorou/                               |
+| Katerina Stefanidi         |     2 | /Nikos-Vertis/                                                   |
+| Marinella Marinella        |     2 | /Nikos-Vertis/                                                   |
+| Alexandros Tsouvelas       |     3 | /Nikos-Vertis/Katerina-Stefanidi/                                |
+| Danai Oikonomidi           |     3 | /Nikos-Vertis/Katerina-Stefanidi/                                |
+| Emmanouil Petridis         |     3 | /Nikos-Vertis/Katerina-Stefanidi/                                |
+| Smaragda Karydi            |     3 | /Nikos-Vertis/Katerina-Stefanidi/                                |
+| Christina Papadopoulou     |     4 | /Nikos-Vertis/Katerina-Stefanidi/Alexandros-Tsouvelas/           |
+| Nikos Makris               |     4 | /Nikos-Vertis/Katerina-Stefanidi/Alexandros-Tsouvelas/           |
+| Stavroula Spanou           |     4 | /Nikos-Vertis/Katerina-Stefanidi/Alexandros-Tsouvelas/           |
+| Nikoletta Vasileiou        |     4 | /Nikos-Vertis/Katerina-Stefanidi/Smaragda-Karydi/                |
+| Andreas Papandreou         |     3 | /Nikos-Vertis/Marinella-Marinella/                               |
+| Dimitris Horn              |     3 | /Nikos-Vertis/Marinella-Marinella/                               |
+| Eirini Oikonomidi          |     3 | /Nikos-Vertis/Marinella-Marinella/                               |
+| Eleftherios Georgiou       |     3 | /Nikos-Vertis/Marinella-Marinella/                               |
+| Karolos Papoulias          |     3 | /Nikos-Vertis/Marinella-Marinella/                               |
+| Archimedes Inventor        |     4 | /Nikos-Vertis/Marinella-Marinella/Andreas-Papandreou/            |
+| Anastasia Ioannidi         |     4 | /Nikos-Vertis/Marinella-Marinella/Dimitris-Horn/                 |
+| Markos Oikonomidis         |     4 | /Nikos-Vertis/Marinella-Marinella/Dimitris-Horn/                 |
+| Sotiris Papadopoulos       |     4 | /Nikos-Vertis/Marinella-Marinella/Dimitris-Horn/                 |
+| Manos Hatzidakis           |     2 | /Notis-Sfakianakis/                                              |
+| Maria Sakkari              |     2 | /Notis-Sfakianakis/                                              |
+| Ioanna Diamanti            |     3 | /Notis-Sfakianakis/Manos-Hatzidakis/                             |
+| Margarita Christodoulou    |     3 | /Notis-Sfakianakis/Manos-Hatzidakis/                             |
+| Nikos Androulakis          |     3 | /Notis-Sfakianakis/Manos-Hatzidakis/                             |
+| Thomas Zabras              |     3 | /Notis-Sfakianakis/Manos-Hatzidakis/                             |
+| Fotios Papageorgiou        |     4 | /Notis-Sfakianakis/Manos-Hatzidakis/Nikos-Androulakis/           |
+| Markos Chatzidakis         |     4 | /Notis-Sfakianakis/Manos-Hatzidakis/Nikos-Androulakis/           |
+| Niki Kerameus              |     4 | /Notis-Sfakianakis/Manos-Hatzidakis/Thomas-Zabras/               |
+| Dionysis Papagiannopoulos  |     3 | /Notis-Sfakianakis/Maria-Sakkari/                                |
+| Grigoris Angelopoulos      |     3 | /Notis-Sfakianakis/Maria-Sakkari/                                |
+| Katerina Kainourgiou       |     3 | /Notis-Sfakianakis/Maria-Sakkari/                                |
+| Panagiotis Mavridis        |     3 | /Notis-Sfakianakis/Maria-Sakkari/                                |
+| Maria Georgiou             |     4 | /Notis-Sfakianakis/Maria-Sakkari/Dionysis-Papagiannopoulos/      |
+| Anastasia Chronopoulou     |     4 | /Notis-Sfakianakis/Maria-Sakkari/Katerina-Kainourgiou/           |
+| Giannis Nikolaidis         |     4 | /Notis-Sfakianakis/Maria-Sakkari/Katerina-Kainourgiou/           |
+| Pavlos Kalligas            |     4 | /Notis-Sfakianakis/Maria-Sakkari/Katerina-Kainourgiou/           |
+| Theodora Eleftheriadi      |     4 | /Notis-Sfakianakis/Maria-Sakkari/Katerina-Kainourgiou/           |
+| Theodora Kalliga           |     4 | /Notis-Sfakianakis/Maria-Sakkari/Katerina-Kainourgiou/           |
+| Anna Korakaki              |     2 | /Pantelis-Pantelidis/                                            |
+| Haris Alexiou              |     2 | /Pantelis-Pantelidis/                                            |
+| Aristeidis Konstantinidis  |     3 | /Pantelis-Pantelidis/Anna-Korakaki/                              |
+| Emmanouil Chronopoulos     |     3 | /Pantelis-Pantelidis/Anna-Korakaki/                              |
+| Konstantinos Christodoulou |     3 | /Pantelis-Pantelidis/Anna-Korakaki/                              |
+| Konstantinos Karamanlis    |     3 | /Pantelis-Pantelidis/Anna-Korakaki/                              |
+| Lakis Lazopoulos           |     3 | /Pantelis-Pantelidis/Anna-Korakaki/                              |
+| Theodora Papadopoulou      |     3 | /Pantelis-Pantelidis/Anna-Korakaki/                              |
+| Evangelos Kalligas         |     4 | /Pantelis-Pantelidis/Anna-Korakaki/Konstantinos-Karamanlis/      |
+| Nikos Dendias              |     4 | /Pantelis-Pantelidis/Anna-Korakaki/Konstantinos-Karamanlis/      |
+| Stefanos Kalligas          |     4 | /Pantelis-Pantelidis/Anna-Korakaki/Konstantinos-Karamanlis/      |
+| Vasiliki Christodoulou     |     4 | /Pantelis-Pantelidis/Anna-Korakaki/Konstantinos-Karamanlis/      |
+| Xanthi Alexiou             |     4 | /Pantelis-Pantelidis/Anna-Korakaki/Konstantinos-Karamanlis/      |
+| Xanthi Papanikolaou        |     4 | /Pantelis-Pantelidis/Anna-Korakaki/Konstantinos-Karamanlis/      |
+| Alexandra Vlachopoulou     |     4 | /Pantelis-Pantelidis/Anna-Korakaki/Lakis-Lazopoulos/             |
+| Markos Kalligas            |     4 | /Pantelis-Pantelidis/Anna-Korakaki/Lakis-Lazopoulos/             |
+| Cleopatra Queen            |     3 | /Pantelis-Pantelidis/Haris-Alexiou/                              |
+| Rena Vlachopoulou          |     3 | /Pantelis-Pantelidis/Haris-Alexiou/                              |
+| Thodoris Atheridis         |     3 | /Pantelis-Pantelidis/Haris-Alexiou/                              |
+| Nikos Galis                |     2 | /Sakis-Rouvas/                                                   |
+| Panos Kiamos               |     2 | /Sakis-Rouvas/                                                   |
+| Eleftherios Venizelos      |     3 | /Sakis-Rouvas/Nikos-Galis/                                       |
+| Faii Skorda                |     3 | /Sakis-Rouvas/Nikos-Galis/                                       |
+| Melina Mercouri            |     3 | /Sakis-Rouvas/Nikos-Galis/                                       |
+| Otto Rehhagel              |     3 | /Sakis-Rouvas/Nikos-Galis/                                       |
+| Charalampos Karamanlis     |     4 | /Sakis-Rouvas/Nikos-Galis/Eleftherios-Venizelos/                 |
+| Olympia Eleftheriadi       |     4 | /Sakis-Rouvas/Nikos-Galis/Eleftherios-Venizelos/                 |
+| Alexander TheGreat         |     4 | /Sakis-Rouvas/Nikos-Galis/Faii-Skorda/                           |
+| Christina Bakogianni       |     4 | /Sakis-Rouvas/Nikos-Galis/Faii-Skorda/                           |
+| Eirini Georgiou            |     4 | /Sakis-Rouvas/Nikos-Galis/Faii-Skorda/                           |
+| Ioanna Lamprou             |     4 | /Sakis-Rouvas/Nikos-Galis/Faii-Skorda/                           |
+| Maria Mavridi              |     4 | /Sakis-Rouvas/Nikos-Galis/Otto-Rehhagel/                         |
+| Sofia Oikonomidi           |     4 | /Sakis-Rouvas/Nikos-Galis/Otto-Rehhagel/                         |
+| Vasiliki Antoniou          |     4 | /Sakis-Rouvas/Nikos-Galis/Otto-Rehhagel/                         |
+| Antonis Chatzidakis        |     3 | /Sakis-Rouvas/Panos-Kiamos/                                      |
+| Eleftherios Tsakalidis     |     3 | /Sakis-Rouvas/Panos-Kiamos/                                      |
+| Kostas Voutsas             |     3 | /Sakis-Rouvas/Panos-Kiamos/                                      |
+| Petros Vasileiou           |     3 | /Sakis-Rouvas/Panos-Kiamos/                                      |
++----------------------------+-------+------------------------------------------------------------------+

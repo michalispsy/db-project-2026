@@ -2,7 +2,6 @@
 | substance_1         | substance_2             | frequency |
 +---------------------+-------------------------+-----------+
 | Abiraterone Acetate | Alteplase               |        18 |
+| Almotriptan         | Memantine Hydrochloride |        12 |
 | Abiraterone Acetate | Almotriptan             |        12 |
-| Alteplase           | Memantine Hydrochloride |        12 |
 +---------------------+-------------------------+-----------+
-
