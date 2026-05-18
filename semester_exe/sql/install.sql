@@ -572,6 +572,17 @@ create table doctor_images (
     constraint fk_doctor_img_relation foreign key (doctor_amka) references doctors(amka) on delete cascade
 );
 
+create table operating_room_images (
+    img_id int auto_increment,
+    room_id int not null,
+    img_url varchar(255) not null,
+    caption varchar(255),
+    ordering int default 0,
+
+    constraint pk_doctor_images primary key (img_id),
+    constraint fk_doctor_img_relation foreign key (room_id) references operating_rooms(room_id) on delete cascade
+);
+
 -- Triggers για αυτοματοποιήσεις
 
 DELIMITER //
@@ -597,7 +608,7 @@ BEGIN
     SET NEW.contact_seq = (
         SELECT COALESCE(MAX(contact_seq), 0) + 1
         FROM patient_emergency_contacts
-        WHERE patient_AMKA = NEW.patient_AMKA
+        WHERE patient_amka = NEW.patient_amka
     );
 END//
 
@@ -741,12 +752,12 @@ CREATE TRIGGER doctor_rank_insert_check_trigger
 BEFORE INSERT ON doctors
 FOR EACH ROW
 BEGIN
-    IF NEW.rank = 'Ειδικευόμενος' AND NEW.supervisor_AMKA IS NULL THEN
+    IF NEW.rank = 'Ειδικευόμενος' AND NEW.supervisor_amka IS NULL THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Σφάλμα: Οι ειδικευόμενοι ιατροί πρέπει υποχρεωτικά να έχουν επόπτη.';
     END IF;
 
-    IF NEW.rank = 'Διευθυντής' AND NEW.supervisor_AMKA IS NOT NULL THEN
+    IF NEW.rank = 'Διευθυντής' AND NEW.supervisor_amka IS NOT NULL THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Σφάλμα: Οι διευθυντές δεν μπορούν να έχουν επόπτη.';
     END IF;
@@ -756,12 +767,12 @@ CREATE TRIGGER doctor_rank_update_check_trigger
 BEFORE UPDATE ON doctors
 FOR EACH ROW
 BEGIN
-    IF NEW.rank = 'Ειδικευόμενος' AND NEW.supervisor_AMKA IS NULL THEN
+    IF NEW.rank = 'Ειδικευόμενος' AND NEW.supervisor_amka IS NULL THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Σφάλμα: Οι ειδικευόμενοι ιατροί πρέπει υποχρεωτικά να έχουν επόπτη.';
     END IF;
 
-    IF NEW.rank = 'Διευθυντής' AND NEW.supervisor_AMKA IS NOT NULL THEN
+    IF NEW.rank = 'Διευθυντής' AND NEW.supervisor_amka IS NOT NULL THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Σφάλμα: Οι διευθυντές δεν μπορούν να έχουν επόπτη.';
     END IF;
@@ -781,20 +792,20 @@ main: BEGIN
     END IF;
 
     WITH RECURSIVE supervision_chain AS (
-        SELECT supervisor_AMKA
+        SELECT supervisor_amka
         FROM doctors
-        WHERE AMKA = p_new_supervisor_amka
+        WHERE amka = p_new_supervisor_amka
         
         UNION ALL
         
-        SELECT d.supervisor_AMKA
+        SELECT d.supervisor_amka
         FROM doctors d
-        INNER JOIN supervision_chain sc ON d.AMKA = sc.supervisor_AMKA
-        WHERE d.supervisor_AMKA IS NOT NULL AND sc.supervisor_AMKA <> p_doctor_amka
+        INNER JOIN supervision_chain sc ON d.amka = sc.supervisor_amka
+        WHERE d.supervisor_amka IS NOT NULL AND sc.supervisor_amka <> p_doctor_amka
     )
     SELECT COUNT(*) INTO v_count 
     FROM supervision_chain 
-    WHERE supervisor_AMKA = p_doctor_amka
+    WHERE supervisor_amka = p_doctor_amka
     LIMIT 1;
 
     IF v_count > 0 THEN
@@ -807,18 +818,18 @@ CREATE TRIGGER doctor_supervisor_insert_trigger
 BEFORE INSERT ON doctors
 FOR EACH ROW
 BEGIN
-    CALL check_supervisor_cycle_proc(NEW.AMKA, NEW.supervisor_AMKA);
+    CALL check_supervisor_cycle_proc(NEW.amka, NEW.supervisor_amka);
 END //
 
 CREATE TRIGGER doctor_supervisor_update_trigger
 BEFORE UPDATE ON doctors
 FOR EACH ROW
 BEGIN
-    IF (NEW.supervisor_AMKA <> OLD.supervisor_AMKA) 
-        OR (NEW.supervisor_AMKA IS NULL AND OLD.supervisor_AMKA IS NOT NULL)
-        OR (NEW.supervisor_AMKA IS NOT NULL AND OLD.supervisor_AMKA IS NULL) 
+    IF (NEW.supervisor_amka <> OLD.supervisor_amka) 
+        OR (NEW.supervisor_amka IS NULL AND OLD.supervisor_amka IS NOT NULL)
+        OR (NEW.supervisor_amka IS NOT NULL AND OLD.supervisor_amka IS NULL) 
     THEN
-        CALL check_supervisor_cycle_proc(NEW.AMKA, NEW.supervisor_AMKA);
+        CALL check_supervisor_cycle_proc(NEW.amka, NEW.supervisor_amka);
     END IF;
 END //
 
@@ -826,7 +837,7 @@ CREATE TRIGGER check_for_admins_in_procedure_trigger
 BEFORE INSERT ON procedure_assistants
 FOR EACH ROW
 BEGIN
-    IF EXISTS (SELECT NULL FROM admin_staff WHERE AMKA = NEW.staff_AMKA) THEN
+    IF EXISTS (SELECT NULL FROM admin_staff WHERE amka = NEW.staff_amka) THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Σφάλμα: Μόνο ιατροί ή νοσηλευτές μπορούν να συμμετέχουν ως βοηθοί.';
     END IF;
@@ -852,17 +863,17 @@ BEGIN
     CALL check_if_discharged(NEW.admission_id);
 END//
 
-CREATE PROCEDURE check_doctor_treated_patient(IN p_admission_id INT, IN p_doctor_AMKA CHAR(11))
+CREATE PROCEDURE check_doctor_treated_patient(IN p_admission_id INT, IN p_doctor_amka CHAR(11))
 BEGIN
     IF NOT EXISTS (
         SELECT NULL FROM prescriptions
-            WHERE admission_id = p_admission_id AND doctor_AMKA = p_doctor_AMKA
+            WHERE admission_id = p_admission_id AND doctor_amka = p_doctor_amka
         UNION ALL
         SELECT NULL FROM procedure_executions
-            WHERE admission_id = p_admission_id AND main_doctor_AMKA = p_doctor_AMKA
+            WHERE admission_id = p_admission_id AND main_doctor_amka = p_doctor_amka
         UNION ALL
         SELECT NULL FROM lab_exams
-            WHERE admission_id = p_admission_id AND doctor_AMKA = p_doctor_AMKA
+            WHERE admission_id = p_admission_id AND doctor_amka = p_doctor_amka
     ) THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Σφάλμα: Ο ιατρός δεν συμμετείχε στη νοσηλεία αυτού του ασθενή.';
@@ -873,7 +884,7 @@ CREATE TRIGGER check_doctor_rating_insert_trigger
 BEFORE INSERT ON doctor_ratings
 FOR EACH ROW
 BEGIN
-    CALL check_doctor_treated_patient(NEW.admission_id, NEW.doctor_AMKA);
+    CALL check_doctor_treated_patient(NEW.admission_id, NEW.doctor_amka);
     CALL check_if_discharged(NEW.admission_id);
 END//
 
@@ -881,7 +892,7 @@ CREATE TRIGGER check_doctor_rating_update_trigger
 BEFORE UPDATE ON doctor_ratings
 FOR EACH ROW
 BEGIN
-    CALL check_doctor_treated_patient(NEW.admission_id, NEW.doctor_AMKA);
+    CALL check_doctor_treated_patient(NEW.admission_id, NEW.doctor_amka);
     CALL check_if_discharged(NEW.admission_id);
 END//
 
@@ -959,7 +970,7 @@ BEGIN
     FROM drug_contains_substances dcs
     JOIN patient_allergies pa ON dcs.substance_id = pa.substance_id
     JOIN active_substances sub ON sub.substance_id = pa.substance_id
-    WHERE dcs.drug_id = NEW.drug_id AND pa.patient_AMKA = NEW.patient_AMKA
+    WHERE dcs.drug_id = NEW.drug_id AND pa.patient_amka = NEW.patient_amka
     LIMIT 1;
 
     IF v_allergy_name IS NOT NULL THEN
@@ -968,7 +979,7 @@ BEGIN
     END IF;
 END//
 
-CREATE PROCEDURE check_procedure_conflicts(IN p_room_id INT, IN p_doctor_AMKA CHAR(11), IN p_start DATETIME, IN p_end DATETIME, IN p_exec_id INT)
+CREATE PROCEDURE check_procedure_conflicts(IN p_room_id INT, IN p_doctor_amka CHAR(11), IN p_start DATETIME, IN p_end DATETIME, IN p_exec_id INT)
 BEGIN
     DECLARE v_end DATETIME;
     SET v_end = COALESCE(p_end, '2099-12-31 23:59:59');
@@ -986,7 +997,7 @@ BEGIN
 
     IF EXISTS (
         SELECT NULL FROM procedure_executions 
-        WHERE main_doctor_AMKA = p_doctor_AMKA 
+        WHERE main_doctor_amka = p_doctor_amka 
         AND execution_id != COALESCE(p_exec_id, -1)
         AND p_start < COALESCE(end_time, '2099-12-31 23:59:59') 
         AND v_end > start_time
@@ -1000,17 +1011,17 @@ CREATE TRIGGER procedure_overlap_insert_trigger
 BEFORE INSERT ON procedure_executions
 FOR EACH ROW
 BEGIN
-    CALL check_procedure_conflicts(NEW.room_id, NEW.main_doctor_AMKA, NEW.start_time, NEW.end_time, NULL);
+    CALL check_procedure_conflicts(NEW.room_id, NEW.main_doctor_amka, NEW.start_time, NEW.end_time, NULL);
 END //
 
-CREATE TRIGGER trg_procedure_overlap_update
+CREATE TRIGGER procedure_overlap_update_trigger
 BEFORE UPDATE ON procedure_executions
 FOR EACH ROW
 BEGIN
-    CALL check_procedure_conflicts(NEW.room_id, NEW.main_doctor_AMKA, NEW.start_time, NEW.end_time, NEW.execution_id);
+    CALL check_procedure_conflicts(NEW.room_id, NEW.main_doctor_amka, NEW.start_time, NEW.end_time, NEW.execution_id);
 END //
 
-CREATE PROCEDURE validate_staff_shift_max_limit(IN p_staff_AMKA VARCHAR(11), IN p_shift_id INT)
+CREATE PROCEDURE validate_staff_shift_max_limit(IN p_staff_amka VARCHAR(11), IN p_shift_id INT)
 BEGIN
     DECLARE shift_count INT;
     DECLARE p_position VARCHAR(20);
@@ -1019,12 +1030,12 @@ BEGIN
 
     SELECT MONTH(shift_date), YEAR(shift_date) INTO current_month, current_year
     FROM shifts WHERE shift_id = p_shift_id;
-    SELECT staff_type INTO p_position FROM staff WHERE AMKA = p_staff_AMKA;
+    SELECT staff_type INTO p_position FROM staff WHERE amka = p_staff_amka;
 
     SELECT COUNT(*) INTO shift_count
     FROM shift_staffing ss
     JOIN shifts s ON ss.shift_id = s.shift_id
-    WHERE ss.staff_AMKA = p_staff_AMKA
+    WHERE ss.staff_amka = p_staff_amka
     AND MONTH(s.shift_date) = current_month
     AND YEAR(s.shift_date) = current_year;
 
@@ -1040,7 +1051,7 @@ BEGIN
     END IF;
 END//
 
-CREATE PROCEDURE validate_consecutive_nights(IN p_staff_AMKA VARCHAR(11), IN p_shift_id INT)
+CREATE PROCEDURE validate_consecutive_nights(IN p_staff_amka VARCHAR(11), IN p_shift_id INT)
 main: BEGIN
     DECLARE p_date DATE;
     DECLARE p_type VARCHAR(20);
@@ -1055,34 +1066,34 @@ main: BEGIN
     IF EXISTS (
         SELECT 1 FROM shift_staffing ss1
         JOIN shifts s1 ON ss1.shift_id = s1.shift_id
-        WHERE ss1.staff_AMKA = p_staff_AMKA AND s1.shift_slot = 'νυχτερινή'
+        WHERE ss1.staff_amka = p_staff_amka AND s1.shift_slot = 'νυχτερινή'
         AND s1.shift_date = DATE_ADD(p_date, INTERVAL 1 DAY)
         AND EXISTS (
             SELECT 1 FROM shift_staffing ss2
             JOIN shifts s2 ON ss2.shift_id = s2.shift_id
-            WHERE ss2.staff_AMKA = p_staff_AMKA AND s2.shift_slot = 'νυχτερινή'
+            WHERE ss2.staff_amka = p_staff_amka AND s2.shift_slot = 'νυχτερινή'
             AND s2.shift_date = DATE_ADD(p_date, INTERVAL 2 DAY)
         )
         ) OR EXISTS (
         SELECT 1 FROM shift_staffing ss1
         JOIN shifts s1 ON ss1.shift_id = s1.shift_id
-        WHERE ss1.staff_AMKA = p_staff_AMKA AND s1.shift_slot = 'νυχτερινή'
+        WHERE ss1.staff_amka = p_staff_amka AND s1.shift_slot = 'νυχτερινή'
         AND s1.shift_date = DATE_SUB(p_date, INTERVAL 1 DAY)
         AND EXISTS (
             SELECT 1 FROM shift_staffing ss2
             JOIN shifts s2 ON ss2.shift_id = s2.shift_id
-            WHERE ss2.staff_AMKA = p_staff_AMKA AND s2.shift_slot = 'νυχτερινή'
+            WHERE ss2.staff_amka = p_staff_amka AND s2.shift_slot = 'νυχτερινή'
             AND s2.shift_date = DATE_ADD(p_date, INTERVAL 1 DAY)
         )
         ) OR EXISTS (
         SELECT 1 FROM shift_staffing ss1
         JOIN shifts s1 ON ss1.shift_id = s1.shift_id
-        WHERE ss1.staff_AMKA = p_staff_AMKA AND s1.shift_slot = 'νυχτερινή'
+        WHERE ss1.staff_amka = p_staff_amka AND s1.shift_slot = 'νυχτερινή'
         AND s1.shift_date = DATE_SUB(p_date, INTERVAL 1 DAY)
         AND EXISTS (
             SELECT 1 FROM shift_staffing ss2
             JOIN shifts s2 ON ss2.shift_id = s2.shift_id
-            WHERE ss2.staff_AMKA = p_staff_AMKA AND s2.shift_slot = 'νυχτερινή'
+            WHERE ss2.staff_amka = p_staff_amka AND s2.shift_slot = 'νυχτερινή'
             AND s2.shift_date = DATE_SUB(p_date, INTERVAL 2 DAY)
         )
     ) THEN
@@ -1095,21 +1106,21 @@ CREATE TRIGGER shift_staffing_insert_trigger
 BEFORE INSERT ON shift_staffing
 FOR EACH ROW
 BEGIN
-    CALL validate_staff_shift_max_limit(NEW.staff_AMKA, NEW.shift_id);
-    CALL validate_consecutive_nights(NEW.staff_AMKA, NEW.shift_id);
+    CALL validate_staff_shift_max_limit(NEW.staff_amka, NEW.shift_id);
+    CALL validate_consecutive_nights(NEW.staff_amka, NEW.shift_id);
 END //
 
 CREATE TRIGGER shift_staffing_update_trigger
 BEFORE UPDATE ON shift_staffing
 FOR EACH ROW
 BEGIN
-    IF (NEW.staff_AMKA <> OLD.staff_AMKA OR NEW.shift_id <> OLD.shift_id) THEN
-        CALL validate_staff_shift_max_limit(NEW.staff_AMKA, NEW.shift_id);
-        CALL validate_consecutive_nights(NEW.staff_AMKA, NEW.shift_id);
+    IF (NEW.staff_amka <> OLD.staff_amka OR NEW.shift_id <> OLD.shift_id) THEN
+        CALL validate_staff_shift_max_limit(NEW.staff_amka, NEW.shift_id);
+        CALL validate_consecutive_nights(NEW.staff_amka, NEW.shift_id);
     END IF;
 END //
         
-CREATE PROCEDURE validate_shift_rest(IN p_staff_AMKA CHAR(11), IN p_shift_id INT)
+CREATE PROCEDURE validate_shift_rest(IN p_staff_amka CHAR(11), IN p_shift_id INT)
 BEGIN
     DECLARE v_new_date DATE;
     DECLARE v_new_slot VARCHAR(20);
@@ -1129,7 +1140,7 @@ BEGIN
     SELECT COUNT(*) INTO v_violation
     FROM shift_staffing ss
     JOIN shifts s ON ss.shift_id = s.shift_id
-    WHERE ss.staff_AMKA = p_staff_AMKA
+    WHERE ss.staff_amka = p_staff_amka
       AND ss.shift_id <> p_shift_id
       AND ABS(TIMESTAMPDIFF(MINUTE, v_new_start,
               TIMESTAMP(s.shift_date,
@@ -1149,15 +1160,15 @@ CREATE TRIGGER prevent_consecutive_shift_insert_trigger
 BEFORE INSERT ON shift_staffing
 FOR EACH ROW
 BEGIN
-    CALL validate_shift_rest(NEW.staff_AMKA, NEW.shift_id);
+    CALL validate_shift_rest(NEW.staff_amka, NEW.shift_id);
 END//
 
 CREATE TRIGGER prevent_consecutive_shift_update_trigger
 BEFORE UPDATE ON shift_staffing
 FOR EACH ROW
 BEGIN
-    IF (NEW.staff_AMKA <> OLD.staff_AMKA OR NEW.shift_id <> OLD.shift_id) THEN
-        CALL validate_shift_rest(NEW.staff_AMKA, NEW.shift_id);
+    IF (NEW.staff_amka <> OLD.staff_amka OR NEW.shift_id <> OLD.shift_id) THEN
+        CALL validate_shift_rest(NEW.staff_amka, NEW.shift_id);
     END IF;
 END//
 
@@ -1175,7 +1186,7 @@ BEGIN
         COUNT(CASE WHEN s.staff_type = 'admin' THEN 1 END)
     INTO doc_count, nurse_count, admin_count
     FROM shift_staffing ss
-    JOIN staff s ON ss.staff_AMKA = s.AMKA
+    JOIN staff s ON ss.staff_amka = s.amka
     WHERE ss.shift_id = p_shift_id;
 
     IF doc_count < 3 THEN
@@ -1191,13 +1202,13 @@ BEGIN
 
     SELECT COUNT(*) INTO resident_exists
     FROM shift_staffing ss
-    JOIN doctors d ON ss.staff_AMKA = d.AMKA
+    JOIN doctors d ON ss.staff_amka = d.amka
     WHERE ss.shift_id = p_shift_id AND d.rank = 'Ειδικευόμενος';
 
     IF resident_exists > 0 THEN
         SELECT COUNT(*) INTO senior_exists
         FROM shift_staffing ss
-        JOIN doctors d ON ss.staff_AMKA = d.AMKA
+        JOIN doctors d ON ss.staff_amka = d.amka
         WHERE ss.shift_id = p_shift_id 
         AND d.rank IN ('Επιμελητής Α', 'Διευθυντής');
 
@@ -1221,7 +1232,7 @@ BEGIN
         COUNT(CASE WHEN s.staff_type = 'admin' THEN 1 END)
     INTO doc_count, nurse_count, admin_count
     FROM shift_staffing ss
-    JOIN staff s ON ss.staff_AMKA = s.AMKA
+    JOIN staff s ON ss.staff_amka = s.amka
     WHERE ss.shift_id = p_shift_id;
 
     IF doc_count >= 3 AND nurse_count >= 6 AND admin_count >= 2 THEN
