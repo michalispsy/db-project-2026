@@ -16,5 +16,5 @@ SELECT
 FROM doctors doc
 JOIN staff s ON doc.AMKA = s.AMKA
 JOIN specialties spec ON doc.specialty = spec.code
-WHERE spec.name = 'Surgery'
+WHERE spec.name = 'Χειρουργική'
 ORDER BY surgeries_as_main DESC;

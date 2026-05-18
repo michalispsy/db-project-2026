@@ -46,7 +46,7 @@ create table genders (
     name varchar(20) not null,
     constraint pk_genders primary key (code)
 );
-insert into genders values ('m','male'),('f','female'),('other','other');
+insert into genders values ('m','Άνδρας'),('f','Γυναίκα'),('other','Άλλο');
 
 create table insurance_providers (
     code varchar(30),
@@ -88,8 +88,8 @@ create table triage_outcomes (
     constraint pk_triage_outcomes primary key (code)
 );
 insert into triage_outcomes values
-    ('discharged','discharged with instructions'),
-    ('hospitalized','referred for admission');
+    ('discharged','Αποχώρηση με οδηγίες'),
+    ('hospitalized','Παραπομπή για νοσηλεία');
 
 create table shift_slots (
     code varchar(20),
@@ -105,8 +105,8 @@ create table shift_statuses (
     constraint pk_shift_statuses primary key (code)
 );
 insert into shift_statuses values
-    ('scheduled','scheduled'),('in progress','in progress'),
-    ('completed','completed'),('cancelled','cancelled'),('understaffed','understaffed');
+    ('scheduled','Προγραμματισμένη'),('in progress','Σε εξέλιξη'),
+    ('completed','Ολοκληρωμένη'),('cancelled','Ακυρωμένη'),('understaffed','Ελλιπής Στελέχωση');
 
 create table procedure_categories (
     code varchar(20),
@@ -124,8 +124,8 @@ create table room_types (
     constraint pk_room_types primary key (code)
 );
 insert into room_types values
-    ('exam room','exam room'),('icu','icu'),
-    ('operating room','operating room'),('therapy room','therapy room');
+    ('exam room','Αίθουσα Εξέτασης'),('icu','ΜΕΘ'),
+    ('operating room','Χειρουργείο'),('therapy room','Αίθουσα Θεραπείας');
 
 create table exam_types (
     exam_code int,
@@ -139,21 +139,21 @@ create table specialties (
     constraint pk_specialties primary key (code)
 );
 insert into specialties values
-    ('cardiology','cardiology'),
-    ('surgery','surgery'),
-    ('pediatrics','pediatrics'),
-    ('neurology','neurology'),
-    ('orthopedics','orthopedics'),
-    ('internal medicine','internal medicine'),
-    ('emergency medicine','emergency medicine'),
-    ('anesthesiology','anesthesiology'),
-    ('radiology','radiology'),
-    ('oncology','oncology'),
-    ('psychiatry','psychiatry'),
-    ('obstetrics and gynecology','obstetrics and gynecology'),
-    ('dermatology','dermatology'),
-    ('urology','urology'),
-    ('general practice','general practice');
+    ('cardiology','Καρδιολογία'),
+    ('surgery','Χειρουργική'),
+    ('pediatrics','Παιδιατρική'),
+    ('neurology','Νευρολογία'),
+    ('orthopedics','Ορθοπεδική'),
+    ('internal medicine','Παθολογία'),
+    ('emergency medicine','Επείγουσα Ιατρική'),
+    ('anesthesiology','Αναισθησιολογία'),
+    ('radiology','Ακτινολογία'),
+    ('oncology','Ογκολογία'),
+    ('psychiatry','Ψυχιατρική'),
+    ('obstetrics and gynecology','Μαιευτική & Γυναικολογία'),
+    ('dermatology','Δερματολογία'),
+    ('urology','Ουρολογία'),
+    ('general practice','Γενική Ιατρική');
 
 -- βασικοί πίνακες της βάσης
 
@@ -1292,3 +1292,71 @@ BEGIN
 END//
 
 DELIMITER ;
+
+-- ============================================================
+-- ΕΥΡΕΤΗΡΙΑ (INDEXES)
+-- ============================================================
+-- Κατηγορία Α: FK στήλες — επιταχύνουν JOINs και τα triggers
+--              που εκτελούν αναζητήσεις μέσω FK.
+-- Κατηγορία Β: Στήλες φίλτρου / ταξινόμησης — WHERE, ORDER BY,
+--              GROUP BY στα ερωτήματα Q01–Q15.
+-- Σημ.: Για σύνθετα PKs (staff_amka, shift_id) η 2η στήλη ΔΕΝ
+--       καλύπτεται από το PK index και χρειάζεται δικό της index.
+-- ============================================================
+
+-- admissions (κεντρικός πίνακας — Q01, Q03, Q06, Q09, Q14)
+CREATE INDEX idx_adm_patient   ON admissions(patient_amka);               -- Q01 Q03 Q06 Q09: JOIN patients
+CREATE INDEX idx_adm_dept      ON admissions(department_id);              -- Q01 Q03: JOIN departments
+CREATE INDEX idx_adm_diag_in   ON admissions(admission_diagnosis_code);   -- Q06 Q14: JOIN icd10
+CREATE INDEX idx_adm_diag_out  ON admissions(discharge_diagnosis_code);   -- Q06: LEFT JOIN icd10
+CREATE INDEX idx_adm_date      ON admissions(admission_date);             -- Q01: YEAR(), Q06: ORDER BY, Q09 Q14: WHERE YEAR()
+
+-- doctors
+CREATE INDEX idx_doc_specialty  ON doctors(specialty);                    -- Q02: JOIN specialties WHERE name=?, Q05: JOIN
+CREATE INDEX idx_doc_supervisor ON doctors(supervisor_amka);              -- Q13: recursive CTE self-join
+
+-- nurses / admin_staff
+CREATE INDEX idx_nurses_dept    ON nurses(dept_id);                       -- Q08: LEFT JOIN departments
+CREATE INDEX idx_admin_dept     ON admin_staff(dept_id);                  -- Q08: LEFT JOIN departments
+
+-- procedure_executions
+CREATE INDEX idx_pe_admission   ON procedure_executions(admission_id);    -- Q05 (indirect JOIN)
+CREATE INDEX idx_pe_doctor      ON procedure_executions(main_doctor_amka);-- Q02 Q05 Q11: subquery / JOIN
+CREATE INDEX idx_pe_procedure   ON procedure_executions(procedure_code);  -- Q05: JOIN medical_procedures
+CREATE INDEX idx_pe_start_time  ON procedure_executions(start_time);      -- Q11: WHERE YEAR(start_time)
+
+-- lab_exams
+CREATE INDEX idx_le_admission   ON lab_exams(admission_id);               -- Q06: LEFT JOIN admissions
+
+-- prescriptions
+CREATE INDEX idx_presc_admission ON prescriptions(admission_id);          -- Q06 Q10: JOIN admissions
+CREATE INDEX idx_presc_drug      ON prescriptions(drug_id);               -- Q06 Q10: JOIN drugs
+
+-- drug_contains_substances: PK=(drug_id, substance_id) — substance_id ΔΕΝ καλύπτεται από το PK
+CREATE INDEX idx_dcs_substance   ON drug_contains_substances(substance_id); -- Q07 Q10: JOIN active_substances
+
+-- patient_allergies: PK=(patient_amka, substance_id) — substance_id ΔΕΝ καλύπτεται από το PK
+CREATE INDEX idx_pa_substance    ON patient_allergies(substance_id);      -- Q07: LEFT JOIN active_substances
+
+-- doctor_ratings: UNIQUE(admission_id, doctor_amka) καλύπτει ήδη το admission_id
+CREATE INDEX idx_dr_doctor       ON doctor_ratings(doctor_amka);          -- Q04: JOIN doctors
+
+-- shifts
+CREATE INDEX idx_shifts_dept     ON shifts(dept_id);                      -- Q12 Q15: JOIN departments
+CREATE INDEX idx_shifts_date     ON shifts(shift_date);                   -- Q08 Q12: WHERE BETWEEN
+
+-- shift_staffing: PK=(staff_amka, shift_id) — shift_id ΔΕΝ καλύπτεται από το PK
+CREATE INDEX idx_ss_shift        ON shift_staffing(shift_id);             -- Q02 Q08 Q12: JOIN shifts
+
+-- triages (admission_id καλύπτεται ήδη από UNIQUE constraint)
+CREATE INDEX idx_triage_urgency  ON triages(urgency_level);               -- Q15: GROUP BY urgency_level
+CREATE INDEX idx_triage_time     ON triages(triage_time);                 -- Q15: WHERE triage_time IS NOT NULL
+
+-- icd10
+CREATE INDEX idx_icd10_category  ON icd10(category);                      -- Q14: GROUP BY category
+
+-- Στήλες φίλτρου (WHERE)
+CREATE INDEX idx_staff_last_name    ON staff(last_name);                  -- Q04: WHERE last_name = 'Alexiou'
+CREATE INDEX idx_patients_last_name ON patients(last_name);               -- Q06: WHERE last_name = 'Papadopoulos'
+CREATE INDEX idx_patients_dob       ON patients(date_of_birth);           -- Q05: WHERE age < 35 (age είναι virtual col από dob)
+CREATE INDEX idx_med_proc_category  ON medical_procedures(category);      -- Q05: WHERE category = 'χειρουργική'
