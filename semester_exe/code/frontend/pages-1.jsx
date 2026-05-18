@@ -94,7 +94,7 @@ const Dashboard = ({ onPatientOpen }) => {
       </div>
       <div className="stat">
         <div className="stat-label">Προγρ. Χειρουργεία</div>
-        <div className="stat-value">{SURGERIES.length}</div>
+        <div className="stat-value">{SURGERIES.filter(s => s.start.startsWith(new Date().toISOString().split('T')[0])).length}</div>
         <div className="stat-meta"><span className="muted">Σύνολο ημέρας</span></div>
       </div>
     </div>

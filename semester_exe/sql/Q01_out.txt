@@ -1,501 +1,503 @@
 +-----------------+----------------+----------+--------------------+------------------+-----------------+------------------+---------------+
 | department_name | admission_year | ken_code | insurance_provider | total_admissions | total_base_cost | total_extra_cost | total_revenue |
 +-----------------+----------------+----------+--------------------+------------------+-----------------+------------------+---------------+
-| Aimatologiko    |           2026 | Τ06Μ     | Interamerican      |                1 |        15128.00 |             0.00 |      15128.00 |
-| Aimatologiko    |           2026 | Κ04Χ     | EOPYY              |                1 |         9163.00 |          3636.75 |      12799.75 |
-| Aimatologiko    |           2026 | Κ03Χ     | EOPYY              |                1 |        11734.00 |           258.22 |      11992.22 |
-| Aimatologiko    |           2026 | Κ05Μ     | Allianz            |                1 |        10023.00 |             0.00 |      10023.00 |
-| Aimatologiko    |           2026 | Θ01Μ     | MetLife            |                1 |         6202.00 |             0.00 |       6202.00 |
-| Aimatologiko    |           2026 | Α10Χ     | EOPYY              |                1 |         4627.00 |          1060.44 |       5687.44 |
-| Aimatologiko    |           2026 | Ε08Χ     | EOPYY              |                1 |         3683.00 |           120.92 |       3803.92 |
-| Aimatologiko    |           2026 | Θ05Μ     | Interamerican      |                1 |         2587.00 |           791.70 |       3378.70 |
-| Aimatologiko    |           2026 | Ξ02Χ     | Interamerican      |                1 |          781.00 |          2472.57 |       3253.57 |
-| Aimatologiko    |           2026 | Ν32Μ     | MetLife            |                1 |         3175.00 |             0.00 |       3175.00 |
-| Aimatologiko    |           2026 | Δ13Μ     | Uninsured          |                1 |         2856.00 |             0.00 |       2856.00 |
-| Aimatologiko    |           2026 | Ν41Μ     | Allianz            |                1 |         1837.00 |           886.84 |       2723.84 |
-| Aimatologiko    |           2026 | Α30Μ     | EOPYY              |                1 |         1331.00 |          1299.85 |       2630.85 |
-| Aimatologiko    |           2026 | Κ43Μ     | Eurolife           |                1 |         1471.00 |           782.74 |       2253.74 |
-| Aimatologiko    |           2026 | Α25Μ     | EOPYY              |                1 |         1766.00 |           477.62 |       2243.62 |
-| Aimatologiko    |           2026 | Λ21Α     | Interamerican      |                1 |          420.00 |          1634.88 |       2054.88 |
-| Aimatologiko    |           2026 | Η44Χ     | MetLife            |                1 |          436.00 |          1438.60 |       1874.60 |
-| Aimatologiko    |           2026 | Π10Μ     | EOPYY              |                1 |         1697.00 |             0.00 |       1697.00 |
-| Aimatologiko    |           2026 | Σ04Μ     | Ethniki            |                1 |         1694.00 |             0.00 |       1694.00 |
-| Aimatologiko    |           2026 | Δ20Χ     | EOPYY              |                1 |         1471.00 |           220.76 |       1691.76 |
-| Aimatologiko    |           2026 | Μ25Χ     | Generali           |                1 |         1260.00 |           427.80 |       1687.80 |
-| Aimatologiko    |           2026 | Τ27Χ     | Interamerican      |                1 |          428.00 |          1256.88 |       1684.88 |
-| Aimatologiko    |           2026 | Α27Χ     | Generali           |                1 |          350.00 |          1291.84 |       1641.84 |
-| Aimatologiko    |           2026 | Δ24Μ     | Interamerican      |                1 |         1619.00 |             0.00 |       1619.00 |
-| Aimatologiko    |           2026 | W11Α     | EOPYY              |                1 |          991.00 |           599.70 |       1590.70 |
-| Aimatologiko    |           2026 | Η43Χ     | EOPYY              |                1 |          521.00 |          1031.12 |       1552.12 |
-| Aimatologiko    |           2026 | Μ69Μ     | EOPYY              |                1 |         1533.00 |             0.00 |       1533.00 |
-| Aimatologiko    |           2026 | Δ08Χ     | EOPYY              |                1 |          791.00 |           740.00 |       1531.00 |
-| Aimatologiko    |           2026 | Ν36Χ     | Generali           |                1 |          482.00 |          1025.83 |       1507.83 |
-| Aimatologiko    |           2026 | Κ35Μ     | EOPYY              |                1 |         1502.00 |             0.00 |       1502.00 |
-| Aimatologiko    |           2026 | Θ22Μ     | Generali           |                1 |         1393.00 |             0.00 |       1393.00 |
-| Aimatologiko    |           2026 | Ξ21Μ     | Uninsured          |                1 |         1136.00 |             0.00 |       1136.00 |
-| Aimatologiko    |           2026 | Φ22Χ     | EOPYY              |                1 |          827.00 |             0.00 |        827.00 |
-| Aimatologiko    |           2026 | Δ24Χ     | Interamerican      |                1 |          802.00 |             0.00 |        802.00 |
-| Aimatologiko    |           2026 | Π50Χ     | EOPYY              |                1 |          374.00 |           270.03 |        644.03 |
-| Aimatologiko    |           2026 | Ν36Χ     | Eurolife           |                1 |          482.00 |             0.00 |        482.00 |
-| Aimatologiko    |           2026 | Υ25Χ     | EOPYY              |                1 |          405.00 |             0.00 |        405.00 |
-| Cheirourgiko    |           2026 | Κ01Χ     | EOPYY              |                1 |        12420.00 |          1327.20 |      13747.20 |
-| Cheirourgiko    |           2026 | Φ01Α     | Uninsured          |                1 |        12204.00 |             0.00 |      12204.00 |
-| Cheirourgiko    |           2026 | Φ01Α     | EOPYY              |                1 |        12204.00 |             0.00 |      12204.00 |
-| Cheirourgiko    |           2026 | Ρ05Μα    | EOPYY              |                1 |         8110.00 |             0.00 |       8110.00 |
-| Cheirourgiko    |           2026 | Μ03Χ     | EOPYY              |                1 |         6411.00 |             0.00 |       6411.00 |
-| Cheirourgiko    |           2026 | Κ12Μ     | Eurolife           |                1 |         5465.00 |           514.23 |       5979.23 |
-| Cheirourgiko    |           2026 | Α21Μ     | EOPYY              |                1 |         2187.00 |          1325.45 |       3512.45 |
-| Cheirourgiko    |           2026 | Ν32Μ     | Allianz            |                1 |         3175.00 |           295.89 |       3470.89 |
-| Cheirourgiko    |           2026 | Α25Μ     | EOPYY              |                1 |         1766.00 |          1671.67 |       3437.67 |
-| Cheirourgiko    |           2026 | Ρ23Α     | EOPYY              |                1 |          428.00 |          2902.44 |       3330.44 |
-| Cheirourgiko    |           2026 | Σ02Χα    | Allianz            |                1 |         3109.00 |             0.00 |       3109.00 |
-| Cheirourgiko    |           2026 | Θ20Χ     | Interamerican      |                1 |         1580.00 |          1439.62 |       3019.62 |
-| Cheirourgiko    |           2026 | Μ79Μ     | EOPYY              |                1 |         2942.00 |             0.00 |       2942.00 |
-| Cheirourgiko    |           2026 | Ν24Μ     | Ethniki            |                1 |         2389.00 |           549.64 |       2938.64 |
-| Cheirourgiko    |           2026 | Δ13Μ     | Uninsured          |                1 |         2856.00 |             0.00 |       2856.00 |
-| Cheirourgiko    |           2026 | Θ21Α     | Uninsured          |                1 |         2599.00 |             0.00 |       2599.00 |
-| Cheirourgiko    |           2026 | Ο17Α     | Eurolife           |                1 |         2423.00 |             0.00 |       2423.00 |
-| Cheirourgiko    |           2026 | Α36Α     | Generali           |                1 |         2412.00 |             0.00 |       2412.00 |
-| Cheirourgiko    |           2026 | Π05Χ     | Generali           |                1 |         1379.00 |          1010.04 |       2389.04 |
-| Cheirourgiko    |           2026 | Ν24Μ     | EOPYY              |                1 |         2389.00 |             0.00 |       2389.00 |
-| Cheirourgiko    |           2026 | Ρ24Μβ    | Generali           |                1 |         1401.00 |           926.09 |       2327.09 |
-| Cheirourgiko    |           2026 | Κ34Μ     | Generali           |                1 |         2233.00 |             0.00 |       2233.00 |
-| Cheirourgiko    |           2026 | Μ23Α     | Uninsured          |                1 |          661.00 |          1494.81 |       2155.81 |
-| Cheirourgiko    |           2026 | Π28Α     | Generali           |                1 |          290.00 |          1781.92 |       2071.92 |
-| Cheirourgiko    |           2026 | Ν26Μ     | Ethniki            |                1 |         2062.00 |             0.00 |       2062.00 |
-| Cheirourgiko    |           2026 | Μ60Α     | Eurolife           |                1 |         1720.00 |             0.00 |       1720.00 |
-| Cheirourgiko    |           2026 | Α02Μβ    | Eurolife           |                1 |         1595.00 |             0.00 |       1595.00 |
-| Cheirourgiko    |           2026 | Θ22Μ     | EOPYY              |                1 |         1393.00 |             0.00 |       1393.00 |
-| Cheirourgiko    |           2026 | Η08Χ     | Eurolife           |                1 |         1273.00 |             0.00 |       1273.00 |
-| Cheirourgiko    |           2026 | Ο12Α     | EOPYY              |                1 |          583.00 |           650.16 |       1233.16 |
-| Cheirourgiko    |           2026 | Ο21Μ     | EOPYY              |                1 |          934.00 |             0.00 |        934.00 |
-| Cheirourgiko    |           2026 | Ξ20Χβ    | EOPYY              |                1 |          257.00 |           559.95 |        816.95 |
-| Cheirourgiko    |           2026 | Δ08Χ     | EOPYY              |                1 |          791.00 |             0.00 |        791.00 |
-| Cheirourgiko    |           2026 | S24Μ     | Uninsured          |                1 |          770.00 |             0.00 |        770.00 |
-| Cheirourgiko    |           2026 | Μ78Χ     | Generali           |                1 |          475.00 |             0.00 |        475.00 |
-| Dermatologiko   |           2026 | Μ01Χ     | Eurolife           |                1 |         9606.00 |           195.78 |       9801.78 |
-| Dermatologiko   |           2026 | Τ23Α     | EOPYY              |                1 |         7359.00 |             0.00 |       7359.00 |
-| Dermatologiko   |           2026 | Γ07Α     | Generali           |                1 |          742.00 |          5747.72 |       6489.72 |
-| Dermatologiko   |           2026 | Θ07Α     | EOPYY              |                1 |         1276.00 |          4868.37 |       6144.37 |
-| Dermatologiko   |           2026 | Μ12Μα    | Interamerican      |                1 |         5478.00 |             0.00 |       5478.00 |
-| Dermatologiko   |           2026 | Γ07Α     | MetLife            |                1 |          742.00 |          4180.16 |       4922.16 |
-| Dermatologiko   |           2026 | Ν41Χ     | Ethniki            |                1 |          693.00 |          3705.91 |       4398.91 |
-| Dermatologiko   |           2026 | Π02Χ     | MetLife            |                1 |         2771.00 |          1105.30 |       3876.30 |
-| Dermatologiko   |           2026 | Ω04Χ     | EOPYY              |                1 |         1934.00 |          1777.90 |       3711.90 |
-| Dermatologiko   |           2026 | Κ12Χ     | EOPYY              |                1 |         3694.00 |             0.00 |       3694.00 |
-| Dermatologiko   |           2026 | Ν01Χ     | Interamerican      |                1 |         1980.00 |          1612.08 |       3592.08 |
-| Dermatologiko   |           2026 | Π05Μβ    | EOPYY              |                1 |         2085.00 |          1483.23 |       3568.23 |
-| Dermatologiko   |           2026 | Φ22Μ     | Ethniki            |                1 |         2357.00 |          1095.40 |       3452.40 |
-| Dermatologiko   |           2026 | Κ33Α     | Allianz            |                1 |         3132.00 |           252.08 |       3384.08 |
-| Dermatologiko   |           2026 | Γ09Α     | Eurolife           |                1 |          418.00 |          2776.10 |       3194.10 |
-| Dermatologiko   |           2026 | Κ17Χ     | EOPYY              |                1 |         2617.00 |           141.98 |       2758.98 |
-| Dermatologiko   |           2026 | Α01Χ     | Interamerican      |                1 |         2712.00 |             0.00 |       2712.00 |
-| Dermatologiko   |           2026 | Μ64Μ     | EOPYY              |                1 |         2669.00 |             0.00 |       2669.00 |
-| Dermatologiko   |           2026 | Ρ20Μ     | Ethniki            |                1 |         2514.00 |             0.00 |       2514.00 |
-| Dermatologiko   |           2026 | Ν07Μ     | Generali           |                1 |         2513.00 |             0.00 |       2513.00 |
-| Dermatologiko   |           2026 | Κ18Μ     | EOPYY              |                1 |         2226.00 |             0.00 |       2226.00 |
-| Dermatologiko   |           2026 | Λ02Μ     | Generali           |                1 |         1743.00 |           132.14 |       1875.14 |
-| Dermatologiko   |           2026 | Λ04Μ     | EOPYY              |                1 |         1807.00 |             0.00 |       1807.00 |
-| Dermatologiko   |           2026 | Α28Μ     | Generali           |                1 |         1377.00 |           359.16 |       1736.16 |
-| Dermatologiko   |           2026 | Δ20Χ     | Uninsured          |                1 |         1471.00 |           220.76 |       1691.76 |
-| Dermatologiko   |           2026 | Μ72Μ     | Uninsured          |                1 |         1681.00 |             0.00 |       1681.00 |
-| Dermatologiko   |           2026 | Φ64Χ     | Ethniki            |                1 |          303.00 |          1188.00 |       1491.00 |
-| Dermatologiko   |           2026 | Ρ10Χ     | Interamerican      |                1 |         1473.00 |             0.00 |       1473.00 |
-| Dermatologiko   |           2026 | Τ20Χ     | EOPYY              |                1 |          512.00 |           686.88 |       1198.88 |
-| Dermatologiko   |           2026 | Ζ22Χ     | Interamerican      |                2 |          794.00 |           122.68 |        916.68 |
-| Dermatologiko   |           2026 | S24Μ     | Generali           |                1 |          770.00 |             0.00 |        770.00 |
-| Gynaikologiko   |           2026 | Ε04Α     | Interamerican      |                1 |        30015.00 |             0.00 |      30015.00 |
-| Gynaikologiko   |           2026 | Ζ02Μ     | MetLife            |                1 |         7225.00 |          1271.46 |       8496.46 |
-| Gynaikologiko   |           2026 | Μ12Μα    | Generali           |                1 |         5478.00 |             0.00 |       5478.00 |
-| Gynaikologiko   |           2026 | Μ07Α     | Eurolife           |                1 |         5235.00 |             0.00 |       5235.00 |
-| Gynaikologiko   |           2026 | Μ60Α     | EOPYY              |                1 |         1720.00 |          3266.72 |       4986.72 |
-| Gynaikologiko   |           2026 | Π44Χ     | EOPYY              |                1 |         1073.00 |          3124.44 |       4197.44 |
-| Gynaikologiko   |           2026 | Κ10Χ     | Allianz            |                1 |         2724.00 |           548.90 |       3272.90 |
-| Gynaikologiko   |           2026 | Π50Χ     | Eurolife           |                1 |          374.00 |          2700.30 |       3074.30 |
-| Gynaikologiko   |           2026 | Α21Μ     | Uninsured          |                1 |         2187.00 |           757.40 |       2944.40 |
-| Gynaikologiko   |           2026 | Μ69Μ     | MetLife            |                1 |         1533.00 |          1327.48 |       2860.48 |
-| Gynaikologiko   |           2026 | S20Α     | MetLife            |                1 |          934.00 |          1913.08 |       2847.08 |
-| Gynaikologiko   |           2026 | Α28Μ     | Interamerican      |                1 |         1377.00 |          1436.64 |       2813.64 |
-| Gynaikologiko   |           2026 | Σ03Χ     | Generali           |                2 |         2198.00 |           526.66 |       2724.66 |
-| Gynaikologiko   |           2026 | Ν26Μ     | Interamerican      |                1 |         2062.00 |           634.38 |       2696.38 |
-| Gynaikologiko   |           2026 | Ν01Χ     | EOPYY              |                1 |         1980.00 |           537.36 |       2517.36 |
-| Gynaikologiko   |           2026 | Α36Α     | EOPYY              |                1 |         2412.00 |             0.00 |       2412.00 |
-| Gynaikologiko   |           2026 | Α23Α     | EOPYY              |                1 |          319.00 |          2010.58 |       2329.58 |
-| Gynaikologiko   |           2026 | Μ63Μ     | Ethniki            |                1 |         1198.00 |          1047.34 |       2245.34 |
-| Gynaikologiko   |           2026 | Α25Μ     | Uninsured          |                1 |         1766.00 |           477.62 |       2243.62 |
-| Gynaikologiko   |           2026 | S23Μ     | Ethniki            |                1 |         2039.00 |             0.00 |       2039.00 |
-| Gynaikologiko   |           2026 | Β06Μ     | Eurolife           |                1 |         1930.00 |             0.00 |       1930.00 |
-| Gynaikologiko   |           2026 | Α30Χ     | MetLife            |                1 |          607.00 |          1193.30 |       1800.30 |
-| Gynaikologiko   |           2026 | Π40Χ     | Generali           |                1 |          677.00 |           957.84 |       1634.84 |
-| Gynaikologiko   |           2026 | Π44Χ     | Interamerican      |                1 |         1073.00 |           520.74 |       1593.74 |
-| Gynaikologiko   |           2026 | Θ20Χ     | EOPYY              |                1 |         1580.00 |             0.00 |       1580.00 |
-| Gynaikologiko   |           2026 | Η20Χ     | Eurolife           |                1 |         1517.00 |             0.00 |       1517.00 |
-| Gynaikologiko   |           2026 | Α33Μβ    | EOPYY              |                1 |         1043.00 |             0.00 |       1043.00 |
-| Gynaikologiko   |           2026 | Ο20Χ     | Ethniki            |                1 |         1035.00 |             0.00 |       1035.00 |
-| Gynaikologiko   |           2026 | Φ24Χ     | Ethniki            |                1 |          934.00 |             0.00 |        934.00 |
-| Gynaikologiko   |           2026 | Γ20Χ     | MetLife            |                1 |          755.00 |             0.00 |        755.00 |
-| Gynaikologiko   |           2026 | Π40Χ     | Eurolife           |                1 |          677.00 |             0.00 |        677.00 |
-| Gynaikologiko   |           2026 | Υ08Χ     | MetLife            |                1 |          631.00 |             0.00 |        631.00 |
-| Gynaikologiko   |           2026 | Λ23Α     | Interamerican      |                1 |          265.00 |             0.00 |        265.00 |
-| Kardiologiko    |           2026 | Κ32Μ     | EOPYY              |              200 |       412400.00 |             0.00 |     412400.00 |
-| Kardiologiko    |           2026 | Τ02Α     | EOPYY              |                1 |        20279.00 |             0.00 |      20279.00 |
-| Kardiologiko    |           2026 | Μ03Χ     | EOPYY              |                1 |         6411.00 |          2160.45 |       8571.45 |
-| Kardiologiko    |           2026 | Θ04Χ     | Interamerican      |                2 |         5696.00 |          2520.35 |       8216.35 |
-| Kardiologiko    |           2026 | Σ03Χ     | Interamerican      |                1 |         1099.00 |          5266.60 |       6365.60 |
-| Kardiologiko    |           2026 | Γ05Χ     | Interamerican      |                1 |         1374.00 |          4952.78 |       6326.78 |
-| Kardiologiko    |           2026 | Ξ02Χ     | Generali           |                1 |          781.00 |          5494.60 |       6275.60 |
-| Kardiologiko    |           2026 | Ν24Χ     | Uninsured          |                1 |         1159.00 |          3826.95 |       4985.95 |
-| Kardiologiko    |           2026 | Ο17Α     | EOPYY              |                1 |         2423.00 |          1737.48 |       4160.48 |
-| Kardiologiko    |           2026 | Φ40Α     | EOPYY              |                1 |         3649.00 |             0.00 |       3649.00 |
-| Kardiologiko    |           2026 | Α11Χ     | Interamerican      |                1 |         3635.00 |             0.00 |       3635.00 |
-| Kardiologiko    |           2026 | Π43Α     | EOPYY              |                1 |          335.00 |          3038.70 |       3373.70 |
-| Kardiologiko    |           2026 | Υ22Χ     | Ethniki            |                1 |          545.00 |          2716.23 |       3261.23 |
-| Kardiologiko    |           2026 | Δ08Χ     | Interamerican      |                1 |          791.00 |          2405.00 |       3196.00 |
-| Kardiologiko    |           2026 | Μ19Μ     | Generali           |                1 |         2648.00 |           398.04 |       3046.04 |
-| Kardiologiko    |           2026 | Υ20Μα    | Generali           |                1 |         2934.00 |             0.00 |       2934.00 |
-| Kardiologiko    |           2026 | Θ05Χ     | EOPYY              |                1 |         1218.00 |          1579.60 |       2797.60 |
-| Kardiologiko    |           2026 | Α36Α     | Uninsured          |                1 |         2412.00 |             0.00 |       2412.00 |
-| Kardiologiko    |           2026 | Π40Χ     | EOPYY              |                1 |          677.00 |          1676.22 |       2353.22 |
-| Kardiologiko    |           2026 | Τ26Μβ    | Interamerican      |                1 |         2346.00 |             0.00 |       2346.00 |
-| Kardiologiko    |           2026 | Γ06Χ     | Interamerican      |                1 |         1264.00 |          1051.26 |       2315.26 |
-| Kardiologiko    |           2026 | Β06Χ     | Ethniki            |                1 |         1659.00 |           528.00 |       2187.00 |
-| Kardiologiko    |           2026 | Ο03Α     | Eurolife           |                1 |          837.00 |           823.16 |       1660.16 |
-| Kardiologiko    |           2026 | Ρ24Μβ    | Ethniki            |                1 |         1401.00 |           168.38 |       1569.38 |
-| Kardiologiko    |           2026 | Β24Α     | EOPYY              |                1 |          296.00 |          1240.50 |       1536.50 |
-| Kardiologiko    |           2026 | Φ64Χ     | MetLife            |                1 |          303.00 |          1188.00 |       1491.00 |
-| Kardiologiko    |           2026 | Ο11Α     | Uninsured          |                1 |          639.00 |           707.12 |       1346.12 |
-| Kardiologiko    |           2026 | Ι22Χ     | Ethniki            |                1 |          366.00 |           708.78 |       1074.78 |
-| Kardiologiko    |           2026 | Η42Χ     | Generali           |                1 |          708.00 |           215.26 |        923.26 |
-| Kardiologiko    |           2026 | Α22Χ     | MetLife            |                1 |          630.00 |             0.00 |        630.00 |
-| Kardiologiko    |           2026 | Μ63Χ     | Generali           |                1 |          444.00 |             0.00 |        444.00 |
-| Kardiologiko    |           2026 | Τ27Χ     | EOPYY              |                1 |          428.00 |             0.00 |        428.00 |
-| Kardiologiko    |           2026 | Δ23Χ     | MetLife            |                1 |          366.00 |             0.00 |        366.00 |
-| Nefrologiko     |           2026 | Κ03Χ     | Ethniki            |                1 |        11734.00 |           516.44 |      12250.44 |
-| Nefrologiko     |           2026 | Ω02Μα    | Uninsured          |                1 |         5420.00 |           739.32 |       6159.32 |
-| Nefrologiko     |           2026 | Π02Μ     | EOPYY              |                1 |         5741.00 |             0.00 |       5741.00 |
-| Nefrologiko     |           2026 | Ο04Α     | EOPYY              |                1 |         1356.00 |          4317.00 |       5673.00 |
-| Nefrologiko     |           2026 | Ω37Β     | MetLife            |                1 |          661.00 |          4266.24 |       4927.24 |
-| Nefrologiko     |           2026 | Π43Α     | Generali           |                1 |          335.00 |          4123.95 |       4458.95 |
-| Nefrologiko     |           2026 | Θ04Μ     | EOPYY              |                1 |         4378.00 |             0.00 |       4378.00 |
-| Nefrologiko     |           2026 | Η40Χ     | EOPYY              |                1 |          366.00 |          3376.80 |       3742.80 |
-| Nefrologiko     |           2026 | Π45Χ     | Interamerican      |                1 |          623.00 |          3094.02 |       3717.02 |
-| Nefrologiko     |           2026 | Ν30Χ     | EOPYY              |                1 |         1191.00 |          2423.34 |       3614.34 |
-| Nefrologiko     |           2026 | Π27Α     | Interamerican      |                1 |          265.00 |          3333.59 |       3598.59 |
-| Nefrologiko     |           2026 | Ν06Μ     | EOPYY              |                1 |         3297.00 |           284.52 |       3581.52 |
-| Nefrologiko     |           2026 | Η40Μα    | EOPYY              |                1 |         2654.00 |           679.70 |       3333.70 |
-| Nefrologiko     |           2026 | Π27Μ     | Eurolife           |                1 |         2521.00 |           730.98 |       3251.98 |
-| Nefrologiko     |           2026 | Π26Χ     | Generali           |                1 |         1245.00 |          1835.82 |       3080.82 |
-| Nefrologiko     |           2026 | Π03Χα    | Generali           |                1 |         2826.00 |             0.00 |       2826.00 |
-| Nefrologiko     |           2026 | Δ22Μ     | Allianz            |                1 |          965.00 |          1276.80 |       2241.80 |
-| Nefrologiko     |           2026 | Μ73Χ     | EOPYY              |                1 |          584.00 |          1505.88 |       2089.88 |
-| Nefrologiko     |           2026 | Κ15Χ     | Ethniki            |                1 |         2013.00 |             0.00 |       2013.00 |
-| Nefrologiko     |           2026 | Α34Μβ    | EOPYY              |                1 |         1393.00 |           546.52 |       1939.52 |
-| Nefrologiko     |           2026 | Κ36Μ     | MetLife            |                1 |          957.00 |           860.82 |       1817.82 |
-| Nefrologiko     |           2026 | Λ04Μ     | Eurolife           |                1 |         1807.00 |             0.00 |       1807.00 |
-| Nefrologiko     |           2026 | Α31Μ     | Generali           |                1 |         1798.00 |             0.00 |       1798.00 |
-| Nefrologiko     |           2026 | Α25Μ     | Uninsured          |                1 |         1766.00 |             0.00 |       1766.00 |
-| Nefrologiko     |           2026 | Ξ20Χα    | Uninsured          |                1 |          786.00 |           731.46 |       1517.46 |
-| Nefrologiko     |           2026 | Η20Χ     | Generali           |                1 |         1517.00 |             0.00 |       1517.00 |
-| Nefrologiko     |           2026 | Δ20Χ     | Ethniki            |                1 |         1471.00 |             0.00 |       1471.00 |
-| Nefrologiko     |           2026 | Α33Χ     | MetLife            |                1 |          607.00 |           760.34 |       1367.34 |
-| Nefrologiko     |           2026 | Η41Χ     | EOPYY              |                1 |          872.00 |           326.88 |       1198.88 |
-| Nefrologiko     |           2026 | Υ05Χ     | Ethniki            |                1 |         1000.00 |             0.00 |       1000.00 |
-| Nefrologiko     |           2026 | Μ30Α     | MetLife            |                1 |          891.00 |             0.00 |        891.00 |
-| Nefrologiko     |           2026 | Ξ20Χα    | EOPYY              |                1 |          786.00 |             0.00 |        786.00 |
-| Nefrologiko     |           2026 | Β22Α     | Eurolife           |                1 |          545.00 |             0.00 |        545.00 |
-| Nefrologiko     |           2026 | Μ71Χ     | Generali           |                1 |          405.00 |             0.00 |        405.00 |
-| Neurologiko     |           2026 | Τ02Α     | Interamerican      |                1 |        20279.00 |             0.00 |      20279.00 |
-| Neurologiko     |           2026 | Κ07Μβ    | EOPYY              |                1 |         7279.00 |           571.38 |       7850.38 |
-| Neurologiko     |           2026 | Ν36Μ     | Ethniki            |                1 |         1486.00 |          4144.84 |       5630.84 |
-| Neurologiko     |           2026 | Φ22Μ     | Interamerican      |                1 |         2357.00 |          3067.12 |       5424.12 |
-| Neurologiko     |           2026 | Π26Χ     | EOPYY              |                2 |         2490.00 |          1631.84 |       4121.84 |
-| Neurologiko     |           2026 | Λ01Μ     | EOPYY              |                1 |         2171.00 |          1493.70 |       3664.70 |
-| Neurologiko     |           2026 | Ν30Μα    | Ethniki            |                1 |         3408.00 |             0.00 |       3408.00 |
-| Neurologiko     |           2026 | Υ20Μα    | MetLife            |                1 |         2934.00 |           420.65 |       3354.65 |
-| Neurologiko     |           2026 | Ω37Α     | Ethniki            |                1 |          254.00 |          2986.83 |       3240.83 |
-| Neurologiko     |           2026 | Ν32Μ     | Ethniki            |                1 |         3175.00 |             0.00 |       3175.00 |
-| Neurologiko     |           2026 | Κ44Α     | EOPYY              |                1 |          311.00 |          2521.35 |       2832.35 |
-| Neurologiko     |           2026 | Π03Χα    | Uninsured          |                1 |         2826.00 |             0.00 |       2826.00 |
-| Neurologiko     |           2026 | Ν82Μβ    | EOPYY              |                1 |         2475.00 |             0.00 |       2475.00 |
-| Neurologiko     |           2026 | Λ21Α     | MetLife            |                1 |          420.00 |          2043.60 |       2463.60 |
-| Neurologiko     |           2026 | Μ67Μ     | Generali           |                1 |         2428.00 |             0.00 |       2428.00 |
-| Neurologiko     |           2026 | Δ23Χ     | Allianz            |                1 |          366.00 |          1876.00 |       2242.00 |
-| Neurologiko     |           2026 | Ο11Α     | Interamerican      |                1 |          639.00 |          1591.02 |       2230.02 |
-| Neurologiko     |           2026 | Μ21Α     | EOPYY              |                1 |         1052.00 |          1108.05 |       2160.05 |
-| Neurologiko     |           2026 | Π05Μβ    | Eurolife           |                1 |         2085.00 |             0.00 |       2085.00 |
-| Neurologiko     |           2026 | W11Α     | Interamerican      |                1 |          991.00 |           959.52 |       1950.52 |
-| Neurologiko     |           2026 | Ζ22Μ     | Ethniki            |                1 |         1167.00 |           712.53 |       1879.53 |
-| Neurologiko     |           2026 | Κ36Μ     | EOPYY              |                1 |          957.00 |           860.82 |       1817.82 |
-| Neurologiko     |           2026 | Π05Χ     | Ethniki            |                1 |         1379.00 |           425.28 |       1804.28 |
-| Neurologiko     |           2026 | Χ42Χ     | Interamerican      |                1 |         1331.00 |           423.66 |       1754.66 |
-| Neurologiko     |           2026 | Μ25Χ     | EOPYY              |                1 |         1260.00 |           427.80 |       1687.80 |
-| Neurologiko     |           2026 | Μ71Χ     | Interamerican      |                1 |          405.00 |          1083.60 |       1488.60 |
-| Neurologiko     |           2026 | Ο11Α     | EOPYY              |                1 |          639.00 |           353.56 |        992.56 |
-| Neurologiko     |           2026 | Ζ22Χ     | EOPYY              |                1 |          397.00 |             0.00 |        397.00 |
-| Ogkologiko      |           2026 | Τ04Α     | Interamerican      |                1 |        11997.00 |             0.00 |      11997.00 |
-| Ogkologiko      |           2026 | Κ03Χ     | EOPYY              |                1 |        11734.00 |             0.00 |      11734.00 |
-| Ogkologiko      |           2026 | Φ02Μ     | MetLife            |                1 |         9426.00 |           583.70 |      10009.70 |
-| Ogkologiko      |           2026 | Σ20Μ     | Interamerican      |                1 |         7435.00 |             0.00 |       7435.00 |
-| Ogkologiko      |           2026 | Κ07Μβ    | EOPYY              |                1 |         7279.00 |             0.00 |       7279.00 |
-| Ogkologiko      |           2026 | Ο22Α     | EOPYY              |                1 |          327.00 |          5943.89 |       6270.89 |
-| Ogkologiko      |           2026 | Π02Μ     | Interamerican      |                1 |         5741.00 |             0.00 |       5741.00 |
-| Ogkologiko      |           2026 | Λ04Χ     | Ethniki            |                1 |          571.00 |          5165.34 |       5736.34 |
-| Ogkologiko      |           2026 | Θ06Χ     | MetLife            |                1 |         1581.00 |          3993.45 |       5574.45 |
-| Ogkologiko      |           2026 | Λ04Μ     | EOPYY              |                1 |         1807.00 |          3720.60 |       5527.60 |
-| Ogkologiko      |           2026 | Η02Μα    | EOPYY              |                1 |         5111.00 |             0.00 |       5111.00 |
-| Ogkologiko      |           2026 | Δ12Μ     | EOPYY              |                1 |         4871.00 |             0.00 |       4871.00 |
-| Ogkologiko      |           2026 | Ν05Α     | Generali           |                1 |          439.00 |          3520.61 |       3959.61 |
-| Ogkologiko      |           2026 | Α34Μα    | Allianz            |                1 |         1977.00 |          1875.44 |       3852.44 |
-| Ogkologiko      |           2026 | Δ12Χα    | Ethniki            |                1 |         3097.00 |           602.79 |       3699.79 |
-| Ogkologiko      |           2026 | Γ05Χ     | MetLife            |                1 |         1374.00 |          2039.38 |       3413.38 |
-| Ogkologiko      |           2026 | Ο20Χ     | Interamerican      |                1 |         1035.00 |          1870.20 |       2905.20 |
-| Ogkologiko      |           2026 | Ν82Μβ    | EOPYY              |                1 |         2475.00 |           397.04 |       2872.04 |
-| Ogkologiko      |           2026 | Π44Μ     | Generali           |                1 |         1097.00 |          1743.30 |       2840.30 |
-| Ogkologiko      |           2026 | Μ21Α     | Uninsured          |                1 |         1052.00 |          1772.88 |       2824.88 |
-| Ogkologiko      |           2026 | Α27Χ     | Eurolife           |                1 |          350.00 |          1937.76 |       2287.76 |
-| Ogkologiko      |           2026 | Ν11Α     | Generali           |                1 |         1331.00 |           935.04 |       2266.04 |
-| Ogkologiko      |           2026 | Η42Μ     | EOPYY              |                1 |         1938.00 |             0.00 |       1938.00 |
-| Ogkologiko      |           2026 | Θ09Χβ    | Interamerican      |                1 |         1765.00 |             0.00 |       1765.00 |
-| Ogkologiko      |           2026 | Γ06Χ     | Generali           |                1 |         1264.00 |           225.27 |       1489.27 |
-| Ogkologiko      |           2026 | Υ22Χ     | Interamerican      |                1 |          545.00 |           740.79 |       1285.79 |
-| Ogkologiko      |           2026 | Β22Α     | EOPYY              |                1 |          545.00 |           581.24 |       1126.24 |
-| Ogkologiko      |           2026 | Ω13Α     | Uninsured          |                1 |          347.00 |           647.88 |        994.88 |
-| Ogkologiko      |           2026 | Δ22Μ     | EOPYY              |                1 |          965.00 |             0.00 |        965.00 |
-| Ogkologiko      |           2026 | Μ23Α     | Interamerican      |                1 |          661.00 |             0.00 |        661.00 |
-| Ogkologiko      |           2026 | Π27Α     | Interamerican      |                1 |          265.00 |             0.00 |        265.00 |
-| Orthopediko     |           2026 | Ε04Α     | Eurolife           |                1 |        30015.00 |             0.00 |      30015.00 |
-| Orthopediko     |           2026 | Ε11Μ     | Eurolife           |                1 |        10704.00 |           418.35 |      11122.35 |
-| Orthopediko     |           2026 | Μ04Χ     | Uninsured          |                1 |         6611.00 |          4426.95 |      11037.95 |
-| Orthopediko     |           2026 | Τ23Α     | Ethniki            |                1 |         7359.00 |             0.00 |       7359.00 |
-| Orthopediko     |           2026 | Μ04Μ     | EOPYY              |                1 |         7042.00 |             0.00 |       7042.00 |
-| Orthopediko     |           2026 | Ν04Μ     | Interamerican      |                1 |         4267.00 |          1999.76 |       6266.76 |
-| Orthopediko     |           2026 | Κ12Χ     | Generali           |                1 |         3694.00 |          1472.10 |       5166.10 |
-| Orthopediko     |           2026 | Ν40Α     | EOPYY              |                1 |          272.00 |          4780.97 |       5052.97 |
-| Orthopediko     |           2026 | Ν21Μ     | Allianz            |                1 |         4960.00 |             0.00 |       4960.00 |
-| Orthopediko     |           2026 | Λ21Α     | Uninsured          |                1 |          420.00 |          3882.84 |       4302.84 |
-| Orthopediko     |           2026 | Α25Μ     | Allianz            |                1 |         1766.00 |          2388.10 |       4154.10 |
-| Orthopediko     |           2026 | Τ25Μβ    | Ethniki            |                1 |         4145.00 |             0.00 |       4145.00 |
-| Orthopediko     |           2026 | Α02Μα    | MetLife            |                1 |         3922.00 |             0.00 |       3922.00 |
-| Orthopediko     |           2026 | Κ32Α     | Generali           |                1 |         1043.00 |          2846.03 |       3889.03 |
-| Orthopediko     |           2026 | Γ09Α     | Generali           |                1 |          418.00 |          3331.32 |       3749.32 |
-| Orthopediko     |           2026 | Κ14Μβ    | Ethniki            |                1 |         1991.00 |          1560.78 |       3551.78 |
-| Orthopediko     |           2026 | Κ31Χ     | Ethniki            |                1 |         1183.00 |          2020.07 |       3203.07 |
-| Orthopediko     |           2026 | Π27Χ     | Ethniki            |                1 |          988.00 |          2160.86 |       3148.86 |
-| Orthopediko     |           2026 | Χ41Α     | EOPYY              |                1 |         3066.00 |             0.00 |       3066.00 |
-| Orthopediko     |           2026 | S25Α     | Ethniki            |                1 |         1082.00 |          1899.45 |       2981.45 |
-| Orthopediko     |           2026 | Σ21Α     | Ethniki            |                1 |          294.00 |          2317.59 |       2611.59 |
-| Orthopediko     |           2026 | Π06Α     | EOPYY              |                1 |         1037.00 |           930.06 |       1967.06 |
-| Orthopediko     |           2026 | S20Χ     | Eurolife           |                1 |         1759.00 |             0.00 |       1759.00 |
-| Orthopediko     |           2026 | Α35Μα    | Eurolife           |                1 |         1556.00 |             0.00 |       1556.00 |
-| Orthopediko     |           2026 | Α27Χ     | Generali           |                1 |          350.00 |          1130.36 |       1480.36 |
-| Orthopediko     |           2026 | Μ65Χ     | Interamerican      |                1 |         1222.00 |           219.94 |       1441.94 |
-| Orthopediko     |           2026 | Π46Α     | Uninsured          |                1 |          327.00 |          1109.68 |       1436.68 |
-| Orthopediko     |           2026 | Δ28Α     | Allianz            |                1 |          382.00 |           912.54 |       1294.54 |
-| Orthopediko     |           2026 | Δ23Χ     | Eurolife           |                1 |          366.00 |           844.20 |       1210.20 |
-| Orthopediko     |           2026 | Ρ22Μ     | Interamerican      |                1 |         1105.00 |             0.00 |       1105.00 |
-| Orthopediko     |           2026 | Κ44Α     | MetLife            |                1 |          311.00 |           775.80 |       1086.80 |
-| Orthopediko     |           2026 | Ν35Α     | Interamerican      |                1 |          350.00 |           636.40 |        986.40 |
-| Orthopediko     |           2026 | Γ11Α     | EOPYY              |                1 |          729.00 |             0.00 |        729.00 |
-| Orthopediko     |           2026 | Δ27Χ     | Generali           |                1 |          199.00 |             0.00 |        199.00 |
-| Ourologiko      |           2026 | Τ21Α     | Generali           |                1 |        41579.00 |             0.00 |      41579.00 |
-| Ourologiko      |           2026 | Κ04Μ     | EOPYY              |                1 |        13155.00 |           589.48 |      13744.48 |
-| Ourologiko      |           2026 | Μ32Μβ    | Interamerican      |                1 |         9963.00 |             0.00 |       9963.00 |
-| Ourologiko      |           2026 | Κ04Χ     | EOPYY              |                1 |         9163.00 |             0.00 |       9163.00 |
-| Ourologiko      |           2026 | Μ31Χ     | Uninsured          |                1 |         8533.00 |             0.00 |       8533.00 |
-| Ourologiko      |           2026 | Ω06Α     | Uninsured          |                1 |         1125.00 |          6669.08 |       7794.08 |
-| Ourologiko      |           2026 | Σ03Μ     | Generali           |                1 |         6097.00 |           899.52 |       6996.52 |
-| Ourologiko      |           2026 | Γ07Α     | EOPYY              |                1 |          742.00 |          6008.98 |       6750.98 |
-| Ourologiko      |           2026 | S01Χ     | Ethniki            |                1 |         1334.00 |          4783.68 |       6117.68 |
-| Ourologiko      |           2026 | Κ38Μ     | Generali           |                1 |         1284.00 |          3626.46 |       4910.46 |
-| Ourologiko      |           2026 | Ω04Χ     | EOPYY              |                1 |         1934.00 |          2844.64 |       4778.64 |
-| Ourologiko      |           2026 | Ρ20Χ     | Allianz            |                1 |         1261.00 |          3256.24 |       4517.24 |
-| Ourologiko      |           2026 | Π41Μ     | EOPYY              |                1 |         1027.00 |          3254.00 |       4281.00 |
-| Ourologiko      |           2026 | Η40Μβ    | EOPYY              |                1 |          965.00 |          2991.60 |       3956.60 |
-| Ourologiko      |           2026 | Κ46Χ     | Uninsured          |                1 |          444.00 |          3366.34 |       3810.34 |
-| Ourologiko      |           2026 | Μ68Μ     | Eurolife           |                1 |         1712.00 |          1842.28 |       3554.28 |
-| Ourologiko      |           2026 | Ν34Χ     | Uninsured          |                1 |         1012.00 |          2455.56 |       3467.56 |
-| Ourologiko      |           2026 | Ι22Μ     | Uninsured          |                1 |          910.00 |          2280.85 |       3190.85 |
-| Ourologiko      |           2026 | Ν40Α     | EOPYY              |                1 |          272.00 |          2516.30 |       2788.30 |
-| Ourologiko      |           2026 | Ν24Μ     | MetLife            |                1 |         2389.00 |             0.00 |       2389.00 |
-| Ourologiko      |           2026 | Ν24Μ     | Generali           |                1 |         2389.00 |             0.00 |       2389.00 |
-| Ourologiko      |           2026 | Υ06Μ     | Uninsured          |                1 |         2381.00 |             0.00 |       2381.00 |
-| Ourologiko      |           2026 | Μ63Μ     | EOPYY              |                1 |         1198.00 |          1122.15 |       2320.15 |
-| Ourologiko      |           2026 | Φ64Χ     | Eurolife           |                1 |          303.00 |          1980.00 |       2283.00 |
-| Ourologiko      |           2026 | Δ28Μ     | MetLife            |                1 |         1969.00 |             0.00 |       1969.00 |
-| Ourologiko      |           2026 | Σ20Χ     | Generali           |                1 |          988.00 |           867.79 |       1855.79 |
-| Ourologiko      |           2026 | Ρ10Χ     | EOPYY              |                1 |         1473.00 |             0.00 |       1473.00 |
-| Ourologiko      |           2026 | Π40Χ     | Ethniki            |                1 |          677.00 |           718.38 |       1395.38 |
-| Ourologiko      |           2026 | Ν32Χ     | MetLife            |                1 |         1183.00 |             0.00 |       1183.00 |
-| Ourologiko      |           2026 | Δ22Μ     | Generali           |                1 |          965.00 |             0.00 |        965.00 |
-| Ourologiko      |           2026 | Δ23Μ     | Interamerican      |                1 |          965.00 |             0.00 |        965.00 |
-| Ourologiko      |           2026 | Μ63Χ     | EOPYY              |                1 |          444.00 |           481.36 |        925.36 |
-| Ourologiko      |           2026 | Α02Χ     | Generali           |                1 |          683.00 |             0.00 |        683.00 |
-| Ourologiko      |           2026 | S01Α     | EOPYY              |                1 |          540.00 |             0.00 |        540.00 |
-| Ourologiko      |           2026 | Τ20Χ     | EOPYY              |                1 |          512.00 |             0.00 |        512.00 |
-| Ourologiko      |           2026 | Ν10Α     | EOPYY              |                1 |          163.00 |             0.00 |        163.00 |
-| Paidiatriko     |           2026 | Ε05Α     | Allianz            |                1 |        34279.00 |             0.00 |      34279.00 |
-| Paidiatriko     |           2026 | Π01Μ     | EOPYY              |                1 |         6489.00 |             0.00 |       6489.00 |
-| Paidiatriko     |           2026 | Π03Χα    | Interamerican      |                1 |         2826.00 |          3486.84 |       6312.84 |
-| Paidiatriko     |           2026 | Μ19Χ     | Generali           |                1 |         1904.00 |          3977.62 |       5881.62 |
-| Paidiatriko     |           2026 | Α01Χ     | Interamerican      |                1 |         2712.00 |          1751.88 |       4463.88 |
-| Paidiatriko     |           2026 | Μ29Α     | Allianz            |                1 |         1903.00 |          2250.60 |       4153.60 |
-| Paidiatriko     |           2026 | Π02Χ     | Interamerican      |                1 |         2771.00 |          1105.30 |       3876.30 |
-| Paidiatriko     |           2026 | Ν12Χ     | Interamerican      |                1 |         3720.00 |             0.00 |       3720.00 |
-| Paidiatriko     |           2026 | Ο21Μ     | MetLife            |                1 |          934.00 |          2691.92 |       3625.92 |
-| Paidiatriko     |           2026 | Κ42Μ     | EOPYY              |                1 |         2054.00 |           840.84 |       2894.84 |
-| Paidiatriko     |           2026 | Ν20Χ     | EOPYY              |                1 |         2576.00 |             0.00 |       2576.00 |
-| Paidiatriko     |           2026 | Ν07Μ     | EOPYY              |                1 |         2513.00 |             0.00 |       2513.00 |
-| Paidiatriko     |           2026 | Α36Α     | Generali           |                1 |         2412.00 |             0.00 |       2412.00 |
-| Paidiatriko     |           2026 | Ν11Α     | Uninsured          |                1 |         1331.00 |           935.04 |       2266.04 |
-| Paidiatriko     |           2026 | Κ31Μ     | Generali           |                1 |         2038.00 |             0.00 |       2038.00 |
-| Paidiatriko     |           2026 | Ο03Α     | Ethniki            |                1 |          837.00 |          1028.95 |       1865.95 |
-| Paidiatriko     |           2026 | Η20Χ     | EOPYY              |                1 |         1517.00 |           215.99 |       1732.99 |
-| Paidiatriko     |           2026 | Μ72Μ     | Interamerican      |                1 |         1681.00 |             0.00 |       1681.00 |
-| Paidiatriko     |           2026 | Ι23Α     | EOPYY              |                1 |          576.00 |          1002.54 |       1578.54 |
-| Paidiatriko     |           2026 | Θ08Α     | EOPYY              |                1 |          952.00 |           402.32 |       1354.32 |
-| Paidiatriko     |           2026 | Υ08Χ     | EOPYY              |                1 |          631.00 |           682.48 |       1313.48 |
-| Paidiatriko     |           2026 | Κ38Μ     | Uninsured          |                1 |         1284.00 |             0.00 |       1284.00 |
-| Paidiatriko     |           2026 | Μ78Χ     | EOPYY              |                1 |          475.00 |           795.04 |       1270.04 |
-| Paidiatriko     |           2026 | Μ23Α     | EOPYY              |                1 |          661.00 |           527.58 |       1188.58 |
-| Paidiatriko     |           2026 | Β22Α     | EOPYY              |                1 |          545.00 |           581.24 |       1126.24 |
-| Paidiatriko     |           2026 | Ο61Χ     | EOPYY              |                1 |          482.00 |           606.08 |       1088.08 |
-| Paidiatriko     |           2026 | Υ09Χβ    | Generali           |                1 |         1035.00 |             0.00 |       1035.00 |
-| Paidiatriko     |           2026 | Ν68Χ     | EOPYY              |                1 |          565.00 |           413.37 |        978.37 |
-| Paidiatriko     |           2026 | Α35Μβ    | EOPYY              |                1 |          973.00 |             0.00 |        973.00 |
-| Paidiatriko     |           2026 | Σ22Χ     | Eurolife           |                1 |          638.00 |           260.10 |        898.10 |
-| Paidiatriko     |           2026 | Κ44Α     | EOPYY              |                1 |          311.00 |           581.85 |        892.85 |
-| Paidiatriko     |           2026 | Γ21Α     | Generali           |                1 |          475.00 |             0.00 |        475.00 |
-| Pathologiko     |           2026 | Ε11Μ     | Allianz            |                1 |        10704.00 |             0.00 |      10704.00 |
-| Pathologiko     |           2026 | Ε08Μ     | EOPYY              |                1 |        10017.00 |             0.00 |      10017.00 |
-| Pathologiko     |           2026 | Κ08Μ     | Eurolife           |                1 |         8956.00 |             0.00 |       8956.00 |
-| Pathologiko     |           2026 | Μ04Μ     | MetLife            |                1 |         7042.00 |             0.00 |       7042.00 |
-| Pathologiko     |           2026 | Δ01Χ     | Uninsured          |                1 |         6452.00 |             0.00 |       6452.00 |
-| Pathologiko     |           2026 | Κ30Μ     | Uninsured          |                1 |         6295.00 |             0.00 |       6295.00 |
-| Pathologiko     |           2026 | Φ04Χ     | Uninsured          |                1 |         5558.00 |             0.00 |       5558.00 |
-| Pathologiko     |           2026 | Ο21Μ     | Interamerican      |                1 |          934.00 |          3268.76 |       4202.76 |
-| Pathologiko     |           2026 | Ν02Χ     | Interamerican      |                1 |         3836.00 |             0.00 |       3836.00 |
-| Pathologiko     |           2026 | Χ45Α     | Generali           |                1 |          965.00 |          1975.20 |       2940.20 |
-| Pathologiko     |           2026 | Π45Χ     | Generali           |                1 |          623.00 |          2234.57 |       2857.57 |
-| Pathologiko     |           2026 | Δ24Χ     | Generali           |                1 |          802.00 |          1926.72 |       2728.72 |
-| Pathologiko     |           2026 | Π45Χ     | Eurolife           |                1 |          623.00 |          2062.68 |       2685.68 |
-| Pathologiko     |           2026 | Θ21Α     | EOPYY              |                1 |         2599.00 |             0.00 |       2599.00 |
-| Pathologiko     |           2026 | Ν07Μ     | Uninsured          |                1 |         2513.00 |             0.00 |       2513.00 |
-| Pathologiko     |           2026 | Δ10Α     | Allianz            |                1 |          672.00 |          1795.59 |       2467.59 |
-| Pathologiko     |           2026 | Υ06Μ     | Eurolife           |                1 |         2381.00 |             0.00 |       2381.00 |
-| Pathologiko     |           2026 | Τ26Μβ    | Interamerican      |                1 |         2346.00 |             0.00 |       2346.00 |
-| Pathologiko     |           2026 | Λ03Χ     | Ethniki            |                1 |          886.00 |          1442.65 |       2328.65 |
-| Pathologiko     |           2026 | Π27Α     | EOPYY              |                1 |          265.00 |          2051.44 |       2316.44 |
-| Pathologiko     |           2026 | Π44Μ     | Ethniki            |                1 |         1097.00 |           804.60 |       1901.60 |
-| Pathologiko     |           2026 | S20Χ     | Interamerican      |                1 |         1759.00 |             0.00 |       1759.00 |
-| Pathologiko     |           2026 | Μ72Μ     | Interamerican      |                1 |         1681.00 |             0.00 |       1681.00 |
-| Pathologiko     |           2026 | Υ27Μ     | MetLife            |                1 |         1673.00 |             0.00 |       1673.00 |
-| Pathologiko     |           2026 | Ο11Α     | EOPYY              |                1 |          639.00 |           707.12 |       1346.12 |
-| Pathologiko     |           2026 | Δ24Χ     | Ethniki            |                1 |          802.00 |             0.00 |        802.00 |
-| Pathologiko     |           2026 | Μ68Χ     | Eurolife           |                1 |          731.00 |             0.00 |        731.00 |
-| Pathologiko     |           2026 | Α22Χ     | EOPYY              |                1 |          630.00 |             0.00 |        630.00 |
-| Pathologiko     |           2026 | Ω30Χ     | Ethniki            |                1 |          545.00 |             0.00 |        545.00 |
-| Pathologiko     |           2026 | Τ20Χ     | Interamerican      |                1 |          512.00 |             0.00 |        512.00 |
-| Pathologiko     |           2026 | Μ63Χ     | Uninsured          |                1 |          444.00 |             0.00 |        444.00 |
-| Pathologiko     |           2026 | Τ27Χ     | Interamerican      |                1 |          428.00 |             0.00 |        428.00 |
-| Pnevmonologiko  |           2026 | Κ04Μ     | MetLife            |                1 |        13155.00 |             0.00 |      13155.00 |
-| Pnevmonologiko  |           2026 | Κ01Χ     | Eurolife           |                1 |        12420.00 |           663.60 |      13083.60 |
-| Pnevmonologiko  |           2026 | Μ32Μβ    | EOPYY              |                1 |         9963.00 |           394.26 |      10357.26 |
-| Pnevmonologiko  |           2026 | Ζ02Μ     | Allianz            |                1 |         7225.00 |          1271.46 |       8496.46 |
-| Pnevmonologiko  |           2026 | Τ23Α     | EOPYY              |                1 |         7359.00 |             0.00 |       7359.00 |
-| Pnevmonologiko  |           2026 | Η44Χ     | Eurolife           |                1 |          436.00 |          6617.56 |       7053.56 |
-| Pnevmonologiko  |           2026 | Ν20Μ     | Generali           |                1 |         6919.00 |             0.00 |       6919.00 |
-| Pnevmonologiko  |           2026 | Φ04Χ     | Allianz            |                1 |         5558.00 |           835.40 |       6393.40 |
-| Pnevmonologiko  |           2026 | Σ03Μ     | EOPYY              |                1 |         6097.00 |             0.00 |       6097.00 |
-| Pnevmonologiko  |           2026 | Σ03Μ     | Generali           |                1 |         6097.00 |             0.00 |       6097.00 |
-| Pnevmonologiko  |           2026 | Ω06Α     | Generali           |                1 |         1125.00 |          4059.44 |       5184.44 |
-| Pnevmonologiko  |           2026 | Κ06Χ     | Uninsured          |                1 |         5077.00 |             0.00 |       5077.00 |
-| Pnevmonologiko  |           2026 | Μ08Μ     | Ethniki            |                1 |         4449.00 |             0.00 |       4449.00 |
-| Pnevmonologiko  |           2026 | Θ20Α     | Allianz            |                1 |          297.00 |          4016.26 |       4313.26 |
-| Pnevmonologiko  |           2026 | Ν04Μ     | EOPYY              |                1 |         4267.00 |             0.00 |       4267.00 |
-| Pnevmonologiko  |           2026 | Θ20Α     | Ethniki            |                1 |          297.00 |          3841.64 |       4138.64 |
-| Pnevmonologiko  |           2026 | Κ46Χ     | MetLife            |                1 |          444.00 |          2574.26 |       3018.26 |
-| Pnevmonologiko  |           2026 | Κ18Μ     | Generali           |                1 |         2226.00 |           785.75 |       3011.75 |
-| Pnevmonologiko  |           2026 | Ζ21Α     | MetLife            |                1 |          848.00 |          2123.10 |       2971.10 |
-| Pnevmonologiko  |           2026 | S01Μ     | MetLife            |                1 |         2413.00 |           415.10 |       2828.10 |
-| Pnevmonologiko  |           2026 | Π02Χ     | Allianz            |                1 |         2771.00 |             0.00 |       2771.00 |
-| Pnevmonologiko  |           2026 | S20Α     | EOPYY              |                1 |          934.00 |          1618.76 |       2552.76 |
-| Pnevmonologiko  |           2026 | Χ45Α     | EOPYY              |                1 |          965.00 |          1580.16 |       2545.16 |
-| Pnevmonologiko  |           2026 | Η02Χ     | EOPYY              |                1 |         2079.00 |           454.83 |       2533.83 |
-| Pnevmonologiko  |           2026 | Μ25Χ     | Interamerican      |                1 |         1260.00 |          1069.50 |       2329.50 |
-| Pnevmonologiko  |           2026 | Μ27Μ     | Ethniki            |                1 |         2179.00 |             0.00 |       2179.00 |
-| Pnevmonologiko  |           2026 | Τ26Μγ    | EOPYY              |                1 |         1644.00 |           436.92 |       2080.92 |
-| Pnevmonologiko  |           2026 | Θ20Α     | Interamerican      |                1 |          297.00 |          1571.58 |       1868.58 |
-| Pnevmonologiko  |           2026 | Μ18Α     | Interamerican      |                1 |          743.00 |          1020.76 |       1763.76 |
-| Pnevmonologiko  |           2026 | Θ20Χ     | EOPYY              |                1 |         1580.00 |             0.00 |       1580.00 |
-| Pnevmonologiko  |           2026 | Σ20Χ     | EOPYY              |                1 |          988.00 |           123.97 |       1111.97 |
-| Pnevmonologiko  |           2026 | Κ45Χ     | Uninsured          |                1 |          521.00 |           570.74 |       1091.74 |
-| Pnevmonologiko  |           2026 | S20Α     | Uninsured          |                1 |          934.00 |             0.00 |        934.00 |
-| Pnevmonologiko  |           2026 | Υ08Χ     | Eurolife           |                1 |          631.00 |             0.00 |        631.00 |
-| Pnevmonologiko  |           2026 | Κ44Α     | EOPYY              |                1 |          311.00 |             0.00 |        311.00 |
-| Psychiatriko    |           2026 | Τ03Α     | Interamerican      |                1 |        16846.00 |             0.00 |      16846.00 |
-| Psychiatriko    |           2026 | Μ01Χ     | Allianz            |                1 |         9606.00 |           685.23 |      10291.23 |
-| Psychiatriko    |           2026 | Ζ02Μ     | EOPYY              |                1 |         7225.00 |          1059.55 |       8284.55 |
-| Psychiatriko    |           2026 | Ν04Μ     | MetLife            |                1 |         4267.00 |          2749.67 |       7016.67 |
-| Psychiatriko    |           2026 | Π02Χ     | Ethniki            |                1 |         2771.00 |          3094.84 |       5865.84 |
-| Psychiatriko    |           2026 | Μ79Χ     | Uninsured          |                1 |         1370.00 |          4204.50 |       5574.50 |
-| Psychiatriko    |           2026 | Ν21Μ     | EOPYY              |                1 |         4960.00 |             0.00 |       4960.00 |
-| Psychiatriko    |           2026 | Θ09Μ     | Interamerican      |                1 |         4895.00 |             0.00 |       4895.00 |
-| Psychiatriko    |           2026 | Ν38Μ     | Interamerican      |                2 |         4654.00 |             0.00 |       4654.00 |
-| Psychiatriko    |           2026 | Κ19Α     | Generali           |                1 |         3194.00 |          1145.16 |       4339.16 |
-| Psychiatriko    |           2026 | Κ02Α     | Interamerican      |                1 |         2844.00 |          1331.84 |       4175.84 |
-| Psychiatriko    |           2026 | Π45Χ     | MetLife            |                1 |          623.00 |          3094.02 |       3717.02 |
-| Psychiatriko    |           2026 | Ρ23Α     | EOPYY              |                1 |          428.00 |          2902.44 |       3330.44 |
-| Psychiatriko    |           2026 | Π10Μ     | EOPYY              |                1 |         1697.00 |          1405.50 |       3102.50 |
-| Psychiatriko    |           2026 | Μ64Μ     | EOPYY              |                1 |         2669.00 |             0.00 |       2669.00 |
-| Psychiatriko    |           2026 | Μ72Μ     | EOPYY              |                1 |         1681.00 |           929.12 |       2610.12 |
-| Psychiatriko    |           2026 | Ζ22Μ     | Eurolife           |                1 |         1167.00 |          1345.89 |       2512.89 |
-| Psychiatriko    |           2026 | Μ10Χ     | MetLife            |                1 |         1908.00 |           572.04 |       2480.04 |
-| Psychiatriko    |           2026 | S01Μ     | EOPYY              |                1 |         2413.00 |             0.00 |       2413.00 |
-| Psychiatriko    |           2026 | Υ25Χ     | EOPYY              |                1 |          405.00 |          1949.80 |       2354.80 |
-| Psychiatriko    |           2026 | Ο03Α     | Generali           |                1 |          837.00 |          1440.53 |       2277.53 |
-| Psychiatriko    |           2026 | Π27Α     | Generali           |                1 |          265.00 |          1795.01 |       2060.01 |
-| Psychiatriko    |           2026 | Ν22Α     | MetLife            |                1 |          243.00 |          1698.13 |       1941.13 |
-| Psychiatriko    |           2026 | Ν41Μ     | EOPYY              |                1 |         1837.00 |             0.00 |       1837.00 |
-| Psychiatriko    |           2026 | Υ05Χ     | Interamerican      |                1 |         1000.00 |           635.79 |       1635.79 |
-| Psychiatriko    |           2026 | Δ20Χ     | Uninsured          |                1 |         1471.00 |             0.00 |       1471.00 |
-| Psychiatriko    |           2026 | Κ14Χ     | Generali           |                1 |         1277.00 |             0.00 |       1277.00 |
-| Psychiatriko    |           2026 | Κ31Χ     | EOPYY              |                1 |         1183.00 |             0.00 |       1183.00 |
-| Psychiatriko    |           2026 | Φ26Χ     | EOPYY              |                1 |          828.00 |             0.00 |        828.00 |
-| Psychiatriko    |           2026 | Α27Χ     | Interamerican      |                1 |          350.00 |             0.00 |        350.00 |
-| Psychiatriko    |           2026 | Π43Α     | Interamerican      |                1 |          335.00 |             0.00 |        335.00 |
-| Psychiatriko    |           2026 | Ν22Α     | EOPYY              |                1 |          243.00 |             0.00 |        243.00 |
-| Revmatologiko   |           2026 | Ε11Μ     | Allianz            |                1 |        10704.00 |             0.00 |      10704.00 |
-| Revmatologiko   |           2026 | Κ05Μ     | Generali           |                1 |        10023.00 |             0.00 |      10023.00 |
-| Revmatologiko   |           2026 | Ρ10Μα    | MetLife            |                1 |         7118.00 |             0.00 |       7118.00 |
-| Revmatologiko   |           2026 | Α10Χ     | EOPYY              |                1 |         4627.00 |          2120.88 |       6747.88 |
-| Revmatologiko   |           2026 | Β06Χ     | EOPYY              |                1 |         1659.00 |          4752.00 |       6411.00 |
-| Revmatologiko   |           2026 | S24Χ     | Ethniki            |                1 |          216.00 |          5096.30 |       5312.30 |
-| Revmatologiko   |           2026 | Θ04Μ     | Generali           |                1 |         4378.00 |           769.21 |       5147.21 |
-| Revmatologiko   |           2026 | Α11Χ     | EOPYY              |                1 |         3635.00 |           814.11 |       4449.11 |
-| Revmatologiko   |           2026 | Α26Μβ    | Uninsured          |                1 |         1175.00 |          3003.11 |       4178.11 |
-| Revmatologiko   |           2026 | Α02Μα    | Uninsured          |                1 |         3922.00 |             0.00 |       3922.00 |
-| Revmatologiko   |           2026 | Ν12Χ     | EOPYY              |                1 |         3720.00 |            89.80 |       3809.80 |
-| Revmatologiko   |           2026 | Κ37Χ     | EOPYY              |                1 |          459.00 |          3271.06 |       3730.06 |
-| Revmatologiko   |           2026 | Ξ02Χ     | Ethniki            |                1 |          781.00 |          2747.30 |       3528.30 |
-| Revmatologiko   |           2026 | Ν30Μα    | EOPYY              |                1 |         3408.00 |             0.00 |       3408.00 |
-| Revmatologiko   |           2026 | Κ33Α     | EOPYY              |                1 |         3132.00 |             0.00 |       3132.00 |
-| Revmatologiko   |           2026 | Μ08Χ     | EOPYY              |                1 |         3014.00 |             0.00 |       3014.00 |
-| Revmatologiko   |           2026 | Α33Μα    | Interamerican      |                1 |         2023.00 |           799.85 |       2822.85 |
-| Revmatologiko   |           2026 | Β06Μ     | Eurolife           |                1 |         1930.00 |           728.70 |       2658.70 |
-| Revmatologiko   |           2026 | Α33Μα    | Generali           |                1 |         2023.00 |             0.00 |       2023.00 |
-| Revmatologiko   |           2026 | Μ65Χ     | EOPYY              |                1 |         1222.00 |           769.79 |       1991.79 |
-| Revmatologiko   |           2026 | Ω03Α     | EOPYY              |                1 |         1281.00 |           641.80 |       1922.80 |
-| Revmatologiko   |           2026 | Ρ24Μβ    | MetLife            |                1 |         1401.00 |           505.14 |       1906.14 |
-| Revmatologiko   |           2026 | Μ25Χ     | Ethniki            |                1 |         1260.00 |           641.70 |       1901.70 |
-| Revmatologiko   |           2026 | Μ69Μ     | Generali           |                1 |         1533.00 |           241.36 |       1774.36 |
-| Revmatologiko   |           2026 | Ξ20Χα    | EOPYY              |                1 |          786.00 |           975.28 |       1761.28 |
-| Revmatologiko   |           2026 | Ο11Α     | EOPYY              |                1 |          639.00 |          1060.68 |       1699.68 |
-| Revmatologiko   |           2026 | Κ42Χ     | MetLife            |                1 |          934.00 |           519.84 |       1453.84 |
-| Revmatologiko   |           2026 | Ν24Χ     | EOPYY              |                1 |         1159.00 |             0.00 |       1159.00 |
-| Revmatologiko   |           2026 | Δ13Χ     | EOPYY              |                1 |          915.00 |             0.00 |        915.00 |
-| Revmatologiko   |           2026 | Τ27Χ     | EOPYY              |                1 |          428.00 |           418.96 |        846.96 |
-| Revmatologiko   |           2026 | Α27Χ     | EOPYY              |                1 |          350.00 |           161.48 |        511.48 |
-| Revmatologiko   |           2026 | Υ25Χ     | EOPYY              |                1 |          405.00 |             0.00 |        405.00 |
-| Revmatologiko   |           2026 | Δ27Χ     | EOPYY              |                1 |          199.00 |             0.00 |        199.00 |
-| Kardiologiko    |           2025 | Κ32Μ     | EOPYY              |              300 |       618600.00 |             0.00 |     618600.00 |
+| Aimatologiko    |           2026 | Τ04Α     | Ιδιωτική Ασφάλεια  |                1 |        11997.00 |             0.00 |      11997.00 |
+| Aimatologiko    |           2026 | Κ03Χ     | ΕΦΚΑ               |                1 |        11734.00 |             0.00 |      11734.00 |
+| Aimatologiko    |           2026 | Η01Μ     | Ιδιωτική Ασφάλεια  |                1 |         7916.00 |             0.00 |       7916.00 |
+| Aimatologiko    |           2026 | Θ07Α     | Ιδιωτική Ασφάλεια  |                1 |         1276.00 |          4868.37 |       6144.37 |
+| Aimatologiko    |           2026 | Η06Μ     | Ιδιωτική Ασφάλεια  |                1 |         4646.00 |             0.00 |       4646.00 |
+| Aimatologiko    |           2026 | Π43Α     | ΕΦΚΑ               |                1 |          335.00 |          4123.95 |       4458.95 |
+| Aimatologiko    |           2026 | Κ32Μ     | Ιδιωτική Ασφάλεια  |                1 |         2062.00 |          2010.96 |       4072.96 |
+| Aimatologiko    |           2026 | Α27Χ     | Ιδιωτική Ασφάλεια  |                2 |          700.00 |          3229.60 |       3929.60 |
+| Aimatologiko    |           2026 | Κ18Μ     | Ιδιωτική Ασφάλεια  |                1 |         2226.00 |          1257.20 |       3483.20 |
+| Aimatologiko    |           2026 | Π50Χ     | Ιδιωτική Ασφάλεια  |                1 |          374.00 |          2700.30 |       3074.30 |
+| Aimatologiko    |           2026 | Κ38Μ     | ΕΦΚΑ               |                1 |         1284.00 |          1611.76 |       2895.76 |
+| Aimatologiko    |           2026 | Π28Α     | ΕΦΚΑ               |                1 |          290.00 |          2450.14 |       2740.14 |
+| Aimatologiko    |           2026 | Ν20Χ     | Ιδιωτική Ασφάλεια  |                1 |         2576.00 |             0.00 |       2576.00 |
+| Aimatologiko    |           2026 | Μ29Α     | ΕΦΚΑ               |                1 |         1903.00 |           409.20 |       2312.20 |
+| Aimatologiko    |           2026 | Ο11Α     | Ιδιωτική Ασφάλεια  |                2 |         1278.00 |           883.90 |       2161.90 |
+| Aimatologiko    |           2026 | Μ73Χ     | ΕΦΚΑ               |                1 |          584.00 |          1505.88 |       2089.88 |
+| Aimatologiko    |           2026 | Σ02Χβ    | ΕΦΚΑ               |                1 |         2056.00 |             0.00 |       2056.00 |
+| Aimatologiko    |           2026 | Λ21Α     | Ιδιωτική Ασφάλεια  |                1 |          420.00 |          1634.88 |       2054.88 |
+| Aimatologiko    |           2026 | Υ09Χβ    | Ιδιωτική Ασφάλεια  |                1 |         1035.00 |           861.60 |       1896.60 |
+| Aimatologiko    |           2026 | Ο02Α     | Ιδιωτική Ασφάλεια  |                1 |         1611.00 |           280.19 |       1891.19 |
+| Aimatologiko    |           2026 | Θ20Α     | ΕΦΚΑ               |                1 |          297.00 |          1571.58 |       1868.58 |
+| Aimatologiko    |           2026 | Λ04Μ     | Ιδιωτική Ασφάλεια  |                1 |         1807.00 |             0.00 |       1807.00 |
+| Aimatologiko    |           2026 | Γ06Χ     | ΕΦΚΑ               |                1 |         1264.00 |           525.63 |       1789.63 |
+| Aimatologiko    |           2026 | Θ08Α     | Ιδιωτική Ασφάλεια  |                1 |          952.00 |           804.64 |       1756.64 |
+| Aimatologiko    |           2026 | Δ24Μ     | Ιδιωτική Ασφάλεια  |                1 |         1619.00 |             0.00 |       1619.00 |
+| Aimatologiko    |           2026 | Β24Α     | ΕΦΚΑ               |                1 |          296.00 |          1240.50 |       1536.50 |
+| Aimatologiko    |           2026 | Ν36Χ     | Ιδιωτική Ασφάλεια  |                1 |          482.00 |          1025.83 |       1507.83 |
+| Aimatologiko    |           2026 | Μ65Χ     | Ιδιωτική Ασφάλεια  |                1 |         1222.00 |           219.94 |       1441.94 |
+| Aimatologiko    |           2026 | Π28Α     | Ιδιωτική Ασφάλεια  |                1 |          290.00 |           890.96 |       1180.96 |
+| Aimatologiko    |           2026 | Σ20Χ     | ΕΦΚΑ               |                1 |          988.00 |           123.97 |       1111.97 |
+| Aimatologiko    |           2026 | Φ26Χ     | Ιδιωτική Ασφάλεια  |                1 |          828.00 |             0.00 |        828.00 |
+| Aimatologiko    |           2026 | Α30Χ     | ΕΦΚΑ               |                1 |          607.00 |             0.00 |        607.00 |
+| Aimatologiko    |           2026 | Τ27Χ     | Ιδιωτική Ασφάλεια  |                1 |          428.00 |             0.00 |        428.00 |
+| Aimatologiko    |           2026 | Α23Α     | ΕΦΚΑ               |                1 |          319.00 |             0.00 |        319.00 |
+| Aimatologiko    |           2026 | Κ44Α     | Ιδιωτική Ασφάλεια  |                1 |          311.00 |             0.00 |        311.00 |
+| Cheirourgiko    |           2026 | Φ01Α     | ΕΦΚΑ               |                1 |        12204.00 |             0.00 |      12204.00 |
+| Cheirourgiko    |           2026 | Ν04Μ     | Ιδιωτική Ασφάλεια  |                1 |         4267.00 |          2749.67 |       7016.67 |
+| Cheirourgiko    |           2026 | Γ05Χ     | Ιδιωτική Ασφάλεια  |                1 |         1374.00 |          4952.78 |       6326.78 |
+| Cheirourgiko    |           2026 | Ο04Α     | Ιδιωτική Ασφάλεια  |                1 |         1356.00 |          4317.00 |       5673.00 |
+| Cheirourgiko    |           2026 | Ν21Μ     | ΕΦΚΑ               |                1 |         4960.00 |           537.12 |       5497.12 |
+| Cheirourgiko    |           2026 | Ν07Μ     | ΕΦΚΑ               |                1 |         2513.00 |          2456.00 |       4969.00 |
+| Cheirourgiko    |           2026 | Κ45Χ     | Ιδιωτική Ασφάλεια  |                1 |          521.00 |          4280.55 |       4801.55 |
+| Cheirourgiko    |           2026 | Ρ20Χ     | ΕΦΚΑ               |                1 |         1261.00 |          3256.24 |       4517.24 |
+| Cheirourgiko    |           2026 | Θ04Χ     | Ιδιωτική Ασφάλεια  |                1 |         2848.00 |          1656.23 |       4504.23 |
+| Cheirourgiko    |           2026 | Θ20Α     | Ανασφάλιστος       |                1 |          297.00 |          4016.26 |       4313.26 |
+| Cheirourgiko    |           2026 | Θ21Α     | Ιδιωτική Ασφάλεια  |                1 |         2599.00 |          1284.36 |       3883.36 |
+| Cheirourgiko    |           2026 | Α34Μα    | ΕΦΚΑ               |                1 |         1977.00 |          1875.44 |       3852.44 |
+| Cheirourgiko    |           2026 | Κ02Α     | Ανασφάλιστος       |                1 |         2844.00 |           998.88 |       3842.88 |
+| Cheirourgiko    |           2026 | Σ21Μ     | ΕΦΚΑ               |                1 |         3782.00 |             0.00 |       3782.00 |
+| Cheirourgiko    |           2026 | Α25Μ     | ΕΦΚΑ               |                1 |         1766.00 |          1671.67 |       3437.67 |
+| Cheirourgiko    |           2026 | Ν30Μα    | ΕΦΚΑ               |                1 |         3408.00 |             0.00 |       3408.00 |
+| Cheirourgiko    |           2026 | Χ42Χ     | ΕΦΚΑ               |                1 |         1331.00 |          1694.64 |       3025.64 |
+| Cheirourgiko    |           2026 | Θ20Χ     | ΕΦΚΑ               |                1 |         1580.00 |          1439.62 |       3019.62 |
+| Cheirourgiko    |           2026 | Υ09Χβ    | Ανασφάλιστος       |                1 |         1035.00 |          1895.52 |       2930.52 |
+| Cheirourgiko    |           2026 | Π26Χ     | Ιδιωτική Ασφάλεια  |                1 |         1245.00 |          1631.84 |       2876.84 |
+| Cheirourgiko    |           2026 | Η40Μα    | Ιδιωτική Ασφάλεια  |                1 |         2654.00 |             0.00 |       2654.00 |
+| Cheirourgiko    |           2026 | Δ28Μ     | Ιδιωτική Ασφάλεια  |                1 |         1969.00 |           584.52 |       2553.52 |
+| Cheirourgiko    |           2026 | Ν11Α     | ΕΦΚΑ               |                1 |         1331.00 |           935.04 |       2266.04 |
+| Cheirourgiko    |           2026 | Α35Μα    | ΕΦΚΑ               |                1 |         1556.00 |           350.84 |       1906.84 |
+| Cheirourgiko    |           2026 | Μ72Μ     | Ιδιωτική Ασφάλεια  |                1 |         1681.00 |             0.00 |       1681.00 |
+| Cheirourgiko    |           2026 | Α35Μα    | Ιδιωτική Ασφάλεια  |                1 |         1556.00 |             0.00 |       1556.00 |
+| Cheirourgiko    |           2026 | Π05Χ     | ΕΦΚΑ               |                1 |         1379.00 |            53.16 |       1432.16 |
+| Cheirourgiko    |           2026 | Π50Χ     | ΕΦΚΑ               |                1 |          374.00 |           810.09 |       1184.09 |
+| Cheirourgiko    |           2026 | Φ24Χ     | ΕΦΚΑ               |                1 |          934.00 |             0.00 |        934.00 |
+| Cheirourgiko    |           2026 | Φ22Χ     | ΕΦΚΑ               |                1 |          827.00 |             0.00 |        827.00 |
+| Cheirourgiko    |           2026 | Ν40Α     | Ανασφάλιστος       |                1 |          272.00 |           503.26 |        775.26 |
+| Cheirourgiko    |           2026 | Μ66Χ     | Ιδιωτική Ασφάλεια  |                1 |          652.00 |             0.00 |        652.00 |
+| Cheirourgiko    |           2026 | Τ20Χ     | ΕΦΚΑ               |                1 |          512.00 |             0.00 |        512.00 |
+| Dermatologiko   |           2026 | Κ05Μ     | Ιδιωτική Ασφάλεια  |                1 |        10023.00 |             0.00 |      10023.00 |
+| Dermatologiko   |           2026 | Η44Χ     | Ιδιωτική Ασφάλεια  |                1 |          436.00 |          6617.56 |       7053.56 |
+| Dermatologiko   |           2026 | Σ03Μ     | ΕΦΚΑ               |                1 |         6097.00 |             0.00 |       6097.00 |
+| Dermatologiko   |           2026 | Π02Μ     | Ιδιωτική Ασφάλεια  |                1 |         5741.00 |             0.00 |       5741.00 |
+| Dermatologiko   |           2026 | Υ08Χ     | ΕΦΚΑ               |                2 |         1262.00 |          4265.50 |       5527.50 |
+| Dermatologiko   |           2026 | Η40Μβ    | ΕΦΚΑ               |                1 |          965.00 |          2991.60 |       3956.60 |
+| Dermatologiko   |           2026 | Κ31Χ     | Ιδιωτική Ασφάλεια  |                1 |         1183.00 |          2020.07 |       3203.07 |
+| Dermatologiko   |           2026 | Π26Χ     | ΕΦΚΑ               |                1 |         1245.00 |          1835.82 |       3080.82 |
+| Dermatologiko   |           2026 | Η20Χ     | ΕΦΚΑ               |                1 |         1517.00 |          1511.93 |       3028.93 |
+| Dermatologiko   |           2026 | Π44Μ     | ΕΦΚΑ               |                1 |         1097.00 |          1743.30 |       2840.30 |
+| Dermatologiko   |           2026 | Α33Μα    | Ιδιωτική Ασφάλεια  |                1 |         2023.00 |           799.85 |       2822.85 |
+| Dermatologiko   |           2026 | Α22Χ     | Ιδιωτική Ασφάλεια  |                1 |          630.00 |          2160.08 |       2790.08 |
+| Dermatologiko   |           2026 | Φ26Μ     | Ιδιωτική Ασφάλεια  |                1 |         2460.00 |             0.00 |       2460.00 |
+| Dermatologiko   |           2026 | Ν24Μ     | Ιδιωτική Ασφάλεια  |                1 |         2389.00 |             0.00 |       2389.00 |
+| Dermatologiko   |           2026 | Α23Α     | ΕΦΚΑ               |                1 |          319.00 |          2010.58 |       2329.58 |
+| Dermatologiko   |           2026 | Ν38Μ     | Ιδιωτική Ασφάλεια  |                1 |         2327.00 |             0.00 |       2327.00 |
+| Dermatologiko   |           2026 | Κ18Μ     | Ιδιωτική Ασφάλεια  |                1 |         2226.00 |             0.00 |       2226.00 |
+| Dermatologiko   |           2026 | Λ03Χ     | Ιδιωτική Ασφάλεια  |                1 |          886.00 |          1154.12 |       2040.12 |
+| Dermatologiko   |           2026 | Μ25Χ     | Ιδιωτική Ασφάλεια  |                1 |         1260.00 |           641.70 |       1901.70 |
+| Dermatologiko   |           2026 | Θ20Α     | ΕΦΚΑ               |                1 |          297.00 |          1571.58 |       1868.58 |
+| Dermatologiko   |           2026 | Ν30Χ     | Ιδιωτική Ασφάλεια  |                1 |         1191.00 |           538.52 |       1729.52 |
+| Dermatologiko   |           2026 | Μ72Μ     | Ιδιωτική Ασφάλεια  |                1 |         1681.00 |             0.00 |       1681.00 |
+| Dermatologiko   |           2026 | Δ24Μ     | ΕΦΚΑ               |                1 |         1619.00 |             0.00 |       1619.00 |
+| Dermatologiko   |           2026 | W11Α     | ΕΦΚΑ               |                1 |          991.00 |           599.70 |       1590.70 |
+| Dermatologiko   |           2026 | Η20Χ     | Ιδιωτική Ασφάλεια  |                1 |         1517.00 |             0.00 |       1517.00 |
+| Dermatologiko   |           2026 | Ο61Χ     | ΕΦΚΑ               |                1 |          482.00 |           606.08 |       1088.08 |
+| Dermatologiko   |           2026 | Β02Χ     | Ιδιωτική Ασφάλεια  |                1 |         1007.00 |             0.00 |       1007.00 |
+| Dermatologiko   |           2026 | Δ23Μ     | ΕΦΚΑ               |                1 |          965.00 |             0.00 |        965.00 |
+| Dermatologiko   |           2026 | Ζ22Χ     | Ιδιωτική Ασφάλεια  |                2 |          794.00 |           122.68 |        916.68 |
+| Dermatologiko   |           2026 | Ο11Α     | Ανασφάλιστος       |                1 |          639.00 |           176.78 |        815.78 |
+| Dermatologiko   |           2026 | Π40Χ     | ΕΦΚΑ               |                1 |          677.00 |             0.00 |        677.00 |
+| Dermatologiko   |           2026 | Κ45Χ     | ΕΦΚΑ               |                1 |          521.00 |             0.00 |        521.00 |
+| Gynaikologiko   |           2026 | Ε04Α     | Ιδιωτική Ασφάλεια  |                1 |        30015.00 |             0.00 |      30015.00 |
+| Gynaikologiko   |           2026 | Κ30Μ     | Ιδιωτική Ασφάλεια  |                1 |         6295.00 |          3778.74 |      10073.74 |
+| Gynaikologiko   |           2026 | Κ08Μ     | Ιδιωτική Ασφάλεια  |                1 |         8956.00 |             0.00 |       8956.00 |
+| Gynaikologiko   |           2026 | Τ23Α     | Ανασφάλιστος       |                1 |         7359.00 |             0.00 |       7359.00 |
+| Gynaikologiko   |           2026 | Γ07Α     | Ιδιωτική Ασφάλεια  |                1 |          742.00 |          5747.72 |       6489.72 |
+| Gynaikologiko   |           2026 | Δ01Χ     | Ανασφάλιστος       |                1 |         6452.00 |             0.00 |       6452.00 |
+| Gynaikologiko   |           2026 | Δ27Χ     | ΕΦΚΑ               |                1 |          199.00 |          5831.88 |       6030.88 |
+| Gynaikologiko   |           2026 | Ι24Α     | ΕΦΚΑ               |                1 |          599.00 |          5013.18 |       5612.18 |
+| Gynaikologiko   |           2026 | Ο15Α     | ΕΦΚΑ               |                1 |         1026.00 |          4149.20 |       5175.20 |
+| Gynaikologiko   |           2026 | Η02Μα    | Ιδιωτική Ασφάλεια  |                1 |         5111.00 |             0.00 |       5111.00 |
+| Gynaikologiko   |           2026 | Ν40Α     | Ιδιωτική Ασφάλεια  |                1 |          272.00 |          4780.97 |       5052.97 |
+| Gynaikologiko   |           2026 | Η01Χ     | Ιδιωτική Ασφάλεια  |                1 |         3682.00 |           895.80 |       4577.80 |
+| Gynaikologiko   |           2026 | Α11Χ     | ΕΦΚΑ               |                1 |         3635.00 |           814.11 |       4449.11 |
+| Gynaikologiko   |           2026 | Π44Χ     | Ιδιωτική Ασφάλεια  |                1 |         1073.00 |          3124.44 |       4197.44 |
+| Gynaikologiko   |           2026 | Κ12Χ     | Ιδιωτική Ασφάλεια  |                1 |         3694.00 |             0.00 |       3694.00 |
+| Gynaikologiko   |           2026 | Φ40Α     | ΕΦΚΑ               |                1 |         3649.00 |             0.00 |       3649.00 |
+| Gynaikologiko   |           2026 | Ν30Μα    | Ιδιωτική Ασφάλεια  |                1 |         3408.00 |             0.00 |       3408.00 |
+| Gynaikologiko   |           2026 | Α30Μ     | ΕΦΚΑ               |                1 |         1331.00 |          1819.79 |       3150.79 |
+| Gynaikologiko   |           2026 | Κ46Χ     | ΕΦΚΑ               |                1 |          444.00 |          2574.26 |       3018.26 |
+| Gynaikologiko   |           2026 | Σ03Χ     | ΕΦΚΑ               |                1 |         1099.00 |          1843.31 |       2942.31 |
+| Gynaikologiko   |           2026 | Ζ22Μ     | Ιδιωτική Ασφάλεια  |                1 |         1167.00 |          1345.89 |       2512.89 |
+| Gynaikologiko   |           2026 | Α30Μ     | Ιδιωτική Ασφάλεια  |                1 |         1331.00 |          1039.88 |       2370.88 |
+| Gynaikologiko   |           2026 | Υ04Χα    | ΕΦΚΑ               |                1 |         2361.00 |             0.00 |       2361.00 |
+| Gynaikologiko   |           2026 | Δ23Χ     | Ιδιωτική Ασφάλεια  |                1 |          366.00 |          1876.00 |       2242.00 |
+| Gynaikologiko   |           2026 | Α02Μβ    | Ιδιωτική Ασφάλεια  |                1 |         1595.00 |           434.45 |       2029.45 |
+| Gynaikologiko   |           2026 | Μ71Χ     | Ιδιωτική Ασφάλεια  |                1 |          405.00 |          1083.60 |       1488.60 |
+| Gynaikologiko   |           2026 | Ν32Χ     | Ιδιωτική Ασφάλεια  |                1 |         1183.00 |             0.00 |       1183.00 |
+| Gynaikologiko   |           2026 | Δ08Χ     | Ιδιωτική Ασφάλεια  |                1 |          791.00 |           370.00 |       1161.00 |
+| Gynaikologiko   |           2026 | Κ32Α     | Ιδιωτική Ασφάλεια  |                1 |         1043.00 |             0.00 |       1043.00 |
+| Gynaikologiko   |           2026 | Δ24Χ     | Ιδιωτική Ασφάλεια  |                1 |          802.00 |             0.00 |        802.00 |
+| Gynaikologiko   |           2026 | Υ24Α     | ΕΦΚΑ               |                1 |          389.00 |             0.00 |        389.00 |
+| Kardiologiko    |           2026 | Κ32Μ     | ΕΦΚΑ               |              200 |       412400.00 |             0.00 |     412400.00 |
+| Kardiologiko    |           2026 | Ε11Μ     | Ανασφάλιστος       |                1 |        10704.00 |             0.00 |      10704.00 |
+| Kardiologiko    |           2026 | Π02Χ     | ΕΦΚΑ               |                1 |         2771.00 |          3094.84 |       5865.84 |
+| Kardiologiko    |           2026 | Ξ21Χ     | ΕΦΚΑ               |                1 |          315.00 |          5439.89 |       5754.89 |
+| Kardiologiko    |           2026 | Κ32Α     | ΕΦΚΑ               |                1 |         1043.00 |          3363.49 |       4406.49 |
+| Kardiologiko    |           2026 | Α26Μβ    | ΕΦΚΑ               |                1 |         1175.00 |          3003.11 |       4178.11 |
+| Kardiologiko    |           2026 | Κ45Χ     | ΕΦΚΑ               |                1 |          521.00 |          3424.44 |       3945.44 |
+| Kardiologiko    |           2026 | Π27Α     | Ιδιωτική Ασφάλεια  |                2 |          530.00 |          3333.59 |       3863.59 |
+| Kardiologiko    |           2026 | Λ01Μ     | Ιδιωτική Ασφάλεια  |                1 |         2171.00 |          1493.70 |       3664.70 |
+| Kardiologiko    |           2026 | Δ24Μ     | ΕΦΚΑ               |                1 |         1619.00 |          1977.14 |       3596.14 |
+| Kardiologiko    |           2026 | Δ28Α     | Ιδιωτική Ασφάλεια  |                1 |          382.00 |          3193.89 |       3575.89 |
+| Kardiologiko    |           2026 | Α27Χ     | Ιδιωτική Ασφάλεια  |                1 |          350.00 |          2906.64 |       3256.64 |
+| Kardiologiko    |           2026 | Π40Χ     | Ιδιωτική Ασφάλεια  |                1 |          677.00 |          2155.14 |       2832.14 |
+| Kardiologiko    |           2026 | Π03Χα    | Ιδιωτική Ασφάλεια  |                1 |         2826.00 |             0.00 |       2826.00 |
+| Kardiologiko    |           2026 | Α28Μ     | Ιδιωτική Ασφάλεια  |                1 |         1377.00 |          1436.64 |       2813.64 |
+| Kardiologiko    |           2026 | Θ01Χ     | Ιδιωτική Ασφάλεια  |                1 |         2801.00 |             0.00 |       2801.00 |
+| Kardiologiko    |           2026 | Ν29Χ     | ΕΦΚΑ               |                1 |          545.00 |          2198.80 |       2743.80 |
+| Kardiologiko    |           2026 | Ν26Μ     | Ιδιωτική Ασφάλεια  |                1 |         2062.00 |           634.38 |       2696.38 |
+| Kardiologiko    |           2026 | Μ19Μ     | Ιδιωτική Ασφάλεια  |                1 |         2648.00 |             0.00 |       2648.00 |
+| Kardiologiko    |           2026 | Ν07Μ     | ΕΦΚΑ               |                1 |         2513.00 |             0.00 |       2513.00 |
+| Kardiologiko    |           2026 | Μ77Μ     | ΕΦΚΑ               |                1 |         2257.00 |             0.00 |       2257.00 |
+| Kardiologiko    |           2026 | Δ22Μ     | ΕΦΚΑ               |                1 |          965.00 |          1276.80 |       2241.80 |
+| Kardiologiko    |           2026 | Μ61Μ     | Ιδιωτική Ασφάλεια  |                1 |         2210.00 |             0.00 |       2210.00 |
+| Kardiologiko    |           2026 | Ρ24Μβ    | Ιδιωτική Ασφάλεια  |                1 |         1401.00 |           757.71 |       2158.71 |
+| Kardiologiko    |           2026 | Π28Α     | Ιδιωτική Ασφάλεια  |                1 |          290.00 |          1781.92 |       2071.92 |
+| Kardiologiko    |           2026 | Α33Μα    | Ιδιωτική Ασφάλεια  |                1 |         2023.00 |             0.00 |       2023.00 |
+| Kardiologiko    |           2026 | Ο02Α     | Ιδιωτική Ασφάλεια  |                1 |         1611.00 |           280.19 |       1891.19 |
+| Kardiologiko    |           2026 | Α31Μ     | Ιδιωτική Ασφάλεια  |                1 |         1798.00 |             0.00 |       1798.00 |
+| Kardiologiko    |           2026 | Ρ24Μβ    | ΕΦΚΑ               |                1 |         1401.00 |           168.38 |       1569.38 |
+| Kardiologiko    |           2026 | Υ23Μ     | ΕΦΚΑ               |                1 |         1564.00 |             0.00 |       1564.00 |
+| Kardiologiko    |           2026 | Υ07Μ     | ΕΦΚΑ               |                1 |         1218.00 |           245.94 |       1463.94 |
+| Kardiologiko    |           2026 | Υ08Χ     | ΕΦΚΑ               |                1 |          631.00 |           682.48 |       1313.48 |
+| Kardiologiko    |           2026 | Π27Χ     | Ιδιωτική Ασφάλεια  |                1 |          988.00 |             0.00 |        988.00 |
+| Kardiologiko    |           2026 | Α02Χ     | Ιδιωτική Ασφάλεια  |                1 |          683.00 |           221.91 |        904.91 |
+| Kardiologiko    |           2026 | Μ68Χ     | Ιδιωτική Ασφάλεια  |                1 |          731.00 |             0.00 |        731.00 |
+| Kardiologiko    |           2026 | Ν41Χ     | Ιδιωτική Ασφάλεια  |                1 |          693.00 |             0.00 |        693.00 |
+| Nefrologiko     |           2026 | Μ01Μ     | Ιδιωτική Ασφάλεια  |                1 |        14020.00 |             0.00 |      14020.00 |
+| Nefrologiko     |           2026 | Κ04Μ     | ΕΦΚΑ               |                1 |        13155.00 |             0.00 |      13155.00 |
+| Nefrologiko     |           2026 | Μ03Χ     | ΕΦΚΑ               |                1 |         6411.00 |          2160.45 |       8571.45 |
+| Nefrologiko     |           2026 | Μ04Μ     | ΕΦΚΑ               |                1 |         7042.00 |             0.00 |       7042.00 |
+| Nefrologiko     |           2026 | G01Μα    | Ανασφάλιστος       |                1 |         5709.00 |             0.00 |       5709.00 |
+| Nefrologiko     |           2026 | Λ04Μ     | ΕΦΚΑ               |                1 |         1807.00 |          3720.60 |       5527.60 |
+| Nefrologiko     |           2026 | Ω37Β     | ΕΦΚΑ               |                1 |          661.00 |          4266.24 |       4927.24 |
+| Nefrologiko     |           2026 | Θ04Μ     | Ιδιωτική Ασφάλεια  |                1 |         4378.00 |             0.00 |       4378.00 |
+| Nefrologiko     |           2026 | Κ46Χ     | ΕΦΚΑ               |                1 |          444.00 |          3366.34 |       3810.34 |
+| Nefrologiko     |           2026 | Π45Χ     | Ιδιωτική Ασφάλεια  |                1 |          623.00 |          3094.02 |       3717.02 |
+| Nefrologiko     |           2026 | Δ28Μ     | Ιδιωτική Ασφάλεια  |                1 |         1969.00 |          1461.30 |       3430.30 |
+| Nefrologiko     |           2026 | Γ09Α     | ΕΦΚΑ               |                1 |          418.00 |          2776.10 |       3194.10 |
+| Nefrologiko     |           2026 | Ι22Μ     | Ιδιωτική Ασφάλεια  |                1 |          910.00 |          2280.85 |       3190.85 |
+| Nefrologiko     |           2026 | Π26Χ     | ΕΦΚΑ               |                1 |         1245.00 |          1835.82 |       3080.82 |
+| Nefrologiko     |           2026 | Ν29Μ     | Ιδιωτική Ασφάλεια  |                1 |         1230.00 |          1596.15 |       2826.15 |
+| Nefrologiko     |           2026 | Π03Χβ    | ΕΦΚΑ               |                1 |         1813.00 |           957.40 |       2770.40 |
+| Nefrologiko     |           2026 | Μ64Μ     | ΕΦΚΑ               |                1 |         2669.00 |             0.00 |       2669.00 |
+| Nefrologiko     |           2026 | Μ13Χ     | Ιδιωτική Ασφάλεια  |                1 |         2083.00 |           509.04 |       2592.04 |
+| Nefrologiko     |           2026 | Υ22Χ     | ΕΦΚΑ               |                1 |          545.00 |          1975.44 |       2520.44 |
+| Nefrologiko     |           2026 | Ν07Μ     | Ανασφάλιστος       |                1 |         2513.00 |             0.00 |       2513.00 |
+| Nefrologiko     |           2026 | Η07Χ     | Ιδιωτική Ασφάλεια  |                1 |         2037.00 |           434.48 |       2471.48 |
+| Nefrologiko     |           2026 | Ν24Μ     | Ιδιωτική Ασφάλεια  |                1 |         2389.00 |             0.00 |       2389.00 |
+| Nefrologiko     |           2026 | Ρ22Μ     | Ιδιωτική Ασφάλεια  |                1 |         1105.00 |          1239.26 |       2344.26 |
+| Nefrologiko     |           2026 | Μ71Χ     | ΕΦΚΑ               |                1 |          405.00 |          1300.32 |       1705.32 |
+| Nefrologiko     |           2026 | Δ20Χ     | Ιδιωτική Ασφάλεια  |                1 |         1471.00 |           220.76 |       1691.76 |
+| Nefrologiko     |           2026 | Υ05Χ     | Ιδιωτική Ασφάλεια  |                1 |         1000.00 |           635.79 |       1635.79 |
+| Nefrologiko     |           2026 | Δ20Χ     | ΕΦΚΑ               |                1 |         1471.00 |             0.00 |       1471.00 |
+| Nefrologiko     |           2026 | Δ28Χ     | Ιδιωτική Ασφάλεια  |                1 |          965.00 |           335.00 |       1300.00 |
+| Nefrologiko     |           2026 | Δ23Μ     | Ιδιωτική Ασφάλεια  |                1 |          965.00 |             0.00 |        965.00 |
+| Neurologiko     |           2026 | Κ01Χ     | ΕΦΚΑ               |                1 |        12420.00 |           265.44 |      12685.44 |
+| Neurologiko     |           2026 | Κ04Χ     | ΕΦΚΑ               |                1 |         9163.00 |             0.00 |       9163.00 |
+| Neurologiko     |           2026 | Μ04Μ     | ΕΦΚΑ               |                1 |         7042.00 |             0.00 |       7042.00 |
+| Neurologiko     |           2026 | Β06Χ     | ΕΦΚΑ               |                1 |         1659.00 |          4752.00 |       6411.00 |
+| Neurologiko     |           2026 | Α11Χ     | ΕΦΚΑ               |                1 |         3635.00 |           542.74 |       4177.74 |
+| Neurologiko     |           2026 | Κ02Α     | Ιδιωτική Ασφάλεια  |                1 |         2844.00 |          1331.84 |       4175.84 |
+| Neurologiko     |           2026 | Μ11Α     | Ιδιωτική Ασφάλεια  |                1 |         4045.00 |             0.00 |       4045.00 |
+| Neurologiko     |           2026 | Σ02Χβ    | Ιδιωτική Ασφάλεια  |                1 |         2056.00 |          1757.42 |       3813.42 |
+| Neurologiko     |           2026 | S24Μ     | Ιδιωτική Ασφάλεια  |                1 |          770.00 |          2755.76 |       3525.76 |
+| Neurologiko     |           2026 | Ν32Μ     | ΕΦΚΑ               |                1 |         3175.00 |             0.00 |       3175.00 |
+| Neurologiko     |           2026 | Δ06Α     | Ιδιωτική Ασφάλεια  |                1 |         1383.00 |          1764.28 |       3147.28 |
+| Neurologiko     |           2026 | Δ12Χα    | Ιδιωτική Ασφάλεια  |                1 |         3097.00 |             0.00 |       3097.00 |
+| Neurologiko     |           2026 | Ρ22Μ     | ΕΦΚΑ               |                1 |         1105.00 |          1915.22 |       3020.22 |
+| Neurologiko     |           2026 | Θ05Χ     | ΕΦΚΑ               |                1 |         1218.00 |          1579.60 |       2797.60 |
+| Neurologiko     |           2026 | Α29Μ     | ΕΦΚΑ               |                1 |          872.00 |          1625.20 |       2497.20 |
+| Neurologiko     |           2026 | Τ26Μβ    | Ιδιωτική Ασφάλεια  |                1 |         2346.00 |             0.00 |       2346.00 |
+| Neurologiko     |           2026 | Ο12Α     | Ιδιωτική Ασφάλεια  |                1 |          583.00 |          1733.76 |       2316.76 |
+| Neurologiko     |           2026 | Μ61Μ     | Ιδιωτική Ασφάλεια  |                1 |         2210.00 |             0.00 |       2210.00 |
+| Neurologiko     |           2026 | Π27Α     | Ιδιωτική Ασφάλεια  |                1 |          265.00 |          1795.01 |       2060.01 |
+| Neurologiko     |           2026 | Γ05Χ     | Ιδιωτική Ασφάλεια  |                1 |         1374.00 |           582.68 |       1956.68 |
+| Neurologiko     |           2026 | Ν22Α     | ΕΦΚΑ               |                1 |          243.00 |          1698.13 |       1941.13 |
+| Neurologiko     |           2026 | Β06Μ     | Ανασφάλιστος       |                1 |         1930.00 |             0.00 |       1930.00 |
+| Neurologiko     |           2026 | Ρ24Μβ    | Ιδιωτική Ασφάλεια  |                1 |         1401.00 |           505.14 |       1906.14 |
+| Neurologiko     |           2026 | Μ65Χ     | Ιδιωτική Ασφάλεια  |                1 |         1222.00 |           659.82 |       1881.82 |
+| Neurologiko     |           2026 | Κ44Α     | ΕΦΚΑ               |                1 |          311.00 |          1551.60 |       1862.60 |
+| Neurologiko     |           2026 | Α31Μ     | Ανασφάλιστος       |                1 |         1798.00 |             0.00 |       1798.00 |
+| Neurologiko     |           2026 | Μ60Α     | ΕΦΚΑ               |                1 |         1720.00 |             0.00 |       1720.00 |
+| Neurologiko     |           2026 | Δ20Χ     | Ιδιωτική Ασφάλεια  |                1 |         1471.00 |           165.57 |       1636.57 |
+| Neurologiko     |           2026 | Φ64Χ     | ΕΦΚΑ               |                1 |          303.00 |          1188.00 |       1491.00 |
+| Neurologiko     |           2026 | Φ62Μ     | Ιδιωτική Ασφάλεια  |                1 |         1183.00 |             0.00 |       1183.00 |
+| Neurologiko     |           2026 | Ο21Μ     | Ιδιωτική Ασφάλεια  |                1 |          934.00 |             0.00 |        934.00 |
+| Neurologiko     |           2026 | Ο03Α     | ΕΦΚΑ               |                1 |          837.00 |             0.00 |        837.00 |
+| Neurologiko     |           2026 | Ν10Α     | ΕΦΚΑ               |                1 |          163.00 |             0.00 |        163.00 |
+| Ogkologiko      |           2026 | Ε04Α     | Ιδιωτική Ασφάλεια  |                1 |        30015.00 |             0.00 |      30015.00 |
+| Ogkologiko      |           2026 | Κ04Μ     | Ιδιωτική Ασφάλεια  |                1 |        13155.00 |           589.48 |      13744.48 |
+| Ogkologiko      |           2026 | Φ02Μ     | Ανασφάλιστος       |                1 |         9426.00 |             0.00 |       9426.00 |
+| Ogkologiko      |           2026 | Φ22Μ     | Ιδιωτική Ασφάλεια  |                1 |         2357.00 |          4162.52 |       6519.52 |
+| Ogkologiko      |           2026 | Ω02Μα    | ΕΦΚΑ               |                1 |         5420.00 |           985.76 |       6405.76 |
+| Ogkologiko      |           2026 | Α10Χ     | Ιδιωτική Ασφάλεια  |                1 |         4627.00 |             0.00 |       4627.00 |
+| Ogkologiko      |           2026 | Π41Μ     | ΕΦΚΑ               |                1 |         1027.00 |          3254.00 |       4281.00 |
+| Ogkologiko      |           2026 | Κ33Α     | Ιδιωτική Ασφάλεια  |                1 |         3132.00 |           693.22 |       3825.22 |
+| Ogkologiko      |           2026 | Ν36Μ     | Ανασφάλιστος       |                1 |         1486.00 |          2072.42 |       3558.42 |
+| Ogkologiko      |           2026 | Ω37Α     | ΕΦΚΑ               |                1 |          254.00 |          2986.83 |       3240.83 |
+| Ogkologiko      |           2026 | Τ20Μ     | ΕΦΚΑ               |                1 |          244.00 |          2622.27 |       2866.27 |
+| Ogkologiko      |           2026 | Π45Χ     | ΕΦΚΑ               |                1 |          623.00 |          2234.57 |       2857.57 |
+| Ogkologiko      |           2026 | Δ13Μ     | ΕΦΚΑ               |                1 |         2856.00 |             0.00 |       2856.00 |
+| Ogkologiko      |           2026 | S20Χ     | ΕΦΚΑ               |                1 |         1759.00 |           921.95 |       2680.95 |
+| Ogkologiko      |           2026 | Λ03Χ     | Ιδιωτική Ασφάλεια  |                1 |          886.00 |          1442.65 |       2328.65 |
+| Ogkologiko      |           2026 | Δ13Χ     | Ιδιωτική Ασφάλεια  |                1 |          915.00 |          1311.42 |       2226.42 |
+| Ogkologiko      |           2026 | Η02Χ     | Ιδιωτική Ασφάλεια  |                1 |         2079.00 |             0.00 |       2079.00 |
+| Ogkologiko      |           2026 | Σ04Μ     | Ιδιωτική Ασφάλεια  |                1 |         1694.00 |           153.32 |       1847.32 |
+| Ogkologiko      |           2026 | Α25Μ     | Ιδιωτική Ασφάλεια  |                1 |         1766.00 |             0.00 |       1766.00 |
+| Ogkologiko      |           2026 | S20Χ     | Ανασφάλιστος       |                1 |         1759.00 |             0.00 |       1759.00 |
+| Ogkologiko      |           2026 | Μ72Μ     | Ιδιωτική Ασφάλεια  |                1 |         1681.00 |             0.00 |       1681.00 |
+| Ogkologiko      |           2026 | Ρ10Χ     | ΕΦΚΑ               |                1 |         1473.00 |             0.00 |       1473.00 |
+| Ogkologiko      |           2026 | Σ04Χ     | ΕΦΚΑ               |                1 |          966.00 |           436.02 |       1402.02 |
+| Ogkologiko      |           2026 | Μ23Α     | Ιδιωτική Ασφάλεια  |                1 |          661.00 |           527.58 |       1188.58 |
+| Ogkologiko      |           2026 | Ι22Χ     | ΕΦΚΑ               |                1 |          366.00 |           708.78 |       1074.78 |
+| Ogkologiko      |           2026 | Ν35Α     | Ιδιωτική Ασφάλεια  |                1 |          350.00 |           636.40 |        986.40 |
+| Ogkologiko      |           2026 | Γ11Α     | ΕΦΚΑ               |                1 |          729.00 |           172.08 |        901.08 |
+| Ogkologiko      |           2026 | Μ63Χ     | Ιδιωτική Ασφάλεια  |                1 |          444.00 |             0.00 |        444.00 |
+| Ogkologiko      |           2026 | Τ27Χ     | ΕΦΚΑ               |                1 |          428.00 |             0.00 |        428.00 |
+| Ogkologiko      |           2026 | Υ25Χ     | Ιδιωτική Ασφάλεια  |                1 |          405.00 |             0.00 |        405.00 |
+| Orthopediko     |           2026 | Τ03Α     | ΕΦΚΑ               |                1 |        16846.00 |             0.00 |      16846.00 |
+| Orthopediko     |           2026 | Κ04Μ     | ΕΦΚΑ               |                1 |        13155.00 |             0.00 |      13155.00 |
+| Orthopediko     |           2026 | Μ01Χ     | ΕΦΚΑ               |                1 |         9606.00 |           685.23 |      10291.23 |
+| Orthopediko     |           2026 | Κ09Μα    | Ιδιωτική Ασφάλεια  |                1 |         6413.00 |          1812.51 |       8225.51 |
+| Orthopediko     |           2026 | Ν20Μ     | Ιδιωτική Ασφάλεια  |                1 |         6919.00 |             0.00 |       6919.00 |
+| Orthopediko     |           2026 | Φ04Χ     | Ανασφάλιστος       |                1 |         5558.00 |           835.40 |       6393.40 |
+| Orthopediko     |           2026 | Ν42Μα    | ΕΦΚΑ               |                1 |         5805.00 |             0.00 |       5805.00 |
+| Orthopediko     |           2026 | Ν34Χ     | Ιδιωτική Ασφάλεια  |                1 |          374.00 |          5178.81 |       5552.81 |
+| Orthopediko     |           2026 | Π26Χ     | ΕΦΚΑ               |                1 |         1245.00 |          3875.62 |       5120.62 |
+| Orthopediko     |           2026 | Η02Μα    | Ιδιωτική Ασφάλεια  |                1 |         5111.00 |             0.00 |       5111.00 |
+| Orthopediko     |           2026 | Θ09Μ     | Ιδιωτική Ασφάλεια  |                1 |         4895.00 |             0.00 |       4895.00 |
+| Orthopediko     |           2026 | Γ09Α     | Ανασφάλιστος       |                1 |          418.00 |          3331.32 |       3749.32 |
+| Orthopediko     |           2026 | Κ37Χ     | ΕΦΚΑ               |                1 |          459.00 |          3271.06 |       3730.06 |
+| Orthopediko     |           2026 | Ν30Χ     | ΕΦΚΑ               |                1 |         1191.00 |          2423.34 |       3614.34 |
+| Orthopediko     |           2026 | Κ32Χ     | ΕΦΚΑ               |                1 |         1089.00 |          2372.60 |       3461.60 |
+| Orthopediko     |           2026 | Κ33Α     | Ανασφάλιστος       |                1 |         3132.00 |           252.08 |       3384.08 |
+| Orthopediko     |           2026 | Ν06Μ     | ΕΦΚΑ               |                1 |         3297.00 |             0.00 |       3297.00 |
+| Orthopediko     |           2026 | Ο02Α     | Ιδιωτική Ασφάλεια  |                1 |         1611.00 |          1681.14 |       3292.14 |
+| Orthopediko     |           2026 | Κ42Μ     | Ιδιωτική Ασφάλεια  |                1 |         2054.00 |           840.84 |       2894.84 |
+| Orthopediko     |           2026 | Κ32Χ     | Ιδιωτική Ασφάλεια  |                1 |         1089.00 |          1423.56 |       2512.56 |
+| Orthopediko     |           2026 | S20Χ     | Ιδιωτική Ασφάλεια  |                1 |         1759.00 |           737.56 |       2496.56 |
+| Orthopediko     |           2026 | Ο17Α     | Ιδιωτική Ασφάλεια  |                1 |         2423.00 |             0.00 |       2423.00 |
+| Orthopediko     |           2026 | Ο17Α     | ΕΦΚΑ               |                1 |         2423.00 |             0.00 |       2423.00 |
+| Orthopediko     |           2026 | Δ28Α     | Ανασφάλιστος       |                1 |          382.00 |          1977.17 |       2359.17 |
+| Orthopediko     |           2026 | Μ61Μ     | ΕΦΚΑ               |                1 |         2210.00 |             0.00 |       2210.00 |
+| Orthopediko     |           2026 | Λ01Μ     | Ιδιωτική Ασφάλεια  |                1 |         2171.00 |             0.00 |       2171.00 |
+| Orthopediko     |           2026 | Λ04Χ     | ΕΦΚΑ               |                1 |          571.00 |          1359.30 |       1930.30 |
+| Orthopediko     |           2026 | Υ27Μ     | Ιδιωτική Ασφάλεια  |                1 |         1673.00 |             0.00 |       1673.00 |
+| Orthopediko     |           2026 | Α02Μβ    | ΕΦΚΑ               |                1 |         1595.00 |             0.00 |       1595.00 |
+| Orthopediko     |           2026 | Α35Μα    | ΕΦΚΑ               |                1 |         1556.00 |             0.00 |       1556.00 |
+| Orthopediko     |           2026 | Χ44Α     | Ιδιωτική Ασφάλεια  |                1 |         1152.00 |           277.41 |       1429.41 |
+| Orthopediko     |           2026 | Ζ22Μ     | Ιδιωτική Ασφάλεια  |                1 |         1167.00 |             0.00 |       1167.00 |
+| Orthopediko     |           2026 | Κ35Χ     | Ιδιωτική Ασφάλεια  |                1 |          521.00 |           393.00 |        914.00 |
+| Ourologiko      |           2026 | Τ02Α     | ΕΦΚΑ               |                1 |        20279.00 |             0.00 |      20279.00 |
+| Ourologiko      |           2026 | Τ06Μ     | Ιδιωτική Ασφάλεια  |                1 |        15128.00 |             0.00 |      15128.00 |
+| Ourologiko      |           2026 | Θ06Χ     | ΕΦΚΑ               |                1 |         1581.00 |          3993.45 |       5574.45 |
+| Ourologiko      |           2026 | Α01Χ     | Ιδιωτική Ασφάλεια  |                1 |         2712.00 |          1751.88 |       4463.88 |
+| Ourologiko      |           2026 | Μ08Μ     | Ιδιωτική Ασφάλεια  |                1 |         4449.00 |             0.00 |       4449.00 |
+| Ourologiko      |           2026 | Σ02Χβ    | ΕΦΚΑ               |                1 |         2056.00 |          2259.54 |       4315.54 |
+| Ourologiko      |           2026 | Γ09Α     | Ιδιωτική Ασφάλεια  |                1 |          418.00 |          3608.93 |       4026.93 |
+| Ourologiko      |           2026 | Π02Χ     | Ιδιωτική Ασφάλεια  |                1 |         2771.00 |          1105.30 |       3876.30 |
+| Ourologiko      |           2026 | Π45Χ     | ΕΦΚΑ               |                1 |          623.00 |          3094.02 |       3717.02 |
+| Ourologiko      |           2026 | Υ20Μα    | ΕΦΚΑ               |                1 |         2934.00 |           673.04 |       3607.04 |
+| Ourologiko      |           2026 | Π27Μ     | Ανασφάλιστος       |                1 |         2521.00 |           730.98 |       3251.98 |
+| Ourologiko      |           2026 | Ν10Α     | ΕΦΚΑ               |                1 |          163.00 |          3044.72 |       3207.72 |
+| Ourologiko      |           2026 | Μ19Μ     | Ιδιωτική Ασφάλεια  |                1 |         2648.00 |           530.72 |       3178.72 |
+| Ourologiko      |           2026 | Η02Χ     | Ιδιωτική Ασφάλεια  |                1 |         2079.00 |           606.44 |       2685.44 |
+| Ourologiko      |           2026 | Β06Μ     | ΕΦΚΑ               |                1 |         1930.00 |           728.70 |       2658.70 |
+| Ourologiko      |           2026 | Μ19Μ     | ΕΦΚΑ               |                1 |         2648.00 |             0.00 |       2648.00 |
+| Ourologiko      |           2026 | Κ31Μ     | Ιδιωτική Ασφάλεια  |                1 |         2038.00 |           575.60 |       2613.60 |
+| Ourologiko      |           2026 | Μ67Μ     | ΕΦΚΑ               |                1 |         2428.00 |             0.00 |       2428.00 |
+| Ourologiko      |           2026 | Ο17Α     | Ιδιωτική Ασφάλεια  |                1 |         2423.00 |             0.00 |       2423.00 |
+| Ourologiko      |           2026 | Υ06Μ     | Ιδιωτική Ασφάλεια  |                1 |         2381.00 |             0.00 |       2381.00 |
+| Ourologiko      |           2026 | Ρ24Μβ    | Ιδιωτική Ασφάλεια  |                1 |         1401.00 |           926.09 |       2327.09 |
+| Ourologiko      |           2026 | Ν26Μ     | ΕΦΚΑ               |                1 |         2062.00 |             0.00 |       2062.00 |
+| Ourologiko      |           2026 | Μ65Χ     | Ιδιωτική Ασφάλεια  |                1 |         1222.00 |           769.79 |       1991.79 |
+| Ourologiko      |           2026 | Ν32Χ     | Ιδιωτική Ασφάλεια  |                1 |         1183.00 |           297.80 |       1480.80 |
+| Ourologiko      |           2026 | Δ20Χ     | Ιδιωτική Ασφάλεια  |                1 |         1471.00 |             0.00 |       1471.00 |
+| Ourologiko      |           2026 | Η42Χ     | ΕΦΚΑ               |                1 |          708.00 |           645.78 |       1353.78 |
+| Ourologiko      |           2026 | Χ44Α     | ΕΦΚΑ               |                1 |         1152.00 |             0.00 |       1152.00 |
+| Ourologiko      |           2026 | Σ03Χ     | Ιδιωτική Ασφάλεια  |                1 |         1099.00 |             0.00 |       1099.00 |
+| Ourologiko      |           2026 | Κ45Χ     | Ιδιωτική Ασφάλεια  |                1 |          521.00 |           570.74 |       1091.74 |
+| Ourologiko      |           2026 | Ο14Α     | Ιδιωτική Ασφάλεια  |                1 |          406.00 |           672.90 |       1078.90 |
+| Ourologiko      |           2026 | Δ27Μ     | ΕΦΚΑ               |                1 |          708.00 |           317.94 |       1025.94 |
+| Ourologiko      |           2026 | Ω13Α     | ΕΦΚΑ               |                1 |          347.00 |           647.88 |        994.88 |
+| Ourologiko      |           2026 | Α35Μβ    | Ιδιωτική Ασφάλεια  |                1 |          973.00 |             0.00 |        973.00 |
+| Ourologiko      |           2026 | Κ44Α     | ΕΦΚΑ               |                1 |          311.00 |           581.85 |        892.85 |
+| Ourologiko      |           2026 | Α22Χ     | Ιδιωτική Ασφάλεια  |                1 |          630.00 |             0.00 |        630.00 |
+| Ourologiko      |           2026 | Η40Χ     | ΕΦΚΑ               |                1 |          366.00 |           187.60 |        553.60 |
+| Paidiatriko     |           2026 | Κ01Χ     | ΕΦΚΑ               |                1 |        12420.00 |             0.00 |      12420.00 |
+| Paidiatriko     |           2026 | Μ31Χ     | ΕΦΚΑ               |                1 |         8533.00 |             0.00 |       8533.00 |
+| Paidiatriko     |           2026 | Μ03Χ     | ΕΦΚΑ               |                1 |         6411.00 |             0.00 |       6411.00 |
+| Paidiatriko     |           2026 | Θ04Μ     | Ιδιωτική Ασφάλεια  |                1 |         4378.00 |           769.21 |       5147.21 |
+| Paidiatriko     |           2026 | Κ12Χ     | ΕΦΚΑ               |                1 |         3694.00 |          1324.89 |       5018.89 |
+| Paidiatriko     |           2026 | Θ09Μ     | ΕΦΚΑ               |                1 |         4895.00 |             0.00 |       4895.00 |
+| Paidiatriko     |           2026 | Ω04Χ     | ΕΦΚΑ               |                1 |         1934.00 |          2844.64 |       4778.64 |
+| Paidiatriko     |           2026 | Λ21Α     | Ιδιωτική Ασφάλεια  |                1 |          420.00 |          3882.84 |       4302.84 |
+| Paidiatriko     |           2026 | Τ25Μβ    | Ιδιωτική Ασφάλεια  |                1 |         4145.00 |             0.00 |       4145.00 |
+| Paidiatriko     |           2026 | S20Χ     | ΕΦΚΑ               |                2 |         3518.00 |             0.00 |       3518.00 |
+| Paidiatriko     |           2026 | Ν32Μ     | Ανασφάλιστος       |                1 |         3175.00 |           295.89 |       3470.89 |
+| Paidiatriko     |           2026 | Π03Χα    | ΕΦΚΑ               |                1 |         2826.00 |             0.00 |       2826.00 |
+| Paidiatriko     |           2026 | Π02Χ     | Ιδιωτική Ασφάλεια  |                1 |         2771.00 |             0.00 |       2771.00 |
+| Paidiatriko     |           2026 | Α26Μβ    | Ιδιωτική Ασφάλεια  |                1 |         1175.00 |          1365.05 |       2540.05 |
+| Paidiatriko     |           2026 | Ο03Α     | Ανασφάλιστος       |                1 |          837.00 |          1646.32 |       2483.32 |
+| Paidiatriko     |           2026 | Χ45Α     | Ιδιωτική Ασφάλεια  |                1 |          965.00 |          1448.48 |       2413.48 |
+| Paidiatriko     |           2026 | Ν25Α     | Ιδιωτική Ασφάλεια  |                1 |          482.00 |          1874.81 |       2356.81 |
+| Paidiatriko     |           2026 | Φ64Χ     | ΕΦΚΑ               |                1 |          303.00 |          1980.00 |       2283.00 |
+| Paidiatriko     |           2026 | Μ25Χ     | Ιδιωτική Ασφάλεια  |                1 |         1260.00 |           998.20 |       2258.20 |
+| Paidiatriko     |           2026 | Α21Μ     | Ιδιωτική Ασφάλεια  |                1 |         2187.00 |             0.00 |       2187.00 |
+| Paidiatriko     |           2026 | Κ35Χ     | Ιδιωτική Ασφάλεια  |                1 |          521.00 |          1257.60 |       1778.60 |
+| Paidiatriko     |           2026 | Μ68Μ     | ΕΦΚΑ               |                1 |         1712.00 |             0.00 |       1712.00 |
+| Paidiatriko     |           2026 | Υ27Μ     | Ιδιωτική Ασφάλεια  |                1 |         1673.00 |             0.00 |       1673.00 |
+| Paidiatriko     |           2026 | Χ40Α     | ΕΦΚΑ               |                1 |          140.00 |          1316.92 |       1456.92 |
+| Paidiatriko     |           2026 | Μ78Χ     | Ιδιωτική Ασφάλεια  |                1 |          475.00 |           795.04 |       1270.04 |
+| Paidiatriko     |           2026 | Ν24Χ     | Ιδιωτική Ασφάλεια  |                1 |         1159.00 |             0.00 |       1159.00 |
+| Paidiatriko     |           2026 | Γ21Α     | Ιδιωτική Ασφάλεια  |                1 |          475.00 |           465.04 |        940.04 |
+| Paidiatriko     |           2026 | Ο21Μ     | ΕΦΚΑ               |                1 |          934.00 |             0.00 |        934.00 |
+| Paidiatriko     |           2026 | Μ30Α     | ΕΦΚΑ               |                1 |          891.00 |             0.00 |        891.00 |
+| Paidiatriko     |           2026 | Τ27Χ     | Ιδιωτική Ασφάλεια  |                1 |          428.00 |           209.48 |        637.48 |
+| Pathologiko     |           2026 | Ε05Α     | Ανασφάλιστος       |                1 |        34279.00 |             0.00 |      34279.00 |
+| Pathologiko     |           2026 | Τ02Α     | ΕΦΚΑ               |                1 |        20279.00 |             0.00 |      20279.00 |
+| Pathologiko     |           2026 | Κ07Μα    | Ιδιωτική Ασφάλεια  |                1 |        10554.00 |             0.00 |      10554.00 |
+| Pathologiko     |           2026 | Φ02Μ     | Ιδιωτική Ασφάλεια  |                1 |         9426.00 |           583.70 |      10009.70 |
+| Pathologiko     |           2026 | Ω06Α     | ΕΦΚΑ               |                1 |         1125.00 |          6379.12 |       7504.12 |
+| Pathologiko     |           2026 | Τ23Α     | ΕΦΚΑ               |                1 |         7359.00 |             0.00 |       7359.00 |
+| Pathologiko     |           2026 | Κ30Μ     | Ιδιωτική Ασφάλεια  |                1 |         6295.00 |             0.00 |       6295.00 |
+| Pathologiko     |           2026 | Ο22Α     | ΕΦΚΑ               |                1 |          327.00 |          5943.89 |       6270.89 |
+| Pathologiko     |           2026 | Κ10Χ     | ΕΦΚΑ               |                1 |         2724.00 |          3293.40 |       6017.40 |
+| Pathologiko     |           2026 | Μ07Α     | ΕΦΚΑ               |                1 |         5235.00 |             0.00 |       5235.00 |
+| Pathologiko     |           2026 | Β06Χ     | ΕΦΚΑ               |                1 |         1659.00 |          2904.00 |       4563.00 |
+| Pathologiko     |           2026 | Θ04Χ     | Ιδιωτική Ασφάλεια  |                1 |         2848.00 |           864.12 |       3712.12 |
+| Pathologiko     |           2026 | Ξ02Χ     | Ιδιωτική Ασφάλεια  |                1 |          781.00 |          2747.30 |       3528.30 |
+| Pathologiko     |           2026 | Θ05Μ     | Ιδιωτική Ασφάλεια  |                1 |         2587.00 |           791.70 |       3378.70 |
+| Pathologiko     |           2026 | Κ32Α     | ΕΦΚΑ               |                1 |         1043.00 |          2328.57 |       3371.57 |
+| Pathologiko     |           2026 | Χ45Α     | ΕΦΚΑ               |                1 |          965.00 |          1975.20 |       2940.20 |
+| Pathologiko     |           2026 | Α02Χ     | Ιδιωτική Ασφάλεια  |                1 |          683.00 |          2219.10 |       2902.10 |
+| Pathologiko     |           2026 | Δ24Χ     | Ιδιωτική Ασφάλεια  |                1 |          802.00 |          1926.72 |       2728.72 |
+| Pathologiko     |           2026 | Μ10Χ     | ΕΦΚΑ               |                1 |         1908.00 |           572.04 |       2480.04 |
+| Pathologiko     |           2026 | Ν82Μβ    | ΕΦΚΑ               |                1 |         2475.00 |             0.00 |       2475.00 |
+| Pathologiko     |           2026 | Λ21Α     | Ιδιωτική Ασφάλεια  |                1 |          420.00 |          2043.60 |       2463.60 |
+| Pathologiko     |           2026 | Χ47Α     | ΕΦΚΑ               |                1 |         1214.00 |          1002.00 |       2216.00 |
+| Pathologiko     |           2026 | Γ20Μ     | ΕΦΚΑ               |                1 |         1969.00 |           137.42 |       2106.42 |
+| Pathologiko     |           2026 | Κ31Μ     | ΕΦΚΑ               |                1 |         2038.00 |             0.00 |       2038.00 |
+| Pathologiko     |           2026 | Η42Μ     | ΕΦΚΑ               |                1 |         1938.00 |             0.00 |       1938.00 |
+| Pathologiko     |           2026 | Σ20Χ     | Ιδιωτική Ασφάλεια  |                1 |          988.00 |           867.79 |       1855.79 |
+| Pathologiko     |           2026 | Ν41Μ     | Ανασφάλιστος       |                1 |         1837.00 |             0.00 |       1837.00 |
+| Pathologiko     |           2026 | Α25Μ     | Ιδιωτική Ασφάλεια  |                1 |         1766.00 |             0.00 |       1766.00 |
+| Pathologiko     |           2026 | Μ18Α     | Ιδιωτική Ασφάλεια  |                1 |          743.00 |          1020.76 |       1763.76 |
+| Pathologiko     |           2026 | Γ07Α     | ΕΦΚΑ               |                1 |          742.00 |           783.78 |       1525.78 |
+| Pathologiko     |           2026 | Σ22Χ     | Ανασφάλιστος       |                1 |          638.00 |           780.30 |       1418.30 |
+| Pathologiko     |           2026 | Μ23Α     | Ιδιωτική Ασφάλεια  |                1 |          661.00 |             0.00 |        661.00 |
+| Pathologiko     |           2026 | Π50Χ     | Ιδιωτική Ασφάλεια  |                1 |          374.00 |             0.00 |        374.00 |
+| Pnevmonologiko  |           2026 | Κ03Χ     | Ιδιωτική Ασφάλεια  |                1 |        11734.00 |             0.00 |      11734.00 |
+| Pnevmonologiko  |           2026 | Ε11Μ     | Ανασφάλιστος       |                1 |        10704.00 |           418.35 |      11122.35 |
+| Pnevmonologiko  |           2026 | Μ01Χ     | ΕΦΚΑ               |                1 |         9606.00 |           195.78 |       9801.78 |
+| Pnevmonologiko  |           2026 | Τ23Α     | ΕΦΚΑ               |                1 |         7359.00 |             0.00 |       7359.00 |
+| Pnevmonologiko  |           2026 | Ν02Χ     | ΕΦΚΑ               |                1 |         3836.00 |          3377.28 |       7213.28 |
+| Pnevmonologiko  |           2026 | Ρ10Μα    | Ανασφάλιστος       |                1 |         7118.00 |             0.00 |       7118.00 |
+| Pnevmonologiko  |           2026 | Α30Μ     | Ιδιωτική Ασφάλεια  |                1 |         1331.00 |          5199.40 |       6530.40 |
+| Pnevmonologiko  |           2026 | Ν36Μ     | Ιδιωτική Ασφάλεια  |                1 |         1486.00 |          4144.84 |       5630.84 |
+| Pnevmonologiko  |           2026 | Ν21Μ     | Ιδιωτική Ασφάλεια  |                1 |         4960.00 |             0.00 |       4960.00 |
+| Pnevmonologiko  |           2026 | Ν05Α     | ΕΦΚΑ               |                1 |          439.00 |          3520.61 |       3959.61 |
+| Pnevmonologiko  |           2026 | Ω04Χ     | ΕΦΚΑ               |                1 |         1934.00 |          1777.90 |       3711.90 |
+| Pnevmonologiko  |           2026 | Μ68Μ     | Ιδιωτική Ασφάλεια  |                1 |         1712.00 |          1842.28 |       3554.28 |
+| Pnevmonologiko  |           2026 | Κ14Μβ    | ΕΦΚΑ               |                1 |         1991.00 |          1560.78 |       3551.78 |
+| Pnevmonologiko  |           2026 | Ρ23Α     | ΕΦΚΑ               |                1 |          428.00 |          2902.44 |       3330.44 |
+| Pnevmonologiko  |           2026 | Ν24Χ     | Ιδιωτική Ασφάλεια  |                1 |         1159.00 |          2041.04 |       3200.04 |
+| Pnevmonologiko  |           2026 | Υ04Χα    | ΕΦΚΑ               |                1 |         2361.00 |           781.05 |       3142.05 |
+| Pnevmonologiko  |           2026 | Ζ21Α     | ΕΦΚΑ               |                1 |          848.00 |          2123.10 |       2971.10 |
+| Pnevmonologiko  |           2026 | Π40Χ     | Ιδιωτική Ασφάλεια  |                1 |          677.00 |          2155.14 |       2832.14 |
+| Pnevmonologiko  |           2026 | Π27Α     | Ιδιωτική Ασφάλεια  |                1 |          265.00 |          2564.30 |       2829.30 |
+| Pnevmonologiko  |           2026 | Β02Χ     | Ιδιωτική Ασφάλεια  |                1 |         1007.00 |          1699.26 |       2706.26 |
+| Pnevmonologiko  |           2026 | Μ72Μ     | Ιδιωτική Ασφάλεια  |                1 |         1681.00 |           929.12 |       2610.12 |
+| Pnevmonologiko  |           2026 | Ν82Μβ    | ΕΦΚΑ               |                1 |         2475.00 |            99.26 |       2574.26 |
+| Pnevmonologiko  |           2026 | Γ07Α     | Ιδιωτική Ασφάλεια  |                1 |          742.00 |          1828.82 |       2570.82 |
+| Pnevmonologiko  |           2026 | Φ24Χ     | ΕΦΚΑ               |                1 |          934.00 |          1307.20 |       2241.20 |
+| Pnevmonologiko  |           2026 | Ω37Α     | ΕΦΚΑ               |                1 |          254.00 |          1900.71 |       2154.71 |
+| Pnevmonologiko  |           2026 | Υ27Μ     | ΕΦΚΑ               |                1 |         1673.00 |             0.00 |       1673.00 |
+| Pnevmonologiko  |           2026 | Μ77Χ     | ΕΦΚΑ               |                1 |         1058.00 |           584.19 |       1642.19 |
+| Pnevmonologiko  |           2026 | Κ35Μ     | ΕΦΚΑ               |                1 |         1502.00 |             0.00 |       1502.00 |
+| Pnevmonologiko  |           2026 | Ρ10Χ     | Ανασφάλιστος       |                1 |         1473.00 |             0.00 |       1473.00 |
+| Pnevmonologiko  |           2026 | Π46Α     | ΕΦΚΑ               |                1 |          327.00 |          1109.68 |       1436.68 |
+| Pnevmonologiko  |           2026 | Α34Μβ    | ΕΦΚΑ               |                1 |         1393.00 |             0.00 |       1393.00 |
+| Pnevmonologiko  |           2026 | Ω03Α     | ΕΦΚΑ               |                1 |         1281.00 |             0.00 |       1281.00 |
+| Pnevmonologiko  |           2026 | Ρ22Μ     | Ιδιωτική Ασφάλεια  |                1 |         1105.00 |             0.00 |       1105.00 |
+| Pnevmonologiko  |           2026 | Α33Μβ    | Ιδιωτική Ασφάλεια  |                1 |         1043.00 |             0.00 |       1043.00 |
+| Pnevmonologiko  |           2026 | Α27Χ     | ΕΦΚΑ               |                1 |          350.00 |           645.92 |        995.92 |
+| Pnevmonologiko  |           2026 | Π07Χ     | ΕΦΚΑ               |                1 |          983.00 |             0.00 |        983.00 |
+| Pnevmonologiko  |           2026 | S24Μ     | ΕΦΚΑ               |                1 |          770.00 |             0.00 |        770.00 |
+| Psychiatriko    |           2026 | Ε04Α     | ΕΦΚΑ               |                1 |        30015.00 |             0.00 |      30015.00 |
+| Psychiatriko    |           2026 | Σ03Χ     | Ιδιωτική Ασφάλεια  |                1 |         1099.00 |          5266.60 |       6365.60 |
+| Psychiatriko    |           2026 | Ν01Χ     | ΕΦΚΑ               |                1 |         1980.00 |          4298.88 |       6278.88 |
+| Psychiatriko    |           2026 | Ω02Μα    | Ανασφάλιστος       |                1 |         5420.00 |           739.32 |       6159.32 |
+| Psychiatriko    |           2026 | Μ12Μα    | Ιδιωτική Ασφάλεια  |                1 |         5478.00 |             0.00 |       5478.00 |
+| Psychiatriko    |           2026 | Μ28Χ     | Ιδιωτική Ασφάλεια  |                1 |         1379.00 |          3781.57 |       5160.57 |
+| Psychiatriko    |           2026 | Ν21Μ     | Ιδιωτική Ασφάλεια  |                1 |         4960.00 |             0.00 |       4960.00 |
+| Psychiatriko    |           2026 | Μ30Α     | ΕΦΚΑ               |                1 |          891.00 |          3902.72 |       4793.72 |
+| Psychiatriko    |           2026 | Θ01Χ     | ΕΦΚΑ               |                1 |         2801.00 |          1564.83 |       4365.83 |
+| Psychiatriko    |           2026 | Μ29Α     | ΕΦΚΑ               |                1 |         1903.00 |          2250.60 |       4153.60 |
+| Psychiatriko    |           2026 | Φ22Μ     | Ιδιωτική Ασφάλεια  |                1 |         2357.00 |          1314.48 |       3671.48 |
+| Psychiatriko    |           2026 | Α21Μ     | ΕΦΚΑ               |                1 |         2187.00 |          1325.45 |       3512.45 |
+| Psychiatriko    |           2026 | Λ02Μ     | Ιδιωτική Ασφάλεια  |                1 |         1743.00 |          1717.82 |       3460.82 |
+| Psychiatriko    |           2026 | Χ41Α     | ΕΦΚΑ               |                1 |         3066.00 |             0.00 |       3066.00 |
+| Psychiatriko    |           2026 | Ο20Χ     | ΕΦΚΑ               |                1 |         1035.00 |          1870.20 |       2905.20 |
+| Psychiatriko    |           2026 | Ω30Χ     | Ιδιωτική Ασφάλεια  |                1 |          545.00 |          2041.60 |       2586.60 |
+| Psychiatriko    |           2026 | Λ02Μ     | Ανασφάλιστος       |                1 |         1743.00 |           792.84 |       2535.84 |
+| Psychiatriko    |           2026 | S23Μ     | Ιδιωτική Ασφάλεια  |                1 |         2039.00 |           448.24 |       2487.24 |
+| Psychiatriko    |           2026 | Ο03Α     | Ιδιωτική Ασφάλεια  |                1 |          837.00 |          1440.53 |       2277.53 |
+| Psychiatriko    |           2026 | Δ28Μ     | ΕΦΚΑ               |                1 |         1969.00 |             0.00 |       1969.00 |
+| Psychiatriko    |           2026 | Α33Μβ    | ΕΦΚΑ               |                1 |         1043.00 |           913.56 |       1956.56 |
+| Psychiatriko    |           2026 | Ν21Χ     | ΕΦΚΑ               |                1 |         1885.00 |             0.00 |       1885.00 |
+| Psychiatriko    |           2026 | Π44Χ     | Ιδιωτική Ασφάλεια  |                1 |         1073.00 |           520.74 |       1593.74 |
+| Psychiatriko    |           2026 | Κ42Χ     | Ιδιωτική Ασφάλεια  |                1 |          934.00 |           519.84 |       1453.84 |
+| Psychiatriko    |           2026 | Δ06Α     | Ιδιωτική Ασφάλεια  |                1 |         1383.00 |             0.00 |       1383.00 |
+| Psychiatriko    |           2026 | Ο11Α     | ΕΦΚΑ               |                1 |          639.00 |           707.12 |       1346.12 |
+| Psychiatriko    |           2026 | Η41Χ     | Ιδιωτική Ασφάλεια  |                1 |          872.00 |           326.88 |       1198.88 |
+| Psychiatriko    |           2026 | Κ31Χ     | Ιδιωτική Ασφάλεια  |                1 |         1183.00 |             0.00 |       1183.00 |
+| Psychiatriko    |           2026 | Β22Α     | Ιδιωτική Ασφάλεια  |                1 |          545.00 |           581.24 |       1126.24 |
+| Psychiatriko    |           2026 | Γ11Α     | Ιδιωτική Ασφάλεια  |                1 |          729.00 |             0.00 |        729.00 |
+| Psychiatriko    |           2026 | S01Α     | ΕΦΚΑ               |                1 |          540.00 |             0.00 |        540.00 |
+| Psychiatriko    |           2026 | Μ63Χ     | Ιδιωτική Ασφάλεια  |                1 |          444.00 |             0.00 |        444.00 |
+| Revmatologiko   |           2026 | Μ04Χ     | Ιδιωτική Ασφάλεια  |                1 |         6611.00 |          3836.69 |      10447.69 |
+| Revmatologiko   |           2026 | Μ02Μ     | Ιδιωτική Ασφάλεια  |                1 |         9110.00 |             0.00 |       9110.00 |
+| Revmatologiko   |           2026 | Ζ02Μ     | ΕΦΚΑ               |                1 |         7225.00 |          1059.55 |       8284.55 |
+| Revmatologiko   |           2026 | Θ01Μ     | ΕΦΚΑ               |                1 |         6202.00 |             0.00 |       6202.00 |
+| Revmatologiko   |           2026 | Κ12Μ     | Ιδιωτική Ασφάλεια  |                1 |         5465.00 |           514.23 |       5979.23 |
+| Revmatologiko   |           2026 | Η01Χ     | ΕΦΚΑ               |                1 |         3682.00 |          1970.76 |       5652.76 |
+| Revmatologiko   |           2026 | Μ07Α     | ΕΦΚΑ               |                1 |         5235.00 |             0.00 |       5235.00 |
+| Revmatologiko   |           2026 | Α36Α     | Ιδιωτική Ασφάλεια  |                2 |         4824.00 |             0.00 |       4824.00 |
+| Revmatologiko   |           2026 | Ω03Α     | Ιδιωτική Ασφάλεια  |                1 |         1281.00 |          3369.45 |       4650.45 |
+| Revmatologiko   |           2026 | Ν41Χ     | Ιδιωτική Ασφάλεια  |                1 |          693.00 |          3705.91 |       4398.91 |
+| Revmatologiko   |           2026 | Ο17Α     | Ιδιωτική Ασφάλεια  |                1 |         2423.00 |          1737.48 |       4160.48 |
+| Revmatologiko   |           2026 | Τ25Μβ    | Ανασφάλιστος       |                1 |         4145.00 |             0.00 |       4145.00 |
+| Revmatologiko   |           2026 | Ε08Χ     | ΕΦΚΑ               |                1 |         3683.00 |             0.00 |       3683.00 |
+| Revmatologiko   |           2026 | S01Μ     | Ιδιωτική Ασφάλεια  |                1 |         2413.00 |           652.30 |       3065.30 |
+| Revmatologiko   |           2026 | Μ69Μ     | ΕΦΚΑ               |                1 |         1533.00 |          1327.48 |       2860.48 |
+| Revmatologiko   |           2026 | Θ05Χ     | Ιδιωτική Ασφάλεια  |                1 |         1218.00 |          1421.64 |       2639.64 |
+| Revmatologiko   |           2026 | Ρ23Α     | Ανασφάλιστος       |                1 |          428.00 |          2176.83 |       2604.83 |
+| Revmatologiko   |           2026 | Ο15Α     | Ιδιωτική Ασφάλεια  |                1 |         1026.00 |          1508.80 |       2534.80 |
+| Revmatologiko   |           2026 | Ν01Χ     | Ιδιωτική Ασφάλεια  |                1 |         1980.00 |           537.36 |       2517.36 |
+| Revmatologiko   |           2026 | Υ06Μ     | ΕΦΚΑ               |                1 |         2381.00 |             0.00 |       2381.00 |
+| Revmatologiko   |           2026 | Ν38Μ     | Ιδιωτική Ασφάλεια  |                1 |         2327.00 |             0.00 |       2327.00 |
+| Revmatologiko   |           2026 | Κ15Χ     | Ιδιωτική Ασφάλεια  |                1 |         2013.00 |             0.00 |       2013.00 |
+| Revmatologiko   |           2026 | Φ64Χ     | Ιδιωτική Ασφάλεια  |                1 |          303.00 |          1188.00 |       1491.00 |
+| Revmatologiko   |           2026 | Ν05Α     | Ιδιωτική Ασφάλεια  |                1 |          439.00 |           765.35 |       1204.35 |
+| Revmatologiko   |           2026 | Δ22Μ     | Ιδιωτική Ασφάλεια  |                1 |          965.00 |             0.00 |        965.00 |
+| Revmatologiko   |           2026 | S20Α     | Ιδιωτική Ασφάλεια  |                1 |          934.00 |             0.00 |        934.00 |
+| Revmatologiko   |           2026 | Η41Χ     | Ιδιωτική Ασφάλεια  |                1 |          872.00 |             0.00 |        872.00 |
+| Revmatologiko   |           2026 | Ξ20Χα    | Ιδιωτική Ασφάλεια  |                1 |          786.00 |             0.00 |        786.00 |
+| Revmatologiko   |           2026 | Υ08Χ     | Ιδιωτική Ασφάλεια  |                1 |          631.00 |             0.00 |        631.00 |
+| Revmatologiko   |           2026 | Κ45Χ     | ΕΦΚΑ               |                1 |          521.00 |             0.00 |        521.00 |
+| Revmatologiko   |           2026 | Α27Χ     | Ιδιωτική Ασφάλεια  |                1 |          350.00 |           161.48 |        511.48 |
+| Revmatologiko   |           2026 | Κ37Χ     | Ιδιωτική Ασφάλεια  |                1 |          459.00 |             0.00 |        459.00 |
+| Revmatologiko   |           2026 | Υ25Χ     | ΕΦΚΑ               |                1 |          405.00 |             0.00 |        405.00 |
+| Revmatologiko   |           2026 | Ζ22Χ     | Ιδιωτική Ασφάλεια  |                1 |          397.00 |             0.00 |        397.00 |
+| Gynaikologiko   |           2025 | Θ05Χ     | Ιδιωτική Ασφάλεια  |                4 |         4872.00 |             0.00 |       4872.00 |
+| Gynaikologiko   |           2025 | Θ05Χ     | ΕΦΚΑ               |                2 |         2436.00 |             0.00 |       2436.00 |
+| Kardiologiko    |           2025 | Κ32Μ     | ΕΦΚΑ               |              300 |       618600.00 |             0.00 |     618600.00 |
+| Gynaikologiko   |           2024 | Θ05Χ     | Ιδιωτική Ασφάλεια  |                4 |         4872.00 |             0.00 |       4872.00 |
+| Gynaikologiko   |           2024 | Θ05Χ     | ΕΦΚΑ               |                2 |         2436.00 |             0.00 |       2436.00 |
 +-----------------+----------------+----------+--------------------+------------------+-----------------+------------------+---------------+
