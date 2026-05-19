@@ -1310,67 +1310,36 @@ DELIMITER ;
 -- ============================================================
 -- ΕΥΡΕΤΗΡΙΑ (INDEXES)
 -- ============================================================
--- Κατηγορία Α: FK στήλες — επιταχύνουν JOINs και τα triggers
---              που εκτελούν αναζητήσεις μέσω FK.
--- Κατηγορία Β: Στήλες φίλτρου / ταξινόμησης — WHERE, ORDER BY,
---              GROUP BY στα ερωτήματα Q01–Q15.
--- Σημ.: Για σύνθετα PKs (staff_amka, shift_id) η 2η στήλη ΔΕΝ
---       καλύπτεται από το PK index και χρειάζεται δικό της index.
+-- Ορίζονται μόνο για στήλες που ΔΕΝ αποκτούν αυτόματα index από
+-- τη MySQL. Οι FK στήλες δεν χρειάζονται ρητό ορισμό γιατί η
+-- MySQL δημιουργεί index γι' αυτές αυτόματα κατά τη δήλωση του
+-- FOREIGN KEY constraint.
 -- ============================================================
 
--- admissions (κεντρικός πίνακας — Q01, Q03, Q06, Q09, Q14)
-CREATE INDEX idx_adm_patient   ON admissions(patient_amka);               -- Q01 Q03 Q06 Q09: JOIN patients
-CREATE INDEX idx_adm_dept      ON admissions(department_id);              -- Q01 Q03: JOIN departments
-CREATE INDEX idx_adm_diag_in   ON admissions(admission_diagnosis_code);   -- Q06 Q14: JOIN icd10
-CREATE INDEX idx_adm_diag_out  ON admissions(discharge_diagnosis_code);   -- Q06: LEFT JOIN icd10
-CREATE INDEX idx_adm_date      ON admissions(admission_date);             -- Q01: YEAR(), Q06: ORDER BY, Q09 Q14: WHERE YEAR()
+-- admissions: admission_date δεν είναι FK — χρειάζεται ρητό index
+CREATE INDEX idx_adm_date        ON admissions(admission_date);
+-- Q01: WHERE YEAR(admission_date), Q06: ORDER BY admission_date, Q09 Q14: WHERE YEAR(admission_date)
 
--- doctors
-CREATE INDEX idx_doc_specialty  ON doctors(specialty);                    -- Q02: JOIN specialties WHERE name=?, Q05: JOIN
-CREATE INDEX idx_doc_supervisor ON doctors(supervisor_amka);              -- Q13: recursive CTE self-join
+-- procedure_executions: start_time δεν είναι FK — χρειάζεται ρητό index
+CREATE INDEX idx_pe_start_time   ON procedure_executions(start_time);
+-- Q11: WHERE YEAR(start_time) = 2025
 
--- nurses / admin_staff
-CREATE INDEX idx_nurses_dept    ON nurses(dept_id);                       -- Q08: LEFT JOIN departments
-CREATE INDEX idx_admin_dept     ON admin_staff(dept_id);                  -- Q08: LEFT JOIN departments
+-- shifts: shift_date δεν είναι FK — το UNIQUE(dept_id, shift_date, shift_slot) δεν καλύπτει αναζητήσεις μόνο με shift_date
+CREATE INDEX idx_shifts_date     ON shifts(shift_date);
+-- Q08: WHERE shift_date = ?, Q12: WHERE shift_date BETWEEN
 
--- procedure_executions
-CREATE INDEX idx_pe_admission   ON procedure_executions(admission_id);    -- Q05 (indirect JOIN)
-CREATE INDEX idx_pe_doctor      ON procedure_executions(main_doctor_amka);-- Q02 Q05 Q11: subquery / JOIN
-CREATE INDEX idx_pe_procedure   ON procedure_executions(procedure_code);  -- Q05: JOIN medical_procedures
-CREATE INDEX idx_pe_start_time  ON procedure_executions(start_time);      -- Q11: WHERE YEAR(start_time)
+-- triages: triage_time δεν είναι FK — χρειάζεται ρητό index
+CREATE INDEX idx_triage_time     ON triages(triage_time);
+-- Q15: WHERE triage_time IS NOT NULL
 
--- lab_exams
-CREATE INDEX idx_le_admission   ON lab_exams(admission_id);               -- Q06: LEFT JOIN admissions
+-- icd10: category δεν είναι FK — χρειάζεται ρητό index
+CREATE INDEX idx_icd10_category  ON icd10(category);
+-- Q14: GROUP BY category
 
--- prescriptions
-CREATE INDEX idx_presc_admission ON prescriptions(admission_id);          -- Q06 Q10: JOIN admissions
-CREATE INDEX idx_presc_drug      ON prescriptions(drug_id);               -- Q06 Q10: JOIN drugs
-
--- drug_contains_substances: PK=(drug_id, substance_id) — substance_id ΔΕΝ καλύπτεται από το PK
-CREATE INDEX idx_dcs_substance   ON drug_contains_substances(substance_id); -- Q07 Q10: JOIN active_substances
-
--- patient_allergies: PK=(patient_amka, substance_id) — substance_id ΔΕΝ καλύπτεται από το PK
-CREATE INDEX idx_pa_substance    ON patient_allergies(substance_id);      -- Q07: LEFT JOIN active_substances
-
--- doctor_ratings: UNIQUE(admission_id, doctor_amka) καλύπτει ήδη το admission_id
-CREATE INDEX idx_dr_doctor       ON doctor_ratings(doctor_amka);          -- Q04: JOIN doctors
-
--- shifts
-CREATE INDEX idx_shifts_dept     ON shifts(dept_id);                      -- Q12 Q15: JOIN departments
-CREATE INDEX idx_shifts_date     ON shifts(shift_date);                   -- Q08 Q12: WHERE BETWEEN
-
--- shift_staffing: PK=(staff_amka, shift_id) — shift_id ΔΕΝ καλύπτεται από το PK
-CREATE INDEX idx_ss_shift        ON shift_staffing(shift_id);             -- Q02 Q08 Q12: JOIN shifts
-
--- triages (admission_id καλύπτεται ήδη από UNIQUE constraint)
-CREATE INDEX idx_triage_urgency  ON triages(urgency_level);               -- Q15: GROUP BY urgency_level
-CREATE INDEX idx_triage_time     ON triages(triage_time);                 -- Q15: WHERE triage_time IS NOT NULL
-
--- icd10
-CREATE INDEX idx_icd10_category  ON icd10(category);                      -- Q14: GROUP BY category
-
--- Στήλες φίλτρου (WHERE)
-CREATE INDEX idx_staff_last_name    ON staff(last_name);                  -- Q04: WHERE last_name = 'Alexiou'
-CREATE INDEX idx_patients_last_name ON patients(last_name);               -- Q06: WHERE last_name = 'Papadopoulos'
-CREATE INDEX idx_patients_dob       ON patients(date_of_birth);           -- Q05: WHERE age < 35 (age είναι virtual col από dob)
-CREATE INDEX idx_med_proc_category  ON medical_procedures(category);      -- Q05: WHERE category = 'χειρουργική'
+-- staff / patients: στήλες φίλτρου WHERE, όχι FK
+CREATE INDEX idx_staff_last_name    ON staff(last_name);
+-- Q04: WHERE last_name = ?
+CREATE INDEX idx_patients_last_name ON patients(last_name);
+-- Q06: WHERE last_name = ?
+CREATE INDEX idx_patients_dob       ON patients(date_of_birth);
+-- Q05: WHERE age < 35 (το age είναι virtual column υπολογισμένο από date_of_birth)
