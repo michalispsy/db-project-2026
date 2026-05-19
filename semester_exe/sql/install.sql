@@ -1270,7 +1270,7 @@ BEGIN
     END IF;
 END//
 
-CREATE TRIGGER trg_protect_locked_shifts_trigger
+CREATE TRIGGER protect_locked_shifts_trigger
 BEFORE INSERT ON shift_staffing
 FOR EACH ROW
 BEGIN
@@ -1286,7 +1286,7 @@ BEGIN
     END IF;
 END//
 
-CREATE TRIGGER trg_protect_locked_shifts_delete_trigger
+CREATE TRIGGER protect_locked_shifts_delete_trigger
 BEFORE DELETE ON shift_staffing
 FOR EACH ROW
 BEGIN
