@@ -1,4 +1,4 @@
--- Q06: Ιστορικό νοσηλειών συγκεκριμένου ασθενή με διαγνώσεις, συνταγογραφήσεις και εξετάσεις
+-- Q06: Ιστορικό νοσηλειών συγκεκριμένου ασθενή με διαγνώσεις, συνταγογραφήσεις, κόστος, εξετάσεις και μέσο όρο αξιολόγησης
 SELECT
     p.AMKA,
     p.first_name,
@@ -13,7 +13,8 @@ SELECT
     d.name                                              AS department,
     CONCAT(i1.icd10_code, ' — ', i1.description)       AS admission_diagnosis,
     CONCAT(i2.icd10_code, ' — ', i2.description)       AS discharge_diagnosis,
-    a.base_cost + a.extra_cost                          AS total_cost,
+    a.total_cost,
+    ROUND((ar.nursing_quality + ar.cleanliness + ar.food + ar.overall) / 4.0, 2) AS avg_admission_rating,
     GROUP_CONCAT(
         DISTINCT dr.name
         ORDER BY dr.name
@@ -29,6 +30,7 @@ JOIN admissions a    ON p.AMKA              = a.patient_AMKA
 JOIN departments d   ON a.department_id     = d.dept_id
 JOIN icd10 i1        ON a.admission_diagnosis_code  = i1.icd10_code
 LEFT JOIN icd10 i2   ON a.discharge_diagnosis_code  = i2.icd10_code
+LEFT JOIN admission_ratings ar  ON a.admission_id   = ar.admission_id
 LEFT JOIN prescriptions pr  ON a.admission_id = pr.admission_id
 LEFT JOIN drugs dr          ON pr.drug_id     = dr.drug_id
 LEFT JOIN lab_exams le      ON a.admission_id = le.admission_id
@@ -36,5 +38,6 @@ LEFT JOIN exam_types et     ON le.exam_code   = et.exam_code
 WHERE p.last_name = 'Papadopoulos'
 GROUP BY a.admission_id, p.first_name, p.last_name, p.AMKA,
          a.admission_date, a.discharge_date, a.base_cost, a.extra_cost,
-         d.name, i1.icd10_code, i1.description, i2.icd10_code, i2.description
+         d.name, i1.icd10_code, i1.description, i2.icd10_code, i2.description,
+         ar.nursing_quality, ar.cleanliness, ar.food, ar.overall
 ORDER BY a.admission_date DESC;

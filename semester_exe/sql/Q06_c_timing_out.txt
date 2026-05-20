@@ -1,0 +1,52 @@
++----------+------------+----------------------------------------------------------------------------+
+| Query_ID |   Duration | Query                                                                      |
++----------+------------+----------------------------------------------------------------------------+
+|        1 | 0.01532406 | -- Έκδοση 1: χωρίς index                                                   |
+|          |            | DROP INDEX IF EXISTS idx_patients_last_name ON patients                    |
+|        2 | 0.00420952 | SELECT                                                                     |
+|          |            |     p.AMKA,                                                                |
+|          |            |     p.first_name,                                                          |
+|          |            |     p.last_name,                                                           |
+|          |            |     a.admission_id,                                                        |
+|          |            |     DATE_FORMAT(a.admission_date, '%Y-%m-%d')           AS admission_date, |
+|          |            |     DATE_FORMAT(a.discharge_date, '%Y-%m-%d')           AS discharge_date, |
+|          |            |     DATEDIFF(                                                              |
+|          |            |         COALESCE(a.discharge_date, CURDATE()),                             |
+|          |            |         a.admis                                                            |
+|        3 | 0.03478919 | -- Έκδοση 2: με FORCE INDEX                                                |
+|          |            | CREATE INDEX IF NOT EXISTS idx_patients_last_name ON patients(last_name)   |
+|        4 | 0.01034868 | SELECT                                                                     |
+|          |            |     p.AMKA,                                                                |
+|          |            |     p.first_name,                                                          |
+|          |            |     p.last_name,                                                           |
+|          |            |     a.admission_id,                                                        |
+|          |            |     DATE_FORMAT(a.admission_date, '%Y-%m-%d')           AS admission_date, |
+|          |            |     DATE_FORMAT(a.discharge_date, '%Y-%m-%d')           AS discharge_date, |
+|          |            |     DATEDIFF(                                                              |
+|          |            |         COALESCE(a.discharge_date, CURDATE()),                             |
+|          |            |         a.admis                                                            |
+|        5 | 0.03200628 | -- Έκδοση 1: χωρίς index                                                   |
+|          |            | DROP INDEX IF EXISTS idx_patients_last_name ON patients                    |
+|        6 | 0.00480941 | SELECT                                                                     |
+|          |            |     p.AMKA,                                                                |
+|          |            |     p.first_name,                                                          |
+|          |            |     p.last_name,                                                           |
+|          |            |     a.admission_id,                                                        |
+|          |            |     DATE_FORMAT(a.admission_date, '%Y-%m-%d')           AS admission_date, |
+|          |            |     DATE_FORMAT(a.discharge_date, '%Y-%m-%d')           AS discharge_date, |
+|          |            |     DATEDIFF(                                                              |
+|          |            |         COALESCE(a.discharge_date, CURDATE()),                             |
+|          |            |         a.admis                                                            |
+|        7 |  0.0202304 | -- Έκδοση 2: με FORCE INDEX                                                |
+|          |            | CREATE INDEX IF NOT EXISTS idx_patients_last_name ON patients(last_name)   |
+|        8 | 0.00320397 | SELECT                                                                     |
+|          |            |     p.AMKA,                                                                |
+|          |            |     p.first_name,                                                          |
+|          |            |     p.last_name,                                                           |
+|          |            |     a.admission_id,                                                        |
+|          |            |     DATE_FORMAT(a.admission_date, '%Y-%m-%d')           AS admission_date, |
+|          |            |     DATE_FORMAT(a.discharge_date, '%Y-%m-%d')           AS discharge_date, |
+|          |            |     DATEDIFF(                                                              |
+|          |            |         COALESCE(a.discharge_date, CURDATE()),                             |
+|          |            |         a.admis                                                            |
++----------+------------+----------------------------------------------------------------------------+
