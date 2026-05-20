@@ -223,8 +223,8 @@ create table doctor_departments (
 );
 
 alter table departments
-    add constraint fk_dept_director foreign key (director_amka)
-        references doctors(amka) on delete set null;
+add constraint fk_dept_director foreign key (director_amka)
+references doctors(amka) on delete set null;
 
 create table admin_staff (
     amka char(11),
@@ -287,6 +287,7 @@ create table patient_emergency_contacts (
 create table ken_categories (
     category_letter varchar(2),
     description text not null,
+
     constraint pk_ken_cat primary key (category_letter)
 );
 
@@ -421,11 +422,7 @@ create table triages (
     constraint fk_triage_urgency foreign key (urgency_level) references urgency_levels(`level`),
     constraint fk_triage_outcome foreign key (outcome) references triage_outcomes(code),
     constraint uni_admission_id unique (admission_id),
-    constraint chk_triage_consistency check (
-        outcome is null or
-        (outcome = 'hospitalized' and admission_id is not null) or
-        (outcome = 'discharged'   and admission_id is null)
-    )
+    constraint chk_triage_consistency check ( outcome is null or (outcome = 'hospitalized' and admission_id is not null) or (outcome = 'discharged'   and admission_id is null))
 );
 
 create table active_substances (
@@ -1307,39 +1304,16 @@ DELIMITER ;
 
 -- Indexes
 
--- ============================================================
--- ΕΥΡΕΤΗΡΙΑ (INDEXES)
--- ============================================================
--- Ορίζονται μόνο για στήλες που ΔΕΝ αποκτούν αυτόματα index από
--- τη MySQL. Οι FK στήλες δεν χρειάζονται ρητό ορισμό γιατί η
--- MySQL δημιουργεί index γι' αυτές αυτόματα κατά τη δήλωση του
--- FOREIGN KEY constraint.
--- ============================================================
+CREATE INDEX idx_adm_date ON admissions(admission_date);
 
--- admissions: admission_date δεν είναι FK — χρειάζεται ρητό index
-CREATE INDEX idx_adm_date        ON admissions(admission_date);
--- Q01: WHERE YEAR(admission_date), Q06: ORDER BY admission_date, Q09 Q14: WHERE YEAR(admission_date)
+CREATE INDEX idx_pe_start_time ON procedure_executions(start_time);
 
--- procedure_executions: start_time δεν είναι FK — χρειάζεται ρητό index
-CREATE INDEX idx_pe_start_time   ON procedure_executions(start_time);
--- Q11: WHERE YEAR(start_time) = 2025
+CREATE INDEX idx_shifts_date ON shifts(shift_date);
 
--- shifts: shift_date δεν είναι FK — το UNIQUE(dept_id, shift_date, shift_slot) δεν καλύπτει αναζητήσεις μόνο με shift_date
-CREATE INDEX idx_shifts_date     ON shifts(shift_date);
--- Q08: WHERE shift_date = ?, Q12: WHERE shift_date BETWEEN
+CREATE INDEX idx_triage_time ON triages(triage_time);
 
--- triages: triage_time δεν είναι FK — χρειάζεται ρητό index
-CREATE INDEX idx_triage_time     ON triages(triage_time);
--- Q15: WHERE triage_time IS NOT NULL
+CREATE INDEX idx_icd10_category ON icd10(category);
 
--- icd10: category δεν είναι FK — χρειάζεται ρητό index
-CREATE INDEX idx_icd10_category  ON icd10(category);
--- Q14: GROUP BY category
-
--- staff / patients: στήλες φίλτρου WHERE, όχι FK
 CREATE INDEX idx_staff_last_name    ON staff(last_name);
--- Q04: WHERE last_name = ?
 CREATE INDEX idx_patients_last_name ON patients(last_name);
--- Q06: WHERE last_name = ?
 CREATE INDEX idx_patients_dob       ON patients(date_of_birth);
--- Q05: WHERE age < 35 (το age είναι virtual column υπολογισμένο από date_of_birth)
