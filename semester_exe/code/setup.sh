@@ -45,7 +45,6 @@ if [[ "$0" != "$TARGET_DIR/db" ]]; then
         fi
     fi
 
-    install_pkg git && \
     install_pkg mariadb-server mariadb && \
     {
         echo " * Registering db command to $TARGET_DIR" && \
@@ -98,12 +97,6 @@ else
 fi
 
 PROJECT_ROOT=$(find "$HOME" -name ".*" -prune -o -type d -path "*/db-project-2026/semester_exe" -printf '%h\n' -quit 2>/dev/null)
-
-if [ -z "$PROJECT_ROOT" ] || [ ! -d "$PROJECT_ROOT" ]; then
-    echo " * Project not found. Cloning"
-    git clone https://github.com/michalispsy/db-project-2026 || exit 1
-    PROJECT_ROOT="$(pwd)/db-project-2026"
-fi
 
 cd "$PROJECT_ROOT/semester_exe" || { echo "Dir not found"; exit 1; }
 
