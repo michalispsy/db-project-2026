@@ -579,8 +579,8 @@ create table operating_room_images (
     caption varchar(255),
     ordering int default 0,
 
-    constraint pk_doctor_images primary key (img_id),
-    constraint fk_doctor_img_relation foreign key (room_id) references operating_rooms(room_id) on delete cascade
+    constraint pk_oproom_images primary key (img_id),
+    constraint fk_oproom_img_relation foreign key (room_id) references operating_rooms(room_id) on delete cascade
 );
 
 -- Triggers για αυτοματοποιήσεις
