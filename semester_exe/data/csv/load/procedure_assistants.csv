@@ -8,45 +8,39 @@ execution_id,staff_AMKA,role
 3,15689109779,First Assistant
 4,41349096197,Circulating Nurse
 4,36759017791,First Assistant
-5,68576063494,Scrub Nurse
-5,05879052244,Scrub Nurse
-6,29591257349,First Assistant
-6,90093781460,First Assistant
-6,60742990747,Scrub Nurse
-7,51204850766,First Assistant
-7,79403664016,Scrub Nurse
-8,78824265594,Circulating Nurse
-8,30192209567,Anesthesiologist
-8,68576063494,Scrub Nurse
-9,17970566036,First Assistant
-9,90034686163,Anesthesiologist
-10,79403664016,First Assistant
-10,90034686163,Anesthesiologist
-10,51204850766,Circulating Nurse
-11,02825326769,Anesthesiologist
-12,44786742802,First Assistant
-12,16204298514,Anesthesiologist
-13,34281644161,Anesthesiologist
-14,36221173277,Scrub Nurse
-15,84914986099,Anesthesiologist
-15,03211535505,First Assistant
-15,36627135896,Scrub Nurse
-16,73561526655,Scrub Nurse
-16,72602925468,First Assistant
-16,40842906969,Scrub Nurse
-17,73123155505,Scrub Nurse
-17,31006433226,Circulating Nurse
-17,79572857595,Circulating Nurse
-18,80253084376,First Assistant
-18,46858639061,First Assistant
-18,91538602826,Anesthesiologist
-19,10740274067,First Assistant
-20,48967808264,First Assistant
-21,27622398474,Anesthesiologist
-21,38118081896,Anesthesiologist
-21,82070669010,Circulating Nurse
+5,89615738551,Scrub Nurse
+6,14447189395,Circulating Nurse
+6,79572857595,Scrub Nurse
+7,96298056820,Circulating Nurse
+7,88197223996,Scrub Nurse
+8,75602080192,First Assistant
+8,24986634209,Circulating Nurse
+8,41349096197,Circulating Nurse
+9,21348548420,Circulating Nurse
+9,68627633283,Circulating Nurse
+10,95592277641,Anesthesiologist
+10,51746564260,Anesthesiologist
+11,73561526655,First Assistant
+12,14753369524,Circulating Nurse
+13,47837031754,Scrub Nurse
+14,71776296914,First Assistant
+15,91538602826,Scrub Nurse
+15,44890932253,Anesthesiologist
+16,75169139521,Circulating Nurse
+16,36050281640,Anesthesiologist
+17,38118081896,Anesthesiologist
+18,67244693172,First Assistant
+18,68017703163,Anesthesiologist
+18,21254341230,First Assistant
+19,46199539467,Scrub Nurse
+20,47837031754,Anesthesiologist
+20,19612766208,First Assistant
+20,36627135896,Circulating Nurse
+21,01703630944,Circulating Nurse
+21,62241976878,Scrub Nurse
+21,36273202227,Circulating Nurse
 22,04991004202,Scrub Nurse
-22,95437766183,Scrub Nurse
+22,69836923534,Circulating Nurse
 23,03350842431,Anesthesiologist
 23,64612096173,Circulating Nurse
 24,30192209567,First Assistant
@@ -65,18 +59,15 @@ execution_id,staff_AMKA,role
 29,79899488566,Circulating Nurse
 30,40034713171,First Assistant
 30,68576063494,Circulating Nurse
-30,08779724792,First Assistant
-31,97891248839,First Assistant
-31,54176755398,First Assistant
-31,40842906969,Scrub Nurse
-32,05033746983,Scrub Nurse
-32,71826533717,Circulating Nurse
+31,53869479025,First Assistant
+31,36627135896,Circulating Nurse
+32,06618756467,Scrub Nurse
 33,64224059208,Scrub Nurse
 33,88067089870,First Assistant
-33,23864100953,Anesthesiologist
-34,04991004202,First Assistant
-35,73054982438,Circulating Nurse
-35,59851602119,Anesthesiologist
+34,98433611371,Circulating Nurse
+34,74653537801,Circulating Nurse
+35,17989022379,Scrub Nurse
+35,82308829586,First Assistant
 36,63460191530,Scrub Nurse
 36,97207382777,First Assistant
 36,68017703163,Circulating Nurse
@@ -102,30 +93,25 @@ execution_id,staff_AMKA,role
 47,50524383805,Circulating Nurse
 48,29591257349,First Assistant
 48,51816125590,First Assistant
-49,05089273961,Circulating Nurse
-49,79993242024,Circulating Nurse
-49,81413447609,Anesthesiologist
-50,67244693172,First Assistant
-51,56355842271,Anesthesiologist
-51,29591257349,Scrub Nurse
-52,20084842648,Scrub Nurse
-52,31579057191,Scrub Nurse
-52,22132041042,Anesthesiologist
-53,88281527873,Circulating Nurse
-53,94882188496,Anesthesiologist
-54,06592088143,First Assistant
-54,05748839974,Circulating Nurse
-54,02520945237,Anesthesiologist
-55,90034686163,Scrub Nurse
+49,55501935450,Circulating Nurse
+49,35211896844,Circulating Nurse
+49,61259016399,Scrub Nurse
+50,11939103829,Scrub Nurse
+51,96322517422,Circulating Nurse
+52,06592088143,Scrub Nurse
+52,92669370632,Anesthesiologist
+53,54736015791,Anesthesiologist
+54,30041691053,Scrub Nurse
+54,66431589016,Scrub Nurse
 55,91538602826,Circulating Nurse
-56,48900824845,First Assistant
+55,03211535505,Circulating Nurse
+56,66023515850,First Assistant
 57,57493251149,Circulating Nurse
 57,02716988371,First Assistant
 57,10508054914,Scrub Nurse
-58,93500115461,Circulating Nurse
-58,92669370632,Scrub Nurse
-59,85324367924,Circulating Nurse
-59,00952242653,Scrub Nurse
+58,43652405536,Circulating Nurse
+59,80253084376,Circulating Nurse
+59,10749161942,Scrub Nurse
 59,36627135896,Scrub Nurse
 60,49679146386,First Assistant
 60,79572857595,Circulating Nurse
@@ -152,1079 +138,1049 @@ execution_id,staff_AMKA,role
 71,35107651917,Scrub Nurse
 72,61768225127,Anesthesiologist
 72,08779724792,First Assistant
-73,61867066320,Scrub Nurse
-73,64612096173,Circulating Nurse
-73,02320914016,First Assistant
-74,58522942525,Anesthesiologist
-74,10404315668,Scrub Nurse
-74,71826533717,First Assistant
-75,61867066320,Scrub Nurse
-75,11386908716,Scrub Nurse
-75,24986634209,First Assistant
-76,90841947855,Circulating Nurse
-76,29591257349,Circulating Nurse
-76,60742990747,Anesthesiologist
-77,62542926456,First Assistant
-77,79403664016,Circulating Nurse
-77,20084842648,Anesthesiologist
-78,40837819190,Anesthesiologist
-79,61768225127,Anesthesiologist
-80,71776296914,Anesthesiologist
-80,93500115461,First Assistant
-81,40034713171,Anesthesiologist
-81,72602925468,Anesthesiologist
-81,75169139521,Scrub Nurse
-82,40842906969,Circulating Nurse
-83,03350842431,First Assistant
-83,53869479025,Scrub Nurse
-84,69158557490,Circulating Nurse
-84,23864100953,Scrub Nurse
-85,78803318361,Anesthesiologist
-85,95592277641,Scrub Nurse
-86,11797269999,Circulating Nurse
-87,10749161942,First Assistant
-87,33703424447,Circulating Nurse
-88,52406221559,Anesthesiologist
-88,09662702660,Scrub Nurse
-88,74653537801,Scrub Nurse
-89,20619019333,First Assistant
-89,35006184897,First Assistant
-89,14753369524,Circulating Nurse
-90,28639420122,Circulating Nurse
-90,62241976878,First Assistant
-90,56154731566,Circulating Nurse
-91,90912375302,Circulating Nurse
-91,09662702660,Scrub Nurse
-92,40842906969,First Assistant
-92,79899488566,First Assistant
-92,69427674831,Circulating Nurse
-93,99944946672,Anesthesiologist
-93,22132041042,First Assistant
-93,75580309016,Anesthesiologist
-94,29591257349,Anesthesiologist
-94,64207632713,First Assistant
-94,19226713175,First Assistant
-95,44890932253,First Assistant
-95,62241976878,Scrub Nurse
-95,48900824845,Scrub Nurse
-96,17749542106,Anesthesiologist
-96,75169139521,Anesthesiologist
-97,99716596566,Circulating Nurse
-97,67244693172,First Assistant
-97,52406221559,Circulating Nurse
-98,97648784962,First Assistant
-99,84178376591,Circulating Nurse
-99,68576063494,Scrub Nurse
-100,90841947855,Circulating Nurse
-100,23622169069,Scrub Nurse
-101,99944946672,Scrub Nurse
-101,09783028010,Scrub Nurse
-102,84914986099,Anesthesiologist
-102,90326551327,Scrub Nurse
-103,12244418997,Circulating Nurse
-104,98433611371,Circulating Nurse
-104,34448672288,Circulating Nurse
-105,92066617996,Circulating Nurse
-105,26611584858,Circulating Nurse
-105,09264070308,First Assistant
-106,91538602826,Circulating Nurse
-106,19612766208,Circulating Nurse
-107,21803966203,Anesthesiologist
-108,26642673512,Anesthesiologist
-108,59851602119,Anesthesiologist
-109,59781554260,Scrub Nurse
-110,79993242024,Scrub Nurse
-110,00363856461,Scrub Nurse
-111,23622169069,Scrub Nurse
-111,95592277641,Circulating Nurse
-112,53869479025,Anesthesiologist
-112,03666020005,Circulating Nurse
-112,40837819190,Anesthesiologist
-113,98433611371,Scrub Nurse
-113,16204298514,First Assistant
-113,69296568512,Circulating Nurse
-114,54176755398,Anesthesiologist
-115,88197223996,Anesthesiologist
-115,21803966203,First Assistant
-116,46339534811,Anesthesiologist
-116,13511350535,Scrub Nurse
-117,58522942525,First Assistant
-118,43302650996,Circulating Nurse
-118,80253084376,Anesthesiologist
-119,05879052244,First Assistant
-119,81291635049,Circulating Nurse
-120,58679496383,Circulating Nurse
-120,75983326170,First Assistant
-120,93500115461,Scrub Nurse
-121,15958417491,Scrub Nurse
-121,40039101933,Scrub Nurse
-121,17430688116,Scrub Nurse
-122,62643850095,First Assistant
-123,48112664971,Anesthesiologist
-123,73536423570,Scrub Nurse
-123,62542926456,Scrub Nurse
-124,41119738818,Anesthesiologist
-124,61259016399,Anesthesiologist
-124,84914986099,Scrub Nurse
-125,33703424447,Anesthesiologist
-125,26611584858,Scrub Nurse
-125,81413447609,Circulating Nurse
-126,35107651917,First Assistant
-126,57908945896,Anesthesiologist
-127,54736015791,First Assistant
-127,73561526655,Anesthesiologist
-127,46858639061,Anesthesiologist
-128,09264070308,Scrub Nurse
-129,29591257349,Scrub Nurse
-129,92669370632,Scrub Nurse
-130,78824265594,First Assistant
-130,82942034015,Anesthesiologist
-130,03211535505,Scrub Nurse
-131,48112664971,First Assistant
-132,57292731868,First Assistant
-133,91511436786,Circulating Nurse
-133,00953662195,Anesthesiologist
-134,64207632713,Circulating Nurse
-134,73481409841,First Assistant
-135,99716596566,Circulating Nurse
-136,39160770040,Scrub Nurse
-136,33703424447,Circulating Nurse
-136,09264070308,Circulating Nurse
-137,47837031754,Scrub Nurse
-137,26642673512,Scrub Nurse
-137,73123155505,Scrub Nurse
-138,61768225127,Circulating Nurse
-139,57285353399,First Assistant
-139,26642673512,First Assistant
-139,10740274067,Anesthesiologist
-140,57292731868,Scrub Nurse
-141,88067089870,Anesthesiologist
-141,50842324234,Anesthesiologist
-142,65673374570,Scrub Nurse
-142,00952242653,Anesthesiologist
-143,56425706802,First Assistant
-143,93784679087,First Assistant
-143,60742990747,Anesthesiologist
-144,46858639061,First Assistant
-145,38118081896,First Assistant
-145,63460191530,Scrub Nurse
-146,36273202227,Scrub Nurse
-147,59802602944,First Assistant
-147,27622398474,Anesthesiologist
-147,24485007288,Anesthesiologist
-148,36221173277,First Assistant
-148,95592277641,Circulating Nurse
-148,90912375302,Scrub Nurse
-149,39160770040,First Assistant
-149,86132394564,Anesthesiologist
-149,91538602826,Anesthesiologist
-150,69626168455,Scrub Nurse
-151,02716988371,Circulating Nurse
-151,47640006875,Anesthesiologist
-152,95616225647,Scrub Nurse
-153,01584668793,First Assistant
-153,23864100953,Scrub Nurse
-153,97906085481,Scrub Nurse
-154,26679419087,Circulating Nurse
-154,71776296914,Scrub Nurse
-155,03666020005,Anesthesiologist
-156,81413447609,First Assistant
-157,62542926456,Scrub Nurse
-157,46600128382,First Assistant
-158,26611584858,Circulating Nurse
-158,69158557490,Circulating Nurse
-158,51816125590,Anesthesiologist
-159,17970566036,Circulating Nurse
-160,68627633283,Circulating Nurse
-160,19360060827,Circulating Nurse
-161,72205397077,First Assistant
-161,14753369524,Scrub Nurse
-161,73536423570,First Assistant
-162,91511436786,Circulating Nurse
-162,97906085481,Circulating Nurse
-162,40039101933,Anesthesiologist
-163,03211535505,Anesthesiologist
-163,73420319777,Anesthesiologist
-163,91141600916,Scrub Nurse
-164,82238794026,Anesthesiologist
-164,11797269999,First Assistant
-164,53869479025,Circulating Nurse
-165,52951646933,Scrub Nurse
-165,40510388027,Scrub Nurse
-165,40034713171,First Assistant
-166,28453974995,Anesthesiologist
-166,36510344442,Scrub Nurse
-167,20761239612,First Assistant
-167,74653537801,Circulating Nurse
-167,17989022379,Scrub Nurse
-168,34448672288,Circulating Nurse
-168,92669370632,Scrub Nurse
-169,02520945237,First Assistant
-169,14447189395,Anesthesiologist
-170,76810248085,First Assistant
-171,79725184070,Circulating Nurse
-171,08581810450,Scrub Nurse
-172,44890932253,First Assistant
-172,75169139521,Scrub Nurse
-172,24784171594,Scrub Nurse
-173,36050281640,Scrub Nurse
-173,16204298514,Anesthesiologist
-174,30192209567,Scrub Nurse
-174,01703630944,First Assistant
-175,79899488566,Scrub Nurse
-175,45323167781,First Assistant
-175,99002772910,Scrub Nurse
-176,72404347412,First Assistant
-176,33703424447,Circulating Nurse
-177,97934421291,First Assistant
-177,02716988371,Circulating Nurse
-177,66201655578,First Assistant
-178,30000886346,Circulating Nurse
-178,68627633283,First Assistant
-179,53869479025,Anesthesiologist
-179,64509999001,Circulating Nurse
-179,10508054914,Scrub Nurse
-180,30000886346,First Assistant
-180,82159773854,Circulating Nurse
-180,34281644161,First Assistant
-181,30000886346,Scrub Nurse
-182,86491259497,First Assistant
-183,71776296914,Scrub Nurse
-183,73420319777,Anesthesiologist
-183,14367286811,First Assistant
-184,35107651917,Scrub Nurse
-185,57493251149,First Assistant
-185,00952242653,Circulating Nurse
-186,23028655052,Circulating Nurse
-187,72602925468,Circulating Nurse
-187,79725184070,First Assistant
-188,82942034015,First Assistant
-188,34448672288,Scrub Nurse
-189,60157117132,Circulating Nurse
-189,03666020005,Anesthesiologist
-190,72602925468,Scrub Nurse
-190,33610944164,Scrub Nurse
-190,05879052244,First Assistant
-191,72602925468,First Assistant
-191,73123155505,Anesthesiologist
-191,61867066320,Scrub Nurse
-192,17970566036,Scrub Nurse
-192,89615738551,Anesthesiologist
-192,73561526655,Anesthesiologist
-193,40842906969,Anesthesiologist
-193,40034713171,Anesthesiologist
-193,72205397077,Anesthesiologist
-194,50524383805,Anesthesiologist
-194,19226713175,Scrub Nurse
-194,79899488566,First Assistant
-195,46199539467,Anesthesiologist
-195,21860032031,Anesthesiologist
-195,34281644161,Anesthesiologist
-196,54677205171,Anesthesiologist
-197,00305661995,First Assistant
-197,30000886346,First Assistant
-198,54677205171,Circulating Nurse
-198,36050281640,Circulating Nurse
-198,87688777925,First Assistant
-199,09662702660,Anesthesiologist
-199,41349096197,Circulating Nurse
-200,69296568512,Circulating Nurse
-200,11386908716,Circulating Nurse
-200,15689109779,Circulating Nurse
-201,52160252394,Circulating Nurse
-201,65673374570,Anesthesiologist
-202,52866933515,Scrub Nurse
-203,60157117132,Scrub Nurse
-203,15969838457,Circulating Nurse
-204,40034713171,Anesthesiologist
-204,55501935450,Scrub Nurse
-205,78803318361,Scrub Nurse
-206,61025634202,First Assistant
-206,90841947855,Scrub Nurse
-206,57285353399,Anesthesiologist
-207,26589347597,Anesthesiologist
-207,40842906969,Anesthesiologist
-208,94882188496,First Assistant
-208,33295945231,Anesthesiologist
-209,56425706802,Circulating Nurse
-209,95616225647,Circulating Nurse
-210,90326551327,Anesthesiologist
-210,59802602944,Circulating Nurse
-211,14753369524,Scrub Nurse
-211,60742990747,Scrub Nurse
-211,26679419087,First Assistant
-212,21348548420,Scrub Nurse
-213,02825326769,First Assistant
-213,90841947855,Anesthesiologist
-214,14447189395,First Assistant
-215,62241976878,Scrub Nurse
-216,96322517422,Scrub Nurse
-217,97906085481,Scrub Nurse
-217,56425706802,First Assistant
-217,81291635049,Scrub Nurse
-218,02320914016,Scrub Nurse
-219,73054982438,First Assistant
-219,23622169069,First Assistant
-219,61768225127,Anesthesiologist
-220,51204850766,Circulating Nurse
-220,46600128382,Anesthesiologist
-221,37185921268,Circulating Nurse
-221,71776296914,Scrub Nurse
-221,48967808264,First Assistant
-222,56355842271,First Assistant
-222,78803318361,Circulating Nurse
-222,33610944164,Circulating Nurse
-223,31579057191,Circulating Nurse
-223,36221173277,First Assistant
-223,36759017791,Circulating Nurse
-224,30491341038,Circulating Nurse
-225,97648784962,Circulating Nurse
-226,59802602944,Anesthesiologist
-227,86132394564,Scrub Nurse
-228,36759017791,Circulating Nurse
-228,55501935450,Circulating Nurse
-229,73536423570,Anesthesiologist
-229,67244693172,First Assistant
-229,66431589016,Anesthesiologist
-230,28453974995,Circulating Nurse
-230,58522942525,First Assistant
-230,23622169069,Anesthesiologist
-231,50524383805,First Assistant
-231,03350842431,Anesthesiologist
-232,56340918580,Circulating Nurse
-232,06618756467,First Assistant
-233,38687906048,Circulating Nurse
-235,86132394564,Anesthesiologist
-235,54176755398,First Assistant
-235,86491259497,First Assistant
-236,08581810450,First Assistant
-236,82308829586,Scrub Nurse
-236,62241976878,Anesthesiologist
-237,67244693172,Anesthesiologist
-237,65213835071,First Assistant
-237,52406221559,First Assistant
-238,90417282076,Scrub Nurse
-238,34448672288,Anesthesiologist
-238,93784679087,First Assistant
-239,62241976878,Scrub Nurse
-239,40039101933,Circulating Nurse
-240,82408475283,First Assistant
-240,66821215649,Anesthesiologist
-241,73877583336,First Assistant
-241,44435962458,Anesthesiologist
-241,95437766183,Anesthesiologist
-242,56340918580,Circulating Nurse
-243,79725184070,Circulating Nurse
-244,59781554260,Circulating Nurse
-244,30000886346,First Assistant
-245,79572857595,First Assistant
-245,48900824845,Anesthesiologist
-246,10404315668,Anesthesiologist
-246,21803966203,First Assistant
-247,31006433226,Scrub Nurse
-248,46199539467,First Assistant
-248,61259016399,First Assistant
-248,79993242024,Anesthesiologist
-249,69296568512,Circulating Nurse
-249,26611584858,Anesthesiologist
-249,12244418997,Anesthesiologist
-250,20084842648,First Assistant
-250,23622169069,First Assistant
-251,97648784962,Anesthesiologist
-251,05089273961,Scrub Nurse
-252,48112664971,First Assistant
-252,40842906969,Anesthesiologist
-253,98313549014,Anesthesiologist
-253,87688777925,First Assistant
-254,03211535505,Anesthesiologist
-254,64612096173,First Assistant
-254,26679419087,First Assistant
-255,62241976878,Scrub Nurse
-256,58192048770,Anesthesiologist
-257,17989022379,Scrub Nurse
-257,64509999001,Anesthesiologist
-258,00952242653,Anesthesiologist
-258,23028655052,Scrub Nurse
-259,38109794122,Scrub Nurse
-259,36759017791,First Assistant
-260,96342898760,First Assistant
-261,02716988371,Anesthesiologist
-262,55501935450,Anesthesiologist
-262,85324367924,Scrub Nurse
-263,94882188496,Scrub Nurse
-263,67080897474,First Assistant
-263,00305661995,Anesthesiologist
-264,58522942525,Anesthesiologist
-264,51204850766,Circulating Nurse
-264,06618756467,First Assistant
-265,02716988371,First Assistant
-265,94882188496,Circulating Nurse
-265,96298056820,Anesthesiologist
-266,71826533717,Scrub Nurse
-267,46858639061,First Assistant
-267,19360060827,Scrub Nurse
-268,99829075515,Anesthesiologist
-269,60742990747,Anesthesiologist
-269,24784171594,First Assistant
-270,39461212898,Circulating Nurse
-270,84178376591,Circulating Nurse
-271,03211535505,First Assistant
-271,72205397077,Anesthesiologist
-272,36054946920,Anesthesiologist
-273,00375398923,First Assistant
-273,79899488566,Anesthesiologist
-273,46600128382,Circulating Nurse
-274,29917217429,Circulating Nurse
-274,81291635049,Circulating Nurse
-275,21348548420,First Assistant
-276,31579057191,Scrub Nurse
-276,72094516767,Scrub Nurse
-277,48900824845,First Assistant
-278,08779724792,Anesthesiologist
-278,48112664971,Anesthesiologist
-279,37185921268,First Assistant
-280,91538602826,Anesthesiologist
-280,28453974995,Scrub Nurse
-281,17970566036,Circulating Nurse
-281,47837031754,Scrub Nurse
-282,23028655052,Scrub Nurse
-283,56425706802,Scrub Nurse
-284,61768225127,Scrub Nurse
-284,29591257349,Circulating Nurse
-284,81413447609,Anesthesiologist
-285,52160252394,Anesthesiologist
-285,38109794122,Scrub Nurse
-286,68576063494,Anesthesiologist
-287,90417282076,Scrub Nurse
-287,73481409841,Scrub Nurse
-288,69427674831,First Assistant
-289,06540259985,Anesthesiologist
-289,06618756467,Circulating Nurse
-289,98313549014,Circulating Nurse
-290,61768225127,Circulating Nurse
-290,82942034015,Circulating Nurse
-291,90922884987,Anesthesiologist
-292,40837819190,Circulating Nurse
-293,98416734785,Scrub Nurse
-294,73561526655,Circulating Nurse
-295,46858639061,Anesthesiologist
-296,08581810450,First Assistant
-297,95592277641,Anesthesiologist
-297,88067089870,First Assistant
-298,53869479025,Circulating Nurse
-298,21860032031,Anesthesiologist
-298,69427674831,First Assistant
-299,59802602944,Circulating Nurse
-299,64612096173,Circulating Nurse
-299,69626168455,Circulating Nurse
-300,02320914016,Scrub Nurse
-300,18626713684,Scrub Nurse
-301,69296568512,Anesthesiologist
-302,09783028010,Circulating Nurse
-302,39865462202,Anesthesiologist
-302,39461212898,Circulating Nurse
-303,04450928605,Anesthesiologist
-303,88197223996,Anesthesiologist
-303,92066617996,Scrub Nurse
-304,61025634202,Circulating Nurse
-304,20761239612,Anesthesiologist
-304,17989022379,Scrub Nurse
-305,10404315668,Scrub Nurse
-305,56425706802,Circulating Nurse
-305,43652405536,Anesthesiologist
-306,04450928605,Scrub Nurse
-306,86491259497,Circulating Nurse
-307,51816125590,Circulating Nurse
-307,73561526655,Scrub Nurse
-308,90326551327,First Assistant
-308,48900824845,First Assistant
-308,56425706802,Circulating Nurse
-309,40039101933,Circulating Nurse
-309,30491341038,Anesthesiologist
-309,75602080192,Anesthesiologist
-310,53869479025,Scrub Nurse
-311,04450928605,Scrub Nurse
-311,50017325900,First Assistant
-311,54677205171,Circulating Nurse
-312,73123155505,Anesthesiologist
-312,79403664016,Scrub Nurse
-313,00363856461,Circulating Nurse
-313,35006184897,First Assistant
-314,65673374570,Scrub Nurse
-315,90326551327,Anesthesiologist
-315,33243629620,Circulating Nurse
-315,52866933515,First Assistant
-316,62643850095,Circulating Nurse
-316,26642673512,First Assistant
-317,96322517422,Anesthesiologist
-318,19360060827,Anesthesiologist
-319,64612096173,First Assistant
-320,44045883114,Scrub Nurse
-320,92066617996,First Assistant
-320,68627633283,Scrub Nurse
-321,47837031754,Anesthesiologist
-321,79993242024,Circulating Nurse
-321,20619019333,First Assistant
-322,73217503619,Circulating Nurse
-322,44890932253,Anesthesiologist
-323,75169139521,Scrub Nurse
-324,69427674831,First Assistant
-324,14753369524,Scrub Nurse
-324,10508054914,Anesthesiologist
-325,39865462202,Circulating Nurse
-325,66821215649,Circulating Nurse
-326,90034686163,Scrub Nurse
-327,08581810450,Anesthesiologist
-328,15969838457,Circulating Nurse
-328,40034713171,Scrub Nurse
-329,82238794026,Scrub Nurse
-330,88382567262,First Assistant
-330,58679496383,First Assistant
-330,66821215649,Circulating Nurse
-331,69480450735,First Assistant
-331,82942034015,First Assistant
-332,26611584858,Anesthesiologist
-332,56154731566,Circulating Nurse
-332,17192817074,Scrub Nurse
-333,90326551327,Anesthesiologist
-334,21803966203,Anesthesiologist
-334,62643850095,Circulating Nurse
-334,69427674831,Scrub Nurse
-335,50842324234,First Assistant
-335,01703630944,First Assistant
-336,00952242653,Scrub Nurse
-336,69296568512,Scrub Nurse
-336,98313549014,First Assistant
-337,10508054914,Scrub Nurse
-337,98433611371,First Assistant
-338,17430688116,Scrub Nurse
-338,19226713175,First Assistant
-338,21860032031,Anesthesiologist
-339,99944946672,Scrub Nurse
-339,03211535505,Scrub Nurse
-339,96322517422,Anesthesiologist
-340,02825326769,Scrub Nurse
-340,15969838457,Scrub Nurse
-340,56154731566,Circulating Nurse
-341,21803966203,Scrub Nurse
-342,11939103829,First Assistant
-342,52866933515,Circulating Nurse
-342,37185921268,First Assistant
-343,64612096173,First Assistant
-343,46199539467,First Assistant
-344,90533470474,Anesthesiologist
-344,03350842431,Scrub Nurse
-345,69039220269,Scrub Nurse
-345,70789775542,Circulating Nurse
-346,00375398923,Circulating Nurse
-346,81413447609,Circulating Nurse
-347,69039220269,Anesthesiologist
-348,49679146386,First Assistant
-349,17749542106,Anesthesiologist
-349,06618756467,Circulating Nurse
-350,40842906969,Anesthesiologist
-351,56425706802,Circulating Nurse
-351,81291635049,Anesthesiologist
-351,40039101933,Circulating Nurse
-352,31539839122,First Assistant
-353,61768225127,Circulating Nurse
-353,62643850095,Scrub Nurse
-353,04450928605,Scrub Nurse
-354,49679146386,First Assistant
-354,70789775542,Scrub Nurse
-355,69480450735,Anesthesiologist
-355,34281644161,Circulating Nurse
-356,24485007288,Anesthesiologist
-357,82159773854,Anesthesiologist
-357,04450928605,First Assistant
-358,30192209567,Anesthesiologist
-359,58679496383,Anesthesiologist
-359,56355842271,Circulating Nurse
-360,52866933515,Anesthesiologist
-360,84178376591,Circulating Nurse
-360,86497035067,First Assistant
-361,36054946920,Circulating Nurse
-361,56425706802,Scrub Nurse
-361,44786742802,First Assistant
-362,17430688116,First Assistant
-362,90912375302,First Assistant
-363,73561526655,First Assistant
-363,01703630944,Scrub Nurse
-364,23864100953,First Assistant
-364,18335974876,Anesthesiologist
-365,79403664016,Circulating Nurse
-366,84914986099,Anesthesiologist
-366,75580309016,First Assistant
-367,06647070385,First Assistant
-368,31006433226,Anesthesiologist
-368,19612766208,First Assistant
-368,36050281640,First Assistant
-369,39461212898,First Assistant
-370,65673374570,Anesthesiologist
-370,21860032031,Anesthesiologist
-370,39461212898,Circulating Nurse
-371,89121397436,Circulating Nurse
-371,05879052244,Circulating Nurse
-371,91538602826,Circulating Nurse
-372,73217503619,Anesthesiologist
-373,73054982438,Anesthesiologist
-373,78803318361,Anesthesiologist
-374,97891248839,First Assistant
-374,88067089870,Scrub Nurse
-375,66201655578,First Assistant
-375,66431589016,Circulating Nurse
-375,17749542106,First Assistant
-376,82942034015,Circulating Nurse
-376,36273202227,First Assistant
-376,52160252394,Circulating Nurse
-377,72404347412,Scrub Nurse
-377,38687906048,Circulating Nurse
-378,39461212898,Circulating Nurse
-378,99716596566,Scrub Nurse
-379,00952242653,Circulating Nurse
-379,98433611371,First Assistant
-380,21348548420,Circulating Nurse
-381,23028655052,Circulating Nurse
-381,92669370632,Circulating Nurse
-381,47640006875,Scrub Nurse
-382,61025634202,First Assistant
+73,05879052244,Anesthesiologist
+73,49679146386,Circulating Nurse
+74,56340918580,Circulating Nurse
+74,13511350535,First Assistant
+74,82238794026,Scrub Nurse
+75,20084842648,Scrub Nurse
+75,43652405536,First Assistant
+76,79899488566,Anesthesiologist
+77,15969838457,First Assistant
+78,73536423570,Scrub Nurse
+78,57292731868,Scrub Nurse
+78,72404347412,Anesthesiologist
+79,69427674831,First Assistant
+80,31539839122,Scrub Nurse
+81,43690283772,Scrub Nurse
+81,69296568512,Scrub Nurse
+81,97648784962,Anesthesiologist
+82,40837819190,Circulating Nurse
+82,43690283772,First Assistant
+83,17749542106,Circulating Nurse
+84,91511436786,Anesthesiologist
+84,66821215649,Circulating Nurse
+85,86027574544,Circulating Nurse
+86,20619019333,Anesthesiologist
+87,72094516767,Anesthesiologist
+87,11797269999,Circulating Nurse
+87,10749161942,Anesthesiologist
+88,10749161942,First Assistant
+88,33703424447,Circulating Nurse
+89,52406221559,Anesthesiologist
+89,09662702660,Scrub Nurse
+89,74653537801,Scrub Nurse
+90,20619019333,First Assistant
+90,35006184897,First Assistant
+90,14753369524,Circulating Nurse
+91,20562019011,Scrub Nurse
+92,67080897474,First Assistant
+92,52160252394,Circulating Nurse
+92,56340918580,Scrub Nurse
+93,15689109779,Circulating Nurse
+94,69427674831,Circulating Nurse
+95,99944946672,Anesthesiologist
+95,22132041042,First Assistant
+95,75580309016,Anesthesiologist
+96,29591257349,Anesthesiologist
+96,64207632713,First Assistant
+96,19226713175,First Assistant
+97,44890932253,First Assistant
+97,62241976878,Scrub Nurse
+97,48900824845,Scrub Nurse
+98,17749542106,Anesthesiologist
+98,75169139521,Anesthesiologist
+99,26642673512,Circulating Nurse
+99,67244693172,First Assistant
+99,52406221559,Circulating Nurse
+100,97648784962,First Assistant
+101,58679496383,Circulating Nurse
+101,68576063494,Scrub Nurse
+102,90841947855,Circulating Nurse
+102,23622169069,Scrub Nurse
+103,26184025787,Scrub Nurse
+104,84914986099,Anesthesiologist
+104,90326551327,Scrub Nurse
+105,12244418997,Circulating Nurse
+106,98433611371,Circulating Nurse
+106,34448672288,Circulating Nurse
+107,59802602944,Scrub Nurse
+107,34448672288,Scrub Nurse
+108,44786742802,Circulating Nurse
+108,91538602826,Circulating Nurse
+109,41349096197,First Assistant
+110,21348548420,Circulating Nurse
+111,59781554260,Scrub Nurse
+112,79993242024,Scrub Nurse
+112,00363856461,Scrub Nurse
+113,23622169069,Scrub Nurse
+113,95592277641,Circulating Nurse
+114,53869479025,Anesthesiologist
+114,03666020005,Circulating Nurse
+114,40837819190,Anesthesiologist
+115,98433611371,Scrub Nurse
+115,16204298514,First Assistant
+115,69296568512,Circulating Nurse
+116,54176755398,Anesthesiologist
+117,88197223996,Anesthesiologist
+117,21803966203,First Assistant
+118,46339534811,Anesthesiologist
+118,13511350535,Scrub Nurse
+119,58522942525,First Assistant
+120,43302650996,Circulating Nurse
+120,80253084376,Anesthesiologist
+121,05879052244,First Assistant
+121,81291635049,Circulating Nurse
+122,58679496383,Circulating Nurse
+122,75983326170,First Assistant
+122,93500115461,Scrub Nurse
+123,15958417491,Scrub Nurse
+123,40039101933,Scrub Nurse
+123,17430688116,Scrub Nurse
+124,62643850095,First Assistant
+125,56340918580,First Assistant
+125,91141600916,Anesthesiologist
+125,26184025787,Anesthesiologist
+126,69834515025,Scrub Nurse
+126,73217503619,First Assistant
+126,09662702660,First Assistant
+127,61768225127,Anesthesiologist
+127,27622398474,Circulating Nurse
+128,69296568512,First Assistant
+129,54736015791,First Assistant
+129,73561526655,Anesthesiologist
+129,46858639061,Anesthesiologist
+130,09264070308,Scrub Nurse
+131,29591257349,Scrub Nurse
+131,92669370632,Scrub Nurse
+132,78824265594,First Assistant
+132,82942034015,Anesthesiologist
+132,03211535505,Scrub Nurse
+133,58522942525,Scrub Nurse
+133,84178376591,Scrub Nurse
+133,69480450735,First Assistant
+134,95592277641,Anesthesiologist
+135,19360060827,Circulating Nurse
+136,10749161942,Scrub Nurse
+136,46199539467,Scrub Nurse
+136,64207632713,Circulating Nurse
+137,88067089870,First Assistant
+137,00953662195,Circulating Nurse
+138,39160770040,Scrub Nurse
+138,33703424447,Circulating Nurse
+138,09264070308,Circulating Nurse
+139,47837031754,Scrub Nurse
+139,26642673512,Scrub Nurse
+139,73123155505,Scrub Nurse
+140,61768225127,Circulating Nurse
+141,57285353399,First Assistant
+141,26642673512,First Assistant
+141,10740274067,Anesthesiologist
+142,57292731868,Scrub Nurse
+143,88067089870,Anesthesiologist
+143,50842324234,Anesthesiologist
+144,65673374570,Scrub Nurse
+144,00952242653,Anesthesiologist
+145,56425706802,First Assistant
+145,93784679087,First Assistant
+145,60742990747,Anesthesiologist
+146,46858639061,First Assistant
+147,38118081896,First Assistant
+147,63460191530,Scrub Nurse
+148,36273202227,Scrub Nurse
+149,59802602944,First Assistant
+149,27622398474,Anesthesiologist
+149,24485007288,Anesthesiologist
+150,36221173277,First Assistant
+150,95592277641,Circulating Nurse
+150,90912375302,Scrub Nurse
+151,39160770040,First Assistant
+151,86132394564,Anesthesiologist
+151,91538602826,Anesthesiologist
+152,69626168455,Scrub Nurse
+153,02716988371,Circulating Nurse
+153,47640006875,Anesthesiologist
+154,95616225647,Scrub Nurse
+155,01584668793,First Assistant
+155,23864100953,Scrub Nurse
+155,97906085481,Scrub Nurse
+156,26679419087,Circulating Nurse
+156,71776296914,Scrub Nurse
+157,03666020005,Anesthesiologist
+158,81413447609,First Assistant
+159,62542926456,Scrub Nurse
+159,46600128382,First Assistant
+160,26611584858,Circulating Nurse
+160,69158557490,Circulating Nurse
+160,51816125590,Anesthesiologist
+161,17970566036,Circulating Nurse
+162,68627633283,Circulating Nurse
+162,19360060827,Circulating Nurse
+163,72205397077,First Assistant
+163,14753369524,Scrub Nurse
+163,73536423570,First Assistant
+164,91511436786,Circulating Nurse
+164,97906085481,Circulating Nurse
+164,40039101933,Anesthesiologist
+165,03211535505,Anesthesiologist
+165,73420319777,Anesthesiologist
+165,91141600916,Scrub Nurse
+166,82238794026,Anesthesiologist
+166,11797269999,First Assistant
+166,53869479025,Circulating Nurse
+167,52951646933,Scrub Nurse
+167,40510388027,Scrub Nurse
+167,40034713171,First Assistant
+168,28453974995,Anesthesiologist
+168,36510344442,Scrub Nurse
+169,20761239612,First Assistant
+169,74653537801,Circulating Nurse
+169,17989022379,Scrub Nurse
+170,34448672288,Circulating Nurse
+170,92669370632,Scrub Nurse
+171,02520945237,First Assistant
+171,14447189395,Anesthesiologist
+172,76810248085,First Assistant
+173,79725184070,Circulating Nurse
+173,08581810450,Scrub Nurse
+174,40837819190,Anesthesiologist
+175,14367286811,Circulating Nurse
+176,53811683710,Circulating Nurse
+176,75602080192,First Assistant
+177,86491259497,Circulating Nurse
+177,14367286811,Scrub Nurse
+178,90034686163,Scrub Nurse
+178,96298056820,Anesthesiologist
+178,01584668793,Anesthesiologist
+179,56154731566,First Assistant
+179,17970566036,Scrub Nurse
+180,66201655578,First Assistant
+180,14447189395,Scrub Nurse
+180,93500115461,First Assistant
+181,59781554260,Circulating Nurse
+182,64509999001,Circulating Nurse
+183,09662702660,Scrub Nurse
+183,62241976878,Circulating Nurse
+184,09662702660,Anesthesiologist
+185,06647070385,Anesthesiologist
+185,40837819190,Anesthesiologist
+186,43690283772,Circulating Nurse
+187,52866933515,Circulating Nurse
+188,35107651917,Scrub Nurse
+189,57493251149,First Assistant
+189,00952242653,Circulating Nurse
+190,23028655052,Circulating Nurse
+191,72602925468,Circulating Nurse
+191,79725184070,First Assistant
+192,82942034015,First Assistant
+192,34448672288,Scrub Nurse
+193,60157117132,Circulating Nurse
+193,03666020005,Anesthesiologist
+194,33610944164,Scrub Nurse
+194,05879052244,First Assistant
+195,72602925468,First Assistant
+195,73123155505,Anesthesiologist
+195,61867066320,Scrub Nurse
+196,17970566036,Scrub Nurse
+196,89615738551,Anesthesiologist
+196,73561526655,Anesthesiologist
+197,40842906969,Anesthesiologist
+197,40034713171,Anesthesiologist
+197,72205397077,Anesthesiologist
+198,50524383805,Anesthesiologist
+198,19226713175,Scrub Nurse
+198,79899488566,First Assistant
+199,79899488566,Scrub Nurse
+199,73536423570,Anesthesiologist
+199,46339534811,First Assistant
+200,82942034015,First Assistant
+200,54677205171,Anesthesiologist
+201,00305661995,First Assistant
+201,30000886346,First Assistant
+202,54677205171,Circulating Nurse
+202,36050281640,Circulating Nurse
+203,64224059208,Scrub Nurse
+204,26589347597,Scrub Nurse
+204,66821215649,Anesthesiologist
+205,86491259497,Anesthesiologist
+206,43652405536,Circulating Nurse
+207,53869479025,First Assistant
+207,81413447609,Scrub Nurse
+207,05033746983,Circulating Nurse
+208,96342898760,First Assistant
+208,24986634209,Scrub Nurse
+208,41290759659,Scrub Nurse
+209,55501935450,Scrub Nurse
+210,78803318361,Scrub Nurse
+211,61025634202,First Assistant
+211,90841947855,Scrub Nurse
+212,26589347597,Anesthesiologist
+212,40842906969,Anesthesiologist
+213,94882188496,First Assistant
+213,33295945231,Anesthesiologist
+214,24986634209,First Assistant
+215,82408475283,First Assistant
+215,44786742802,Circulating Nurse
+216,36627135896,First Assistant
+216,49679146386,Scrub Nurse
+217,51816125590,Circulating Nurse
+218,13511350535,Anesthesiologist
+218,73561526655,First Assistant
+219,59851602119,First Assistant
+219,05748839974,Scrub Nurse
+219,49679146386,Anesthesiologist
+220,69834515025,Circulating Nurse
+220,03350842431,Circulating Nurse
+220,17749542106,First Assistant
+221,97906085481,Scrub Nurse
+221,56425706802,First Assistant
+222,94882188496,Anesthesiologist
+222,02320914016,Scrub Nurse
+222,80619022311,Circulating Nurse
+223,73054982438,First Assistant
+223,23622169069,First Assistant
+223,61768225127,Anesthesiologist
+224,51204850766,Circulating Nurse
+224,46600128382,Anesthesiologist
+225,37185921268,Circulating Nurse
+225,71776296914,Scrub Nurse
+225,48967808264,First Assistant
+226,56355842271,First Assistant
+226,78803318361,Circulating Nurse
+226,33610944164,Circulating Nurse
+227,31579057191,Circulating Nurse
+227,36221173277,First Assistant
+227,36759017791,Circulating Nurse
+228,30491341038,Circulating Nurse
+229,97207382777,Anesthesiologist
+229,30000886346,Circulating Nurse
+229,67080897474,Anesthesiologist
+230,75602080192,Circulating Nurse
+230,56154731566,Circulating Nurse
+230,11939103829,Circulating Nurse
+231,90533470474,Scrub Nurse
+232,67244693172,Circulating Nurse
+232,64207632713,First Assistant
+233,90577204410,First Assistant
+234,28453974995,Circulating Nurse
+234,58522942525,First Assistant
+234,23622169069,Anesthesiologist
+235,50524383805,First Assistant
+235,03350842431,Anesthesiologist
+236,56340918580,Circulating Nurse
+236,06618756467,First Assistant
+237,38687906048,Circulating Nurse
+239,86132394564,Anesthesiologist
+239,54176755398,First Assistant
+239,86491259497,First Assistant
+240,08581810450,First Assistant
+240,82308829586,Scrub Nurse
+240,62241976878,Anesthesiologist
+241,92669370632,Anesthesiologist
+241,63460191530,First Assistant
+242,51816125590,Circulating Nurse
+242,86491259497,Circulating Nurse
+243,30491341038,Scrub Nurse
+244,73877583336,Circulating Nurse
+244,13511350535,Scrub Nurse
+245,47837031754,First Assistant
+245,74653537801,First Assistant
+245,39461212898,Circulating Nurse
+246,23622169069,Anesthesiologist
+246,64224059208,First Assistant
+246,48900824845,Anesthesiologist
+247,41119738818,Circulating Nurse
+247,75580309016,Scrub Nurse
+248,73123155505,First Assistant
+248,48967808264,Circulating Nurse
+248,37185921268,Circulating Nurse
+249,97934421291,First Assistant
+249,71776296914,First Assistant
+250,06540259985,First Assistant
+251,04450928605,First Assistant
+251,64224059208,Circulating Nurse
+251,98416734785,Scrub Nurse
+252,46199539467,First Assistant
+252,61259016399,First Assistant
+252,79993242024,Anesthesiologist
+253,69296568512,Circulating Nurse
+253,26611584858,Anesthesiologist
+253,12244418997,Anesthesiologist
+254,20084842648,First Assistant
+254,23622169069,First Assistant
+255,97648784962,Anesthesiologist
+255,05089273961,Scrub Nurse
+256,48112664971,First Assistant
+256,40842906969,Anesthesiologist
+257,98313549014,Anesthesiologist
+257,87688777925,First Assistant
+258,03211535505,Anesthesiologist
+258,64612096173,First Assistant
+258,26679419087,First Assistant
+259,62241976878,Scrub Nurse
+260,58192048770,Anesthesiologist
+261,17989022379,Scrub Nurse
+261,64509999001,Anesthesiologist
+262,00952242653,Anesthesiologist
+262,23028655052,Scrub Nurse
+263,38109794122,Scrub Nurse
+263,36759017791,First Assistant
+264,79403664016,First Assistant
+265,64224059208,Circulating Nurse
+266,85324367924,Scrub Nurse
+266,36273202227,First Assistant
+266,70014413068,Scrub Nurse
+267,10508054914,First Assistant
+267,82942034015,Scrub Nurse
+267,90071210242,Anesthesiologist
+268,51204850766,Circulating Nurse
+269,19226713175,Scrub Nurse
+270,52824685492,Anesthesiologist
+270,80619022311,Scrub Nurse
+271,12874527193,Circulating Nurse
+272,46858639061,First Assistant
+272,19360060827,Scrub Nurse
+273,99829075515,Anesthesiologist
+274,52160252394,Scrub Nurse
+275,50524383805,Anesthesiologist
+275,17430688116,First Assistant
+275,59851602119,Scrub Nurse
+276,44045883114,Anesthesiologist
+277,04991004202,Scrub Nurse
+277,18335974876,First Assistant
+278,00375398923,First Assistant
+278,79899488566,Anesthesiologist
+278,46600128382,Circulating Nurse
+279,29917217429,Circulating Nurse
+279,81291635049,Circulating Nurse
+280,73481409841,Scrub Nurse
+281,24784171594,Anesthesiologist
+281,08779724792,Anesthesiologist
+281,40837819190,First Assistant
+282,62643850095,Anesthesiologist
+283,90417282076,First Assistant
+283,37185921268,First Assistant
+284,91538602826,Anesthesiologist
+284,28453974995,Scrub Nurse
+285,17970566036,Circulating Nurse
+285,47837031754,Scrub Nurse
+286,81413447609,Circulating Nurse
+287,56425706802,Scrub Nurse
+288,61259016399,Anesthesiologist
+289,35519628222,First Assistant
+289,82408475283,First Assistant
+290,69480450735,Anesthesiologist
+290,61768225127,Anesthesiologist
+290,97891248839,First Assistant
+291,70789775542,Circulating Nurse
+291,59802602944,Circulating Nurse
+291,17749542106,Scrub Nurse
+292,86132394564,Scrub Nurse
+292,11797269999,Anesthesiologist
+292,52824685492,Anesthesiologist
+293,41349096197,Anesthesiologist
+293,00953662195,Scrub Nurse
+294,41119738818,Circulating Nurse
+294,73481409841,First Assistant
+294,90922884987,Anesthesiologist
+295,40837819190,Circulating Nurse
+296,03350842431,First Assistant
+296,98313549014,Scrub Nurse
+296,41290759659,Anesthesiologist
+297,61768225127,Scrub Nurse
+297,28639420122,Circulating Nurse
+298,68017703163,Anesthesiologist
+299,55501935450,Anesthesiologist
+299,08581810450,First Assistant
+300,10508054914,Scrub Nurse
+301,90912375302,Circulating Nurse
+302,01703630944,Circulating Nurse
+303,59802602944,Circulating Nurse
+303,64612096173,Circulating Nurse
+303,69626168455,Circulating Nurse
+304,17989022379,First Assistant
+305,38687906048,Anesthesiologist
+306,48967808264,First Assistant
+307,19397814590,Circulating Nurse
+307,15958417491,Scrub Nurse
+308,92066617996,Scrub Nurse
+309,61025634202,Circulating Nurse
+309,20761239612,Anesthesiologist
+309,17989022379,Scrub Nurse
+310,92669370632,Scrub Nurse
+310,98416734785,First Assistant
+310,59781554260,Circulating Nurse
+311,90841947855,Circulating Nurse
+311,67244693172,Scrub Nurse
+312,82942034015,Circulating Nurse
+312,99002772910,Circulating Nurse
+312,52951646933,Anesthesiologist
+313,81413447609,Circulating Nurse
+314,62542926456,Circulating Nurse
+314,78824265594,Circulating Nurse
+314,58522942525,First Assistant
+315,90841947855,Anesthesiologist
+315,40039101933,Scrub Nurse
+315,35107651917,Anesthesiologist
+316,59781554260,First Assistant
+316,63460191530,First Assistant
+317,72205397077,Scrub Nurse
+317,66023515850,Anesthesiologist
+318,44890932253,Circulating Nurse
+318,87688777925,Scrub Nurse
+318,04450928605,Anesthesiologist
+319,45323167781,Scrub Nurse
+319,14599201663,First Assistant
+320,00953662195,Anesthesiologist
+321,53811683710,Scrub Nurse
+321,84178376591,First Assistant
+321,54677205171,First Assistant
+322,82408475283,Scrub Nurse
+322,08581810450,Scrub Nurse
+322,06540259985,Scrub Nurse
+323,64612096173,First Assistant
+324,44045883114,Scrub Nurse
+324,92066617996,First Assistant
+324,68627633283,Scrub Nurse
+325,47837031754,Anesthesiologist
+325,79993242024,Circulating Nurse
+325,20619019333,First Assistant
+326,73217503619,Circulating Nurse
+326,44890932253,Anesthesiologist
+327,75169139521,Scrub Nurse
+328,69427674831,First Assistant
+328,14753369524,Scrub Nurse
+328,10508054914,Anesthesiologist
+329,69480450735,Circulating Nurse
+330,90034686163,Scrub Nurse
+331,08581810450,Anesthesiologist
+332,50842324234,Circulating Nurse
+332,15969838457,Circulating Nurse
+332,40034713171,Scrub Nurse
+333,82238794026,Scrub Nurse
+334,88382567262,First Assistant
+334,58679496383,First Assistant
+334,66821215649,Circulating Nurse
+335,91538602826,Anesthesiologist
+335,39117766650,First Assistant
+336,26611584858,Anesthesiologist
+336,56154731566,Circulating Nurse
+336,17192817074,Scrub Nurse
+337,00375398923,First Assistant
+337,68627633283,Scrub Nurse
+337,10728878072,Anesthesiologist
+338,18335974876,First Assistant
+338,13511350535,Scrub Nurse
+339,36221173277,Circulating Nurse
+339,90071210242,First Assistant
+339,31539839122,Anesthesiologist
+340,98313549014,First Assistant
+340,73420319777,First Assistant
+341,98433611371,First Assistant
+341,57285353399,First Assistant
+341,59781554260,First Assistant
+342,21860032031,Anesthesiologist
+343,99944946672,Scrub Nurse
+343,03211535505,Scrub Nurse
+343,96322517422,Anesthesiologist
+344,02825326769,Scrub Nurse
+344,15969838457,Scrub Nurse
+344,56154731566,Circulating Nurse
+345,21803966203,Scrub Nurse
+346,11939103829,First Assistant
+346,52866933515,Circulating Nurse
+346,37185921268,First Assistant
+347,18626713684,Circulating Nurse
+347,47837031754,Circulating Nurse
+348,95437766183,Scrub Nurse
+349,40510388027,Anesthesiologist
+350,81413447609,Circulating Nurse
+350,95592277641,Scrub Nurse
+351,47837031754,First Assistant
+351,49679146386,First Assistant
+352,21860032031,Circulating Nurse
+353,31539839122,Circulating Nurse
+354,40034713171,Anesthesiologist
+354,14447189395,Anesthesiologist
+354,64612096173,Anesthesiologist
+355,56425706802,Scrub Nurse
+356,52866933515,Anesthesiologist
+356,36050281640,First Assistant
+356,89615738551,Scrub Nurse
+357,71776296914,Scrub Nurse
+357,63460191530,Scrub Nurse
+358,74653537801,Scrub Nurse
+358,17989022379,Scrub Nurse
+359,18626713684,Scrub Nurse
+359,75602080192,First Assistant
+360,33243629620,Circulating Nurse
+360,62542926456,Circulating Nurse
+360,89615738551,Scrub Nurse
+361,86497035067,First Assistant
+361,82942034015,Anesthesiologist
+362,44786742802,First Assistant
+362,49679146386,Scrub Nurse
+363,18626713684,Scrub Nurse
+363,36510344442,Circulating Nurse
+363,62542926456,Anesthesiologist
+364,61867066320,Circulating Nurse
+365,15689109779,Scrub Nurse
+365,19397814590,Anesthesiologist
+365,04450928605,Scrub Nurse
+366,85324367924,Circulating Nurse
+366,50524383805,First Assistant
+367,79899488566,First Assistant
+368,01703630944,Anesthesiologist
+368,36273202227,Scrub Nurse
+369,73123155505,Anesthesiologist
+369,20084842648,Scrub Nurse
+369,31006433226,Anesthesiologist
+370,67080897474,Circulating Nurse
+370,66201655578,Circulating Nurse
+370,92188352791,Scrub Nurse
+371,09783028010,First Assistant
+371,26184025787,Anesthesiologist
+371,21860032031,Anesthesiologist
+372,36221173277,Anesthesiologist
+372,84178376591,Anesthesiologist
+373,91538602826,Circulating Nurse
+373,20084842648,First Assistant
+373,06647070385,Scrub Nurse
+374,73054982438,Anesthesiologist
+374,78803318361,Anesthesiologist
+375,97891248839,First Assistant
+375,88067089870,Scrub Nurse
+376,65673374570,Circulating Nurse
+376,81413447609,Circulating Nurse
+377,17749542106,First Assistant
+378,82942034015,Circulating Nurse
+378,36273202227,First Assistant
+378,52160252394,Circulating Nurse
+379,43652405536,Scrub Nurse
+379,41290759659,First Assistant
+380,28453974995,First Assistant
+380,59802602944,Scrub Nurse
+381,49679146386,Circulating Nurse
+381,43652405536,Circulating Nurse
 382,99716596566,Circulating Nurse
-382,38118081896,First Assistant
-383,35006184897,First Assistant
+383,71776296914,Circulating Nurse
+383,24784171594,Anesthesiologist
 384,04991004202,Anesthesiologist
 384,20562019011,Anesthesiologist
-385,69158557490,Anesthesiologist
-385,87688777925,Anesthesiologist
-386,56425706802,Anesthesiologist
-386,57292731868,Circulating Nurse
-386,40837819190,Scrub Nurse
-387,06540259985,Scrub Nurse
-387,30192209567,Scrub Nurse
-387,56154731566,Circulating Nurse
-388,59802602944,Scrub Nurse
-388,40034713171,Scrub Nurse
-388,70789775542,First Assistant
-389,46339534811,Anesthesiologist
-389,62241976878,Anesthesiologist
-390,99944946672,First Assistant
-390,34281644161,First Assistant
-391,48900824845,First Assistant
-391,69626168455,Circulating Nurse
-391,51816125590,First Assistant
-392,89121397436,Anesthesiologist
-392,82308829586,Scrub Nurse
-393,57292731868,Circulating Nurse
-394,60742990747,Scrub Nurse
-395,79725184070,First Assistant
-395,06618756467,Circulating Nurse
-395,50524383805,Anesthesiologist
-396,96298056820,Scrub Nurse
-397,82308829586,Anesthesiologist
-397,14447189395,Anesthesiologist
-397,88197223996,Anesthesiologist
-398,82942034015,First Assistant
-399,00375398923,Anesthesiologist
-399,35211896844,First Assistant
-399,05033746983,Scrub Nurse
-400,14447189395,Scrub Nurse
-401,59802602944,Scrub Nurse
-401,82070669010,Circulating Nurse
-402,59781554260,Anesthesiologist
-402,30041691053,Scrub Nurse
-402,52824685492,Anesthesiologist
-403,38118081896,Anesthesiologist
-404,54677205171,Anesthesiologist
-404,66023515850,Scrub Nurse
-404,49864786862,Scrub Nurse
-405,35211896844,Scrub Nurse
-405,36627135896,Anesthesiologist
-405,74653537801,First Assistant
-406,33243629620,Scrub Nurse
-406,57493251149,Anesthesiologist
-407,69834515025,Scrub Nurse
-407,26589347597,Anesthesiologist
-408,84178376591,First Assistant
-408,19397814590,Circulating Nurse
-409,69626168455,First Assistant
-409,12244418997,Circulating Nurse
-410,21254341230,First Assistant
-410,15969838457,Anesthesiologist
-411,00952242653,Anesthesiologist
-412,19226713175,First Assistant
-413,67244693172,First Assistant
-414,15958417491,Scrub Nurse
-414,41119738818,Circulating Nurse
-414,86132394564,First Assistant
-415,54677205171,Scrub Nurse
-416,68627633283,Anesthesiologist
-417,61025634202,Scrub Nurse
-417,82308829586,First Assistant
-418,08779724792,First Assistant
-418,23028655052,Circulating Nurse
-419,26589347597,Anesthesiologist
-419,17430688116,Circulating Nurse
-420,56355842271,First Assistant
-421,86515902578,First Assistant
-422,90912375302,Anesthesiologist
-422,35107651917,Anesthesiologist
-422,99002772910,Circulating Nurse
-423,10749161942,Anesthesiologist
-423,54736015791,First Assistant
-424,02320914016,First Assistant
-424,08779724792,Anesthesiologist
-425,01584668793,Anesthesiologist
-425,05879052244,Scrub Nurse
-426,48112664971,Circulating Nurse
-426,41119738818,First Assistant
-427,46858639061,First Assistant
-428,75602080192,Anesthesiologist
-428,29917217429,Scrub Nurse
-428,29591257349,Anesthesiologist
-429,22132041042,Circulating Nurse
-429,59802602944,Scrub Nurse
-430,36054946920,First Assistant
-430,11939103829,First Assistant
-430,26642673512,Circulating Nurse
-431,11386908716,Anesthesiologist
-431,43302650996,Scrub Nurse
-431,64509999001,Circulating Nurse
-432,56355842271,Circulating Nurse
-432,88382567262,Scrub Nurse
-432,36510344442,Anesthesiologist
-433,95616225647,Scrub Nurse
-434,90417282076,Anesthesiologist
-435,11939103829,First Assistant
-435,66821215649,Circulating Nurse
-436,99716596566,Circulating Nurse
-436,78803318361,Scrub Nurse
-436,78870584168,Anesthesiologist
-437,06618756467,Anesthesiologist
-437,53869479025,Circulating Nurse
-437,96342898760,Scrub Nurse
-438,44890932253,First Assistant
-439,08779724792,Scrub Nurse
-440,24485007288,First Assistant
-441,09783028010,First Assistant
-441,00375398923,Circulating Nurse
-441,44435962458,First Assistant
-442,53869479025,Anesthesiologist
-442,61259016399,Anesthesiologist
-442,86132394564,Scrub Nurse
-443,40034713171,Anesthesiologist
-443,35006184897,Scrub Nurse
-443,24986634209,Circulating Nurse
-444,35006184897,Circulating Nurse
-444,11386908716,Anesthesiologist
-444,39461212898,First Assistant
-445,78824265594,Scrub Nurse
-445,36759017791,First Assistant
-445,20084842648,Scrub Nurse
-446,53811683710,Circulating Nurse
-446,02320914016,Scrub Nurse
-446,81413447609,First Assistant
-447,04450928605,Scrub Nurse
-448,88197223996,First Assistant
-448,38109794122,Anesthesiologist
-449,33295945231,Anesthesiologist
-450,24485007288,First Assistant
-451,06540259985,Circulating Nurse
-451,19397814590,Circulating Nurse
-451,46858639061,Scrub Nurse
-452,97207382777,Scrub Nurse
-452,40837819190,Scrub Nurse
-452,05033746983,First Assistant
-453,08779724792,First Assistant
-453,26642673512,Scrub Nurse
-454,86491259497,Anesthesiologist
-454,99829075515,First Assistant
-455,96322517422,Scrub Nurse
-456,72205397077,Scrub Nurse
-456,17970566036,First Assistant
-457,73420319777,Anesthesiologist
-457,72404347412,First Assistant
-458,61867066320,Anesthesiologist
-459,66821215649,First Assistant
-460,24485007288,Circulating Nurse
-460,04450928605,Circulating Nurse
-460,02320914016,Anesthesiologist
-461,64224059208,First Assistant
-462,90533470474,Scrub Nurse
-462,02825326769,Scrub Nurse
-462,43652405536,Anesthesiologist
-463,75602080192,Circulating Nurse
-464,69158557490,First Assistant
-464,97207382777,Circulating Nurse
-464,20084842648,Circulating Nurse
-465,81291635049,Anesthesiologist
-465,80619022311,First Assistant
-465,30041691053,Circulating Nurse
-466,19226713175,Scrub Nurse
-466,27622398474,Scrub Nurse
-466,73481409841,Anesthesiologist
-467,17430688116,Scrub Nurse
-468,00375398923,Circulating Nurse
-468,64509999001,First Assistant
-469,69296568512,First Assistant
-470,31539839122,Anesthesiologist
-470,82070669010,Circulating Nurse
-471,03350842431,Circulating Nurse
-472,02825326769,Circulating Nurse
-472,06618756467,Anesthesiologist
-472,84914986099,Anesthesiologist
-473,99829075515,Anesthesiologist
-474,68576063494,Anesthesiologist
-475,98433611371,Circulating Nurse
-476,69296568512,Circulating Nurse
-476,43652405536,Scrub Nurse
-477,61768225127,First Assistant
-477,68576063494,First Assistant
-477,24485007288,Circulating Nurse
-478,08581810450,Anesthesiologist
-478,47640006875,Anesthesiologist
-478,39117766650,Anesthesiologist
-479,46858639061,Anesthesiologist
-480,96342898760,Anesthesiologist
-481,90912375302,Circulating Nurse
-481,53869479025,Circulating Nurse
-481,68576063494,Circulating Nurse
-482,91141600916,Anesthesiologist
-482,11939103829,First Assistant
-483,90093781460,Scrub Nurse
-483,99829075515,Circulating Nurse
-483,29591257349,Anesthesiologist
-484,71776296914,First Assistant
-485,86027574544,Scrub Nurse
-485,39461212898,First Assistant
-485,57493251149,Anesthesiologist
-486,56425706802,First Assistant
-486,84914986099,First Assistant
-487,35006184897,First Assistant
-487,28453974995,Circulating Nurse
-488,30000886346,Scrub Nurse
-489,38109794122,First Assistant
-489,72205397077,Scrub Nurse
-490,26679419087,Anesthesiologist
-491,88067089870,First Assistant
-491,41290759659,First Assistant
-492,52824685492,First Assistant
-492,57292731868,Circulating Nurse
-493,43302650996,Circulating Nurse
-493,97934421291,Scrub Nurse
-494,97891248839,Scrub Nurse
-495,90922884987,First Assistant
-495,69296568512,First Assistant
-496,82070669010,Circulating Nurse
-496,39461212898,Circulating Nurse
-497,24485007288,Anesthesiologist
-498,17970566036,First Assistant
-498,51204850766,Anesthesiologist
-499,54677205171,First Assistant
-499,36273202227,First Assistant
-499,43652405536,Circulating Nurse
-500,57292731868,Anesthesiologist
-500,75983326170,Anesthesiologist
-500,62241976878,Scrub Nurse
-501,99944946672,First Assistant
-501,61025634202,Circulating Nurse
-502,33610944164,Scrub Nurse
-502,35211896844,Anesthesiologist
-503,91511436786,First Assistant
-504,10404315668,Anesthesiologist
-504,81291635049,Circulating Nurse
-504,75983326170,Circulating Nurse
-505,86491259497,Anesthesiologist
-506,90093781460,First Assistant
-506,36510344442,Anesthesiologist
-507,50842324234,First Assistant
-508,38118081896,First Assistant
-509,98313549014,Scrub Nurse
-509,44045883114,Circulating Nurse
-510,40034713171,Scrub Nurse
-510,68627633283,Scrub Nurse
-511,36759017791,First Assistant
-511,61768225127,Scrub Nurse
-512,82308829586,Anesthesiologist
-512,96322517422,First Assistant
-513,30041691053,First Assistant
-513,41119738818,First Assistant
-514,81291635049,Anesthesiologist
-514,52824685492,Scrub Nurse
-515,82238794026,Circulating Nurse
-515,68017703163,First Assistant
-516,11939103829,First Assistant
-516,51746564260,Circulating Nurse
-517,10404315668,First Assistant
-517,64612096173,Circulating Nurse
-518,75983326170,Scrub Nurse
-519,82159773854,Anesthesiologist
-519,91141600916,Anesthesiologist
-520,55501935450,Scrub Nurse
-520,31006433226,Circulating Nurse
-521,54736015791,Circulating Nurse
-521,26679419087,Circulating Nurse
-522,82308829586,Circulating Nurse
-522,33610944164,First Assistant
-523,33610944164,Scrub Nurse
-523,70789775542,Anesthesiologist
-523,66431589016,Scrub Nurse
-524,73217503619,First Assistant
-525,17749542106,Circulating Nurse
-525,86497035067,Scrub Nurse
-525,16204298514,Circulating Nurse
-526,02825326769,First Assistant
-526,26611584858,First Assistant
-527,30000886346,Scrub Nurse
-528,96322517422,Anesthesiologist
-529,14447189395,First Assistant
-529,48967808264,First Assistant
-529,16204298514,Anesthesiologist
-530,06618756467,First Assistant
-530,48967808264,Anesthesiologist
-531,79572857595,First Assistant
-532,06592088143,Anesthesiologist
-532,69836923534,Scrub Nurse
-533,82308829586,Circulating Nurse
-533,33243629620,First Assistant
-533,05089273961,First Assistant
-534,11797269999,First Assistant
-534,44435962458,Circulating Nurse
-535,84914986099,Anesthesiologist
-535,70789775542,Circulating Nurse
-536,00363856461,Anesthesiologist
-537,13511350535,First Assistant
-538,86515902578,Circulating Nurse
-538,10404315668,Circulating Nurse
-538,90922884987,Anesthesiologist
-539,65213835071,First Assistant
-540,54176755398,Anesthesiologist
-541,56154731566,Anesthesiologist
-541,34281644161,Scrub Nurse
-541,38687906048,Scrub Nurse
-542,61768225127,First Assistant
-542,05879052244,Circulating Nurse
-542,10740274067,Circulating Nurse
-543,47640006875,Scrub Nurse
-544,66821215649,Scrub Nurse
-544,66431589016,Anesthesiologist
-544,64612096173,Scrub Nurse
-545,41349096197,First Assistant
-546,62542926456,Scrub Nurse
-546,18335974876,Scrub Nurse
-546,02320914016,Circulating Nurse
-547,46339534811,Circulating Nurse
-547,96298056820,First Assistant
-547,75169139521,Circulating Nurse
-548,17749542106,Circulating Nurse
-549,64224059208,First Assistant
-549,59851602119,Scrub Nurse
-550,17192817074,Circulating Nurse
-550,46600128382,Scrub Nurse
-551,48900824845,Scrub Nurse
-551,02320914016,Scrub Nurse
-551,17430688116,Anesthesiologist
-552,30491341038,Circulating Nurse
-552,39461212898,Circulating Nurse
-552,19226713175,Circulating Nurse
-553,72602925468,Circulating Nurse
-554,82238794026,First Assistant
-554,44890932253,Scrub Nurse
-554,50842324234,First Assistant
-555,61025634202,Anesthesiologist
-555,90093781460,Scrub Nurse
-555,61768225127,Scrub Nurse
-556,95592277641,Circulating Nurse
-557,66431589016,Anesthesiologist
-557,41119738818,First Assistant
-558,75983326170,Circulating Nurse
-558,56425706802,Anesthesiologist
-558,40039101933,Scrub Nurse
-559,34448672288,First Assistant
-560,59802602944,Circulating Nurse
-561,90417282076,Scrub Nurse
-562,59851602119,Circulating Nurse
-562,72205397077,Scrub Nurse
-563,50842324234,Circulating Nurse
-563,41349096197,First Assistant
-563,91511436786,Anesthesiologist
-564,02716988371,Anesthesiologist
-564,45323167781,Circulating Nurse
-565,57285353399,Circulating Nurse
-565,79993242024,Scrub Nurse
-565,06592088143,First Assistant
-566,52866933515,Anesthesiologist
-566,56340918580,Anesthesiologist
-567,89615738551,First Assistant
-567,90326551327,Scrub Nurse
-567,20084842648,First Assistant
-568,39865462202,Scrub Nurse
-568,91141600916,Anesthesiologist
-568,69039220269,Scrub Nurse
-569,08581810450,Anesthesiologist
-569,10749161942,Circulating Nurse
-570,64509999001,Circulating Nurse
-570,19612766208,First Assistant
-571,90577204410,Scrub Nurse
-571,98313549014,First Assistant
-571,20562019011,First Assistant
-572,51204850766,Scrub Nurse
-572,61025634202,First Assistant
-572,05879052244,Scrub Nurse
-573,00953662195,Anesthesiologist
-573,73123155505,Anesthesiologist
-573,47640006875,Scrub Nurse
-574,78803318361,Anesthesiologist
-574,43690283772,Scrub Nurse
-575,62643850095,Scrub Nurse
-575,33610944164,Anesthesiologist
-575,03666020005,Circulating Nurse
-576,64224059208,Circulating Nurse
-577,89121397436,Anesthesiologist
-578,26642673512,First Assistant
-578,44890932253,Circulating Nurse
-578,45323167781,First Assistant
-579,62643850095,Scrub Nurse
-579,73217503619,Anesthesiologist
-580,99829075515,Anesthesiologist
-580,78824265594,Scrub Nurse
-581,18626713684,First Assistant
-581,50524383805,Circulating Nurse
-581,79403664016,Scrub Nurse
-582,81413447609,Anesthesiologist
-582,56154731566,Scrub Nurse
-583,68627633283,Anesthesiologist
-584,90326551327,Scrub Nurse
-584,14367286811,Scrub Nurse
-585,00375398923,First Assistant
-585,00953662195,Anesthesiologist
-585,90577204410,First Assistant
-586,85324367924,First Assistant
-586,19360060827,Anesthesiologist
-586,10740274067,Anesthesiologist
-587,50524383805,Anesthesiologist
-587,79725184070,Circulating Nurse
-588,59851602119,Circulating Nurse
-589,90093781460,Anesthesiologist
-590,17989022379,Scrub Nurse
-590,89121397436,Anesthesiologist
-590,51204850766,First Assistant
-591,80619022311,Scrub Nurse
-591,44045883114,Scrub Nurse
-592,44435962458,First Assistant
-592,54176755398,Anesthesiologist
-593,34448672288,First Assistant
-594,73420319777,First Assistant
-594,39461212898,First Assistant
-594,00375398923,Scrub Nurse
-595,61867066320,Anesthesiologist
-596,57292731868,Circulating Nurse
-596,95437766183,Anesthesiologist
-597,36510344442,First Assistant
-597,45323167781,Scrub Nurse
-597,93500115461,Scrub Nurse
-598,52824685492,Anesthesiologist
-598,17192817074,Anesthesiologist
-599,48967808264,First Assistant
-599,52824685492,Circulating Nurse
-600,73217503619,Scrub Nurse
-600,14753369524,First Assistant
-600,09662702660,Anesthesiologist
+385,52866933515,Anesthesiologist
+385,58522942525,First Assistant
+385,43302650996,Circulating Nurse
+386,53811683710,First Assistant
+386,11939103829,Anesthesiologist
+387,12244418997,First Assistant
+387,10749161942,First Assistant
+388,24784171594,First Assistant
+389,78803318361,First Assistant
+390,74653537801,First Assistant
+391,14367286811,Circulating Nurse
+392,10404315668,First Assistant
+392,69626168455,Circulating Nurse
+392,51816125590,First Assistant
+393,89121397436,Anesthesiologist
+393,82308829586,Scrub Nurse
+394,57292731868,Circulating Nurse
+395,96322517422,Anesthesiologist
+396,64207632713,Scrub Nurse
+396,39117766650,First Assistant
+396,06618756467,Circulating Nurse
+397,01584668793,Scrub Nurse
+397,68017703163,Scrub Nurse
+398,49679146386,Anesthesiologist
+399,90034686163,Circulating Nurse
+400,26611584858,First Assistant
+401,05033746983,Scrub Nurse
+402,14447189395,Scrub Nurse
+403,59802602944,Scrub Nurse
+403,82070669010,Circulating Nurse
+404,40039101933,Scrub Nurse
+405,05033746983,Scrub Nurse
+406,82942034015,First Assistant
+407,75169139521,First Assistant
+408,36627135896,Anesthesiologist
+408,74653537801,First Assistant
+409,33243629620,Scrub Nurse
+409,57493251149,Anesthesiologist
+410,69834515025,Scrub Nurse
+410,26589347597,Anesthesiologist
+411,22132041042,Scrub Nurse
+412,52866933515,Circulating Nurse
+412,69626168455,First Assistant
+412,12244418997,Circulating Nurse
+413,21254341230,First Assistant
+413,15969838457,Anesthesiologist
+414,00952242653,Anesthesiologist
+415,19226713175,First Assistant
+416,03350842431,Circulating Nurse
+416,14753369524,First Assistant
+417,67080897474,First Assistant
+417,06592088143,Circulating Nurse
+417,24986634209,Circulating Nurse
+418,28639420122,First Assistant
+418,54677205171,Scrub Nurse
+419,46199539467,First Assistant
+419,49679146386,Scrub Nurse
+419,62643850095,Scrub Nurse
+420,89121397436,Scrub Nurse
+420,26611584858,First Assistant
+420,68627633283,Anesthesiologist
+421,36050281640,Circulating Nurse
+422,70014413068,Circulating Nurse
+422,26611584858,Anesthesiologist
+423,20619019333,First Assistant
+423,52160252394,First Assistant
+424,26589347597,Anesthesiologist
+424,17430688116,Circulating Nurse
+425,56355842271,First Assistant
+426,98416734785,Circulating Nurse
+427,21860032031,Scrub Nurse
+427,21254341230,Scrub Nurse
+428,10749161942,Anesthesiologist
+428,54736015791,First Assistant
+429,88067089870,Scrub Nurse
+430,44890932253,Scrub Nurse
+430,30192209567,First Assistant
+430,15689109779,Circulating Nurse
+431,90417282076,First Assistant
+431,09783028010,Scrub Nurse
+431,51816125590,Circulating Nurse
+432,75602080192,Anesthesiologist
+432,29917217429,Scrub Nurse
+432,29591257349,Anesthesiologist
+433,22132041042,Circulating Nurse
+433,59802602944,Scrub Nurse
+434,36054946920,First Assistant
+434,11939103829,First Assistant
+434,26642673512,Circulating Nurse
+435,48900824845,Scrub Nurse
+436,10508054914,First Assistant
+436,97934421291,Circulating Nurse
+437,26642673512,First Assistant
+437,02320914016,First Assistant
+438,80253084376,Scrub Nurse
+439,33243629620,Anesthesiologist
+439,57292731868,Circulating Nurse
+440,50017325900,First Assistant
+441,66821215649,Circulating Nurse
+442,99716596566,Circulating Nurse
+442,78803318361,Scrub Nurse
+442,78870584168,Anesthesiologist
+443,21803966203,Anesthesiologist
+443,39160770040,Scrub Nurse
+444,50524383805,Scrub Nurse
+444,86132394564,First Assistant
+444,66201655578,Circulating Nurse
+445,30000886346,First Assistant
+446,09783028010,First Assistant
+446,00375398923,Circulating Nurse
+447,36221173277,Circulating Nurse
+447,52406221559,Scrub Nurse
+448,39461212898,Anesthesiologist
+449,35006184897,Circulating Nurse
+449,11386908716,Anesthesiologist
+449,39461212898,First Assistant
+450,71776296914,Scrub Nurse
+451,26679419087,Scrub Nurse
+451,78870584168,Circulating Nurse
+451,14753369524,Scrub Nurse
+452,52951646933,Anesthesiologist
+452,03350842431,First Assistant
+452,90912375302,First Assistant
+453,67080897474,First Assistant
+454,23622169069,Anesthesiologist
+454,98416734785,Anesthesiologist
+455,73217503619,Circulating Nurse
+456,50842324234,Scrub Nurse
+456,68017703163,Scrub Nurse
+457,02520945237,First Assistant
+457,73217503619,Scrub Nurse
+457,00953662195,Scrub Nurse
+458,26642673512,Scrub Nurse
+459,99829075515,First Assistant
+460,10508054914,First Assistant
+460,52951646933,Scrub Nurse
+460,15969838457,First Assistant
+461,56340918580,Anesthesiologist
+461,41349096197,Scrub Nurse
+461,86515902578,Circulating Nurse
+462,88281527873,Scrub Nurse
+462,38109794122,Anesthesiologist
+463,60742990747,Anesthesiologist
+463,36273202227,Circulating Nurse
+464,65213835071,Scrub Nurse
+464,41349096197,First Assistant
+464,73420319777,Scrub Nurse
+465,39160770040,Circulating Nurse
+465,23028655052,Anesthesiologist
+466,58522942525,First Assistant
+467,04450928605,First Assistant
+467,91511436786,Circulating Nurse
+467,75580309016,First Assistant
+468,90922884987,Circulating Nurse
+469,11386908716,Scrub Nurse
+470,29917217429,Scrub Nurse
+470,73481409841,Anesthesiologist
+470,50842324234,Scrub Nurse
+471,29917217429,Scrub Nurse
+471,97207382777,Circulating Nurse
+472,99944946672,Circulating Nurse
+472,00375398923,Circulating Nurse
+472,64509999001,First Assistant
+473,69296568512,First Assistant
+474,31539839122,Anesthesiologist
+474,82070669010,Circulating Nurse
+475,03350842431,Circulating Nurse
+475,61867066320,First Assistant
+475,36273202227,Scrub Nurse
+476,81291635049,First Assistant
+476,57493251149,Circulating Nurse
+477,68017703163,Circulating Nurse
+478,98416734785,Anesthesiologist
+479,82308829586,Anesthesiologist
+479,39461212898,Scrub Nurse
+480,96298056820,Scrub Nurse
+480,23622169069,First Assistant
+480,60157117132,Anesthesiologist
+481,48112664971,First Assistant
+481,36273202227,Circulating Nurse
+482,09783028010,First Assistant
+482,35006184897,Circulating Nurse
+482,08779724792,Anesthesiologist
+483,21254341230,Scrub Nurse
+483,88197223996,Scrub Nurse
+483,66821215649,Circulating Nurse
+484,67244693172,Scrub Nurse
+484,47640006875,Scrub Nurse
+485,06592088143,First Assistant
+486,26642673512,First Assistant
+486,21860032031,Anesthesiologist
+487,64612096173,Anesthesiologist
+488,90034686163,First Assistant
+488,14447189395,Anesthesiologist
+488,94882188496,Scrub Nurse
+489,33243629620,Circulating Nurse
+490,64612096173,Anesthesiologist
+490,03666020005,First Assistant
+491,46199539467,First Assistant
+491,95592277641,Anesthesiologist
+492,73877583336,Scrub Nurse
+492,60157117132,Anesthesiologist
+493,43690283772,Circulating Nurse
+493,73054982438,Scrub Nurse
+494,33295945231,First Assistant
+495,52406221559,Circulating Nurse
+495,97648784962,Circulating Nurse
+495,88067089870,First Assistant
+496,33295945231,First Assistant
+496,72205397077,Circulating Nurse
+497,62542926456,First Assistant
+497,99716596566,Circulating Nurse
+498,26184025787,Scrub Nurse
+499,50017325900,First Assistant
+500,82070669010,Circulating Nurse
+500,39461212898,Circulating Nurse
+501,24485007288,Anesthesiologist
+502,17970566036,First Assistant
+502,51204850766,Anesthesiologist
+503,54677205171,First Assistant
+503,36273202227,First Assistant
+503,43652405536,Circulating Nurse
+504,30192209567,Anesthesiologist
+504,57493251149,Circulating Nurse
+504,10728878072,First Assistant
+505,10740274067,Scrub Nurse
+505,26589347597,First Assistant
+506,33610944164,Scrub Nurse
+506,35211896844,Anesthesiologist
+507,91511436786,First Assistant
+508,22132041042,Anesthesiologist
+509,86491259497,Anesthesiologist
+509,06618756467,Scrub Nurse
+509,40039101933,First Assistant
+510,62542926456,Scrub Nurse
+510,36510344442,First Assistant
+511,11386908716,First Assistant
+512,75602080192,First Assistant
+512,26611584858,Scrub Nurse
+512,38118081896,First Assistant
+513,98313549014,Scrub Nurse
+513,44045883114,Circulating Nurse
+514,40034713171,Scrub Nurse
+514,68627633283,Scrub Nurse
+515,36759017791,First Assistant
+515,61768225127,Scrub Nurse
+516,05033746983,First Assistant
+516,36054946920,First Assistant
+516,96322517422,Circulating Nurse
+517,21860032031,Circulating Nurse
+517,30041691053,First Assistant
+518,97906085481,Scrub Nurse
+518,68576063494,Anesthesiologist
+518,46339534811,Scrub Nurse
+519,39865462202,Circulating Nurse
+519,76810248085,Scrub Nurse
+520,36759017791,First Assistant
+521,18335974876,Circulating Nurse
+521,11939103829,First Assistant
+521,51746564260,Circulating Nurse
+522,10404315668,First Assistant
+522,64612096173,Circulating Nurse
+523,75983326170,Scrub Nurse
+524,95437766183,First Assistant
+524,79403664016,Scrub Nurse
+524,24784171594,First Assistant
+525,56154731566,First Assistant
+525,17430688116,Anesthesiologist
+526,73481409841,Scrub Nurse
+526,53811683710,Scrub Nurse
+526,54176755398,Circulating Nurse
+527,33610944164,First Assistant
+527,44890932253,Scrub Nurse
+528,17192817074,Circulating Nurse
+529,15969838457,Scrub Nurse
+530,02716988371,Anesthesiologist
+530,57292731868,Scrub Nurse
+530,08581810450,Scrub Nurse
+531,24986634209,First Assistant
+531,36510344442,Scrub Nurse
+532,26611584858,First Assistant
+532,06540259985,Scrub Nurse
+532,26679419087,Scrub Nurse
+533,23622169069,Anesthesiologist
+533,36221173277,Scrub Nurse
+534,95592277641,First Assistant
+534,61025634202,Circulating Nurse
+534,36050281640,Scrub Nurse
+535,97906085481,First Assistant
+536,69836923534,Circulating Nurse
+536,54736015791,Anesthesiologist
+537,79572857595,First Assistant
+538,06592088143,Anesthesiologist
+538,69836923534,Scrub Nurse
+539,82308829586,Circulating Nurse
+539,33243629620,First Assistant
+539,05089273961,First Assistant
+540,78870584168,Anesthesiologist
+541,86027574544,Scrub Nurse
+542,54677205171,Scrub Nurse
+542,08779724792,Anesthesiologist
+542,28639420122,Circulating Nurse
+543,12244418997,Scrub Nurse
+543,00375398923,Anesthesiologist
+544,90922884987,Anesthesiologist
+544,05089273961,Scrub Nurse
+545,35211896844,Circulating Nurse
+545,91141600916,Scrub Nurse
+545,45323167781,Scrub Nurse
+546,54176755398,Anesthesiologist
+547,02825326769,Anesthesiologist
+547,17749542106,Scrub Nurse
+547,21254341230,Circulating Nurse
+548,66201655578,First Assistant
+548,90912375302,First Assistant
+549,94882188496,Anesthesiologist
+549,99002772910,Scrub Nurse
+549,97906085481,Anesthesiologist
+550,38687906048,Anesthesiologist
+550,19226713175,First Assistant
+551,68576063494,Scrub Nurse
+551,15689109779,First Assistant
+552,46339534811,Circulating Nurse
+552,96298056820,First Assistant
+552,75169139521,Circulating Nurse
+553,23864100953,First Assistant
+553,17749542106,Circulating Nurse
+553,82159773854,Scrub Nurse
+554,36221173277,First Assistant
+554,33610944164,Circulating Nurse
+555,80253084376,Anesthesiologist
+555,69158557490,Scrub Nurse
+556,17430688116,Anesthesiologist
+556,97648784962,Scrub Nurse
+557,19226713175,Circulating Nurse
+557,86027574544,First Assistant
+558,39865462202,Anesthesiologist
+558,99829075515,First Assistant
+559,50842324234,First Assistant
+559,88382567262,Circulating Nurse
+560,00305661995,Scrub Nurse
+560,99829075515,Circulating Nurse
+561,95592277641,Circulating Nurse
+562,66431589016,Anesthesiologist
+562,41119738818,First Assistant
+563,51204850766,Anesthesiologist
+564,54677205171,Anesthesiologist
+564,39461212898,First Assistant
+565,10404315668,Circulating Nurse
+565,69039220269,Circulating Nurse
+566,15958417491,First Assistant
+566,91141600916,Circulating Nurse
+566,65673374570,Circulating Nurse
+567,80619022311,Circulating Nurse
+568,71776296914,First Assistant
+568,28639420122,Scrub Nurse
+569,84914986099,First Assistant
+570,48112664971,First Assistant
+571,46199539467,Anesthesiologist
+571,53869479025,First Assistant
+572,05748839974,Anesthesiologist
+573,31579057191,Anesthesiologist
+574,48900824845,Circulating Nurse
+574,08581810450,Anesthesiologist
+576,91538602826,First Assistant
+576,26642673512,Anesthesiologist
+577,60742990747,Scrub Nurse
+577,36273202227,Anesthesiologist
+577,56340918580,Anesthesiologist
+578,41119738818,Anesthesiologist
+578,19612766208,First Assistant
+579,82942034015,Circulating Nurse
+579,00363856461,Anesthesiologist
+579,52951646933,Anesthesiologist
+580,20761239612,Scrub Nurse
+580,21803966203,Circulating Nurse
+580,65673374570,Scrub Nurse
+581,26611584858,First Assistant
+581,30041691053,Anesthesiologist
+582,64224059208,Scrub Nurse
+582,20562019011,Scrub Nurse
+582,19360060827,First Assistant
+583,12244418997,Scrub Nurse
+583,00305661995,Anesthesiologist
+584,00305661995,First Assistant
+585,26679419087,Scrub Nurse
+585,98433611371,Circulating Nurse
+585,18335974876,Anesthesiologist
+586,22132041042,First Assistant
+587,40034713171,Anesthesiologist
+587,03350842431,Scrub Nurse
+588,10404315668,First Assistant
+588,36221173277,Circulating Nurse
+588,70789775542,Anesthesiologist
+589,72602925468,Circulating Nurse
+589,35107651917,Anesthesiologist
+590,96342898760,First Assistant
+590,60742990747,Circulating Nurse
+590,90093781460,Circulating Nurse
+591,95592277641,Circulating Nurse
+592,33243629620,Circulating Nurse
+592,53811683710,Circulating Nurse
+593,50524383805,Anesthesiologist
+593,79725184070,Circulating Nurse
+594,30041691053,Circulating Nurse
+594,12244418997,Anesthesiologist
+595,44435962458,Scrub Nurse
+595,59802602944,First Assistant
+595,17989022379,Scrub Nurse
+596,86491259497,Scrub Nurse
+597,44435962458,First Assistant
+597,54176755398,Anesthesiologist
+598,34448672288,First Assistant
+599,04450928605,Scrub Nurse
+599,15689109779,First Assistant
+599,98433611371,First Assistant
+600,73481409841,Scrub Nurse

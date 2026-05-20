@@ -340,8 +340,8 @@ bash run.sh
 | `prevent_consecutive_shift_insert_trigger` | `shift_staffing` | BEFORE INSERT | Ελάχιστο 8 ωρών ανάπαυσης μεταξύ βαρδιών |
 | `prevent_consecutive_shift_update_trigger` | `shift_staffing` | BEFORE UPDATE | Ελάχιστο 8 ωρών ανάπαυσης μεταξύ βαρδιών |
 | `validate_shift_on_lock_trigger` | `shifts` | BEFORE UPDATE | Κατά το κλείδωμα (→ completed): ≥3 ιατροί, ≥6 νοσηλευτές, ≥2 διοικητικοί · αν υπάρχει ειδικευόμενος, απαιτείται Επιμελητής Α ή Διευθυντής |
-| `trg_protect_locked_shifts_trigger` | `shift_staffing` | BEFORE INSERT | Απαγόρευση προσθήκης σε κλειδωμένη εφημερία |
-| `trg_protect_locked_shifts_delete_trigger` | `shift_staffing` | BEFORE DELETE | Απαγόρευση αφαίρεσης από κλειδωμένη εφημερία |
+| `protect_locked_shifts_trigger` | `shift_staffing` | BEFORE INSERT | Απαγόρευση προσθήκης σε κλειδωμένη εφημερία |
+| `protect_locked_shifts_delete_trigger` | `shift_staffing` | BEFORE DELETE | Απαγόρευση αφαίρεσης από κλειδωμένη εφημερία |
 
 ---
 
@@ -388,6 +388,8 @@ bash run.sh
 αυτόματα FK indexes της MariaDB:
 
 
+| Index | Στήλη | Χρήση σε ερωτήματα |
+|---|---|---|
 | `idx_adm_date` | `admissions.admission_date` | Q01, Q06, Q09, Q14 |
 | `idx_pe_start_time` | `procedure_executions.start_time` | Q11 |
 | `idx_shifts_date` | `shifts.shift_date` | Q08, Q12 |
@@ -396,3 +398,5 @@ bash run.sh
 | `idx_staff_last_name` | `staff.last_name` | Q04 |
 | `idx_patients_last_name` | `patients.last_name` | Q06 |
 | `idx_patients_dob` | `patients.date_of_birth` | Q05 |
+
+

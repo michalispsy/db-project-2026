@@ -11,5 +11,5 @@ JOIN staff s ON doc.AMKA = s.AMKA
 JOIN doctor_ratings dr ON doc.AMKA = dr.doctor_AMKA
 JOIN admissions a ON dr.admission_id = a.admission_id
 JOIN admission_ratings ar ON a.admission_id = ar.admission_id
-WHERE s.last_name = 'Alexiou'
-GROUP BY doc.AMKA, s.last_name;
+WHERE s.last_name = 'Alexiou' AND s.first_name = 'Michalis'
+GROUP BY doc.AMKA, s.first_name, s.last_name;
