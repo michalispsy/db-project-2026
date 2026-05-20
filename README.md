@@ -129,6 +129,13 @@ bash run.sh
 
 > Το `run.sh` απαιτεί sudo γιατί συνδέεται στο MariaDB μέσω unix socket (`/run/mysqld/mysqld.sock`).
 
+### Σημείωση: Επειδή σε κάποια attributes χρησιμοποιούνται ελληνικοί χαρακτήρες, είναι πιθανόν να χρειαστεί να ρυθμίσετε το locale του terminal:
+
+```bash
+export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
+```
+
 ---
 
 ## Σχήμα βάσης
