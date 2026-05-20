@@ -7,7 +7,7 @@ Outputs:
   - sql/load.sql with LOAD DATA LOCAL INFILE statements
 
 Usage:
-    python3 data/synthetic_data/generate.py
+    python3 code/synthetic_data_generation_code/generate.py
 """
 import sys
 import os

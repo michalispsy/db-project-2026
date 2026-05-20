@@ -376,7 +376,7 @@ bash run.sh
 ## Συνθετικά δεδομένα
 
 Τα δεδομένα παράχθηκαν συνθετικά μέσω Python scripts στο
-`data/synthetic_data_generation_code/`, με βάση πραγματικά κωδικολόγια
+`code/synthetic_data_generation_code/`, με βάση πραγματικά κωδικολόγια
 (ICD-10, ΚΕΝ, EMA). Η φόρτωση γίνεται μέσω `LOAD DATA LOCAL INFILE` από
 αρχεία CSV στο `data/csv/load/`.
 
