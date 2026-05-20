@@ -580,6 +580,22 @@ create table operating_room_images (
     constraint fk_oproom_img_relation foreign key (room_id) references operating_rooms(room_id) on delete cascade
 );
 
+-- Indexes
+
+CREATE INDEX idx_adm_date ON admissions(admission_date);
+
+CREATE INDEX idx_pe_start_time ON procedure_executions(start_time);
+
+CREATE INDEX idx_shifts_date ON shifts(shift_date);
+
+CREATE INDEX idx_triage_time ON triages(triage_time);
+
+CREATE INDEX idx_icd10_category ON icd10(category);
+
+CREATE INDEX idx_staff_last_name    ON staff(last_name);
+CREATE INDEX idx_patients_last_name ON patients(last_name);
+CREATE INDEX idx_patients_dob       ON patients(date_of_birth);
+
 -- Triggers για αυτοματοποιήσεις
 
 DELIMITER //
@@ -1300,20 +1316,3 @@ BEGIN
 END//
 
 DELIMITER ;
-
-
--- Indexes
-
-CREATE INDEX idx_adm_date ON admissions(admission_date);
-
-CREATE INDEX idx_pe_start_time ON procedure_executions(start_time);
-
-CREATE INDEX idx_shifts_date ON shifts(shift_date);
-
-CREATE INDEX idx_triage_time ON triages(triage_time);
-
-CREATE INDEX idx_icd10_category ON icd10(category);
-
-CREATE INDEX idx_staff_last_name    ON staff(last_name);
-CREATE INDEX idx_patients_last_name ON patients(last_name);
-CREATE INDEX idx_patients_dob       ON patients(date_of_birth);
