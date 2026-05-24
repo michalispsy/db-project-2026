@@ -8,5 +8,11 @@ mysql/
 Diagrams/
 
 .~lock.*#
-# Αν τα Excel του ΕΜΑ είναι πολύ μεγάλα, ίσως θες να τα εξαιρέσεις, 
-# αλλά η εκφώνηση ζητάει πλήρη φάκελο [sql/load.sql] οπότε προσοχή εδώ.
+
+# Ignore virtual environments
+venv/
+.venv/
+
+# Ignore Python cache folders and files
+__pycache__/
+*.pyc
